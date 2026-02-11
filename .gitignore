@@ -1,0 +1,59 @@
+# Environment
+.env
+.env.*
+*.env
+!.env.example
+
+# Credentials & secrets
+credentials.json
+secrets.json
+*.key
+*.pem
+*_key.json
+service-account*.json
+
+# Dependencies
+node_modules/
+.pnp.*
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Build outputs
+dist/
+build/
+.expo/
+*.apk
+*.aab
+*.ipa
+web-build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Data (local only)
+data/raw/
+data/cache/
+*.db
+*.sqlite
+
+# Scraped content (can be large)
+scraped/
+brochures/
