@@ -362,7 +362,93 @@ Complexity: High - defer to Phase 2
 - [ ] Test fallback switching (block Tier 1 → Tier 2)
 - [ ] Add WhatsApp alerts for failures
 
-### Phase 1c: Data Validation (Per Store) ⚠️ CRITICAL
+### Phase 1c: Product Coverage Strategy (Feb 12-14) 🎯 PRIORITY
+
+**⚠️ CRITICAL DISCOVERY:** Bulgarian supermarkets do NOT have full online product catalogs!
+- Lidl, Kaufland, Billa are discount/traditional retailers, not e-commerce
+- Websites only show **weekly promotional items** (~10-20% of inventory)
+- Full product data exists ONLY in **PDF brochures**
+
+**Two strategies for price comparison:**
+
+**Strategy A: Promo-Only Comparison (Current - Fast)**
+- Compare promotional items across stores
+- Limited to ~1,500-2,000 products/week
+- Updates weekly as promos change
+- ✅ Already working with current scrapers
+
+**Strategy B: PDF/OCR Pipeline (Future - Comprehensive)**
+- Extract ALL products from PDF brochures
+- Covers full promo inventory including non-web items
+- Higher accuracy (brochure is source of truth)
+- Requires: PDF download → OCR → structured extraction
+
+**Current Product Status:**
+- [x] Kaufland - 1,207 promo products ✅
+- [x] Lidl - 53 products (Lidl Plus promos) ✅
+- [x] Billa - 277 products (weekly brochure) ✅
+- [ ] Kaufland additional pages (Mega deals, Top offers) 
+- [ ] Fantastico - PDF ONLY (no web data)
+- [ ] Metro - shop.metro.bg (JS-rendered, needs browser)
+
+**Action Items:**
+1. [x] Scrape ALL Kaufland offer pages (Monday + Wednesday + Weekend)
+2. [ ] Explore Lidl additional categories
+3. [ ] Build PDF/OCR pipeline for Fantastico (Phase 2)
+4. [ ] Test Metro with browser automation
+
+### Phase 1d: Database Architecture 🗄️ CRITICAL
+**Design comprehensive schema for:**
+- Products (name, ID, category, subcategory, brand, unit, weight/volume)
+- Prices (current, old, discount %, per-unit price)
+- Stores (ID, name, logo, scrape URL)
+- Scrape history (timestamp, source tier, product count)
+- Price history (track changes over time for "is this really a deal?")
+- Images (URL, local cache path, hash for deduplication)
+
+**Requirements:**
+- Handle thousands of products efficiently
+- Track price changes over time
+- Support fuzzy product matching across stores
+- Normalize product names for comparison
+
+**Deliverables:**
+- [ ] Database schema design doc
+- [ ] SQLite for MVP, PostgreSQL for production
+- [ ] Migration scripts
+- [ ] Data models (Python dataclasses/Pydantic)
+
+### Phase 1e: Price Comparison UI ⭐ KEY FEATURE
+**"Cheapest wins" display:**
+- When searching for "coffee costa arabica"
+- Backend finds matches across all stores
+- Show ONLY the cheapest option prominently
+- Visual indicator: 🏆 trophy/star + "X% cheaper than other stores"
+- Secondary: collapsed list of other store prices
+
+**UI Elements:**
+- Winner badge/trophy icon
+- Green highlight on best price
+- "Спестяваш X лв" (You save X lv)
+- Price comparison bar visualization
+- "Налично в X магазина" (Available in X stores)
+
+### Phase 1f: Product Images & Descriptions Research 📸
+**Questions to answer:**
+- Can we scrape product images from store websites?
+- Copyright/legal considerations for displaying images
+- Storage strategy: URLs vs local cache vs CDN
+- Image deduplication (same product, different stores)
+- Description normalization across stores
+
+**Deliverables:**
+- [ ] Research doc on image scraping feasibility
+- [ ] Storage recommendation
+- [ ] Legal considerations summary
+
+---
+
+### Phase 1c-OLD: Data Validation (Per Store) ⚠️ CRITICAL
 **For EACH new store, before considering scraper "done":**
 - [ ] Download current PDF brochure
 - [ ] Pick 5-10 random items from brochure (variety of categories)
