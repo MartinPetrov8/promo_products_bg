@@ -167,6 +167,42 @@ promobg.com/
     └── Browse by category
 ```
 
+### 4.4 Scraping Strategy (⚠️ CRITICAL)
+
+**Full documentation:** [`docs/SCRAPING_STRATEGY.md`](docs/SCRAPING_STRATEGY.md)
+
+This is the backbone of the project. Key points:
+
+#### Three-Tier Fallback System
+| Tier | Source | Freshness | Risk |
+|------|--------|-----------|------|
+| 1 | Direct retailer website | Real-time | High (blocks) |
+| 2 | Aggregators (katalozi.bg) | 1-2 days | Low |
+| 3 | PDF + OCR | Weekly | None |
+
+#### Fallback Waterfall Logic
+```python
+for tier in [direct, aggregator, pdf]:
+    try:
+        products = scrape(tier)
+        if len(products) >= MIN_THRESHOLD:
+            return products
+    except (Block, Timeout):
+        continue
+return cached_stale_data()  # Never return nothing
+```
+
+#### Error Handling
+- **Auto-retry:** Timeout, 429, 5xx (with exponential backoff)
+- **Switch tier:** 403, Cloudflare block, CAPTCHA
+- **Alert human:** All tiers failed, selector breakage
+
+#### Safeguards
+- Minimum product thresholds detect selector breakage
+- Rate limiting (10 req/min retailers, 30 req/min aggregators)
+- User-agent rotation from 5+ real browser strings
+- WhatsApp alerts for critical failures
+
 ---
 
 ## 5. UI/UX Principles
@@ -310,9 +346,21 @@ Complexity: High - defer to Phase 2
 ### Phase 1: Research & Scrapers (Feb 11-14)
 - [x] Market research review
 - [x] Kaufland scraper working
-- [ ] Lidl scraper
-- [ ] Billa scraper
+- [x] Lidl scraper
+- [x] Billa scraper
+- [x] Combined scraper (1,537 products)
+- [x] FastAPI backend
 - [ ] Check remaining stores (website vs PDF)
+
+### Phase 1b: Scraping Infrastructure (Feb 12-14) ⚠️ BACKBONE
+- [x] Document scraping strategy (`docs/SCRAPING_STRATEGY.md`)
+- [ ] Implement `ScraperOrchestrator` class
+- [ ] Add retry logic with exponential backoff
+- [ ] Add per-domain rate limiting
+- [ ] Implement health tracking per store
+- [ ] Build Tier 2 scrapers (katalozi.bg fallback)
+- [ ] Test fallback switching (block Tier 1 → Tier 2)
+- [ ] Add WhatsApp alerts for failures
 
 ### Phase 2: MVP Website (Feb 14-21)
 - [ ] Next.js project setup
