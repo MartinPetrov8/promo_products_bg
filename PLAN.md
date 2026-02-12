@@ -397,31 +397,32 @@ Complexity: High - defer to Phase 2
 3. [ ] Build PDF/OCR pipeline for Fantastico (Phase 2)
 4. [ ] Test Metro with browser automation
 
-### Phase 1g: Machine-Readable Price Feeds Research 🔍
+### Phase 1g: Machine-Readable Price Feeds Research 🔍 ✅ COMPLETE
 **Goal:** Check if stores have public JSON/XML/RSS feeds (easier than scraping)
 
-**Per-store investigation:**
-| Store | Has API? | Format | URL | Notes |
-|-------|----------|--------|-----|-------|
-| Kaufland | ⏳ Check | - | - | Check /api/, network tab, sitemap |
-| Lidl | ⏳ Check | - | - | Known to have embedded JSON in pages |
-| Billa | ⏳ Check | - | - | Check REWE group APIs |
-| Metro | ⏳ Check | - | - | B2B may have product feeds |
-| Fantastico | ⏳ Check | - | - | Likely PDF-only |
+**Results:** See `research/api-feeds-discovery.md` for full details.
 
-**What to look for:**
-- `/api/` endpoints returning JSON
-- RSS/Atom feeds for offers
-- XML sitemaps with product data
-- Embedded JSON in page source (like Lidl)
-- Network requests during page load (XHR/Fetch)
-- robots.txt mentions of API paths
+| Store | Has API? | Format | URL | Status |
+|-------|----------|--------|-----|--------|
+| **Lidl** | ✅ YES! | JSON | `/p/api/gridboxes/BG/bg` | 🎯 JACKPOT |
+| Kaufland | ❌ No | HTML | Sitemap only | Keep HTML scraper |
+| Billa | ❌ No | HTML | ssbbilla.site | Keep HTML scraper |
+| Metro | ❌ No | JS | Needs browser | Phase 2 |
+| Fantastico | ❌ No | PDF | No web data | Phase 2 OCR |
 
-**Benefits of API feeds:**
-- Faster than HTML scraping
-- More stable (less selector changes)
-- Often includes more data (categories, barcodes)
-- Lower ban risk (designed for consumption)
+### 🎯 Lidl API Discovery
+
+**Endpoint:** `https://www.lidl.bg/p/api/gridboxes/BG/bg`
+
+**Returns full JSON including:**
+- Product ID, title, brand, category
+- Prices in EUR AND BGN
+- Old prices (for discount calculation)
+- Multiple product images
+- Stock availability dates
+- Product descriptions
+
+**Action:** Switch Lidl scraper from HTML to API → More reliable, more data!
 
 ### Phase 1d: Database Architecture 🗄️ CRITICAL
 **Design comprehensive schema for:**
