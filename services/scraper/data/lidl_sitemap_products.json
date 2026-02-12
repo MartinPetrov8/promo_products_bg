@@ -1,0 +1,72 @@
+[
+  {
+    "product_id": "p10051120",
+    "name": "Фъстъци | LIDL",
+    "price_eur": 0.43,
+    "price_bgn": 0.84,
+    "old_price_eur": 67.0,
+    "old_price_bgn": 131.04,
+    "discount_pct": 99,
+    "image_url": null,
+    "product_url": "https://www.lidl.bg/p/f'st'ti/p10051120",
+    "category": null,
+    "description": "Фъстъци -  Печени, осолени Ниска цена, високо качество. Заслужава си.",
+    "brand": null
+  },
+  {
+    "product_id": "p10051415",
+    "name": "Детска стенна етажерка | LIDL",
+    "price_eur": 10.22,
+    "price_bgn": 19.99,
+    "old_price_eur": 85.0,
+    "old_price_bgn": 166.24,
+    "discount_pct": 88,
+    "image_url": null,
+    "product_url": "https://www.lidl.bg/p/livarno-detska-stenna-etazerka/p10051415",
+    "category": null,
+    "description": "Livarno Детска стенна етажерка -  60 x 49 x 15 cm № 496389 Ниска цена, високо качество. Заслужава си.",
+    "brand": "Livarno"
+  },
+  {
+    "product_id": "p7206198",
+    "name": "Мини багета по френска рецепта | LIDL",
+    "price_eur": 60.0,
+    "price_bgn": 117.35,
+    "old_price_eur": null,
+    "old_price_bgn": null,
+    "discount_pct": null,
+    "image_url": null,
+    "product_url": "https://www.lidl.bg/p/mini-bageta-po-frenska-retepta/p7206198",
+    "category": null,
+    "description": "Мини багета по френска рецепта -  Мини багета по френска рецепта Ниска цена, високо качество. Заслужава си.",
+    "brand": null
+  },
+  {
+    "product_id": "p10051128",
+    "name": "Део рол-он | LIDL",
+    "price_eur": 0.86,
+    "price_bgn": 1.68,
+    "old_price_eur": 107.0,
+    "old_price_bgn": 209.27,
+    "discount_pct": 99,
+    "image_url": null,
+    "product_url": "https://www.lidl.bg/p/deo-rol-on/p10051128",
+    "category": null,
+    "description": "Део рол-он -  Дамски или мъжки Различни видове Ниска цена, високо качество. Заслужава си.",
+    "brand": null
+  },
+  {
+    "product_id": "p10051090",
+    "name": "Бели курабии с бадеми | LIDL",
+    "price_eur": 1.78,
+    "price_bgn": 3.48,
+    "old_price_eur": 70.0,
+    "old_price_bgn": 136.91,
+    "discount_pct": 97,
+    "image_url": null,
+    "product_url": "https://www.lidl.bg/p/agi-beli-kurabii-s-bademi/p10051090",
+    "category": null,
+    "description": "Agi Бели курабии с бадеми - Ниска цена, високо качество. Заслужава си.",
+    "brand": "Agi"
+  }
+]
