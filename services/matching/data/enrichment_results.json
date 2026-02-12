@@ -1,0 +1,217 @@
+{
+  "timestamp": "2026-02-12T15:00:00.777584",
+  "stats": {
+    "total_products": 20,
+    "already_have_barcode": 0,
+    "searched": 20,
+    "matches_found": 0,
+    "high_confidence": 0,
+    "low_confidence": 0,
+    "no_match": 20,
+    "errors": 0,
+    "barcodes_saved": 0,
+    "bulk_products_skipped": 0
+  },
+  "results": [
+    {
+      "product_id": 1,
+      "product_name": "S POWER",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0.212,
+      "off_product_name": "Raw nuts Mix Power",
+      "off_brands": "ELiT"
+    },
+    {
+      "product_id": 2,
+      "product_name": "Бял земел",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0,
+      "off_product_name": null,
+      "off_brands": null
+    },
+    {
+      "product_id": 3,
+      "product_name": "Aquaphor",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0.3,
+      "off_product_name": "Aquaphor",
+      "off_brands": ""
+    },
+    {
+      "product_id": 4,
+      "product_name": "AQUAPHOR",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0.3,
+      "off_product_name": "Aquaphor",
+      "off_brands": ""
+    },
+    {
+      "product_id": 5,
+      "product_name": "Автомобилна чистачка",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0,
+      "off_product_name": null,
+      "off_brands": null
+    },
+    {
+      "product_id": 6,
+      "product_name": "ZEBRA",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0.225,
+      "off_product_name": "Zebra Cakes",
+      "off_brands": "Little Debbie,  Mckee Foods"
+    },
+    {
+      "product_id": 7,
+      "product_name": "Пърленка",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0,
+      "off_product_name": null,
+      "off_brands": null
+    },
+    {
+      "product_id": 8,
+      "product_name": "Home Practic",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0,
+      "off_product_name": null,
+      "off_brands": null
+    },
+    {
+      "product_id": 9,
+      "product_name": "Luminarc",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0,
+      "off_product_name": null,
+      "off_brands": null
+    },
+    {
+      "product_id": 10,
+      "product_name": "Моркови",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0.3,
+      "off_product_name": "Моркови",
+      "off_brands": null
+    },
+    {
+      "product_id": 11,
+      "product_name": "MUHLER",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0,
+      "off_product_name": null,
+      "off_brands": null
+    },
+    {
+      "product_id": 12,
+      "product_name": "BRIO",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0.18,
+      "off_product_name": "Citron",
+      "off_brands": "Brio"
+    },
+    {
+      "product_id": 13,
+      "product_name": "Свинско каре",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0,
+      "off_product_name": null,
+      "off_brands": null
+    },
+    {
+      "product_id": 14,
+      "product_name": "Черни маслини Мамут",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0,
+      "off_product_name": null,
+      "off_brands": null
+    },
+    {
+      "product_id": 15,
+      "product_name": "Krina",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0.17,
+      "off_product_name": "Orez brun integral",
+      "off_brands": "Krina"
+    },
+    {
+      "product_id": 16,
+      "product_name": "Свинска плешка без кост",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0,
+      "off_product_name": null,
+      "off_brands": null
+    },
+    {
+      "product_id": 17,
+      "product_name": "Златно Добруджанско",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0.377,
+      "off_product_name": "Златно Добруджанско олио",
+      "off_brands": "Клас Олио"
+    },
+    {
+      "product_id": 18,
+      "product_name": "K-Classic",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0.271,
+      "off_product_name": "Skyr Classic",
+      "off_brands": "Milbona"
+    },
+    {
+      "product_id": 19,
+      "product_name": "BUITONI",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0.173,
+      "off_product_name": "Sfoglia rotonda",
+      "off_brands": "Buitoni"
+    },
+    {
+      "product_id": 20,
+      "product_name": "Пица",
+      "product_brand": null,
+      "store": "Kaufland",
+      "barcode_found": null,
+      "confidence": 0.223,
+      "off_product_name": "Пица Вичи",
+      "off_brands": "Viči"
+    }
+  ]
+}
