@@ -21,12 +21,18 @@ OFF_DB = PROJECT_ROOT / "data" / "off_bulgaria.db"
 
 # Promotional prefixes to strip (order matters - longer first)
 PROMO_PATTERNS = [
+    # King оферта variants (most specific first)
     r'^king\s+оферта\s*-\s*супер\s+цена\s*-\s*',
     r'^king\s+оферта\s*-\s*само\s+с\s+billa\s+card\s*-\s*',
     r'^king\s+оферта\s*-\s*сега\s+в\s+billa\s*-\s*',
     r'^king\s+оферта\s*-\s*ново\s+в\s+billa\s*-\s*',
     r'^king\s+оферта\s*-\s*',
+    # Other prefixes
     r'^супер\s+цена\s*-\s*',
+    r'^ниска\s+цена\s*-\s*',
+    r'^промо\s+-?\s*',
+    r'^-\d+%\s*-\s*',
+    r'^\d+%\s+-\s*',
     r'^само\s+с\s+billa\s+card\s*-\s*',
     r'^сега\s+в\s+billa\s*-\s*',
     r'^ново\s+в\s+billa\s*-\s*',
@@ -35,8 +41,12 @@ PROMO_PATTERNS = [
     r'\s+от\s+топлата\s+витрина.*$',
     r'\s+от\s+деликатесната\s+витрина.*$',
     r'\s+от\s+нашата\s+пекарна.*$',
+    r'\s+от\s+billa\s+пекарна.*$',
     r'\s+за\s+1\s+кг\s*$',
     r'\s+за\s+1\s+бр\.?\s*$',
+    r'\s+до\s+\d+\s*кг\s+на\s+клиент.*$',
+    r'\s+произход\s*-\s*българия.*$',
+    r'\s+произход.*$',
 ]
 
 
@@ -66,7 +76,6 @@ def extract_attributes(name: str) -> dict:
     name_lower = name.lower()
     
     # Extract size (e.g., "400 г", "1.5 л", "2 х 1,5 л")
-    # Pack format first: "2 х 1,5 л"
     pack_match = re.search(r'(\d+)\s*[хx]\s*(\d+[.,]?\d*)\s*(г|гр|кг|мл|л|g|kg|ml|l)\b', name_lower)
     if pack_match:
         result['pack_count'] = int(pack_match.group(1))
@@ -76,7 +85,6 @@ def extract_attributes(name: str) -> dict:
         if unit in ['л', 'l', 'кг', 'kg']:
             result['size_value'] *= 1000
     else:
-        # Single size: "400 г"
         size_match = re.search(r'(\d+[.,]?\d*)\s*(г|гр|кг|мл|л|g|kg|ml|l)\b', name_lower)
         if size_match:
             result['size_value'] = float(size_match.group(1).replace(',', '.'))
@@ -90,7 +98,7 @@ def extract_attributes(name: str) -> dict:
     if fat_match:
         result['fat_pct'] = fat_match.group(1).replace(',', '.')
     
-    # Extract brand (common Bulgarian brands)
+    # Extract brand
     brands = [
         ('верея', 'Верея'), ('olympus', 'Olympus'), ('олимпус', 'Olympus'),
         ('данон', 'Danone'), ('danone', 'Danone'), ('активиа', 'Activia'),
@@ -134,7 +142,6 @@ def run_analysis():
     conn = sqlite3.connect(str(OUR_DB))
     cursor = conn.cursor()
     
-    # Get Billa products (store_id = 3)
     cursor.execute('''
         SELECT p.id, p.name
         FROM products p
@@ -145,7 +152,6 @@ def run_analysis():
     
     print(f"\nTotal Billa products: {len(products)}")
     
-    # Analyze
     cleaned_data = []
     brands_found = 0
     sizes_found = 0
@@ -174,7 +180,6 @@ def run_analysis():
     print(f"  Sizes extracted:  {sizes_found} ({sizes_found/len(products)*100:.0f}%)")
     print(f"  Fat % extracted:  {fat_found} ({fat_found/len(products)*100:.0f}%)")
     
-    # Show samples
     print("\n" + "=" * 70)
     print("SAMPLE TRANSFORMATIONS")
     print("=" * 70)
@@ -190,7 +195,7 @@ def run_analysis():
 
 
 def update_database(cleaned_data: list):
-    """Update Billa products with cleaned names."""
+    """Update Billa products with cleaned names and attributes."""
     print("\n" + "=" * 70)
     print("UPDATING DATABASE")
     print("=" * 70)
@@ -198,21 +203,42 @@ def update_database(cleaned_data: list):
     conn = sqlite3.connect(str(OUR_DB))
     cursor = conn.cursor()
     
-    updated = 0
+    updated_names = 0
+    updated_attrs = 0
+    
     for item in cleaned_data:
+        # Update normalized_name
+        cursor.execute('''
+            UPDATE products 
+            SET normalized_name = ?
+            WHERE id = ?
+        ''', (item['cleaned'].lower(), item['id']))
+        
         if item['cleaned'] != item['original']:
-            # Update normalized_name with cleaned version
+            updated_names += 1
+        
+        # Update brand, unit, quantity
+        attrs = item['attrs']
+        if attrs['brand'] or attrs['size_value']:
             cursor.execute('''
                 UPDATE products 
-                SET normalized_name = ?
+                SET brand = COALESCE(?, brand),
+                    unit = COALESCE(?, unit),
+                    quantity = COALESCE(?, quantity)
                 WHERE id = ?
-            ''', (item['cleaned'].lower(), item['id']))
-            updated += 1
+            ''', (
+                attrs['brand'],
+                attrs['size_unit'],
+                attrs['size_value'],
+                item['id']
+            ))
+            updated_attrs += 1
     
     conn.commit()
     conn.close()
     
-    print(f"Updated {updated} products with cleaned names")
+    print(f"Updated {updated_names} products with cleaned names")
+    print(f"Updated {updated_attrs} products with attributes (brand/size)")
 
 
 if __name__ == '__main__':

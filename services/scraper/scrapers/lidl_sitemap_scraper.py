@@ -77,6 +77,10 @@ class LidlProduct:
     category: Optional[str]
     description: Optional[str]
     brand: Optional[str]
+    size: Optional[str]           # Package size (e.g., "500 g/опаковка")
+    size_value: Optional[float]    # Parsed numeric value (e.g., 500.0)
+    size_unit: Optional[str]       # Parsed unit (g, kg, ml, l)
+    keyfacts: Optional[str]        # Raw keyfacts HTML
 
 
 class LidlSitemapScraper:
@@ -442,6 +446,36 @@ class LidlSitemapScraper:
         brand_match = re.search(r'"brand":\s*\{[^}]*"name":\s*"([^"]+)"', content)
         brand = brand_match.group(1) if brand_match else None
         
+        # Extract packaging size (e.g., "500 g/опаковка", "1 l/опаковка")
+        # Pattern: "<number> <unit>/опаковка" appears inline in the page JSON
+        size = None
+        size_value = None
+        size_unit = None
+        
+        # Try to find size pattern in the HTML
+        size_match = re.search(r'"(\d+(?:\.\d+)?)\s*(g|kg|ml|l|gr)/опаковка"', content, re.IGNORECASE)
+        if size_match:
+            size = size_match.group(0).replace('"', '')
+            size_value = float(size_match.group(1))
+            size_unit = size_match.group(2).lower()
+            # Normalize 'gr' to 'g'
+            if size_unit == 'gr':
+                size_unit = 'g'
+        else:
+            # Try alternative pattern: ≈ 650 g/опаковка (with approximation sign)
+            size_match = re.search(r'≈\s*(\d+(?:\.\d+)?)\s*(g|kg|ml|l)/опаковка', content, re.IGNORECASE)
+            if size_match:
+                size = f"{size_match.group(1)} {size_match.group(2)}/опаковка"
+                size_value = float(size_match.group(1))
+                size_unit = size_match.group(2).lower()
+        
+        # Extract keyfacts HTML if present
+        # Pattern: "description":"<ul><li>3.5% масленост</li><li>UHT</li></ul>"
+        keyfacts = None
+        keyfacts_match = re.search(r'"description":"(<ul>.*?</ul>)"', content)
+        if keyfacts_match:
+            keyfacts = html_module.unescape(keyfacts_match.group(1))
+        
         # BGN conversion
         EUR_TO_BGN = 1.9558
         price_bgn = round(price_eur * EUR_TO_BGN, 2) if price_eur else None
@@ -460,6 +494,10 @@ class LidlSitemapScraper:
             category=category,
             description=description,
             brand=brand,
+            size=size,
+            size_value=size_value,
+            size_unit=size_unit,
+            keyfacts=keyfacts,
         )
     
     def scrape_all(self, limit: Optional[int] = None, shuffle: bool = True) -> List[LidlProduct]:
