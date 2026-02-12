@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromoBG - Сравни цените в супермаркетите</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .product-card:hover { transform: translateY(-2px); }
+        .discount-badge { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-bold text-green-600">🛒 PromoBG</h1>
+                <p class="text-sm text-gray-500 hidden sm:block">Сравни цените • Спести пари</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="bg-gradient-to-r from-green-500 to-green-600 py-12">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white text-center mb-6">
+                Намери най-добрите оферти
+            </h2>
+            <div class="flex gap-2">
+                <input 
+                    type="text" 
+                    id="searchInput"
+                    placeholder="Търси продукт... (напр. мляко, хляб, кафе)"
+                    class="flex-1 px-4 py-3 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-green-300"
+                >
+                <button 
+                    onclick="searchProducts()"
+                    class="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 rounded-lg font-semibold transition"
+                >
+                    Търси
+                </button>
+            </div>
+            <!-- Filters -->
+            <div class="flex gap-4 mt-4 flex-wrap">
+                <select id="storeFilter" class="px-3 py-2 rounded-lg" onchange="filterProducts()">
+                    <option value="">Всички магазини</option>
+                    <option value="Kaufland">Kaufland</option>
+                    <option value="Lidl">Lidl</option>
+                    <option value="Billa">Billa</option>
+                </select>
+                <select id="discountFilter" class="px-3 py-2 rounded-lg" onchange="filterProducts()">
+                    <option value="0">Всички оферти</option>
+                    <option value="20">Над 20% отстъпка</option>
+                    <option value="40">Над 40% отстъпка</option>
+                    <option value="50">Над 50% отстъпка</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="max-w-6xl mx-auto px-4 py-6">
+        <div class="grid grid-cols-3 gap-4 text-center">
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="text-3xl font-bold text-green-600" id="totalProducts">-</div>
+                <div class="text-sm text-gray-500">Продукти</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="text-3xl font-bold text-green-600" id="totalStores">3</div>
+                <div class="text-sm text-gray-500">Магазини</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="text-3xl font-bold text-green-600" id="avgDiscount">-</div>
+                <div class="text-sm text-gray-500">Средна отстъпка</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="max-w-6xl mx-auto px-4 py-6">
+        <h3 class="text-xl font-semibold mb-4" id="resultsTitle">🔥 Топ оферти</h3>
+        <div id="results" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="text-center py-12 text-gray-400 col-span-full">Зареждане...</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-400">PromoBG © 2026 • Данните се обновяват ежедневно</p>
+            <p class="text-sm text-gray-500 mt-2">Kaufland • Lidl • Billa</p>
+        </div>
+    </footer>
+
+    <script>
+        let allProducts = [];
+        
+        // Load products
+        async function loadProducts() {
+            try {
+                const response = await fetch('data/all_products.json');
+                allProducts = await response.json();
+                updateStats();
+                showTopDeals();
+            } catch (err) {
+                console.error('Error loading products:', err);
+                document.getElementById('results').innerHTML = 
+                    '<div class="text-center py-12 text-red-500 col-span-full">Грешка при зареждане на данните</div>';
+            }
+        }
+        
+        function updateStats() {
+            document.getElementById('totalProducts').textContent = allProducts.length.toLocaleString();
+            const withDiscount = allProducts.filter(p => p.discount_pct > 0);
+            const avgDiscount = withDiscount.length > 0 
+                ? Math.round(withDiscount.reduce((a, p) => a + p.discount_pct, 0) / withDiscount.length)
+                : 0;
+            document.getElementById('avgDiscount').textContent = avgDiscount + '%';
+        }
+        
+        function showTopDeals() {
+            const deals = allProducts
+                .filter(p => p.discount_pct > 0)
+                .sort((a, b) => b.discount_pct - a.discount_pct)
+                .slice(0, 20);
+            renderProducts(deals);
+            document.getElementById('resultsTitle').textContent = '🔥 Топ оферти';
+        }
+        
+        function searchProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!query) {
+                showTopDeals();
+                return;
+            }
+            
+            let results = allProducts.filter(p => 
+                p.name.toLowerCase().includes(query)
+            );
+            
+            results = applyFilters(results);
+            results = results.sort((a, b) => (b.discount_pct || 0) - (a.discount_pct || 0));
+            
+            renderProducts(results.slice(0, 100));
+            document.getElementById('resultsTitle').textContent = 
+                `Резултати за "${query}" (${results.length})`;
+        }
+        
+        function filterProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (query) {
+                searchProducts();
+            } else {
+                let results = applyFilters(allProducts);
+                results = results.sort((a, b) => (b.discount_pct || 0) - (a.discount_pct || 0));
+                renderProducts(results.slice(0, 40));
+                document.getElementById('resultsTitle').textContent = '🔥 Топ оферти';
+            }
+        }
+        
+        function applyFilters(products) {
+            const store = document.getElementById('storeFilter').value;
+            const minDiscount = parseInt(document.getElementById('discountFilter').value) || 0;
+            
+            return products.filter(p => {
+                if (store && p.store !== store) return false;
+                if (minDiscount && (p.discount_pct || 0) < minDiscount) return false;
+                return true;
+            });
+        }
+        
+        function renderProducts(products) {
+            const container = document.getElementById('results');
+            
+            if (products.length === 0) {
+                container.innerHTML = '<div class="text-center py-12 text-gray-400 col-span-full">Няма намерени продукти</div>';
+                return;
+            }
+            
+            container.innerHTML = products.map(p => `
+                <div class="product-card bg-white rounded-xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md">
+                    <div class="relative">
+                        ${p.discount_pct ? `
+                            <div class="discount-badge absolute top-2 right-2 text-white text-sm font-bold px-2 py-1 rounded-lg">
+                                -${p.discount_pct}%
+                            </div>
+                        ` : ''}
+                        <div class="h-32 bg-gray-100 flex items-center justify-center text-4xl">
+                            ${getStoreEmoji(p.store)}
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="text-xs text-gray-400 mb-1">${p.store}</div>
+                        <h4 class="font-medium text-sm leading-tight mb-2 line-clamp-2" title="${p.name}">
+                            ${p.name.slice(0, 50)}${p.name.length > 50 ? '...' : ''}
+                        </h4>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-lg font-bold text-green-600">${p.price_eur.toFixed(2)}€</span>
+                            ${p.old_price_eur ? `
+                                <span class="text-sm text-gray-400 line-through">${p.old_price_eur.toFixed(2)}€</span>
+                            ` : ''}
+                        </div>
+                        <div class="text-xs text-gray-400 mt-1">${p.price_bgn.toFixed(2)} лв.</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function getStoreEmoji(store) {
+            const emojis = {
+                'Kaufland': '🟡',
+                'Lidl': '🔵',
+                'Billa': '🟢'
+            };
+            return emojis[store] || '🛒';
+        }
+        
+        // Enter key search
+        document.getElementById('searchInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') searchProducts();
+        });
+        
+        // Load on page load
+        loadProducts();
+    </script>
+</body>
+</html>
