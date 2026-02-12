@@ -8,6 +8,9 @@
     <style>
         .product-card:hover { transform: translateY(-2px); }
         .discount-badge { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+        .winner-badge { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); }
+        .winner-card { border: 2px solid #22c55e; box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1); }
+        .price-bar { height: 6px; border-radius: 3px; }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -41,15 +44,31 @@
                     Търси
                 </button>
             </div>
-            <!-- Filters -->
-            <div class="flex gap-4 mt-4 flex-wrap">
-                <select id="storeFilter" class="px-3 py-2 rounded-lg" onchange="filterProducts()">
+            <!-- View Toggle -->
+            <div class="flex gap-4 mt-4 items-center">
+                <div class="flex bg-white/20 rounded-lg p-1">
+                    <button 
+                        id="viewGrid" 
+                        onclick="setView('grid')"
+                        class="px-3 py-1 rounded text-white text-sm font-medium bg-white/30"
+                    >
+                        📦 Всички
+                    </button>
+                    <button 
+                        id="viewCompare" 
+                        onclick="setView('compare')"
+                        class="px-3 py-1 rounded text-white text-sm font-medium"
+                    >
+                        ⚔️ Сравни цените
+                    </button>
+                </div>
+                <select id="storeFilter" class="px-3 py-2 rounded-lg text-sm" onchange="filterProducts()">
                     <option value="">Всички магазини</option>
                     <option value="Kaufland">Kaufland</option>
                     <option value="Lidl">Lidl</option>
                     <option value="Billa">Billa</option>
                 </select>
-                <select id="discountFilter" class="px-3 py-2 rounded-lg" onchange="filterProducts()">
+                <select id="discountFilter" class="px-3 py-2 rounded-lg text-sm" onchange="filterProducts()">
                     <option value="0">Всички оферти</option>
                     <option value="20">Над 20% отстъпка</option>
                     <option value="40">Над 40% отстъпка</option>
@@ -95,6 +114,7 @@
 
     <script>
         let allProducts = [];
+        let currentView = 'grid';
         
         // Load products
         async function loadProducts() {
@@ -119,12 +139,26 @@
             document.getElementById('avgDiscount').textContent = avgDiscount + '%';
         }
         
+        function setView(view) {
+            currentView = view;
+            document.getElementById('viewGrid').className = 
+                `px-3 py-1 rounded text-white text-sm font-medium ${view === 'grid' ? 'bg-white/30' : ''}`;
+            document.getElementById('viewCompare').className = 
+                `px-3 py-1 rounded text-white text-sm font-medium ${view === 'compare' ? 'bg-white/30' : ''}`;
+            filterProducts();
+        }
+        
         function showTopDeals() {
             const deals = allProducts
                 .filter(p => p.discount_pct > 0)
                 .sort((a, b) => b.discount_pct - a.discount_pct)
                 .slice(0, 20);
-            renderProducts(deals);
+            
+            if (currentView === 'compare') {
+                renderComparisonView(deals);
+            } else {
+                renderProducts(deals);
+            }
             document.getElementById('resultsTitle').textContent = '🔥 Топ оферти';
         }
         
@@ -140,9 +174,13 @@
             );
             
             results = applyFilters(results);
-            results = results.sort((a, b) => (b.discount_pct || 0) - (a.discount_pct || 0));
+            results = results.sort((a, b) => (a.price_eur || 999) - (b.price_eur || 999)); // Sort by price
             
-            renderProducts(results.slice(0, 100));
+            if (currentView === 'compare') {
+                renderComparisonView(results);
+            } else {
+                renderProducts(results.slice(0, 100));
+            }
             document.getElementById('resultsTitle').textContent = 
                 `Резултати за "${query}" (${results.length})`;
         }
@@ -154,7 +192,12 @@
             } else {
                 let results = applyFilters(allProducts);
                 results = results.sort((a, b) => (b.discount_pct || 0) - (a.discount_pct || 0));
-                renderProducts(results.slice(0, 40));
+                
+                if (currentView === 'compare') {
+                    renderComparisonView(results.slice(0, 40));
+                } else {
+                    renderProducts(results.slice(0, 40));
+                }
                 document.getElementById('resultsTitle').textContent = '🔥 Топ оферти';
             }
         }
@@ -170,8 +213,124 @@
             });
         }
         
+        // Group products by similar name for comparison
+        function groupByProduct(products) {
+            const groups = {};
+            
+            products.forEach(p => {
+                // Normalize name for grouping (remove store-specific prefixes, quantities)
+                const key = p.name.toLowerCase()
+                    .replace(/\d+\s*(г|кг|мл|л|бр)/gi, '') // Remove quantities
+                    .replace(/\s+/g, ' ')
+                    .trim()
+                    .slice(0, 30); // Use first 30 chars as key
+                
+                if (!groups[key]) {
+                    groups[key] = [];
+                }
+                groups[key].push(p);
+            });
+            
+            // Filter to only groups with multiple stores
+            return Object.values(groups)
+                .filter(g => g.length >= 1)
+                .map(g => {
+                    g.sort((a, b) => a.price_eur - b.price_eur);
+                    return g;
+                })
+                .sort((a, b) => {
+                    // Sort by savings potential (difference between cheapest and most expensive)
+                    const savingsA = a.length > 1 ? a[a.length - 1].price_eur - a[0].price_eur : 0;
+                    const savingsB = b.length > 1 ? b[b.length - 1].price_eur - b[0].price_eur : 0;
+                    return savingsB - savingsA;
+                });
+        }
+        
+        // Render comparison view - "Cheapest Wins"
+        function renderComparisonView(products) {
+            const container = document.getElementById('results');
+            const groups = groupByProduct(products);
+            
+            if (groups.length === 0) {
+                container.innerHTML = '<div class="text-center py-12 text-gray-400 col-span-full">Няма намерени продукти</div>';
+                return;
+            }
+            
+            container.className = 'space-y-4';
+            container.innerHTML = groups.slice(0, 30).map(group => {
+                const cheapest = group[0];
+                const mostExpensive = group[group.length - 1];
+                const savings = group.length > 1 ? (mostExpensive.price_eur - cheapest.price_eur) : 0;
+                const savingsPercent = savings > 0 ? Math.round((savings / mostExpensive.price_eur) * 100) : 0;
+                const maxPrice = Math.max(...group.map(p => p.price_eur));
+                
+                return `
+                    <div class="bg-white rounded-xl shadow-sm p-4">
+                        <!-- Product Header -->
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">${cheapest.name.slice(0, 60)}${cheapest.name.length > 60 ? '...' : ''}</h4>
+                                <div class="text-sm text-gray-500">Налично в ${group.length} ${group.length === 1 ? 'магазин' : 'магазина'}</div>
+                            </div>
+                            ${savings > 0 ? `
+                                <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+                                    💰 Спести до ${savings.toFixed(2)}€
+                                </div>
+                            ` : ''}
+                        </div>
+                        
+                        <!-- Store Prices -->
+                        <div class="space-y-2">
+                            ${group.map((p, idx) => {
+                                const isWinner = idx === 0 && group.length > 1;
+                                const barWidth = (p.price_eur / maxPrice) * 100;
+                                
+                                return `
+                                    <div class="flex items-center gap-3 ${isWinner ? 'bg-green-50 rounded-lg p-2 -mx-2' : ''}">
+                                        <!-- Store Logo -->
+                                        <div class="w-16 text-center">
+                                            <span class="text-2xl">${getStoreEmoji(p.store)}</span>
+                                            <div class="text-xs text-gray-500">${p.store}</div>
+                                        </div>
+                                        
+                                        <!-- Price Bar -->
+                                        <div class="flex-1">
+                                            <div class="price-bar bg-gray-200 w-full">
+                                                <div class="price-bar ${isWinner ? 'bg-green-500' : 'bg-gray-400'}" style="width: ${barWidth}%"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Price -->
+                                        <div class="text-right min-w-[100px]">
+                                            <div class="flex items-center gap-2 justify-end">
+                                                ${isWinner ? '<span class="text-xl">🏆</span>' : ''}
+                                                <span class="font-bold ${isWinner ? 'text-green-600 text-lg' : 'text-gray-700'}">${p.price_eur.toFixed(2)}€</span>
+                                            </div>
+                                            ${p.old_price_eur ? `
+                                                <div class="text-xs text-gray-400 line-through">${p.old_price_eur.toFixed(2)}€</div>
+                                            ` : ''}
+                                            ${p.discount_pct ? `
+                                                <div class="text-xs text-red-500 font-medium">-${p.discount_pct}%</div>
+                                            ` : ''}
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                        
+                        ${savings > 0 ? `
+                            <div class="mt-3 pt-3 border-t text-center text-sm text-gray-500">
+                                Купувай от <strong class="text-green-600">${cheapest.store}</strong> и спести <strong class="text-green-600">${savingsPercent}%</strong> спрямо най-скъпия вариант
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+        
         function renderProducts(products) {
             const container = document.getElementById('results');
+            container.className = 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4';
             
             if (products.length === 0) {
                 container.innerHTML = '<div class="text-center py-12 text-gray-400 col-span-full">Няма намерени продукти</div>';
