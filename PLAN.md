@@ -362,6 +362,24 @@ Complexity: High - defer to Phase 2
 - [ ] Test fallback switching (block Tier 1 → Tier 2)
 - [ ] Add WhatsApp alerts for failures
 
+### Phase 1c: Data Validation (Per Store) ⚠️ CRITICAL
+**For EACH new store, before considering scraper "done":**
+- [ ] Download current PDF brochure
+- [ ] Pick 5-10 random items from brochure (variety of categories)
+- [ ] Cross-check: Are these items on the website?
+- [ ] Cross-check: Do prices EXACTLY match? (regular + promo price)
+- [ ] Document discrepancies in `research/price-validation/{store}.md`
+- [ ] If brochure has items NOT on website → need PDF/OCR pipeline
+
+**Why:** Brochures may contain exclusive deals not on website. This is our price edge.
+
+**Stores to validate:**
+- [ ] Kaufland (website vs brochure)
+- [ ] Lidl (website vs brochure)
+- [ ] Billa (website vs brochure)
+- [ ] Metro (website vs brochure)
+- [ ] Fantastico (PDF-only, baseline)
+
 ### Phase 2: MVP Website (Feb 14-21)
 - [ ] Next.js project setup
 - [ ] Product search page
