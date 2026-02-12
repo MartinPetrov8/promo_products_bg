@@ -179,7 +179,37 @@ promobg.com/
 │ 3. Fast — Instant search results                       │
 │ 4. Visual — Product images prominent                   │
 │ 5. One-tap actions — Save, alert, share                │
+│ 6. CLEAR WINNER — Obvious which store has best price   │
 └─────────────────────────────────────────────────────────┘
+```
+
+### Price Comparison UI Requirements
+```
+CORE PRINCIPLE: User should know the best deal in <2 seconds
+
+PRODUCT COMPARISON VIEW:
+┌─────────────────────────────────────────────────────────┐
+│  🏆 BEST PRICE                                          │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │ Kaufland          2.49€  ← GREEN/HIGHLIGHTED    │   │
+│  └─────────────────────────────────────────────────┘   │
+│  │ Lidl              2.79€                         │   │
+│  │ Billa             2.99€  (was 3.49€)           │   │
+└─────────────────────────────────────────────────────────┘
+
+CALL TO ACTION ELEMENTS:
+- 🏆 Trophy/badge on best price
+- Green highlight on cheapest option
+- "Спестяваш X лв" (You save X) vs next best
+- Price difference shown clearly
+- One-click "Add to shopping list"
+
+COMPARISON CARD FEATURES:
+- Side-by-side store prices
+- Visual price bar (relative to highest)
+- Savings amount in € and лв
+- Store logos for recognition
+- "Price per kg/L" for fair comparison
 ```
 
 ### UI References (modern, clean)
