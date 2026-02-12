@@ -350,7 +350,33 @@ Complexity: High - defer to Phase 2
 - [x] Billa scraper
 - [x] Combined scraper (1,537 products)
 - [x] FastAPI backend
-- [ ] Check remaining stores (website vs PDF)
+- [x] "Cheapest wins" UI with 🏆 badges
+- [x] SQLite database with 919 products
+- [ ] ~~Check remaining stores~~ (DEPRIORITIZED - focus on top 3 first)
+
+### Phase 1h: Stabilize Top 3 Stores 🎯 CURRENT PRIORITY (Feb 12)
+
+**Focus:** Lidl, Kaufland, Billa - maximize product coverage before expanding.
+
+**Tasks:**
+- [ ] Research programmatic data access (API/XML/JSON/XLS) for all 3 stores
+  - Spawned Kimi research agents (2026-02-12)
+- [ ] Get MORE products from Lidl (currently only 73, website has thousands)
+  - Explore all category pages
+  - Check pagination on API
+  - Find additional endpoints
+- [ ] Get product images/descriptions from open-source sources (naoferta.net API)
+- [ ] Add product categories to frontend
+  - First: Verify categories are similar across stores
+  - Current state: Lidl has Хранителни/Нехранителни, Kaufland/Billa missing categories
+  - May need category mapping
+
+**Category Analysis (2026-02-12):**
+| Store | Has Categories? | Values |
+|-------|----------------|--------|
+| Lidl | ✅ Yes | Хранителни (Food), Нехранителни (Non-food) |
+| Kaufland | ❌ No | Not captured in scraper |
+| Billa | ❌ No | All marked as "Billa" |
 
 ### Phase 1b: Scraping Infrastructure (Feb 12-14) ⚠️ BACKBONE
 - [x] Document scraping strategy (`docs/SCRAPING_STRATEGY.md`)
@@ -358,9 +384,9 @@ Complexity: High - defer to Phase 2
 - [x] Add retry logic with exponential backoff (`RetryHandler`)
 - [x] Add per-domain rate limiting (`DomainRateLimiter`)
 - [x] Implement health tracking per store (`HealthMonitor`)
-- [ ] Build Tier 2 scrapers (katalozi.bg fallback)
-- [ ] Test fallback switching (block Tier 1 → Tier 2)
-- [ ] Add WhatsApp alerts for failures
+- [ ] Build Tier 2 scrapers (katalozi.bg fallback) — DEFERRED
+- [ ] Test fallback switching — DEFERRED
+- [ ] Add WhatsApp alerts for failures — DEFERRED
 
 ### Phase 1c: Product Coverage Strategy (Feb 12-14) 🎯 PRIORITY
 
