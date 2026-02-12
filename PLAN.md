@@ -216,6 +216,31 @@ COMPARISON CARD FEATURES:
 - Too Good To Go app (simple cards)
 - Honey browser extension (price drops)
 - Chipp.bg (Bulgarian, clean design)
+- **Idealo.de** - Price alerts, watchlists
+- **PriceRunner** - Discount badges, "X stores" count, social proof
+
+### Key Patterns from Global Leaders (researched 2026-02-12)
+```
+FROM PRICERUNNER:
+├── Discount badge first: "-21%" prominently displayed
+├── Price comparison: "£85.00 £108.00" (new vs old)
+├── Store count: "7 stores" builds trust
+├── Social proof: "1000+ watching"
+└── Star ratings next to products
+
+FROM IDEALO:
+├── "Preiswecker" (Price alarm/alert)
+├── "Merkzettel" (Watchlist)
+├── 600M+ offers, 50K+ shops scale
+└── User reviews + test reports
+
+IMPLEMENTATION:
+├── MVP: Discount badge, price comparison, best price highlight
+├── Phase 2: Price alerts, watchlist, price history
+└── Phase 3: Social proof, ratings, personalization
+```
+
+See: `/research/competitor-ui-patterns.md` for full analysis
 
 ### Anti-Patterns (avoid)
 - MySupermarket.bg — Too basic, no visual appeal
