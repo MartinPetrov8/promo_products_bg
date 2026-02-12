@@ -335,6 +335,49 @@ Complexity: High - defer to Phase 2
 
 ---
 
+## 12. Deployment
+
+### GitHub Pages Setup
+```
+1. All web files go to /docs folder
+2. GitHub Pages serves from main branch /docs
+3. URL: https://martinpetrov8.github.io/promo_products_bg/
+```
+
+### Deployment Workflow
+```bash
+# 1. Update scrapers and run
+cd services/scraper
+python3 combined_scraper.py
+
+# 2. Copy data to web app
+cp data/all_products.json ../../apps/web/data/
+
+# 3. Copy web app to docs (for GitHub Pages)
+cp -r ../../apps/web/* ../../docs/
+
+# 4. Commit and push
+git add .
+git commit -m "Update data and deploy"
+git push origin main
+
+# 5. GitHub Pages auto-deploys from /docs
+```
+
+### Enable GitHub Pages (one-time setup)
+1. Go to repo Settings
+2. Navigate to Pages section
+3. Source: Deploy from a branch
+4. Branch: main
+5. Folder: /docs
+6. Save
+
+### Live URLs
+- **MVP:** https://martinpetrov8.github.io/promo_products_bg/
+- **Data:** https://martinpetrov8.github.io/promo_products_bg/data/all_products.json
+
+---
+
 ## 8. Success Metrics
 
 | Metric | Month 1 | Month 3 |
