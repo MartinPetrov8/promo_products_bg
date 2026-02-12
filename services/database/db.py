@@ -368,6 +368,29 @@ class Database:
         return [dict(row) for row in rows]
 
 
+    def get_stats(self) -> Dict[str, Any]:
+        """Get database statistics."""
+        stats = {}
+        
+        # Table counts
+        tables = ['products', 'stores', 'store_products', 'prices', 'price_history', 'categories']
+        for table in tables:
+            try:
+                result = self.fetchone(f"SELECT COUNT(*) as count FROM {table}")
+                stats[table] = result['count'] if result else 0
+            except:
+                stats[table] = 0
+        
+        stats['db_size_mb'] = round(self.get_size_mb(), 2)
+        
+        return stats
+    
+    @property
+    def conn(self) -> sqlite3.Connection:
+        """Get connection (for manual commits)."""
+        return self.connect()
+
+
 # Singleton instance
 _db_instance: Optional[Database] = None
 
