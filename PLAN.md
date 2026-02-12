@@ -99,9 +99,9 @@ Features retailers CAN'T offer:
 | Store | Website has promos? | PDF needed? | Status |
 |-------|---------------------|-------------|--------|
 | Kaufland | ✅ YES | ❌ NO | **DONE - 1,207 products** |
-| Lidl | ⏳ Check | ⏳ | Next |
-| Billa | ⏳ Check | ⏳ | |
-| Fantastico | ⏳ Check | ⏳ | |
+| Lidl | ✅ YES | ❌ NO | **DONE - 53 products** |
+| Billa | ✅ YES (ssbbilla.site) | ❌ NO | **DONE - 277 products** |
+| Fantastico | ❌ NO | ✅ YES (PDF) | Needs OCR |
 | T-Market | ⏳ Check | ⏳ | |
 | CBA | ⏳ Check | ⏳ | |
 | ProMarket | ⏳ Check | ⏳ | |
@@ -217,13 +217,33 @@ Sample data:
 Code: `services/scraper/scrapers/kaufland_scraper.py`
 Data: `services/scraper/data/kaufland_products.json`
 
-### 6.2 Lidl ⏳ NEXT
-- [ ] Check if website has promo products or only PDF
-- [ ] Test scraping approach
-- [ ] Extract products
+### 6.2 Lidl ✅ COMPLETE
+```
+Status:     Working
+Products:   53 extracted
+Avg discount: 28.3%
+Max discount: 54%
+Method:     Parse embedded JSON from HTML
+Source:     lidl.bg/c/lidl-plus-promotsii/
+```
 
-### 6.3 Billa ⏳ PENDING
-### 6.4 Fantastico ⏳ PENDING
+### 6.3 Billa ✅ COMPLETE
+```
+Status:     Working
+Products:   277 extracted
+With discount: 222 (80%)
+Avg discount: 36.1%
+Method:     Scrape ssbbilla.site (accessibility version)
+Source:     ssbbilla.site/catalog/sedmichna-broshura
+```
+
+### 6.4 Fantastico ⚠️ REQUIRES PDF OCR
+```
+Status:     PDF brochures only
+Method:     Would need pdf.js/PyMuPDF extraction
+Complexity: High - defer to Phase 2
+```
+
 ### 6.5 T-Market ⏳ PENDING
 ### 6.6 CBA ⏳ PENDING
 ### 6.7 ProMarket ⏳ PENDING
