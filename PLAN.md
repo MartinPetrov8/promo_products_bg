@@ -354,10 +354,10 @@ Complexity: High - defer to Phase 2
 
 ### Phase 1b: Scraping Infrastructure (Feb 12-14) ⚠️ BACKBONE
 - [x] Document scraping strategy (`docs/SCRAPING_STRATEGY.md`)
-- [ ] Implement `ScraperOrchestrator` class
-- [ ] Add retry logic with exponential backoff
-- [ ] Add per-domain rate limiting
-- [ ] Implement health tracking per store
+- [x] Implement `ScraperOrchestrator` class (`services/scraper/core/orchestrator.py`)
+- [x] Add retry logic with exponential backoff (`RetryHandler`)
+- [x] Add per-domain rate limiting (`DomainRateLimiter`)
+- [x] Implement health tracking per store (`HealthMonitor`)
 - [ ] Build Tier 2 scrapers (katalozi.bg fallback)
 - [ ] Test fallback switching (block Tier 1 → Tier 2)
 - [ ] Add WhatsApp alerts for failures
@@ -444,6 +444,41 @@ Complexity: High - defer to Phase 2
 - [ ] SQLite for MVP, PostgreSQL for production
 - [ ] Migration scripts
 - [ ] Data models (Python dataclasses/Pydantic)
+
+### Phase 1e-2: Sophisticated Product Matching 🎯 CRITICAL
+**Problem:** Current matching is too naive. Example:
+- "King оферта - Супер цена - Орехите Луканка Смядовска" ≠ "Clever Луканка слайс 100g"
+- Different brand = different quality tier = NOT comparable
+
+**Requirements for true comparison:**
+1. **Brand extraction** — Parse brand from product name (King, Clever, K-Classic, etc.)
+2. **Quality tier classification:**
+   - Premium (Орехите, Тандем, branded)
+   - Standard (store brands like Clever, K-Classic)
+   - Budget (no-name, bulk)
+3. **Product type normalization:**
+   - "Луканка Смядовска" vs "Луканка" vs "Луканка слайс" = different products
+   - Extract: base product + variant + weight/quantity
+4. **Barcode matching (ideal):**
+   - Same EAN/barcode = same product (if available from scraping)
+5. **Fuzzy matching with constraints:**
+   - Same brand OR same quality tier
+   - Same product category
+   - Similar weight (±20%)
+
+**Matching confidence levels:**
+- ✅ `exact` — Same barcode/EAN
+- 🟡 `high` — Same brand + same product type + similar weight
+- 🟠 `medium` — Same quality tier + same product type
+- ❌ `none` — Different quality tiers or different product types
+
+**Implementation:**
+- [ ] Brand extraction regex patterns (BG + international brands)
+- [ ] Quality tier classifier
+- [ ] Product type normalizer (strip quantities, modifiers)
+- [ ] Weight/quantity parser (g, kg, ml, L, бр)
+- [ ] Matching algorithm with confidence scores
+- [ ] Only show comparisons with `high`+ confidence in UI
 
 ### Phase 1e: Price Comparison UI ⭐ KEY FEATURE
 **"Cheapest wins" display:**
