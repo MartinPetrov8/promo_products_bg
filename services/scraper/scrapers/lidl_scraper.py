@@ -120,9 +120,21 @@ class LidlScraper:
     
     # Category URLs for additional products (HTML pages with embedded JSON)
     CATEGORY_URLS = [
+        # Promotions
         "https://www.lidl.bg/c/lidl-plus-promotsii/a10039565",
+        # Food & Drinks
+        "https://www.lidl.bg/c/khrani-i-napitki/s10068374",
         "https://www.lidl.bg/c/hrani/s10012946",
         "https://www.lidl.bg/c/napitki/s10012962",
+        # Weekly brochure
+        "https://www.lidl.bg/c/broshura/s10020060",
+        # Household & Kitchen
+        "https://www.lidl.bg/c/kukhnya-i-domakinstvo/s10068166",
+        "https://www.lidl.bg/c/dom-i-obzavezhdane/s10068371",
+        # Baby & Toys
+        "https://www.lidl.bg/c/bebe-dete-i-igrachki/s10068225",
+        # Garden & Tools
+        "https://www.lidl.bg/c/instrumenti-i-gradina/s10068222",
     ]
     
     def __init__(

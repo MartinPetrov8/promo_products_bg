@@ -70,6 +70,12 @@ def compute_group_key(name: str) -> str:
     """
     Compute a grouping key from product name.
     Used for "cheapest wins" comparison - groups similar products.
+    
+    Strategy: Extract the core product type, stripping:
+    - Brand names, store prefixes
+    - Quantities/weights/sizes
+    - Promotional phrases
+    - Source/origin descriptions
     """
     import re
     
@@ -81,17 +87,37 @@ def compute_group_key(name: str) -> str:
     # Remove Billa loyalty marker
     result = re.sub(r'продукт,?\s*маркиран\s*(със)?\s*синя\s*звезда', '', result, flags=re.IGNORECASE)
     
-    # Remove all quantities and weights
-    result = re.sub(r'\b\d+\s*(x\s*)?\d*\s*(г|гр|kg|кг|ml|мл|l|л|бр|pcs|броя?|опаковки?)\b\.?', '', result, flags=re.IGNORECASE)
-    result = re.sub(r'\d+\s*-\s*\d+\s*(г|гр|kg|кг|ml|мл|l|л|бр)\.?', '', result, flags=re.IGNORECASE)
+    # Remove "От ... витрина" phrases (Billa deli counter)
+    result = re.sub(r'от\s+(деликатесната|топлата|студената)\s+витрина', '', result, flags=re.IGNORECASE)
     
-    # Remove brand prefixes for grouping (not for display)
-    prefixes = ['k-classic', 'clever', 'king оферта', 'king', 'lidl plus', 'super цена', 'тор цена', 'tira']
-    for prefix in prefixes:
-        result = re.sub(r'^' + re.escape(prefix) + r'\s*[-–]?\s*', '', result.strip())
+    # Remove "За 1 кг" pricing
+    result = re.sub(r'за\s+\d+\s*(кг|kg|л|l)', '', result, flags=re.IGNORECASE)
+    
+    # Remove "Billa Ready" and similar store labels
+    result = re.sub(r'billa\s*(ready|app)?', '', result, flags=re.IGNORECASE)
+    
+    # Remove all quantities and weights (expanded patterns)
+    result = re.sub(r'\b\d+\s*(x\s*)?\d*\s*(г|гр|kg|кг|ml|мл|l|л|бр|pcs|броя?|опаковки?|бутилки?)\b\.?', '', result, flags=re.IGNORECASE)
+    result = re.sub(r'\d+\s*-\s*\d+\s*(г|гр|kg|кг|ml|мл|l|л|бр)\.?', '', result, flags=re.IGNORECASE)
+    result = re.sub(r'\d+\s*%', '', result)  # Remove percentages (fat content etc)
+    
+    # Remove brand prefixes (case-insensitive, at start of string or after dash)
+    brands = [
+        'k-classic', 'clever', 'king оферта', 'king', 'lidl plus', 'super цена', 
+        'супер цена', 'топ цена', 'tira', 'само с billa app', 'само с',
+        'parkside', 'silvercrest', 'crivit', 'livarno', 'esmara', 'ernesto',
+        'deutsche markenbutter', 'la provincia', 'meat revolution', 'monini',
+        'саяна', 'верея', 'пастир', 'дончево', 'престиж', 'гербери'
+    ]
+    for brand in brands:
+        result = re.sub(r'^' + re.escape(brand) + r'\s*[-–]?\s*', '', result.strip())
+        result = re.sub(r'\s+' + re.escape(brand) + r'\s*$', '', result)  # At end too
     
     # Remove promotional phrases
-    result = re.sub(r'\b(супер цена|промоция|намаление|оферта|акция)\b', '', result, flags=re.IGNORECASE)
+    result = re.sub(r'\b(супер цена|промоция|намаление|оферта|акция|произход|българия)\b', '', result, flags=re.IGNORECASE)
+    
+    # Remove size/variant descriptors that prevent matching
+    result = re.sub(r'\b(различни видове|разни|асортимент|класик|или)\b', '', result, flags=re.IGNORECASE)
     
     # Normalize whitespace
     result = re.sub(r'\s+', ' ', result).strip()
@@ -99,7 +125,11 @@ def compute_group_key(name: str) -> str:
     # Remove leading/trailing punctuation
     result = re.sub(r'^[\s\-–—:,]+|[\s\-–—:,]+$', '', result)
     
-    return result[:40]  # Shorter key for better grouping
+    # If result is very short after stripping, it's likely a generic product - keep it
+    if len(result) < 3:
+        return ""
+    
+    return result[:35]  # Shorter key for better grouping
 
 
 def export_products():
