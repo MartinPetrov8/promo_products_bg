@@ -46,7 +46,8 @@ def alert_callback(scraper_id: str, status: str, context: dict):
     """
     Alert callback for critical issues.
     
-    In production, this would send WhatsApp/Telegram alerts.
+    Sends alerts via Telegram (when running in OpenClaw context)
+    and always logs locally.
     """
     message = f"""
 🚨 SCRAPER ALERT: {scraper_id}
@@ -59,11 +60,29 @@ Current Tier: {context.get('current_tier', 'N/A')}
     
     logger.critical(message)
     
-    # TODO: Send via OpenClaw message tool
-    # For now, just log it
+    # Always log to console
     print(f"\n{'='*50}")
     print(message)
     print(f"{'='*50}\n")
+    
+    # Try to send via OpenClaw webhook (if available)
+    # This works when scraper is run via OpenClaw cron or manually
+    try:
+        import os
+        import requests as req
+        webhook_url = os.environ.get('OPENCLAW_WEBHOOK_URL')
+        webhook_token = os.environ.get('OPENCLAW_WEBHOOK_TOKEN')
+        
+        if webhook_url and webhook_token:
+            req.post(
+                webhook_url,
+                json={'text': message, 'channel': 'telegram'},
+                headers={'Authorization': f'Bearer {webhook_token}'},
+                timeout=5
+            )
+            logger.info("Alert sent via OpenClaw webhook")
+    except Exception as e:
+        logger.warning(f"Could not send webhook alert: {e}")
 
 
 def create_orchestrator() -> ScraperOrchestrator:
