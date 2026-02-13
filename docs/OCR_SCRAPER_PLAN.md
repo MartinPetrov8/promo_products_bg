@@ -151,3 +151,51 @@ RUN pip install paddleocr easyocr pytesseract
 2. Test OCR on sample page
 3. Build price extraction regex
 4. Create product matcher
+
+---
+
+## Implementation Complete (2026-02-13 23:15 UTC)
+
+### GPT-4 Vision OCR Working ✅
+
+Tested successfully on Billa brochure:
+- **5 pages processed** → **41 products extracted**
+- Extracts: name, price, old_price, unit, discount_pct
+- Cost: ~$0.01-0.02 per page (gpt-4o-mini)
+
+### Created: `ocr_brochure_scraper.py`
+
+```bash
+# Usage examples:
+python ocr_brochure_scraper.py --url 'https://view.publitas.com/billa-bulgaria/...'
+python ocr_brochure_scraper.py --pdf data/brochures/billa.pdf --max-pages 20
+```
+
+### Features
+- Downloads PDFs from Publitas URLs automatically
+- Extracts pages as JPEG using pdfimages
+- GPT-4 Vision for Bulgarian text OCR
+- Structured JSON output
+- Rate limiting (1 req/sec)
+- Error handling and stats
+
+### Sample Output
+```json
+{
+  "name": "БЪЛГАРСКА ФЕРМА Пилешки бут",
+  "price": 3.79,
+  "old_price": 5.99,
+  "unit": "кг",
+  "discount_pct": 37
+}
+```
+
+### Cost Estimate
+- 50-page brochure: ~$0.50-1.00 with gpt-4o-mini
+- Weekly run for 3 stores: ~$3-5/week
+
+### Next Steps
+1. Add database import for extracted products
+2. Schedule weekly brochure scrapes
+3. Add broshura.bg support
+4. Improve product matching to existing DB
