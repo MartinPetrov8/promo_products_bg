@@ -1,44 +1,44 @@
-# Scraper Status - 2026-02-13
+# Scraper Status - 2026-02-13 22:30 UTC
 
-## Database State
+## Database State (Fresh Tonight)
 
-| Store | Products | With Price | BGN Prices | Status |
-|-------|----------|------------|------------|--------|
-| Kaufland | 2,724 | 2,444 | 1,830 | ✅ Working |
-| Lidl | 713 | 34 | 12 | ⚠️ Limited URLs |
-| Billa | 554 | 554 | 0 (EUR) | ⚠️ No DB integration |
+| Store | Products | BGN Prices | Brand | Size | Last Scraped |
+|-------|----------|------------|-------|------|--------------|
+| Kaufland | 2,724 | 67% | 79% | 56% | 2026-02-13 22:27 |
+| Lidl | 1,078 | 98% | 36% | 36% | 2026-02-13 22:28 |
+| Billa | 554 | 47% | 14% | 80% | 2026-02-13 22:02 |
+| **TOTAL** | **4,340** | **72%** | | | |
 
-## Scraper Issues
+## Scraper Status
 
-### Kaufland ✅
-- **Status:** Fully working
-- **Last run:** 2026-02-13, 1,979 products scraped
-- **BGN extraction:** Working (from `prices.alternative.formatted.standard`)
+### Kaufland ✅ Complete
+- **Scraper:** `kaufland_enhanced_scraper.py`
+- **Method:** Single page fetch, JSON array parsing
+- **Coverage:** 1,977 products per run
+- **Features:** BGN extraction, discount %, old prices, brand, size
 
-### Lidl ⚠️
-- **Status:** Scraper works but limited data
-- **Issue:** Only 12/713 products have URLs stored
-- **Fix needed:** Run `lidl_sitemap_scraper.py` to populate URLs for all products
-- **Alternative:** Update existing store_products with URLs from sitemap
+### Lidl ✅ Complete
+- **Scraper:** `lidl_sitemap_scraper.py`
+- **Method:** Sitemap → individual product pages
+- **Coverage:** 1,104 URLs in sitemap
+- **Features:** Full anti-detection (jitter, coffee breaks, decoys, circuit breaker)
+- **Runtime:** ~90 min for full scrape
 
-### Billa ⚠️
-- **Status:** Scrapes to JSON only
-- **Issue:** No `save_to_db()` method
-- **Prices:** All in EUR, need conversion
-- **Fix needed:** Add DB integration like Kaufland/Lidl
-
-## Code Audit Fixes Applied
-
-1. ✅ Pickle → JSON (security fix)
-2. ✅ Circuit breaker public methods
-3. ✅ Transaction rollback handling
-4. ✅ Price validation (0.01-10000)
-5. ✅ File locking for checkpoints
-6. ✅ Thread safety in rate limiter
+### Billa ⚠️ Partial
+- **Scraper:** `billa_scraper.py` (via ssbbilla.site)
+- **Issue:** Only promotional products, name matching ~47%
+- **Blocker:** Main billa.bg uses Publitas flipbook → needs OCR
 
 ## Next Steps
 
-1. **Lidl URLs:** Run sitemap scraper or create URL updater
-2. **Billa DB:** Add `save_to_db()` method with EUR→BGN conversion
-3. **OFF Matching:** Once all stores have BGN prices
-4. **OCR Scraper:** For Publitas/broshura.bg images (future)
+1. **OCR Scraper** - For Publitas/broshura.bg images
+   - Research: PaddleOCR, Tesseract, Google Vision
+   - Target: Extract product names, prices from brochure images
+
+2. **OFF Matching** - Once OCR complete
+   - Match products across stores by name/barcode
+   - Enrich with Open Food Facts data
+
+3. **Frontend** - Deploy to GitHub Pages
+   - Price comparison UI
+   - Filter by store, category, discount

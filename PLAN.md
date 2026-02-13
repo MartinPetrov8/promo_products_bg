@@ -706,3 +706,40 @@ git push origin main
 ### Blocked Until
 - Current scrapers complete and working
 - Research phase done
+
+---
+
+## Progress Update - 2026-02-13 22:30 UTC
+
+### Completed Tonight
+- [x] Code audit (3 independent audits: DeepSeek, Gemini, MiniMax)
+- [x] Fixed CRITICAL + HIGH issues (pickle, circuit breaker, transactions)
+- [x] Kaufland full rescrape (1,977 products, 94.8% brand)
+- [x] Lidl sitemap scrape (1,078 products, 98% BGN)
+- [x] Billa import (258 products with BGN)
+- [x] All timestamps recorded in `scraped_at` field
+
+### Database State
+- **Total:** 4,340 products
+- **BGN Prices:** 3,144 (72%)
+- **All stores scraped fresh tonight**
+
+### In Progress: OCR Scraper Research
+For Publitas (Billa brochures) and broshura.bg:
+
+#### OCR Options to Evaluate
+1. **PaddleOCR** - Good Bulgarian support, free, local
+2. **Tesseract** - Free, local, may need training for Bulgarian
+3. **EasyOCR** - Supports Bulgarian, easy setup
+4. **Google Vision API** - Best accuracy, paid (~$1.50/1000 images)
+
+#### OCR Pipeline Design
+1. Capture brochure page images
+2. Detect product regions (name + price areas)
+3. OCR each region
+4. Parse structured data (product name, price, unit)
+5. Import to database
+
+### Blocked
+- Billa full coverage (needs OCR for Publitas brochures)
+- broshura.bg (PDF/image-based brochures)
