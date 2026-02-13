@@ -5,12 +5,10 @@ Kaufland Enhanced Scraper - Extracts detailed product data
 CRITICAL: The `price` field in Kaufland's JSON is EUR, not BGN!
 BGN prices are in: prices.alternative.formatted.standard/old
 
-Key fields:
-- title: Usually brand name
-- subtitle: Product name
-- unit: Size (e.g., "400 г", "1 кг")
-- prices.alternative.formatted.standard: BGN price
-- prices.alternative.formatted.old: Old BGN price (if discounted)
+Parsing strategy:
+- Find all "offers":[] arrays in HTML (44+ arrays)
+- Parse each as JSON
+- Extract klNr, title, subtitle, unit, prices.alternative.formatted
 """
 
 import re
@@ -172,7 +170,7 @@ def extract_brand(text: str) -> Optional[str]:
 
 
 class KauflandEnhancedScraper:
-    """Scrapes Kaufland offers page for product data."""
+    """Scrapes Kaufland offers page for product data using JSON array parsing."""
     
     def __init__(self, db_path: Optional[Path] = None):
         self.db_path = db_path or Path(__file__).parent.parent.parent.parent / "data" / "promobg.db"
@@ -196,89 +194,94 @@ class KauflandEnhancedScraper:
                     time.sleep(5 * (attempt + 1))
         return None
     
-    def _extract_products_from_html(self, html: str) -> List[KauflandProduct]:
-        """Extract products from embedded JSON in HTML."""
-        products = []
-        seen = set()
+    def _extract_offers_from_json_arrays(self, html: str) -> List[Dict]:
+        """Extract all offers from embedded JSON arrays in HTML."""
+        all_offers = []
+        seen_klnr = set()
         
-        kl_matches = list(re.finditer(r'"klNr":"(\d+)"', html))
-        logger.info(f"Found {len(kl_matches)} klNr entries")
-        
-        for m in kl_matches:
-            kl = m.group(1)
-            if kl in seen:
-                continue
-            seen.add(kl)
+        # Find all "offers":[ array starts
+        for m in re.finditer(r'"offers":\[', html):
+            start = m.end() - 1  # Include the [
             
-            start = max(0, m.start() - 1500)
-            end = min(len(html), m.end() + 500)
-            context = html[start:end]
+            # Find matching closing bracket
+            depth = 0
+            end = start
+            for i, c in enumerate(html[start:start+500000]):
+                if c == '[':
+                    depth += 1
+                elif c == ']':
+                    depth -= 1
+                    if depth == 0:
+                        end = start + i + 1
+                        break
+            
+            array_str = html[start:end]
             
             try:
-                title_m = re.search(r'"title":"([^"]+)"', context)
-                if not title_m:
-                    continue
-                
-                subtitle_m = re.search(r'"subtitle":"([^"]*)"', context)
-                detail_title_m = re.search(r'"detailTitle":"([^"]*)"', context)
-                desc_m = re.search(r'"detailDescription":"([^"]*)"', context)
-                unit_m = re.search(r'"unit":"([^"]*)"', context)
-                price_m = re.search(r'"price":([\d.]+)', context)
-                discount_m = re.search(r'"discount":(\d+)', context)
-                image_m = re.search(r'"listImage":"([^"]+)"', context)
-                date_from_m = re.search(r'"dateFrom":"([^"]+)"', context)
-                date_to_m = re.search(r'"dateTo":"([^"]+)"', context)
-                bgn_standard_m = re.search(r'"standard":"([^"]+)"', context)
-                bgn_old_m = re.search(r'"old":"([^"]+)"', context)
-                
-                title = title_m.group(1)
-                subtitle = subtitle_m.group(1) if subtitle_m else None
-                unit = unit_m.group(1) if unit_m else None
-                
-                # Parse BGN prices
-                price_bgn = parse_bgn_price(bgn_standard_m.group(1)) if bgn_standard_m else None
-                old_price_bgn = parse_bgn_price(bgn_old_m.group(1)) if bgn_old_m else None
-                
-                # Extract size
-                size_val, size_unit_str = None, None
-                if unit:
-                    size_val, size_unit_str = extract_size(unit)
-                if not size_val and subtitle:
-                    size_val, size_unit_str = extract_size(subtitle)
-                if not size_val:
-                    size_val, size_unit_str = extract_size(title)
-                
-                # Extract brand
-                brand = None
-                if title and len(title.split()) <= 3:
-                    brand = title
-                if not brand:
-                    brand = extract_brand(title)
-                
-                products.append(KauflandProduct(
-                    kl_nr=kl,
-                    title=title,
-                    subtitle=subtitle,
-                    detail_title=detail_title_m.group(1) if detail_title_m else None,
-                    description=desc_m.group(1).replace('\\n', ' | ') if desc_m else None,
-                    unit=unit,
-                    price_bgn=price_bgn,
-                    old_price_bgn=old_price_bgn,
-                    price_eur=float(price_m.group(1)) if price_m else None,
-                    discount_pct=int(discount_m.group(1)) if discount_m else None,
-                    size_value=size_val,
-                    size_unit=size_unit_str,
-                    brand=brand,
-                    image_url=image_m.group(1) if image_m else None,
-                    date_from=date_from_m.group(1) if date_from_m else None,
-                    date_to=date_to_m.group(1) if date_to_m else None,
-                ))
-                
-            except Exception as e:
-                logger.warning(f"Failed to parse offer {kl}: {e}")
+                offers = json.loads(array_str)
+                for offer in offers:
+                    klnr = offer.get('klNr')
+                    if klnr and klnr not in seen_klnr:
+                        seen_klnr.add(klnr)
+                        all_offers.append(offer)
+            except json.JSONDecodeError:
                 continue
         
-        return products
+        logger.info(f"Extracted {len(all_offers)} unique offers from JSON arrays")
+        return all_offers
+    
+    def _offer_to_product(self, offer: Dict) -> Optional[KauflandProduct]:
+        """Convert JSON offer dict to KauflandProduct."""
+        kl_nr = offer.get('klNr')
+        title = offer.get('title')
+        
+        if not kl_nr or not title:
+            return None
+        
+        subtitle = offer.get('subtitle')
+        unit = offer.get('unit')
+        
+        # Extract BGN prices from prices.alternative.formatted
+        prices = offer.get('prices', {}).get('alternative', {}).get('formatted', {})
+        price_bgn = parse_bgn_price(prices.get('standard'))
+        old_price_bgn = parse_bgn_price(prices.get('old'))
+        
+        # Extract size from unit field first, then subtitle, then title
+        size_val, size_unit_str = None, None
+        if unit:
+            size_val, size_unit_str = extract_size(unit)
+        if not size_val and subtitle:
+            size_val, size_unit_str = extract_size(subtitle)
+        if not size_val:
+            size_val, size_unit_str = extract_size(title)
+        
+        # Extract brand - title often IS the brand for single-word titles
+        brand = None
+        if title and len(title.split()) <= 2:
+            brand = title
+        if not brand:
+            brand = extract_brand(title)
+        if not brand and subtitle:
+            brand = extract_brand(subtitle)
+        
+        return KauflandProduct(
+            kl_nr=kl_nr,
+            title=title,
+            subtitle=subtitle,
+            detail_title=offer.get('detailTitle'),
+            description=offer.get('detailDescription', '').replace('\\n', ' | ') if offer.get('detailDescription') else None,
+            unit=unit,
+            price_bgn=price_bgn,
+            old_price_bgn=old_price_bgn,
+            price_eur=offer.get('price'),
+            discount_pct=offer.get('discount'),
+            size_value=size_val,
+            size_unit=size_unit_str,
+            brand=brand,
+            image_url=offer.get('listImage'),
+            date_from=offer.get('dateFrom'),
+            date_to=offer.get('dateTo'),
+        )
     
     def scrape(self) -> List[KauflandProduct]:
         """Scrape Kaufland offers page."""
@@ -294,9 +297,17 @@ class KauflandEnhancedScraper:
         html = response.text
         logger.info(f"Page size: {len(html):,} bytes")
         
-        self.products = self._extract_products_from_html(html)
-        logger.info(f"Extracted {len(self.products)} unique products")
+        # Extract all offers from JSON arrays
+        offers = self._extract_offers_from_json_arrays(html)
         
+        # Convert to products
+        self.products = []
+        for offer in offers:
+            product = self._offer_to_product(offer)
+            if product:
+                self.products.append(product)
+        
+        logger.info(f"Converted {len(self.products)} offers to products")
         return self.products
     
     def save_to_db(self):
@@ -458,14 +469,20 @@ def main():
     print("SAMPLE PRODUCTS")
     print(f"{'='*60}")
     
-    sample = [p for p in products if p.price_bgn][:10]
+    # Find kiwi specifically
+    kiwi = next((p for p in products if p.kl_nr == '09700101'), None)
+    if kiwi:
+        print(f"\n🥝 KIWI (09700101):")
+        print(f"  {kiwi.title} - {kiwi.subtitle}")
+        print(f"  Price: {kiwi.price_bgn} лв (was {kiwi.old_price_bgn} лв)")
+        print(f"  Unit: {kiwi.unit}")
+    
+    # More samples
+    sample = [p for p in products if p.price_bgn and p.old_price_bgn][:5]
     for p in sample:
         print(f"\n{p.title} - {p.subtitle}")
-        if p.old_price_bgn:
-            print(f"  Price: {p.price_bgn} лв (was {p.old_price_bgn} лв)")
-        else:
-            print(f"  Price: {p.price_bgn} лв")
-        print(f"  Unit: {p.unit} | Size: {p.size_value} {p.size_unit} | Brand: {p.brand}")
+        print(f"  Price: {p.price_bgn} лв (was {p.old_price_bgn} лв) -{p.discount_pct}%")
+        print(f"  Unit: {p.unit} | Size: {p.size_value} {p.size_unit}")
 
 
 if __name__ == '__main__':
