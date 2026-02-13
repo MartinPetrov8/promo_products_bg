@@ -518,12 +518,12 @@ class LidlProductScraper:
         self._delete_checkpoint()
     
     def get_existing_product_urls(self) -> List[str]:
-        """Get URLs for products already in database."""
+        """Get URLs for products already in database (from store_products table)."""
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
             cursor.execute("""
-                SELECT product_url FROM products 
-                WHERE store_id = ? AND product_url IS NOT NULL
+                SELECT store_product_url FROM store_products 
+                WHERE store_id = ? AND store_product_url IS NOT NULL
             """, (LIDL_STORE_ID,))
             return [row[0] for row in cursor.fetchall()]
 
