@@ -1,505 +1,293 @@
 #!/usr/bin/env python3
 """
-Kaufland.bg Enhanced Scraper - With Product Detail Extraction
+Kaufland Enhanced Scraper - Extracts detailed product data
 
-Extracts detailed product data by:
-1. Scraping main offers page for product list + articleIDs
-2. Fetching detail modal for each product via kloffer-articleID parameter
-3. Parsing deep divs for name, brand, size, full description
-
-Uses hardened scraper infrastructure.
+Key improvements:
+1. Extracts detailDescription field for more size/spec info
+2. Extracts detailTitle for cleaner product names
+3. Parses descriptions for sizes, brands, and attributes
 """
 
 import re
 import json
 import time
 import logging
-import random
-from dataclasses import dataclass, asdict, field
-from typing import Optional, List, Dict, Set, Tuple
 from pathlib import Path
-from urllib.parse import urlencode, parse_qs, urlparse
+from dataclasses import dataclass, asdict
+from typing import List, Optional, Tuple
 
-# Infrastructure imports
-import sys
-sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
+import requests
 
-from services.scraper.core.session_manager import SessionManager, SessionConfig
-from services.scraper.core.rate_limiter import DomainRateLimiter
-from services.scraper.core.circuit_breaker import CircuitBreaker
-from services.scraper.core.retry_handler import RetryHandler, RetryConfig
-
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
 @dataclass
 class KauflandProduct:
-    """Enhanced product data from Kaufland with detailed attributes"""
-    # Basic info
-    name: str
-    subtitle: Optional[str]          # Short description from tile
-    detail_description: Optional[str] # Full description from modal
-    
-    # Attributes extracted from descriptions
-    brand: Optional[str] = None
+    kl_nr: str
+    title: str
+    detail_title: Optional[str]
+    subtitle: Optional[str]
+    description: Optional[str]
+    price: Optional[float]
+    old_price: Optional[float]
+    discount_pct: Optional[int]
     size_value: Optional[float] = None
     size_unit: Optional[str] = None
-    fat_content: Optional[str] = None
-    
-    # Pricing
-    price_eur: Optional[float] = None
-    price_bgn: Optional[float] = None
-    old_price_eur: Optional[float] = None
-    old_price_bgn: Optional[float] = None
-    discount_pct: Optional[int] = None
-    
-    # Media & IDs
-    image_url: Optional[str] = None
-    article_id: Optional[str] = None    # kloffer-articleID
-    kl_nr: Optional[str] = None         # Internal Kaufland number
+    brand: Optional[str] = None
     category: Optional[str] = None
-    product_url: Optional[str] = None
-    
-    # Metadata
-    valid_from: Optional[str] = None
-    valid_to: Optional[str] = None
+    image_url: Optional[str] = None
 
 
-class KauflandEnhancedScraper:
-    """
-    Enhanced Kaufland scraper with detail modal fetching.
-    """
-    
-    DOMAIN = "kaufland.bg"
-    BASE_URL = "https://www.kaufland.bg"
-    
-    def __init__(self):
-        # Infrastructure
-        self.session_manager = SessionManager(
-            config=SessionConfig(
-                max_requests=25,
-                max_age_seconds=600,
-            )
-        )
-        self.rate_limiter = DomainRateLimiter()
-        self.circuit_breaker = CircuitBreaker(
-            name=self.DOMAIN,
-            failure_threshold=5,
-            recovery_timeout=120,
-        )
-        self.retry_handler = RetryHandler(
-            config=RetryConfig(
-                max_attempts=3,
-                base_delay=4.0,
-                max_delay=60.0,
-            )
-        )
-        
-        self.stats = {
-            'tiles_scraped': 0,
-            'details_fetched': 0,
-            'products_enhanced': 0,
-            'failures': 0,
-        }
-    
-    def _extract_article_id(self, tile_html: str) -> Optional[str]:
-        """Extract kloffer-articleID from product tile HTML"""
-        # Look for data attributes or URL patterns
-        # Pattern 1: data-kloffer-id or similar
-        match = re.search(r'data-[\w-]*(?:article|offer)["\']?[=:]\s*["\']?(\d+)', tile_html, re.I)
-        if match:
-            return match.group(1)
-        
-        # Pattern 2: in onclick handlers
-        match = re.search(r'articleID[=:](\d+)', tile_html, re.I)
-        if match:
-            return match.group(1)
-        
-        # Pattern 3: klNr in JSON data
-        match = re.search(r'"klNr":"(\d+)"', tile_html)
-        if match:
-            return match.group(1)
-        
-        return None
-    
-    def _extract_category_from_url(self, url: str) -> Optional[str]:
-        """Extract category name from offer page URL"""
-        try:
-            parsed = urlparse(url)
-            params = parse_qs(parsed.query)
-            if 'kloffer-category' in params:
-                cat = params['kloffer-category'][0]
-                # Decode URL encoding and clean
-                return cat.split('_')[-1] if '_' in cat else cat
-        except:
-            pass
-        return None
-    
-    def _parse_size(self, text: str) -> Tuple[Optional[float], Optional[str]]:
-        """Extract size value and unit from text"""
-        if not text:
-            return None, None
-        
-        text_lower = text.lower()
-        
-        # Pattern: "X г", "X кг", "X мл", "X л"
-        # Also handle "Ø9 см" for plants
-        patterns = [
-            (r'(\d+[.,]?\d*)\s*(кг|kg)\b', 'kg'),
-            (r'(\d+[.,]?\d*)\s*(г|гр|g)\b', 'g'),
-            (r'(\d+[.,]?\d*)\s*(л|l)\b', 'l'),
-            (r'(\d+[.,]?\d*)\s*(мл|ml)\b', 'ml'),
-            (r'[Øø](\d+[.,]?\d*)\s*(см|cm)\b', 'cm'),
-        ]
-        
-        for pattern, unit in patterns:
-            match = re.search(pattern, text_lower)
-            if match:
-                try:
-                    value = float(match.group(1).replace(',', '.'))
-                    # Convert kg to g, l to ml for consistency
-                    if unit == 'kg':
-                        return value * 1000, 'g'
-                    elif unit == 'l':
-                        return value * 1000, 'ml'
-                    return value, unit
-                except ValueError:
-                    continue
-        
+def extract_size(text: str) -> Tuple[Optional[float], Optional[str]]:
+    """Extract size from text like '400 г', '1.5 л', '2x500 мл', '10 бр.'"""
+    if not text:
         return None, None
     
-    def _extract_brand(self, text: str) -> Optional[str]:
-        """Extract brand from product name or description"""
-        if not text:
-            return None
-        
-        text_lower = text.lower()
-        
-        brands = [
-            ('k-classic', 'K-Classic'),
-            ('k classic', 'K-Classic'),
-            ('clever', 'Clever'),
-            ('milka', 'Milka'),
-            ('nescafe', 'Nescafe'),
-            ('jacobs', 'Jacobs'),
-            ('lavazza', 'Lavazza'),
-            ('coca-cola', 'Coca-Cola'),
-            ('coca cola', 'Coca-Cola'),
-            ('pepsi', 'Pepsi'),
-            ('nestle', 'Nestle'),
-            ('ferrero', 'Ferrero'),
-            ('kinder', 'Kinder'),
-            ('lindt', 'Lindt'),
-            ('milka', 'Milka'),
-            ('haribo', 'Haribo'),
-            ('nutella', 'Nutella'),
-            ('pringles', 'Pringles'),
-            ('lays', 'Lay\'s'),
-            ('doritos', 'Doritos'),
-            ('red bull', 'Red Bull'),
-            ('heineken', 'Heineken'),
-            ('pampers', 'Pampers'),
-            ('ariel', 'Ariel'),
-            ('lenor', 'Lenor'),
-            ('persil', 'Persil'),
-            ('finish', 'Finish'),
-        ]
-        
-        for pattern, brand_name in brands:
-            if pattern in text_lower:
-                return brand_name
-        
+    text_lower = text.lower()
+    
+    # Pack format: 2x500 ml, 6 x 1.5 л
+    pack_patterns = [
+        (r'(\d+)\s*[xх×]\s*(\d+[.,]?\d*)\s*(кг|kg)\b', 'kg'),
+        (r'(\d+)\s*[xх×]\s*(\d+[.,]?\d*)\s*(г|гр|g)\b', 'g'),
+        (r'(\d+)\s*[xх×]\s*(\d+[.,]?\d*)\s*(л|l)\b', 'l'),
+        (r'(\d+)\s*[xх×]\s*(\d+[.,]?\d*)\s*(мл|ml)\b', 'ml'),
+    ]
+    
+    for pattern, unit in pack_patterns:
+        match = re.search(pattern, text_lower)
+        if match:
+            try:
+                count = int(match.group(1))
+                value = float(match.group(2).replace(',', '.'))
+                total = count * value
+                if unit in ['kg', 'l']:
+                    return total * 1000, 'g' if unit == 'kg' else 'ml'
+                return total, 'g' if unit == 'g' else 'ml'
+            except ValueError:
+                continue
+    
+    # Single size patterns - weight/volume
+    patterns = [
+        (r'(\d+[.,]?\d*)\s*(кг|kg)\b', 'kg'),
+        (r'(\d+[.,]?\d*)\s*(г|гр|g)\b', 'g'),
+        (r'(\d+[.,]?\d*)\s*(л|l)\b', 'l'),
+        (r'(\d+[.,]?\d*)\s*(мл|ml)\b', 'ml'),
+        (r'[Øø](\d+[.,]?\d*)\s*(см|cm)\b', 'cm'),  # Diameter
+    ]
+    
+    for pattern, unit in patterns:
+        match = re.search(pattern, text_lower)
+        if match:
+            try:
+                value = float(match.group(1).replace(',', '.'))
+                if unit == 'kg':
+                    return value * 1000, 'g'
+                elif unit == 'l':
+                    return value * 1000, 'ml'
+                return value, unit
+            except ValueError:
+                continue
+    
+    # Piece count patterns - "10 бр.", "32+8 бр.", "42 -- 70 бр."
+    # Take the first number for range patterns
+    piece_match = re.search(r'(\d+)\s*(?:\+\s*\d+)?\s*(?:--\s*\d+)?\s*бр\.?', text_lower)
+    if piece_match:
+        try:
+            value = float(piece_match.group(1))
+            return value, 'бр'
+        except ValueError:
+            pass
+    
+    return None, None
+
+
+def extract_brand(text: str) -> Optional[str]:
+    """Extract brand from product name or description"""
+    if not text:
         return None
     
-    def _fetch_product_detail(self, article_id: str, category: Optional[str] = None) -> Optional[Dict]:
-        """Fetch detailed product info via kloffer-articleID parameter"""
-        if not article_id:
-            return None
-        
-        # Build detail URL
-        params = {
-            'kloffer-week': 'current',
-            'kloffer-articleID': article_id,
-        }
-        if category:
-            params['kloffer-category'] = category
-        
-        url = f"{self.BASE_URL}/aktualni-predlozheniya/oferti.html?{urlencode(params)}"
-        
-        # Rate limit
-        self.rate_limiter.wait(url)
-        
-        if self.circuit_breaker.is_open:
-            logger.warning(f"Circuit breaker OPEN")
-            return None
-        
-        session = self.session_manager.get_session(self.DOMAIN)
-        
-        try:
-            response = session.get(url, timeout=30)
-            
-            if response.status_code == 200:
-                self.circuit_breaker._on_success()
-                self.rate_limiter.report_success(url)
-                self.stats['details_fetched'] += 1
-                
-                # Parse detail data from HTML
-                return self._parse_detail_html(response.text)
-            else:
-                self.circuit_breaker._on_failure()
-                self.rate_limiter.report_failure(url, response.status_code)
-                return None
-                
-        except Exception as e:
-            logger.error(f"Detail fetch failed: {e}")
-            self.circuit_breaker._on_failure()
-            return None
+    text_lower = text.lower()
     
-    def _parse_detail_html(self, html: str) -> Dict:
-        """Extract detailed product info from HTML"""
-        result = {
-            'title': None,
-            'subtitle': None,
-            'detail_description': None,
-            'brand': None,
-            'kl_nr': None,
-        }
-        
-        # Look for embedded JSON data
-        # Pattern 1: Direct JSON in script tags
-        json_match = re.search(r'window\.__INITIAL_STATE__\s*=\s*(\{.*?\});', html, re.DOTALL)
-        if json_match:
-            try:
-                data = json.loads(json_match.group(1))
-                # Navigate to offer data
-                offers = data.get('offer', {}).get('offers', [])
-                if offers:
-                    offer = offers[0]
-                    result['title'] = offer.get('title')
-                    result['subtitle'] = offer.get('subtitle')
-                    result['detail_description'] = offer.get('detailDescription')
-                    result['kl_nr'] = offer.get('klNr')
-            except (json.JSONDecodeError, KeyError):
-                pass
-        
-        # Pattern 2: Individual data attributes
-        if not result['title']:
-            title_match = re.search(r'"title":"([^"]+)"', html)
-            if title_match:
-                result['title'] = title_match.group(1)
-        
-        if not result['subtitle']:
-            subtitle_match = re.search(r'"subtitle":"([^"]+)"', html)
-            if subtitle_match:
-                result['subtitle'] = subtitle_match.group(1)
-        
-        if not result['detail_description']:
-            desc_match = re.search(r'"detailDescription":"([^"]+)"', html)
-            if desc_match:
-                result['detail_description'] = desc_match.group(1).replace('\\n', '\n')
-        
-        # Extract brand from title
-        if result['title']:
-            result['brand'] = self._extract_brand(result['title'])
-        
-        return result
+    # Sorted by specificity - longer/more specific first
+    brands = [
+        ('coca-cola', 'Coca-Cola'), ('coca cola', 'Coca-Cola'),
+        ('k-classic', 'K-Classic'), ('k classic', 'K-Classic'),
+        ('red bull', 'Red Bull'),
+        ('lay\'s', "Lay's"), ('lays', "Lay's"),
+        ('milka', 'Milka'), ('nescafe', 'Nescafe'), ('jacobs', 'Jacobs'),
+        ('lavazza', 'Lavazza'), ('tchibo', 'Tchibo'),
+        ('pepsi', 'Pepsi'), ('fanta', 'Fanta'), ('sprite', 'Sprite'),
+        ('nestle', 'Nestle'), ('nestlé', 'Nestle'),
+        ('ferrero', 'Ferrero'), ('kinder', 'Kinder'),
+        ('lindt', 'Lindt'), ('haribo', 'Haribo'), ('nutella', 'Nutella'),
+        ('pringles', 'Pringles'), ('doritos', 'Doritos'),
+        ('heineken', 'Heineken'), ('stella artois', 'Stella Artois'),
+        ('pampers', 'Pampers'), ('huggies', 'Huggies'),
+        ('ariel', 'Ariel'), ('lenor', 'Lenor'), ('persil', 'Persil'),
+        ('finish', 'Finish'), ('fairy', 'Fairy'),
+        ('emeka', 'Emeka'), ('zewa', 'Zewa'),
+        ('верея', 'Верея'), ('olympus', 'Olympus'), ('олимпус', 'Olympus'),
+        ('danone', 'Danone'), ('данон', 'Danone'),
+        ('president', 'President'), ('президент', 'President'),
+        ('hochland', 'Hochland'), ('хохланд', 'Hochland'),
+        ('dr. oetker', 'Dr. Oetker'), ('knorr', 'Knorr'),
+        ('maggi', 'Maggi'), ('hellmann\'s', "Hellmann's"),
+        ('bonduelle', 'Bonduelle'), ('бондюел', 'Bonduelle'),
+        ('barilla', 'Barilla'), ('де чеко', 'De Cecco'),
+        ('aquaphor', 'Aquaphor'), ('аквафор', 'Aquaphor'),
+        ('oral-b', 'Oral-B'), ('colgate', 'Colgate'),
+        ('nivea', 'Nivea'), ('dove', 'Dove'), ('rexona', 'Rexona'),
+        ('калиакра', 'Калиакра'), ('девин', 'Devin'),
+        ('банкя', 'Bankya'), ('горна баня', 'Горна Баня'),
+    ]
     
-    def _parse_offers_page(self, html: str, source_url: str) -> List[KauflandProduct]:
-        """Parse products from main offers page with detail fetching"""
-        products = []
-        category = self._extract_category_from_url(source_url)
-        
-        # Extract all product data from embedded JSON
-        # Look for offer arrays in the page
-        json_patterns = [
-            r'"offers":\s*(\[.*?\])',
-            r'window\.__INITIAL_STATE__\s*=\s*(\{.*?\});',
-        ]
-        
-        offers_data = []
-        for pattern in json_patterns:
-            matches = re.findall(pattern, html, re.DOTALL)
-            for match in matches:
-                try:
-                    data = json.loads(match)
-                    if isinstance(data, list):
-                        offers_data.extend(data)
-                    elif isinstance(data, dict) and 'offer' in data:
-                        offers = data.get('offer', {}).get('offers', [])
-                        offers_data.extend(offers)
-                except json.JSONDecodeError:
-                    continue
-        
-        logger.info(f"Found {len(offers_data)} offers in page data")
-        
-        # Process each offer
-        seen_ids: Set[str] = set()
-        
-        for offer in offers_data:
-            try:
-                article_id = offer.get('articleId') or offer.get('klNr')
-                if not article_id or article_id in seen_ids:
-                    continue
-                seen_ids.add(article_id)
-                
-                # Basic product data
-                name = offer.get('title', '')
-                if not name:
-                    continue
-                
-                subtitle = offer.get('subtitle')
-                detail_desc = offer.get('detailDescription')
-                kl_nr = offer.get('klNr')
-                
-                # Pricing
-                price = offer.get('price')
-                old_price = offer.get('oldPrice')
-                discount = offer.get('discount')
-                
-                # Alternative price format
-                prices = offer.get('prices', {})
-                if not price and 'alternative' in prices:
-                    price_str = prices['alternative'].get('formatted', {}).get('standard', '')
-                    # Parse BGN price from formatted string
-                    price_match = re.search(r'([\d.,]+)', price_str.replace(' ', ''))
-                    if price_match:
-                        price = float(price_match.group(1).replace(',', '.'))
-                
-                # Image
-                image_url = offer.get('listImage') or offer.get('detailImages', [None])[0]
-                
-                # Size extraction
-                size_value, size_unit = None, None
-                if subtitle:
-                    size_value, size_unit = self._parse_size(subtitle)
-                if not size_value and detail_desc:
-                    size_value, size_unit = self._parse_size(detail_desc)
-                
-                # Brand extraction
-                brand = self._extract_brand(name)
-                if not brand and detail_desc:
-                    brand = self._extract_brand(detail_desc)
-                
-                # Create product
-                product = KauflandProduct(
-                    name=name,
-                    subtitle=subtitle,
-                    detail_description=detail_desc,
-                    brand=brand,
-                    size_value=size_value,
-                    size_unit=size_unit,
-                    price_eur=None,  # Will calculate from BGN
-                    price_bgn=price,
-                    old_price_bgn=old_price,
-                    discount_pct=discount,
-                    image_url=image_url,
-                    article_id=str(article_id),
-                    kl_nr=kl_nr,
-                    category=category,
-                )
-                
-                products.append(product)
-                self.stats['products_enhanced'] += 1
-                
-            except Exception as e:
-                logger.warning(f"Failed to parse offer: {e}")
-                continue
-        
-        return products
+    for pattern, brand_name in brands:
+        if pattern in text_lower:
+            return brand_name
     
-    def scrape_offers_page(self, url: str) -> List[KauflandProduct]:
-        """Scrape a single offers page with full details"""
-        logger.info(f"Scraping: {url}")
-        
-        # Rate limit
-        self.rate_limiter.wait(url)
-        
-        if self.circuit_breaker.is_open:
-            logger.warning(f"Circuit breaker OPEN for {self.DOMAIN}")
-            return []
-        
-        session = self.session_manager.get_session(self.DOMAIN)
-        
-        try:
-            response = session.get(url, timeout=30)
-            
-            if response.status_code == 200:
-                self.circuit_breaker._on_success()
-                self.rate_limiter.report_success(url)
-                
-                products = self._parse_offers_page(response.text, url)
-                logger.info(f"Scraped {len(products)} products from {url}")
-                return products
-            else:
-                self.circuit_breaker._on_failure()
-                self.rate_limiter.report_failure(url, response.status_code)
-                return []
-                
-        except Exception as e:
-            logger.error(f"Failed to scrape {url}: {e}")
-            self.circuit_breaker._on_failure()
-            return []
+    return None
+
+
+def scrape_kaufland_enhanced() -> List[KauflandProduct]:
+    """Scrape Kaufland offers page with enhanced data extraction"""
+    url = "https://www.kaufland.bg/aktualni-predlozheniya/oferti.html"
     
-    def scrape_all(self) -> List[KauflandProduct]:
-        """Scrape all offer pages"""
-        all_products = []
-        
-        offer_urls = [
-            f"{self.BASE_URL}/aktualni-predlozheniya/oferti.html",
-            f"{self.BASE_URL}/aktualni-predlozheniya/ot-ponedelnik.html",
-            f"{self.BASE_URL}/aktualni-predlozheniya/ot-sryada.html",
-        ]
-        
-        for url in offer_urls:
-            products = self.scrape_offers_page(url)
-            all_products.extend(products)
-            
-            # Delay between pages
-            time.sleep(random.uniform(3, 6))
-        
-        logger.info(f"Total products scraped: {len(all_products)}")
-        return all_products
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36",
+        "Accept-Language": "bg-BG,bg;q=0.9",
+    }
     
-    def save_to_json(self, products: List[KauflandProduct], output_path: Optional[Path] = None):
-        """Save products to JSON"""
-        if output_path is None:
-            output_path = Path(__file__).parent.parent / "data" / "kaufland_enhanced.json"
+    logger.info(f"Fetching {url}")
+    resp = requests.get(url, headers=headers, timeout=60)
+    resp.raise_for_status()
+    
+    html = resp.text
+    logger.info(f"Page size: {len(html)} bytes")
+    
+    # Extract all klNr entries
+    kl_matches = list(re.finditer(r'"klNr":"([0-9]+)"', html))
+    logger.info(f"Found {len(kl_matches)} klNr entries")
+    
+    products = []
+    seen = set()
+    
+    for m in kl_matches:
+        kl = m.group(1)
+        if kl in seen:
+            continue
+        seen.add(kl)
         
-        output_path.parent.mkdir(parents=True, exist_ok=True)
+        # Look backwards and forwards for associated data
+        # Go back up to 1000 chars to find title, forward 2000 for description
+        start = max(0, m.start() - 1000)
+        end = min(len(html), m.start() + 2500)
+        context = html[start:end]
         
-        data = [asdict(p) for p in products]
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+        # Extract all available fields
+        title_m = re.search(r'"title":"([^"]+)"', context)
+        subtitle_m = re.search(r'"subtitle":"([^"]*)"', context)
+        detail_title_m = re.search(r'"detailTitle":"([^"]*)"', context)
+        desc_m = re.search(r'"detailDescription":"([^"]*)"', context)
+        price_m = re.search(r'"price":([\d.]+)', context)
+        old_price_m = re.search(r'"oldPrice":([\d.]+)', context)
+        image_m = re.search(r'"listImage":"([^"]+)"', context)
         
-        logger.info(f"Saved {len(products)} products to {output_path}")
-        return output_path
+        if not title_m:
+            continue
+        
+        title = title_m.group(1)
+        subtitle = subtitle_m.group(1) if subtitle_m else None
+        detail_title = detail_title_m.group(1) if detail_title_m else None
+        description = desc_m.group(1).replace('\\n', ' | ') if desc_m else None
+        price = float(price_m.group(1)) if price_m else None
+        old_price = float(old_price_m.group(1)) if old_price_m else None
+        image_url = image_m.group(1) if image_m else None
+        
+        # Calculate discount
+        discount_pct = None
+        if price and old_price and old_price > price:
+            discount_pct = int(100 * (old_price - price) / old_price)
+        
+        # Extract size - try multiple sources
+        size_val, size_unit = None, None
+        
+        # 1. Try subtitle (often has size like "400 г")
+        if subtitle:
+            size_val, size_unit = extract_size(subtitle)
+        
+        # 2. Try description
+        if not size_val and description:
+            size_val, size_unit = extract_size(description)
+        
+        # 3. Try title
+        if not size_val:
+            size_val, size_unit = extract_size(title)
+        
+        # Extract brand - try multiple sources
+        brand = extract_brand(title)
+        if not brand and description:
+            brand = extract_brand(description)
+        if not brand and detail_title:
+            brand = extract_brand(detail_title)
+        
+        products.append(KauflandProduct(
+            kl_nr=kl,
+            title=title,
+            detail_title=detail_title,
+            subtitle=subtitle,
+            description=description,
+            price=price,
+            old_price=old_price,
+            discount_pct=discount_pct,
+            size_value=size_val,
+            size_unit=size_unit,
+            brand=brand,
+            image_url=image_url,
+        ))
+    
+    logger.info(f"Extracted {len(products)} unique products")
+    return products
 
 
 def main():
-    """Run the enhanced scraper"""
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s [%(levelname)s] %(name)s: %(message)s'
-    )
-    
-    scraper = KauflandEnhancedScraper()
-    products = scraper.scrape_all()
-    
-    # Save
-    scraper.save_to_json(products)
-    
-    # Stats
-    with_size = sum(1 for p in products if p.size_value)
-    with_brand = sum(1 for p in products if p.brand)
-    with_detail = sum(1 for p in products if p.detail_description)
+    products = scrape_kaufland_enhanced()
     
     print(f"\n{'='*60}")
-    print(f"KAUFLAND ENHANCED SCRAPE COMPLETE")
+    print("KAUFLAND ENHANCED SCRAPE COMPLETE")
     print(f"{'='*60}")
     print(f"Total products: {len(products)}")
+    
+    with_size = sum(1 for p in products if p.size_value)
+    with_brand = sum(1 for p in products if p.brand)
+    with_price = sum(1 for p in products if p.price)
+    with_desc = sum(1 for p in products if p.description)
+    
     print(f"With size: {with_size} ({100*with_size/max(1,len(products)):.1f}%)")
     print(f"With brand: {with_brand} ({100*with_brand/max(1,len(products)):.1f}%)")
-    print(f"With detail description: {with_detail} ({100*with_detail/max(1,len(products)):.1f}%)")
+    print(f"With price: {with_price} ({100*with_price/max(1,len(products)):.1f}%)")
+    print(f"With description: {with_desc} ({100*with_desc/max(1,len(products)):.1f}%)")
+    
+    print(f"\n{'='*60}")
+    print("SAMPLE PRODUCTS")
+    print(f"{'='*60}")
+    
+    # Show products WITH descriptions
+    sample = [p for p in products if p.description][:10]
+    for p in sample:
+        print(f"\nTitle: {p.title}")
+        print(f"  Detail: {p.detail_title}")
+        print(f"  Subtitle: {p.subtitle}")
+        print(f"  Description: {p.description[:80] if p.description else None}...")
+        print(f"  Brand: {p.brand} | Size: {p.size_value} {p.size_unit} | Price: {p.price}")
+    
+    # Save
+    output = Path(__file__).parent.parent / "data" / "kaufland_enhanced.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with open(output, 'w', encoding='utf-8') as f:
+        json.dump([asdict(p) for p in products], f, ensure_ascii=False, indent=2)
+    
+    print(f"\n✅ Saved to {output}")
 
 
 if __name__ == '__main__':
