@@ -17,19 +17,20 @@ Research findings (2026-02-13):
 
 Usage:
     scraper = LidlProductScraper()
-    products = await scraper.scrape_products(product_urls)
+    products = scraper.scrape_products(product_urls)
     scraper.save_to_db()
 """
 
 import json
 import logging
 import re
+import sqlite3
 import time
 import random
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional, List, Dict, Any
-from datetime import datetime
+from datetime import datetime, timezone
 
 import requests
 
@@ -45,6 +46,7 @@ from services.scraper.core.retry_handler import RetryHandler, RetryConfig
 logger = logging.getLogger(__name__)
 
 DOMAIN = "www.lidl.bg"
+LIDL_STORE_ID = 2
 
 
 @dataclass
@@ -79,7 +81,7 @@ class LidlProductData:
     availability_type: Optional[str] = None  # SCHEDULED, IN_STORE, SOLD_OUT
     
     # Metadata
-    scraped_at: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    scraped_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -114,6 +116,7 @@ class LidlProductScraper:
     def __init__(self, db_path: Optional[Path] = None):
         self.db_path = db_path or Path(__file__).parent.parent.parent.parent / "data" / "promobg.db"
         self.products: List[LidlProductData] = []
+        self.checkpoint_file = self.db_path.parent / "lidl_checkpoint.json"
         
         # Infrastructure setup
         self.session_manager = SessionManager(config=SessionConfig(
@@ -123,10 +126,7 @@ class LidlProductScraper:
         ))
         
         self.rate_limiter = DomainRateLimiter()
-        # Uses default config for lidl.bg (10 req/min, 3s min delay)
-        
         self.circuit_breaker = CircuitBreaker(name="lidl_product")
-        
         self.retry_handler = RetryHandler(RetryConfig(
             max_attempts=3,
             base_delay=5.0,
@@ -238,10 +238,7 @@ class LidlProductScraper:
             return f"в магазините от {scheduled.group(1)}", "SCHEDULED"
         
         # Look for "available from" single date
-        from_date = re.search(
-            r'от\s+(\d{2}\.\d{2}\.)',
-            html
-        )
+        from_date = re.search(r'от\s+(\d{2}\.\d{2}\.)', html)
         if from_date:
             return f"от {from_date.group(1)}", "UPCOMING"
         
@@ -279,6 +276,22 @@ class LidlProductScraper:
         clean = ' '.join(clean.split())
         return clean.strip() if clean else None
     
+    def _fetch_with_retry(self, url: str) -> Optional[requests.Response]:
+        """Fetch URL with retry logic and circuit breaker."""
+        def _do_fetch():
+            if self.circuit_breaker.is_open():
+                raise Exception("Circuit breaker is open")
+            session = self.session_manager.get_session(DOMAIN)
+            response = session.get(url, timeout=30)
+            response.raise_for_status()
+            return response
+        
+        try:
+            return self.retry_handler.execute(_do_fetch)
+        except Exception as e:
+            logger.error(f"All retries failed for {url}: {e}")
+            return None
+    
     def fetch_product(self, url: str) -> Optional[LidlProductData]:
         """
         Fetch and parse a single product page.
@@ -293,15 +306,23 @@ class LidlProductScraper:
         time.sleep(random.uniform(1.0, 3.0))
         
         try:
-            session = self.session_manager.get_session(DOMAIN)
-            response = session.get(url, timeout=30)
-            response.raise_for_status()
+            response = self._fetch_with_retry(url)
+            if not response:
+                self.circuit_breaker.record_failure()
+                return None
+            
             html = response.text
             
             # Extract JSON-LD
             json_ld = self._extract_json_ld(html)
             if not json_ld:
                 logger.warning(f"No JSON-LD found for {url}")
+                return None
+            
+            # Validate SKU exists
+            sku = json_ld.get('sku')
+            if not sku:
+                logger.warning(f"Missing SKU for {url}")
                 return None
             
             # Extract prices from HTML (NOT from JSON-LD!)
@@ -318,7 +339,7 @@ class LidlProductScraper:
             
             # Build product data
             product = LidlProductData(
-                sku=json_ld.get('sku', ''),
+                sku=sku,
                 product_url=url,
                 name=json_ld.get('name', ''),
                 description=self._clean_description(json_ld.get('description')),
@@ -334,22 +355,65 @@ class LidlProductScraper:
                 availability_type=avail_type,
             )
             
+            self.circuit_breaker.record_success()
             logger.info(f"Scraped: {product.name} - {price_bgn} лв - {size_raw} - {avail_text}")
             return product
             
         except requests.RequestException as e:
             logger.error(f"Failed to fetch {url}: {e}")
+            self.circuit_breaker.record_failure()
             return None
         except Exception as e:
-            logger.error(f"Error parsing {url}: {e}")
+            logger.exception(f"Error parsing {url}")
+            self.circuit_breaker.record_failure()
             return None
     
-    def scrape_products(self, urls: List[str], checkpoint_every: int = 10) -> List[LidlProductData]:
-        """Scrape multiple product pages."""
-        total = len(urls)
-        logger.info(f"Starting scrape of {total} Lidl products")
+    def _save_checkpoint(self, processed_urls: List[str]):
+        """Save checkpoint - OVERWRITES existing file."""
+        checkpoint_data = {
+            'processed_urls': processed_urls,
+            'products': [p.to_dict() for p in self.products],
+            'timestamp': datetime.now(timezone.utc).isoformat()
+        }
+        with open(self.checkpoint_file, 'w', encoding='utf-8') as f:
+            json.dump(checkpoint_data, f, ensure_ascii=False, indent=2)
+        logger.info(f"Checkpoint saved: {len(processed_urls)} processed")
+    
+    def _load_checkpoint(self) -> tuple[List[str], List[LidlProductData]]:
+        """Load checkpoint if exists."""
+        if not self.checkpoint_file.exists():
+            return [], []
         
-        for i, url in enumerate(urls, 1):
+        try:
+            with open(self.checkpoint_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            products = [LidlProductData(**p) for p in data.get('products', [])]
+            return data.get('processed_urls', []), products
+        except Exception as e:
+            logger.warning(f"Failed to load checkpoint: {e}")
+            return [], []
+    
+    def _delete_checkpoint(self):
+        """Delete checkpoint file on successful completion."""
+        if self.checkpoint_file.exists():
+            self.checkpoint_file.unlink()
+            logger.info("Checkpoint file deleted")
+    
+    def scrape_products(self, urls: List[str], checkpoint_every: int = 10) -> List[LidlProductData]:
+        """Scrape multiple product pages with checkpoint support."""
+        # Load checkpoint
+        processed_urls, self.products = self._load_checkpoint()
+        if processed_urls:
+            logger.info(f"Resuming from checkpoint: {len(processed_urls)} already processed")
+        
+        # Filter already processed
+        remaining = [u for u in urls if u not in processed_urls]
+        total = len(urls)
+        
+        logger.info(f"Starting scrape: {len(remaining)} remaining of {total} total")
+        
+        for i, url in enumerate(remaining, len(processed_urls) + 1):
             if self.circuit_breaker.is_open():
                 logger.error("Circuit breaker open - stopping scrape")
                 break
@@ -357,15 +421,14 @@ class LidlProductScraper:
             product = self.fetch_product(url)
             if product:
                 self.products.append(product)
-                self.circuit_breaker.record_success()
-            else:
-                self.circuit_breaker.record_failure()
+            
+            processed_urls.append(url)
             
             if i % 10 == 0:
                 logger.info(f"Progress: {i}/{total} ({len(self.products)} successful)")
             
             if checkpoint_every and i % checkpoint_every == 0:
-                self._save_checkpoint(i)
+                self._save_checkpoint(processed_urls)
             
             if i % 50 == 0:
                 pause = random.uniform(30, 60)
@@ -375,55 +438,24 @@ class LidlProductScraper:
         logger.info(f"Scrape complete: {len(self.products)}/{total} products")
         return self.products
     
-    def _save_checkpoint(self, count: int):
-        """Save intermediate results."""
-        checkpoint_file = self.db_path.parent / f"lidl_checkpoint_{count}.json"
-        with open(checkpoint_file, 'w', encoding='utf-8') as f:
-            json.dump([p.to_dict() for p in self.products], f, ensure_ascii=False, indent=2)
-        logger.info(f"Checkpoint saved: {checkpoint_file}")
-    
     def save_to_db(self):
         """Save products to SQLite database."""
-        import sqlite3
-        
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        
-        for product in self.products:
-            cursor.execute("""
-                UPDATE products SET
-                    price = ?,
-                    original_price = ?,
-                    description = ?,
-                    size = ?,
-                    size_unit = ?,
-                    image_url = ?,
-                    brand = ?,
-                    scraped_at = ?
-                WHERE store_id = 2 AND product_code = ?
-            """, (
-                product.price_bgn,
-                product.old_price_bgn,
-                product.description,
-                str(product.size_value) if product.size_value else product.size_raw,
-                product.size_unit,
-                product.image_url,
-                product.brand,
-                product.scraped_at,
-                product.sku,
-            ))
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
             
-            if cursor.rowcount == 0:
+            for product in self.products:
                 cursor.execute("""
-                    INSERT INTO products (
-                        store_id, product_code, name, price, original_price,
-                        description, size, size_unit, image_url, brand, 
-                        product_url, scraped_at
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    UPDATE products SET
+                        price = ?,
+                        original_price = ?,
+                        description = ?,
+                        size = ?,
+                        size_unit = ?,
+                        image_url = ?,
+                        brand = ?,
+                        scraped_at = ?
+                    WHERE store_id = ? AND product_code = ?
                 """, (
-                    2,
-                    product.sku,
-                    product.name,
                     product.price_bgn,
                     product.old_price_bgn,
                     product.description,
@@ -431,30 +463,48 @@ class LidlProductScraper:
                     product.size_unit,
                     product.image_url,
                     product.brand,
-                    product.product_url,
                     product.scraped_at,
+                    LIDL_STORE_ID,
+                    product.sku,
                 ))
+                
+                if cursor.rowcount == 0:
+                    cursor.execute("""
+                        INSERT INTO products (
+                            store_id, product_code, name, price, original_price,
+                            description, size, size_unit, image_url, brand, 
+                            product_url, scraped_at
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """, (
+                        LIDL_STORE_ID,
+                        product.sku,
+                        product.name,
+                        product.price_bgn,
+                        product.old_price_bgn,
+                        product.description,
+                        str(product.size_value) if product.size_value else product.size_raw,
+                        product.size_unit,
+                        product.image_url,
+                        product.brand,
+                        product.product_url,
+                        product.scraped_at,
+                    ))
+            
+            conn.commit()
+            logger.info(f"Saved {len(self.products)} products to database")
         
-        conn.commit()
-        logger.info(f"Saved {len(self.products)} products to database")
-        conn.close()
+        # Delete checkpoint on successful save
+        self._delete_checkpoint()
     
     def get_existing_product_urls(self) -> List[str]:
         """Get URLs for products already in database."""
-        import sqlite3
-        
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        
-        cursor.execute("""
-            SELECT product_url FROM products 
-            WHERE store_id = 2 AND product_url IS NOT NULL
-        """)
-        
-        urls = [row[0] for row in cursor.fetchall()]
-        conn.close()
-        
-        return urls
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT product_url FROM products 
+                WHERE store_id = ? AND product_url IS NOT NULL
+            """, (LIDL_STORE_ID,))
+            return [row[0] for row in cursor.fetchall()]
 
 
 def main():
@@ -482,8 +532,8 @@ def main():
     
     print(f"\n=== SCRAPE SUMMARY ===")
     print(f"Products scraped: {len(products)}")
-    print(f"With BGN price: {prices_found} ({100*prices_found/len(products):.1f}%)")
-    print(f"With size: {sizes_found} ({100*sizes_found/len(products):.1f}%)")
+    print(f"With BGN price: {prices_found} ({100*prices_found/len(products):.1f}%)" if products else "")
+    print(f"With size: {sizes_found} ({100*sizes_found/len(products):.1f}%)" if products else "")
 
 
 if __name__ == "__main__":
