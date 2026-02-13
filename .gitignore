@@ -57,3 +57,5 @@ data/cache/
 # Scraped content (can be large)
 scraped/
 brochures/
+*.db-shm
+*.db-wal
