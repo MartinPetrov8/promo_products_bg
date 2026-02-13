@@ -6,13 +6,14 @@ Fetches individual product pages to extract accurate data:
 - BGN price from HTML (not EUR from JSON-LD!)
 - Size/weight from keyfacts HTML
 - Description from JSON-LD
-- Availability status
+- Detailed availability (scheduled dates, not just OutOfStock)
 
 Research findings (2026-02-13):
 - JSON-LD contains EUR price (4.60€), NOT BGN
+- JSON-LD priceCurrency says "BGN" but value is EUR - MISLEADING!
 - BGN price (9.00 лв) is ONLY in rendered HTML
 - Size ("600 g/опаковка") is in keyfacts HTML section
-- JSON-LD has: sku, name, description, availability, image
+- Availability like "в магазините от 16.02. - 22.02." in HTML
 
 Usage:
     scraper = LidlProductScraper()
@@ -73,8 +74,9 @@ class LidlProductData:
     size_value: Optional[float] = None  # e.g., 600
     size_unit: Optional[str] = None  # e.g., "g"
     
-    # Availability (from JSON-LD)
-    availability: Optional[str] = None  # InStoreOnly, InStock, OutOfStock
+    # Availability - detailed from HTML
+    availability: Optional[str] = None  # e.g., "в магазините от 16.02. - 22.02."
+    availability_type: Optional[str] = None  # SCHEDULED, IN_STORE, SOLD_OUT
     
     # Metadata
     scraped_at: str = field(default_factory=lambda: datetime.utcnow().isoformat())
@@ -94,6 +96,7 @@ class LidlProductData:
             'size_value': self.size_value,
             'size_unit': self.size_unit,
             'availability': self.availability,
+            'availability_type': self.availability_type,
             'scraped_at': self.scraped_at,
         }
 
@@ -102,8 +105,10 @@ class LidlProductScraper:
     """
     Scrapes individual Lidl product pages for accurate data.
     
-    Key insight: JSON-LD prices are in EUR, but we need BGN!
-    Must extract BGN price from rendered HTML.
+    Key insights:
+    - JSON-LD price is EUR (even when priceCurrency says BGN!)
+    - Must extract BGN price from rendered HTML
+    - Availability text like "в магазините от X - Y" is in HTML
     """
     
     def __init__(self, db_path: Optional[Path] = None):
@@ -130,12 +135,7 @@ class LidlProductScraper:
         ))
     
     def _extract_json_ld(self, html: str) -> Optional[Dict[str, Any]]:
-        """
-        Extract Product schema.org JSON-LD from page.
-        
-        Returns dict with: sku, name, description, image, brand, offers
-        Note: offers.price is in EUR, not BGN!
-        """
+        """Extract Product schema.org JSON-LD from page."""
         pattern = r'<script type="application/ld\+json">(\{"@context":"http://schema\.org","@type":"Product"[^<]+)</script>'
         match = re.search(pattern, html)
         if not match:
@@ -151,12 +151,10 @@ class LidlProductScraper:
         """
         Extract BGN price from rendered HTML.
         
-        The price in JSON-LD is EUR! Must get BGN from HTML.
-        Looks for: <div class="ods-price__value">9.00ЛВ.*</div>
-        
-        Returns: (current_price, old_price)
+        JSON-LD price is EUR even when priceCurrency says BGN!
+        Must get real BGN from HTML: <div class="ods-price__value">9.00ЛВ.*</div>
         """
-        # Current BGN price - look for лв/ЛВ after number
+        # Current BGN price
         current_match = re.search(
             r'ods-price__value[^>]*>(\d+[,\.]\d{2})\s*(?:лв|ЛВ)',
             html,
@@ -169,7 +167,7 @@ class LidlProductScraper:
             except ValueError:
                 pass
         
-        # Old/crossed-out price (if on sale)
+        # Old/crossed-out price
         old_match = re.search(
             r'ods-price--strikethrough[^>]*>(\d+[,\.]\d{2})\s*(?:лв|ЛВ)',
             html,
@@ -198,16 +196,8 @@ class LidlProductScraper:
         """
         Extract size/weight from keyfacts HTML.
         
-        Patterns:
-          - "600 g/опаковка"
-          - "1.5 l/опаковка"  
-          - "500 ml/опаковка"
-          - "1 kg/опаковка"
-          - "6 бр./опаковка" (pieces)
-        
-        Returns: (raw_size, numeric_value, unit)
+        Patterns: "600 g/опаковка", "1.5 l/опаковка", "1 kg/опаковка"
         """
-        # Pattern for size with unit before /опаковка
         patterns = [
             (r'(\d+(?:[,\.]\d+)?)\s*(g|kg|ml|l|л)\s*/\s*опаковка', None),
             (r'(\d+(?:[,\.]\d+)?)\s*(бр)\.?\s*/\s*опаковка', 'бр'),
@@ -219,7 +209,6 @@ class LidlProductScraper:
                 try:
                     value = float(match.group(1).replace(',', '.'))
                     unit = force_unit or match.group(2).lower()
-                    # Normalize units
                     if unit == 'л':
                         unit = 'l'
                     raw = f"{match.group(1)} {unit}/опаковка"
@@ -229,15 +218,51 @@ class LidlProductScraper:
         
         return None, None, None
     
-    def _extract_availability(self, json_ld: Optional[Dict]) -> Optional[str]:
-        """Extract availability from JSON-LD offers."""
+    def _extract_availability_detailed(self, html: str) -> tuple[Optional[str], Optional[str]]:
+        """
+        Extract detailed availability from HTML.
+        
+        Lidl has special availability types:
+        - "в магазините от 16.02. - 22.02." = scheduled/upcoming
+        - "Налично в магазина" = in store now
+        - "Изчерпано" = sold out
+        
+        Returns: (availability_text, availability_type)
+        """
+        # Look for scheduled availability (future date range)
+        scheduled = re.search(
+            r'в магазините от (\d{2}\.\d{2}\.?\s*-\s*\d{2}\.\d{2}\.?)',
+            html
+        )
+        if scheduled:
+            return f"в магазините от {scheduled.group(1)}", "SCHEDULED"
+        
+        # Look for "available from" single date
+        from_date = re.search(
+            r'от\s+(\d{2}\.\d{2}\.)',
+            html
+        )
+        if from_date:
+            return f"от {from_date.group(1)}", "UPCOMING"
+        
+        # Check for in-store availability
+        if re.search(r'наличн[оа]\s+в\s+магазин', html, re.IGNORECASE):
+            return "Налично в магазина", "IN_STORE"
+        
+        # Check for sold out
+        if re.search(r'изчерпан[оа]', html, re.IGNORECASE):
+            return "Изчерпано", "SOLD_OUT"
+        
+        return None, None
+    
+    def _extract_availability_jsonld(self, json_ld: Optional[Dict]) -> Optional[str]:
+        """Extract availability from JSON-LD (fallback)."""
         if not json_ld:
             return None
         
         offers = json_ld.get('offers', [])
         if offers and isinstance(offers, list) and len(offers) > 0:
             avail = offers[0].get('availability', '')
-            # Extract just the status: "InStoreOnly", "InStock", "OutOfStock"
             if 'InStoreOnly' in avail:
                 return 'InStoreOnly'
             elif 'InStock' in avail:
@@ -250,9 +275,7 @@ class LidlProductScraper:
         """Clean HTML from description."""
         if not desc:
             return None
-        # Remove HTML tags
         clean = re.sub(r'<[^>]+>', ' ', desc)
-        # Normalize whitespace
         clean = ' '.join(clean.split())
         return clean.strip() if clean else None
     
@@ -260,9 +283,8 @@ class LidlProductScraper:
         """
         Fetch and parse a single product page.
         
-        Extracts:
-          - JSON-LD: sku, name, description, image, brand, availability
-          - HTML: BGN price (!important), size/weight
+        Extracts from JSON-LD: sku, name, description, image, brand
+        Extracts from HTML: BGN price, size, detailed availability
         """
         # Rate limiting
         self.rate_limiter.wait(url)
@@ -289,6 +311,11 @@ class LidlProductScraper:
             # Extract size from HTML
             size_raw, size_value, size_unit = self._extract_size(html)
             
+            # Extract detailed availability from HTML
+            avail_text, avail_type = self._extract_availability_detailed(html)
+            if not avail_text:
+                avail_text = self._extract_availability_jsonld(json_ld)
+            
             # Build product data
             product = LidlProductData(
                 sku=json_ld.get('sku', ''),
@@ -303,10 +330,11 @@ class LidlProductScraper:
                 size_raw=size_raw,
                 size_value=size_value,
                 size_unit=size_unit,
-                availability=self._extract_availability(json_ld),
+                availability=avail_text,
+                availability_type=avail_type,
             )
             
-            logger.info(f"Scraped: {product.name} - {price_bgn} лв - {size_raw}")
+            logger.info(f"Scraped: {product.name} - {price_bgn} лв - {size_raw} - {avail_text}")
             return product
             
         except requests.RequestException as e:
@@ -317,16 +345,7 @@ class LidlProductScraper:
             return None
     
     def scrape_products(self, urls: List[str], checkpoint_every: int = 10) -> List[LidlProductData]:
-        """
-        Scrape multiple product pages.
-        
-        Args:
-            urls: List of product page URLs
-            checkpoint_every: Save checkpoint every N products
-        
-        Returns:
-            List of scraped products
-        """
+        """Scrape multiple product pages."""
         total = len(urls)
         logger.info(f"Starting scrape of {total} Lidl products")
         
@@ -342,15 +361,12 @@ class LidlProductScraper:
             else:
                 self.circuit_breaker.record_failure()
             
-            # Progress logging
             if i % 10 == 0:
                 logger.info(f"Progress: {i}/{total} ({len(self.products)} successful)")
             
-            # Checkpoint
             if checkpoint_every and i % checkpoint_every == 0:
                 self._save_checkpoint(i)
             
-            # Coffee break every 50 requests
             if i % 50 == 0:
                 pause = random.uniform(30, 60)
                 logger.info(f"Coffee break: {pause:.0f}s")
@@ -373,7 +389,6 @@ class LidlProductScraper:
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
-        # Update existing products or insert new
         for product in self.products:
             cursor.execute("""
                 UPDATE products SET
@@ -399,7 +414,6 @@ class LidlProductScraper:
             ))
             
             if cursor.rowcount == 0:
-                # Insert new product
                 cursor.execute("""
                     INSERT INTO products (
                         store_id, product_code, name, price, original_price,
@@ -407,7 +421,7 @@ class LidlProductScraper:
                         product_url, scraped_at
                     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
-                    2,  # Lidl store_id
+                    2,
                     product.sku,
                     product.name,
                     product.price_bgn,
@@ -426,7 +440,7 @@ class LidlProductScraper:
         conn.close()
     
     def get_existing_product_urls(self) -> List[str]:
-        """Get URLs for products already in database that need updating."""
+        """Get URLs for products already in database."""
         import sqlite3
         
         conn = sqlite3.connect(self.db_path)
@@ -451,8 +465,6 @@ def main():
     )
     
     scraper = LidlProductScraper()
-    
-    # Get URLs from database
     urls = scraper.get_existing_product_urls()
     
     if not urls:
@@ -460,15 +472,11 @@ def main():
         return
     
     logger.info(f"Found {len(urls)} products to update")
-    
-    # Scrape products
     products = scraper.scrape_products(urls)
     
-    # Save to database
     if products:
         scraper.save_to_db()
     
-    # Summary
     prices_found = sum(1 for p in products if p.price_bgn)
     sizes_found = sum(1 for p in products if p.size_value)
     
