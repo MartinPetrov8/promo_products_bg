@@ -444,13 +444,21 @@ class LidlProductScraper:
         return price is not None and 0.01 <= price <= 10000.0
     
     def save_to_db(self):
-        """Save products to SQLite database with transaction safety."""
+        """Save products to normalized SQLite database with transaction safety."""
+        if not self.products:
+            logger.warning("No products to save")
+            return
+        
+        now = datetime.now(timezone.utc).isoformat()
+        
         conn = sqlite3.connect(self.db_path)
         try:
             cursor = conn.cursor()
+            cursor.execute("PRAGMA foreign_keys = ON")
             cursor.execute("BEGIN TRANSACTION")
+            updated = 0
+            inserted = 0
             skipped = 0
-            saved = 0
             
             for product in self.products:
                 # Validate price
@@ -458,55 +466,118 @@ class LidlProductScraper:
                     logger.warning(f"Invalid price {product.price_bgn} for {product.sku}, skipping")
                     skipped += 1
                     continue
-                saved += 1
-                cursor.execute("""
-                    UPDATE products SET
-                        price = ?,
-                        original_price = ?,
-                        description = ?,
-                        size = ?,
-                        size_unit = ?,
-                        image_url = ?,
-                        brand = ?,
-                        scraped_at = ?
-                    WHERE store_id = ? AND product_code = ?
-                """, (
-                    product.price_bgn,
-                    product.old_price_bgn,
-                    product.description,
-                    str(product.size_value) if product.size_value else product.size_raw,
-                    product.size_unit,
-                    product.image_url,
-                    product.brand,
-                    product.scraped_at,
-                    LIDL_STORE_ID,
-                    product.sku,
-                ))
                 
-                if cursor.rowcount == 0:
+                # Find existing store_product by SKU
+                cursor.execute("""
+                    SELECT sp.id, sp.product_id FROM store_products sp
+                    WHERE sp.store_id = ? AND sp.store_product_code = ?
+                """, (LIDL_STORE_ID, product.sku))
+                
+                row = cursor.fetchone()
+                
+                if row:
+                    store_product_id, product_id = row
+                    
+                    # Update store_product
                     cursor.execute("""
-                        INSERT INTO products (
-                            store_id, product_code, name, price, original_price,
-                            description, size, size_unit, image_url, brand, 
-                            product_url, scraped_at
-                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    """, (
-                        LIDL_STORE_ID,
-                        product.sku,
-                        product.name,
-                        product.price_bgn,
-                        product.old_price_bgn,
-                        product.description,
-                        str(product.size_value) if product.size_value else product.size_raw,
-                        product.size_unit,
-                        product.image_url,
-                        product.brand,
-                        product.product_url,
-                        product.scraped_at,
-                    ))
+                        UPDATE store_products SET
+                            store_product_url = COALESCE(?, store_product_url),
+                            store_image_url = COALESCE(?, store_image_url),
+                            package_size = COALESCE(?, package_size),
+                            last_seen_at = ?,
+                            scraped_at = ?,
+                            updated_at = ?
+                        WHERE id = ?
+                    """, (product.product_url, product.image_url, product.size_raw,
+                          now, now, now, store_product_id))
+                    
+                    # Update product
+                    cursor.execute("""
+                        UPDATE products SET
+                            brand = COALESCE(?, brand),
+                            quantity = COALESCE(?, quantity),
+                            unit = COALESCE(?, unit),
+                            description = COALESCE(?, description),
+                            updated_at = ?
+                        WHERE id = ?
+                    """, (product.brand, product.size_value, product.size_unit,
+                          product.description, now, product_id))
+                    
+                    # Update or insert price
+                    if product.price_bgn:
+                        cursor.execute("""
+                            SELECT id FROM prices 
+                            WHERE store_product_id = ? 
+                            ORDER BY created_at DESC LIMIT 1
+                        """, (store_product_id,))
+                        
+                        price_row = cursor.fetchone()
+                        discount_pct = None
+                        if product.old_price_bgn and product.old_price_bgn > product.price_bgn:
+                            discount_pct = round((1 - product.price_bgn / product.old_price_bgn) * 100, 1)
+                        
+                        if price_row:
+                            cursor.execute("""
+                                UPDATE prices SET
+                                    current_price = ?,
+                                    old_price = ?,
+                                    discount_percent = ?,
+                                    currency = 'BGN',
+                                    updated_at = ?
+                                WHERE id = ?
+                            """, (product.price_bgn, product.old_price_bgn, discount_pct,
+                                  now, price_row[0]))
+                        else:
+                            cursor.execute("""
+                                INSERT INTO prices (
+                                    store_product_id, current_price, old_price, discount_percent,
+                                    currency, valid_from, created_at, updated_at
+                                ) VALUES (?, ?, ?, ?, 'BGN', ?, ?, ?)
+                            """, (store_product_id, product.price_bgn, product.old_price_bgn,
+                                  discount_pct, now, now, now))
+                    
+                    updated += 1
+                else:
+                    # Insert new product
+                    cursor.execute("""
+                        INSERT INTO products (name, normalized_name, brand, quantity, unit, 
+                                            description, created_at, updated_at)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    """, (product.name, product.name.lower(), product.brand, product.size_value,
+                          product.size_unit or 'бр', product.description, now, now))
+                    
+                    product_id = cursor.lastrowid
+                    
+                    # Insert store_product
+                    cursor.execute("""
+                        INSERT INTO store_products (
+                            product_id, store_id, store_product_code, store_product_url,
+                            store_image_url, package_size, last_seen_at, first_seen_at,
+                            scraped_at, created_at, updated_at
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """, (product_id, LIDL_STORE_ID, product.sku, product.product_url,
+                          product.image_url, product.size_raw, now, now, now, now, now))
+                    
+                    store_product_id = cursor.lastrowid
+                    
+                    # Insert price
+                    if product.price_bgn:
+                        discount_pct = None
+                        if product.old_price_bgn and product.old_price_bgn > product.price_bgn:
+                            discount_pct = round((1 - product.price_bgn / product.old_price_bgn) * 100, 1)
+                        
+                        cursor.execute("""
+                            INSERT INTO prices (
+                                store_product_id, current_price, old_price, discount_percent,
+                                currency, valid_from, created_at, updated_at
+                            ) VALUES (?, ?, ?, ?, 'BGN', ?, ?, ?)
+                        """, (store_product_id, product.price_bgn, product.old_price_bgn,
+                              discount_pct, now, now, now))
+                    
+                    inserted += 1
             
             conn.commit()
-            logger.info(f"Saved {saved} products to database ({skipped} skipped)")
+            logger.info(f"Saved to database: {updated} updated, {inserted} inserted, {skipped} skipped")
         except Exception as e:
             conn.rollback()
             logger.error(f"Database error, transaction rolled back: {e}")
