@@ -677,3 +677,32 @@ git push origin main
 ---
 
 *Last updated: 2026-02-11 21:50 UTC*
+
+---
+
+## To-Do: OCR-Based Scraper (Added 2026-02-13)
+
+### Why
+- Broshura.bg and Publitas (Billa brochures) serve images/PDFs, not structured data
+- Need to extract: product names, prices, descriptions, promo percentages from visual content
+- Inevitable for full coverage of Bulgarian grocery promos
+
+### Research Tasks
+- [ ] Evaluate OCR engines for Bulgarian text:
+  - PaddleOCR (good non-English support)
+  - Tesseract (free, local)
+  - Google Vision API (paid, high accuracy)
+  - EasyOCR (supports Bulgarian)
+- [ ] Research Publitas API patterns (may have underlying image URLs)
+- [ ] Test OCR accuracy on sample brochure pages
+- [ ] Design pipeline: image capture → OCR → structured data extraction
+- [ ] Handle layout detection (price near product name association)
+
+### Target Sources
+- Publitas flipbooks (Billa brochures)
+- Broshura.bg PDFs
+- Other retailer brochure images
+
+### Blocked Until
+- Current scrapers complete and working
+- Research phase done

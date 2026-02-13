@@ -22,6 +22,7 @@ Usage:
 """
 
 import json
+import fcntl
 import logging
 import re
 import sqlite3
@@ -279,7 +280,7 @@ class LidlProductScraper:
     def _fetch_with_retry(self, url: str) -> Optional[requests.Response]:
         """Fetch URL with retry logic and circuit breaker."""
         def _do_fetch():
-            if self.circuit_breaker.is_open():
+            if self.circuit_breaker.is_open:
                 raise Exception("Circuit breaker is open")
             session = self.session_manager.get_session(DOMAIN)
             response = session.get(url, timeout=30)
@@ -414,7 +415,7 @@ class LidlProductScraper:
         logger.info(f"Starting scrape: {len(remaining)} remaining of {total} total")
         
         for i, url in enumerate(remaining, len(processed_urls) + 1):
-            if self.circuit_breaker.is_open():
+            if self.circuit_breaker.is_open:
                 logger.error("Circuit breaker open - stopping scrape")
                 break
             
@@ -438,12 +439,26 @@ class LidlProductScraper:
         logger.info(f"Scrape complete: {len(self.products)}/{total} products")
         return self.products
     
+    def _validate_price(self, price: float) -> bool:
+        """Validate price is within reasonable bounds."""
+        return price is not None and 0.01 <= price <= 10000.0
+    
     def save_to_db(self):
-        """Save products to SQLite database."""
-        with sqlite3.connect(self.db_path) as conn:
+        """Save products to SQLite database with transaction safety."""
+        conn = sqlite3.connect(self.db_path)
+        try:
             cursor = conn.cursor()
+            cursor.execute("BEGIN TRANSACTION")
+            skipped = 0
+            saved = 0
             
             for product in self.products:
+                # Validate price
+                if product.price_bgn and not self._validate_price(product.price_bgn):
+                    logger.warning(f"Invalid price {product.price_bgn} for {product.sku}, skipping")
+                    skipped += 1
+                    continue
+                saved += 1
                 cursor.execute("""
                     UPDATE products SET
                         price = ?,
@@ -491,7 +506,13 @@ class LidlProductScraper:
                     ))
             
             conn.commit()
-            logger.info(f"Saved {len(self.products)} products to database")
+            logger.info(f"Saved {saved} products to database ({skipped} skipped)")
+        except Exception as e:
+            conn.rollback()
+            logger.error(f"Database error, transaction rolled back: {e}")
+            raise
+        finally:
+            conn.close()
         
         # Delete checkpoint on successful save
         self._delete_checkpoint()

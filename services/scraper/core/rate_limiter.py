@@ -64,6 +64,7 @@ class AdaptiveRateLimiter:
         """
         Wait appropriate time before next request.
         Returns actual wait time.
+        Thread-safe: calculates wait time under lock, sleeps outside.
         """
         with self._lock:
             now = time.time()
@@ -73,12 +74,14 @@ class AdaptiveRateLimiter:
             jittered_delay = self._add_jitter(self.current_delay)
             
             wait_time = max(0, jittered_delay - elapsed)
-            
-            if wait_time > 0:
-                time.sleep(wait_time)
-            
-            self.last_request_time = time.time()
-            return wait_time
+            # Pre-update last_request_time to include planned wait
+            self.last_request_time = now + wait_time
+        
+        # Sleep OUTSIDE lock to avoid blocking other threads
+        if wait_time > 0:
+            time.sleep(wait_time)
+        
+        return wait_time
     
     def _add_jitter(self, delay: float) -> float:
         """Add randomness to delay (human-like behavior)"""

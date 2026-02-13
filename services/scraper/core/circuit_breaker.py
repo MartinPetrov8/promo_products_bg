@@ -184,6 +184,14 @@ class CircuitBreaker:
             self._success_count = 0
             self._last_failure_time = None
     
+    def record_success(self):
+        """Public API to record a successful operation (for manual use outside call())"""
+        self._on_success()
+    
+    def record_failure(self):
+        """Public API to record a failed operation (for manual use outside call())"""
+        self._on_failure()
+    
     @property
     def is_closed(self) -> bool:
         return self.state == CircuitState.CLOSED

@@ -12,7 +12,7 @@ import os
 import json
 import time
 import random
-import pickle
+import json
 import logging
 from pathlib import Path
 from typing import Dict, Optional, List
@@ -300,25 +300,27 @@ class SessionManager:
     def _cookie_path(self, domain: str) -> Path:
         """Get cookie file path for domain"""
         safe_domain = domain.replace(".", "_").replace(":", "_")
-        return self.cookie_dir / f"{safe_domain}_cookies.pkl"
+        return self.cookie_dir / f"{safe_domain}_cookies.json"
     
     def _save_cookies(self, session: BrowserSession, domain: str):
-        """Save session cookies to disk"""
+        """Save session cookies to disk (JSON format for security)"""
         try:
             cookie_path = self._cookie_path(domain)
-            with open(cookie_path, 'wb') as f:
-                pickle.dump(dict(session.session.cookies), f)
+            # Convert cookies to JSON-serializable dict
+            cookies_dict = {k: v for k, v in session.session.cookies.items()}
+            with open(cookie_path, 'w', encoding='utf-8') as f:
+                json.dump(cookies_dict, f)
             logger.debug(f"Saved cookies for {domain}")
         except Exception as e:
             logger.warning(f"Failed to save cookies for {domain}: {e}")
     
     def _load_cookies(self, session: BrowserSession, domain: str):
-        """Load cookies from disk"""
+        """Load cookies from disk (JSON format for security)"""
         try:
             cookie_path = self._cookie_path(domain)
             if cookie_path.exists():
-                with open(cookie_path, 'rb') as f:
-                    cookies = pickle.load(f)
+                with open(cookie_path, 'r', encoding='utf-8') as f:
+                    cookies = json.load(f)
                     session.session.cookies.update(cookies)
                 logger.debug(f"Loaded cookies for {domain}")
         except Exception as e:

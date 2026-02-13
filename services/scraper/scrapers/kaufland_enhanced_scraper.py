@@ -310,20 +310,33 @@ class KauflandEnhancedScraper:
         logger.info(f"Converted {len(self.products)} offers to products")
         return self.products
     
+    def _validate_price(self, price: float) -> bool:
+        """Validate price is within reasonable bounds."""
+        return price is not None and 0.01 <= price <= 10000.0
+    
     def save_to_db(self):
-        """Save products to normalized SQLite database."""
+        """Save products to normalized SQLite database with transaction safety."""
         if not self.products:
             logger.warning("No products to save")
             return
         
         now = datetime.now(timezone.utc).isoformat()
         
-        with sqlite3.connect(self.db_path) as conn:
+        conn = sqlite3.connect(self.db_path)
+        try:
             cursor = conn.cursor()
+            cursor.execute("PRAGMA foreign_keys = ON")
+            cursor.execute("BEGIN TRANSACTION")
             updated = 0
             inserted = 0
+            skipped = 0
             
             for product in self.products:
+                # Validate price before processing
+                if product.price_bgn and not self._validate_price(product.price_bgn):
+                    logger.warning(f"Invalid price {product.price_bgn} for {product.kl_nr}, skipping")
+                    skipped += 1
+                    continue
                 full_name = f"{product.title} {product.subtitle}" if product.subtitle else product.title
                 
                 # Find existing store_product
@@ -424,7 +437,13 @@ class KauflandEnhancedScraper:
                     inserted += 1
             
             conn.commit()
-            logger.info(f"Saved to database: {updated} updated, {inserted} inserted")
+            logger.info(f"Saved to database: {updated} updated, {inserted} inserted, {skipped} skipped")
+        except Exception as e:
+            conn.rollback()
+            logger.error(f"Database error, transaction rolled back: {e}")
+            raise
+        finally:
+            conn.close()
     
     def save_to_json(self, output_path: Optional[Path] = None):
         """Save products to JSON file."""
