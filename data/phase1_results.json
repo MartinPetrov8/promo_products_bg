@@ -1,8 +1,709 @@
 {
-  "total_unmatched": 1892,
-  "new_matches": 0,
-  "confident": 0,
-  "likely": 0,
-  "low": 0,
-  "matches": []
+  "total_unmatched": 3022,
+  "new_matches": 526,
+  "confident": 123,
+  "likely": 40,
+  "low": 363,
+  "matches": [
+    {
+      "product_id": 5114,
+      "off_id": 14503,
+      "confidence": 0.5130434782608695,
+      "variant_used": "s power",
+      "off_name": "OmniBiotic Power"
+    },
+    {
+      "product_id": 5115,
+      "off_id": 2692,
+      "confidence": 0.4862745098039216,
+      "variant_used": "бял земел",
+      "off_name": "Бял хляб"
+    },
+    {
+      "product_id": 5123,
+      "off_id": 8254,
+      "confidence": 1.0,
+      "variant_used": "моркови",
+      "off_name": "Моркови"
+    },
+    {
+      "product_id": 5126,
+      "off_id": 3137,
+      "confidence": 0.5833333333333333,
+      "variant_used": "свинско каре",
+      "off_name": "Свинско филе"
+    },
+    {
+      "product_id": 5127,
+      "off_id": 4883,
+      "confidence": 0.7541666666666667,
+      "variant_used": "черни маслини мамут",
+      "off_name": "Черни маслини"
+    },
+    {
+      "product_id": 5129,
+      "off_id": 12575,
+      "confidence": 0.654054054054054,
+      "variant_used": "свинска плешка без кост",
+      "off_name": "Свинска плешка"
+    },
+    {
+      "product_id": 5130,
+      "off_id": 148,
+      "confidence": 0.7968992248062015,
+      "variant_used": "златно добруджанско",
+      "off_name": "Златно Добруджанско олио"
+    },
+    {
+      "product_id": 5131,
+      "off_id": 11987,
+      "confidence": 1.0,
+      "variant_used": "k classic",
+      "off_name": "K classic"
+    },
+    {
+      "product_id": 5133,
+      "off_id": 1045,
+      "confidence": 1.0,
+      "variant_used": "pizza",
+      "off_name": "pizza"
+    },
+    {
+      "product_id": 5135,
+      "off_id": 5870,
+      "confidence": 0.6499999999999999,
+      "variant_used": "feliciana",
+      "off_name": "Pizza Feliciana"
+    },
+    {
+      "product_id": 5137,
+      "off_id": 10953,
+      "confidence": 0.5235294117647059,
+      "variant_used": "pizza spetsiale",
+      "off_name": "Pizza Super Diavola"
+    },
+    {
+      "product_id": 5139,
+      "off_id": 5870,
+      "confidence": 0.5458333333333333,
+      "variant_used": "pizza neapoletana",
+      "off_name": "Pizza Feliciana"
+    },
+    {
+      "product_id": 5140,
+      "off_id": 13734,
+      "confidence": 0.6,
+      "variant_used": "pinsa romana",
+      "off_name": "Pizza Dough - Pinsa Romana"
+    },
+    {
+      "product_id": 5141,
+      "off_id": 13129,
+      "confidence": 0.6799999999999999,
+      "variant_used": "passionata",
+      "off_name": "Пица Passionata"
+    },
+    {
+      "product_id": 5144,
+      "off_id": 13129,
+      "confidence": 0.6799999999999999,
+      "variant_used": "passionata",
+      "off_name": "Пица Passionata"
+    },
+    {
+      "product_id": 5145,
+      "off_id": 6043,
+      "confidence": 0.78,
+      "variant_used": "k take it veggie",
+      "off_name": "K-take it veggie Falafel"
+    },
+    {
+      "product_id": 5146,
+      "off_id": 9092,
+      "confidence": 0.47619047619047616,
+      "variant_used": "ristorante",
+      "off_name": "Ristorante - Szalámis Pizza"
+    },
+    {
+      "product_id": 5147,
+      "off_id": 1022,
+      "confidence": 0.6820512820512821,
+      "variant_used": "old spice",
+      "off_name": "Old Spice Captain"
+    },
+    {
+      "product_id": 5148,
+      "off_id": 1022,
+      "confidence": 0.6820512820512821,
+      "variant_used": "old spice",
+      "off_name": "Old Spice Captain"
+    },
+    {
+      "product_id": 5149,
+      "off_id": 2914,
+      "confidence": 1.0,
+      "variant_used": "snickers",
+      "off_name": "Snickers"
+    },
+    {
+      "product_id": 5151,
+      "off_id": 8113,
+      "confidence": 0.62,
+      "variant_used": "olineza",
+      "off_name": "Olineza wrong"
+    },
+    {
+      "product_id": 5158,
+      "off_id": 5098,
+      "confidence": 0.6,
+      "variant_used": "maggi asia",
+      "off_name": "Maggi"
+    },
+    {
+      "product_id": 5159,
+      "off_id": 4491,
+      "confidence": 0.6666666666666667,
+      "variant_used": "classic max",
+      "off_name": "classic"
+    },
+    {
+      "product_id": 5160,
+      "off_id": 3637,
+      "confidence": 1.0,
+      "variant_used": "eggs",
+      "off_name": "Eggs"
+    },
+    {
+      "product_id": 5162,
+      "off_id": 355,
+      "confidence": 1.0,
+      "variant_used": "oreo",
+      "off_name": "Oreo"
+    },
+    {
+      "product_id": 5165,
+      "off_id": 13489,
+      "confidence": 1.0,
+      "variant_used": "florina",
+      "off_name": "florina"
+    },
+    {
+      "product_id": 5167,
+      "off_id": 466,
+      "confidence": 0.6523809523809524,
+      "variant_used": "corny big",
+      "off_name": "Corny big chocolate"
+    },
+    {
+      "product_id": 5173,
+      "off_id": 4368,
+      "confidence": 1.0,
+      "variant_used": "боровинки",
+      "off_name": "Боровинки"
+    },
+    {
+      "product_id": 5174,
+      "off_id": 247,
+      "confidence": 1.0,
+      "variant_used": "kinder pingui",
+      "off_name": "Kinder Pingui"
+    },
+    {
+      "product_id": 5175,
+      "off_id": 4778,
+      "confidence": 0.6499999999999999,
+      "variant_used": "kinder",
+      "off_name": "Kinder Joy"
+    },
+    {
+      "product_id": 5180,
+      "off_id": 10476,
+      "confidence": 0.6235294117647059,
+      "variant_used": "tuborg",
+      "off_name": "Tuborg бира"
+    },
+    {
+      "product_id": 5181,
+      "off_id": 10476,
+      "confidence": 0.6235294117647059,
+      "variant_used": "tuborg",
+      "off_name": "Tuborg бира"
+    },
+    {
+      "product_id": 5182,
+      "off_id": 2915,
+      "confidence": 0.7087719298245614,
+      "variant_used": "ferrero rocher raffaello",
+      "off_name": "Ferrero Rocher"
+    },
+    {
+      "product_id": 5183,
+      "off_id": 3396,
+      "confidence": 0.5,
+      "variant_used": "bella",
+      "off_name": "Bella holandesa"
+    },
+    {
+      "product_id": 5184,
+      "off_id": 4781,
+      "confidence": 0.6499999999999999,
+      "variant_used": "7 days",
+      "off_name": "7 Days Max"
+    },
+    {
+      "product_id": 5189,
+      "off_id": 6539,
+      "confidence": 1.0,
+      "variant_used": "chio",
+      "off_name": "Chio"
+    },
+    {
+      "product_id": 5190,
+      "off_id": 1998,
+      "confidence": 0.5122807017543859,
+      "variant_used": "gourmet gold",
+      "off_name": "Mc gold"
+    },
+    {
+      "product_id": 5191,
+      "off_id": 1998,
+      "confidence": 0.5122807017543859,
+      "variant_used": "gourmet gold",
+      "off_name": "Mc gold"
+    },
+    {
+      "product_id": 5192,
+      "off_id": 11610,
+      "confidence": 0.5125,
+      "variant_used": "gourmet perle",
+      "off_name": "Gourmet Protein bar"
+    },
+    {
+      "product_id": 5216,
+      "off_id": 6688,
+      "confidence": 0.6682926829268292,
+      "variant_used": "червени чушки камби",
+      "off_name": "Червени чушки нарязани"
+    },
+    {
+      "product_id": 5217,
+      "off_id": 10546,
+      "confidence": 1.0,
+      "variant_used": "гъби печурки",
+      "off_name": "Гъби печурки"
+    },
+    {
+      "product_id": 5218,
+      "off_id": 11053,
+      "confidence": 1.0,
+      "variant_used": "портокали",
+      "off_name": "портокали"
+    },
+    {
+      "product_id": 5219,
+      "off_id": 10330,
+      "confidence": 1.0,
+      "variant_used": "лимони",
+      "off_name": "Лимони"
+    },
+    {
+      "product_id": 5220,
+      "off_id": 11052,
+      "confidence": 0.56,
+      "variant_used": "червени ябълки",
+      "off_name": "ябълки"
+    },
+    {
+      "product_id": 5221,
+      "off_id": 9277,
+      "confidence": 0.6466666666666667,
+      "variant_used": "микс бейби салатки",
+      "off_name": "Милкс бейби салати"
+    },
+    {
+      "product_id": 5224,
+      "off_id": 9159,
+      "confidence": 0.4862745098039216,
+      "variant_used": "сух чесън",
+      "off_name": "Сух шпек"
+    },
+    {
+      "product_id": 5225,
+      "off_id": 13040,
+      "confidence": 0.6,
+      "variant_used": "ананас",
+      "off_name": "Кефир ананас"
+    },
+    {
+      "product_id": 5227,
+      "off_id": 10813,
+      "confidence": 0.6558558558558558,
+      "variant_used": "червено зеле",
+      "off_name": "Консервирано червено зеле"
+    },
+    {
+      "product_id": 5228,
+      "off_id": 4653,
+      "confidence": 0.5818181818181818,
+      "variant_used": "queen s diamond",
+      "off_name": "queen's"
+    },
+    {
+      "product_id": 5230,
+      "off_id": 7497,
+      "confidence": 0.5190476190476191,
+      "variant_used": "червено грозде",
+      "off_name": "ЧЕРВЕНО ЦВЕКЛО"
+    },
+    {
+      "product_id": 5231,
+      "off_id": 5397,
+      "confidence": 0.575,
+      "variant_used": "mango",
+      "off_name": "pepsi mango"
+    },
+    {
+      "product_id": 5234,
+      "off_id": 11091,
+      "confidence": 1.0,
+      "variant_used": "пилешко филе от гърди",
+      "off_name": "Пилешко филе от гърди"
+    },
+    {
+      "product_id": 5235,
+      "off_id": 13381,
+      "confidence": 0.72,
+      "variant_used": "пуешко месо за готвене",
+      "off_name": "Св месо за готвене"
+    },
+    {
+      "product_id": 5237,
+      "off_id": 9208,
+      "confidence": 0.7541666666666667,
+      "variant_used": "пилешко долно бутче",
+      "off_name": "пилешко бутче"
+    },
+    {
+      "product_id": 5239,
+      "off_id": 14239,
+      "confidence": 1.0,
+      "variant_used": "сланина",
+      "off_name": "Сланина"
+    },
+    {
+      "product_id": 5240,
+      "off_id": 5201,
+      "confidence": 1.0,
+      "variant_used": "кайма от свинско месо",
+      "off_name": "Кайма От Свинско Месо"
+    },
+    {
+      "product_id": 5242,
+      "off_id": 1686,
+      "confidence": 0.5204301075268817,
+      "variant_used": "свински пръжки",
+      "off_name": "Свински кренвирши"
+    },
+    {
+      "product_id": 5243,
+      "off_id": 14378,
+      "confidence": 0.5285714285714286,
+      "variant_used": "сланина за печене",
+      "off_name": "сланина кен"
+    },
+    {
+      "product_id": 5246,
+      "off_id": 14117,
+      "confidence": 0.575,
+      "variant_used": "браво",
+      "off_name": "Бекон - Браво"
+    },
+    {
+      "product_id": 5249,
+      "off_id": 9594,
+      "confidence": 0.6421052631578947,
+      "variant_used": "перелик",
+      "off_name": "Перелик шпек"
+    },
+    {
+      "product_id": 5250,
+      "off_id": 9672,
+      "confidence": 0.5,
+      "variant_used": "бони",
+      "off_name": "Бони биренки"
+    },
+    {
+      "product_id": 5251,
+      "off_id": 2662,
+      "confidence": 0.5272727272727272,
+      "variant_used": "кен",
+      "off_name": "бекс кен"
+    },
+    {
+      "product_id": 5254,
+      "off_id": 13605,
+      "confidence": 0.5428571428571428,
+      "variant_used": "леки",
+      "off_name": "Винер - Леки"
+    },
+    {
+      "product_id": 5255,
+      "off_id": 13875,
+      "confidence": 0.5418181818181818,
+      "variant_used": "майстор цветко",
+      "off_name": "Свинско Филе от Майстор Цветко"
+    },
+    {
+      "product_id": 5257,
+      "off_id": 13654,
+      "confidence": 0.7410852713178294,
+      "variant_used": "деликатес житница",
+      "off_name": "Надиница Деликатес Житница"
+    },
+    {
+      "product_id": 5258,
+      "off_id": 10990,
+      "confidence": 0.6235294117647059,
+      "variant_used": "тандем",
+      "off_name": "Тандем Роле"
+    },
+    {
+      "product_id": 5259,
+      "off_id": 12740,
+      "confidence": 0.62,
+      "variant_used": "фермата",
+      "off_name": "шунка Фермата"
+    },
+    {
+      "product_id": 5260,
+      "off_id": 5135,
+      "confidence": 0.6,
+      "variant_used": "народен",
+      "off_name": "Пастет Народен"
+    },
+    {
+      "product_id": 5261,
+      "off_id": 8815,
+      "confidence": 0.6,
+      "variant_used": "елит мес",
+      "off_name": "Елит"
+    },
+    {
+      "product_id": 5262,
+      "off_id": 8061,
+      "confidence": 1.0,
+      "variant_used": "орехите",
+      "off_name": "Орехите"
+    },
+    {
+      "product_id": 5264,
+      "off_id": 1514,
+      "confidence": 0.5696969696969697,
+      "variant_used": "irish beef",
+      "off_name": "Irish butter"
+    },
+    {
+      "product_id": 5265,
+      "off_id": 3658,
+      "confidence": 1.0,
+      "variant_used": "свински врат без кост",
+      "off_name": "Свински врат без кост"
+    },
+    {
+      "product_id": 5267,
+      "off_id": 12247,
+      "confidence": 1.0,
+      "variant_used": "разбит хайвер",
+      "off_name": "разбит хайвер"
+    },
+    {
+      "product_id": 5268,
+      "off_id": 7307,
+      "confidence": 0.536,
+      "variant_used": "копърка",
+      "off_name": "копърка маринована"
+    },
+    {
+      "product_id": 5269,
+      "off_id": 4154,
+      "confidence": 0.5840000000000001,
+      "variant_used": "сьомгoва пъстърва",
+      "off_name": "пъстърва"
+    },
+    {
+      "product_id": 5270,
+      "off_id": 10,
+      "confidence": 0.6799999999999999,
+      "variant_used": "суши филаделфия",
+      "off_name": "Филаделфия"
+    },
+    {
+      "product_id": 5271,
+      "off_id": 13715,
+      "confidence": 0.5948717948717949,
+      "variant_used": "сьомга котлет",
+      "off_name": "Сьомга пастет"
+    },
+    {
+      "product_id": 5272,
+      "off_id": 3137,
+      "confidence": 0.5696969696969697,
+      "variant_used": "рибно филе",
+      "off_name": "Свинско филе"
+    },
+    {
+      "product_id": 5273,
+      "off_id": 12629,
+      "confidence": 0.5685106382978724,
+      "variant_used": "сьомгова пъстърва филе",
+      "off_name": "Филе от сьомгова пастърва"
+    },
+    {
+      "product_id": 5275,
+      "off_id": 10379,
+      "confidence": 1.0,
+      "variant_used": "deutsche markenbutter",
+      "off_name": "Deutsche Markenbutter"
+    },
+    {
+      "product_id": 5279,
+      "off_id": 11646,
+      "confidence": 0.575,
+      "variant_used": "верея",
+      "off_name": "Айрян Верея"
+    },
+    {
+      "product_id": 5281,
+      "off_id": 11139,
+      "confidence": 0.6,
+      "variant_used": "elena",
+      "off_name": "File Elena"
+    },
+    {
+      "product_id": 5282,
+      "off_id": 5095,
+      "confidence": 1.0,
+      "variant_used": "my day",
+      "off_name": "My Day"
+    },
+    {
+      "product_id": 5291,
+      "off_id": 6850,
+      "confidence": 0.4933333333333333,
+      "variant_used": "димитър маджаров",
+      "off_name": "Бекон Маджаров"
+    },
+    {
+      "product_id": 5294,
+      "off_id": 2285,
+      "confidence": 0.6,
+      "variant_used": "lacrima",
+      "off_name": "сирене lacrima"
+    },
+    {
+      "product_id": 5295,
+      "off_id": 557,
+      "confidence": 1.0,
+      "variant_used": "philadelphia",
+      "off_name": "Philadelphia"
+    },
+    {
+      "product_id": 5296,
+      "off_id": 14599,
+      "confidence": 1.0,
+      "variant_used": "алфатар",
+      "off_name": "Алфатар"
+    },
+    {
+      "product_id": 5303,
+      "off_id": 9828,
+      "confidence": 0.45641025641025634,
+      "variant_used": "фамилия",
+      "off_name": "Вафли фамилия пакет"
+    },
+    {
+      "product_id": 5307,
+      "off_id": 13282,
+      "confidence": 0.5978494623655913,
+      "variant_used": "familia collection",
+      "off_name": "Familia Cocoa"
+    },
+    {
+      "product_id": 5311,
+      "off_id": 10671,
+      "confidence": 0.5540540540540541,
+      "variant_used": "маслини гръцка салата",
+      "off_name": "Маслини каламата"
+    },
+    {
+      "product_id": 5312,
+      "off_id": 10671,
+      "confidence": 0.7589743589743589,
+      "variant_used": "маслини каламата екстра",
+      "off_name": "Маслини каламата"
+    },
+    {
+      "product_id": 5313,
+      "off_id": 4883,
+      "confidence": 0.5733333333333333,
+      "variant_used": "натурални маслини",
+      "off_name": "Черни маслини"
+    },
+    {
+      "product_id": 5314,
+      "off_id": 11987,
+      "confidence": 1.0,
+      "variant_used": "k classic",
+      "off_name": "K classic"
+    },
+    {
+      "product_id": 5316,
+      "off_id": 3537,
+      "confidence": 1.0,
+      "variant_used": "къпани кори",
+      "off_name": "Къпани кори"
+    },
+    {
+      "product_id": 5317,
+      "off_id": 10671,
+      "confidence": 1.0,
+      "variant_used": "маслини каламата",
+      "off_name": "Маслини каламата"
+    },
+    {
+      "product_id": 5318,
+      "off_id": 12031,
+      "confidence": 0.4933333333333333,
+      "variant_used": "the chefs",
+      "off_name": "the cracker"
+    },
+    {
+      "product_id": 5325,
+      "off_id": 4817,
+      "confidence": 0.5789473684210527,
+      "variant_used": "stella",
+      "off_name": "Stella Artois"
+    },
+    {
+      "product_id": 5326,
+      "off_id": 10731,
+      "confidence": 1.0,
+      "variant_used": "nucrema",
+      "off_name": "Nucrema"
+    },
+    {
+      "product_id": 5327,
+      "off_id": 5062,
+      "confidence": 0.7218390804597701,
+      "variant_used": "вита баница",
+      "off_name": "Селска вита баница"
+    },
+    {
+      "product_id": 5328,
+      "off_id": 3525,
+      "confidence": 1.0,
+      "variant_used": "кроасан",
+      "off_name": "КРОАСАН"
+    }
+  ]
 }
