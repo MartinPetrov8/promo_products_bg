@@ -1164,6 +1164,18 @@
     "product_url": null
   },
   {
+    "name": "Банани",
+    "quantity": "до 5 кг на покупка",
+    "price_eur": 1.02,
+    "price_bgn": 1.99,
+    "old_price_eur": 1.84,
+    "old_price_bgn": 3.6,
+    "discount_pct": 30,
+    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/09700011_P",
+    "category": null,
+    "product_url": null
+  },
+  {
     "name": "Тиландсия в кeрамична кашпа",
     "quantity": "Ø9 см",
     "price_eur": 7.0,
@@ -1176,18 +1188,6 @@
     "product_url": null
   },
   {
-    "name": "Лилиум",
-    "quantity": "Ø13 см",
-    "price_eur": 5.11,
-    "price_bgn": 9.99,
-    "old_price_eur": null,
-    "old_price_bgn": null,
-    "discount_pct": null,
-    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/175_09902371_P",
-    "category": null,
-    "product_url": null
-  },
-  {
     "name": "Каскадна орхидея фаленопсис",
     "quantity": "Ø12 см",
     "price_eur": 12.77,
@@ -1196,18 +1196,6 @@
     "old_price_bgn": null,
     "discount_pct": null,
     "image_url": "https://kaufland.media.schwarz/is/image/schwarz/00027827_P",
-    "category": null,
-    "product_url": null
-  },
-  {
-    "name": "Цветна орхидея Фаленопсис",
-    "quantity": "оцветена допълнително",
-    "price_eur": 9.2,
-    "price_bgn": 17.99,
-    "old_price_eur": null,
-    "old_price_bgn": null,
-    "discount_pct": null,
-    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/00077194_P-1",
     "category": null,
     "product_url": null
   },
@@ -1256,18 +1244,6 @@
     "old_price_bgn": 2.99,
     "discount_pct": 35,
     "image_url": "https://kaufland.media.schwarz/is/image/schwarz/38030222_BG_P",
-    "category": null,
-    "product_url": null
-  },
-  {
-    "name": "Мити картофи",
-    "quantity": "",
-    "price_eur": 2.27,
-    "price_bgn": 4.44,
-    "old_price_eur": 4.09,
-    "old_price_bgn": 8.0,
-    "discount_pct": 44,
-    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/3000033039838_BG_P",
     "category": null,
     "product_url": null
   },
@@ -1332,18 +1308,6 @@
     "product_url": null
   },
   {
-    "name": "Букет рози и гербери",
-    "quantity": "",
-    "price_eur": 6.64,
-    "price_bgn": 12.99,
-    "old_price_eur": null,
-    "old_price_bgn": null,
-    "discount_pct": null,
-    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/20604702_P",
-    "category": null,
-    "product_url": null
-  },
-  {
     "name": "Жълт лук",
     "quantity": "",
     "price_eur": 0.4,
@@ -1404,18 +1368,6 @@
     "product_url": null
   },
   {
-    "name": "Домати Рома кг",
-    "quantity": "Клас: I",
-    "price_eur": 1.78,
-    "price_bgn": 3.48,
-    "old_price_eur": 3.06,
-    "old_price_bgn": 5.98,
-    "discount_pct": 41,
-    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/09700431B_P",
-    "category": null,
-    "product_url": null
-  },
-  {
     "name": "Queen's Diamond",
     "quantity": "Фурми\nбез костилка",
     "price_eur": 1.17,
@@ -1472,18 +1424,6 @@
     "old_price_bgn": 2.99,
     "discount_pct": 50,
     "image_url": "https://kaufland.media.schwarz/is/image/schwarz/25013337_BG_P-2",
-    "category": null,
-    "product_url": null
-  },
-  {
-    "name": "Свински гърди",
-    "quantity": "от свежата витрина",
-    "price_eur": 4.08,
-    "price_bgn": 7.98,
-    "old_price_eur": null,
-    "old_price_bgn": null,
-    "discount_pct": null,
-    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/00113005_P-1",
     "category": null,
     "product_url": null
   },
@@ -5407,7 +5347,7 @@
     "old_price_eur": 3.06,
     "old_price_bgn": 5.98,
     "discount_pct": 26,
-    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/05101328_P",
+    "image_url": "https://kaufland.media.schwarz/is/content/schwarz/05101328_P",
     "category": null,
     "product_url": null
   },
@@ -6744,6 +6684,78 @@
     "product_url": null
   },
   {
+    "name": "Пилешко бутче",
+    "quantity": "до 10 кг на покупка",
+    "price_eur": 1.78,
+    "price_bgn": 3.48,
+    "old_price_eur": 3.06,
+    "old_price_bgn": 5.98,
+    "discount_pct": 41,
+    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/01000431_A",
+    "category": null,
+    "product_url": null
+  },
+  {
+    "name": "Stella Artois",
+    "quantity": "Бира\n5% vol",
+    "price_eur": 5.62,
+    "price_bgn": 10.99,
+    "old_price_eur": 9.15,
+    "old_price_bgn": 17.9,
+    "discount_pct": 38,
+    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/3800014051640_BG_P",
+    "category": null,
+    "product_url": null
+  },
+  {
+    "name": "Хляб ръжено-пшеничен",
+    "quantity": "от нашата пекарна",
+    "price_eur": 0.76,
+    "price_bgn": 1.49,
+    "old_price_eur": 1.53,
+    "old_price_bgn": 2.99,
+    "discount_pct": 50,
+    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/8767_BG_P",
+    "category": null,
+    "product_url": null
+  },
+  {
+    "name": "ЗОРА",
+    "quantity": "Яйца\nразмер L",
+    "price_eur": 4.08,
+    "price_bgn": 7.98,
+    "old_price_eur": null,
+    "old_price_bgn": null,
+    "discount_pct": null,
+    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/20894355_P",
+    "category": null,
+    "product_url": null
+  },
+  {
+    "name": "Кашкавал от краве мляко",
+    "quantity": "от свежата витрина",
+    "price_eur": 6.13,
+    "price_bgn": 11.99,
+    "old_price_eur": 8.17,
+    "old_price_bgn": 15.98,
+    "discount_pct": 24,
+    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/00031815_P",
+    "category": null,
+    "product_url": null
+  },
+  {
+    "name": "ОТ МРЪВКА",
+    "quantity": "Свинско филе\nопаковка около 700 г",
+    "price_eur": 5.62,
+    "price_bgn": 10.99,
+    "old_price_eur": null,
+    "old_price_bgn": null,
+    "discount_pct": null,
+    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/235_2020856073_P",
+    "category": null,
+    "product_url": null
+  },
+  {
     "name": "Минзухар",
     "quantity": "",
     "price_eur": 1.53,
@@ -6752,18 +6764,6 @@
     "old_price_bgn": null,
     "discount_pct": null,
     "image_url": "https://kaufland.media.schwarz/is/image/schwarz/00037499_P-2",
-    "category": null,
-    "product_url": null
-  },
-  {
-    "name": "Миникаланхое в керамика",
-    "quantity": "Ø6 см",
-    "price_eur": 2.29,
-    "price_bgn": 4.48,
-    "old_price_eur": null,
-    "old_price_bgn": null,
-    "discount_pct": null,
-    "image_url": "https://kaufland.media.schwarz/is/image/schwarz/00002912",
     "category": null,
     "product_url": null
   },

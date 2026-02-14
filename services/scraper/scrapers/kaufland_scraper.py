@@ -88,10 +88,11 @@ class KauflandScraper:
     BASE_URL = "https://www.kaufland.bg"
     
     # Offer pages to scrape
+    # Current Kaufland offer pages (updated 2026-02-14)
+    # Note: ot-sryada and vikend pages removed, oferti.html is the main listing
     OFFER_URLS = [
         "https://www.kaufland.bg/aktualni-predlozheniya/ot-ponedelnik.html",
-        "https://www.kaufland.bg/aktualni-predlozheniya/ot-sryada.html",
-        "https://www.kaufland.bg/aktualni-predlozheniya/vikend.html",
+        "https://www.kaufland.bg/aktualni-predlozheniya/oferti.html",
     ]
     
     def __init__(
