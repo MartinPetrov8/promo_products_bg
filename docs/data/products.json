@@ -1,8 +1,8 @@
 {
   "meta": {
-    "updated_at": "2026-02-14T19:52:58.552541+00:00",
+    "updated_at": "2026-02-14T21:51:12.139724+00:00",
     "total_products": 3155,
-    "cross_store_groups": 128,
+    "cross_store_groups": 133,
     "stores": [
       "Kaufland",
       "Lidl",
@@ -783,10 +783,10 @@
       "old_price": 1.02,
       "discount_pct": 56,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "2831736002345",
+      "group_id": "g_06aa41aa",
+      "match_type": "embedding_confident_v2",
+      "match_confidence": 0.83,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -5934,10 +5934,10 @@
       "old_price": 0.61,
       "discount_pct": 50,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "7613287354556",
+      "group_id": "g_165d07d8",
+      "match_type": "embedding_low_v2",
+      "match_confidence": 0.68,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -7787,10 +7787,10 @@
       "old_price": 1.84,
       "discount_pct": 44,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "3800779041719",
+      "group_id": "g_c79e4b83",
+      "match_type": "embedding_likely_v2",
+      "match_confidence": 0.78,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -8467,10 +8467,10 @@
       "old_price": 3.99,
       "discount_pct": 42,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "5711953166372",
+      "group_id": "g_dd5f4b31",
+      "match_type": "embedding_confident_v2",
+      "match_confidence": 0.82,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -9096,10 +9096,10 @@
       "old_price": 0.51,
       "discount_pct": 41,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "4049726010241",
+      "group_id": "g_624568f6",
+      "match_type": "embedding_likely_v2",
+      "match_confidence": 0.7,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -12717,10 +12717,10 @@
       "old_price": 2.55,
       "discount_pct": 35,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "3825795574812",
+      "group_id": "g_71431f3c",
+      "match_type": "embedding_likely_v2",
+      "match_confidence": 0.71,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -14417,10 +14417,10 @@
       "old_price": 3.01,
       "discount_pct": 33,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "4056489941699",
+      "group_id": "g_3bbaf7a5",
+      "match_type": "embedding_low_v2",
+      "match_confidence": 0.66,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -19942,10 +19942,10 @@
       "old_price": 3.57,
       "discount_pct": 28,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "3800200820241",
+      "group_id": "g_bea180d0",
+      "match_type": "embedding_confident_v2",
+      "match_confidence": 0.81,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -26232,10 +26232,10 @@
       "old_price": 1.53,
       "discount_pct": 23,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "3800214350444",
+      "group_id": "g_3776a246",
+      "match_type": "embedding_likely_v2",
+      "match_confidence": 0.71,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -26861,10 +26861,10 @@
       "old_price": 6.28,
       "discount_pct": 22,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "00077777",
+      "group_id": "g_89281f24",
+      "match_type": "embedding_low_v2",
+      "match_confidence": 0.67,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -32964,10 +32964,10 @@
       "old_price": null,
       "discount_pct": 0,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "2829080004207",
+      "group_id": "g_3e5a8fe0",
+      "match_type": "embedding_low_v2",
+      "match_confidence": 0.68,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -38812,10 +38812,10 @@
       "old_price": null,
       "discount_pct": 0,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "5908260250522",
+      "group_id": "g_77f27f7c",
+      "match_type": "embedding_low_v2",
+      "match_confidence": 0.69,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -40869,10 +40869,10 @@
       "old_price": null,
       "discount_pct": 0,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "2806131002559",
+      "group_id": "g_1e4edbfd",
+      "match_type": "embedding_likely_v2",
+      "match_confidence": 0.77,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -44116,10 +44116,10 @@
       "old_price": null,
       "discount_pct": 0,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "2803292011680",
+      "group_id": "g_a08565a2",
+      "match_type": "embedding_likely_v2",
+      "match_confidence": 0.74,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -44626,10 +44626,10 @@
       "old_price": null,
       "discount_pct": 0,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "3288131509938",
+      "group_id": "g_1343c635",
+      "match_type": "embedding_low_v2",
+      "match_confidence": 0.68,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -46513,10 +46513,10 @@
       "old_price": null,
       "discount_pct": 0,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "7613287354556",
+      "group_id": "g_165d07d8",
+      "match_type": "embedding_likely_v2",
+      "match_confidence": 0.73,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -47839,10 +47839,10 @@
       "old_price": null,
       "discount_pct": 0,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "2824490001907",
+      "group_id": "g_d6d7e59c",
+      "match_type": "embedding_low_v2",
+      "match_confidence": 0.69,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -47873,10 +47873,10 @@
       "old_price": null,
       "discount_pct": 0,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "3800059301847",
+      "group_id": "g_a7f4775e",
+      "match_type": "embedding_likely_v2",
+      "match_confidence": 0.7,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -49896,10 +49896,10 @@
       "old_price": null,
       "discount_pct": 0,
       "image_url": null,
-      "off_barcode": null,
-      "group_id": null,
-      "match_type": null,
-      "match_confidence": null,
+      "off_barcode": "3800061606169",
+      "group_id": "g_7afe966c",
+      "match_type": "embedding_low_v2",
+      "match_confidence": 0.66,
       "quantity_g": null,
       "quantity_ml": null,
       "price_per_kg": null,
@@ -54200,6 +54200,13 @@
       "categories": null,
       "ingredients": null
     },
+    "2829080004207": {
+      "name": "Bulgara сирене",
+      "brand": "Bulgara",
+      "nutriscore": "unknown",
+      "categories": null,
+      "ingredients": "КРАВЕ МЛЯКО, ЗАКВАСКА МАЯ, сол"
+    },
     "4337185305429": {
       "name": "Ирландско масло 82%",
       "brand": "K-Classic",
@@ -56279,6 +56286,13 @@
       "categories": null,
       "ingredients": null
     },
+    "2831736002345": {
+      "name": "Моркови",
+      "brand": null,
+      "nutriscore": "unknown",
+      "categories": "Plant-based foods and beverages, Plant-based foods, Fruits and vegetables based foods, Fruits based foods, Fruits, Fresh fruits",
+      "ingredients": null
+    },
     "2897537010286": {
       "name": "Македонска наденица Аз ям (витрина)",
       "brand": null,
@@ -56558,6 +56572,13 @@
       "nutriscore": "e",
       "categories": "Snacks,Sweet snacks,Biscuits and cakes,Biscuits and crackers,Biscuits,Chocolate biscuits,de:Kakaokekse mit einer Crèmefüllung",
       "ingredients": "Făină de GRAU, zahăr, ulei de palmier, ulei de rapiţă, amidon din GRAU, cacao cu conținut redus de grăsime 4,7 %, sirop de glucoză-fructoză, agenţi de afânare (carbonați de amoniu, carbonați de potasi"
+    },
+    "5908260250522": {
+      "name": "Vitamin Water Vitamins and Minerals",
+      "brand": "Oshee",
+      "nutriscore": "c",
+      "categories": "en:Beverages, en:Waters, en:Vitamin waters",
+      "ingredients": "вода, захар, регулатор на киселинността: лимонена киселина, концентрира сок от черен морков, естествени аромати, обогатяващи вещества: витамини (ниацин, витамин B6, Биотин, витамин B12), минерална със"
     },
     "5941000020405": {
       "name": "Star",
@@ -57455,6 +57476,13 @@
       "categories": "Месни продукти, Месни заготовки, Кюфтета от месо",
       "ingredients": "АГНЕШКО МЕСО 65%, ГОВЕЖДО МЕСО 16%, ВОДА, Сол, ПШЕНИЧНИ ФИБРИ, МЛЕЧЕН ПРОТЕИН, РЕГУЛАТОР НА КИСЕЛИННОСТ: НАТРИЕВ АЦЕТЯТ, НАТРИЕВ ЦИТРАТ, АНТИОКСИДАНТ: АСКОРБИНОВА КИСЕЛИНА. НАТРИЕВ АСКОРБАТ."
     },
+    "2803292011680": {
+      "name": "Свинска плешка",
+      "brand": null,
+      "nutriscore": "unknown",
+      "categories": null,
+      "ingredients": null
+    },
     "3800214631079": {
       "name": "Агнешко плато",
       "brand": "Чех",
@@ -57679,6 +57707,13 @@
       "categories": null,
       "ingredients": null
     },
+    "3800779041719": {
+      "name": null,
+      "brand": "Бони",
+      "nutriscore": "unknown",
+      "categories": null,
+      "ingredients": null
+    },
     "4337185009020": {
       "name": "Нектар от моркови, ябълки и банани",
       "brand": "K Classic",
@@ -57699,6 +57734,13 @@
       "nutriscore": "unknown",
       "categories": "en:баница, bg:хляб",
       "ingredients": "Тесто (65%) пшеничено брашно, питейна вода, рафинирано масло, сол. Пълнеж (35%) имитиращ продукт (мляко 14% обезмаслено краве мляко и/или сухо мляко,регулатор на киселинност: калциев двухлорид, вода),"
+    },
+    "3288131509938": {
+      "name": null,
+      "brand": "Babybio",
+      "nutriscore": "unknown",
+      "categories": null,
+      "ingredients": null
     },
     "3800052316114": {
       "name": "безалкохолна бира",
@@ -57909,6 +57951,13 @@
       "nutriscore": "d",
       "categories": "Ябълков сок",
       "ingredients": "сок от ябълки"
+    },
+    "4049726010241": {
+      "name": "",
+      "brand": "Брей",
+      "nutriscore": "e",
+      "categories": "Breakfasts,Spreads,Sweet spreads,Bee products,Farming products,Sweeteners,Honeys",
+      "ingredients": "100% Honey"
     },
     "20930967": {
       "name": "Гауда",
@@ -58126,6 +58175,13 @@
       "nutriscore": "unknown",
       "categories": "White breads",
       "ingredients": "Брашно пшенично тип 500, вода питейна, мая, сол, подобрители, (брашно пшенично, емулгатор: естери на моно - и диацетилна винена киселина с моно-и диглицериди на мастните киселини, комплекс ензими, ант"
+    },
+    "4056489941699": {
+      "name": "Black seedless olives",
+      "brand": "",
+      "nutriscore": "d",
+      "categories": "Olives,Seedless olives,Pickled olives",
+      "ingredients": "Черни маслини сорт „Халкидики&quot; (Chalkidikis), трапезна сол, регулатор на киселинността: млечна киселина; стабилизатор: феро глюконат. Произход на маслините: Гърция. Може да съдържа следи от бадем"
     },
     "3800232100083": {
       "name": "Бяло пшенично брашно",
@@ -59107,6 +59163,13 @@
       "categories": "Готови ястия, Готови салати",
       "ingredients": "Варени картофи (антиоксидант: калиев метабисулфит); майонеза (питейна вода; рафинирано слънчогледово масло; царевично нишесте; захар; регулатор на киселинност: оцетна киселина; ЖЪЛТЪК на прах; трапезн"
     },
+    "3800214350444": {
+      "name": "Viki",
+      "brand": null,
+      "nutriscore": "unknown",
+      "categories": null,
+      "ingredients": null
+    },
     "4049726003175": {
       "name": "Чесън клас 1",
       "brand": null,
@@ -59317,6 +59380,13 @@
       "categories": "Dairies, Fermented foods, Fermented milk products, Cheeses, en:cow-cheeses",
       "ingredients": "краве мляко, сол, закваска, мая"
     },
+    "3825795574812": {
+      "name": "",
+      "brand": "Крез",
+      "nutriscore": "unknown",
+      "categories": "Сандвичи, Сандвичи с птици, Сандвичи с пуешко",
+      "ingredients": "Пълноз.тостер угб-(брашно пшен.пълнозърнест, вода, мая, сол, слънч.масло, захар).Пуешко месо-(67% нишесте 4%, соев протеин-4% , 250, 262, страбилизатор – 451 ароматизант) Растит, продукт с вкус на моц"
+    },
     "8586019161267": {
       "name": "Bebelan пюре от круши",
       "brand": "Bebelan",
@@ -59387,6 +59457,13 @@
       "categories": null,
       "ingredients": "лактобаланс&quot; obhotneh aomnaekg sa jnobpo pebho 3pabe vkabahme sa ydotpesa hpenopsmmena pea he mg lpn gea or 7 0 thy t40 ng 0 mg kancynwre ce nphear nepopano nn lactobacates aa ne ce npesswana epe"
     },
+    "5711953166372": {
+      "name": "Лате",
+      "brand": null,
+      "nutriscore": "d",
+      "categories": "Coffee drinks",
+      "ingredients": null
+    },
     "3800139114947": {
       "name": "Салатен микс",
       "brand": "Detelina's",
@@ -59456,6 +59533,13 @@
       "nutriscore": "e",
       "categories": "Месни продукти, Български месни продукти, Роле Трапезица",
       "ingredients": "95% свински врат, трапезна сол, захар, консервант: калиев нитрат; антиоксидант: аскорбинова киселина; чесън, черен пипер."
+    },
+    "2824490001907": {
+      "name": "Луканка",
+      "brand": null,
+      "nutriscore": "unknown",
+      "categories": null,
+      "ingredients": "ПАРТ-Н 314022,11,22 ХРАНИТЕЛНА СТОЙНОСТ ЗА 100 1082 к"
     },
     "3800740020781": {
       "name": "Лютеница",
@@ -59826,13 +59910,6 @@
       "brand": null,
       "nutriscore": "unknown",
       "categories": null,
-      "ingredients": null
-    },
-    "2831736002345": {
-      "name": "Моркови",
-      "brand": null,
-      "nutriscore": "unknown",
-      "categories": "Plant-based foods and beverages, Plant-based foods, Fruits and vegetables based foods, Fruits based foods, Fruits, Fresh fruits",
       "ingredients": null
     },
     "5202422001428": {
@@ -60437,6 +60514,13 @@
       "categories": "Хранителни добавки, Хлебна мая, Мая",
       "ingredients": "Прясна мая (Saccharomyces cerevisiae) /30% минимум/, вода /70% максимум/."
     },
+    "3800061606169": {
+      "name": "Суха паста с крем мляко",
+      "brand": "Престиж",
+      "nutriscore": "unknown",
+      "categories": null,
+      "ingredients": "захар, питейна вода, пшенично брашно, сироп от глюкоза, частично хидрогенирани мазнини палмова, соево масло, рапично олио, слънчогледово олио, сорбитан тристеарат, соев лецитин, нехидрогенирани мазнин"
+    },
     "2816053002469": {
       "name": "Пилешка пържола от бут",
       "brand": "",
@@ -60654,12 +60738,26 @@
       "categories": "Млечни продукти, Ферментирали продукти, Ферментирали млечни продукти, Сирене, Краве сирене и кашкавал",
       "ingredients": "Обезмаслено краве мляко, закваска, регулатор на киселинността, калциев хлорид, сол, мая"
     },
+    "00077777": {
+      "name": "Jahody a hroznové víno",
+      "brand": "",
+      "nutriscore": "unknown",
+      "categories": null,
+      "ingredients": "flavoured biscuits: wheat flour, vegetable oil, starch (wheat,tumab powder, salt, cheese (contains: milk), maltodextrin (maize), yeast solids, baking powder, sugar, spice, garlic powder, onion powder "
+    },
     "3800207946081": {
       "name": "микс елит",
       "brand": null,
       "nutriscore": "unknown",
       "categories": null,
       "ingredients": null
+    },
+    "3800200820241": {
+      "name": "",
+      "brand": "Rois",
+      "nutriscore": "unknown",
+      "categories": "",
+      "ingredients": "bg"
     },
     "4823077624261": {
       "name": "",
@@ -60905,13 +61003,6 @@
       "nutriscore": "b",
       "categories": "Млечни продукти, Ферментирали продукти, Десерти, Ферментирали млечни продукти, Млечни десерти, Ферментирали млечни десерти, Кисело мляко, Краве кисело мляко",
       "ingredients": "Краве мляко, закваска."
-    },
-    "2803292011680": {
-      "name": "Свинска плешка",
-      "brand": null,
-      "nutriscore": "unknown",
-      "categories": null,
-      "ingredients": null
     },
     "2802824003568": {
       "name": "Свински Бут",
@@ -62744,6 +62835,34 @@
       "min_price": 2.48,
       "max_price": 11.48
     },
+    "g_165d07d8": {
+      "off_barcode": "7613287354556",
+      "product_ids": [
+        930,
+        5674,
+        5764
+      ],
+      "stores": [
+        "Kaufland",
+        "Lidl"
+      ],
+      "min_price": 0.3,
+      "max_price": 10.22
+    },
+    "g_a7f4775e": {
+      "off_barcode": "3800059301847",
+      "product_ids": [
+        3350,
+        5759,
+        1063
+      ],
+      "stores": [
+        "Kaufland",
+        "Lidl"
+      ],
+      "min_price": 0.5,
+      "max_price": 11.75
+    },
     "g_22b6e03c": {
       "off_barcode": "10206704",
       "product_ids": [
@@ -62757,6 +62876,19 @@
       ],
       "min_price": 2.85,
       "max_price": 20.99
+    },
+    "g_06aa41aa": {
+      "off_barcode": "2831736002345",
+      "product_ids": [
+        5736,
+        929
+      ],
+      "stores": [
+        "Kaufland",
+        "Lidl"
+      ],
+      "min_price": 0.44,
+      "max_price": 0.45
     },
     "g_40bbde38": {
       "off_barcode": "3800837314472",
@@ -62814,6 +62946,21 @@
       ],
       "min_price": 2.29,
       "max_price": 26.99
+    },
+    "g_1e4edbfd": {
+      "off_barcode": "2806131002559",
+      "product_ids": [
+        1044,
+        200,
+        5770,
+        4284
+      ],
+      "stores": [
+        "Kaufland",
+        "Lidl"
+      ],
+      "min_price": 2.99,
+      "max_price": 7.66
     },
     "g_e1ea40cc": {
       "off_barcode": "3800202560497",
@@ -62962,6 +63109,20 @@
       ],
       "min_price": 0.66,
       "max_price": 0.85
+    },
+    "g_a08565a2": {
+      "off_barcode": "2803292011680",
+      "product_ids": [
+        5774,
+        935,
+        158
+      ],
+      "stores": [
+        "Kaufland",
+        "Lidl"
+      ],
+      "min_price": 2.96,
+      "max_price": 9.2
     },
     "g_29b584c2": {
       "off_barcode": "8699025780350",
