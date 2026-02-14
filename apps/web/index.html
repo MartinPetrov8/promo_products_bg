@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PromoBG - Сравни цените в супермаркетите</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://images.openfoodfacts.org">
     <style>
         .product-card:hover { transform: translateY(-2px); }
         .discount-badge { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+        .nutriscore-a { background: #038141; }
+        .nutriscore-b { background: #85bb2f; }
+        .nutriscore-c { background: #fecb02; }
+        .nutriscore-d { background: #ee8100; }
+        .nutriscore-e { background: #e63e11; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 100; }
+        .modal.active { display: flex; align-items: center; justify-content: center; }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -55,26 +63,41 @@
                     <option value="40">Над 40% отстъпка</option>
                     <option value="50">Над 50% отстъпка</option>
                 </select>
+                <select id="nutriscoreFilter" class="px-3 py-2 rounded-lg" onchange="filterProducts()">
+                    <option value="">Всички Nutriscore</option>
+                    <option value="a">Nutriscore A</option>
+                    <option value="b">Nutriscore B</option>
+                    <option value="c">Nutriscore C</option>
+                </select>
+                <label class="flex items-center gap-2 bg-white px-3 py-2 rounded-lg cursor-pointer">
+                    <input type="checkbox" id="crossStoreFilter" onchange="filterProducts()">
+                    <span class="text-sm">Сравни магазини</span>
+                </label>
             </div>
         </div>
     </section>
 
     <!-- Stats -->
     <section class="max-w-6xl mx-auto px-4 py-6">
-        <div class="grid grid-cols-3 gap-4 text-center">
+        <div class="grid grid-cols-4 gap-4 text-center">
             <div class="bg-white p-4 rounded-lg shadow-sm">
                 <div class="text-3xl font-bold text-green-600" id="totalProducts">-</div>
                 <div class="text-sm text-gray-500">Продукти</div>
             </div>
             <div class="bg-white p-4 rounded-lg shadow-sm">
-                <div class="text-3xl font-bold text-green-600" id="totalStores">3</div>
-                <div class="text-sm text-gray-500">Магазини</div>
+                <div class="text-3xl font-bold text-green-600" id="matchedProducts">-</div>
+                <div class="text-sm text-gray-500">С данни от OFF</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="text-3xl font-bold text-green-600" id="crossStoreCount">-</div>
+                <div class="text-sm text-gray-500">За сравнение</div>
             </div>
             <div class="bg-white p-4 rounded-lg shadow-sm">
                 <div class="text-3xl font-bold text-green-600" id="avgDiscount">-</div>
                 <div class="text-sm text-gray-500">Средна отстъпка</div>
             </div>
         </div>
+        <p class="text-center text-xs text-gray-400 mt-2" id="lastUpdated"></p>
     </section>
 
     <!-- Results -->
@@ -85,22 +108,33 @@
         </div>
     </section>
 
+    <!-- Comparison Modal -->
+    <div id="comparisonModal" class="modal" onclick="closeModal(event)">
+        <div class="bg-white rounded-xl shadow-xl max-w-lg w-full mx-4 max-h-[80vh] overflow-auto" onclick="event.stopPropagation()">
+            <div class="p-4 border-b flex justify-between items-center">
+                <h3 class="font-bold text-lg" id="modalTitle">Сравнение на цени</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            </div>
+            <div id="modalContent" class="p-4"></div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 mt-12">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <p class="text-gray-400">PromoBG © 2026 • Данните се обновяват ежедневно</p>
-            <p class="text-sm text-gray-500 mt-2">Kaufland • Lidl • Billa</p>
+            <p class="text-sm text-gray-500 mt-2">Kaufland • Lidl • Billa • Данни от OpenFoodFacts</p>
         </div>
     </footer>
 
     <script>
-        let allProducts = [];
+        let data = { products: [], off: {}, groups: {}, meta: {} };
         
         // Load products
         async function loadProducts() {
             try {
-                const response = await fetch('data/all_products.json');
-                allProducts = await response.json();
+                const response = await fetch('data/products.json');
+                data = await response.json();
                 updateStats();
                 showTopDeals();
             } catch (err) {
@@ -111,17 +145,36 @@
         }
         
         function updateStats() {
-            document.getElementById('totalProducts').textContent = allProducts.length.toLocaleString();
-            const withDiscount = allProducts.filter(p => p.discount_pct > 0);
+            document.getElementById('totalProducts').textContent = data.meta.total_products?.toLocaleString() || '-';
+            document.getElementById('matchedProducts').textContent = data.meta.matched_products?.toLocaleString() || '-';
+            document.getElementById('crossStoreCount').textContent = data.meta.cross_store_groups?.toLocaleString() || '-';
+            
+            const withDiscount = data.products.filter(p => p.discount_pct > 0 && p.discount_pct < 100);
             const avgDiscount = withDiscount.length > 0 
                 ? Math.round(withDiscount.reduce((a, p) => a + p.discount_pct, 0) / withDiscount.length)
                 : 0;
             document.getElementById('avgDiscount').textContent = avgDiscount + '%';
+            
+            if (data.meta.updated_at) {
+                const date = new Date(data.meta.updated_at);
+                document.getElementById('lastUpdated').textContent = 
+                    `Последна актуализация: ${date.toLocaleDateString('bg-BG')} ${date.toLocaleTimeString('bg-BG', {hour: '2-digit', minute: '2-digit'})}`;
+            }
+        }
+        
+        function getNutriscore(product) {
+            if (!product.off_barcode || !data.off[product.off_barcode]) return null;
+            return data.off[product.off_barcode].nutriscore?.toLowerCase();
+        }
+        
+        function getGroupProducts(groupId) {
+            if (!groupId || !data.groups[groupId]) return [];
+            return data.products.filter(p => p.group_id === groupId);
         }
         
         function showTopDeals() {
-            const deals = allProducts
-                .filter(p => p.discount_pct > 0)
+            const deals = data.products
+                .filter(p => p.discount_pct > 0 && p.discount_pct < 100)
                 .sort((a, b) => b.discount_pct - a.discount_pct)
                 .slice(0, 20);
             renderProducts(deals);
@@ -135,7 +188,7 @@
                 return;
             }
             
-            let results = allProducts.filter(p => 
+            let results = data.products.filter(p => 
                 p.name.toLowerCase().includes(query)
             );
             
@@ -152,7 +205,7 @@
             if (query) {
                 searchProducts();
             } else {
-                let results = applyFilters(allProducts);
+                let results = applyFilters(data.products);
                 results = results.sort((a, b) => (b.discount_pct || 0) - (a.discount_pct || 0));
                 renderProducts(results.slice(0, 40));
                 document.getElementById('resultsTitle').textContent = '🔥 Топ оферти';
@@ -162,10 +215,18 @@
         function applyFilters(products) {
             const store = document.getElementById('storeFilter').value;
             const minDiscount = parseInt(document.getElementById('discountFilter').value) || 0;
+            const nutriscore = document.getElementById('nutriscoreFilter').value;
+            const crossStoreOnly = document.getElementById('crossStoreFilter').checked;
             
             return products.filter(p => {
                 if (store && p.store !== store) return false;
                 if (minDiscount && (p.discount_pct || 0) < minDiscount) return false;
+                if (p.discount_pct >= 100) return false; // Filter out data errors
+                if (nutriscore && getNutriscore(p) !== nutriscore) return false;
+                if (crossStoreOnly) {
+                    const group = data.groups[p.group_id];
+                    if (!group || group.stores.length < 2) return false;
+                }
                 return true;
             });
         }
@@ -178,12 +239,22 @@
                 return;
             }
             
-            container.innerHTML = products.map(p => `
+            container.innerHTML = products.map(p => {
+                const nutriscore = getNutriscore(p);
+                const group = data.groups[p.group_id];
+                const hasComparison = group && group.stores.length >= 2;
+                
+                return `
                 <div class="product-card bg-white rounded-xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md">
                     <div class="relative">
-                        ${p.discount_pct ? `
+                        ${p.discount_pct && p.discount_pct < 100 ? `
                             <div class="discount-badge absolute top-2 right-2 text-white text-sm font-bold px-2 py-1 rounded-lg">
                                 -${p.discount_pct}%
+                            </div>
+                        ` : ''}
+                        ${nutriscore ? `
+                            <div class="absolute top-2 left-2 nutriscore-${nutriscore} text-white text-xs font-bold px-2 py-1 rounded-lg uppercase">
+                                ${nutriscore}
                             </div>
                         ` : ''}
                         <div class="h-32 bg-gray-100 flex items-center justify-center text-4xl">
@@ -196,15 +267,79 @@
                             ${p.name.slice(0, 50)}${p.name.length > 50 ? '...' : ''}
                         </h4>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-lg font-bold text-green-600">${p.price_eur.toFixed(2)}€</span>
-                            ${p.old_price_eur ? `
-                                <span class="text-sm text-gray-400 line-through">${p.old_price_eur.toFixed(2)}€</span>
+                            <span class="text-lg font-bold text-green-600">${p.price?.toFixed(2) || '-'}€</span>
+                            ${p.old_price ? `
+                                <span class="text-sm text-gray-400 line-through">${p.old_price.toFixed(2)}€</span>
                             ` : ''}
                         </div>
-                        <div class="text-xs text-gray-400 mt-1">${p.price_bgn.toFixed(2)} лв.</div>
+                        ${p.price_per_kg || p.price_per_l ? `
+                            <div class="text-xs text-gray-500 mt-1">
+                                ${p.price_per_kg ? `${p.price_per_kg.toFixed(2)}€/кг` : ''}
+                                ${p.price_per_l ? `${p.price_per_l.toFixed(2)}€/л` : ''}
+                            </div>
+                        ` : ''}
+                        ${hasComparison ? `
+                            <button onclick="showComparison('${p.group_id}')" 
+                                class="mt-2 w-full text-xs bg-blue-50 text-blue-600 py-1 rounded hover:bg-blue-100 transition">
+                                📊 Сравни ${group.stores.length} магазина
+                            </button>
+                        ` : ''}
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
+        }
+        
+        function showComparison(groupId) {
+            const group = data.groups[groupId];
+            if (!group) return;
+            
+            const products = getGroupProducts(groupId).sort((a, b) => (a.price || 999) - (b.price || 999));
+            const offData = data.off[group.off_barcode];
+            const minPrice = Math.min(...products.map(p => p.price || 999));
+            const maxPrice = Math.max(...products.map(p => p.price || 0));
+            const savings = maxPrice - minPrice;
+            
+            document.getElementById('modalTitle').textContent = offData?.name || products[0]?.name || 'Сравнение';
+            document.getElementById('modalContent').innerHTML = `
+                ${offData?.nutriscore ? `
+                    <div class="mb-4 flex items-center gap-2">
+                        <span class="nutriscore-${offData.nutriscore.toLowerCase()} text-white px-2 py-1 rounded font-bold uppercase">
+                            Nutriscore ${offData.nutriscore}
+                        </span>
+                        <span class="text-sm text-gray-500">${offData.brand || ''}</span>
+                    </div>
+                ` : ''}
+                <div class="space-y-3">
+                    ${products.map((p, i) => `
+                        <div class="flex items-center gap-3 p-3 rounded-lg ${i === 0 ? 'bg-green-50 border border-green-200' : 'bg-gray-50'}">
+                            <span class="text-2xl">${getStoreEmoji(p.store)}</span>
+                            <div class="flex-1">
+                                <div class="font-medium">${p.store}</div>
+                                <div class="text-xs text-gray-500">
+                                    ${p.price_per_kg ? `${p.price_per_kg.toFixed(2)}€/кг` : ''}
+                                    ${p.price_per_l ? `${p.price_per_l.toFixed(2)}€/л` : ''}
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold text-lg ${i === 0 ? 'text-green-600' : ''}">${p.price?.toFixed(2) || '-'}€</div>
+                                ${i === 0 ? '<div class="text-xs text-green-600 font-medium">⭐ НАЙ-ДОБРА</div>' : ''}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+                ${savings > 0.01 ? `
+                    <div class="mt-4 p-3 bg-yellow-50 rounded-lg text-center">
+                        <span class="text-yellow-800 font-medium">💰 Спестяваш до ${savings.toFixed(2)}€ (${Math.round(savings/maxPrice*100)}%)</span>
+                    </div>
+                ` : ''}
+            `;
+            document.getElementById('comparisonModal').classList.add('active');
+        }
+        
+        function closeModal(event) {
+            if (!event || event.target.id === 'comparisonModal') {
+                document.getElementById('comparisonModal').classList.remove('active');
+            }
         }
         
         function getStoreEmoji(store) {
@@ -219,6 +354,11 @@
         // Enter key search
         document.getElementById('searchInput').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') searchProducts();
+        });
+        
+        // Escape to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
         });
         
         // Load on page load
