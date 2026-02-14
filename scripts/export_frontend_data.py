@@ -13,7 +13,7 @@ from unit_price import get_unit_prices, parse_quantity
 REPO_ROOT = Path(__file__).parent.parent
 PROMOBG_DB = REPO_ROOT / "data" / "promobg.db"
 OFF_DB = REPO_ROOT / "data" / "off_bulgaria.db"
-OUTPUT_FILE = REPO_ROOT / "apps" / "web" / "data" / "products.json"
+OUTPUT_FILE = REPO_ROOT / "docs" / "data" / "products.json"
 
 
 def get_off_data(off_conn: sqlite3.Connection) -> dict:
@@ -32,7 +32,7 @@ def get_off_data(off_conn: sqlite3.Connection) -> dict:
             "brand": row[3],
             "categories": row[4],
             "nutriscore": row[5],
-            "ingredients": row[6][:200] if row[6] else None  # Truncate ingredients
+            "ingredients": row[6][:200] if row[6] else None
         }
     return off_by_id
 
@@ -67,21 +67,20 @@ def export_data():
     """)
     
     products = []
-    off_lookup = {}  # barcode -> OFF data
-    groups_by_off_id = {}  # off_product_id -> list of product indices
+    off_lookup = {}
     
     for row in cur.fetchall():
-        # Parse unit prices
         unit_prices = get_unit_prices(row["name"], row["current_price"] or 0)
         qty, unit = parse_quantity(row["name"])
         
         # Get OFF barcode if matched
         off_barcode = None
+        off_id = None
         if row["off_product_id"] and row["off_product_id"] in off_by_id:
             off_data = off_by_id[row["off_product_id"]]
             off_barcode = off_data["barcode"]
+            off_id = row["off_product_id"]
             
-            # Add to OFF lookup (dedupe by barcode)
             if off_barcode and off_barcode not in off_lookup:
                 off_lookup[off_barcode] = {
                     "name": off_data["name"],
@@ -90,27 +89,40 @@ def export_data():
                     "categories": off_data["categories"],
                     "ingredients": off_data["ingredients"]
                 }
-            
-            # Track for cross-store groups
-            off_id = row["off_product_id"]
-            if off_id not in groups_by_off_id:
-                groups_by_off_id[off_id] = []
-            groups_by_off_id[off_id].append(len(products))
         
-        # Generate group_id from OFF barcode
         group_id = None
         if off_barcode:
             group_id = f"g_{hashlib.md5(off_barcode.encode()).hexdigest()[:8]}"
+        
+        # === DATA VALIDATION ===
+        old_price = row["old_price"]
+        current_price = row["current_price"]
+        discount_pct = row["discount_percent"] or 0
+        
+        # Rule 1: If old_price > 5x current, it's garbage
+        if old_price and current_price and old_price > current_price * 3:
+            old_price = None
+            discount_pct = 0
+        
+        # Rule 2: If no old_price, discount must be 0
+        if not old_price:
+            discount_pct = 0
+        
+        # Rule 3: Cap max discount at 70% (higher = garbage)
+        if discount_pct > 70:
+            old_price = None
+            discount_pct = 0
         
         product = {
             "id": row["id"],
             "name": row["name"],
             "store": row["store_name"],
-            "price": round(row["current_price"], 2) if row["current_price"] else None,
-            "old_price": round(row["old_price"], 2) if row["old_price"] else None,
-            "discount_pct": int(row["discount_percent"]) if row["discount_percent"] else 0,
+            "price": round(current_price, 2) if current_price else None,
+            "old_price": round(old_price, 2) if old_price else None,
+            "discount_pct": int(discount_pct),
             "image_url": row["image_url"],
             "off_barcode": off_barcode,
+            "off_id": off_id,
             "group_id": group_id,
             "match_type": row["match_type"],
             "match_confidence": round(row["match_confidence"], 2) if row["match_confidence"] else None,
@@ -121,40 +133,60 @@ def export_data():
         }
         products.append(product)
     
-    # Build cross-store groups (only where 2+ stores have the product)
+    # Deduplicate: keep only best match per store per group_id
+    print("Deduplicating same-store products in groups...")
+    seen = {}
+    deduped = []
+    
+    for p in products:
+        if not p["group_id"]:
+            deduped.append(p)
+            continue
+        
+        key = (p["store"], p["group_id"])
+        if key not in seen:
+            seen[key] = p
+            deduped.append(p)
+        else:
+            existing = seen[key]
+            if (p["match_confidence"] or 0) > (existing["match_confidence"] or 0):
+                deduped.remove(existing)
+                seen[key] = p
+                deduped.append(p)
+    
+    print(f"  Kept {len(deduped)} products (removed {len(products) - len(deduped)} duplicates)")
+    products = deduped
+    
+    # Build cross-store groups
+    print("Building cross-store groups...")
+    groups_by_id = {}
+    
+    for p in products:
+        if p["group_id"]:
+            if p["group_id"] not in groups_by_id:
+                groups_by_id[p["group_id"]] = []
+            groups_by_id[p["group_id"]].append(p)
+    
     groups = {}
-    for off_id, product_indices in groups_by_off_id.items():
-        if len(product_indices) < 2:
-            continue
+    for group_id, group_products in groups_by_id.items():
+        stores = set(p["store"] for p in group_products)
         
-        off_data = off_by_id.get(off_id, {})
-        off_barcode = off_data.get("barcode")
-        if not off_barcode:
-            continue
-        
-        group_id = f"g_{hashlib.md5(off_barcode.encode()).hexdigest()[:8]}"
-        
-        # Get stores and prices for this group
-        stores = set()
-        prices = []
-        product_ids = []
-        for idx in product_indices:
-            p = products[idx]
-            stores.add(p["store"])
-            product_ids.append(p["id"])
-            if p["price"]:
-                prices.append(p["price"])
-        
-        if len(stores) >= 2:  # Cross-store comparison
+        if len(stores) >= 2:
+            prices = [p["price"] for p in group_products if p["price"]]
+            off_barcode = group_products[0]["off_barcode"]
+            
             groups[group_id] = {
                 "off_barcode": off_barcode,
-                "product_ids": product_ids,
+                "product_ids": [p["id"] for p in group_products],
                 "stores": sorted(stores),
                 "min_price": min(prices) if prices else None,
                 "max_price": max(prices) if prices else None
             }
     
-    # Build output
+    # Remove internal off_id field
+    for p in products:
+        p.pop("off_id", None)
+    
     output = {
         "meta": {
             "updated_at": datetime.now(timezone.utc).isoformat(),
@@ -168,13 +200,11 @@ def export_data():
         "groups": groups
     }
     
-    # Write output
     print(f"Writing to {OUTPUT_FILE}...")
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     
-    # Stats
     file_size = OUTPUT_FILE.stat().st_size
     print(f"\n=== Export Complete ===")
     print(f"Total products: {len(products)}")
