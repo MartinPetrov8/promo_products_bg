@@ -256,3 +256,44 @@ Acceptable for mobile — loads in <1s on 3G.
 3. Update frontend
 4. Test on mobile
 5. Deploy to GitHub Pages
+
+---
+
+## Search Results Ranking (Priority Feature)
+
+### Requirement
+When displaying search results, **sort by number of store matches (descending)**.
+
+Products available in more stores should appear first, as they offer the best comparison value.
+
+### Example
+Search: "кафе" (coffee)
+
+| Rank | Product | Stores | Why First |
+|------|---------|--------|-----------|
+| 1 | Lavazza Crema | Lidl, Billa, Kaufland | 3 stores = most comparable |
+| 2 | Jacobs Kronung | Billa, Kaufland | 2 stores |
+| 3 | Tchibo Gold | Lidl | 1 store |
+
+### Implementation
+```javascript
+// Sort results by store count (descending), then by relevance
+results.sort((a, b) => {
+    // Primary: number of stores (more = better)
+    const storeCountDiff = (b.stores?.length || 1) - (a.stores?.length || 1);
+    if (storeCountDiff !== 0) return storeCountDiff;
+    
+    // Secondary: search relevance score
+    return (b.relevance || 0) - (a.relevance || 0);
+});
+```
+
+### Data Requirements
+Each product in `frontend_data.json` needs:
+- `stores`: array of store objects with prices
+- OR `store_count`: number of stores selling this product
+
+### Status
+- [ ] Add `store_count` to export script
+- [ ] Implement sort in frontend search
+- [ ] Test with multi-store products
