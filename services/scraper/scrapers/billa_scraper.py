@@ -66,8 +66,12 @@ class BillaScraper:
     BASE_URL = "https://ssbbilla.site"
     
     # Pages to scrape
+    # All available brochures on ssbbilla.site (accessibility version)
+    # sedmichna = weekly, predstoyashta = upcoming, proteinov = special
     CATALOG_URLS = [
         "https://ssbbilla.site/catalog/sedmichna-broshura",
+        "https://ssbbilla.site/catalog/predstoyashta-broshura",  # May be empty
+        "https://ssbbilla.site/catalog/proteinov-izbor-jan-2026",  # May be empty/seasonal
     ]
     
     def __init__(
