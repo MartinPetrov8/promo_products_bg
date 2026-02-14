@@ -16,6 +16,10 @@
         .nutriscore-e { background: #e63e11; }
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 100; }
         .modal.active { display: flex; align-items: center; justify-content: center; }
+        .typeahead { position: absolute; top: 100%; left: 0; right: 0; background: white; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-height: 300px; overflow-y: auto; z-index: 50; }
+        .typeahead-item { padding: 0.75rem 1rem; cursor: pointer; border-bottom: 1px solid #eee; }
+        .typeahead-item:hover { background: #f3f4f6; }
+        .typeahead-item:last-child { border-bottom: none; }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -35,19 +39,25 @@
             <h2 class="text-3xl font-bold text-white text-center mb-6">
                 Намери най-добрите оферти
             </h2>
-            <div class="flex gap-2">
-                <input 
-                    type="text" 
-                    id="searchInput"
-                    placeholder="Търси продукт... (напр. мляко, хляб, кафе)"
-                    class="flex-1 px-4 py-3 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-green-300"
-                >
-                <button 
-                    onclick="searchProducts()"
-                    class="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 rounded-lg font-semibold transition"
-                >
-                    Търси
-                </button>
+            <div class="relative">
+                <div class="flex gap-2">
+                    <div class="flex-1 relative">
+                        <input 
+                            type="text" 
+                            id="searchInput"
+                            placeholder="Търси продукт... (напр. мляко, хляб, кафе)"
+                            class="w-full px-4 py-3 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-green-300"
+                            autocomplete="off"
+                        >
+                        <div id="typeahead" class="typeahead hidden"></div>
+                    </div>
+                    <button 
+                        onclick="searchProducts()"
+                        class="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 rounded-lg font-semibold transition"
+                    >
+                        Търси
+                    </button>
+                </div>
             </div>
             <!-- Filters -->
             <div class="flex gap-4 mt-4 flex-wrap">
@@ -63,15 +73,9 @@
                     <option value="40">Над 40% отстъпка</option>
                     <option value="50">Над 50% отстъпка</option>
                 </select>
-                <select id="nutriscoreFilter" class="px-3 py-2 rounded-lg" onchange="filterProducts()">
-                    <option value="">Всички Nutriscore</option>
-                    <option value="a">Nutriscore A</option>
-                    <option value="b">Nutriscore B</option>
-                    <option value="c">Nutriscore C</option>
-                </select>
                 <label class="flex items-center gap-2 bg-white px-3 py-2 rounded-lg cursor-pointer">
                     <input type="checkbox" id="crossStoreFilter" onchange="filterProducts()">
-                    <span class="text-sm">Сравни магазини</span>
+                    <span class="text-sm">Само за сравнение</span>
                 </label>
             </div>
         </div>
@@ -79,14 +83,10 @@
 
     <!-- Stats -->
     <section class="max-w-6xl mx-auto px-4 py-6">
-        <div class="grid grid-cols-4 gap-4 text-center">
+        <div class="grid grid-cols-3 gap-4 text-center">
             <div class="bg-white p-4 rounded-lg shadow-sm">
                 <div class="text-3xl font-bold text-green-600" id="totalProducts">-</div>
                 <div class="text-sm text-gray-500">Продукти</div>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-sm">
-                <div class="text-3xl font-bold text-green-600" id="matchedProducts">-</div>
-                <div class="text-sm text-gray-500">С данни от OFF</div>
             </div>
             <div class="bg-white p-4 rounded-lg shadow-sm">
                 <div class="text-3xl font-bold text-green-600" id="crossStoreCount">-</div>
@@ -123,18 +123,20 @@
     <footer class="bg-gray-800 text-white py-8 mt-12">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <p class="text-gray-400">PromoBG © 2026 • Данните се обновяват ежедневно</p>
-            <p class="text-sm text-gray-500 mt-2">Kaufland • Lidl • Billa • Данни от OpenFoodFacts</p>
+            <p class="text-sm text-gray-500 mt-2">Kaufland • Lidl • Billa</p>
         </div>
     </footer>
 
     <script>
         let data = { products: [], off: {}, groups: {}, meta: {} };
+        let searchIndex = []; // For typeahead
         
         // Load products
         async function loadProducts() {
             try {
                 const response = await fetch('data/products.json');
                 data = await response.json();
+                buildSearchIndex();
                 updateStats();
                 showTopDeals();
             } catch (err) {
@@ -144,12 +146,22 @@
             }
         }
         
+        function buildSearchIndex() {
+            // Build unique product names for typeahead
+            const names = new Set();
+            data.products.forEach(p => {
+                // Extract first 2-3 words for suggestions
+                const words = p.name.split(/\s+/).slice(0, 3).join(' ');
+                if (words.length > 2) names.add(words);
+            });
+            searchIndex = Array.from(names).sort();
+        }
+        
         function updateStats() {
             document.getElementById('totalProducts').textContent = data.meta.total_products?.toLocaleString() || '-';
-            document.getElementById('matchedProducts').textContent = data.meta.matched_products?.toLocaleString() || '-';
             document.getElementById('crossStoreCount').textContent = data.meta.cross_store_groups?.toLocaleString() || '-';
             
-            const withDiscount = data.products.filter(p => p.discount_pct > 0 && p.discount_pct < 100);
+            const withDiscount = data.products.filter(p => p.discount_pct > 0);
             const avgDiscount = withDiscount.length > 0 
                 ? Math.round(withDiscount.reduce((a, p) => a + p.discount_pct, 0) / withDiscount.length)
                 : 0;
@@ -174,14 +186,14 @@
         
         function showTopDeals() {
             const deals = data.products
-                .filter(p => p.discount_pct > 0 && p.discount_pct < 100)
-                .sort((a, b) => b.discount_pct - a.discount_pct)
+                .filter(p => p.discount_pct > 0)
                 .slice(0, 20);
             renderProducts(deals);
             document.getElementById('resultsTitle').textContent = '🔥 Топ оферти';
         }
         
         function searchProducts() {
+            hideTypeahead();
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) {
                 showTopDeals();
@@ -193,8 +205,6 @@
             );
             
             results = applyFilters(results);
-            results = results.sort((a, b) => (b.discount_pct || 0) - (a.discount_pct || 0));
-            
             renderProducts(results.slice(0, 100));
             document.getElementById('resultsTitle').textContent = 
                 `Резултати за "${query}" (${results.length})`;
@@ -206,7 +216,6 @@
                 searchProducts();
             } else {
                 let results = applyFilters(data.products);
-                results = results.sort((a, b) => (b.discount_pct || 0) - (a.discount_pct || 0));
                 renderProducts(results.slice(0, 40));
                 document.getElementById('resultsTitle').textContent = '🔥 Топ оферти';
             }
@@ -215,14 +224,11 @@
         function applyFilters(products) {
             const store = document.getElementById('storeFilter').value;
             const minDiscount = parseInt(document.getElementById('discountFilter').value) || 0;
-            const nutriscore = document.getElementById('nutriscoreFilter').value;
             const crossStoreOnly = document.getElementById('crossStoreFilter').checked;
             
             return products.filter(p => {
                 if (store && p.store !== store) return false;
                 if (minDiscount && (p.discount_pct || 0) < minDiscount) return false;
-                if (p.discount_pct >= 100) return false; // Filter out data errors
-                if (nutriscore && getNutriscore(p) !== nutriscore) return false;
                 if (crossStoreOnly) {
                     const group = data.groups[p.group_id];
                     if (!group || group.stores.length < 2) return false;
@@ -247,7 +253,7 @@
                 return `
                 <div class="product-card bg-white rounded-xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md">
                     <div class="relative">
-                        ${p.discount_pct && p.discount_pct < 100 ? `
+                        ${p.discount_pct ? `
                             <div class="discount-badge absolute top-2 right-2 text-white text-sm font-bold px-2 py-1 rounded-lg">
                                 -${p.discount_pct}%
                             </div>
@@ -293,7 +299,16 @@
             const group = data.groups[groupId];
             if (!group) return;
             
-            const products = getGroupProducts(groupId).sort((a, b) => (a.price || 999) - (b.price || 999));
+            // Get products and dedupe by store (keep cheapest per store)
+            const allProducts = getGroupProducts(groupId);
+            const byStore = {};
+            allProducts.forEach(p => {
+                if (!byStore[p.store] || p.price < byStore[p.store].price) {
+                    byStore[p.store] = p;
+                }
+            });
+            const products = Object.values(byStore).sort((a, b) => (a.price || 999) - (b.price || 999));
+            
             const offData = data.off[group.off_barcode];
             const minPrice = Math.min(...products.map(p => p.price || 999));
             const maxPrice = Math.max(...products.map(p => p.price || 0));
@@ -351,12 +366,57 @@
             return emojis[store] || '🛒';
         }
         
-        // Enter key search
+        // Typeahead functionality
+        function showTypeahead(query) {
+            if (!query || query.length < 2) {
+                hideTypeahead();
+                return;
+            }
+            
+            const matches = searchIndex
+                .filter(name => name.toLowerCase().includes(query.toLowerCase()))
+                .slice(0, 8);
+            
+            if (matches.length === 0) {
+                hideTypeahead();
+                return;
+            }
+            
+            const container = document.getElementById('typeahead');
+            container.innerHTML = matches.map(m => `
+                <div class="typeahead-item" onclick="selectTypeahead('${m.replace(/'/g, "\\'")}')">
+                    ${m}
+                </div>
+            `).join('');
+            container.classList.remove('hidden');
+        }
+        
+        function hideTypeahead() {
+            document.getElementById('typeahead').classList.add('hidden');
+        }
+        
+        function selectTypeahead(value) {
+            document.getElementById('searchInput').value = value;
+            hideTypeahead();
+            searchProducts();
+        }
+        
+        // Event listeners
         document.getElementById('searchInput').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') searchProducts();
+            if (e.key === 'Enter') {
+                hideTypeahead();
+                searchProducts();
+            }
         });
         
-        // Escape to close modal
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            showTypeahead(e.target.value);
+        });
+        
+        document.getElementById('searchInput').addEventListener('blur', () => {
+            setTimeout(hideTypeahead, 200); // Delay to allow click
+        });
+        
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
         });
