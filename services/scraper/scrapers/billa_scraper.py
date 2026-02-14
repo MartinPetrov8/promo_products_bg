@@ -16,7 +16,10 @@ from bs4 import BeautifulSoup
 
 # Infrastructure imports
 import sys
-sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
+# Add project root to path (4 levels up from this file)
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+assert (PROJECT_ROOT / "services").exists(), f"Invalid project root: {PROJECT_ROOT}"
+sys.path.insert(0, str(PROJECT_ROOT))
 
 from services.scraper.core.session_manager import SessionManager, SessionConfig
 from services.scraper.core.rate_limiter import DomainRateLimiter
@@ -24,6 +27,22 @@ from services.scraper.core.circuit_breaker import CircuitBreaker
 from services.scraper.core.retry_handler import RetryHandler, RetryConfig
 
 logger = logging.getLogger(__name__)
+
+# ============================================
+# Constants
+# ============================================
+
+# EUR/BGN official fixed rate (Bulgaria pegged to EUR since 1997)
+EUR_BGN_RATE = 1.95583
+
+# Discount validation range
+# 70% max because higher discounts are usually data errors or "100% Арабика" false positives
+# Real clearance sales rarely exceed 60-70%
+MAX_REASONABLE_DISCOUNT = 70
+MIN_DISCOUNT = 1
+
+# Product name filters - these are legal/terms text, not actual products
+EXCLUDED_NAME_TERMS = ['Разбир', 'условията']
 
 
 # ============================================
@@ -182,7 +201,7 @@ class BillaScraper:
                 # Skip headers and non-products
                 if not name or name in ['Billa', ''] or len(name) < 5:
                     continue
-                if 'Разбир' in name or 'условията' in name:
+                if any(term in name for term in EXCLUDED_NAME_TERMS):
                     continue
                 
                 # Get all prices (span.price elements)
@@ -201,7 +220,8 @@ class BillaScraper:
                                 prices_eur.append(value)
                             elif 'лв' in curr:
                                 prices_bgn.append(value)
-                    except:
+                    except (ValueError, AttributeError) as e:
+                        logger.debug(f"Price parse failed: {e}")
                         continue
                 
                 # Get discount
@@ -213,14 +233,19 @@ class BillaScraper:
                     match = re.search(r'-?\s*(\d{1,2})\s*%', discount_text)
                     if match:
                         discount = int(match.group(1))
-                        # Validate: discount must be 1-70% (reasonable range)
-                        if discount < 1 or discount > 70:
+                        # Validate: discount must be in reasonable range
+                        if not (MIN_DISCOUNT <= discount <= MAX_REASONABLE_DISCOUNT):
+                            logger.debug(f"Discount {discount}% outside valid range {MIN_DISCOUNT}-{MAX_REASONABLE_DISCOUNT}%")
                             discount = None
                 
                 # Assign prices (first = old, second = new for this structure)
+                # Assign EUR prices - ensure old_price > current_price
                 if len(prices_eur) >= 2:
-                    old_price_eur = prices_eur[0]
-                    price_eur = prices_eur[1]
+                    # Sort to ensure old (higher) price is first
+                    if prices_eur[0] > prices_eur[1]:
+                        old_price_eur, price_eur = prices_eur[0], prices_eur[1]
+                    else:
+                        old_price_eur, price_eur = prices_eur[1], prices_eur[0]
                 elif len(prices_eur) == 1:
                     price_eur = prices_eur[0]
                     old_price_eur = None
@@ -228,14 +253,20 @@ class BillaScraper:
                     price_eur = 0
                     old_price_eur = None
                 
+                # Assign BGN prices - ensure old_price > current_price
                 if len(prices_bgn) >= 2:
-                    old_price_bgn = prices_bgn[0]
-                    price_bgn = prices_bgn[1]
+                    if prices_bgn[0] > prices_bgn[1]:
+                        old_price_bgn, price_bgn = prices_bgn[0], prices_bgn[1]
+                    else:
+                        old_price_bgn, price_bgn = prices_bgn[1], prices_bgn[0]
                 elif len(prices_bgn) == 1:
                     price_bgn = prices_bgn[0]
                     old_price_bgn = None
                 else:
-                    price_bgn = price_eur * 1.95583 if price_eur else 0
+                    # Calculate BGN from EUR using fixed rate (BGN pegged to EUR)
+                    if price_eur:
+                        logger.debug(f"No BGN price for '{name[:30]}...', calculating from EUR")
+                    price_bgn = round(price_eur * EUR_BGN_RATE, 2) if price_eur else 0
                     old_price_bgn = None
                 
                 if price_eur > 0 or price_bgn > 0:
