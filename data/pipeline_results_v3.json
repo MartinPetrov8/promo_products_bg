@@ -1,0 +1,415 @@
+{
+  "total_store_products": 4356,
+  "filtered_non_food": 912,
+  "food_products": 3444,
+  "total_matches": 2735,
+  "match_rate_percent": 79.4,
+  "stats": {
+    "token": 2428,
+    "no_match": 709,
+    "barcode": 288,
+    "fuzzy": 19
+  },
+  "unmatched_sample": [
+    {
+      "name": "Шеф Месар",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Брей!",
+      "store": "Kaufland"
+    },
+    {
+      "name": "ИДА",
+      "store": "Kaufland"
+    },
+    {
+      "name": "PIXELS",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Pampers",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Alvina",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Zebra",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Crown",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Liv&Bo",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Dilios",
+      "store": "Kaufland"
+    },
+    {
+      "name": "William Peel Шотландско уиски",
+      "store": "Lidl"
+    },
+    {
+      "name": "Пърленка",
+      "store": "Lidl"
+    },
+    {
+      "name": "Помело",
+      "store": "Lidl"
+    },
+    {
+      "name": "King оферта - Сега в Billa - Jogobella Йогурт 400 г",
+      "store": "Billa"
+    },
+    {
+      "name": "King оферта - Само с Billa Card - Калиакра Сълнчогледово олио 2 л До 5 бр. на клиент*",
+      "store": "Billa"
+    },
+    {
+      "name": "Супер цена - Chateau Karnobat Вино 3 л Произход - България",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - William Peel Уиски 1,5 л Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Супер цена - Paulaner бира мултипак 4 х 0,5 л Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Супер цена - Felix Пауч за котки 12 бр. x 85 г Различни видове Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Savex Premium Гел за пране 112 пранета или Капсули за пране 72 бр. 1 опаковка Произхо",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Bon Via Flora Лалета 7 бр.Букет Валидно от 13.02. до 14.02.2026 г.* Продукт, маркиран",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Букет рози с лилиум Валидно от 13.02. до 14.02.2026 г.* Продукт, маркиран със синя зв",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Bon Via Flora Лалета 15 бр.Букет Валидно от 13.02. до 14.02.2026 г.* Продукт, маркира",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Букет за любимата Валидно от 13.02. до 14.02.2026 г.* Продукт, маркиран със синя звез",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Bon Via Flora Рози 7 бр.Букет Валидно от 13.02. до 14.02.2026 г.* Продукт, маркиран с",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Букет \"Свети Валентин\" Валидно от 13.02. до 14.02.2026 г.* Продукт, маркиран със синя",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Роза брой 50 см Валидно от 13.02. до 14.02.2026 г.* Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Зюмбюл в подаръчка опаковка Ф7 1 бр.** Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Охладен заек За 1 кг Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Ocean Fish Суши Филаделфия 240 г Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Пушена черноморска сьомгова пъстърва 100 г Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Чеснова багета От Billa пекарна 165 г Billa Ready",
+      "store": "Billa"
+    },
+    {
+      "name": "Бейби багета От Billa пекарна 50 г Billa Ready",
+      "store": "Billa"
+    },
+    {
+      "name": "Само с Billa App - Sano Maxima Sensitive Гел за пране 2 л, 1 изпиране = 0,31 €/0,61 лв./30 пранета",
+      "store": "Billa"
+    },
+    {
+      "name": "Само с Billa App - Brio Универсален нож 13 см",
+      "store": "Billa"
+    },
+    {
+      "name": "Tira Nespresso Espresso съвместими капсули - 20 бр.",
+      "store": "Billa"
+    },
+    {
+      "name": "Vina Esmeralda Вино 0,75 л Сорт - Розе. Произход - Испания. Температура на консумация - 14 - 16°C. П",
+      "store": "Billa"
+    },
+    {
+      "name": "Sangre De Toro Вино 0,75 л Сорт - Гарнача и Каринян. Произход - Испания. Температура на консумация -",
+      "store": "Billa"
+    },
+    {
+      "name": "Lost Vines Вино 0,75 л Сорт - Гарнача и Каринян. Произход - Испания. Температура на консумация - 16 ",
+      "store": "Billa"
+    },
+    {
+      "name": "Sol Vineus Розе 0,75 л Сорт - Темпранийо-Гренаж (Гарнача). Произход - Испания. Температура на консум",
+      "store": "Billa"
+    },
+    {
+      "name": "Sol Vineus Виура 0,75 л Сорт - Виура. Произход - Испания. Температура на консумация - 10 - 12°C.",
+      "store": "Billa"
+    },
+    {
+      "name": "Sol Vineus Темпранийо 0,75 л Сорт - Темпранийо. Произход - Испания. Температура на консумация - 16 -",
+      "store": "Billa"
+    },
+    {
+      "name": "Супер цена - Jim Beam Бърбън 1 л Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Claymore Уиски 0,7 л",
+      "store": "Billa"
+    },
+    {
+      "name": "Сунгурларска Ракия отлежала 0,7 л Произход - България",
+      "store": "Billa"
+    },
+    {
+      "name": "Само с Billa Card - ANGEL'S Вино 0,75 л Произход - България",
+      "store": "Billa"
+    },
+    {
+      "name": "Medix Alvina Гел за пране 44 пранета Произход - България 1 изпиране = 0,15 €/0,29 лв./ 44 пранета",
+      "store": "Billa"
+    },
+    {
+      "name": "Само с Billa Card - Sanobon Тоалетно блокче синя вода 55 г",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Spontex Домакински гъби, порести, 10 броя в опаковка Продукт, маркиран със синя звезд",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Сгъваем леген 24 л, различни цветове, 1 бр. Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Spontex Домакински гъби на вълни, 12 броя в опаковка Продукт, маркиран със синя звезд",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Spontex Домакински гъби с канал, 16 броя в опаковка Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Сгъваема мивка 9,6 л, различни цветов, 1 бр. Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Spontex Домакински гъби без канал 10 броя в опаковка Продукт, маркиран със синя звезд",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Сгъваема кофа 10 л, различни цветове, 1 бр. Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Vivess Кошче за отпадъци 5 л 1 бр. Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Сгъваем сушилник за съдове, 7,5 л, 1 бр. Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Scrub Daddy или Scrub Mommy Домакинска гъба1 бр. Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Vivess Кошница за съхранение М - 30 см, 1 бр. Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Vivess Кошница за съхранение L - 45 см, 1 бр. Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa - Изтривалка 40 х 60 см, различни цветове, 1 бр. Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Сега в Billa -Vivess Кошница за съхранение S - 20 см, 1 бр. Продукт, маркиран със синя звезда",
+      "store": "Billa"
+    },
+    {
+      "name": "Само с Billa Card - Ariel Гел за пране 40 пранета или Капсули за пране 28 бр. 1 опаковка, 1 изпиране",
+      "store": "Billa"
+    },
+    {
+      "name": "Само с Billa Card - Pampers Premium Бебешки пелени - размер 1 или 2 - 46-52 бр.в опаковка Продукт, м",
+      "store": "Billa"
+    },
+    {
+      "name": "Само с Billa Card - Somat All In 1 Таблетки за съдомиялна 75 бр.в опаковка Продукт, маркиран със син",
+      "store": "Billa"
+    },
+    {
+      "name": "Супер цена - Maretti Брускети 70 г Произход - България",
+      "store": "Billa"
+    },
+    {
+      "name": "ZEBRA",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Пърленка",
+      "store": "Kaufland"
+    },
+    {
+      "name": "BRIO",
+      "store": "Kaufland"
+    },
+    {
+      "name": "BUITONI",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Galileo",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Naturli",
+      "store": "Kaufland"
+    },
+    {
+      "name": "ItalPizza",
+      "store": "Kaufland"
+    },
+    {
+      "name": "DELICHE",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Шеф месар",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Шеф Месар",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Победа",
+      "store": "Kaufland"
+    },
+    {
+      "name": "БРЕЙ!",
+      "store": "Kaufland"
+    },
+    {
+      "name": "CHATEAU KARNOBAT",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Vernada",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Durex Play",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Durex",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Сладея",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Motorola",
+      "store": "Kaufland"
+    },
+    {
+      "name": "KINGSHILL",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Akita",
+      "store": "Kaufland"
+    },
+    {
+      "name": "GLORIA",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Меко",
+      "store": "Kaufland"
+    },
+    {
+      "name": "BRUNO BANANI",
+      "store": "Kaufland"
+    },
+    {
+      "name": "ADIDAS",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Titanum",
+      "store": "Kaufland"
+    },
+    {
+      "name": "CERESIT AERO",
+      "store": "Kaufland"
+    },
+    {
+      "name": "CERESIT",
+      "store": "Kaufland"
+    },
+    {
+      "name": "ENERGIZER",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Лактофол",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Medix",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Лилиум",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Каскадна орхидея фаленопсис",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Цветна орхидея Фаленопсис",
+      "store": "Kaufland"
+    },
+    {
+      "name": "Целина стъбла",
+      "store": "Kaufland"
+    }
+  ]
+}
