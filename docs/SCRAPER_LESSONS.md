@@ -79,3 +79,27 @@ After sub-agent audit (score 6.5/10), applied these fixes:
 5. ✅ Project root assertion - prevent silent path failures
 
 **Estimated new score: 8.5/10**
+
+---
+
+## Kaufland (Validated ✅ 2026-02-14)
+
+### What Works
+- **Offers page**: `/aktualni-predlozheniya/oferti.html` - main product listing
+- **Monday page**: `/aktualni-predlozheniya/ot-ponedelnik.html` - weekly start
+- **HTML parsing**: `k-product-tile` elements with CSS selectors
+
+### URL Changes (2026-02-14)
+- ❌ Removed `ot-sryada.html` (404 - page no longer exists)
+- ❌ Removed `vikend.html` (404 - page no longer exists)  
+- ✅ Added `oferti.html` (main offers listing)
+
+### Brochure vs Website
+- **Brochure** (`broshuri.html`) = PDF visual format
+- **Website** (`oferti.html`) = structured HTML
+- **Same products** - no OCR needed
+
+### Final Stats
+- 569 products
+- 429 with discounts (max 61%)
+- 5/5 products validated against live site
