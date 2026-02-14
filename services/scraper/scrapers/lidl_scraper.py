@@ -353,7 +353,7 @@ class LidlScraperFixed:
                     image_url = img_match.group(1) if img_match else None
                     
                     # URL
-                    url_match = re.search(r'^":"(/p/[^"]+)"', chunk)
+                    url_match = re.search(r'^:"(/p/[^"]+)"', chunk)
                     product_url = f"{self.BASE_URL}{url_match.group(1)}" if url_match else ""
                     
                     products.append(LidlProduct(
