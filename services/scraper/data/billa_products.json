@@ -1931,7 +1931,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 34.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -1942,7 +1942,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 34.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -1953,7 +1953,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 34.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -1964,7 +1964,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 34.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -1975,7 +1975,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 34.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -1986,7 +1986,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 21.98,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -1997,7 +1997,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 21.98,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2008,7 +2008,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 19.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2019,7 +2019,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 16.0,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2030,7 +2030,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 9.0,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2041,7 +2041,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 10.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2052,7 +2052,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 9.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2063,7 +2063,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 9.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2074,7 +2074,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 12.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2085,7 +2085,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 9.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2096,7 +2096,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 9.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2107,7 +2107,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 9.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2118,7 +2118,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 9.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },
@@ -2129,7 +2129,7 @@
     "price_bgn": 0.0,
     "old_price_eur": null,
     "old_price_bgn": 9.99,
-    "discount_pct": 100,
+    "discount_pct": null,
     "image_url": null,
     "category": "Billa"
   },

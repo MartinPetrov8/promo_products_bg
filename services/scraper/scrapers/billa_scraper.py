@@ -204,9 +204,14 @@ class BillaScraper:
                 discount_el = div.find(class_='discount')
                 discount = None
                 if discount_el:
-                    match = re.search(r'(\d+)', discount_el.get_text())
+                    # Look for discount pattern like "-XX%" or "XX%"
+                    discount_text = discount_el.get_text()
+                    match = re.search(r'-?\s*(\d{1,2})\s*%', discount_text)
                     if match:
                         discount = int(match.group(1))
+                        # Validate: discount must be 1-70% (reasonable range)
+                        if discount < 1 or discount > 70:
+                            discount = None
                 
                 # Assign prices (first = old, second = new for this structure)
                 if len(prices_eur) >= 2:
@@ -230,6 +235,11 @@ class BillaScraper:
                     old_price_bgn = None
                 
                 if price_eur > 0 or price_bgn > 0:
+                    # Validate discount: must have old_price to have a discount
+                    validated_discount = discount
+                    if discount and not old_price_eur and not old_price_bgn:
+                        validated_discount = None  # No discount without old price
+                    
                     products.append(BillaProduct(
                         name=name[:100],  # Truncate long names
                         quantity=None,
@@ -237,7 +247,7 @@ class BillaScraper:
                         price_bgn=round(price_bgn, 2),
                         old_price_eur=round(old_price_eur, 2) if old_price_eur else None,
                         old_price_bgn=round(old_price_bgn, 2) if old_price_bgn else None,
-                        discount_pct=discount,
+                        discount_pct=validated_discount,
                         image_url=None,
                     ))
                     
