@@ -42,17 +42,26 @@ GRIDBOXES_API = "https://www.lidl.bg/p/api/gridboxes/BG/bg"
 
 # Categories to scrape via search API
 FOOD_CATEGORIES = [
+    # Food subcategories
     "10068374",  # Food & Drinks (parent)
     "10071012",  # Fruits & Vegetables
     "10071015",  # Bread & Bakery
     "10071016",  # Fresh Meat
     "10071017",  # Milk & Dairy
-    "10071018",  # Sausages/Deli
     "10071019",  # Frozen Foods
     "10071020",  # Canned & Ready Foods
-    "10071021",  # Beverages
     "10071022",  # Sweets & Snacks
-    "10071023",  # Spices & Sauces
+    "10071025",  # Additional food
+    "10071044",  # Additional food (36 products)
+    "10071045",  # Additional food
+    "10071049",  # Additional food
+    # Non-food categories
+    "10068222",  # Tools & Garden
+    "10068166",  # Kitchen & Household
+    "10068371",  # Home & Furnishing
+    "10068225",  # Baby & Toys
+    "10068226",  # Sports & Leisure
+    "10068373",  # Fashion
 ]
 
 # HTML pages with pre-rendered data
