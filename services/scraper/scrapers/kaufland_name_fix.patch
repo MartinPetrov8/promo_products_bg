@@ -1,0 +1,27 @@
+--- a/kaufland_scraper.py
++++ b/kaufland_scraper.py
+@@ -206,10 +206,17 @@
+                 if not tile:
+                     continue
+                 
+-                name = title_div.get_text(strip=True)
+-                if not name:
++                title_text = title_div.get_text(strip=True)
++                
++                # Quantity/subtitle (this is often the actual product description!)
++                subtitle = tile.select_one('div.k-product-tile__subtitle')
++                subtitle_text = subtitle.get_text(strip=True) if subtitle else None
++                
++                # Combine: Brand + Description (or just description if brand is useless)
++                if subtitle_text:
++                    name = f"{title_text} {subtitle_text}".strip() if title_text else subtitle_text
++                else:
++                    name = title_text
++                    
++                if not name or len(name) < 3:
+                     continue
+                 
+-                # Quantity/subtitle
+-                subtitle = tile.select_one('div.k-product-tile__subtitle')
+-                quantity = subtitle.get_text(strip=True) if subtitle else None
++                quantity = None  # Will parse from combined name later

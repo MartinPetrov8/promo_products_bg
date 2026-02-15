@@ -1,359 +1,71 @@
 {
   "matches": [
     {
-      "category": "other",
+      "category": "electronics",
+      "confidence": 0.873,
       "stores": {
         "Kaufland": {
-          "name": "Товарна количка с платформа",
-          "price": 49.99
+          "name": "PARKSIDE® Акумулаторна батерия 2 Ah и Зарядно 2,4 A",
+          "brand": null,
+          "price": 31.98
         },
         "Lidl": {
-          "name": "Станция за заточване",
-          "price": 19.42
+          "name": "Акумулаторна батерия и зарядно устройство",
+          "brand": "Parkside",
+          "price": 16.35
         }
       },
-      "savings": 30.57,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "Шкаф",
-          "price": 37.98
-        },
-        "Lidl": {
-          "name": "Шредер",
-          "price": 14.31
-        }
-      },
-      "savings": 23.67,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_meat",
-      "stores": {
-        "Kaufland": {
-          "name": "IRISH BEEF Ирландско говеждо от врат от свежата витрина",
-          "price": 25.99
-        },
-        "Lidl": {
-          "name": "Говежди или хамбургски колбас",
-          "price": 8.69
-        }
-      },
-      "savings": 17.3,
+      "savings": 15.63,
       "cheapest": "Lidl"
     },
     {
       "category": "garden",
+      "confidence": 0.891,
       "stores": {
         "Kaufland": {
-          "name": "Синя орхидея Фаленопсис в керамична кашпа",
-          "price": 29.98
-        },
-        "Billa": {
-          "name": "Орхидея Фаленопсис в керамика саксия Ф6 1 бр.** Продукт, маркиран със синя звезда",
-          "price": 13.67
-        }
-      },
-      "savings": 16.31,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "K-Classic Количка за пазаруване с хладилна чанта",
-          "price": 44.98
-        },
-        "Billa": {
-          "name": "Pampers Premium Бебешки пелени - размер 1 или 2 - 46-52 бр.в опаковка Продукт, м",
-          "price": 28.79
-        }
-      },
-      "savings": 16.19,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_meat",
-      "stores": {
-        "Kaufland": {
-          "name": "GOLDSTEIG Ементал Германия",
-          "price": 26.99
-        },
-        "Billa": {
-          "name": "Виенски шницел от контрафиле 760 г",
-          "price": 10.99
-        }
-      },
-      "savings": 16.0,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Kaufland": {
-          "name": "Savex Гел или Капсули за пране",
-          "price": 13.98
-        },
-        "Billa": {
-          "name": "Savex Premium Гел за пране 112 пранета или Капсули за пране 72 бр. 1 опаковка Произхо",
-          "price": 29.98
-        }
-      },
-      "savings": 16.0,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Lidl": {
-          "name": "Маслен радиатор",
-          "price": 35.79
-        },
-        "Billa": {
-          "name": "CleanMaxx Акумулаторна прахосмукачка 7,4V, различни цветове 1 бр. Продукт, марки",
-          "price": 49.99
-        }
-      },
-      "savings": 14.2,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "CERESIT Таблетки 3+1 лавандула или диви цветя",
-          "price": 23.98
-        },
-        "Billa": {
-          "name": "Tira капсули Hazelnut DG 16 бр.",
-          "price": 9.99
-        }
-      },
-      "savings": 13.99,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Grant's Шотландско уиски",
-          "price": 35.99
-        },
-        "Lidl": {
-          "name": "Шотландско уиски",
-          "price": 23.51
-        }
-      },
-      "savings": 12.48,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "garden",
-      "stores": {
-        "Kaufland": {
-          "name": "Remington Сешоар D3010",
+          "name": "Каскадна орхидея фаленопсис Ø12 см",
+          "brand": null,
           "price": 24.98
         },
-        "Billa": {
-          "name": "Кала саксия Ф12 1 бр.** Продукт, маркиран със синя звезда",
-          "price": 13.67
-        }
-      },
-      "savings": 11.31,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "ДИМИТЪР МАДЖАРОВ Сиренe от козе мляко от свежата витрина",
-          "price": 20.99
-        },
-        "Billa": {
-          "name": "Рикас Бяло саламурено сирене От деликатесната витрина За 1 кг",
-          "price": 9.96
-        }
-      },
-      "savings": 11.03,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_pantry",
-      "stores": {
         "Lidl": {
-          "name": "Уред за варене на ориз",
-          "price": 20.45
-        },
-        "Billa": {
-          "name": "Пълнени чушки с ориз От деликатесната витрина За 1 кг",
-          "price": 9.96
+          "name": "Орхидея Фаленопсис",
+          "brand": null,
+          "price": 11.75
         }
       },
-      "savings": 10.49,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "LACRIMA Сирене от краве мляко",
-          "price": 16.98
-        },
-        "Lidl": {
-          "name": "Кашкавал от краве мляко",
-          "price": 6.64
-        }
-      },
-      "savings": 10.34,
+      "savings": 13.23,
       "cheapest": "Lidl"
-    },
-    {
-      "category": "personal_care",
-      "stores": {
-        "Kaufland": {
-          "name": "L'оreal Шампоан Elseve",
-          "price": 8.98
-        },
-        "Lidl": {
-          "name": "Любими герои",
-          "price": 19.02
-        }
-      },
-      "savings": 10.04,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_pantry",
-      "stores": {
-        "Kaufland": {
-          "name": "Bohemia Комплект чаши Columba 260 мл или 400 мл",
-          "price": 19.99
-        },
-        "Billa": {
-          "name": "Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
-          "price": 9.96
-        }
-      },
-      "savings": 10.03,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "personal_care",
-      "stores": {
-        "Kaufland": {
-          "name": "GILLETTE Самобръсначка Blue 3",
-          "price": 16.98
-        },
-        "Billa": {
-          "name": "Jim Beam Бърбън 1 л Продукт, маркиран със синя звезда",
-          "price": 26.99
-        }
-      },
-      "savings": 10.01,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Kaufland": {
-          "name": "Merci Шоколадови бонбони",
-          "price": 16.98
-        },
-        "Billa": {
-          "name": "Milora Шоколадови бонбони Mozart Kugeln 200 г",
-          "price": 6.98
-        }
-      },
-      "savings": 10.0,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Kaufland": {
-          "name": "SAMSUNG Микровълнова фурна MS20A3010",
-          "price": 139.9
-        },
-        "Billa": {
-          "name": "CleanMaxx Акумулаторна прахосмукачка 22.2V, с включени принадлежности, 1 бр. Про",
-          "price": 129.98
-        }
-      },
-      "savings": 9.92,
-      "cheapest": "Billa"
     },
     {
       "category": "other",
+      "confidence": 0.871,
       "stores": {
         "Kaufland": {
-          "name": "Цял заек охладен",
-          "price": 14.98
-        },
-        "Lidl": {
-          "name": "Прясна цяла патица",
-          "price": 5.11
-        }
-      },
-      "savings": 9.87,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Lidl": {
-          "name": "Препарат за пране 2 в 1",
-          "price": 8.94
+          "name": "Кухненска везна до 6 кг",
+          "brand": null,
+          "price": 7.49
         },
         "Billa": {
-          "name": "Само с Billa App - Sano Maxima Sensitive Гел за пране 2 л, 1 изпиране = 0,31 €/0,61 лв./30 пранета",
-          "price": 17.99
+          "name": "Бадем печен За 1 кг",
+          "brand": null,
+          "price": 19.54
         }
       },
-      "savings": 9.05,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_pantry",
-      "stores": {
-        "Kaufland": {
-          "name": "BRIO Комплект за подправки 13 части",
-          "price": 17.99
-        },
-        "Billa": {
-          "name": "Едросмляна лютеница От деликатесната витрина За 1 кг",
-          "price": 8.98
-        }
-      },
-      "savings": 9.01,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "ДИМИТЪР МАДЖАРОВ Кашкавал Златна селекция от краве мляко",
-          "price": 10.99
-        },
-        "Billa": {
-          "name": "Димитър Маджаров Овче сирене ЗНП 700 г Продукт, маркиран със синя звезда Защитено наименование за пр",
-          "price": 19.99
-        }
-      },
-      "savings": 9.0,
+      "savings": 12.05,
       "cheapest": "Kaufland"
     },
     {
       "category": "food_meat",
+      "confidence": 0.864,
       "stores": {
         "Kaufland": {
           "name": "Пуешко месо за готвене от бут",
+          "brand": null,
           "price": 14.98
         },
         "Lidl": {
           "name": "Месо за готвене от младо телешко",
+          "brand": null,
           "price": 6.49
         }
       },
@@ -361,134 +73,53 @@
       "cheapest": "Lidl"
     },
     {
-      "category": "electronics",
+      "category": "food_dairy",
+      "confidence": 0.914,
       "stores": {
         "Kaufland": {
-          "name": "ENERGIZER Батерии AA или ААА",
-          "price": 7.98
-        },
-        "Lidl": {
-          "name": "Акумулаторна батерия и зарядно устройство",
-          "price": 16.35
-        }
-      },
-      "savings": 8.37,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Flirt Водка",
-          "price": 15.98
-        },
-        "Lidl": {
-          "name": "Водка",
-          "price": 7.66
-        }
-      },
-      "savings": 8.32,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Martini Пенливо вино различни видове",
-          "price": 19.99
-        },
-        "Billa": {
-          "name": "ANGEL'S Вино 0,75 л Произход - България",
-          "price": 11.72
-        }
-      },
-      "savings": 8.27,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Eduscho Кафе на зърна различни видове",
-          "price": 29.98
-        },
-        "Billa": {
-          "name": "Tira Кафе на зърна Dual Colombia Brazil 500 г Продукт, маркиран със синя звезда",
-          "price": 21.98
-        }
-      },
-      "savings": 8.0,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Kaufland": {
-          "name": "Ferrero Rocher Шоколадови бонбони",
-          "price": 10.99
-        },
-        "Billa": {
-          "name": "Ferrero Rocher Бонбониера Diamand 300 г",
-          "price": 18.99
-        }
-      },
-      "savings": 8.0,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "К2r Цветоулавящи кърпички",
-          "price": 6.98
-        },
-        "Billa": {
-          "name": "Spontex Микрофибърни кърпи за почистване,16 броя в опаковка Продукт, маркиран със син",
+          "name": "РАФТИС Кашкавал от краве мляко",
+          "brand": null,
           "price": 14.98
-        }
-      },
-      "savings": 8.0,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Nescafe Classic Разтворимо кафе",
-          "price": 13.98
         },
         "Lidl": {
-          "name": "Инстантно кафе Голд",
-          "price": 6.13
+          "name": "Кашкавал от краве мляко",
+          "brand": "Дни",
+          "price": 6.64
         }
       },
-      "savings": 7.85,
+      "savings": 8.34,
       "cheapest": "Lidl"
     },
     {
-      "category": "household",
+      "category": "pets",
+      "confidence": 0.896,
       "stores": {
         "Kaufland": {
-          "name": "Familia Тоалетна хартия различни видове",
-          "price": 16.98
+          "name": "Whiskas Суха храна за котки различни видове",
+          "brand": null,
+          "price": 12.48
         },
         "Lidl": {
-          "name": "Тоалетна хартия",
-          "price": 9.71
+          "name": "Суха храна за котки",
+          "brand": "Coshida",
+          "price": 4.34
         }
       },
-      "savings": 7.27,
+      "savings": 8.14,
       "cheapest": "Lidl"
     },
     {
       "category": "electronics",
+      "confidence": 0.932,
       "stores": {
         "Kaufland": {
           "name": "Parkside® Зарядно за батерии",
+          "brand": null,
           "price": 19.99
         },
         "Lidl": {
           "name": "Зарядно устройство за акумулаторна батерия",
+          "brand": "Parkside",
           "price": 12.78
         }
       },
@@ -496,269 +127,35 @@
       "cheapest": "Lidl"
     },
     {
-      "category": "food_meat",
-      "stores": {
-        "Kaufland": {
-          "name": "MEAT REVOLUTION Шницел от младо телешко",
-          "price": 11.99
-        },
-        "Lidl": {
-          "name": "Кайма от младо телешко",
-          "price": 4.85
-        }
-      },
-      "savings": 7.14,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "pets",
-      "stores": {
-        "Kaufland": {
-          "name": "Gourmet Gold Храна за котки различни видове",
-          "price": 4.87
-        },
-        "Billa": {
-          "name": "Vivess Кошче за отпадъци 5 л 1 бр. Продукт, маркиран със синя звезда",
-          "price": 11.99
-        }
-      },
-      "savings": 7.12,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "Kinder Pingui Млечен десерт",
-          "price": 4.64
-        },
-        "Lidl": {
-          "name": "Детски гумени ботуши",
-          "price": 11.75
-        }
-      },
-      "savings": 7.11,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "GEMBIRD Саундбар SPK-BT-BAR400-01",
-          "price": 29.98
-        },
-        "Billa": {
-          "name": "Само с Billa App - Jagermeister Ликьор 0,7 л",
-          "price": 22.98
-        }
-      },
-      "savings": 7.0,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Kaufland": {
-          "name": "Bohemia Комплект чаши Columba",
-          "price": 15.98
-        },
-        "Billa": {
-          "name": "Semana Омекотител 100 пранета Произход - България Продукт, маркиран със синя звезда 1",
-          "price": 8.98
-        }
-      },
-      "savings": 7.0,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "personal_care",
-      "stores": {
-        "Kaufland": {
-          "name": "GILLETTE Самобръсначка Blue 3 различни видове",
-          "price": 16.98
-        },
-        "Billa": {
-          "name": "Сгъваем леген 24 л, различни цветове, 1 бр. Продукт, маркиран със синя звезда",
-          "price": 9.99
-        }
-      },
-      "savings": 6.99,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "clothing",
-      "stores": {
-        "Kaufland": {
-          "name": "OYANDA Пижама сатен",
-          "price": 15.98
-        },
-        "Lidl": {
-          "name": "Пижама",
-          "price": 9.2
-        }
-      },
-      "savings": 6.78,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "BRIO Точило за ножове 13 x 7 см",
-          "price": 9.49
-        },
-        "Billa": {
-          "name": "Само с Billa App - Brio Универсален нож 13 см",
-          "price": 3.48
-        }
-      },
-      "savings": 6.01,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "Media Range Micro SD карта 128 GB/Cl10 + aдаптер",
-          "price": 17.99
-        },
-        "Billa": {
-          "name": "Vivess Кошница за съхранение М - 30 см, 1 бр. Продукт, маркиран със синя звезда",
-          "price": 11.99
-        }
-      },
-      "savings": 6.0,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Kaufland": {
-          "name": "Milka Бисквити Choc&Choc",
-          "price": 4.11
-        },
-        "Billa": {
-          "name": "Tira капсули Cappuccino 8 + 8 DG",
-          "price": 9.99
-        }
-      },
-      "savings": 5.88,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Lidl": {
-          "name": "Разтворимо кафе 3 в 1",
-          "price": 5.11
-        },
-        "Billa": {
-          "name": "Tira мляно кафе Crema 250 г",
-          "price": 10.99
-        }
-      },
-      "savings": 5.88,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "electronics",
-      "stores": {
-        "Kaufland": {
-          "name": "Osram LED Star лампа 13 W",
-          "price": 5.98
-        },
-        "Lidl": {
-          "name": "LED часовник",
-          "price": 11.75
-        }
-      },
-      "savings": 5.77,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Bohemia Комплект чаши за вино Columba",
-          "price": 19.99
-        },
-        "Billa": {
-          "name": "Chateau Karnobat Вино 3 л Произход - България",
-          "price": 14.26
-        }
-      },
-      "savings": 5.73,
-      "cheapest": "Billa"
-    },
-    {
       "category": "food_dairy",
+      "confidence": 0.866,
       "stores": {
         "Kaufland": {
-          "name": "FIVEPI Маскарпоне Италия",
-          "price": 10.48
-        },
-        "Lidl": {
-          "name": "Италианско тирамису",
-          "price": 5.11
-        }
-      },
-      "savings": 5.37,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_produce",
-      "stores": {
-        "Kaufland": {
-          "name": "Кухненска везна до 6 кг",
-          "price": 7.49
+          "name": "Булгарче Сирене от краве мляко от свежата витрина",
+          "brand": null,
+          "price": 10.99
         },
         "Billa": {
-          "name": "Пресни картофи За 1 кг",
-          "price": 2.52
+          "name": "Саяна Кашкавал от краве мляко От деликатесната витрина За 1 кг",
+          "brand": null,
+          "price": 17.97
         }
       },
-      "savings": 4.97,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_frozen",
-      "stores": {
-        "Kaufland": {
-          "name": "Pinsa Romana Пица Традиционна замразена",
-          "price": 5.22
-        },
-        "Billa": {
-          "name": "Tira капсули Pistachio DG 16 бр.",
-          "price": 9.99
-        }
-      },
-      "savings": 4.77,
+      "savings": 6.98,
       "cheapest": "Kaufland"
     },
     {
-      "category": "food_produce",
-      "stores": {
-        "Kaufland": {
-          "name": "Булкарто Бланширани картофи",
-          "price": 6.98
-        },
-        "Lidl": {
-          "name": "Бланширани картофи",
-          "price": 2.35
-        }
-      },
-      "savings": 4.63,
-      "cheapest": "Lidl"
-    },
-    {
       "category": "food_meat",
+      "confidence": 0.881,
       "stores": {
         "Kaufland": {
           "name": "Шеф Месар Панирано пилешко филе",
+          "brand": null,
           "price": 7.18
         },
         "Lidl": {
           "name": "Панирани пилешки шницели",
+          "brand": null,
           "price": 2.7
         }
       },
@@ -766,134 +163,71 @@
       "cheapest": "Lidl"
     },
     {
-      "category": "food_drinks",
-      "stores": {
-        "Lidl": {
-          "name": "Шоколадови мини блокчета с кокос",
-          "price": 3.57
-        },
-        "Billa": {
-          "name": "Сгъваема кофа 10 л, различни цветове, 1 бр. Продукт, маркиран със синя звезда",
-          "price": 8.0
-        }
-      },
-      "savings": 4.43,
-      "cheapest": "Lidl"
-    },
-    {
       "category": "food_snacks",
+      "confidence": 0.899,
       "stores": {
         "Kaufland": {
           "name": "Roshen Шоколадови бонбони",
+          "brand": null,
           "price": 9.49
         },
-        "Billa": {
-          "name": "Насипни бонбони За 1 кг",
-          "price": 13.91
-        }
-      },
-      "savings": 4.42,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "Naturli Веган пица Mexicana",
-          "price": 6.75
-        },
-        "Billa": {
-          "name": "Пица с шунка и моцарела От Billa пекарна 220 г Произход - България Billa Ready",
-          "price": 2.48
-        }
-      },
-      "savings": 4.27,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Del Alma Масло от гроздови семки",
-          "price": 14.98
-        },
-        "Billa": {
-          "name": "Пещерска Ракия гроздова 0,7 л Произход - България",
-          "price": 10.99
-        }
-      },
-      "savings": 3.99,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Kaufland": {
-          "name": "STR8 Тоалетна вода",
-          "price": 12.99
-        },
-        "Billa": {
-          "name": "Finish Сол за съдомиялна 1,5 кг, изплакваща течност 800 мл или почистващи капсули за съдомиялна 3 бр",
-          "price": 9.0
-        }
-      },
-      "savings": 3.99,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "HOME PRACTIC Уред за вакуумиране",
-          "price": 19.99
-        },
         "Lidl": {
-          "name": "Покани топлината у дома",
-          "price": 16.02
+          "name": "Шоколадови бонбони",
+          "brand": "J.D.GROSS",
+          "price": 5.11
         }
       },
-      "savings": 3.97,
+      "savings": 4.38,
       "cheapest": "Lidl"
     },
     {
-      "category": "other",
+      "category": "food_meat",
+      "confidence": 0.875,
       "stores": {
         "Kaufland": {
-          "name": "Parkside® Пистолет с горещ силикон",
-          "price": 19.99
+          "name": "Майстор Цветко Салам Закуска",
+          "brand": null,
+          "price": 9.99
         },
-        "Lidl": {
-          "name": "Silvercrest®",
-          "price": 16.02
+        "Billa": {
+          "name": "Мес Ко Колбас Мелник 230 г",
+          "brand": null,
+          "price": 6.04
         }
       },
-      "savings": 3.97,
-      "cheapest": "Lidl"
+      "savings": 3.95,
+      "cheapest": "Billa"
     },
     {
       "category": "food_produce",
+      "confidence": 0.912,
       "stores": {
+        "Kaufland": {
+          "name": "Булкарто Бланширани картофи",
+          "brand": null,
+          "price": 6.98
+        },
         "Lidl": {
           "name": "Бланширани сладки картофи",
+          "brand": "Harvest",
           "price": 3.06
-        },
-        "Billa": {
-          "name": "Бейби картофи със самардала От топлата витрина За 1 кг Billa Ready",
-          "price": 7.02
         }
       },
-      "savings": 3.96,
+      "savings": 3.92,
       "cheapest": "Lidl"
     },
     {
       "category": "food_drinks",
+      "confidence": 0.873,
       "stores": {
         "Kaufland": {
           "name": "Jameson Ирландско уиски",
+          "brand": null,
           "price": 33.89
         },
         "Billa": {
           "name": "Pogues Ирландско Уиски 1 л",
+          "brand": null,
           "price": 29.98
         }
       },
@@ -901,584 +235,71 @@
       "cheapest": "Billa"
     },
     {
-      "category": "food_meat",
+      "category": "food_snacks",
+      "confidence": 0.863,
       "stores": {
         "Kaufland": {
-          "name": "Чаени свещи 100 бр.",
-          "price": 6.98
+          "name": "Roshen Шоколадови бонбони Chocolateria",
+          "brand": null,
+          "price": 9.49
         },
-        "Billa": {
-          "name": "Clever Луканка слайс 100 г",
-          "price": 3.11
+        "Lidl": {
+          "name": "Шоколадови белгийски бонбони с пълнеж",
+          "brand": "ORIGINAL",
+          "price": 5.62
         }
       },
       "savings": 3.87,
-      "cheapest": "Billa"
+      "cheapest": "Lidl"
     },
     {
       "category": "food_meat",
+      "confidence": 0.917,
       "stores": {
         "Kaufland": {
-          "name": "K-Classic Пица специале на въглища",
-          "price": 3.74
-        },
-        "Billa": {
-          "name": "Billa Пилешки бутчета замразени BBQ 750 г",
-          "price": 7.49
-        }
-      },
-      "savings": 3.75,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "Ristorante Пица различни видове",
-          "price": 6.75
+          "name": "Тандем Бекон",
+          "brand": null,
+          "price": 8.0
         },
         "Lidl": {
-          "name": "Мини пици Маргарита",
-          "price": 3.06
-        }
-      },
-      "savings": 3.69,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "Сами-М Топчета за супа",
-          "price": 3.99
-        },
-        "Lidl": {
-          "name": "Комплект за приготвяне на суши",
-          "price": 7.66
-        }
-      },
-      "savings": 3.67,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Extra Zytnia Водка",
-          "price": 12.99
-        },
-        "Billa": {
-          "name": "Absolut Водка 0,7 л",
-          "price": 16.49
-        }
-      },
-      "savings": 3.5,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_meat",
-      "stores": {
-        "Lidl": {
-          "name": "Хамон Серрано",
-          "price": 2.55
-        },
-        "Billa": {
-          "name": "Мес Ко Колбас Мелник 230 г",
-          "price": 6.04
-        }
-      },
-      "savings": 3.49,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "Плюшена играчка различни видове",
-          "price": 6.98
-        },
-        "Lidl": {
-          "name": "Плюшена играчка",
-          "price": 3.57
-        }
-      },
-      "savings": 3.41,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_pantry",
-      "stores": {
-        "Kaufland": {
-          "name": "COSTA D'ORO LE COLLINE Маслиново масло",
-          "price": 14.98
-        },
-        "Billa": {
-          "name": "Само с Billa App - Billa Необработено маслиново масло extra virgin 750 мл",
-          "price": 11.72
-        }
-      },
-      "savings": 3.26,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Lidl": {
-          "name": "Шоколадови белгийски бонбони с пълнеж",
-          "price": 5.62
-        },
-        "Billa": {
-          "name": "Гербери Тунквани бисквити 170 г",
-          "price": 2.39
-        }
-      },
-      "savings": 3.23,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "personal_care",
-      "stores": {
-        "Lidl": {
-          "name": "Заваръчни дюзи, дюзи за горелка или заваръчна тел",
-          "price": 3.57
-        },
-        "Billa": {
-          "name": "Dove Advanced Дезодорант спрей 150 мл или рол он 50 мл Различни видове 1 бр.",
-          "price": 6.75
-        }
-      },
-      "savings": 3.18,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "clothing",
-      "stores": {
-        "Lidl": {
-          "name": "Работни чорапи",
-          "price": 6.64
-        },
-        "Billa": {
-          "name": "Само с Billa App - Happy Foottopia Чорапи с бамбук размер 35-38 / 39-42 или 43-46 - 1 чифт",
-          "price": 3.48
-        }
-      },
-      "savings": 3.16,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Lidl": {
-          "name": "Оформящ топ",
-          "price": 6.13
-        },
-        "Billa": {
-          "name": "Помело едро 1 бр.",
-          "price": 2.99
-        }
-      },
-      "savings": 3.14,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_pantry",
-      "stores": {
-        "Kaufland": {
-          "name": "Златно Добруджанско Слънчогледово олио",
-          "price": 2.39
-        },
-        "Billa": {
-          "name": "Калиакра Сълнчогледово олио 2 л До 5 бр. на клиент*",
-          "price": 5.5
-        }
-      },
-      "savings": 3.11,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "personal_care",
-      "stores": {
-        "Kaufland": {
-          "name": "Syoss Боя за коса различни цветове",
-          "price": 8.98
-        },
-        "Billa": {
-          "name": "Loreal Excellence Боя за коса 1 опаковка - различни цветове",
-          "price": 11.99
-        }
-      },
-      "savings": 3.01,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Four Roses Бърбън уиски",
-          "price": 21.98
-        },
-        "Billa": {
-          "name": "William Peel Уиски 1,5 л Продукт, маркиран със синя звезда",
-          "price": 24.98
-        }
-      },
-      "savings": 3.0,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Kaufland": {
-          "name": "SHOOTERS Шоколадови бонбони с алкохол различни вкусове",
-          "price": 3.99
-        },
-        "Billa": {
-          "name": "Billa Premium Бонбони от тъмен шоколад с пияна вишна 168 г",
-          "price": 6.98
-        }
-      },
-      "savings": 2.99,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Stallion Selection Червено или Бяло вино различни сортове",
-          "price": 14.98
-        },
-        "Lidl": {
-          "name": "Палави, но стилни",
-          "price": 12.02
-        }
-      },
-      "savings": 2.96,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "clothing",
-      "stores": {
-        "Lidl": {
-          "name": "Тениска",
-          "price": 4.08
-        },
-        "Billa": {
-          "name": "Изтривалка 40 х 60 см, различни цветове, 1 бр. Продукт, маркиран със синя звезда",
-          "price": 6.98
-        }
-      },
-      "savings": 2.9,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "Минзухар",
-          "price": 2.99
-        },
-        "Lidl": {
-          "name": "Суши сет Мукава",
-          "price": 5.62
-        }
-      },
-      "savings": 2.63,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_pantry",
-      "stores": {
-        "Kaufland": {
-          "name": "HEINZ Майонеза класик",
-          "price": 4.48
-        },
-        "Billa": {
-          "name": "Орехите Сушеница Добруджанска вакум 180 г",
-          "price": 7.02
-        }
-      },
-      "savings": 2.54,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Kaufland": {
-          "name": "Milka Mлечен шоколад различни видове",
-          "price": 6.3
-        },
-        "Billa": {
-          "name": "Milka Бисквити Милка XL 184 г",
-          "price": 3.79
-        }
-      },
-      "savings": 2.51,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "personal_care",
-      "stores": {
-        "Lidl": {
-          "name": "Сух шампоан",
-          "price": 1.97
-        },
-        "Billa": {
-          "name": "Palmolive Тоалетен сапун 4 x 90 г Продукт, маркиран със синя звезда",
-          "price": 4.48
-        }
-      },
-      "savings": 2.51,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "personal_care",
-      "stores": {
-        "Kaufland": {
-          "name": "OLD SPICE Дезодорант спрей или стик",
-          "price": 5.32
-        },
-        "Billa": {
-          "name": "Dove Advanced Дезодорант спрей 200 мл",
-          "price": 7.75
-        }
-      },
-      "savings": 2.43,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_produce",
-      "stores": {
-        "Lidl": {
-          "name": "Салата микс Италиана",
-          "price": 1.53
-        },
-        "Billa": {
-          "name": "Marca Italia Прошуто Кото слайс 130 г Продукт, маркиран със синя звезда",
-          "price": 3.89
-        }
-      },
-      "savings": 2.36,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "ПАСТИР Сирене от козе или овче мляко",
-          "price": 9.49
-        },
-        "Billa": {
-          "name": "Пастир Кашкавал от козе мляко 200 г Продукт, маркиран със синя звезда",
-          "price": 7.22
-        }
-      },
-      "savings": 2.27,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "K-Classic Моцарела Maxi 45% масленост",
-          "price": 6.98
-        },
-        "Lidl": {
-          "name": "Моцарела",
-          "price": 4.75
-        }
-      },
-      "savings": 2.23,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "Плюшена играчка мече",
-          "price": 6.98
-        },
-        "Lidl": {
-          "name": "Играчка",
-          "price": 9.2
+          "name": "Суитшърт",
+          "brand": null,
+          "price": 10.22
         }
       },
       "savings": 2.22,
       "cheapest": "Kaufland"
     },
     {
-      "category": "food_produce",
+      "category": "food_dairy",
+      "confidence": 0.867,
       "stores": {
         "Kaufland": {
-          "name": "CLASSIC MAX Паеля с пиле и зеленчуци",
-          "price": 3.74
+          "name": "Саяна Кисело мляко",
+          "brand": null,
+          "price": 3.6
         },
         "Billa": {
-          "name": "Червен лук За 1 кг",
-          "price": 1.55
+          "name": "Верея Чудно Кисело мляко 5% 400 г",
+          "brand": null,
+          "price": 1.49
         }
       },
-      "savings": 2.19,
+      "savings": 2.11,
       "cheapest": "Billa"
-    },
-    {
-      "category": "personal_care",
-      "stores": {
-        "Kaufland": {
-          "name": "Nivea Мицеларен измивен гел с розова вода",
-          "price": 5.98
-        },
-        "Billa": {
-          "name": "Nivea Душ гел 500 мл Различни видове",
-          "price": 8.0
-        }
-      },
-      "savings": 2.02,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Midalidare Nota Bene Червено вино",
-          "price": 16.98
-        },
-        "Billa": {
-          "name": "Vina Esmeralda Вино 0,75 л Сорт - Розе. Произход - Испания. Температура на консумация - 14 - 16°C. П",
-          "price": 18.99
-        }
-      },
-      "savings": 2.01,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Kimbo Кафе на зърна",
-          "price": 36.98
-        },
-        "Billa": {
-          "name": "Tira Кафе на зърна Barista Espresso 1 кг Продукт, маркиран със синя звезда",
-          "price": 34.99
-        }
-      },
-      "savings": 1.99,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_produce",
-      "stores": {
-        "Kaufland": {
-          "name": "Червено грозде без семки",
-          "price": 4.48
-        },
-        "Lidl": {
-          "name": "Круши в сок от грозде",
-          "price": 2.55
-        }
-      },
-      "savings": 1.93,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_produce",
-      "stores": {
-        "Kaufland": {
-          "name": "Манго",
-          "price": 2.19
-        },
-        "Lidl": {
-          "name": "Сира",
-          "price": 4.09
-        }
-      },
-      "savings": 1.9,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Kaufland": {
-          "name": "Domestos Универсален препарат или Спрей",
-          "price": 6.49
-        },
-        "Lidl": {
-          "name": "Течен перилен препарат",
-          "price": 4.6
-        }
-      },
-      "savings": 1.89,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "ION DARK Натурален шоколад 90 г",
-          "price": 3.58
-        },
-        "Billa": {
-          "name": "Clever Суров орех 200 г",
-          "price": 5.46
-        }
-      },
-      "savings": 1.88,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Kaufland": {
-          "name": "Milka Бисквити Cookies Sensations различни видове",
-          "price": 4.11
-        },
-        "Lidl": {
-          "name": "Обикновени бисквити Мария",
-          "price": 2.3
-        }
-      },
-      "savings": 1.81,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_produce",
-      "stores": {
-        "Lidl": {
-          "name": "Рози",
-          "price": 3.19
-        },
-        "Billa": {
-          "name": "Домати розови За 1 кг",
-          "price": 4.87
-        }
-      },
-      "savings": 1.68,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "pets",
-      "stores": {
-        "Kaufland": {
-          "name": "K-Classic Суха храна за котки",
-          "price": 5.98
-        },
-        "Lidl": {
-          "name": "Суха храна за котки",
-          "price": 4.34
-        }
-      },
-      "savings": 1.64,
-      "cheapest": "Lidl"
     },
     {
       "category": "food_dairy",
+      "confidence": 0.863,
       "stores": {
         "Lidl": {
           "name": "Моцарела XXL",
+          "brand": "Milbona",
           "price": 5.87
         },
         "Billa": {
           "name": "Cammino D'oro Моцарела 2 х 125 г",
+          "brand": null,
           "price": 4.28
         }
       },
@@ -1487,418 +308,70 @@
     },
     {
       "category": "food_snacks",
-      "stores": {
-        "Lidl": {
-          "name": "Шоколадови бонбони",
-          "price": 5.11
-        },
-        "Billa": {
-          "name": "Leader Brand Сладки с плодов пълнеж 270 г",
-          "price": 3.6
-        }
-      },
-      "savings": 1.51,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_meat",
+      "confidence": 0.853,
       "stores": {
         "Kaufland": {
-          "name": "Зюмбюл Трио 12см",
-          "price": 5.98
+          "name": "Milka Бисквити Chocominis",
+          "brand": null,
+          "price": 2.78
         },
         "Billa": {
-          "name": "Clever Кренвиршr За1 кг",
-          "price": 4.48
-        }
-      },
-      "savings": 1.5,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Lidl": {
-          "name": "Шоколадови мини блокчета",
-          "price": 3.57
-        },
-        "Billa": {
-          "name": "Clever лакомства за котка 150 г Различни видове",
-          "price": 2.09
-        }
-      },
-      "savings": 1.48,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "Яйца размер М",
-          "price": 5.87
-        },
-        "Billa": {
-          "name": "Дончево яйца от подово оглеждани кокошки, размер M - 10 броя в опаковка",
-          "price": 4.4
-        }
-      },
-      "savings": 1.47,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "MADETA Синьо сирене 60% масленост",
-          "price": 3.09
-        },
-        "Lidl": {
-          "name": "Синьо сирене",
-          "price": 1.63
-        }
-      },
-      "savings": 1.46,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_meat",
-      "stores": {
-        "Kaufland": {
-          "name": "K-Classic Салам с поръска различни видове",
-          "price": 3.48
-        },
-        "Lidl": {
-          "name": "Салам",
-          "price": 2.04
-        }
-      },
-      "savings": 1.44,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "clothing",
-      "stores": {
-        "Kaufland": {
-          "name": "OYANDA Чорапи 35 - 42",
-          "price": 4.99
-        },
-        "Lidl": {
-          "name": "Чорапи",
-          "price": 3.57
-        }
-      },
-      "savings": 1.42,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_produce",
-      "stores": {
-        "Lidl": {
-          "name": "Кокос или авокадо",
-          "price": 2.55
-        },
-        "Billa": {
-          "name": "Ананас 1 бр.",
-          "price": 3.89
-        }
-      },
-      "savings": 1.34,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Lidl": {
-          "name": "Грана Падано",
-          "price": 3.57
-        },
-        "Billa": {
-          "name": "Landfrisch Сирене котидж 4q5% 150 г",
-          "price": 2.25
-        }
-      },
-      "savings": 1.32,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "DEUTSCHE MARKENBUTTER Краве масло",
-          "price": 3.68
-        },
-        "Billa": {
-          "name": "Deutsche Markenbutter краве масло 250 г",
-          "price": 4.99
-        }
-      },
-      "savings": 1.31,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "home",
-      "stores": {
-        "Kaufland": {
-          "name": "Кана за вода 1600 мл",
-          "price": 3.99
-        },
-        "Billa": {
-          "name": "Garnier Sinnat Мицеларна вода 400 мл",
-          "price": 5.28
-        }
-      },
-      "savings": 1.29,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Lidl": {
-          "name": "Пазарска чанта",
-          "price": 1.02
-        },
-        "Billa": {
-          "name": "Pom-Bar снакс Family pack 80 г Продукт, маркиран със синя звезда",
-          "price": 2.29
-        }
-      },
-      "savings": 1.27,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "garden",
-      "stores": {
-        "Kaufland": {
-          "name": "K-Classic Пица различни видове",
-          "price": 3.74
-        },
-        "Billa": {
-          "name": "Bon Via Flora Каланхое саксия Ф12 1 бр.** Продукт, маркиран със синя звезда",
-          "price": 4.99
-        }
-      },
-      "savings": 1.25,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "electronics",
-      "stores": {
-        "Kaufland": {
-          "name": "Media Range USB памет 128 GB",
-          "price": 13.98
-        },
-        "Lidl": {
-          "name": "Разклонител с USB портове",
-          "price": 12.78
-        }
-      },
-      "savings": 1.2,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Lidl": {
-          "name": "Детска книга",
-          "price": 7.15
-        },
-        "Billa": {
-          "name": "Billa Кухненска хартия 2 пласта 1 бр.",
-          "price": 5.98
-        }
-      },
-      "savings": 1.17,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "garden",
-      "stores": {
-        "Lidl": {
-          "name": "Орхидея Фаленопсис",
-          "price": 11.75
-        },
-        "Billa": {
-          "name": "Bon Via Flora Орхидея Фаленопсис с 1 разклонение саксия Ф12 1 бр.** Продукт, маркиран",
-          "price": 12.89
-        }
-      },
-      "savings": 1.14,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_pantry",
-      "stores": {
-        "Kaufland": {
-          "name": "Черни маслини Мамут от свежата витрина",
-          "price": 6.98
-        },
-        "Billa": {
-          "name": "Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
-          "price": 8.0
-        }
-      },
-      "savings": 1.02,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "КИСЕЛОВО Сирене от краве мляко",
-          "price": 14.98
-        },
-        "Billa": {
-          "name": "Боженци краве сирене За 1 кг",
-          "price": 16.0
-        }
-      },
-      "savings": 1.02,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Zlaten Rozhen Червено вино",
-          "price": 8.98
-        },
-        "Billa": {
-          "name": "JP. Chenet Вино 0,75 л",
-          "price": 9.99
+          "name": "Milka Бисквити Милка XL 184 г",
+          "brand": null,
+          "price": 3.79
         }
       },
       "savings": 1.01,
       "cheapest": "Kaufland"
     },
     {
-      "category": "household",
+      "category": "food_meat",
+      "confidence": 0.902,
       "stores": {
         "Kaufland": {
-          "name": "Nike Тоалетна вода различни видове",
-          "price": 19.99
+          "name": "Свински врат без кост около 1,5 кг",
+          "brand": null,
+          "price": 7.98
         },
         "Billa": {
-          "name": "Ariel Гел за пране 40 пранета или Капсули за пране 28 бр. 1 опаковка, 1 изпиране",
-          "price": 20.99
-        }
-      },
-      "savings": 1.0,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "personal_care",
-      "stores": {
-        "Kaufland": {
-          "name": "SAFEGUARD Сапун антибактериален различни видове",
-          "price": 1.58
-        },
-        "Billa": {
-          "name": "Wet Hankies Антибактериални мокри кърпи 2 + 2 бр. Продукт, маркиран със синя звезда",
-          "price": 2.58
-        }
-      },
-      "savings": 1.0,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Kaufland": {
-          "name": "Моп тип Пеперуда",
-          "price": 5.98
-        },
-        "Billa": {
-          "name": "Clever Моп тип пеперуда 1 бр.",
+          "name": "Свински врат без кост За 1 кг До 5 кг на клиент на ден*",
+          "brand": null,
           "price": 6.98
         }
       },
       "savings": 1.0,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Tchibo Espresso Мляно кафе различни видове",
-          "price": 9.99
-        },
-        "Billa": {
-          "name": "Tira мляно кафе Espresso 250 г",
-          "price": 9.0
-        }
-      },
-      "savings": 0.99,
       "cheapest": "Billa"
     },
     {
-      "category": "food_meat",
+      "category": "food_produce",
+      "confidence": 0.86,
       "stores": {
         "Kaufland": {
-          "name": "K-Classic Маслена свещ",
-          "price": 1.99
-        },
-        "Billa": {
-          "name": "Гранде кебапче От топлата витрина 1 бр. Billa Ready",
-          "price": 1.0
-        }
-      },
-      "savings": 0.99,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "Home Practic Комплект микрофибърни кърпи",
-          "price": 1.58
+          "name": "Портокали",
+          "brand": null,
+          "price": 1.49
         },
         "Lidl": {
-          "name": "Универсални мокри кърпички",
-          "price": 2.55
+          "name": "Пърленка",
+          "brand": null,
+          "price": 0.51
         }
       },
-      "savings": 0.97,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "Геврек със сирене и сусам от нашата пекарна",
-          "price": 0.98
-        },
-        "Lidl": {
-          "name": "Крем сирене",
-          "price": 1.89
-        }
-      },
-      "savings": 0.91,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_meat",
-      "stores": {
-        "Lidl": {
-          "name": "Бейби пеперони",
-          "price": 1.63
-        },
-        "Billa": {
-          "name": "Nice Bites Стафиди тъмни джъмбо 200 г",
-          "price": 2.52
-        }
-      },
-      "savings": 0.89,
+      "savings": 0.98,
       "cheapest": "Lidl"
     },
     {
       "category": "food_produce",
+      "confidence": 0.893,
       "stores": {
         "Kaufland": {
           "name": "Гъби печурки",
+          "brand": null,
           "price": 1.94
         },
         "Lidl": {
           "name": "Кралски печурки",
+          "brand": null,
           "price": 2.81
         }
       },
@@ -1906,104 +379,53 @@
       "cheapest": "Kaufland"
     },
     {
-      "category": "household",
+      "category": "food_produce",
+      "confidence": 0.852,
       "stores": {
         "Kaufland": {
-          "name": "Medix Препарат за съдове Max Power",
-          "price": 1.68
+          "name": "Манго",
+          "brand": null,
+          "price": 2.19
         },
         "Lidl": {
-          "name": "Препарат за съдове XXL",
-          "price": 2.55
+          "name": "Чанта",
+          "brand": null,
+          "price": 3.06
         }
       },
       "savings": 0.87,
       "cheapest": "Kaufland"
     },
     {
-      "category": "food_drinks",
+      "category": "personal_care",
+      "confidence": 0.867,
       "stores": {
-        "Kaufland": {
-          "name": "K-Classic Млечен десерт",
-          "price": 1.84
-        },
         "Lidl": {
-          "name": "Високопротеинов пудинг",
-          "price": 1.02
-        }
-      },
-      "savings": 0.82,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "other",
-      "stores": {
-        "Kaufland": {
-          "name": "Традиция за трапезата Сладко жито",
-          "price": 2.84
-        },
-        "Lidl": {
-          "name": "Сладка царевица",
-          "price": 2.04
-        }
-      },
-      "savings": 0.8,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Kaufland": {
-          "name": "Bingo Гел за пране 3л=50пр",
-          "price": 9.78
-        },
-        "Lidl": {
-          "name": "Седмица XXL",
-          "price": 9.02
-        }
-      },
-      "savings": 0.76,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_pantry",
-      "stores": {
-        "Kaufland": {
-          "name": "Zebra Кухненска ролка Décor",
-          "price": 2.29
-        },
-        "Lidl": {
-          "name": "Соленки Панделки",
-          "price": 1.53
-        }
-      },
-      "savings": 0.76,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Kaufland": {
-          "name": "Snickers Шоколадов десерт Super + 1",
-          "price": 1.88
+          "name": "Крем сапун",
+          "brand": "Cien",
+          "price": 1.22
         },
         "Billa": {
-          "name": "Snickers, Mars или Twix Шоколадов десерт 50 - 51 г",
-          "price": 1.19
+          "name": "Dove Крем сапун 90 г",
+          "brand": null,
+          "price": 2.09
         }
       },
-      "savings": 0.69,
-      "cheapest": "Billa"
+      "savings": 0.87,
+      "cheapest": "Lidl"
     },
     {
       "category": "food_drinks",
+      "confidence": 0.878,
       "stores": {
         "Lidl": {
           "name": "Шоколад",
+          "brand": "Schogetten",
           "price": 2.3
         },
         "Billa": {
           "name": "Млечен шоколад 160 г",
+          "brand": null,
           "price": 2.99
         }
       },
@@ -2011,89 +433,17 @@
       "cheapest": "Lidl"
     },
     {
-      "category": "food_snacks",
-      "stores": {
-        "Kaufland": {
-          "name": "Chio Чипс различни вкусове",
-          "price": 2.48
-        },
-        "Lidl": {
-          "name": "Чипс",
-          "price": 3.16
-        }
-      },
-      "savings": 0.68,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Kaufland": {
-          "name": "Medix Glass Почистващ препарат за стъкла различни видове",
-          "price": 2.99
-        },
-        "Billa": {
-          "name": "Medix Clean & Easy Препарат за съдове 800 мл Произход - България Продукт, маркиран със синя звезда",
-          "price": 3.58
-        }
-      },
-      "savings": 0.59,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_produce",
-      "stores": {
-        "Kaufland": {
-          "name": "Червени ябълки",
-          "price": 1.49
-        },
-        "Lidl": {
-          "name": "Нектар Ябълка",
-          "price": 2.02
-        }
-      },
-      "savings": 0.53,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_meat",
-      "stores": {
-        "Kaufland": {
-          "name": "Кайма от свинско месо от свежата витрина",
-          "price": 7.49
-        },
-        "Billa": {
-          "name": "Meat Revolution Телешка кайма 400 г",
-          "price": 6.98
-        }
-      },
-      "savings": 0.51,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_bakery",
-      "stores": {
-        "Kaufland": {
-          "name": "Хляб със сусамово семе от нашата пекарна",
-          "price": 1.49
-        },
-        "Billa": {
-          "name": "Бабин хляб със семена или царевичен От Billa пекарна 220 г Billa Ready",
-          "price": 1.99
-        }
-      },
-      "savings": 0.5,
-      "cheapest": "Kaufland"
-    },
-    {
       "category": "food_pantry",
+      "confidence": 0.881,
       "stores": {
         "Kaufland": {
           "name": "Захира Пудра захар",
+          "brand": null,
           "price": 1.58
         },
         "Billa": {
           "name": "Сладея Пудра захар 250 г",
+          "brand": null,
           "price": 1.1
         }
       },
@@ -2101,442 +451,97 @@
       "cheapest": "Billa"
     },
     {
-      "category": "food_pantry",
-      "stores": {
-        "Kaufland": {
-          "name": "Топаз Мел Брашно тип 500",
-          "price": 5.46
-        },
-        "Billa": {
-          "name": "Deroni Домашна едросмляна лютеница 520 г или Айвар 500 г 1 бр.",
-          "price": 4.99
-        }
-      },
-      "savings": 0.47,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_pantry",
-      "stores": {
-        "Lidl": {
-          "name": "Ритуална свещ",
-          "price": 0.76
-        },
-        "Billa": {
-          "name": "Сладки времена Халва 30 г",
-          "price": 0.29
-        }
-      },
-      "savings": 0.47,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Lidl": {
-          "name": "Безалкохолна бира",
-          "price": 0.51
-        },
-        "Billa": {
-          "name": "Pepsi газирана напитка 0,33 л",
-          "price": 0.98
-        }
-      },
-      "savings": 0.47,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_meat",
-      "stores": {
-        "Kaufland": {
-          "name": "K-Classic Пица Маргарита",
-          "price": 5.61
-        },
-        "Billa": {
-          "name": "Мес Ко Пилешко роле 270 г Продукт, маркиран със синя звезда",
-          "price": 6.04
-        }
-      },
-      "savings": 0.43,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Загорка Специално Бира",
-          "price": 2.19
-        },
-        "Billa": {
-          "name": "Prisun негазирана напитка 1,5 л",
-          "price": 1.78
-        }
-      },
-      "savings": 0.41,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "Prestige Камамбер или Бри",
-          "price": 4.48
-        },
-        "Lidl": {
-          "name": "Бикини, слипове или боксери",
-          "price": 4.09
-        }
-      },
-      "savings": 0.39,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "personal_care",
-      "stores": {
-        "Kaufland": {
-          "name": "Safeguard Сапун",
-          "price": 1.58
-        },
-        "Lidl": {
-          "name": "Крем сапун",
-          "price": 1.22
-        }
-      },
-      "savings": 0.36,
-      "cheapest": "Lidl"
-    },
-    {
       "category": "food_produce",
+      "confidence": 0.856,
       "stores": {
         "Kaufland": {
-          "name": "Закуска Болонезе от нашата пекарна",
+          "name": "Авокадо",
+          "brand": null,
           "price": 1.29
         },
         "Billa": {
-          "name": "Закуска с кайсия и крем От Billa пекарна 85 г Billa Ready",
-          "price": 1.0
+          "name": "Авокадо Хас 1 бр.",
+          "brand": null,
+          "price": 1.66
         }
       },
-      "savings": 0.29,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_produce",
-      "stores": {
-        "Kaufland": {
-          "name": "Брей! Червени ябълки",
-          "price": 2.48
-        },
-        "Billa": {
-          "name": "Ябълки Голдън делишъс За 1 кг",
-          "price": 2.72
-        }
-      },
-      "savings": 0.24,
+      "savings": 0.37,
       "cheapest": "Kaufland"
     },
     {
-      "category": "food_frozen",
+      "category": "food_drinks",
+      "confidence": 0.915,
       "stores": {
         "Kaufland": {
-          "name": "Magnum Сладолед различни вкусове",
-          "price": 3.29
+          "name": "Своге Шоколад различни видове",
+          "brand": null,
+          "price": 1.88
         },
         "Lidl": {
-          "name": "Сладолед",
-          "price": 3.06
+          "name": "Шоколадови топчета",
+          "brand": "CROWNFIELD",
+          "price": 2.24
         }
       },
-      "savings": 0.23,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "pets",
-      "stores": {
-        "Kaufland": {
-          "name": "Dante Храна за кучета различни видове",
-          "price": 1.25
-        },
-        "Lidl": {
-          "name": "Лакомства за кучета",
-          "price": 1.02
-        }
-      },
-      "savings": 0.23,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_produce",
-      "stores": {
-        "Kaufland": {
-          "name": "Pom Bar Картофени мечета различни вкусове",
-          "price": 2.68
-        },
-        "Billa": {
-          "name": "Сладки картофи За 1 кг",
-          "price": 2.91
-        }
-      },
-      "savings": 0.23,
+      "savings": 0.36,
       "cheapest": "Kaufland"
-    },
-    {
-      "category": "pets",
-      "stores": {
-        "Kaufland": {
-          "name": "Dante Храна за котки различни видове",
-          "price": 1.08
-        },
-        "Lidl": {
-          "name": "Лакомства за котки",
-          "price": 1.27
-        }
-      },
-      "savings": 0.19,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_pantry",
-      "stores": {
-        "Lidl": {
-          "name": "Чоризо",
-          "price": 2.04
-        },
-        "Billa": {
-          "name": "Боровинки 125 г",
-          "price": 1.86
-        }
-      },
-      "savings": 0.18,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Kaufland": {
-          "name": "Кристал Локум",
-          "price": 0.98
-        },
-        "Billa": {
-          "name": "Кристал Локум цветен 140 г",
-          "price": 1.15
-        }
-      },
-      "savings": 0.17,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_pantry",
-      "stores": {
-        "Lidl": {
-          "name": "Бяло пшенично брашно",
-          "price": 0.76
-        },
-        "Billa": {
-          "name": "Clever Бяло брашно тип 650 1 кг",
-          "price": 0.9
-        }
-      },
-      "savings": 0.14,
-      "cheapest": "Lidl"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "Jogobella Плодов йогурт различни вкусове",
-          "price": 2.64
-        },
-        "Billa": {
-          "name": "Jogobella Йогурт 400 г",
-          "price": 2.52
-        }
-      },
-      "savings": 0.12,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_dairy",
-      "stores": {
-        "Kaufland": {
-          "name": "Закуска с пушено сирене и шунка",
-          "price": 0.98
-        },
-        "Billa": {
-          "name": "Баничка със сирене или със сирене и спанак От Billa пекарна 125 г Произхо",
-          "price": 0.86
-        }
-      },
-      "savings": 0.12,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_produce",
-      "stores": {
-        "Lidl": {
-          "name": "Българско червено зеле",
-          "price": 1.27
-        },
-        "Billa": {
-          "name": "Maretti Брускети 70 г Произход - България",
-          "price": 1.15
-        }
-      },
-      "savings": 0.12,
-      "cheapest": "Billa"
     },
     {
       "category": "food_meat",
+      "confidence": 0.875,
       "stores": {
-        "Lidl": {
-          "name": "Немска деликатесна салата с колбас",
-          "price": 2.55
+        "Kaufland": {
+          "name": "Кроасан с кренвирш от свинско месо",
+          "brand": null,
+          "price": 1.27
         },
         "Billa": {
-          "name": "Billa Мексиканска салата с риба тон 150 г",
-          "price": 2.48
+          "name": "Кюфте от кълцано свинско месо От топлата витрина 1 бр. Billa Ready",
+          "brand": null,
+          "price": 0.96
         }
       },
-      "savings": 0.07,
+      "savings": 0.31,
       "cheapest": "Billa"
     },
     {
-      "category": "food_dairy",
-      "stores": {
-        "Lidl": {
-          "name": "Млечна напитка",
-          "price": 1.53
-        },
-        "Billa": {
-          "name": "Верея Чудно Кисело мляко 5% 400 г",
-          "price": 1.49
-        }
-      },
-      "savings": 0.04,
-      "cheapest": "Billa"
-    },
-    {
-      "category": "food_bakery",
+      "category": "food_produce",
+      "confidence": 0.893,
       "stores": {
         "Kaufland": {
-          "name": "Пърленка от нашата пекарна",
-          "price": 0.18
-        },
-        "Billa": {
-          "name": "Бейби багета От Billa пекарна 50 г Billa Ready",
-          "price": 0.2
-        }
-      },
-      "savings": 0.02,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Kaufland": {
-          "name": "Melbon Шоколадови бонбони Морски фигури",
-          "price": 7.98
-        },
-        "Billa": {
-          "name": "Ocean Fish Суши Филаделфия 240 г Продукт, маркиран със синя звезда",
-          "price": 8.0
-        }
-      },
-      "savings": 0.02,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Kaufland": {
-          "name": "ZEBRA Салфетки",
-          "price": 0.98
+          "name": "Круши Конференс",
+          "brand": null,
+          "price": 3.48
         },
         "Lidl": {
-          "name": "Салфетки",
-          "price": 0.97
+          "name": "Пелин",
+          "brand": "РОДНА СТРЯХА",
+          "price": 3.57
         }
       },
-      "savings": 0.01,
-      "cheapest": "Lidl"
+      "savings": 0.09,
+      "cheapest": "Kaufland"
     },
     {
       "category": "food_meat",
+      "confidence": 0.934,
       "stores": {
         "Kaufland": {
           "name": "Свинска плешка без кост до 5 кг на покупка",
+          "brand": null,
           "price": 5.79
         },
         "Billa": {
           "name": "Свински бут без кост За 1 кг",
+          "brand": null,
           "price": 5.79
-        }
-      },
-      "savings": 0.0,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_bakery",
-      "stores": {
-        "Kaufland": {
-          "name": "7 Days Max/7 Days Double Max Кроасан различни видове",
-          "price": 1.19
-        },
-        "Billa": {
-          "name": "7 Days Кроасан 70 - 92 г",
-          "price": 1.19
-        }
-      },
-      "savings": 0.0,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_drinks",
-      "stores": {
-        "Kaufland": {
-          "name": "Nescafe Разтворимо кафе 2в1 или 3в1",
-          "price": 2.89
-        },
-        "Billa": {
-          "name": "Nescafe Разтворима напитка 3 в 1 плик 10 х 15q5 г",
-          "price": 2.89
-        }
-      },
-      "savings": 0.0,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "food_snacks",
-      "stores": {
-        "Kaufland": {
-          "name": "Raffaello Бонбони кокос",
-          "price": 6.59
-        },
-        "Billa": {
-          "name": "Raffaello Бонбони 150 г",
-          "price": 6.59
-        }
-      },
-      "savings": 0.0,
-      "cheapest": "Kaufland"
-    },
-    {
-      "category": "household",
-      "stores": {
-        "Kaufland": {
-          "name": "Bonuss Тоалетна хартия 32+8 бр.",
-          "price": 9.99
-        },
-        "Billa": {
-          "name": "Billa Тоалетна хартия 3 пласта 16 бр. в опаковка",
-          "price": 9.99
         }
       },
       "savings": 0.0,
       "cheapest": "Kaufland"
     }
   ],
-  "generated": "2026-02-15T17:00:00Z",
-  "count": 169,
-  "version": "v2"
+  "count": 30,
+  "version": "v3c_with_brands",
+  "generated": "2026-02-15"
 }
