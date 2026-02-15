@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Export cross-store matches to frontend JSON.
-Improved matching with brand-aware logic.
+Format matches what compare.html expects.
 """
 
 import sqlite3
@@ -18,7 +18,6 @@ MODEL_CACHE = os.environ.get('TRANSFORMERS_CACHE', '/host-workspace/.model-cache
 THRESHOLD = 0.82
 
 def normalize(text):
-    """Normalize text for matching."""
     if not text:
         return ""
     text = text.lower()
@@ -32,7 +31,7 @@ def main():
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     
-    # Load all products with prices
+    # Load all products with prices - ONLY those with valid prices
     cur.execute("""
         SELECT 
             p.id, p.name, p.normalized_name, p.brand,
@@ -42,7 +41,9 @@ def main():
         JOIN store_products sp ON p.id = sp.product_id
         JOIN stores s ON sp.store_id = s.id
         LEFT JOIN prices pr ON pr.store_product_id = sp.id
-        WHERE p.brand != 'NO_BRAND' OR p.brand IS NULL
+        WHERE (p.brand != 'NO_BRAND' OR p.brand IS NULL)
+        AND pr.current_price IS NOT NULL
+        AND pr.current_price > 0
     """)
     
     products = []
@@ -53,7 +54,7 @@ def main():
         products.append(prod)
         by_store[prod['store']].append(prod)
     
-    print(f"Loaded {len(products)} branded products from {len(by_store)} stores")
+    print(f"Loaded {len(products)} products with prices from {len(by_store)} stores")
     for store, prods in by_store.items():
         print(f"  {store}: {len(prods)}")
     
@@ -86,9 +87,8 @@ def main():
     for brand, brand_prods in by_brand.items():
         stores_in_brand = set(p['store'] for p in brand_prods)
         if len(stores_in_brand) < 2:
-            continue  # Need at least 2 stores
+            continue
         
-        # Cluster similar products within brand
         n = len(brand_prods)
         used = set()
         
@@ -103,9 +103,8 @@ def main():
                 if j in used:
                     continue
                 if brand_prods[j]['store'] in cluster_stores:
-                    continue  # Skip same store
+                    continue
                 
-                # Compute similarity
                 sim = np.dot(brand_prods[i]['embedding'], brand_prods[j]['embedding']) / (
                     np.linalg.norm(brand_prods[i]['embedding']) * np.linalg.norm(brand_prods[j]['embedding'])
                 )
@@ -118,7 +117,6 @@ def main():
             if len(cluster_stores) >= 2:
                 matches.append({
                     'products': cluster,
-                    'stores': list(cluster_stores),
                     'brand': brand,
                     'confidence': 0.9
                 })
@@ -128,37 +126,41 @@ def main():
     
     print(f"  Found {len(matches)} brand-based matches")
     
-    # Export to JSON
+    # Export to JSON - format for compare.html
     print(f"\nExporting to {OUTPUT_PATH}...")
     
     output = []
     for m in matches:
+        # Get best name (shortest clean one)
+        names = [p['name'].split('\n')[0] for p in m['products']]
+        best_name = min(names, key=len) if names else m['brand']
+        
+        # Build stores array for frontend
+        stores_data = []
+        for p in m['products']:
+            stores_data.append({
+                'store': p['store'],
+                'price': float(p['price']),
+                'name': p['name']
+            })
+        
+        prices = [s['price'] for s in stores_data]
+        min_price = min(prices)
+        max_price = max(prices)
+        savings = round(max_price - min_price, 2)
+        
         entry = {
             'id': len(output) + 1,
+            'name': best_name,
             'brand': m['brand'].title() if m.get('brand') else None,
-            'products': [],
-            'stores': m['stores'],
-            'store_count': len(m['stores']),
-            'confidence': m['confidence']
+            'stores': stores_data,  # What compare.html expects
+            'store_count': len(stores_data),
+            'confidence': m['confidence'],
+            'min_price': min_price,
+            'max_price': max_price,
+            'savings': savings,
+            'savings_pct': round((savings / max_price) * 100, 1) if max_price > 0 else 0
         }
-        
-        prices = []
-        for p in m['products']:
-            entry['products'].append({
-                'id': p['id'],
-                'name': p['name'],
-                'brand': p['brand'],
-                'store': p['store'],
-                'price': p['price']
-            })
-            if p['price']:
-                prices.append(p['price'])
-        
-        if len(prices) >= 2:
-            entry['min_price'] = min(prices)
-            entry['max_price'] = max(prices)
-            entry['savings'] = round(max(prices) - min(prices), 2)
-            entry['savings_pct'] = round((entry['savings'] / max(prices)) * 100, 1)
         
         output.append(entry)
     
@@ -172,10 +174,6 @@ def main():
     if output:
         print(f"   Top savings: {output[0].get('savings', 0):.2f} лв ({output[0].get('brand', 'N/A')})")
         print(f"   Avg savings: {sum(m.get('savings', 0) for m in output) / len(output):.2f} лв")
-    
-    # Stats
-    total_with_savings = len([m for m in output if m.get('savings', 0) > 0])
-    print(f"   Matches with savings: {total_with_savings}")
     
     conn.close()
 
