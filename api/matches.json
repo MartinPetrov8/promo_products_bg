@@ -1,1150 +1,298 @@
-{
-  "version": "v5_brand_coverage_84pct",
-  "generated": "2026-02-15T20:10:00Z",
-  "total_matches": 127,
-  "matches": [
-    {
-      "product": "Parkside акумулаторна батерия и зарядно устройство",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 16.35,
-      "expensive_store": "Kaufland",
-      "expensive_price": 44.98,
-      "savings": 28.63,
-      "similarity": 0.85
-    },
-    {
-      "product": "Parkside зарядно устройство за акумулаторна батерия",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 12.78,
-      "expensive_store": "Kaufland",
-      "expensive_price": 37.98,
-      "savings": 25.2,
-      "similarity": 0.871
-    },
-    {
-      "product": "Parkside акумулаторна батерия и зарядно устройство",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 16.35,
-      "expensive_store": "Kaufland",
-      "expensive_price": 39.98,
-      "savings": 23.63,
-      "similarity": 0.888
-    },
-    {
-      "product": "Parkside акумулаторна батерия и зарядно устройство",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 16.35,
-      "expensive_store": "Kaufland",
-      "expensive_price": 37.98,
-      "savings": 21.63,
-      "similarity": 0.878
-    },
-    {
-      "product": "Parkside зарядно устройство за акумулаторна батерия",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 12.78,
-      "expensive_store": "Kaufland",
-      "expensive_price": 31.98,
-      "savings": 19.2,
-      "similarity": 0.919
-    },
-    {
-      "product": "JOHNNIE WALKER шотландско уиски",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 23.51,
-      "expensive_store": "Kaufland",
-      "expensive_price": 41.99,
-      "savings": 18.48,
-      "similarity": 0.873
-    },
-    {
-      "product": "орхидея фаленопсис",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 11.75,
-      "expensive_store": "Kaufland",
-      "expensive_price": 29.98,
-      "savings": 18.23,
-      "similarity": 0.845
-    },
-    {
-      "product": "Орхидея орхидея фаленопсис в керамика саксия ф6 1 бр.** продукт, маркиран със синя звезд",
-      "cheaper_store": "Billa",
-      "cheaper_price": 13.671042,
-      "expensive_store": "Kaufland",
-      "expensive_price": 29.98,
-      "savings": 16.31,
-      "similarity": 0.894
-    },
-    {
-      "product": "Savex savex гел или капсули за пране",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 13.98,
-      "expensive_store": "Billa",
-      "expensive_price": 29.982414,
-      "savings": 16.0,
-      "similarity": 0.873
-    },
-    {
-      "product": "Parkside акумулаторна батерия и зарядно устройство",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 16.35,
-      "expensive_store": "Kaufland",
-      "expensive_price": 31.98,
-      "savings": 15.63,
-      "similarity": 0.93
-    },
-    {
-      "product": "орхидея фаленопсис",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 11.75,
-      "expensive_store": "Kaufland",
-      "expensive_price": 24.98,
-      "savings": 13.23,
-      "similarity": 0.884
-    },
-    {
-      "product": "Дни кашкавал от краве мляко",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 6.64,
-      "expensive_store": "Kaufland",
-      "expensive_price": 17.99,
-      "savings": 11.35,
-      "similarity": 0.881
-    },
-    {
-      "product": "сутиен",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 6.13,
-      "expensive_store": "Kaufland",
-      "expensive_price": 15.98,
-      "savings": 9.85,
-      "similarity": 0.843
-    },
-    {
-      "product": "месо за готвене от младо телешко",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 6.49,
-      "expensive_store": "Kaufland",
-      "expensive_price": 14.98,
-      "savings": 8.49,
-      "similarity": 0.89
-    },
-    {
-      "product": "Coshida суха храна за котки",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 4.34,
-      "expensive_store": "Kaufland",
-      "expensive_price": 12.48,
-      "savings": 8.14,
-      "similarity": 0.899
-    },
-    {
-      "product": "Lindt lindt шоколад excellence различни видове 100 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 5.984748,
-      "expensive_store": "Kaufland",
-      "expensive_price": 13.98,
-      "savings": 8.0,
-      "similarity": 0.863
-    },
-    {
-      "product": "Ferrero ferrero rocher шоколадови бонбони",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 10.99,
-      "expensive_store": "Billa",
-      "expensive_price": 18.99,
-      "savings": 8.0,
-      "similarity": 0.824
-    },
-    {
-      "product": "сутиен",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 6.13,
-      "expensive_store": "Kaufland",
-      "expensive_price": 13.98,
-      "savings": 7.85,
-      "similarity": 0.827
-    },
-    {
-      "product": "Parkside зарядно устройство за акумулаторна батерия",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 12.78,
-      "expensive_store": "Kaufland",
-      "expensive_price": 19.99,
-      "savings": 7.21,
-      "similarity": 0.922
-    },
-    {
-      "product": "NO_BRAND круши конференс",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 3.48,
-      "expensive_store": "Lidl",
-      "expensive_price": 10.22,
-      "savings": 6.74,
-      "similarity": 0.869
-    },
-    {
-      "product": "Дни кашкавал от краве мляко",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 6.64,
-      "expensive_store": "Kaufland",
-      "expensive_price": 12.99,
-      "savings": 6.35,
-      "similarity": 0.907
-    },
-    {
-      "product": "NO_BRAND свинска плешка без кост до 5 кг на покупка",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 5.79,
-      "expensive_store": "Billa",
-      "expensive_price": 11.99,
-      "savings": 6.2,
-      "similarity": 0.822
-    },
-    {
-      "product": "BRIO само с billa app - brio универсален нож 13 см",
-      "cheaper_store": "Billa",
-      "cheaper_price": 3.48,
-      "expensive_store": "Kaufland",
-      "expensive_price": 9.49,
-      "savings": 6.01,
-      "similarity": 0.821
-    },
-    {
-      "product": "NO_BRAND саяна кашкавал от краве мляко от деликатесната витрина за 1 кг",
-      "cheaper_store": "Billa",
-      "cheaper_price": 17.97,
-      "expensive_store": "Kaufland",
-      "expensive_price": 23.78,
-      "savings": 5.81,
-      "similarity": 0.842
-    },
-    {
-      "product": "Дни кашкавал от краве мляко",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 6.64,
-      "expensive_store": "Kaufland",
-      "expensive_price": 12.38,
-      "savings": 5.74,
-      "similarity": 0.87
-    },
-    {
-      "product": "NO_BRAND народен кренвирш пилешки от деликатесната витрина за 1 кг",
-      "cheaper_store": "Billa",
-      "cheaper_price": 5.46,
-      "expensive_store": "Kaufland",
-      "expensive_price": 10.99,
-      "savings": 5.53,
-      "similarity": 0.835
-    },
-    {
-      "product": "месо за готвене от младо телешко",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 6.49,
-      "expensive_store": "Kaufland",
-      "expensive_price": 11.99,
-      "savings": 5.5,
-      "similarity": 0.897
-    },
-    {
-      "product": "Extra водка",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 7.66,
-      "expensive_store": "Kaufland",
-      "expensive_price": 12.99,
-      "savings": 5.33,
-      "similarity": 0.968
-    },
-    {
-      "product": "NO_BRAND булгарче сирене от краве мляко от свежата витрина",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 10.99,
-      "expensive_store": "Billa",
-      "expensive_price": 16.02,
-      "savings": 5.03,
-      "similarity": 0.879
-    },
-    {
-      "product": "NO_BRAND meat revolution телешка кайма 400 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 6.98,
-      "expensive_store": "Kaufland",
-      "expensive_price": 11.99,
-      "savings": 5.01,
-      "similarity": 0.835
-    },
-    {
-      "product": "NO_BRAND coca-cola газирана напитка 2 х 1,5 л",
-      "cheaper_store": "Billa",
-      "cheaper_price": 3.99,
-      "expensive_store": "Kaufland",
-      "expensive_price": 8.98,
-      "savings": 4.99,
-      "similarity": 0.843
-    },
-    {
-      "product": "зафирови кашкавал от краве мляко",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 12.99,
-      "expensive_store": "Billa",
-      "expensive_price": 17.97,
-      "savings": 4.98,
-      "similarity": 0.82
-    },
-    {
-      "product": "Harvest бланширани картофи",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 2.35,
-      "expensive_store": "Kaufland",
-      "expensive_price": 6.98,
-      "savings": 4.63,
-      "similarity": 0.893
-    },
-    {
-      "product": "орхидея фаленопсис",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 11.75,
-      "expensive_store": "Kaufland",
-      "expensive_price": 15.98,
-      "savings": 4.23,
-      "similarity": 0.869
-    },
-    {
-      "product": "NO_BRAND круши конференс",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 3.48,
-      "expensive_store": "Lidl",
-      "expensive_price": 7.66,
-      "savings": 4.18,
-      "similarity": 0.84
-    },
-    {
-      "product": "панирани пилешки шницели",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 2.7,
-      "expensive_store": "Kaufland",
-      "expensive_price": 6.79,
-      "savings": 4.09,
-      "similarity": 0.853
-    },
-    {
-      "product": "Пещерска пещерска ракия гроздова 0,7 л произход - българия",
-      "cheaper_store": "Billa",
-      "cheaper_price": 10.99,
-      "expensive_store": "Kaufland",
-      "expensive_price": 14.98,
-      "savings": 3.99,
-      "similarity": 0.842
-    },
-    {
-      "product": "Harvest бланширани сладки картофи",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 3.06,
-      "expensive_store": "Kaufland",
-      "expensive_price": 6.98,
-      "savings": 3.92,
-      "similarity": 0.894
-    },
-    {
-      "product": "pogues ирландско уиски 1 л",
-      "cheaper_store": "Billa",
-      "cheaper_price": 29.98,
-      "expensive_store": "Kaufland",
-      "expensive_price": 33.89,
-      "savings": 3.91,
-      "similarity": 0.88
-    },
-    {
-      "product": "суитшърт",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 10.22,
-      "expensive_store": "Kaufland",
-      "expensive_price": 13.98,
-      "savings": 3.76,
-      "similarity": 0.842
-    },
-    {
-      "product": "CROWNFIELD шоколадови топчета",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 2.24,
-      "expensive_store": "Kaufland",
-      "expensive_price": 5.98,
-      "savings": 3.74,
-      "similarity": 0.927
-    },
-    {
-      "product": "CROWNFIELD шоколадови топчета дуо",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 2.24,
-      "expensive_store": "Kaufland",
-      "expensive_price": 5.98,
-      "savings": 3.74,
-      "similarity": 0.862
-    },
-    {
-      "product": "Schogetten шоколад",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 2.3,
-      "expensive_store": "Kaufland",
-      "expensive_price": 5.98,
-      "savings": 3.68,
-      "similarity": 0.863
-    },
-    {
-      "product": "Parkside акумулаторна батерия и зарядно устройство",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 16.35,
-      "expensive_store": "Kaufland",
-      "expensive_price": 19.99,
-      "savings": 3.64,
-      "similarity": 0.924
-    },
-    {
-      "product": "Lindt lindt шоколад excellence различни видове 100 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 5.984748,
-      "expensive_store": "Kaufland",
-      "expensive_price": 9.49,
-      "savings": 3.51,
-      "similarity": 0.872
-    },
-    {
-      "product": "NO_BRAND круши конференс",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 3.48,
-      "expensive_store": "Lidl",
-      "expensive_price": 6.8,
-      "savings": 3.32,
-      "similarity": 0.821
-    },
-    {
-      "product": "млечен шоколад 160 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 2.99,
-      "expensive_store": "Kaufland",
-      "expensive_price": 6.3,
-      "savings": 3.31,
-      "similarity": 0.824
-    },
-    {
-      "product": "разклонител",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 10.73,
-      "expensive_store": "Kaufland",
-      "expensive_price": 13.98,
-      "savings": 3.25,
-      "similarity": 0.82
-    },
-    {
-      "product": "своге шоколад различни видове",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.88,
-      "expensive_store": "Lidl",
-      "expensive_price": 5.11,
-      "savings": 3.23,
-      "similarity": 0.821
-    },
-    {
-      "product": "Рафтис рафтис кашкавал от краве мляко",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 14.98,
-      "expensive_store": "Billa",
-      "expensive_price": 17.97,
-      "savings": 2.99,
-      "similarity": 0.847
-    },
-    {
-      "product": "NO_BRAND червено грозде без семки",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 4.48,
-      "expensive_store": "Lidl",
-      "expensive_price": 7.39,
-      "savings": 2.91,
-      "similarity": 0.848
-    },
-    {
-      "product": "NO_BRAND круши конференс",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 3.48,
-      "expensive_store": "Lidl",
-      "expensive_price": 6.13,
-      "savings": 2.65,
-      "similarity": 0.87
-    },
-    {
-      "product": "БРЕЙ брей! филе елена слайс",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 3.48,
-      "expensive_store": "Lidl",
-      "expensive_price": 6.13,
-      "savings": 2.65,
-      "similarity": 0.825
-    },
-    {
-      "product": "pergale шоколадови бонбони асорти",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 2.99,
-      "expensive_store": "Lidl",
-      "expensive_price": 5.62,
-      "savings": 2.63,
-      "similarity": 0.857
-    },
-    {
-      "product": "ягоди 250 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 3.31,
-      "expensive_store": "Lidl",
-      "expensive_price": 5.59,
-      "savings": 2.28,
-      "similarity": 0.844
-    },
-    {
-      "product": "Плюшена плюшена играчка различни видове",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 6.98,
-      "expensive_store": "Lidl",
-      "expensive_price": 9.2,
-      "savings": 2.22,
-      "similarity": 0.865
-    },
-    {
-      "product": "своге шоколад различни видове",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.88,
-      "expensive_store": "Lidl",
-      "expensive_price": 4.09,
-      "savings": 2.21,
-      "similarity": 0.837
-    },
-    {
-      "product": "Свински свински бут без кост за 1 кг",
-      "cheaper_store": "Billa",
-      "cheaper_price": 5.79,
-      "expensive_store": "Kaufland",
-      "expensive_price": 7.98,
-      "savings": 2.19,
-      "similarity": 0.95
-    },
-    {
-      "product": "pergale шоколадови бонбони асорти",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 2.99,
-      "expensive_store": "Lidl",
-      "expensive_price": 5.11,
-      "savings": 2.12,
-      "similarity": 0.892
-    },
-    {
-      "product": "Nucrema nucrema какаов крем промопакет",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 7.98,
-      "expensive_store": "Billa",
-      "expensive_price": 9.994138000000001,
-      "savings": 2.01,
-      "similarity": 0.865
-    },
-    {
-      "product": "Ariel ariel, гел 35/40 пранета прах 40 пранета капсули 26/30 пранета",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 18.99,
-      "expensive_store": "Billa",
-      "expensive_price": 20.985734,
-      "savings": 2.0,
-      "similarity": 0.841
-    },
-    {
-      "product": "Clever clever резерва за моп пеперуда 1 бр.",
-      "cheaper_store": "Billa",
-      "cheaper_price": 3.99,
-      "expensive_store": "Kaufland",
-      "expensive_price": 5.98,
-      "savings": 1.99,
-      "similarity": 0.856
-    },
-    {
-      "product": "NO_BRAND белииса краве сирене шайба от деликатесната витрина за 1 кг",
-      "cheaper_store": "Billa",
-      "cheaper_price": 16.02,
-      "expensive_store": "Kaufland",
-      "expensive_price": 17.99,
-      "savings": 1.97,
-      "similarity": 0.843
-    },
-    {
-      "product": "шоколадов десерт",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 4.09,
-      "expensive_store": "Kaufland",
-      "expensive_price": 5.98,
-      "savings": 1.89,
-      "similarity": 0.834
-    },
-    {
-      "product": "сутиен",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 6.13,
-      "expensive_store": "Kaufland",
-      "expensive_price": 8.0,
-      "savings": 1.87,
-      "similarity": 0.822
-    },
-    {
-      "product": "Fresh kinder шоколадов десерт choco fresh",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 2.23,
-      "expensive_store": "Lidl",
-      "expensive_price": 4.09,
-      "savings": 1.86,
-      "similarity": 0.846
-    },
-    {
-      "product": "Pilos синьо сирене",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 1.63,
-      "expensive_store": "Kaufland",
-      "expensive_price": 3.09,
-      "savings": 1.46,
-      "similarity": 0.831
-    },
-    {
-      "product": "кифлички с какаов крем",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.99,
-      "expensive_store": "Lidl",
-      "expensive_price": 3.32,
-      "savings": 1.33,
-      "similarity": 0.888
-    },
-    {
-      "product": "Deutsche Markenbutter deutsche markenbutter краве масло",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 3.68,
-      "expensive_store": "Billa",
-      "expensive_price": 4.99,
-      "savings": 1.31,
-      "similarity": 0.859
-    },
-    {
-      "product": "шоколадов десерт",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 4.09,
-      "expensive_store": "Kaufland",
-      "expensive_price": 5.38,
-      "savings": 1.29,
-      "similarity": 0.888
-    },
-    {
-      "product": "панирани пилешки шницели",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 2.7,
-      "expensive_store": "Kaufland",
-      "expensive_price": 3.99,
-      "savings": 1.29,
-      "similarity": 0.826
-    },
-    {
-      "product": "MILKA milka шоколад различни видове",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.72,
-      "expensive_store": "Billa",
-      "expensive_price": 2.99,
-      "savings": 1.27,
-      "similarity": 0.839
-    },
-    {
-      "product": "Bellarom горещ шоколад",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 1.78,
-      "expensive_store": "Kaufland",
-      "expensive_price": 2.99,
-      "savings": 1.21,
-      "similarity": 0.83
-    },
-    {
-      "product": "NO_BRAND свинска плешка без кост до 5 кг на покупка",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 5.79,
-      "expensive_store": "Billa",
-      "expensive_price": 6.98,
-      "savings": 1.19,
-      "similarity": 0.912
-    },
-    {
-      "product": "pergale шоколадови бонбони асорти",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 2.99,
-      "expensive_store": "Lidl",
-      "expensive_price": 4.09,
-      "savings": 1.1,
-      "similarity": 0.847
-    },
-    {
-      "product": "киселово сирене от краве мляко",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 14.98,
-      "expensive_store": "Billa",
-      "expensive_price": 16.02,
-      "savings": 1.04,
-      "similarity": 0.844
-    },
-    {
-      "product": "NO_BRAND черни маслини мамут от свежата витрина",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 6.98,
-      "expensive_store": "Billa",
-      "expensive_price": 8.0,
-      "savings": 1.02,
-      "similarity": 0.821
-    },
-    {
-      "product": "MILKA milka бисквити chocominis",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 2.78,
-      "expensive_store": "Billa",
-      "expensive_price": 3.7942519999999997,
-      "savings": 1.01,
-      "similarity": 0.852
-    },
-    {
-      "product": "MILKA milka бисквити различни видове",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 2.78,
-      "expensive_store": "Billa",
-      "expensive_price": 3.7942519999999997,
-      "savings": 1.01,
-      "similarity": 0.849
-    },
-    {
-      "product": "Свински свински врат без кост за 1 кг до 5 кг на клиент на ден*",
-      "cheaper_store": "Billa",
-      "cheaper_price": 6.98,
-      "expensive_store": "Kaufland",
-      "expensive_price": 7.98,
-      "savings": 1.0,
-      "similarity": 0.926
-    },
-    {
-      "product": "моп тип пеперуда",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 5.98,
-      "expensive_store": "Billa",
-      "expensive_price": 6.98,
-      "savings": 1.0,
-      "similarity": 0.906
-    },
-    {
-      "product": "Lacmi lacmi шоколад различни видове",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.99,
-      "expensive_store": "Billa",
-      "expensive_price": 2.99,
-      "savings": 1.0,
-      "similarity": 0.846
-    },
-    {
-      "product": "Lacmi lacmi шоколад избрани видове",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.99,
-      "expensive_store": "Billa",
-      "expensive_price": 2.99,
-      "savings": 1.0,
-      "similarity": 0.845
-    },
-    {
-      "product": "месо за готвене от младо телешко",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 6.49,
-      "expensive_store": "Kaufland",
-      "expensive_price": 7.49,
-      "savings": 1.0,
-      "similarity": 0.823
-    },
-    {
-      "product": "Espresso tira мляно кафе espresso 250 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 8.99668,
-      "expensive_store": "Kaufland",
-      "expensive_price": 9.99,
-      "savings": 0.99,
-      "similarity": 0.86
-    },
-    {
-      "product": "J.D.GROSS шоколадови бонбони",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 5.11,
-      "expensive_store": "Kaufland",
-      "expensive_price": 5.98,
-      "savings": 0.87,
-      "similarity": 0.859
-    },
-    {
-      "product": "NO_BRAND гъби печурки",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.94,
-      "expensive_store": "Lidl",
-      "expensive_price": 2.81,
-      "savings": 0.87,
-      "similarity": 0.856
-    },
-    {
-      "product": "CROWNFIELD шоколадови топчета",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 2.24,
-      "expensive_store": "Kaufland",
-      "expensive_price": 2.99,
-      "savings": 0.75,
-      "similarity": 0.942
-    },
-    {
-      "product": "CROWNFIELD шоколадови топчета дуо",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 2.24,
-      "expensive_store": "Kaufland",
-      "expensive_price": 2.99,
-      "savings": 0.75,
-      "similarity": 0.877
-    },
-    {
-      "product": "CROWNFIELD шоколадови топчета",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 2.24,
-      "expensive_store": "Billa",
-      "expensive_price": 2.99,
-      "savings": 0.75,
-      "similarity": 0.871
-    },
-    {
-      "product": "Schogetten шоколад",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 2.3,
-      "expensive_store": "Kaufland",
-      "expensive_price": 2.99,
-      "savings": 0.69,
-      "similarity": 0.888
-    },
-    {
-      "product": "Snickers snickers, mars или twix шоколадов десерт 50 - 51 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 1.19,
-      "expensive_store": "Kaufland",
-      "expensive_price": 1.88,
-      "savings": 0.69,
-      "similarity": 0.876
-    },
-    {
-      "product": "Schogetten шоколад",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 2.3,
-      "expensive_store": "Billa",
-      "expensive_price": 2.99,
-      "savings": 0.69,
-      "similarity": 0.87
-    },
-    {
-      "product": "млечен шоколад 160 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 2.99,
-      "expensive_store": "Kaufland",
-      "expensive_price": 3.48,
-      "savings": 0.49,
-      "similarity": 0.835
-    },
-    {
-      "product": "млечен шоколад 160 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 2.99,
-      "expensive_store": "Kaufland",
-      "expensive_price": 3.48,
-      "savings": 0.49,
-      "similarity": 0.825
-    },
-    {
-      "product": "сладея пудра захар 250 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 1.1,
-      "expensive_store": "Kaufland",
-      "expensive_price": 1.58,
-      "savings": 0.48,
-      "similarity": 0.875
-    },
-    {
-      "product": "ALCOHOLIC безалкохолна бира",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 0.51,
-      "expensive_store": "Kaufland",
-      "expensive_price": 0.98,
-      "savings": 0.47,
-      "similarity": 0.856
-    },
-    {
-      "product": "своге шоколад различни видове",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.88,
-      "expensive_store": "Lidl",
-      "expensive_price": 2.3,
-      "savings": 0.42,
-      "similarity": 0.897
-    },
-    {
-      "product": "Ананас ананас клас: i",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 3.48,
-      "expensive_store": "Billa",
-      "expensive_price": 3.89,
-      "savings": 0.41,
-      "similarity": 0.897
-    },
-    {
-      "product": "NO_BRAND авокадо",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.29,
-      "expensive_store": "Billa",
-      "expensive_price": 1.66,
-      "savings": 0.37,
-      "similarity": 0.874
-    },
-    {
-      "product": "своге шоколад различни видове",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.88,
-      "expensive_store": "Lidl",
-      "expensive_price": 2.24,
-      "savings": 0.36,
-      "similarity": 0.924
-    },
-    {
-      "product": "своге шоколад различни видове",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.88,
-      "expensive_store": "Lidl",
-      "expensive_price": 2.24,
-      "savings": 0.36,
-      "similarity": 0.864
-    },
-    {
-      "product": "ORIGINAL шоколадови белгийски бонбони с пълнеж",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 5.62,
-      "expensive_store": "Kaufland",
-      "expensive_price": 5.98,
-      "savings": 0.36,
-      "similarity": 0.844
-    },
-    {
-      "product": "млечен шоколад 160 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 2.99,
-      "expensive_store": "Kaufland",
-      "expensive_price": 3.34,
-      "savings": 0.35,
-      "similarity": 0.865
-    },
-    {
-      "product": "млечен шоколад 160 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 2.99,
-      "expensive_store": "Kaufland",
-      "expensive_price": 3.34,
-      "savings": 0.35,
-      "similarity": 0.861
-    },
-    {
-      "product": "MILKA milka бисквити милка xl 184 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 3.7942519999999997,
-      "expensive_store": "Kaufland",
-      "expensive_price": 4.11,
-      "savings": 0.32,
-      "similarity": 0.874
-    },
-    {
-      "product": "MILKA milka бисквити милка xl 184 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 3.7942519999999997,
-      "expensive_store": "Kaufland",
-      "expensive_price": 4.11,
-      "savings": 0.32,
-      "similarity": 0.823
-    },
-    {
-      "product": "бисквити с мармалад или с локум",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.99,
-      "expensive_store": "Lidl",
-      "expensive_price": 2.3,
-      "savings": 0.31,
-      "similarity": 0.858
-    },
-    {
-      "product": "Billa кюфте от кълцано свинско месо от топлата витрина 1 бр. billa ready",
-      "cheaper_store": "Billa",
-      "cheaper_price": 0.96,
-      "expensive_store": "Kaufland",
-      "expensive_price": 1.27,
-      "savings": 0.31,
-      "similarity": 0.843
-    },
-    {
-      "product": "XXXL 32+16 тоалетна хартия",
-      "cheaper_store": "Lidl",
-      "cheaper_price": 9.71,
-      "expensive_store": "Kaufland",
-      "expensive_price": 9.99,
-      "savings": 0.28,
-      "similarity": 0.865
-    },
-    {
-      "product": "Кристал кристал локум",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 0.98,
-      "expensive_store": "Billa",
-      "expensive_price": 1.15,
-      "savings": 0.17,
-      "similarity": 0.913
-    },
-    {
-      "product": "сладея пудра захар 250 г",
-      "cheaper_store": "Billa",
-      "cheaper_price": 1.1,
-      "expensive_store": "Kaufland",
-      "expensive_price": 1.25,
-      "savings": 0.15,
-      "similarity": 0.869
-    },
-    {
-      "product": "Tasty tasty еклер с шоколад",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 3.99,
-      "expensive_store": "Lidl",
-      "expensive_price": 4.09,
-      "savings": 0.1,
-      "similarity": 0.88
-    },
-    {
-      "product": "NO_BRAND саяна кашкавал от краве мляко от деликатесната витрина за 1 кг",
-      "cheaper_store": "Billa",
-      "cheaper_price": 17.97,
-      "expensive_store": "Kaufland",
-      "expensive_price": 17.99,
-      "savings": 0.02,
-      "similarity": 0.907
-    },
-    {
-      "product": "NO_BRAND свинска плешка без кост до 5 кг на покупка",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 5.79,
-      "expensive_store": "Billa",
-      "expensive_price": 5.79,
-      "savings": 0.0,
-      "similarity": 0.957
-    },
-    {
-      "product": "NO_BRAND гъби печурки",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.94,
-      "expensive_store": "Billa",
-      "expensive_price": 1.94,
-      "savings": 0.0,
-      "similarity": 0.928
-    },
-    {
-      "product": "Salza salza соленки с вкус различни видове",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 2.39,
-      "expensive_store": "Billa",
-      "expensive_price": 2.39,
-      "savings": 0.0,
-      "similarity": 0.885
-    },
-    {
-      "product": "DAYS 7 days кроасан double ванилия&ягода",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 1.19,
-      "expensive_store": "Billa",
-      "expensive_price": 1.19,
-      "savings": 0.0,
-      "similarity": 0.875
-    },
-    {
-      "product": "Nescafe nescafe разтворимо кафе 2в1 или 3в1",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 2.89,
-      "expensive_store": "Billa",
-      "expensive_price": 2.89,
-      "savings": 0.0,
-      "similarity": 0.86
-    },
-    {
-      "product": "pergale шоколадови бонбони асорти",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 2.99,
-      "expensive_store": "Billa",
-      "expensive_price": 2.99,
-      "savings": 0.0,
-      "similarity": 0.829
-    },
-    {
-      "product": "Parkside parkside® принадлежности за рязане или полиране",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 2.48,
-      "expensive_store": "Lidl",
-      "expensive_price": 0,
-      "savings": -2.48,
-      "similarity": 0.824
-    },
-    {
-      "product": "Parkside parkside® регулируем трион",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 5.98,
-      "expensive_store": "Lidl",
-      "expensive_price": 0,
-      "savings": -5.98,
-      "similarity": 0.848
-    },
-    {
-      "product": "Parkside parkside® маркер за дълбоки отвори",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 6.98,
-      "expensive_store": "Lidl",
-      "expensive_price": 0,
-      "savings": -6.98,
-      "similarity": 0.867
-    },
-    {
-      "product": "Parkside parkside® ексцентършлайф",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 39.98,
-      "expensive_store": "Lidl",
-      "expensive_price": 0,
-      "savings": -39.98,
-      "similarity": 0.911
-    },
-    {
-      "product": "Parkside parkside® стелаж",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 79.99,
-      "expensive_store": "Lidl",
-      "expensive_price": 0,
-      "savings": -79.99,
-      "similarity": 0.911
-    },
-    {
-      "product": "Parkside parkside® въжен подемник",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 159.99,
-      "expensive_store": "Lidl",
-      "expensive_price": 0,
-      "savings": -159.99,
-      "similarity": 0.875
-    },
-    {
-      "product": "Parkside parkside® маса за оберфреза",
-      "cheaper_store": "Kaufland",
-      "cheaper_price": 199.91,
-      "expensive_store": "Lidl",
-      "expensive_price": 0,
-      "savings": -199.91,
-      "similarity": 0.892
-    }
-  ]
-}
+[
+  {
+    "id": 2,
+    "brand": "Parkside",
+    "products": [
+      {
+        "id": 820,
+        "name": "PARKSIDE® Акумулаторна батерия 2 Ah\nи Зарядно 2,4 A",
+        "brand": "Parkside",
+        "store": "Kaufland",
+        "price": 31.98
+      },
+      {
+        "id": 1092,
+        "name": "Зарядно устройство за акумулаторна батерия",
+        "brand": "Parkside",
+        "store": "Lidl",
+        "price": 12.78
+      }
+    ],
+    "stores": [
+      "Lidl",
+      "Kaufland"
+    ],
+    "store_count": 2,
+    "confidence": 0.9,
+    "min_price": 12.78,
+    "max_price": 31.98,
+    "savings": 19.2,
+    "savings_pct": 60.0
+  },
+  {
+    "id": 3,
+    "brand": "Орхидея",
+    "products": [
+      {
+        "id": 888,
+        "name": "Синя орхидея Фаленопсис в керамична кашпа",
+        "brand": "Орхидея",
+        "store": "Kaufland",
+        "price": 29.98
+      },
+      {
+        "id": 1216,
+        "name": "Орхидея Фаленопсис в керамика саксия Ф6 1 бр.** Продукт, маркиран със синя звезда",
+        "brand": "Орхидея",
+        "store": "Billa",
+        "price": 13.671042
+      }
+    ],
+    "stores": [
+      "Kaufland",
+      "Billa"
+    ],
+    "store_count": 2,
+    "confidence": 0.9,
+    "min_price": 13.671042,
+    "max_price": 29.98,
+    "savings": 16.31,
+    "savings_pct": 54.4
+  },
+  {
+    "id": 10,
+    "brand": "Savex",
+    "products": [
+      {
+        "id": 538,
+        "name": "Savex Гел или Капсули за пране",
+        "brand": "Savex",
+        "store": "Kaufland",
+        "price": 13.98
+      },
+      {
+        "id": 1190,
+        "name": "Savex Premium Гел за пране 112 пранета или Капсули за пране 72 бр. 1 опаковка Произхо",
+        "brand": "Savex",
+        "store": "Billa",
+        "price": 29.982414
+      }
+    ],
+    "stores": [
+      "Kaufland",
+      "Billa"
+    ],
+    "store_count": 2,
+    "confidence": 0.9,
+    "min_price": 13.98,
+    "max_price": 29.982414,
+    "savings": 16.0,
+    "savings_pct": 53.4
+  },
+  {
+    "id": 7,
+    "brand": "Lindt",
+    "products": [
+      {
+        "id": 425,
+        "name": "Lindt Lindor Шоколадови бонбони\nразлични видове",
+        "brand": "Lindt",
+        "store": "Kaufland",
+        "price": 13.98
+      },
+      {
+        "id": 1313,
+        "name": "Lindt Шоколад Excellence различни видове 100 г",
+        "brand": "Lindt",
+        "store": "Billa",
+        "price": 5.984748
+      }
+    ],
+    "stores": [
+      "Kaufland",
+      "Billa"
+    ],
+    "store_count": 2,
+    "confidence": 0.9,
+    "min_price": 5.984748,
+    "max_price": 13.98,
+    "savings": 8.0,
+    "savings_pct": 57.2
+  },
+  {
+    "id": 6,
+    "brand": "Nucrema",
+    "products": [
+      {
+        "id": 307,
+        "name": "Nucrema Какаов крем\nпромопакет",
+        "brand": "Nucrema",
+        "store": "Kaufland",
+        "price": 7.98
+      },
+      {
+        "id": 1178,
+        "name": "Nucrema Какаов крем 1,2 кг",
+        "brand": "Nucrema",
+        "store": "Billa",
+        "price": 9.994138000000001
+      }
+    ],
+    "stores": [
+      "Kaufland",
+      "Billa"
+    ],
+    "store_count": 2,
+    "confidence": 0.9,
+    "min_price": 7.98,
+    "max_price": 9.994138000000001,
+    "savings": 2.01,
+    "savings_pct": 20.1
+  },
+  {
+    "id": 5,
+    "brand": "Верея",
+    "products": [
+      {
+        "id": 248,
+        "name": "Верея Прясно мляко",
+        "brand": "Верея",
+        "store": "Kaufland",
+        "price": 2.68
+      },
+      {
+        "id": 1281,
+        "name": "Верея Чудно Кисело мляко 5% 400 г",
+        "brand": "Верея",
+        "store": "Billa",
+        "price": 1.49
+      }
+    ],
+    "stores": [
+      "Kaufland",
+      "Billa"
+    ],
+    "store_count": 2,
+    "confidence": 0.9,
+    "min_price": 1.49,
+    "max_price": 2.68,
+    "savings": 1.19,
+    "savings_pct": 44.4
+  },
+  {
+    "id": 9,
+    "brand": "Milka",
+    "products": [
+      {
+        "id": 867,
+        "name": "Milka Бисквити\nChocominis",
+        "brand": "MILKA",
+        "store": "Kaufland",
+        "price": 2.78
+      },
+      {
+        "id": 1181,
+        "name": "Milka Бисквити Милка XL 184 г",
+        "brand": "MILKA",
+        "store": "Billa",
+        "price": 3.7942519999999997
+      }
+    ],
+    "stores": [
+      "Kaufland",
+      "Billa"
+    ],
+    "store_count": 2,
+    "confidence": 0.9,
+    "min_price": 2.78,
+    "max_price": 3.7942519999999997,
+    "savings": 1.01,
+    "savings_pct": 26.6
+  },
+  {
+    "id": 4,
+    "brand": "Свински",
+    "products": [
+      {
+        "id": 234,
+        "name": "Свински врат без кост около 1,5 кг",
+        "brand": "Свински",
+        "store": "Kaufland",
+        "price": 7.98
+      },
+      {
+        "id": 1155,
+        "name": "Свински врат без кост За 1 кг До 5 кг на клиент на ден*",
+        "brand": "Свински",
+        "store": "Billa",
+        "price": 6.98
+      }
+    ],
+    "stores": [
+      "Kaufland",
+      "Billa"
+    ],
+    "store_count": 2,
+    "confidence": 0.9,
+    "min_price": 6.98,
+    "max_price": 7.98,
+    "savings": 1.0,
+    "savings_pct": 12.5
+  },
+  {
+    "id": 1,
+    "brand": "Parkside",
+    "products": [
+      {
+        "id": 811,
+        "name": "Parkside® Въжен подемник",
+        "brand": "Parkside",
+        "store": "Kaufland",
+        "price": 159.99
+      },
+      {
+        "id": 1006,
+        "name": "Parkside®Можеш го!",
+        "brand": "Parkside",
+        "store": "Lidl",
+        "price": null
+      }
+    ],
+    "stores": [
+      "Lidl",
+      "Kaufland"
+    ],
+    "store_count": 2,
+    "confidence": 0.9
+  },
+  {
+    "id": 8,
+    "brand": "Nescafe",
+    "products": [
+      {
+        "id": 390,
+        "name": "Nescafe Разтворимо кафе 2в1 или 3в1",
+        "brand": "Nescafe",
+        "store": "Kaufland",
+        "price": 2.89
+      },
+      {
+        "id": 1323,
+        "name": "Nescafe Разтворима напитка 3 в 1 плик 10 х 15q5 г",
+        "brand": "Nescafe",
+        "store": "Billa",
+        "price": 2.89
+      }
+    ],
+    "stores": [
+      "Kaufland",
+      "Billa"
+    ],
+    "store_count": 2,
+    "confidence": 0.9,
+    "min_price": 2.89,
+    "max_price": 2.89,
+    "savings": 0.0,
+    "savings_pct": 0.0
+  }
+]
