@@ -1,13 +1,12 @@
 """
-Cross-Store Matching Pipeline v2.3
+Cross-Store Matching Pipeline v2.4
 
-Matches products across Kaufland, Lidl, and Billa stores.
-Uses category blocking to reduce search space and improve accuracy.
-
-Changes in v2.3:
-- Raised embedding threshold to 0.90 (from 0.85)
-- Added bidirectional match confirmation
-- Added brand-less exact matching for generic products
+Changes in v2.4:
+- Added bidirectional matching to Phase 2 (brand_fuzzy)
+- Raised embedding threshold to 0.92 (from 0.90)
+- Added category-mismatch rejection for embedding matches
+- Fixed exact_generic to include quantity/unit in key
+- Lowered short name threshold to 3 chars (catches яйца, орех)
 """
 
 import os
@@ -39,17 +38,18 @@ class CrossStoreMatcher:
     
     Phases:
     1a. Exact (branded): Same brand + similar name + compatible quantity
-    1b. Exact (generic): Same normalized_name (no brand required)
-    2. Brand Fuzzy: Same brand + embedding similarity
-    3. Embedding Only: Category-blocked bidirectional embedding matching
+    1b. Exact (generic): Same normalized_name + quantity (no brand required)
+    2. Brand Fuzzy: Same brand + bidirectional embedding similarity
+    3. Embedding Only: Category-blocked bidirectional embedding + category validation
     """
     
     STORES = ['Kaufland', 'Lidl', 'Billa']
     
-    # Thresholds (v2.3: raised embedding from 0.85 to 0.90)
+    # Thresholds (v2.4: raised embedding to 0.92)
     EXACT_NAME_SIM = 0.95
     BRAND_FUZZY_SIM = 0.80
-    EMBEDDING_SIM = 0.90  # Raised from 0.85
+    EMBEDDING_SIM = 0.92  # Raised from 0.90
+    EMBEDDING_CROSS_CATEGORY_SIM = 0.98  # Must be very high if categories differ
     
     def __init__(self, db_path: str):
         self.db_path = db_path
@@ -84,21 +84,21 @@ class CrossStoreMatcher:
         self._insert_matches(conn, exact_b, 'exact_branded')
         stats['matches']['exact_branded'] = len(exact_b)
         
-        # Phase 1b: Exact generic matches (NEW)
-        print("\n=== Phase 1b: Exact Generic Matching ===")
+        # Phase 1b: Exact generic matches (with quantity)
+        print("\n=== Phase 1b: Exact Generic Matching (with quantity) ===")
         exact_g = self._phase_exact_generic(products, matched_ids)
         self._insert_matches(conn, exact_g, 'exact_generic')
         stats['matches']['exact_generic'] = len(exact_g)
         
-        # Phase 2: Brand + Fuzzy
-        print("\n=== Phase 2: Brand Fuzzy Matching ===")
+        # Phase 2: Brand + Fuzzy (bidirectional)
+        print("\n=== Phase 2: Brand Fuzzy Matching (bidirectional) ===")
         self._load_model()
-        fuzzy = self._phase_brand_fuzzy(products, matched_ids)
+        fuzzy = self._phase_brand_fuzzy_bidirectional(products, matched_ids)
         self._insert_matches(conn, fuzzy, 'brand_fuzzy')
         stats['matches']['brand_fuzzy'] = len(fuzzy)
         
-        # Phase 3: Embedding with bidirectional confirmation
-        print("\n=== Phase 3: Embedding Matching (bidirectional) ===")
+        # Phase 3: Embedding with bidirectional + category validation
+        print("\n=== Phase 3: Embedding Matching (bidirectional + category check) ===")
         emb = self._phase_embedding_bidirectional(products, matched_ids)
         self._insert_matches(conn, emb, 'embedding')
         stats['matches']['embedding'] = len(emb)
@@ -159,6 +159,21 @@ class CrossStoreMatcher:
         
         return products
     
+    def _normalize_unit(self, unit: str) -> str:
+        """Normalize unit for comparison."""
+        if not unit:
+            return ''
+        unit = unit.lower().strip()
+        # Normalize common variations
+        unit_map = {
+            'l': 'l', 'л': 'l', 'liter': 'l', 'литра': 'l', 'литър': 'l',
+            'ml': 'ml', 'мл': 'ml',
+            'kg': 'kg', 'кг': 'kg',
+            'g': 'g', 'г': 'g', 'гр': 'g',
+            'бр': 'pcs', 'pcs': 'pcs', 'броя': 'pcs',
+        }
+        return unit_map.get(unit, unit)
+    
     def _phase_exact_branded(self, products: Dict, matched: Set[int]) -> List[dict]:
         """Phase 1a: Exact brand + name + quantity matches."""
         matches = []
@@ -171,8 +186,8 @@ class CrossStoreMatcher:
                 key = (
                     p['brand'].lower(),
                     (p['normalized_name'] or '')[:50],
-                    str(p['quantity']),
-                    p['unit'] or ''
+                    str(p['quantity'] or ''),
+                    self._normalize_unit(p['unit'])
                 )
                 by_key[key][store].append(p)
         
@@ -193,25 +208,28 @@ class CrossStoreMatcher:
         return matches
     
     def _phase_exact_generic(self, products: Dict, matched: Set[int]) -> List[dict]:
-        """Phase 1b: Exact normalized_name matches (no brand required)."""
+        """Phase 1b: Exact normalized_name + quantity matches (no brand required)."""
         matches = []
-        by_name = defaultdict(lambda: defaultdict(list))
+        by_key = defaultdict(lambda: defaultdict(list))
         
         for store, prods in products.items():
             for p in prods:
                 if p['id'] in matched:
                     continue
-                # Use first 60 chars of normalized name as key
+                # Include quantity and unit in key (v2.4 fix)
                 name_key = (p['normalized_name'] or '')[:60].strip().lower()
-                if len(name_key) < 5:  # Skip very short names
+                if len(name_key) < 3:  # Lowered from 5 to 3 (catches яйца)
                     continue
-                by_name[name_key][store].append(p)
+                qty_key = str(p['quantity'] or '')
+                unit_key = self._normalize_unit(p['unit'])
+                full_key = (name_key, qty_key, unit_key)
+                by_key[full_key][store].append(p)
         
-        for name_key, store_prods in by_name.items():
+        for key, store_prods in by_key.items():
             if len(store_prods) < 2:
                 continue
             
-            match = {'_confidence': 0.98}  # Slightly less than branded
+            match = {'_confidence': 0.98}
             for store, prods in store_prods.items():
                 if prods[0]['id'] not in matched:
                     match[store] = prods[0]
@@ -223,8 +241,8 @@ class CrossStoreMatcher:
         print(f"  ✓ {len(matches)} exact generic matches")
         return matches
     
-    def _phase_brand_fuzzy(self, products: Dict, matched: Set[int]) -> List[dict]:
-        """Phase 2: Same brand, fuzzy name match."""
+    def _phase_brand_fuzzy_bidirectional(self, products: Dict, matched: Set[int]) -> List[dict]:
+        """Phase 2: Same brand, bidirectional fuzzy name match."""
         matches = []
         by_brand = defaultdict(lambda: defaultdict(list))
         
@@ -251,27 +269,32 @@ class CrossStoreMatcher:
                     emb2 = self.model.encode([p['normalized_name'] for p in prods2])
                     sims = cosine_similarity(emb1, emb2)
                     
-                    used2 = set()
-                    for idx1, p1 in enumerate(prods1):
-                        if p1['id'] in matched:
+                    # Bidirectional matching (v2.4 fix)
+                    best_for_1 = np.argmax(sims, axis=1)
+                    best_for_2 = np.argmax(sims, axis=0)
+                    
+                    for idx1, idx2 in enumerate(best_for_1):
+                        # Check bidirectional
+                        if best_for_2[idx2] != idx1:
                             continue
                         
-                        best_idx = np.argmax(sims[idx1])
-                        best_sim = float(sims[idx1][best_idx])
+                        sim = float(sims[idx1][idx2])
+                        if sim < self.BRAND_FUZZY_SIM:
+                            continue
                         
-                        if best_sim >= self.BRAND_FUZZY_SIM and best_idx not in used2:
-                            p2 = prods2[best_idx]
-                            if p2['id'] not in matched:
-                                matches.append({s1: p1, s2: p2, '_confidence': best_sim})
-                                matched.add(p1['id'])
-                                matched.add(p2['id'])
-                                used2.add(best_idx)
+                        p1, p2 = prods1[idx1], prods2[idx2]
+                        if p1['id'] in matched or p2['id'] in matched:
+                            continue
+                        
+                        matches.append({s1: p1, s2: p2, '_confidence': sim})
+                        matched.add(p1['id'])
+                        matched.add(p2['id'])
         
-        print(f"  ✓ {len(matches)} brand+fuzzy matches")
+        print(f"  ✓ {len(matches)} brand+fuzzy matches (bidirectional)")
         return matches
     
     def _phase_embedding_bidirectional(self, products: Dict, matched: Set[int]) -> List[dict]:
-        """Phase 3: Embedding matching with bidirectional confirmation."""
+        """Phase 3: Embedding matching with bidirectional + category validation."""
         matches = []
         by_category = defaultdict(lambda: defaultdict(list))
         
@@ -301,21 +324,28 @@ class CrossStoreMatcher:
                     emb2 = self.model.encode([p['normalized_name'] for p in prods2], batch_size=64)
                     sims = cosine_similarity(emb1, emb2)
                     
-                    # Bidirectional: find pairs where each is the other's best match
-                    best_for_1 = np.argmax(sims, axis=1)  # Best in prods2 for each in prods1
-                    best_for_2 = np.argmax(sims, axis=0)  # Best in prods1 for each in prods2
+                    # Bidirectional matching
+                    best_for_1 = np.argmax(sims, axis=1)
+                    best_for_2 = np.argmax(sims, axis=0)
                     
                     for idx1, idx2 in enumerate(best_for_1):
-                        # Check bidirectional: prods1[idx1]'s best is prods2[idx2]
-                        # AND prods2[idx2]'s best is prods1[idx1]
                         if best_for_2[idx2] != idx1:
                             continue
                         
                         sim = float(sims[idx1][idx2])
-                        if sim < self.EMBEDDING_SIM:
-                            continue
-                        
                         p1, p2 = prods1[idx1], prods2[idx2]
+                        
+                        # Category validation (v2.4)
+                        # If categories differ, require higher threshold
+                        cat1 = p1.get('category') or 'other'
+                        cat2 = p2.get('category') or 'other'
+                        if cat1 != cat2:
+                            if sim < self.EMBEDDING_CROSS_CATEGORY_SIM:
+                                continue  # Reject cross-category matches below 0.98
+                        else:
+                            if sim < self.EMBEDDING_SIM:
+                                continue
+                        
                         if p1['id'] in matched or p2['id'] in matched:
                             continue
                         
@@ -323,7 +353,7 @@ class CrossStoreMatcher:
                         matched.add(p1['id'])
                         matched.add(p2['id'])
         
-        print(f"  ✓ {len(matches)} embedding matches (bidirectional)")
+        print(f"  ✓ {len(matches)} embedding matches (bidirectional + category check)")
         return matches
     
     def _insert_matches(self, conn, matches: List[dict], match_type: str):
@@ -352,7 +382,7 @@ class CrossStoreMatcher:
 
 def run_matching_pipeline(db_path: str = 'data/promobg.db') -> Dict:
     print("=" * 60)
-    print("CROSS-STORE MATCHING PIPELINE v2.3")
+    print("CROSS-STORE MATCHING PIPELINE v2.4")
     print("=" * 60)
     print(f"Started at: {datetime.now().isoformat()}")
     
