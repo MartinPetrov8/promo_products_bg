@@ -1,178 +1,156 @@
 # PromoBG Architecture
 
+**Last Updated:** 2026-02-15
+
 ## System Overview
 
-PromoBG is a Bulgarian grocery price comparison platform that aggregates promotional offers from Kaufland, Lidl, and Billa (with plans for Fantastico), normalizes product data, and enables cross-store price comparison.
+PromoBG is a Bulgarian grocery price comparison platform that aggregates promotional offers from Kaufland, Lidl, and Billa, normalizes product data, and enables cross-store price comparison.
 
-**Key Metrics:**
-- 90 → 2,346 cross-store matches (post-standardization)
-- 5,664 total products across 3 stores
-- 802 products standardized in first pass
+**Current Metrics:**
+- 6,425 total products across 3 stores
+- 162 cross-store matches (high quality, 0.92+ confidence)
+- 82 matches with valid price comparison data
+- 29 product categories
 
 ---
 
-## Core Principles
+## Data Flow
 
-### 1. Standardized Product Schema (v1.0)
+```
+┌─────────────┐    ┌────────────────┐    ┌──────────────────┐    ┌─────────────┐
+│   Scrapers  │───▶│ Standardization│───▶│ Category Classify│───▶│  Matching   │
+│ K/L/B sites │    │ brand/qty/name │    │ 29 GS1 categories│    │ Pipeline v2.4│
+└─────────────┘    └────────────────┘    └──────────────────┘    └─────────────┘
+                                                                        │
+                                                                        ▼
+                   ┌─────────────────┐    ┌──────────────────┐    ┌─────────────┐
+                   │    API/UI       │◀───│  Price Compare   │◀───│ cross_store │
+                   │  compare.html   │    │  82 products     │    │  _matches   │
+                   └─────────────────┘    └──────────────────┘    └─────────────┘
+```
 
-All products from all stores must conform to this schema:
+---
+
+## Core Components
+
+### 1. Standardization Module (`standardization/`)
+
+Normalizes raw scraped data into consistent format:
 
 ```python
-class StandardProduct:
-    # Identity
-    store: str                    # "Kaufland" | "Lidl" | "Billa"
-    external_id: str              # Store's native product ID
-    
-    # Core Attributes (REQUIRED for comparison)
-    name: str                     # Clean product name (no promo prefixes)
-    normalized_name: str          # Lowercase, normalized for matching
-    brand: Optional[str]          # Extracted brand name
-    
-    # Quantity (standardized to base units)
-    quantity_value: Optional[float]  # Numeric value (e.g., 500)
-    quantity_unit: Optional[str]     # "ml" | "g" | "pcs" | "kg" | "l"
-    
-    # Category (for blocking)
-    category: Optional[str]       # GS1 GPC category code
-    category_name: Optional[str]  # Human-readable category
-    
-    # Price & Availability
-    price: float                  # Current price (BGN)
-    old_price: Optional[float]    # Regular/strikethrough price
-    price_per_unit: Optional[float]  # Price per 100ml or 100g
-    valid_from: date
-    valid_to: Optional[date]
-    
-    # Metadata
-    image_url: Optional[str]
-    description: Optional[str]    # Full description if available
-    is_house_brand: bool         # Is this a store-exclusive brand?
-    
-    # Tracking
-    scraped_at: datetime
-    hash: str                     # Content hash for change detection
+# Key fields normalized:
+- normalized_name: Lowercase, promo prefixes stripped
+- brand: Extracted from name or dedicated field
+- quantity: Parsed to numeric value
+- unit: Normalized (л→l, кг→kg, мл→ml, г→g, бр→pcs)
+- category_code: GS1 GPC code
 ```
 
-### 2. Brand Tier Classification
+**Files:**
+- `schema.py` - StandardProduct dataclass
+- `brand_extractor.py` - Brand detection
+- `quantity_parser.py` - Bulgarian quantity parsing
+- `category_classifier.py` - Keyword-based categorization
 
-| Tier | Definition | Examples | Matching Rule |
-|------|-----------|----------|---------------|
-| **National** | Well-known international/national brands | Coca-Cola, Nestlé, Milka | Exact brand match required |
-| **Regional** | Regional Bulgarian brands | Верея, Olympus, Калиакра | Exact brand match required |
-| **House** | Store-exclusive private labels | K-Classic, Pilos, Clever | Match as "comparable" |
-| **Generic** | No brand/generic | "Баничка", "Пресни яйца" | Embedding-only matching |
+### 2. Category Taxonomy (`data/categories.json`)
 
-### 3. Category Taxonomy (GS1 GPC Based)
+29 simplified GS1 GPC categories for Bulgarian groceries:
 
-```
-10000000 - Food/Beverage/Tobacco
-  10100000 - Produce
-    10101500 - Fresh fruits
-    10101600 - Fresh vegetables
-  10200000 - Meat/Poultry/Fish
-    10202600 - Fresh meat
-    10202900 - Processed meat
-  10300000 - Dairy/Eggs
-    10303400 - Milk
-    10303500 - Cheese
-    10303600 - Yogurt
-  10400000 - Bakery
-    10403800 - Bread
-    10403900 - Pastries
-  10500000 - Beverages
-    10504900 - Soft drinks
-    10505200 - Beer
+| Category | Code | Products |
+|----------|------|----------|
+| dairy | 10300000 | Milk, cheese, yogurt |
+| meat | 10200000 | Fresh meat |
+| produce_fruit | 10101500 | Fruits |
+| produce_veg | 10101600 | Vegetables |
+| beverages_soft | 10504900 | Soft drinks |
+| ... | ... | ... |
 
-20000000 - Health/Beauty/Personal Care
-30000000 - Household Cleaning
-40000000 - Home/Garden
-```
+### 3. Matching Pipeline v2.4 (`matching/pipeline.py`)
 
-### 4. Matching Rules
+Four-phase matching with quality controls:
 
-#### Rule 1: Category Blocking
-- Products must share the same GS1 GPC category to be match candidates
-- Reduces comparison space 1000x (5K products → ~50 per category)
+| Phase | Method | Threshold | Matches |
+|-------|--------|-----------|---------|
+| 1a | Exact branded | brand + name + qty | 0 |
+| 1b | Exact generic | name + qty | 8 |
+| 2 | Brand fuzzy (bidirectional) | 0.80 | 52 |
+| 3 | Embedding (bidirectional + category) | 0.92 | 102 |
 
-#### Rule 2: Exact Match (Confidence: 0.95)
-- brand_match = normalized(brand1) == normalized(brand2)
-- name_similarity >= 0.95 (normalized names)
-- quantity_compatible(q1, u1, q2, u2)
-- category_match
+**Key Features:**
+- Bidirectional confirmation (both products must be each other's best match)
+- Category-mismatch rejection (requires 0.98 if categories differ)
+- Quantity/unit validation in exact matching
 
-#### Rule 3: Brand + Fuzzy (Confidence: 0.75-0.90)
-- brand_match = True
-- name_similarity >= 0.80 (embedding)
-- quantity_compatible()
-- category_match
+### 4. Database Schema
 
-#### Rule 4: House Brand Comparable (Confidence: 0.70)
-- both_are_house_brands = True
-- same_product_type (embedding > 0.85)
-- quantity_compatible()
-- category_match
-- Example: K-Classic Milk ↔ Pilos Milk
+```sql
+-- Products table
+products (
+    id, name, normalized_name, brand,
+    quantity, unit, category_code, category_name,
+    barcode_ean, image_url, ...
+)
 
-### 5. Quantity Compatibility
+-- Store-specific data
+store_products (
+    id, product_id, store_id,
+    store_product_code, store_product_url, ...
+)
 
-```python
-def quantities_compatible(q1, u1, q2, u2):
-    # Normalize to base units (ml or g)
-    # Allow 25% variance for multipacks
-    ratio = max(base1, base2) / min(base1, base2)
-    return ratio <= 1.25
-```
+-- Prices (separate table)
+prices (
+    id, store_product_id,
+    current_price, old_price, discount_percent,
+    price_per_unit, price_per_unit_base, ...
+)
 
-### 6. Price Per Unit Calculation
-
-```python
-def calculate_price_per_unit(price, quantity, unit):
-    # Return price per 100ml or 100g for fair comparison
-    base_qty = normalize_to_base(quantity, unit)
-    if unit in ('ml', 'л', 'l', 'мл'):
-        return (price / base_qty) * 100  # per 100ml
-    elif unit in ('g', 'г', 'kg', 'кг'):
-        return (price / base_qty) * 100  # per 100g
+-- Cross-store matches
+cross_store_matches (
+    id, kaufland_product_id, lidl_product_id, billa_product_id,
+    canonical_name, canonical_brand, category_code,
+    match_type, confidence, store_count
+)
 ```
 
 ---
 
-## Store-Specific Notes
+## Store Data Quality
 
-### Kaufland
-- **Data Quality:** High (65% brand coverage)
-- **Challenges:** Unit field sometimes contains descriptions
-- **API/Scraper:** JSON API available
-
-### Lidl
-- **Data Quality:** Medium (37% brand coverage)
-- **Challenges:** HTML in unit field
-- **Fix Required:** Strip HTML before parsing quantity
-
-### Billa
-- **Data Quality:** Low (9% → 35% after fixes)
-- **Challenges:** Promo prefixes pollute names
-- **Fix Required:** Strip "King оферта -", "Само с Billa Card -" prefixes
+| Store | Products | Brand Coverage | Quantity Coverage | Issues |
+|-------|----------|----------------|-------------------|--------|
+| Kaufland | 3,293 | 68% | 39% | Unit field has descriptions |
+| Lidl | 1,540 | 37% | 33% | Price scraper bug (10-100x too high) |
+| Billa | 831 | 35% | 53% | "King оферта" prefixes |
 
 ---
 
-## Matching Confidence Tiers
+## API & Frontend
 
-| Tier | Confidence | Match Type | UX Display |
-|------|-----------|------------|------------|
-| 🟢 **Exact** | 0.95 | Same brand, similar name, compatible qty | "Same product" |
-| 🟡 **Very Similar** | 0.80-0.94 | Same brand, fuzzy name match | "Same brand, check details" |
-| 🟠 **Comparable** | 0.70-0.79 | House brands, similar product | "Comparable product" |
-| 🔴 **Possible** | < 0.70 | Embedding match only | "Might be similar" |
+### Static UI (`api/compare.html`)
+- 82 products with price comparison
+- Best value highlighting (🏆)
+- Savings percentage calculation
+- Store-colored branding
+
+### API Endpoints (future)
+- `GET /matches` - Cross-store matches with prices
+- `GET /categories` - Category list with counts
+- `GET /stats` - Overall statistics
 
 ---
 
-## Technical Stack
+## Known Issues
 
-| Component | Technology |
-|-----------|------------|
-| Database | SQLite (development), PostgreSQL (production) |
-| Embedding Model | paraphrase-multilingual-MiniLM-L12-v2 |
-| API Framework | FastAPI |
-| Frontend | React or Vue.js |
-| Scraping | Python + BeautifulSoup / Playwright |
+1. **Lidl price scraper** - Returns prices 10-100x actual value for some products
+2. **Quantity parsing** - Only 39% of Kaufland products have quantity extracted
+3. **Category coverage** - 53% of products fall into "other" (non-food items, flowers, etc.)
+
+---
+
+## Future Improvements
+
+1. Fix Lidl price scraper
+2. Add more stores (T-Market, Fantastico)
+3. Daily scraping cron
+4. Mobile PWA version
+5. User accounts + shopping lists
