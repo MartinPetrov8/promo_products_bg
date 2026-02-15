@@ -18,6 +18,7 @@ import json
 from typing import Optional, Dict, List, Tuple
 from dataclasses import dataclass
 from datetime import datetime
+from contextlib import contextmanager
 
 # House brands per store (private labels)
 HOUSE_BRANDS = {
@@ -73,69 +74,74 @@ class BrandResolver:
         self._init_db()
         self._load_patterns()
     
+    @contextmanager
+    def _get_conn(self):
+        """Context manager for database connections - prevents leaks."""
+        conn = sqlite3.connect(self.db_path)
+        try:
+            yield conn
+        finally:
+            conn.close()
+    
     def _init_db(self):
         """Initialize brand resolution tables."""
-        conn = sqlite3.connect(self.db_path)
-        c = conn.cursor()
-        
-        # Brand patterns table
-        c.execute("""
-            CREATE TABLE IF NOT EXISTS brand_patterns (
-                id INTEGER PRIMARY KEY,
-                pattern TEXT NOT NULL,
-                brand TEXT NOT NULL,
-                store_id INTEGER,
-                confidence REAL DEFAULT 1.0,
-                source TEXT,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                UNIQUE(pattern, brand)
-            )
-        """)
-        
-        # Image hash cache
-        c.execute("""
-            CREATE TABLE IF NOT EXISTS brand_image_cache (
-                id INTEGER PRIMARY KEY,
-                image_url TEXT NOT NULL UNIQUE,
-                image_hash TEXT,
-                brand TEXT,
-                ocr_text TEXT,
-                confidence REAL,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        """)
-        
-        # OCR queue
-        c.execute("""
-            CREATE TABLE IF NOT EXISTS brand_ocr_queue (
-                id INTEGER PRIMARY KEY,
-                product_id INTEGER,
-                image_url TEXT NOT NULL,
-                store TEXT,
-                priority INTEGER DEFAULT 0,
-                status TEXT DEFAULT 'pending',
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                processed_at TIMESTAMP
-            )
-        """)
-        
-        conn.commit()
-        conn.close()
+        with self._get_conn() as conn:
+            c = conn.cursor()
+            
+            # Brand patterns table
+            c.execute("""
+                CREATE TABLE IF NOT EXISTS brand_patterns (
+                    id INTEGER PRIMARY KEY,
+                    pattern TEXT NOT NULL,
+                    brand TEXT NOT NULL,
+                    store_id INTEGER,
+                    confidence REAL DEFAULT 1.0,
+                    source TEXT,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    UNIQUE(pattern, brand)
+                )
+            """)
+            
+            # Image hash cache
+            c.execute("""
+                CREATE TABLE IF NOT EXISTS brand_image_cache (
+                    id INTEGER PRIMARY KEY,
+                    image_url TEXT NOT NULL UNIQUE,
+                    image_hash TEXT,
+                    brand TEXT,
+                    ocr_text TEXT,
+                    confidence REAL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+            
+            # OCR queue
+            c.execute("""
+                CREATE TABLE IF NOT EXISTS brand_ocr_queue (
+                    id INTEGER PRIMARY KEY,
+                    product_id INTEGER,
+                    image_url TEXT NOT NULL,
+                    store TEXT,
+                    priority INTEGER DEFAULT 0,
+                    status TEXT DEFAULT 'pending',
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    processed_at TIMESTAMP
+                )
+            """)
+            
+            conn.commit()
     
     def _load_patterns(self):
         """Load brand patterns from database."""
-        conn = sqlite3.connect(self.db_path)
-        c = conn.cursor()
-        
-        c.execute("SELECT pattern, brand FROM brand_patterns ORDER BY confidence DESC")
-        for row in c.fetchall():
-            try:
-                pattern = re.compile(row[0], re.IGNORECASE)
-                self.brand_patterns.append((pattern, row[1]))
-            except re.error:
-                pass
-        
-        conn.close()
+        with self._get_conn() as conn:
+            c = conn.cursor()
+            c.execute("SELECT pattern, brand FROM brand_patterns ORDER BY confidence DESC")
+            for row in c.fetchall():
+                try:
+                    pattern = re.compile(row[0], re.IGNORECASE)
+                    self.brand_patterns.append((pattern, row[1]))
+                except re.error:
+                    pass
         
         # Add house brand patterns
         for store, brands in HOUSE_BRANDS.items():
@@ -220,16 +226,13 @@ class BrandResolver:
     
     def _lookup_image_cache(self, image_url: str) -> BrandResult:
         """Look up brand from image cache."""
-        conn = sqlite3.connect(self.db_path)
-        c = conn.cursor()
-        
-        c.execute("""
-            SELECT brand, confidence FROM brand_image_cache 
-            WHERE image_url = ? AND brand IS NOT NULL
-        """, (image_url,))
-        
-        row = c.fetchone()
-        conn.close()
+        with self._get_conn() as conn:
+            c = conn.cursor()
+            c.execute("""
+                SELECT brand, confidence FROM brand_image_cache 
+                WHERE image_url = ? AND brand IS NOT NULL
+            """, (image_url,))
+            row = c.fetchone()
         
         if row:
             return BrandResult(
@@ -242,29 +245,23 @@ class BrandResolver:
     
     def queue_for_ocr(self, product_id: int, image_url: str, store: str = None, priority: int = 0):
         """Add product to OCR queue."""
-        conn = sqlite3.connect(self.db_path)
-        c = conn.cursor()
-        
-        c.execute("""
-            INSERT OR IGNORE INTO brand_ocr_queue (product_id, image_url, store, priority)
-            VALUES (?, ?, ?, ?)
-        """, (product_id, image_url, store, priority))
-        
-        conn.commit()
-        conn.close()
+        with self._get_conn() as conn:
+            c = conn.cursor()
+            c.execute("""
+                INSERT OR IGNORE INTO brand_ocr_queue (product_id, image_url, store, priority)
+                VALUES (?, ?, ?, ?)
+            """, (product_id, image_url, store, priority))
+            conn.commit()
     
     def add_pattern(self, pattern: str, brand: str, source: str = 'manual', confidence: float = 1.0):
         """Add a brand pattern to the database."""
-        conn = sqlite3.connect(self.db_path)
-        c = conn.cursor()
-        
-        c.execute("""
-            INSERT OR REPLACE INTO brand_patterns (pattern, brand, source, confidence)
-            VALUES (?, ?, ?, ?)
-        """, (pattern, brand, source, confidence))
-        
-        conn.commit()
-        conn.close()
+        with self._get_conn() as conn:
+            c = conn.cursor()
+            c.execute("""
+                INSERT OR REPLACE INTO brand_patterns (pattern, brand, source, confidence)
+                VALUES (?, ?, ?, ?)
+            """, (pattern, brand, source, confidence))
+            conn.commit()
         
         # Add to in-memory patterns
         try:
@@ -275,16 +272,13 @@ class BrandResolver:
     
     def add_image_cache(self, image_url: str, brand: str, ocr_text: str = None, confidence: float = 0.80):
         """Add image to brand cache."""
-        conn = sqlite3.connect(self.db_path)
-        c = conn.cursor()
-        
-        c.execute("""
-            INSERT OR REPLACE INTO brand_image_cache (image_url, brand, ocr_text, confidence)
-            VALUES (?, ?, ?, ?)
-        """, (image_url, brand, ocr_text, confidence))
-        
-        conn.commit()
-        conn.close()
+        with self._get_conn() as conn:
+            c = conn.cursor()
+            c.execute("""
+                INSERT OR REPLACE INTO brand_image_cache (image_url, brand, ocr_text, confidence)
+                VALUES (?, ?, ?, ?)
+            """, (image_url, brand, ocr_text, confidence))
+            conn.commit()
     
     def resolve_batch(self, products: List[Dict]) -> List[Dict]:
         """
@@ -312,19 +306,17 @@ class BrandResolver:
     
     def get_stats(self) -> Dict:
         """Get resolution statistics."""
-        conn = sqlite3.connect(self.db_path)
-        c = conn.cursor()
-        
-        c.execute("SELECT COUNT(*) FROM brand_patterns")
-        pattern_count = c.fetchone()[0]
-        
-        c.execute("SELECT COUNT(*) FROM brand_image_cache WHERE brand IS NOT NULL")
-        cache_count = c.fetchone()[0]
-        
-        c.execute("SELECT COUNT(*) FROM brand_ocr_queue WHERE status = 'pending'")
-        queue_count = c.fetchone()[0]
-        
-        conn.close()
+        with self._get_conn() as conn:
+            c = conn.cursor()
+            
+            c.execute("SELECT COUNT(*) FROM brand_patterns")
+            pattern_count = c.fetchone()[0]
+            
+            c.execute("SELECT COUNT(*) FROM brand_image_cache WHERE brand IS NOT NULL")
+            cache_count = c.fetchone()[0]
+            
+            c.execute("SELECT COUNT(*) FROM brand_ocr_queue WHERE status = 'pending'")
+            queue_count = c.fetchone()[0]
         
         return {
             'patterns': pattern_count,

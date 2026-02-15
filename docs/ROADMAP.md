@@ -84,3 +84,17 @@
 - Kaufland: 3,293 products
 - Lidl: 1,540 products (price issues)
 - Billa: 831 products
+
+## Future Scalability Work
+
+### O(n²) Matching Algorithm
+**Status:** Logged for future  
+**Impact:** Low at current scale (1.4K products), critical at 10K+  
+**Problem:** `cross_store_matcher.py` Phase 2 (brand+fuzzy) and Phase 3 (embedding) use nested loops  
+**Solution:** When scaling past 10K products:
+1. Use FAISS for approximate nearest neighbor search
+2. Pre-compute and cache embeddings in DB
+3. Batch processing with chunking
+4. Consider async processing queue (Celery)
+
+**Estimated effort:** 1-2 days when needed
