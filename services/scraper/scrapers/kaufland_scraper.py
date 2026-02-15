@@ -206,13 +206,22 @@ class KauflandScraper:
                 if not tile:
                     continue
                 
-                name = title_div.get_text(strip=True)
-                if not name:
+                title_text = title_div.get_text(strip=True)
+                
+                # Get subtitle (actual product description)
+                subtitle = tile.select_one('div.k-product-tile__subtitle')
+                subtitle_text = subtitle.get_text(strip=True) if subtitle else None
+                
+                # Combine brand + description for better matching
+                if subtitle_text:
+                    name = f"{title_text} {subtitle_text}".strip() if title_text else subtitle_text
+                else:
+                    name = title_text
+                    
+                if not name or len(name) < 3:
                     continue
                 
-                # Quantity/subtitle
-                subtitle = tile.select_one('div.k-product-tile__subtitle')
-                quantity = subtitle.get_text(strip=True) if subtitle else None
+                quantity = None  # Will parse from combined name
                 
                 # Get both price tags (EUR and BGN)
                 pricetags = tile.select('div.k-product-tile__pricetag')
