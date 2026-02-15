@@ -3,6 +3,74 @@
     "stores": [
       {
         "store": "Kaufland",
+        "name": "Синя орхидея Фаленопсис в керамична кашпа",
+        "price": 29.98
+      },
+      {
+        "store": "Billa",
+        "name": "Орхидея Фаленопсис в керамика саксия Ф6 1 бр.** Продукт, маркиран със синя звезда",
+        "price": 13.67
+      }
+    ],
+    "name": "Синя орхидея Фаленопсис в керамична кашпа",
+    "confidence": 0.883,
+    "savings": 16.31
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Savex Гел или Капсули за пране",
+        "price": 13.98
+      },
+      {
+        "store": "Billa",
+        "name": "Savex Premium Гел за пране 112 пранета или Капсули за пране 72 бр. 1 опаковка Произхо",
+        "price": 29.98
+      }
+    ],
+    "name": "Savex Гел или Капсули за пране",
+    "confidence": 0.852,
+    "savings": 16.0
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "PARKSIDE® Акумулаторна батерия 2 Ah\nи Зарядно 2,4 A",
+        "price": 31.98
+      },
+      {
+        "store": "Lidl",
+        "name": "Акумулаторна батерия и зарядно устройство",
+        "price": 16.35
+      }
+    ],
+    "name": "PARKSIDE® Акумулаторна батерия 2 Ah\nи Зарядно 2,4 A",
+    "confidence": 0.867,
+    "savings": 15.63
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Каскадна орхидея фаленопсис Ø12 см",
+        "price": 24.98
+      },
+      {
+        "store": "Lidl",
+        "name": "Орхидея Фаленопсис",
+        "price": 11.75
+      }
+    ],
+    "name": "Каскадна орхидея фаленопсис Ø12 см",
+    "confidence": 0.891,
+    "savings": 13.23
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
         "name": "Jameson Ирландско уиски",
         "price": 33.89
       },
@@ -15,6 +83,91 @@
     "name": "Jameson Ирландско уиски",
     "confidence": 0.923,
     "savings": 10.38
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "РАФТИС Кашкавал\nот краве мляко",
+        "price": 14.98
+      },
+      {
+        "store": "Lidl",
+        "name": "Кашкавал от краве мляко",
+        "price": 6.64
+      }
+    ],
+    "name": "РАФТИС Кашкавал\nот краве мляко",
+    "confidence": 0.966,
+    "savings": 8.34
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Whiskas Суха храна за котки\nразлични видове",
+        "price": 12.48
+      },
+      {
+        "store": "Lidl",
+        "name": "Суха храна за котки",
+        "price": 4.34
+      }
+    ],
+    "name": "Whiskas Суха храна за котки\nразлични видове",
+    "confidence": 0.966,
+    "savings": 8.14
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Nescafe Classic Разтворимо кафе",
+        "price": 13.98
+      },
+      {
+        "store": "Lidl",
+        "name": "Инстантно кафе Голд",
+        "price": 6.13
+      }
+    ],
+    "name": "Nescafe Classic Разтворимо кафе",
+    "confidence": 0.921,
+    "savings": 7.85
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "OYANDA Пижама\nсатен",
+        "price": 15.98
+      },
+      {
+        "store": "Lidl",
+        "name": "Пижама",
+        "price": 9.2
+      }
+    ],
+    "name": "OYANDA Пижама\nсатен",
+    "confidence": 0.882,
+    "savings": 6.78
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "MEAT REVOLUTION Шницел\nот младо телешко",
+        "price": 11.99
+      },
+      {
+        "store": "Lidl",
+        "name": "Месо за готвене от младо телешко",
+        "price": 6.49
+      }
+    ],
+    "name": "MEAT REVOLUTION Шницел\nот младо телешко",
+    "confidence": 0.897,
+    "savings": 5.5
   },
   {
     "stores": [
@@ -37,6 +190,125 @@
     "stores": [
       {
         "store": "Kaufland",
+        "name": "TENO Тоалетна хартия\nFresh Breeze",
+        "price": 14.98
+      },
+      {
+        "store": "Lidl",
+        "name": "Тоалетна хартия",
+        "price": 9.71
+      }
+    ],
+    "name": "TENO Тоалетна хартия\nFresh Breeze",
+    "confidence": 0.887,
+    "savings": 5.27
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Кен Шунка",
+        "price": 4.99
+      },
+      {
+        "store": "Lidl",
+        "name": "Шунка",
+        "price": 10.22
+      }
+    ],
+    "name": "Кен Шунка",
+    "confidence": 0.923,
+    "savings": 5.23
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Булгарче Сирене от краве мляко\nот свежата витрина",
+        "price": 10.99
+      },
+      {
+        "store": "Billa",
+        "name": "Белииса Краве сирене шайба От деликатесната витрина За 1 кг",
+        "price": 16.02
+      }
+    ],
+    "name": "Булгарче Сирене от краве мляко\nот свежата витрина",
+    "confidence": 0.879,
+    "savings": 5.03
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "COCA-COLA 8 x 0,33 л кен\nпромопакет",
+        "price": 8.98
+      },
+      {
+        "store": "Billa",
+        "name": "Coca-Cola газирана напитка 2 х 1,5 л",
+        "price": 3.99
+      }
+    ],
+    "name": "COCA-COLA 8 x 0,33 л кен\nпромопакет",
+    "confidence": 0.906,
+    "savings": 4.99
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Булкарто Бланширани картофи",
+        "price": 6.98
+      },
+      {
+        "store": "Lidl",
+        "name": "Бланширани картофи",
+        "price": 2.35
+      }
+    ],
+    "name": "Булкарто Бланширани картофи",
+    "confidence": 0.98,
+    "savings": 4.63
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Шеф Месар Панирано пилешко филе",
+        "price": 7.18
+      },
+      {
+        "store": "Lidl",
+        "name": "Панирани пилешки шницели",
+        "price": 2.7
+      }
+    ],
+    "name": "Шеф Месар Панирано пилешко филе",
+    "confidence": 0.882,
+    "savings": 4.48
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Кайма от свинско месо от свежата витрина",
+        "price": 7.49
+      },
+      {
+        "store": "Lidl",
+        "name": "Филе от пуешко месо XXL",
+        "price": 3.05
+      }
+    ],
+    "name": "Кайма от свинско месо от свежата витрина",
+    "confidence": 0.853,
+    "savings": 4.44
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
         "name": "Плюшена играчка различни видове",
         "price": 6.98
       },
@@ -49,6 +321,74 @@
     "name": "Плюшена играчка различни видове",
     "confidence": 0.911,
     "savings": 3.41
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Raffaello Бонбони\nкокос",
+        "price": 6.59
+      },
+      {
+        "store": "Lidl",
+        "name": "Шоколадови мини блокчета с кокос",
+        "price": 3.57
+      }
+    ],
+    "name": "Raffaello Бонбони\nкокос",
+    "confidence": 0.867,
+    "savings": 3.02
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Garnier Боя за коса Olia\nразлични цветове",
+        "price": 8.98
+      },
+      {
+        "store": "Billa",
+        "name": "Loreal Excellence Боя за коса 1 опаковка - различни цветове",
+        "price": 11.99
+      }
+    ],
+    "name": "Garnier Боя за коса Olia\nразлични цветове",
+    "confidence": 0.877,
+    "savings": 3.01
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Круши Конференс",
+        "price": 3.48
+      },
+      {
+        "store": "Lidl",
+        "name": "Сутиен",
+        "price": 6.13
+      }
+    ],
+    "name": "Круши Конференс",
+    "confidence": 0.87,
+    "savings": 2.65
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "DELICHE Сладолед\nразлични видове",
+        "price": 5.48
+      },
+      {
+        "store": "Lidl",
+        "name": "Сладолед",
+        "price": 3.06
+      }
+    ],
+    "name": "DELICHE Сладолед\nразлични видове",
+    "confidence": 0.856,
+    "savings": 2.42
   },
   {
     "stores": [
@@ -71,6 +411,23 @@
     "stores": [
       {
         "store": "Kaufland",
+        "name": "Tasty Еклер с шоколад",
+        "price": 3.99
+      },
+      {
+        "store": "Lidl",
+        "name": "Горещ шоколад",
+        "price": 1.78
+      }
+    ],
+    "name": "Tasty Еклер с шоколад",
+    "confidence": 0.911,
+    "savings": 2.21
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
         "name": "Кифлички с какаов крем",
         "price": 1.99
       },
@@ -83,6 +440,23 @@
     "name": "Кифлички с какаов крем",
     "confidence": 0.917,
     "savings": 1.33
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "DEUTSCHE MARKENBUTTER Краве масло",
+        "price": 3.68
+      },
+      {
+        "store": "Billa",
+        "name": "Deutsche Markenbutter краве масло 250 г",
+        "price": 4.99
+      }
+    ],
+    "name": "DEUTSCHE MARKENBUTTER Краве масло",
+    "confidence": 0.896,
+    "savings": 1.31
   },
   {
     "stores": [
@@ -105,6 +479,23 @@
     "stores": [
       {
         "store": "Kaufland",
+        "name": "Кана за вода 1600 мл",
+        "price": 3.99
+      },
+      {
+        "store": "Billa",
+        "name": "Garnier Sinnat Мицеларна вода 400 мл",
+        "price": 5.28
+      }
+    ],
+    "name": "Кана за вода 1600 мл",
+    "confidence": 0.874,
+    "savings": 1.29
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
         "name": "Верея Прясно мляко",
         "price": 2.68
       },
@@ -117,6 +508,91 @@
     "name": "Верея Прясно мляко",
     "confidence": 0.947,
     "savings": 1.25
+  },
+  {
+    "stores": [
+      {
+        "store": "Lidl",
+        "name": "Газирана безалкохолна напитка",
+        "price": 0.61
+      },
+      {
+        "store": "Billa",
+        "name": "Prisun негазирана напитка 1,5 л",
+        "price": 1.78
+      }
+    ],
+    "name": "Газирана безалкохолна напитка",
+    "confidence": 0.862,
+    "savings": 1.17
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Jogobella Плодов йогурт\nразлични вкусове",
+        "price": 2.64
+      },
+      {
+        "store": "Lidl",
+        "name": "Соев йогурт",
+        "price": 1.53
+      }
+    ],
+    "name": "Jogobella Плодов йогурт\nразлични вкусове",
+    "confidence": 0.875,
+    "savings": 1.11
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "EXQUISA Сирене Котидж",
+        "price": 2.99
+      },
+      {
+        "store": "Lidl",
+        "name": "Крем сирене",
+        "price": 1.89
+      }
+    ],
+    "name": "EXQUISA Сирене Котидж",
+    "confidence": 0.884,
+    "savings": 1.1
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Гъби печурки",
+        "price": 1.94
+      },
+      {
+        "store": "Lidl",
+        "name": "Кралски печурки",
+        "price": 2.81
+      }
+    ],
+    "name": "Гъби печурки",
+    "confidence": 0.856,
+    "savings": 0.87
+  },
+  {
+    "stores": [
+      {
+        "store": "Lidl",
+        "name": "Лакомства за котки",
+        "price": 1.27
+      },
+      {
+        "store": "Billa",
+        "name": "Clever лакомства за котка 150 г Различни видове",
+        "price": 2.09
+      }
+    ],
+    "name": "Лакомства за котки",
+    "confidence": 0.867,
+    "savings": 0.82
   },
   {
     "stores": [
@@ -134,6 +610,91 @@
     "name": "МИРАЖ Тунквани бисквити Макси",
     "confidence": 0.901,
     "savings": 0.69
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Snickers Шоколадов десерт\nSuper + 1",
+        "price": 1.88
+      },
+      {
+        "store": "Billa",
+        "name": "Snickers, Mars или Twix Шоколадов десерт 50 - 51 г",
+        "price": 1.19
+      }
+    ],
+    "name": "Snickers Шоколадов десерт\nSuper + 1",
+    "confidence": 0.866,
+    "savings": 0.69
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Захира Пудра захар",
+        "price": 1.58
+      },
+      {
+        "store": "Billa",
+        "name": "Сладея Пудра захар 250 г",
+        "price": 1.1
+      }
+    ],
+    "name": "Захира Пудра захар",
+    "confidence": 0.884,
+    "savings": 0.48
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Ананас Клас: I",
+        "price": 3.48
+      },
+      {
+        "store": "Billa",
+        "name": "Ананас 1 бр.",
+        "price": 3.89
+      }
+    ],
+    "name": "Ананас Клас: I",
+    "confidence": 0.865,
+    "savings": 0.41
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Авокадо",
+        "price": 1.29
+      },
+      {
+        "store": "Billa",
+        "name": "Авокадо Хас 1 бр.",
+        "price": 1.66
+      }
+    ],
+    "name": "Авокадо",
+    "confidence": 0.874,
+    "savings": 0.37
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Кристал Локум",
+        "price": 0.98
+      },
+      {
+        "store": "Billa",
+        "name": "Кристал Локум цветен 140 г",
+        "price": 1.15
+      }
+    ],
+    "name": "Кристал Локум",
+    "confidence": 0.869,
+    "savings": 0.17
   },
   {
     "stores": [
@@ -161,7 +722,7 @@
       },
       {
         "store": "Billa",
-        "name": "Супер цена - Свински бут без кост За 1 кг",
+        "name": "Свински бут без кост За 1 кг",
         "price": 5.79
       }
     ],
