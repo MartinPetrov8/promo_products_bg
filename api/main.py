@@ -1,5 +1,6 @@
 """
 PromoBG API - Price Comparison Endpoints
+Serves data directly from SQLite database.
 """
 
 import sqlite3
@@ -7,10 +8,12 @@ from pathlib import Path
 from typing import List, Optional
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
+import json
 
-app = FastAPI(title="PromoBG API", version="0.1.0")
+app = FastAPI(title="PromoBG API", version="0.2.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -20,28 +23,7 @@ app.add_middleware(
 )
 
 DB_PATH = Path(__file__).parent.parent / "data" / "promobg.db"
-HTML_PATH = Path(__file__).parent / "index.html"
-
-
-class StorePrice(BaseModel):
-    store: str
-    price: float
-    quantity: Optional[float] = None
-    unit: Optional[str] = None
-    price_per_unit: Optional[float] = None
-    product_name: str
-
-
-class MatchedProduct(BaseModel):
-    match_id: int
-    canonical_name: str
-    brand: Optional[str] = None
-    category: Optional[str] = None
-    match_type: str
-    confidence: float
-    prices: List[StorePrice]
-    best_value: Optional[str] = None
-    savings_percent: Optional[float] = None
+HTML_PATH = Path(__file__).parent
 
 
 def get_db():
@@ -50,136 +32,247 @@ def get_db():
     return conn
 
 
-@app.get("/", response_class=HTMLResponse)
-def root():
-    return HTML_PATH.read_text()
+@app.get("/")
+async def root():
+    return FileResponse(HTML_PATH / "compare.html")
 
 
-@app.get("/matches", response_model=List[MatchedProduct])
-def get_matches(
-    category: Optional[str] = Query(None),
-    min_confidence: float = Query(0.9),
-    limit: int = Query(50, le=200),
+@app.get("/api/stats")
+async def get_stats():
+    """Get overall statistics."""
+    conn = get_db()
+    cur = conn.cursor()
+    
+    # Total products
+    cur.execute("SELECT COUNT(*) FROM products")
+    total_products = cur.fetchone()[0]
+    
+    # Products by store
+    cur.execute("""
+        SELECT s.name, COUNT(*) 
+        FROM products p
+        JOIN store_products sp ON p.id = sp.product_id
+        JOIN stores s ON sp.store_id = s.id
+        GROUP BY s.name
+    """)
+    by_store = {row[0]: row[1] for row in cur.fetchall()}
+    
+    # Brand coverage
+    cur.execute("""
+        SELECT 
+            SUM(CASE WHEN brand IS NOT NULL AND brand != '' AND brand != 'NO_BRAND' THEN 1 ELSE 0 END) as branded,
+            SUM(CASE WHEN brand = 'NO_BRAND' THEN 1 ELSE 0 END) as no_brand,
+            COUNT(*) as total
+        FROM products
+    """)
+    row = cur.fetchone()
+    
+    conn.close()
+    
+    return {
+        "total_products": total_products,
+        "by_store": by_store,
+        "branded": row[0],
+        "no_brand": row[1],
+        "brand_coverage_pct": round((row[0] / row[2]) * 100, 1) if row[2] > 0 else 0
+    }
+
+
+@app.get("/api/products")
+async def get_products(
+    store: Optional[str] = None,
+    brand: Optional[str] = None,
+    search: Optional[str] = None,
+    limit: int = Query(default=100, le=500)
 ):
+    """Get products with optional filters."""
     conn = get_db()
     cur = conn.cursor()
     
     query = """
-        SELECT id, canonical_name, canonical_brand, category_code,
-               match_type, confidence, kaufland_product_id, lidl_product_id, billa_product_id
-        FROM cross_store_matches
-        WHERE confidence >= ?
+        SELECT p.id, p.name, p.brand, s.name as store, pr.current_price as price
+        FROM products p
+        JOIN store_products sp ON p.id = sp.product_id
+        JOIN stores s ON sp.store_id = s.id
+        LEFT JOIN prices pr ON pr.store_product_id = sp.id
+        WHERE 1=1
     """
-    params = [min_confidence]
+    params = []
     
-    if category:
-        query += " AND category_code = ?"
-        params.append(category)
+    if store:
+        query += " AND s.name = ?"
+        params.append(store)
+    if brand:
+        query += " AND LOWER(p.brand) = LOWER(?)"
+        params.append(brand)
+    if search:
+        query += " AND LOWER(p.name) LIKE ?"
+        params.append(f"%{search.lower()}%")
     
-    query += " ORDER BY confidence DESC LIMIT ?"
-    params.append(limit)
+    query += f" LIMIT {limit}"
     
-    matches = cur.execute(query, params).fetchall()
-    results = []
-    
-    for match in matches:
-        prices = []
-        best_ppu = None
-        best_store = None
-        
-        for store, pid_col in [('Kaufland', 'kaufland_product_id'), 
-                                ('Lidl', 'lidl_product_id'), 
-                                ('Billa', 'billa_product_id')]:
-            pid = match[pid_col]
-            if not pid:
-                continue
-            
-            row = cur.execute("""
-                SELECT p.name, p.quantity, p.unit, pr.current_price, pr.price_per_unit
-                FROM products p
-                JOIN store_products sp ON p.id = sp.product_id
-                JOIN stores s ON sp.store_id = s.id
-                JOIN prices pr ON sp.id = pr.store_product_id
-                WHERE p.id = ? AND s.name = ? AND sp.deleted_at IS NULL
-            """, (pid, store)).fetchone()
-            
-            if row and row['current_price']:
-                # Skip obviously wrong Lidl prices
-                if row['current_price'] > 100 and store == 'Lidl':
-                    continue
-                
-                qty = row['quantity']
-                ppu = row['price_per_unit']
-                if not ppu and qty and qty > 0:
-                    ppu = row['current_price'] / qty
-                
-                prices.append(StorePrice(
-                    store=store,
-                    price=row['current_price'],
-                    quantity=qty,
-                    unit=row['unit'],
-                    price_per_unit=ppu,
-                    product_name=row['name'][:60] if row['name'] else ''
-                ))
-                
-                if ppu and (best_ppu is None or ppu < best_ppu):
-                    best_ppu = ppu
-                    best_store = store
-        
-        savings = None
-        if len(prices) >= 2 and best_ppu:
-            ppus = [p.price_per_unit for p in prices if p.price_per_unit]
-            if len(ppus) >= 2:
-                worst_ppu = max(ppus)
-                savings = (worst_ppu - best_ppu) / worst_ppu * 100
-        
-        if len(prices) >= 2:
-            results.append(MatchedProduct(
-                match_id=match['id'],
-                canonical_name=match['canonical_name'],
-                brand=match['canonical_brand'],
-                category=match['category_code'],
-                match_type=match['match_type'],
-                confidence=match['confidence'],
-                prices=prices,
-                best_value=best_store,
-                savings_percent=round(savings, 1) if savings else None
-            ))
-    
+    cur.execute(query, params)
+    products = [dict(row) for row in cur.fetchall()]
     conn.close()
-    return results
+    
+    return products
 
 
-@app.get("/categories")
-def get_categories():
+@app.get("/api/brands")
+async def get_brands(multi_store: bool = False):
+    """Get all brands, optionally only those in multiple stores."""
     conn = get_db()
-    rows = conn.execute("""
-        SELECT category_code, COUNT(*) as cnt
-        FROM cross_store_matches
-        WHERE category_code IS NOT NULL AND category_code != '99000000'
-        GROUP BY category_code ORDER BY cnt DESC
-    """).fetchall()
+    cur = conn.cursor()
+    
+    if multi_store:
+        cur.execute("""
+            SELECT LOWER(p.brand) as brand, GROUP_CONCAT(DISTINCT s.name) as stores, COUNT(*) as count
+            FROM products p
+            JOIN store_products sp ON p.id = sp.product_id
+            JOIN stores s ON sp.store_id = s.id
+            WHERE p.brand IS NOT NULL AND p.brand != '' AND p.brand != 'NO_BRAND'
+            GROUP BY LOWER(p.brand)
+            HAVING COUNT(DISTINCT s.name) >= 2
+            ORDER BY count DESC
+        """)
+    else:
+        cur.execute("""
+            SELECT LOWER(p.brand) as brand, COUNT(*) as count
+            FROM products p
+            WHERE p.brand IS NOT NULL AND p.brand != '' AND p.brand != 'NO_BRAND'
+            GROUP BY LOWER(p.brand)
+            ORDER BY count DESC
+        """)
+    
+    brands = [dict(row) for row in cur.fetchall()]
     conn.close()
-    return [{"code": r[0], "matches": r[1]} for r in rows]
+    
+    return brands
 
 
-@app.get("/stats")
-def get_stats():
+@app.get("/api/matches")
+async def get_matches(min_savings: float = 0):
+    """
+    Get cross-store price comparisons.
+    Finds same brand+similar products across stores with price differences.
+    """
     conn = get_db()
-    total_products = conn.execute("SELECT COUNT(*) FROM products").fetchone()[0]
-    total_matches = conn.execute("SELECT COUNT(*) FROM cross_store_matches").fetchone()[0]
-    by_type = conn.execute("""
-        SELECT match_type, COUNT(*), AVG(confidence)
-        FROM cross_store_matches GROUP BY match_type
-    """).fetchall()
+    cur = conn.cursor()
+    
+    # Get brands that appear in multiple stores with prices
+    cur.execute("""
+        SELECT LOWER(p.brand) as brand
+        FROM products p
+        JOIN store_products sp ON p.id = sp.product_id
+        JOIN stores s ON sp.store_id = s.id
+        JOIN prices pr ON pr.store_product_id = sp.id
+        WHERE p.brand IS NOT NULL AND p.brand != '' AND p.brand != 'NO_BRAND'
+        AND pr.current_price IS NOT NULL AND pr.current_price > 0
+        GROUP BY LOWER(p.brand)
+        HAVING COUNT(DISTINCT s.name) >= 2
+    """)
+    multi_store_brands = [row[0] for row in cur.fetchall()]
+    
+    matches = []
+    
+    for brand in multi_store_brands:
+        # Get all products for this brand with prices
+        cur.execute("""
+            SELECT p.id, p.name, p.brand, s.name as store, pr.current_price as price
+            FROM products p
+            JOIN store_products sp ON p.id = sp.product_id
+            JOIN stores s ON sp.store_id = s.id
+            JOIN prices pr ON pr.store_product_id = sp.id
+            WHERE LOWER(p.brand) = ?
+            AND pr.current_price IS NOT NULL AND pr.current_price > 0
+            ORDER BY s.name
+        """, (brand,))
+        
+        products = [dict(row) for row in cur.fetchall()]
+        
+        if len(products) < 2:
+            continue
+        
+        # Group by store
+        by_store = {}
+        for p in products:
+            store = p['store']
+            if store not in by_store:
+                by_store[store] = []
+            by_store[store].append(p)
+        
+        if len(by_store) < 2:
+            continue
+        
+        # Find best price per store (lowest)
+        store_prices = []
+        for store, prods in by_store.items():
+            best = min(prods, key=lambda x: x['price'])
+            store_prices.append({
+                'store': store,
+                'price': best['price'],
+                'name': best['name']
+            })
+        
+        prices = [s['price'] for s in store_prices]
+        min_price = min(prices)
+        max_price = max(prices)
+        savings = round(max_price - min_price, 2)
+        
+        if savings >= min_savings:
+            # Use shortest product name as display name
+            names = [s['name'].split('\n')[0] for s in store_prices]
+            display_name = min(names, key=len)
+            
+            matches.append({
+                'name': display_name,
+                'brand': brand.title(),
+                'stores': store_prices,
+                'store_count': len(store_prices),
+                'min_price': min_price,
+                'max_price': max_price,
+                'savings': savings,
+                'savings_pct': round((savings / max_price) * 100, 1) if max_price > 0 else 0,
+                'confidence': 0.9
+            })
+    
+    # Sort by savings
+    matches.sort(key=lambda x: x['savings'], reverse=True)
+    
     conn.close()
+    
     return {
-        "total_products": total_products,
-        "total_matches": total_matches,
-        "by_type": {r[0]: {"count": r[1], "avg_confidence": round(r[2], 3)} for r in by_type}
+        'count': len(matches),
+        'matches': matches
+    }
+
+
+@app.get("/api/compare/{brand}")
+async def compare_brand(brand: str):
+    """Compare prices for a specific brand across stores."""
+    conn = get_db()
+    cur = conn.cursor()
+    
+    cur.execute("""
+        SELECT p.id, p.name, p.brand, s.name as store, pr.current_price as price
+        FROM products p
+        JOIN store_products sp ON p.id = sp.product_id
+        JOIN stores s ON sp.store_id = s.id
+        LEFT JOIN prices pr ON pr.store_product_id = sp.id
+        WHERE LOWER(p.brand) = LOWER(?)
+        ORDER BY pr.current_price
+    """, (brand,))
+    
+    products = [dict(row) for row in cur.fetchall()]
+    conn.close()
+    
+    return {
+        'brand': brand,
+        'count': len(products),
+        'products': products
     }
 
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=3001)
+    uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -19,7 +19,7 @@
         .match-card { background: white; border-radius: 10px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .match-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
         .match-name { font-size: 1.2em; font-weight: 600; }
-        .confidence { background: #e3f2fd; color: #1976d2; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; }
+        .match-brand { background: #fff3e0; color: #e65100; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; }
         .prices { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
         .price-card { padding: 15px; border-radius: 8px; background: #f9f9f9; text-align: center; }
         .price-card.best { background: #e8f5e9; border: 2px solid #4caf50; }
@@ -31,10 +31,12 @@
         .savings { display: inline-block; background: #4caf50; color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; margin-top: 5px; }
         .no-results { text-align: center; color: #999; padding: 40px; }
         .footer { text-align: center; color: #999; margin-top: 30px; font-size: 0.85em; }
+        .loading { text-align: center; padding: 40px; color: #666; }
+        .db-badge { background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 4px; font-size: 0.7em; margin-left: 10px; }
     </style>
 </head>
 <body>
-    <h1>🛒 PromoBG</h1>
+    <h1>🛒 PromoBG <span class="db-badge">LIVE DB</span></h1>
     
     <div class="stats">
         <div class="stat-card">
@@ -45,24 +47,53 @@
             <div class="number" id="maxSavings">-</div>
             <div class="label">Макс. спестяване</div>
         </div>
+        <div class="stat-card">
+            <div class="number" id="totalProducts">-</div>
+            <div class="label">Продукти</div>
+        </div>
     </div>
     
     <div class="search-box">
         <input type="text" id="search" placeholder="Търси продукт...">
     </div>
     
-    <div class="matches" id="matches"></div>
+    <div class="matches" id="matches">
+        <div class="loading">Зареждане...</div>
+    </div>
     
-    <p class="footer">Kaufland • Lidl • Billa</p>
+    <p class="footer">Kaufland • Lidl • Billa — Данни директно от базата</p>
     
     <script>
     let allMatches = [];
     
+    // Detect API base URL
+    const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? '' // Same origin
+        : '/api'; // GitHub Pages needs this
+    
     async function loadData() {
         try {
-            const resp = await fetch('matches.json');
-            allMatches = await resp.json();
-            document.getElementById('matchCount').textContent = allMatches.length;
+            // Try API first
+            let resp = await fetch(API_BASE + '/api/matches');
+            if (resp.ok) {
+                const data = await resp.json();
+                allMatches = data.matches || [];
+                document.getElementById('matchCount').textContent = allMatches.length;
+            } else {
+                // Fallback to static JSON
+                resp = await fetch('matches.json');
+                allMatches = await resp.json();
+                document.getElementById('matchCount').textContent = allMatches.length;
+            }
+            
+            // Stats
+            try {
+                const statsResp = await fetch(API_BASE + '/api/stats');
+                if (statsResp.ok) {
+                    const stats = await statsResp.json();
+                    document.getElementById('totalProducts').textContent = stats.total_products;
+                }
+            } catch(e) {}
             
             // Find max savings
             let maxSav = 0;
@@ -73,7 +104,8 @@
             
             renderMatches(allMatches);
         } catch(e) {
-            document.getElementById('matches').innerHTML = '<div class="no-results">Грешка при зареждане</div>';
+            console.error(e);
+            document.getElementById('matches').innerHTML = '<div class="no-results">Грешка при зареждане: ' + e.message + '</div>';
         }
     }
     
@@ -94,7 +126,7 @@
             <div class="match-card">
                 <div class="match-header">
                     <span class="match-name">${m.name}</span>
-                    <span class="confidence">${(m.confidence * 100).toFixed(0)}%</span>
+                    <span class="match-brand">${m.brand || ''}</span>
                 </div>
                 <div class="prices">
                     ${stores.map(s => `
@@ -111,7 +143,10 @@
     
     document.getElementById('search').addEventListener('input', e => {
         const q = e.target.value.toLowerCase();
-        renderMatches(allMatches.filter(m => m.name.toLowerCase().includes(q)));
+        renderMatches(allMatches.filter(m => 
+            m.name.toLowerCase().includes(q) || 
+            (m.brand && m.brand.toLowerCase().includes(q))
+        ));
     });
     
     loadData();
