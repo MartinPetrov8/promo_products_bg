@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromoBG - Сравнение на цени</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f5f5f5; padding: 20px; }
+        h1 { text-align: center; margin-bottom: 20px; color: #333; }
+        .stats { display: flex; gap: 20px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap; }
+        .stat-card { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); min-width: 120px; }
+        .stat-card .number { font-size: 2em; font-weight: bold; color: #2196F3; }
+        .stat-card .label { color: #666; margin-top: 5px; }
+        .matches { max-width: 900px; margin: 0 auto; }
+        .match-card { background: white; border-radius: 10px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .match-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
+        .match-name { font-size: 1.2em; font-weight: 600; }
+        .match-brand { color: #666; font-size: 0.9em; }
+        .match-confidence { background: #e8f5e9; color: #2e7d32; padding: 4px 8px; border-radius: 4px; font-size: 0.85em; }
+        .prices { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+        .price-card { padding: 15px; border-radius: 8px; background: #f9f9f9; }
+        .price-card.best { background: #e8f5e9; border: 2px solid #4caf50; }
+        .store-name { font-weight: 600; margin-bottom: 5px; }
+        .store-name.Kaufland { color: #e31e2d; }
+        .store-name.Lidl { color: #0050aa; }
+        .store-name.Billa { color: #f58220; }
+        .price { font-size: 1.3em; font-weight: bold; }
+        .price-per-unit { color: #666; font-size: 0.9em; margin-top: 5px; }
+        .savings { display: inline-block; background: #4caf50; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.85em; }
+        .winner { margin-left: 5px; }
+        .note { text-align: center; color: #999; margin-top: 30px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>🛒 PromoBG - Сравнение на цени</h1>
+    
+    <div class="stats">
+        <div class="stat-card">
+            <div class="number">82</div>
+            <div class="label">Съвпадения с цени</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">162</div>
+            <div class="label">Общо съвпадения</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">6425</div>
+            <div class="label">Продукти</div>
+        </div>
+    </div>
+    
+    <div class="matches">
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">ВЕДРАРЕ</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">4.59 лв</div>
+                    <div class="price-per-unit">4.590 лв/Сирене Дунавия
+от козе или овче мляко</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">4.28 лв</div>
+                    <div class="price-per-unit">0.009 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.8%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Кайма от свинско месо</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">3.83 лв</div>
+                    <div class="price-per-unit">3.830 лв/от свежата витрина</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">1.58 лв</div>
+                    <div class="price-per-unit">0.006 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.8%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Davidoff</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">6.89 лв</div>
+                    <div class="price-per-unit">6.890 лв/Кафе
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">45.98 лв</div>
+                    <div class="price-per-unit">0.046 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.3%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Авокадо</div>
+                    <div class="match-brand">Авокадо</div>
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">1.94 лв</div>
+                    <div class="price-per-unit">0.004 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">0.99 лв</div>
+                    <div class="price-per-unit">0.990 лв/<ul> <li>Произход: Перу</li> </ul></div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.6%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Народен</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">2.29 лв</div>
+                    <div class="price-per-unit">2.290 лв/Шпек
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">3.11 лв</div>
+                    <div class="price-per-unit">0.015 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.3%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Roku</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">24.53 лв</div>
+                    <div class="price-per-unit">24.530 лв/Джин
+43% vol</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">11.48 лв</div>
+                    <div class="price-per-unit">0.016 лв/ml</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Lindt Lindor</div>
+                    <div class="match-brand">Lindt</div>
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">7.15 лв</div>
+                    <div class="price-per-unit">7.150 лв/Шоколадови бонбони
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">8.98 лв</div>
+                    <div class="price-per-unit">0.036 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.5%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Мандарини 1кг мрежа</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">0.76 лв</div>
+                    <div class="price-per-unit">0.760 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">1.49 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Деликатес Житница</div>
+                    <div class="match-brand">Деликатес Житница</div>
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">13.29 лв</div>
+                    <div class="price-per-unit">13.290 лв/Тракийска луканка
+от свежата витрина</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">3.79 лв</div>
+                    <div class="price-per-unit">0.019 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Extra Zytnia</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">6.64 лв</div>
+                    <div class="price-per-unit">6.640 лв/Водка</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">42.99 лв</div>
+                    <div class="price-per-unit">0.025 лв/ml</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.6%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Nestle</div>
+                    <div class="match-brand">Nestle</div>
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">3.21 лв</div>
+                    <div class="price-per-unit">3.210 лв/Зърнена закуска
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">6.28 лв</div>
+                    <div class="price-per-unit">0.017 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.5%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">HEINZ</div>
+                    <div class="match-brand">Heinz</div>
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">2.29 лв</div>
+                    <div class="price-per-unit">2.290 лв/Майонеза
+класик</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">5.98 лв</div>
+                    <div class="price-per-unit">0.006 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.7%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">HEINZ Кетчуп</div>
+                    <div class="match-brand">HEINZ</div>
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">5.48 лв</div>
+                    <div class="price-per-unit">0.010 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">3.06 лв</div>
+                    <div class="price-per-unit">3.060 лв/бр</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.7%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Parоdontax</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">2.86 лв</div>
+                    <div class="price-per-unit">2.860 лв/Паста за зъби
+или Четка за зъби</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">1.19 лв</div>
+                    <div class="price-per-unit">0.009 лв/ml</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.7%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Paturages Comtois</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">13.80 лв</div>
+                    <div class="price-per-unit">13.800 лв/Сирене Бри
+от свежата витрина</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">4.48 лв</div>
+                    <div class="price-per-unit">0.022 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.8%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Мakler</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">10.73 лв</div>
+                    <div class="price-per-unit">10.730 лв/Моцарела
+от свежата витрина</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">2.85 лв</div>
+                    <div class="price-per-unit">2.850 лв/бр</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 73.4%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Raffaello</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">3.37 лв</div>
+                    <div class="price-per-unit">3.370 лв/Бонбони
+кокос</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">9.99 лв</div>
+                    <div class="price-per-unit">0.071 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 97.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Своге</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">0.96 лв</div>
+                    <div class="price-per-unit">0.960 лв/Шоколад
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">3.60 лв</div>
+                    <div class="price-per-unit">0.024 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 97.5%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Martini</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">10.22 лв</div>
+                    <div class="price-per-unit">10.220 лв/Пенливо вино
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">1.47 лв</div>
+                    <div class="price-per-unit">0.007 лв/ml</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Pur</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">1.63 лв</div>
+                    <div class="price-per-unit">1.630 лв/Препарат за съдове
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">3.48 лв</div>
+                    <div class="price-per-unit">0.004 лв/ml</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.7%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Пица</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">3.45 лв</div>
+                    <div class="price-per-unit">3.450 лв/различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">0.51 лв</div>
+                    <div class="price-per-unit">0.510 лв/бр</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 85.2%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Кроасан</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">0.65 лв</div>
+                    <div class="price-per-unit">0.650 лв/с кренвирш от свинско месо</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">1.00 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Царевец</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">3.57 лв</div>
+                    <div class="price-per-unit">3.570 лв/Обикновени вафли</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">4.48 лв</div>
+                    <div class="price-per-unit">0.011 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.7%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Ная</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">2.80 лв</div>
+                    <div class="price-per-unit">2.800 лв/бр</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">5.85 лв</div>
+                    <div class="price-per-unit">0.027 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.0%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">El Sabor</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">1.78 лв</div>
+                    <div class="price-per-unit">1.780 лв/Тортила чипс
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">2.58 лв</div>
+                    <div class="price-per-unit">0.013 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.3%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Микс бейби салатки</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">1.53 лв</div>
+                    <div class="price-per-unit">1.530 лв/с или без рукола</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">0.76 лв</div>
+                    <div class="price-per-unit">0.760 лв/<ul> <li>Произход: Полша</li> </ul></div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 50.3%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Портокали</div>
+                    <div class="match-brand">Портокали</div>
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">1.49 лв</div>
+                    <div class="price-per-unit">0.000 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">0.89 лв</div>
+                    <div class="price-per-unit">0.890 лв/<ul> <li>Произход: Гърция</li> </ul></div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 100.0%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Пещерска</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">7.66 лв</div>
+                    <div class="price-per-unit">7.660 лв/Гроздова ракия</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">12.89 лв</div>
+                    <div class="price-per-unit">0.018 лв/ml</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.8%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Димитър Маджаров</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">1.30 лв</div>
+                    <div class="price-per-unit">1.300 лв/Биволско кисело мляко</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">3.89 лв</div>
+                    <div class="price-per-unit">2.593 лв/l</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 49.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">CASTELLO</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">6.64 лв</div>
+                    <div class="price-per-unit">6.640 лв/Селекция сирена</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">2.70 лв</div>
+                    <div class="price-per-unit">0.022 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.7%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Coccolino</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">3.32 лв</div>
+                    <div class="price-per-unit">3.320 лв/Омекотител
+избрани видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">6.49 лв</div>
+                    <div class="price-per-unit">0.004 лв/ml</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">FAMILIA Collection</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">3.19 лв</div>
+                    <div class="price-per-unit">3.190 лв/Сладолед
+различни вкусове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">7.80 лв</div>
+                    <div class="price-per-unit">0.016 лв/ml</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.5%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Bonuss</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">5.11 лв</div>
+                    <div class="price-per-unit">5.110 лв/бр</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">0.35 лв</div>
+                    <div class="price-per-unit">0.350 лв/бр</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 93.2%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">K-CLASSIC</div>
+                    <div class="match-brand">K-Classic</div>
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">2.55 лв</div>
+                    <div class="price-per-unit">2.550 лв/Бургер от говеждо месо
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">5.98 лв</div>
+                    <div class="price-per-unit">0.015 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.4%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Кашкавал от краве мляко</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">6.13 лв</div>
+                    <div class="price-per-unit">6.130 лв/от свежата витрина</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">5.49 лв</div>
+                    <div class="price-per-unit">5.490 лв/бр</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 10.4%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">ION</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">1.83 лв</div>
+                    <div class="price-per-unit">1.830 лв/Шоколад
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">3.79 лв</div>
+                    <div class="price-per-unit">0.038 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 97.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">ПИРИНСКО</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">3.32 лв</div>
+                    <div class="price-per-unit">3.320 лв/ml</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">5.85 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Nescafe Classic</div>
+                    <div class="match-brand">Nescafe</div>
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">7.15 лв</div>
+                    <div class="price-per-unit">7.150 лв/Разтворимо кафе</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">12.50 лв</div>
+                    <div class="price-per-unit">0.042 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.4%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Победа</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">0.91 лв</div>
+                    <div class="price-per-unit">0.910 лв/Бисквити
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">4.87 лв</div>
+                    <div class="price-per-unit">0.019 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 97.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Споко</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">0.28 лв</div>
+                    <div class="price-per-unit">0.280 лв/Тунквана вафла
+Макси</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">0.51 лв</div>
+                    <div class="price-per-unit">0.009 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 96.7%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Булкарто</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">3.57 лв</div>
+                    <div class="price-per-unit">3.570 лв/Бланширани картофи</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">3.89 лв</div>
+                    <div class="price-per-unit">0.004 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Манго</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">1.12 лв</div>
+                    <div class="price-per-unit">1.120 лв/бр</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">1.27 лв</div>
+                    <div class="price-per-unit">1.270 лв/<ul> <li>Произход: Бразилия</li> </ul></div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 11.8%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Jameson</div>
+                    
+                </div>
+                <div class="match-confidence">100% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">17.33 лв</div>
+                    <div class="price-per-unit">17.330 лв/Ирландско уиски</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">40.00 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">PHILADELPHIA</div>
+                    <div class="match-brand">Philadelphia</div>
+                </div>
+                <div class="match-confidence">99% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">5.87 лв</div>
+                    <div class="price-per-unit">5.870 лв/Крема сирене
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">4.99 лв</div>
+                    <div class="price-per-unit">0.029 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.5%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Български картофи четкани</div>
+                    <div class="match-brand">Български картофи</div>
+                </div>
+                <div class="match-confidence">98% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">3.25 лв</div>
+                    <div class="price-per-unit">0.001 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">0.68 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Ивет Македонска наденица</div>
+                    <div class="match-brand">Ивет</div>
+                </div>
+                <div class="match-confidence">98% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">5.48 лв</div>
+                    <div class="price-per-unit">0.034 лв/g</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">4.99 лв</div>
+                    <div class="price-per-unit">0.010 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 70.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Milka Шоколад</div>
+                    <div class="match-brand">Milka</div>
+                </div>
+                <div class="match-confidence">98% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">9.08 лв</div>
+                    <div class="price-per-unit">0.033 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">8.00 лв</div>
+                    <div class="price-per-unit">0.066 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 49.8%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Four Roses</div>
+                    
+                </div>
+                <div class="match-confidence">98% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">11.24 лв</div>
+                    <div class="price-per-unit">11.240 лв/Бърбън уиски</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">48.00 лв</div>
+                    <div class="price-per-unit">48.000 лв/l</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 76.6%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Зюмбюл Трио 12см</div>
+                    
+                </div>
+                <div class="match-confidence">98% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">3.06 лв</div>
+                    <div class="price-per-unit">3.060 лв/бр</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">6.98 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Портокали</div>
+                    
+                </div>
+                <div class="match-confidence">98% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">0.76 лв</div>
+                    <div class="price-per-unit">0.760 лв/бр</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">1.74 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Червени ябълки</div>
+                    
+                </div>
+                <div class="match-confidence">98% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">0.76 лв</div>
+                    <div class="price-per-unit">0.760 лв/бр</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">3.31 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Авокадо</div>
+                    <div class="match-brand">Авокадо</div>
+                </div>
+                <div class="match-confidence">98% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">1.29 лв</div>
+                    <div class="price-per-unit">0.001 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">2.55 лв</div>
+                    <div class="price-per-unit">2.550 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Помело</div>
+                    <div class="match-brand">Помело</div>
+                </div>
+                <div class="match-confidence">98% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">1.99 лв</div>
+                    
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">0.35 лв</div>
+                    <div class="price-per-unit">0.350 лв/бр</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Броколи</div>
+                    <div class="match-brand">Броколи</div>
+                </div>
+                <div class="match-confidence">98% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">2.48 лв</div>
+                    <div class="price-per-unit">0.005 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">2.48 лв</div>
+                    <div class="price-per-unit">0.005 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 0.8%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Прясно мляко</div>
+                    <div class="match-brand">Прясно мляко</div>
+                </div>
+                <div class="match-confidence">98% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">1.99 лв</div>
+                    <div class="price-per-unit">0.002 лв/ml</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">2.80 лв</div>
+                    <div class="price-per-unit">0.003 лв/ml</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 28.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Nescafe</div>
+                    <div class="match-brand">Nescafe</div>
+                </div>
+                <div class="match-confidence">97% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">1.48 лв</div>
+                    <div class="price-per-unit">1.480 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">3.55 лв</div>
+                    <div class="price-per-unit">3.550 лв/бр</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 58.3%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">XIXO Безалкохолна газирана
+напитка</div>
+                    <div class="match-brand">XIXO</div>
+                </div>
+                <div class="match-confidence">97% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">0.74 лв</div>
+                    <div class="price-per-unit">0.003 лв/ml</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">1.00 лв</div>
+                    <div class="price-per-unit">0.000 лв/ml</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 86.7%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">PERGALE</div>
+                    
+                </div>
+                <div class="match-confidence">97% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">1.53 лв</div>
+                    <div class="price-per-unit">1.530 лв/Бонбони асорти
+избрани видове</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Billa">Billa</div>
+                    <div class="price">13.91 лв</div>
+                    <div class="price-per-unit">7.110 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 78.5%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Мероне Краве сирене</div>
+                    <div class="match-brand">Мероне</div>
+                </div>
+                <div class="match-confidence">97% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">7.98 лв</div>
+                    <div class="price-per-unit">0.020 лв/g</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">9.99 лв</div>
+                    <div class="price-per-unit">0.013 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 37.6%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Krina Ориз</div>
+                    <div class="match-brand">Krina</div>
+                </div>
+                <div class="match-confidence">97% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">2.48 лв</div>
+                    <div class="price-per-unit">0.003 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">11.99 лв</div>
+                    <div class="price-per-unit">0.006 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 58.7%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Бланширани картофи</div>
+                    
+                </div>
+                <div class="match-confidence">97% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">1.99 лв</div>
+                    <div class="price-per-unit">1.990 лв/бр</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Billa">Billa<span class="winner">🏆</span></div>
+                    <div class="price">2.52 лв</div>
+                    <div class="price-per-unit">1.290 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 35.2%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Свинско каре</div>
+                    
+                </div>
+                <div class="match-confidence">96% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">3.47 лв</div>
+                    <div class="price-per-unit">3.470 лв/от свежата витрина</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">3.89 лв</div>
+                    <div class="price-per-unit">0.039 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 98.9%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Бонбони</div>
+                    <div class="match-brand">Toffifee</div>
+                </div>
+                <div class="match-confidence">96% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">6.30 лв</div>
+                    <div class="price-per-unit">0.025 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Billa">Billa</div>
+                    <div class="price">7.11 лв</div>
+                    <div class="price-per-unit">7.110 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.6%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Бланширани сладки картофи | LIDL</div>
+                    
+                </div>
+                <div class="match-confidence">96% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">4.99 лв</div>
+                    <div class="price-per-unit">0.010 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Billa">Billa</div>
+                    <div class="price">1.49 лв</div>
+                    <div class="price-per-unit">1.490 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.3%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Мити картофи</div>
+                    
+                </div>
+                <div class="match-confidence">96% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">2.27 лв</div>
+                    <div class="price-per-unit">2.270 лв/бр</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Billa">Billa<span class="winner">🏆</span></div>
+                    <div class="price">1.29 лв</div>
+                    <div class="price-per-unit">1.290 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 43.2%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Ананас Голд</div>
+                    <div class="match-brand">Ананас Голд</div>
+                </div>
+                <div class="match-confidence">96% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">6.98 лв</div>
+                    
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Billa">Billa<span class="winner">🏆</span></div>
+                    <div class="price">1.99 лв</div>
+                    <div class="price-per-unit">1.990 лв/бр</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Кана за вода</div>
+                    
+                </div>
+                <div class="match-confidence">96% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">2.04 лв</div>
+                    <div class="price-per-unit">2.040 лв/ml</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">2.76 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Банани</div>
+                    
+                </div>
+                <div class="match-confidence">96% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">1.02 лв</div>
+                    <div class="price-per-unit">1.020 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">3.31 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Хели</div>
+                    
+                </div>
+                <div class="match-confidence">96% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">0.28 лв</div>
+                    <div class="price-per-unit">0.280 лв/Вафла Ретро
+избрани видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">0.78 лв</div>
+                    <div class="price-per-unit">0.008 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 97.2%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">ХАПНИ</div>
+                    
+                </div>
+                <div class="match-confidence">96% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">2.55 лв</div>
+                    <div class="price-per-unit">2.550 лв/Салата
+Снежанка или Руска</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">6.59 лв</div>
+                    <div class="price-per-unit">0.005 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.8%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Parkside® Зарядно за батерии</div>
+                    <div class="match-brand">Parkside®</div>
+                </div>
+                <div class="match-confidence">96% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">19.99 лв</div>
+                    
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">20.44 лв</div>
+                    <div class="price-per-unit">20.440 лв/<ul> <li>20 V/4000 mAh</li> <li>№ 496285</li> </ul></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">ЖАНЕТА Праскови</div>
+                    <div class="match-brand">ЖАНЕТА</div>
+                </div>
+                <div class="match-confidence">95% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">2.68 лв</div>
+                    <div class="price-per-unit">0.012 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">2.99 лв</div>
+                    <div class="price-per-unit">0.014 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 10.4%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Parkside® Акумулаторен циркулярен
+трион</div>
+                    <div class="match-brand">Parkside®</div>
+                </div>
+                <div class="match-confidence">95% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">89.99 лв</div>
+                    
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">46.01 лв</div>
+                    <div class="price-per-unit">46.010 лв/g</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Сьомга филе</div>
+                    <div class="match-brand">Сьомга филе</div>
+                </div>
+                <div class="match-confidence">95% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">32.23 лв</div>
+                    
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">19.99 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Яйца</div>
+                    
+                </div>
+                <div class="match-confidence">95% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">3.00 лв</div>
+                    <div class="price-per-unit">3.000 лв/размер М</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Lidl">Lidl</div>
+                    <div class="price">11.99 лв</div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Пилешко филе от гърди</div>
+                    
+                </div>
+                <div class="match-confidence">95% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">5.62 лв</div>
+                    <div class="price-per-unit">5.620 лв/от свежата витрина</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">1.68 лв</div>
+                    <div class="price-per-unit">0.022 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.6%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Del Alma</div>
+                    
+                </div>
+                <div class="match-confidence">95% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">7.66 лв</div>
+                    <div class="price-per-unit">7.660 лв/Масло
+от гроздови семки</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">2.13 лв</div>
+                    <div class="price-per-unit">0.021 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.7%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Пуешко месо за готвене</div>
+                    
+                </div>
+                <div class="match-confidence">95% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">7.66 лв</div>
+                    <div class="price-per-unit">7.660 лв/от бут</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">6.43 лв</div>
+                    <div class="price-per-unit">0.013 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.8%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Пилешко бутче до 10 кг на покупка</div>
+                    <div class="match-brand">Пилешко бутче</div>
+                </div>
+                <div class="match-confidence">94% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">3.48 лв</div>
+                    <div class="price-per-unit">0.000 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Billa">Billa</div>
+                    <div class="price">3.06 лв</div>
+                    <div class="price-per-unit">3.060 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 100.0%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Насладки</div>
+                    
+                </div>
+                <div class="match-confidence">94% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">0.96 лв</div>
+                    <div class="price-per-unit">0.960 лв/Бисквити с пълнеж
+различни видове</div>
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">1.58 лв</div>
+                    <div class="price-per-unit">0.004 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.6%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Lavazza Мляно кафе
+Crema E Gusto Forte</div>
+                    <div class="match-brand">Lavazza</div>
+                </div>
+                <div class="match-confidence">94% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card best">
+                    <div class="store-name Kaufland">Kaufland<span class="winner">🏆</span></div>
+                    <div class="price">16.98 лв</div>
+                    <div class="price-per-unit">0.034 лв/g</div>
+                </div>
+
+                <div class="price-card ">
+                    <div class="store-name Billa">Billa</div>
+                    <div class="price">9.29 лв</div>
+                    <div class="price-per-unit">9.290 лв/g</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px; text-align: right;">
+                <span class="savings">Спестявате до 99.6%</span>
+            </div>
+
+        </div>
+
+        <div class="match-card">
+            <div class="match-header">
+                <div>
+                    <div class="match-name">Parkside® Магнити
+различни видове</div>
+                    <div class="match-brand">Parkside®</div>
+                </div>
+                <div class="match-confidence">93% точност</div>
+            </div>
+            <div class="prices">
+
+                <div class="price-card ">
+                    <div class="store-name Kaufland">Kaufland</div>
+                    <div class="price">9.99 лв</div>
+                    
+                </div>
+
+                <div class="price-card best">
+                    <div class="store-name Lidl">Lidl<span class="winner">🏆</span></div>
+                    <div class="price">3.57 лв</div>
+                    <div class="price-per-unit">3.570 лв/<ul> <li>Различни видове</li> <li>№ 494645, 494649</li> </ul></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <p class="note">Генерирано: 2026-02-15 14:34 UTC</p>
+</body>
+</html>
