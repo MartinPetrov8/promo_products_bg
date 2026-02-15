@@ -2,160 +2,177 @@
 
 ## System Overview
 
-PromoBG is a static-first web application that aggregates grocery prices from Bulgarian supermarkets.
+PromoBG is a Bulgarian grocery price comparison platform that aggregates promotional offers from Kaufland, Lidl, and Billa (with plans for Fantastico), normalizes product data, and enables cross-store price comparison.
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           DATA LAYER                                     │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐                  │
-│   │ Kaufland.bg │   │  Lidl.bg    │   │ssbbilla.site│                  │
-│   │   (HTML)    │   │(Embedded JS)│   │(HTML Tables)│                  │
-│   └──────┬──────┘   └──────┬──────┘   └──────┬──────┘                  │
-│          │                 │                 │                          │
-│          ▼                 ▼                 ▼                          │
-│   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐                  │
-│   │  Kaufland   │   │    Lidl     │   │    Billa    │                  │
-│   │  Scraper    │   │   Scraper   │   │   Scraper   │                  │
-│   │  (Python)   │   │  (Python)   │   │  (Python)   │                  │
-│   └──────┬──────┘   └──────┬──────┘   └──────┬──────┘                  │
-│          │                 │                 │                          │
-│          └────────────────┼─────────────────┘                          │
-│                           │                                             │
-│                           ▼                                             │
-│                  ┌─────────────────┐                                    │
-│                  │Combined Scraper │                                    │
-│                  │  (Merge + ID)   │                                    │
-│                  └────────┬────────┘                                    │
-│                           │                                             │
-│                           ▼                                             │
-│                  ┌─────────────────┐                                    │
-│                  │all_products.json│  ← 1,537 products                  │
-│                  │   (655 KB)      │                                    │
-│                  └────────┬────────┘                                    │
-│                           │                                             │
-├───────────────────────────┼─────────────────────────────────────────────┤
-│                    PRESENTATION LAYER                                   │
-├───────────────────────────┼─────────────────────────────────────────────┤
-│                           │                                             │
-│                           ▼                                             │
-│                  ┌─────────────────┐                                    │
-│                  │   index.html    │                                    │
-│                  │  (Static SPA)   │                                    │
-│                  └────────┬────────┘                                    │
-│                           │                                             │
-│          ┌────────────────┼────────────────┐                            │
-│          │                │                │                            │
-│          ▼                ▼                ▼                            │
-│   ┌───────────┐   ┌───────────┐   ┌───────────┐                        │
-│   │  Search   │   │  Filters  │   │  Product  │                        │
-│   │  (JS)     │   │  (JS)     │   │  Cards    │                        │
-│   └───────────┘   └───────────┘   └───────────┘                        │
-│                                                                         │
-├─────────────────────────────────────────────────────────────────────────┤
-│                        DEPLOYMENT                                        │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│   GitHub Pages (/docs folder)                                           │
-│   URL: https://martinpetrov8.github.io/promo_products_bg/               │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
+**Key Metrics:**
+- 90 → 2,346 cross-store matches (post-standardization)
+- 5,664 total products across 3 stores
+- 802 products standardized in first pass
+
+---
+
+## Core Principles
+
+### 1. Standardized Product Schema (v1.0)
+
+All products from all stores must conform to this schema:
+
+```python
+class StandardProduct:
+    # Identity
+    store: str                    # "Kaufland" | "Lidl" | "Billa"
+    external_id: str              # Store's native product ID
+    
+    # Core Attributes (REQUIRED for comparison)
+    name: str                     # Clean product name (no promo prefixes)
+    normalized_name: str          # Lowercase, normalized for matching
+    brand: Optional[str]          # Extracted brand name
+    
+    # Quantity (standardized to base units)
+    quantity_value: Optional[float]  # Numeric value (e.g., 500)
+    quantity_unit: Optional[str]     # "ml" | "g" | "pcs" | "kg" | "l"
+    
+    # Category (for blocking)
+    category: Optional[str]       # GS1 GPC category code
+    category_name: Optional[str]  # Human-readable category
+    
+    # Price & Availability
+    price: float                  # Current price (BGN)
+    old_price: Optional[float]    # Regular/strikethrough price
+    price_per_unit: Optional[float]  # Price per 100ml or 100g
+    valid_from: date
+    valid_to: Optional[date]
+    
+    # Metadata
+    image_url: Optional[str]
+    description: Optional[str]    # Full description if available
+    is_house_brand: bool         # Is this a store-exclusive brand?
+    
+    # Tracking
+    scraped_at: datetime
+    hash: str                     # Content hash for change detection
 ```
 
-## Components
+### 2. Brand Tier Classification
 
-### 1. Scrapers (`services/scraper/scrapers/`)
+| Tier | Definition | Examples | Matching Rule |
+|------|-----------|----------|---------------|
+| **National** | Well-known international/national brands | Coca-Cola, Nestlé, Milka | Exact brand match required |
+| **Regional** | Regional Bulgarian brands | Верея, Olympus, Калиакра | Exact brand match required |
+| **House** | Store-exclusive private labels | K-Classic, Pilos, Clever | Match as "comparable" |
+| **Generic** | No brand/generic | "Баничка", "Пресни яйца" | Embedding-only matching |
 
-Each scraper is a Python module that:
-- Fetches HTML from store website
-- Parses product data (name, price, discount)
-- Returns standardized `Product` objects
-
-| Scraper | Source | Method | Products |
-|---------|--------|--------|----------|
-| `kaufland_scraper.py` | kaufland.bg | CSS selectors | ~1,200 |
-| `lidl_scraper.py` | lidl.bg | Embedded JSON parse | ~50 |
-| `billa_scraper.py` | ssbbilla.site | HTML table parse | ~280 |
-
-### 2. Combined Scraper (`services/scraper/combined_scraper.py`)
-
-- Imports individual scrapers
-- Calls each scraper
-- Generates unique IDs (MD5 hash of store+name)
-- Merges into single JSON
-- Adds timestamps
-
-### 3. Web Frontend (`apps/web/index.html`)
-
-Single-page application using:
-- **Tailwind CSS** (via CDN) - Styling
-- **Vanilla JavaScript** - Logic
-- **Fetch API** - Load JSON data
-
-Features:
-- Real-time search (filters as you type)
-- Store filter dropdown
-- Discount filter dropdown
-- Responsive grid layout
-- Product cards with discount badges
-
-### 4. Deployment (`docs/`)
-
-Static files served by GitHub Pages:
-- `index.html` - Main app
-- `data/all_products.json` - Product database
-
-## Data Flow
+### 3. Category Taxonomy (GS1 GPC Based)
 
 ```
-1. SCRAPE (manual or cron)
-   └─→ python3 combined_scraper.py
-   
-2. OUTPUT
-   └─→ services/scraper/data/all_products.json
-   
-3. COPY TO WEB
-   └─→ cp data/all_products.json ../../apps/web/data/
-   
-4. COPY TO DEPLOY
-   └─→ cp -r apps/web/* docs/
-   
-5. PUSH
-   └─→ git push origin main
-   
-6. GITHUB PAGES
-   └─→ Auto-deploys from /docs
+10000000 - Food/Beverage/Tobacco
+  10100000 - Produce
+    10101500 - Fresh fruits
+    10101600 - Fresh vegetables
+  10200000 - Meat/Poultry/Fish
+    10202600 - Fresh meat
+    10202900 - Processed meat
+  10300000 - Dairy/Eggs
+    10303400 - Milk
+    10303500 - Cheese
+    10303600 - Yogurt
+  10400000 - Bakery
+    10403800 - Bread
+    10403900 - Pastries
+  10500000 - Beverages
+    10504900 - Soft drinks
+    10505200 - Beer
+
+20000000 - Health/Beauty/Personal Care
+30000000 - Household Cleaning
+40000000 - Home/Garden
 ```
 
-## Technology Choices
+### 4. Matching Rules
 
-| Layer | Technology | Why |
-|-------|------------|-----|
-| Scraping | Python + BeautifulSoup | Fast, reliable, good encoding support |
-| Data | JSON files | Simple, no database needed for MVP |
-| Frontend | Vanilla HTML/JS | No build step, fast deployment |
-| Styling | Tailwind CSS | Rapid prototyping, responsive |
-| Hosting | GitHub Pages | Free, reliable, automatic |
+#### Rule 1: Category Blocking
+- Products must share the same GS1 GPC category to be match candidates
+- Reduces comparison space 1000x (5K products → ~50 per category)
 
-## Scaling Considerations
+#### Rule 2: Exact Match (Confidence: 0.95)
+- brand_match = normalized(brand1) == normalized(brand2)
+- name_similarity >= 0.95 (normalized names)
+- quantity_compatible(q1, u1, q2, u2)
+- category_match
 
-### Current (MVP)
-- Static JSON loaded client-side
-- All filtering in browser
-- ~1,500 products = ~650KB JSON
-- Acceptable load time (<2s)
+#### Rule 3: Brand + Fuzzy (Confidence: 0.75-0.90)
+- brand_match = True
+- name_similarity >= 0.80 (embedding)
+- quantity_compatible()
+- category_match
 
-### Future (10K+ products)
-- Move to server-side search
-- Add pagination
-- Consider SQLite or PostgreSQL
-- API endpoints for filtering
-- CDN for static assets
+#### Rule 4: House Brand Comparable (Confidence: 0.70)
+- both_are_house_brands = True
+- same_product_type (embedding > 0.85)
+- quantity_compatible()
+- category_match
+- Example: K-Classic Milk ↔ Pilos Milk
 
-## Security
+### 5. Quantity Compatibility
 
-- No user data collected
-- No authentication required
-- All data is public (scraped from public websites)
-- No API keys exposed in frontend
+```python
+def quantities_compatible(q1, u1, q2, u2):
+    # Normalize to base units (ml or g)
+    # Allow 25% variance for multipacks
+    ratio = max(base1, base2) / min(base1, base2)
+    return ratio <= 1.25
+```
+
+### 6. Price Per Unit Calculation
+
+```python
+def calculate_price_per_unit(price, quantity, unit):
+    # Return price per 100ml or 100g for fair comparison
+    base_qty = normalize_to_base(quantity, unit)
+    if unit in ('ml', 'л', 'l', 'мл'):
+        return (price / base_qty) * 100  # per 100ml
+    elif unit in ('g', 'г', 'kg', 'кг'):
+        return (price / base_qty) * 100  # per 100g
+```
+
+---
+
+## Store-Specific Notes
+
+### Kaufland
+- **Data Quality:** High (65% brand coverage)
+- **Challenges:** Unit field sometimes contains descriptions
+- **API/Scraper:** JSON API available
+
+### Lidl
+- **Data Quality:** Medium (37% brand coverage)
+- **Challenges:** HTML in unit field
+- **Fix Required:** Strip HTML before parsing quantity
+
+### Billa
+- **Data Quality:** Low (9% → 35% after fixes)
+- **Challenges:** Promo prefixes pollute names
+- **Fix Required:** Strip "King оферта -", "Само с Billa Card -" prefixes
+
+---
+
+## Matching Confidence Tiers
+
+| Tier | Confidence | Match Type | UX Display |
+|------|-----------|------------|------------|
+| 🟢 **Exact** | 0.95 | Same brand, similar name, compatible qty | "Same product" |
+| 🟡 **Very Similar** | 0.80-0.94 | Same brand, fuzzy name match | "Same brand, check details" |
+| 🟠 **Comparable** | 0.70-0.79 | House brands, similar product | "Comparable product" |
+| 🔴 **Possible** | < 0.70 | Embedding match only | "Might be similar" |
+
+---
+
+## Technical Stack
+
+| Component | Technology |
+|-----------|------------|
+| Database | SQLite (development), PostgreSQL (production) |
+| Embedding Model | paraphrase-multilingual-MiniLM-L12-v2 |
+| API Framework | FastAPI |
+| Frontend | React or Vue.js |
+| Scraping | Python + BeautifulSoup / Playwright |
