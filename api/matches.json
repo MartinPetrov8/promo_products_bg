@@ -1,0 +1,172 @@
+[
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Jameson Ирландско уиски",
+        "price": 33.89
+      },
+      {
+        "store": "Lidl",
+        "name": "Шотландско уиски",
+        "price": 23.51
+      }
+    ],
+    "name": "Jameson Ирландско уиски",
+    "confidence": 0.923,
+    "savings": 10.38
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Extra Zytnia Водка",
+        "price": 12.99
+      },
+      {
+        "store": "Lidl",
+        "name": "Водка",
+        "price": 7.66
+      }
+    ],
+    "name": "Extra Zytnia Водка",
+    "confidence": 0.903,
+    "savings": 5.33
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Плюшена играчка различни видове",
+        "price": 6.98
+      },
+      {
+        "store": "Lidl",
+        "name": "Плюшена играчка",
+        "price": 3.57
+      }
+    ],
+    "name": "Плюшена играчка различни видове",
+    "confidence": 0.911,
+    "savings": 3.41
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Nescafe Разтворимо кафе 2в1 или 3в1",
+        "price": 2.89
+      },
+      {
+        "store": "Lidl",
+        "name": "Разтворимо кафе 3 в 1",
+        "price": 5.11
+      }
+    ],
+    "name": "Nescafe Разтворимо кафе 2в1 или 3в1",
+    "confidence": 0.906,
+    "savings": 2.22
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Кифлички с какаов крем",
+        "price": 1.99
+      },
+      {
+        "store": "Lidl",
+        "name": "Веган крем с лешници и какао",
+        "price": 3.32
+      }
+    ],
+    "name": "Кифлички с какаов крем",
+    "confidence": 0.917,
+    "savings": 1.33
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Елей Баварски сладкиш\nс шоколад",
+        "price": 5.38
+      },
+      {
+        "store": "Lidl",
+        "name": "Шоколадов десерт",
+        "price": 4.09
+      }
+    ],
+    "name": "Елей Баварски сладкиш\nс шоколад",
+    "confidence": 0.902,
+    "savings": 1.29
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Верея Прясно мляко",
+        "price": 2.68
+      },
+      {
+        "store": "Lidl",
+        "name": "Мляко UHT",
+        "price": 1.43
+      }
+    ],
+    "name": "Верея Прясно мляко",
+    "confidence": 0.947,
+    "savings": 1.25
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "МИРАЖ Тунквани бисквити Макси",
+        "price": 2.99
+      },
+      {
+        "store": "Lidl",
+        "name": "Обикновени бисквити Мария",
+        "price": 2.3
+      }
+    ],
+    "name": "МИРАЖ Тунквани бисквити Макси",
+    "confidence": 0.901,
+    "savings": 0.69
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Саяна Кашкавал от краве мляко\nот свежата витрина",
+        "price": 17.99
+      },
+      {
+        "store": "Billa",
+        "name": "Саяна Кашкавал от краве мляко От деликатесната витрина За 1 кг",
+        "price": 17.97
+      }
+    ],
+    "name": "Саяна Кашкавал от краве мляко\nот свежата витрина",
+    "confidence": 0.907,
+    "savings": 0.02
+  },
+  {
+    "stores": [
+      {
+        "store": "Kaufland",
+        "name": "Свинска плешка без кост до 5 кг на покупка",
+        "price": 5.79
+      },
+      {
+        "store": "Billa",
+        "name": "Супер цена - Свински бут без кост За 1 кг",
+        "price": 5.79
+      }
+    ],
+    "name": "Свинска плешка без кост до 5 кг на покупка",
+    "confidence": 0.926,
+    "savings": 0.0
+  }
+]
