@@ -1,209 +1,1645 @@
 [
   {
-    "id": 1,
-    "name": "PARKSIDE® Акумулаторна батерия 2 Ah",
-    "brand": "Parkside",
+    "name": "Finish Таблетки за съдoмиялна",
+    "brand": "Finish",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 9.0,
+        "name": "Finish Сол за съдомиялна 1,5 кг, изплакваща течност 800 мл или почистващи капсули за съдомиялна 3 бр"
+      },
+      {
+        "store": "Kaufland",
+        "price": 38.98,
+        "name": "Finish Таблетки за съдoмиялна\nизбрани видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 9.0,
+    "max_price": 38.98,
+    "savings": 29.98,
+    "savings_pct": 76.9,
+    "confidence": 0.9
+  },
+  {
+    "name": "Teo Bebe Future Гел",
+    "brand": "Teo",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 1.46685,
+        "name": "Само с Billa App - Teo Bebe Тоaлетен сапун 75 г Произход - България"
+      },
+      {
+        "store": "Kaufland",
+        "price": 25.48,
+        "name": "Teo Bebe Future Гел\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 1.46685,
+    "max_price": 25.48,
+    "savings": 24.01,
+    "savings_pct": 94.2,
+    "confidence": 0.9
+  },
+  {
+    "name": "Уоки-токи",
+    "brand": "Vol",
     "stores": [
       {
         "store": "Kaufland",
-        "price": 31.98,
-        "name": "PARKSIDE® Акумулаторна батерия 2 Ah\nи Зарядно 2,4 A"
+        "price": 1.1,
+        "name": "TUBORG Бира\n0,0% vol"
       },
       {
         "store": "Lidl",
-        "price": 12.78,
-        "name": "Зарядно устройство за акумулаторна батерия"
+        "price": 21.98,
+        "name": "Уоки-токи"
       }
     ],
     "store_count": 2,
-    "confidence": 0.9,
-    "min_price": 12.78,
-    "max_price": 31.98,
-    "savings": 19.2,
-    "savings_pct": 60.0
+    "min_price": 1.1,
+    "max_price": 21.98,
+    "savings": 20.88,
+    "savings_pct": 95.0,
+    "confidence": 0.9
   },
   {
-    "id": 2,
-    "name": "Синя орхидея Фаленопсис в керамична кашпа",
-    "brand": "Орхидея",
+    "name": "Шотландско уиски",
+    "brand": "Johnnie Walker",
     "stores": [
       {
         "store": "Kaufland",
-        "price": 29.98,
-        "name": "Синя орхидея Фаленопсис в керамична кашпа"
+        "price": 41.99,
+        "name": "Johnnie Walker Шотландско уиски\nBlack label"
       },
+      {
+        "store": "Lidl",
+        "price": 23.51,
+        "name": "Шотландско уиски"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 23.51,
+    "max_price": 41.99,
+    "savings": 18.48,
+    "savings_pct": 44.0,
+    "confidence": 0.9
+  },
+  {
+    "name": "Димитър Маджаров Биволско кисело мляко",
+    "brand": "Димитър",
+    "stores": [
       {
         "store": "Billa",
-        "price": 13.671042,
-        "name": "Орхидея Фаленопсис в керамика саксия Ф6 1 бр.** Продукт, маркиран със синя звезда"
+        "price": 19.99,
+        "name": "Димитър Маджаров Овче сирене ЗНП 700 г Продукт, маркиран със синя звезда Защитено наименование за пр"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.54,
+        "name": "Димитър Маджаров Биволско кисело мляко"
       }
     ],
     "store_count": 2,
-    "confidence": 0.9,
-    "min_price": 13.671042,
-    "max_price": 29.98,
-    "savings": 16.31,
-    "savings_pct": 54.4
+    "min_price": 2.54,
+    "max_price": 19.99,
+    "savings": 17.45,
+    "savings_pct": 87.3,
+    "confidence": 0.9
   },
   {
-    "id": 9,
-    "name": "Savex Гел или Капсули за пране",
+    "name": "Savex Прах, Гел или Капсули",
     "brand": "Savex",
     "stores": [
-      {
-        "store": "Kaufland",
-        "price": 13.98,
-        "name": "Savex Гел или Капсули за пране"
-      },
       {
         "store": "Billa",
         "price": 29.982414,
         "name": "Savex Premium Гел за пране 112 пранета или Капсули за пране 72 бр. 1 опаковка Произхо"
-      }
-    ],
-    "store_count": 2,
-    "confidence": 0.9,
-    "min_price": 13.98,
-    "max_price": 29.982414,
-    "savings": 16.0,
-    "savings_pct": 53.4
-  },
-  {
-    "id": 6,
-    "name": "Lindt Lindor Шоколадови бонбони",
-    "brand": "Lindt",
-    "stores": [
+      },
       {
         "store": "Kaufland",
         "price": 13.98,
-        "name": "Lindt Lindor Шоколадови бонбони\nразлични видове"
+        "name": "Savex Прах, Гел или Капсули\nизбрани видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 13.98,
+    "max_price": 29.982414,
+    "savings": 16.0,
+    "savings_pct": 53.4,
+    "confidence": 0.9
+  },
+  {
+    "name": "Ferrero Rocher/ Raffaello Шоколад",
+    "brand": "Ferrero",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 18.99,
+        "name": "Ferrero Rocher Бонбониера Diamand 300 г"
       },
+      {
+        "store": "Kaufland",
+        "price": 3.99,
+        "name": "Ferrero Rocher/ Raffaello Шоколад\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 3.99,
+    "max_price": 18.99,
+    "savings": 15.0,
+    "savings_pct": 79.0,
+    "confidence": 0.9
+  },
+  {
+    "name": "BRIOBRIO Уок Тиган Red Hot",
+    "brand": "Red",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 7.49,
+        "name": "Red Bull енергийна напитка мултипак 4 х 0.25 л"
+      },
+      {
+        "store": "Kaufland",
+        "price": 21.98,
+        "name": "BRIOBRIO Уок Тиган Red Hot"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 7.49,
+    "max_price": 21.98,
+    "savings": 14.49,
+    "savings_pct": 65.9,
+    "confidence": 0.9
+  },
+  {
+    "name": "Шуменско Бира",
+    "brand": "Шуменско",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 1.8,
+        "name": "Шуменско бира 1 л Произход - България"
+      },
+      {
+        "store": "Kaufland",
+        "price": 11.97,
+        "name": "Шуменско Бира"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 1.8,
+    "max_price": 11.97,
+    "savings": 10.17,
+    "savings_pct": 85.0,
+    "confidence": 0.9
+  },
+  {
+    "name": "Lenor Омекотител",
+    "brand": "Lenor",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 8.78,
+        "name": "Lenor Омекотител 65/71 пранета, 1 изпиране = 0,07 €/0,17 лв./ 65 пранета, 0,06 €"
+      },
+      {
+        "store": "Kaufland",
+        "price": 16.98,
+        "name": "Lenor Омекотител\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 8.78,
+    "max_price": 16.98,
+    "savings": 8.2,
+    "savings_pct": 48.3,
+    "confidence": 0.9
+  },
+  {
+    "name": "PAMPERS Пелени или Гащички PREMIUM",
+    "brand": "Pampers",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 28.789376,
+        "name": "Pampers Premium Бебешки пелени - размер 1 или 2 - 46-52 бр.в опаковка Продукт, м"
+      },
+      {
+        "store": "Kaufland",
+        "price": 36.98,
+        "name": "PAMPERS Пелени или Гащички PREMIUM"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 28.789376,
+    "max_price": 36.98,
+    "savings": 8.19,
+    "savings_pct": 22.1,
+    "confidence": 0.9
+  },
+  {
+    "name": "Tira мляно кафе Crema 250 г",
+    "brand": "Crema",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 10.991596,
+        "name": "Tira мляно кафе Crema 250 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.99,
+        "name": "Baby Crema Бебешки влажни кърпички"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.99,
+    "max_price": 10.991596,
+    "savings": 8.0,
+    "savings_pct": 72.8,
+    "confidence": 0.9
+  },
+  {
+    "name": "Пижама",
+    "brand": "Family",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 2.29,
+        "name": "Pom-Bar снакс Family pack 80 г Продукт, маркиран със синя звезда"
+      },
+      {
+        "store": "Lidl",
+        "price": 9.2,
+        "name": "Пижама"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.29,
+    "max_price": 9.2,
+    "savings": 6.91,
+    "savings_pct": 75.1,
+    "confidence": 0.9
+  },
+  {
+    "name": "Alvina Омекотител",
+    "brand": "Alvina",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 12.5,
+        "name": "Medix Alvina Гел за пране 44 пранета Произход - България 1 изпиране = 0,15 €/0,29 лв./ 44 пранета"
+      },
+      {
+        "store": "Kaufland",
+        "price": 6.49,
+        "name": "Alvina Омекотител\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 6.49,
+    "max_price": 12.5,
+    "savings": 6.01,
+    "savings_pct": 48.1,
+    "confidence": 0.9
+  },
+  {
+    "name": "Ocean Pick Сельодка хапки",
+    "brand": "Ocean",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 8.0,
+        "name": "Ocean Fish Суши Филаделфия 240 г Продукт, маркиран със синя звезда"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.19,
+        "name": "Ocean Pick Сельодка хапки\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.19,
+    "max_price": 8.0,
+    "savings": 5.81,
+    "savings_pct": 72.6,
+    "confidence": 0.9
+  },
+  {
+    "name": "Sobieski Водка Premium 0,7 л",
+    "brand": "Premium",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 11.99,
+        "name": "Sobieski Водка Premium 0,7 л"
+      },
+      {
+        "store": "Kaufland",
+        "price": 6.49,
+        "name": "Amstel Бира Premium Pilsener"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 6.49,
+    "max_price": 11.99,
+    "savings": 5.5,
+    "savings_pct": 45.9,
+    "confidence": 0.9
+  },
+  {
+    "name": "Водка",
+    "brand": "Extra",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 11.72,
+        "name": "Само с Billa App - Billa Необработено маслиново масло extra virgin 750 мл"
+      },
+      {
+        "store": "Kaufland",
+        "price": 12.99,
+        "name": "Extra Zytnia Водка"
+      },
+      {
+        "store": "Lidl",
+        "price": 7.66,
+        "name": "Водка"
+      }
+    ],
+    "store_count": 3,
+    "min_price": 7.66,
+    "max_price": 12.99,
+    "savings": 5.33,
+    "savings_pct": 41.0,
+    "confidence": 0.9
+  },
+  {
+    "name": "KINGSHILL Тениска",
+    "brand": "Xxl",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 3.79,
+        "name": "Българска ферма Пресен пилешки бут цял XXL За 1 кг Произход - България"
+      },
+      {
+        "store": "Kaufland",
+        "price": 8.98,
+        "name": "KINGSHILL Тениска\nS - XXL"
+      },
+      {
+        "store": "Lidl",
+        "price": 8.94,
+        "name": "Препарат за пране 2 в 1"
+      }
+    ],
+    "store_count": 3,
+    "min_price": 3.79,
+    "max_price": 8.98,
+    "savings": 5.19,
+    "savings_pct": 57.8,
+    "confidence": 0.9
+  },
+  {
+    "name": "Sensodyne Паста или Четка за зъби",
+    "brand": "Sensodyne",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 9.99,
+        "name": "Sensodyne Whitening Паста за зъби 2 x 75 мл Продукт, маркиран със синя звезда"
+      },
+      {
+        "store": "Kaufland",
+        "price": 5.79,
+        "name": "Sensodyne Паста или Четка за зъби\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 5.79,
+    "max_price": 9.99,
+    "savings": 4.2,
+    "savings_pct": 42.0,
+    "confidence": 0.9
+  },
+  {
+    "name": "Hochland Топено сирене",
+    "brand": "Hochland",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 7.49,
+        "name": "Hochland крема сирене 2 х 200 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 3.48,
+        "name": "Hochland Топено сирене\nразлични вкусове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 3.48,
+    "max_price": 7.49,
+    "savings": 4.01,
+    "savings_pct": 53.5,
+    "confidence": 0.9
+  },
+  {
+    "name": "Микс бейби салатки с или без рукола",
+    "brand": "Микс",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 6.98,
+        "name": "Микс кебапчета и кюфтета за скара свинско месо 960 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.99,
+        "name": "Микс бейби салатки с или без рукола"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.99,
+    "max_price": 6.98,
+    "savings": 3.99,
+    "savings_pct": 57.2,
+    "confidence": 0.9
+  },
+  {
+    "name": "Пещерска Гроздова ракия",
+    "brand": "Пещерска",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 10.99,
+        "name": "Пещерска Ракия гроздова 0,7 л Произход - България"
+      },
+      {
+        "store": "Kaufland",
+        "price": 14.98,
+        "name": "Пещерска Гроздова ракия"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 10.99,
+    "max_price": 14.98,
+    "savings": 3.99,
+    "savings_pct": 26.6,
+    "confidence": 0.9
+  },
+  {
+    "name": "Garnier Боя за коса Olia",
+    "brand": "Garnier",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 5.28,
+        "name": "Garnier Sinnat Мицеларна вода 400 мл"
+      },
+      {
+        "store": "Kaufland",
+        "price": 8.98,
+        "name": "Garnier Боя за коса Olia\nразлични цветове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 5.28,
+    "max_price": 8.98,
+    "savings": 3.7,
+    "savings_pct": 41.2,
+    "confidence": 0.9
+  },
+  {
+    "name": "HEINZ Майонеза",
+    "brand": "Heinz",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 8.08,
+        "name": "Heinz Кетчуп оригинал 1,35 кг"
+      },
+      {
+        "store": "Kaufland",
+        "price": 4.48,
+        "name": "HEINZ Майонеза\nкласик"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 4.48,
+    "max_price": 8.08,
+    "savings": 3.6,
+    "savings_pct": 44.6,
+    "confidence": 0.9
+  },
+  {
+    "name": "Lindt Les Grandes Шоколад",
+    "brand": "Lindt",
+    "stores": [
       {
         "store": "Billa",
         "price": 5.984748,
         "name": "Lindt Шоколад Excellence различни видове 100 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 9.49,
+        "name": "Lindt Les Grandes Шоколад\nразлични видове"
       }
     ],
     "store_count": 2,
-    "confidence": 0.9,
     "min_price": 5.984748,
-    "max_price": 13.98,
-    "savings": 8.0,
-    "savings_pct": 57.2
+    "max_price": 9.49,
+    "savings": 3.51,
+    "savings_pct": 37.0,
+    "confidence": 0.9
   },
   {
-    "id": 5,
-    "name": "Nucrema Какаов крем",
-    "brand": "Nucrema",
+    "name": "Palmolive Душ гел",
+    "brand": "Palmolive",
     "stores": [
+      {
+        "store": "Billa",
+        "price": 4.478782,
+        "name": "Palmolive Тоалетен сапун 4 x 90 г Продукт, маркиран със синя звезда"
+      },
       {
         "store": "Kaufland",
         "price": 7.98,
-        "name": "Nucrema Какаов крем\nпромопакет"
-      },
-      {
-        "store": "Billa",
-        "price": 9.994138000000001,
-        "name": "Nucrema Какаов крем 1,2 кг"
+        "name": "Palmolive Душ гел"
       }
     ],
     "store_count": 2,
-    "confidence": 0.9,
-    "min_price": 7.98,
-    "max_price": 9.994138000000001,
-    "savings": 2.01,
-    "savings_pct": 20.1
+    "min_price": 4.478782,
+    "max_price": 7.98,
+    "savings": 3.5,
+    "savings_pct": 43.9,
+    "confidence": 0.9
   },
   {
-    "id": 4,
-    "name": "Верея Прясно мляко",
-    "brand": "Верея",
+    "name": "Тандем Колбас",
+    "brand": "Тандем",
     "stores": [
       {
-        "store": "Kaufland",
-        "price": 2.68,
-        "name": "Верея Прясно мляко"
+        "store": "Billa",
+        "price": 7.02,
+        "name": "Тандем Шунка XXL 500 г"
       },
       {
-        "store": "Billa",
-        "price": 1.49,
-        "name": "Верея Чудно Кисело мляко 5% 400 г"
+        "store": "Kaufland",
+        "price": 3.89,
+        "name": "Тандем Колбас\nТелешки /Хамбургски /Камчия"
       }
     ],
     "store_count": 2,
-    "confidence": 0.9,
-    "min_price": 1.49,
-    "max_price": 2.68,
-    "savings": 1.19,
-    "savings_pct": 44.4
+    "min_price": 3.89,
+    "max_price": 7.02,
+    "savings": 3.13,
+    "savings_pct": 44.6,
+    "confidence": 0.9
   },
   {
-    "id": 8,
-    "name": "Milka Бисквити",
+    "name": "Орехите Луканка/Старец/Суджук/",
+    "brand": "Орехите",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 7.02,
+        "name": "Орехите Сушеница Добруджанска вакум 180 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 9.99,
+        "name": "Орехите Луканка/Старец/Суджук/\nСушеник"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 7.02,
+    "max_price": 9.99,
+    "savings": 2.97,
+    "savings_pct": 29.7,
+    "confidence": 0.9
+  },
+  {
+    "name": "Зюмбюл Трио 12см",
+    "brand": "Зюмбюл",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 3.109722,
+        "name": "Зюмбюл в подаръчка опаковка Ф7 1 бр.** Продукт, маркиран със синя звезда"
+      },
+      {
+        "store": "Kaufland",
+        "price": 5.98,
+        "name": "Зюмбюл Трио 12см"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 3.109722,
+    "max_price": 5.98,
+    "savings": 2.87,
+    "savings_pct": 48.0,
+    "confidence": 0.9
+  },
+  {
+    "name": "7 Days Max/7 Days Double Max Кроасан",
+    "brand": "Max",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 3.99,
+        "name": "Colgate Max White Charcoal Паста за зъби 75 мл или Colgate Slim Soft Четка за зъби 1 бр"
+      },
+      {
+        "store": "Kaufland",
+        "price": 1.19,
+        "name": "7 Days Max/7 Days Double Max Кроасан\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 1.19,
+    "max_price": 3.99,
+    "savings": 2.8,
+    "savings_pct": 70.2,
+    "confidence": 0.9
+  },
+  {
+    "name": "NIVEA Шампоан, Балсам или Душ гел",
+    "brand": "Nivea",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 7.999222,
+        "name": "Nivea Душ гел 500 мл Различни видове"
+      },
+      {
+        "store": "Kaufland",
+        "price": 5.48,
+        "name": "NIVEA Шампоан, Балсам или Душ гел\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 5.48,
+    "max_price": 7.999222,
+    "savings": 2.52,
+    "savings_pct": 31.5,
+    "confidence": 0.9
+  },
+  {
+    "name": "Роден край Суха паста",
+    "brand": "Роден",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 4.5,
+        "name": "Роден край Нетунквани вафли 525 г Произход - България"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.09,
+        "name": "Роден край Суха паста"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.09,
+    "max_price": 4.5,
+    "savings": 2.41,
+    "savings_pct": 53.6,
+    "confidence": 0.9
+  },
+  {
+    "name": "Орхидея Фаленопсис Ø12 см",
+    "brand": "Орхидея",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 13.671042,
+        "name": "Орхидея Фаленопсис в керамика саксия Ф6 1 бр.** Продукт, маркиран със синя звезда"
+      },
+      {
+        "store": "Kaufland",
+        "price": 15.98,
+        "name": "Орхидея Фаленопсис Ø12 см"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 13.671042,
+    "max_price": 15.98,
+    "savings": 2.31,
+    "savings_pct": 14.5,
+    "confidence": 0.9
+  },
+  {
+    "name": "ПАСТИР Сирене",
+    "brand": "Пастир",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 7.22,
+        "name": "Пастир Кашкавал от козе мляко 200 г Продукт, маркиран със синя звезда"
+      },
+      {
+        "store": "Kaufland",
+        "price": 9.49,
+        "name": "ПАСТИР Сирене\nот козе или овче мляко"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 7.22,
+    "max_price": 9.49,
+    "savings": 2.27,
+    "savings_pct": 23.9,
+    "confidence": 0.9
+  },
+  {
+    "name": "Milka Шоколад",
     "brand": "Milka",
     "stores": [
-      {
-        "store": "Kaufland",
-        "price": 2.78,
-        "name": "Milka Бисквити\nChocominis"
-      },
       {
         "store": "Billa",
         "price": 3.7942519999999997,
         "name": "Milka Бисквити Милка XL 184 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 1.72,
+        "name": "Milka Шоколад\nразлични видове"
       }
     ],
     "store_count": 2,
-    "confidence": 0.9,
-    "min_price": 2.78,
+    "min_price": 1.72,
     "max_price": 3.7942519999999997,
-    "savings": 1.01,
-    "savings_pct": 26.6
+    "savings": 2.07,
+    "savings_pct": 54.6,
+    "confidence": 0.9
   },
   {
-    "id": 3,
-    "name": "Свински врат без кост около 1,5 кг",
-    "brand": "Свински",
+    "name": "Nucrema Какаов крем",
+    "brand": "Nucrema",
     "stores": [
+      {
+        "store": "Billa",
+        "price": 9.994138000000001,
+        "name": "Nucrema Какаов крем 1,2 кг"
+      },
       {
         "store": "Kaufland",
         "price": 7.98,
-        "name": "Свински врат без кост около 1,5 кг"
-      },
-      {
-        "store": "Billa",
-        "price": 6.98,
-        "name": "Свински врат без кост За 1 кг До 5 кг на клиент на ден*"
+        "name": "Nucrema Какаов крем\nпромопакет"
       }
     ],
     "store_count": 2,
-    "confidence": 0.9,
-    "min_price": 6.98,
-    "max_price": 7.98,
-    "savings": 1.0,
-    "savings_pct": 12.5
+    "min_price": 7.98,
+    "max_price": 9.994138000000001,
+    "savings": 2.01,
+    "savings_pct": 20.1,
+    "confidence": 0.9
   },
   {
-    "id": 7,
+    "name": "Ariel, Гел 35/40 пранета Прах 40 пранета",
+    "brand": "Ariel",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 20.985734,
+        "name": "Ariel Гел за пране 40 пранета или Капсули за пране 28 бр. 1 опаковка, 1 изпиране"
+      },
+      {
+        "store": "Kaufland",
+        "price": 18.99,
+        "name": "Ariel, Гел 35/40 пранета Прах 40 пранета\nКапсули 26/30 пранета"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 18.99,
+    "max_price": 20.985734,
+    "savings": 2.0,
+    "savings_pct": 9.5,
+    "confidence": 0.9
+  },
+  {
+    "name": "Изтривалка 40 х 60 см",
+    "brand": "Изтривалка",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 6.982206,
+        "name": "Изтривалка 40 х 60 см, различни цветове, 1 бр. Продукт, маркиран със синя звезда"
+      },
+      {
+        "store": "Kaufland",
+        "price": 4.99,
+        "name": "Изтривалка 40 х 60 см"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 4.99,
+    "max_price": 6.982206,
+    "savings": 1.99,
+    "savings_pct": 28.5,
+    "confidence": 0.9
+  },
+  {
+    "name": "Разтворимо кафе 3 в 1",
+    "brand": "Броя",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 3.481324,
+        "name": "Spontex Домакински гъби без канал 10 броя в опаковка Продукт, маркиран със синя звезд"
+      },
+      {
+        "store": "Lidl",
+        "price": 5.11,
+        "name": "Разтворимо кафе 3 в 1"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 3.481324,
+    "max_price": 5.11,
+    "savings": 1.63,
+    "savings_pct": 31.9,
+    "confidence": 0.9
+  },
+  {
+    "name": "Елит мес Сушеница",
+    "brand": "Мес",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 6.04,
+        "name": "Мес Ко Пилешко роле 270 г Продукт, маркиран със синя звезда"
+      },
+      {
+        "store": "Kaufland",
+        "price": 4.48,
+        "name": "Елит мес Сушеница\nЧипровска"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 4.48,
+    "max_price": 6.04,
+    "savings": 1.56,
+    "savings_pct": 25.8,
+    "confidence": 0.9
+  },
+  {
+    "name": "Natura Леща екстра",
+    "brand": "Natura",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 1.9,
+        "name": "Natura Парено жито 500 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 3.38,
+        "name": "Natura Леща екстра"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 1.9,
+    "max_price": 3.38,
+    "savings": 1.48,
+    "savings_pct": 43.8,
+    "confidence": 0.9
+  },
+  {
+    "name": "Krina Ориз",
+    "brand": "Krina",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 3.89,
+        "name": "Krina Капия печена белена без оцет 680 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.48,
+        "name": "Krina Ориз"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.48,
+    "max_price": 3.89,
+    "savings": 1.41,
+    "savings_pct": 36.2,
+    "confidence": 0.9
+  },
+  {
+    "name": "DEUTSCHE MARKENBUTTER Краве масло",
+    "brand": "Deutsche Markenbutter",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 4.99,
+        "name": "Deutsche Markenbutter краве масло 250 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 3.68,
+        "name": "DEUTSCHE MARKENBUTTER Краве масло"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 3.68,
+    "max_price": 4.99,
+    "savings": 1.31,
+    "savings_pct": 26.3,
+    "confidence": 0.9
+  },
+  {
+    "name": "ANGEL'S Вино 0,75 л Произход - България",
+    "brand": "Angel",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 11.72,
+        "name": "ANGEL'S Вино 0,75 л Произход - България"
+      },
+      {
+        "store": "Kaufland",
+        "price": 12.99,
+        "name": "ANGEL'S SHARE/ SILVER ANGEL Червено или Бяло вино\nразлични сортове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 11.72,
+    "max_price": 12.99,
+    "savings": 1.27,
+    "savings_pct": 9.8,
+    "confidence": 0.9
+  },
+  {
+    "name": "Верея Прясно мляко",
+    "brand": "Верея",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 1.49,
+        "name": "Верея Чудно Кисело мляко 5% 400 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.68,
+        "name": "Верея Прясно мляко"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 1.49,
+    "max_price": 2.68,
+    "savings": 1.19,
+    "savings_pct": 44.4,
+    "confidence": 0.9
+  },
+  {
+    "name": "Магнитни принадлежности",
+    "brand": "Parkside",
+    "stores": [
+      {
+        "store": "Kaufland",
+        "price": 2.48,
+        "name": "PARKSIDE® Принадлежности\nза рязане или полиране"
+      },
+      {
+        "store": "Lidl",
+        "price": 3.57,
+        "name": "Магнитни принадлежности"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.48,
+    "max_price": 3.57,
+    "savings": 1.09,
+    "savings_pct": 30.5,
+    "confidence": 0.9
+  },
+  {
+    "name": "Pepsi газирана напитка 0,33 л",
+    "brand": "Pepsi",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 0.98,
+        "name": "Pepsi газирана напитка 0,33 л"
+      },
+      {
+        "store": "Kaufland",
+        "price": 1.99,
+        "name": "PEPSI/ MIRINDA/ 7 UP различни видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 0.98,
+    "max_price": 1.99,
+    "savings": 1.01,
+    "savings_pct": 50.8,
+    "confidence": 0.9
+  },
+  {
+    "name": "Syoss Боя за коса",
+    "brand": "Syoss",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 9.99,
+        "name": "Syoss Шампоан 750 мл Продукт, маркиран със синя звезда"
+      },
+      {
+        "store": "Kaufland",
+        "price": 8.98,
+        "name": "Syoss Боя за коса\nразлични цветове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 8.98,
+    "max_price": 9.99,
+    "savings": 1.01,
+    "savings_pct": 10.1,
+    "confidence": 0.9
+  },
+  {
+    "name": "BRIO Термобутилка",
+    "brand": "Brio",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 3.48,
+        "name": "Само с Billa App - Brio Универсален нож 13 см"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.48,
+        "name": "BRIO Термобутилка"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.48,
+    "max_price": 3.48,
+    "savings": 1.0,
+    "savings_pct": 28.7,
+    "confidence": 0.9
+  },
+  {
+    "name": "Tchibo Espresso Мляно кафе",
+    "brand": "Espresso",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 8.99668,
+        "name": "Tira мляно кафе Espresso 250 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 9.99,
+        "name": "Tchibo Espresso Мляно кафе\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 8.99668,
+    "max_price": 9.99,
+    "savings": 0.99,
+    "savings_pct": 9.9,
+    "confidence": 0.9
+  },
+  {
+    "name": "Vernada Салата Хумус",
+    "brand": "Салата",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 2.48,
+        "name": "Billa Мексиканска салата с риба тон 150 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 1.99,
+        "name": "Vernada Салата Хумус\nразлични вкусове"
+      },
+      {
+        "store": "Lidl",
+        "price": 1.53,
+        "name": "Салата микс Италиана"
+      }
+    ],
+    "store_count": 3,
+    "min_price": 1.53,
+    "max_price": 2.48,
+    "savings": 0.95,
+    "savings_pct": 38.3,
+    "confidence": 0.9
+  },
+  {
+    "name": "Свински пръжки беконови",
+    "brand": "Свински",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 5.79,
+        "name": "Свински бут без кост За 1 кг"
+      },
+      {
+        "store": "Kaufland",
+        "price": 6.49,
+        "name": "Свински пръжки беконови"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 5.79,
+    "max_price": 6.49,
+    "savings": 0.7,
+    "savings_pct": 10.8,
+    "confidence": 0.9
+  },
+  {
+    "name": "Snickers Шоколадов десерт",
+    "brand": "Snickers",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 1.19,
+        "name": "Snickers, Mars или Twix Шоколадов десерт 50 - 51 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 1.88,
+        "name": "Snickers Шоколадов десерт\nSuper + 1"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 1.19,
+    "max_price": 1.88,
+    "savings": 0.69,
+    "savings_pct": 36.7,
+    "confidence": 0.9
+  },
+  {
+    "name": "VASELINE Балсам за устни",
+    "brand": "Original",
+    "stores": [
+      {
+        "store": "Kaufland",
+        "price": 5.01,
+        "name": "VASELINE Балсам за устни\nOriginal"
+      },
+      {
+        "store": "Lidl",
+        "price": 5.62,
+        "name": "Шоколадови белгийски бонбони с пълнеж"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 5.01,
+    "max_price": 5.62,
+    "savings": 0.61,
+    "savings_pct": 10.9,
+    "confidence": 0.9
+  },
+  {
+    "name": "Prisun Плодова напитка",
+    "brand": "Prisun",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 1.78,
+        "name": "Prisun негазирана напитка 1,5 л"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.19,
+        "name": "Prisun Плодова напитка\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 1.78,
+    "max_price": 2.19,
+    "savings": 0.41,
+    "savings_pct": 18.7,
+    "confidence": 0.9
+  },
+  {
+    "name": "Ананас 1 бр.",
+    "brand": "Ананас",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 3.89,
+        "name": "Ананас 1 бр."
+      },
+      {
+        "store": "Kaufland",
+        "price": 3.48,
+        "name": "Ананас Клас: I"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 3.48,
+    "max_price": 3.89,
+    "savings": 0.41,
+    "savings_pct": 10.5,
+    "confidence": 0.9
+  },
+  {
+    "name": "Rexona Дезодорант",
+    "brand": "Rexona",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 5.358892,
+        "name": "Rexona Дезодорант спрей 150 мл или стик 50 мл - различни аромати, 1 бр."
+      },
+      {
+        "store": "Kaufland",
+        "price": 4.99,
+        "name": "Rexona Дезодорант\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 4.99,
+    "max_price": 5.358892,
+    "savings": 0.37,
+    "savings_pct": 6.9,
+    "confidence": 0.9
+  },
+  {
+    "name": "Сандвич Чабата",
+    "brand": "Fresh",
+    "stores": [
+      {
+        "store": "Kaufland",
+        "price": 2.23,
+        "name": "Kinder Шоколадов десерт\nChoco fresh"
+      },
+      {
+        "store": "Lidl",
+        "price": 2.55,
+        "name": "Сандвич Чабата"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.23,
+    "max_price": 2.55,
+    "savings": 0.32,
+    "savings_pct": 12.5,
+    "confidence": 0.9
+  },
+  {
+    "name": "CHATEAU KARNOBAT Червено, Бяло вино или Розе",
+    "brand": "Chateau Karnobat",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 14.26,
+        "name": "Chateau Karnobat Вино 3 л Произход - България"
+      },
+      {
+        "store": "Kaufland",
+        "price": 13.98,
+        "name": "CHATEAU KARNOBAT Червено, Бяло вино или Розе"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 13.98,
+    "max_price": 14.26,
+    "savings": 0.28,
+    "savings_pct": 2.0,
+    "confidence": 0.9
+  },
+  {
+    "name": "Kinder Milк Slice",
+    "brand": "Kinder",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 1.39,
+        "name": "Kinder Pingui 30 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 1.11,
+        "name": "Kinder Milк Slice\nМлечен десерт"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 1.11,
+    "max_price": 1.39,
+    "savings": 0.28,
+    "savings_pct": 20.1,
+    "confidence": 0.9
+  },
+  {
+    "name": "Кристал Локум",
+    "brand": "Кристал",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 1.15,
+        "name": "Кристал Локум цветен 140 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 0.98,
+        "name": "Кристал Локум"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 0.98,
+    "max_price": 1.15,
+    "savings": 0.17,
+    "savings_pct": 14.8,
+    "confidence": 0.9
+  },
+  {
+    "name": "Jogobella Йогурт 400 г",
+    "brand": "Jogobella",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 2.522982,
+        "name": "Jogobella Йогурт 400 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.64,
+        "name": "Jogobella Плодов йогурт\nразлични вкусове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.522982,
+    "max_price": 2.64,
+    "savings": 0.12,
+    "savings_pct": 4.5,
+    "confidence": 0.9
+  },
+  {
+    "name": "7 DAYS Bake Rolls",
+    "brand": "Days",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 1.19,
+        "name": "7 Days Кроасан 70 - 92 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 1.08,
+        "name": "7 DAYS Bake Rolls\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 1.08,
+    "max_price": 1.19,
+    "savings": 0.11,
+    "savings_pct": 9.2,
+    "confidence": 0.9
+  },
+  {
+    "name": "Chio Чипс",
+    "brand": "Chio",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 2.58,
+        "name": "Chio Чипс Intense 120 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.48,
+        "name": "Chio Чипс\nразлични вкусове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.48,
+    "max_price": 2.58,
+    "savings": 0.1,
+    "savings_pct": 3.9,
+    "confidence": 0.9
+  },
+  {
+    "name": "ПРЕСТИЖ Миникейк",
+    "brand": "Престиж",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 0.59,
+        "name": "Престиж Суха паста 50 г Произход - България"
+      },
+      {
+        "store": "Kaufland",
+        "price": 0.49,
+        "name": "ПРЕСТИЖ Миникейк\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 0.49,
+    "max_price": 0.59,
+    "savings": 0.1,
+    "savings_pct": 16.9,
+    "confidence": 0.9
+  },
+  {
+    "name": "Боровинки 125 г",
+    "brand": "Боровинки",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 1.86,
+        "name": "Боровинки 125 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 1.78,
+        "name": "Боровинки Клас: I"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 1.78,
+    "max_price": 1.86,
+    "savings": 0.08,
+    "savings_pct": 4.3,
+    "confidence": 0.9
+  },
+  {
+    "name": "Сладки времена Минилокум",
+    "brand": "Сладки",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 0.29,
+        "name": "Сладки времена Халва 30 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 0.25,
+        "name": "Сладки времена Минилокум\nобикновен"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 0.25,
+    "max_price": 0.29,
+    "savings": 0.04,
+    "savings_pct": 13.8,
+    "confidence": 0.9
+  },
+  {
+    "name": "Хели Вафла Ретро",
+    "brand": "Хели",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 0.59,
+        "name": "Хели Тунквана вафла с халва ретро 65 г Произход - България"
+      },
+      {
+        "store": "Kaufland",
+        "price": 0.55,
+        "name": "Хели Вафла Ретро\nизбрани видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 0.55,
+    "max_price": 0.59,
+    "savings": 0.04,
+    "savings_pct": 6.8,
+    "confidence": 0.9
+  },
+  {
+    "name": "Absolut Водка",
+    "brand": "Absolut",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 16.49,
+        "name": "Absolut Водка 0,7 л"
+      },
+      {
+        "store": "Kaufland",
+        "price": 16.49,
+        "name": "Absolut Водка\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 16.49,
+    "max_price": 16.49,
+    "savings": 0.0,
+    "savings_pct": 0.0,
+    "confidence": 0.9
+  },
+  {
+    "name": "Domestos Универсален препарат",
+    "brand": "Domestos",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 6.49,
+        "name": "Domestos Почистващ препарат 1,250 л Продукт, маркиран със синя звезда"
+      },
+      {
+        "store": "Kaufland",
+        "price": 6.49,
+        "name": "Domestos Универсален препарат\nили Спрей"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 6.49,
+    "max_price": 6.49,
+    "savings": 0.0,
+    "savings_pct": 0.0,
+    "confidence": 0.9
+  },
+  {
     "name": "Nescafe Разтворимо кафе 2в1 или 3в1",
     "brand": "Nescafe",
     "stores": [
       {
-        "store": "Kaufland",
-        "price": 2.89,
-        "name": "Nescafe Разтворимо кафе 2в1 или 3в1"
-      },
-      {
         "store": "Billa",
         "price": 2.89,
         "name": "Nescafe Разтворима напитка 3 в 1 плик 10 х 15q5 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.89,
+        "name": "Nescafe Разтворимо кафе 2в1 или 3в1"
       }
     ],
     "store_count": 2,
-    "confidence": 0.9,
     "min_price": 2.89,
     "max_price": 2.89,
     "savings": 0.0,
-    "savings_pct": 0.0
+    "savings_pct": 0.0,
+    "confidence": 0.9
+  },
+  {
+    "name": "Raffaello Бонбони",
+    "brand": "Raffaello",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 6.59,
+        "name": "Raffaello Бонбони 150 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 6.59,
+        "name": "Raffaello Бонбони\nкокос"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 6.59,
+    "max_price": 6.59,
+    "savings": 0.0,
+    "savings_pct": 0.0,
+    "confidence": 0.9
+  },
+  {
+    "name": "Salza Соленки с вкус",
+    "brand": "Salza",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 2.39,
+        "name": "Salza Соленки с вкус на сирене 200 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 2.39,
+        "name": "Salza Соленки с вкус\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 2.39,
+    "max_price": 2.39,
+    "savings": 0.0,
+    "savings_pct": 0.0,
+    "confidence": 0.9
+  },
+  {
+    "name": "Suchard Шоколадови бонбони",
+    "brand": "Suchard",
+    "stores": [
+      {
+        "store": "Billa",
+        "price": 4.99,
+        "name": "Suchard Бонбониера 117 - 138 г"
+      },
+      {
+        "store": "Kaufland",
+        "price": 4.99,
+        "name": "Suchard Шоколадови бонбони\nразлични видове"
+      }
+    ],
+    "store_count": 2,
+    "min_price": 4.99,
+    "max_price": 4.99,
+    "savings": 0.0,
+    "savings_pct": 0.0,
+    "confidence": 0.9
   }
 ]
