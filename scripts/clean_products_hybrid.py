@@ -4,32 +4,58 @@ Hybrid cleaning pipeline:
 1. Apply rules to all products (free, 85-97% accurate)
 2. Detect low-confidence extractions
 3. Send only edge cases to LLM (~$0.002/run)
+4. Deduplicate products (same name+store or same SKU+store)
+5. Apply OCR brand cache for Lidl
 """
 
 import json
 import re
-import subprocess
 import os
+from pathlib import Path
 from collections import defaultdict
 
+PROJECT_ROOT = Path(__file__).parent.parent
+
 # Load configs
-with open('config/brands.json') as f:
+with open(PROJECT_ROOT / 'config/brands.json') as f:
     BRANDS = json.load(f)['brands']
-with open('config/categories.json') as f:
+with open(PROJECT_ROOT / 'config/categories.json') as f:
     CATEGORY_CONFIG = json.load(f)['categories']
+
+# Load OCR brand cache for Lidl
+BRAND_CACHE = {}
+cache_file = PROJECT_ROOT / 'data' / 'brand_cache.json'
+if cache_file.exists():
+    with open(cache_file) as f:
+        BRAND_CACHE = json.load(f)
 
 # Pre-compile brand patterns
 BRAND_PATTERNS = [(b.rstrip('®™© '), re.compile(
     r'(?:^|[\s\-/\(])' + re.escape(b.rstrip('®™© ')) + r'(?:[\s\-/\)®™©,]|$)', re.I)) 
     for b in sorted(BRANDS, key=len, reverse=True)]
 
-def extract_brand(text):
+def normalize_name(name: str) -> str:
+    """Normalize name for deduplication."""
+    if not name:
+        return ''
+    # Lowercase, remove special chars, collapse whitespace
+    normalized = name.lower()
+    normalized = re.sub(r'[^\w\s]', ' ', normalized)
+    normalized = re.sub(r'\s+', ' ', normalized).strip()
+    return normalized
+
+def extract_brand(text, sku=None, store=None):
+    # Check OCR cache first for Lidl
+    if store == 'Lidl' and sku and sku in BRAND_CACHE:
+        cached = BRAND_CACHE[sku]
+        if cached.get('brand'):
+            return cached['brand'], 1.0
+    
     for brand, pattern in BRAND_PATTERNS:
         if pattern.search(text):
-            return brand, 1.0  # confidence
-    # Check if text has potential brand (capitalized word at start)
+            return brand, 1.0
     if re.match(r'^[A-ZА-Я]{2,}', text):
-        return None, 0.3  # low confidence - might have brand
+        return None, 0.3
     return None, 1.0
 
 def extract_category(text):
@@ -41,35 +67,17 @@ def extract_category(text):
                 scores[cat] += len(kw) * 2 if len(kw) > 4 else len(kw)
     if scores:
         best = max(scores, key=scores.get)
-        confidence = min(scores[best] / 20, 1.0)  # Higher score = more confident
+        confidence = min(scores[best] / 20, 1.0)
         return best, confidence
     return 'Други', 0.5
 
 def extract_quantity(text):
     text_lower = text.lower()
     
-    # Check if has quantity pattern
-    has_pattern = bool(re.search(r'\d+(?:[.,]\d+)?\s*(мл|ml|л|l|гр|g|кг|kg|бр|w|см)', text_lower, re.I))
-    
     # Addition: "32+8 бр."
     add_match = re.search(r'(\d+)\s*\+\s*(\d+)\s*(бр\.?)', text_lower)
     if add_match:
         return float(int(add_match.group(1)) + int(add_match.group(2))), 'бр.', 1.0
-    
-    # Dimensions
-    dim = re.search(r'(\d+)\s*[xх]\s*(\d+)\s*см', text_lower)
-    if dim:
-        return float(int(dim.group(1)) * int(dim.group(2))), 'см', 0.9
-    
-    # Diameter
-    diam = re.search(r'[øо](\d+)\s*см', text_lower)
-    if diam:
-        return float(diam.group(1)), 'см', 0.9
-    
-    # Wattage
-    watt = re.search(r'(\d+(?:[.,]\d+)?)\s*w', text_lower)
-    if watt:
-        return float(watt.group(1).replace(',', '.')), 'W', 1.0
     
     # Pack: 6x500ml
     pack = re.search(r'(\d+)\s*[xх]\s*(\d+(?:[.,]\d+)?)\s*(мл|ml|л|l|гр?|g|кг|kg)', text_lower)
@@ -78,70 +86,84 @@ def extract_quantity(text):
         value = float(pack.group(2).replace(',', '.'))
         unit = pack.group(3).lower()
         if unit in ('л', 'l'): value, unit = value * 1000, 'ml'
-        elif unit in ('кг', 'kg'): value, unit = value * 1000, 'g'
-        elif unit in ('мл', 'ml'): unit = 'ml'
-        elif unit in ('гр', 'г', 'g'): unit = 'g'
-        return value * count, unit, 1.0
+        if unit in ('кг', 'kg'): value, unit = value * 1000, 'g'
+        return count * value, 'ml' if unit in ('мл', 'ml') else 'g', 1.0
     
-    # Single quantity
-    for pattern, base_unit, mult in [
-        (r'(\d+(?:[.,]\d+)?)\s*(мл|ml)', 'ml', 1),
-        (r'(\d+(?:[.,]\d+)?)\s*(л|l)(?:\s|$|,|=)', 'ml', 1000),
-        (r'(\d+(?:[.,]\d+)?)\s*(гр?|g)(?:\s|$|,)', 'g', 1),
-        (r'(\d+(?:[.,]\d+)?)\s*(кг|kg)', 'g', 1000),
-        (r'(\d+)\s*(бр\.?|pcs)', 'бр.', 1),
-    ]:
+    # Simple units
+    patterns = [
+        (r'(\d+(?:[.,]\d+)?)\s*(кг|kg)', 1000, 'g'),
+        (r'(\d+(?:[.,]\d+)?)\s*(гр?|g)\b', 1, 'g'),
+        (r'(\d+(?:[.,]\d+)?)\s*(л|l)\b', 1000, 'ml'),
+        (r'(\d+(?:[.,]\d+)?)\s*(мл|ml)', 1, 'ml'),
+        (r'(\d+)\s*(бр\.?|pcs)', 1, 'бр.'),
+    ]
+    for pattern, multiplier, unit in patterns:
         m = re.search(pattern, text_lower)
         if m:
-            return float(m.group(1).replace(',', '.')) * mult, base_unit, 1.0
+            value = float(m.group(1).replace(',', '.')) * multiplier
+            return value, unit, 1.0
     
-    # Has pattern but couldn't extract = low confidence
-    if has_pattern:
-        return None, None, 0.3
     return None, None, 1.0
 
-def llm_extract_batch(products, api_key):
-    """Send edge cases to GPT-4o-mini."""
-    if not products:
-        return {}
+def llm_extract_batch(batch, api_key):
+    """Extract data from edge cases using GPT-4o-mini."""
+    import requests
     
-    prompt = """Extract from Bulgarian products. Return JSON: {"products": [{"sku": "...", "brand": "...", "category": "...", "quantity_value": N, "quantity_unit": "..."}]}
-
-Categories: Месо и колбаси, Млечни продукти, Напитки, Плодове и зеленчуци, Хигиена, Дом, Сладкарски изделия, Други
-
-Products:
-"""
-    batch_text = "\n".join([f"SKU:{p['sku']}|{p['text']}" for p in products])
-    
-    payload = {
-        "model": "gpt-4o-mini",
-        "messages": [
-            {"role": "system", "content": "Extract product data. Return only valid JSON."},
-            {"role": "user", "content": prompt + batch_text}
-        ],
-        "temperature": 0,
-        "response_format": {"type": "json_object"}
-    }
-    
-    cmd = ['curl', '-s', 'https://api.openai.com/v1/chat/completions',
-           '-H', 'Content-Type: application/json',
-           '-H', f'Authorization: Bearer {api_key}',
-           '-d', json.dumps(payload)]
-    
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+    prompt = "Extract brand, category, quantity from these Bulgarian product names. Return JSON array.\n\n"
+    for i, item in enumerate(batch):
+        prompt += f"{i+1}. {item['text']}\n"
+    prompt += "\nReturn: [{\"sku\": \"...\", \"brand\": \"...\", \"category\": \"...\", \"quantity_value\": ..., \"quantity_unit\": \"...\"}]"
     
     try:
-        resp = json.loads(result.stdout)
-        content = resp['choices'][0]['message']['content']
-        data = json.loads(content)
-        prods = data.get('products', data if isinstance(data, list) else [])
-        return {str(p['sku']): p for p in prods if p.get('sku')}
-    except:
-        return {}
+        response = requests.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={"Authorization": f"Bearer {api_key}"},
+            json={
+                "model": "gpt-4o-mini",
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0
+            },
+            timeout=60
+        )
+        response.raise_for_status()
+        content = response.json()['choices'][0]['message']['content']
+        
+        # Parse JSON from response
+        json_match = re.search(r'\[.*\]', content, re.DOTALL)
+        if json_match:
+            results = json.loads(json_match.group())
+            return {batch[i]['sku']: r for i, r in enumerate(results) if i < len(batch)}
+    except Exception as e:
+        print(f"LLM error: {e}")
+    return {}
+
+def deduplicate(results):
+    """Remove duplicate products (same normalized name + store)."""
+    seen = set()
+    deduplicated = []
+    duplicates = 0
+    
+    for r in results:
+        # Create dedup key: normalized name + store
+        norm_name = normalize_name(r.get('raw_name', ''))
+        store = r.get('store', '')
+        key = f"{store}:{norm_name}"
+        
+        if key in seen:
+            duplicates += 1
+            continue
+        
+        seen.add(key)
+        deduplicated.append(r)
+    
+    if duplicates > 0:
+        print(f"Removed {duplicates} duplicates")
+    
+    return deduplicated
 
 def main():
     # Load raw products
-    with open('output/raw_products.json') as f:
+    with open(PROJECT_ROOT / 'output/raw_products.json') as f:
         raw_products = json.load(f)
     
     print(f"Processing {len(raw_products)} products...")
@@ -151,24 +173,24 @@ def main():
     edge_cases = []
     
     for p in raw_products:
-        text = (p.get('raw_name', '') + ' ' + p.get('raw_subtitle', '')).strip()
+        text = ((p.get('raw_name') or '') + ' ' + (p.get('raw_subtitle') or '')).strip()
         sku = p.get('sku')
+        store = p.get('store')
         
         # Use raw brand if available, otherwise extract
         raw_brand = p.get('brand')
         if raw_brand:
             brand, brand_conf = raw_brand, 1.0
         else:
-            brand, brand_conf = extract_brand(text)
+            brand, brand_conf = extract_brand(text, sku, store)
         category, cat_conf = extract_category(text)
         qty_value, qty_unit, qty_conf = extract_quantity(text)
         
-        # Determine overall confidence
         min_conf = min(brand_conf, cat_conf, qty_conf)
         
         result = {
             'sku': sku,
-            'store': p.get('store'),
+            'store': store,
             'raw_name': p.get('raw_name'),
             'raw_subtitle': p.get('raw_subtitle'),
             'brand': brand,
@@ -202,7 +224,6 @@ def main():
         if api_key:
             print(f"\nSending {len(edge_cases)} edge cases to GPT-4o-mini...")
             
-            # Process in batches
             BATCH_SIZE = 30
             llm_results = {}
             for i in range(0, len(edge_cases), BATCH_SIZE):
@@ -212,7 +233,6 @@ def main():
                 llm_results.update(batch_results)
                 print(f"got {len(batch_results)}")
             
-            # Merge LLM results
             for r in results:
                 if r['sku'] in llm_results:
                     llm = llm_results[r['sku']]
@@ -225,12 +245,24 @@ def main():
         else:
             print("No OpenAI API key - skipping LLM extraction")
     
+    # Phase 3: Deduplicate
+    print("\nDeduplicating...")
+    results = deduplicate(results)
+    
     # Remove confidence field
     for r in results:
         del r['_confidence']
     
+    # Add clean_name for matching
+    for r in results:
+        name = r.get('raw_name', '')
+        brand = r.get('brand', '')
+        if brand and name.lower().startswith(brand.lower()):
+            name = name[len(brand):].strip()
+        r['clean_name'] = name
+    
     # Save
-    with open('output/products_clean.json', 'w', encoding='utf-8') as f:
+    with open(PROJECT_ROOT / 'output/products_clean.json', 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     
     # Stats
