@@ -2,15 +2,18 @@
 """
 PromoBG Data Pipeline - Production Ready
 
-Single entry point for all data operations:
-  python pipeline.py --full          # Run complete pipeline
-  python pipeline.py --scrape lidl   # Scrape single store
-  python pipeline.py --match         # Run matching only
-  python pipeline.py --export        # Export to frontend only
+Usage:
+  python pipeline.py --full              # Full pipeline (scrape all → sync → match → export)
+  python pipeline.py --daily             # Daily run (sync + match + export, no scrape)
+  python pipeline.py --scrape lidl       # Scrape single store
+  python pipeline.py --sync lidl         # Sync store from latest raw file
+  python pipeline.py --match             # Run matching only
+  python pipeline.py --export            # Export to frontend only
+  python pipeline.py --report            # Generate status report
 
-Pipeline steps:
+Pipeline phases:
   1. SCRAPE  → raw_scrapes/{store}_{date}.json
-  2. CLEAN   → DB (products, store_products, prices)
+  2. SYNC    → DB (products, prices, price_history)
   3. MATCH   → DB (cross_store_matches)
   4. EXPORT  → docs/data/products.json
 """
@@ -23,12 +26,12 @@ import re
 import sqlite3
 import sys
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 # Setup paths
 REPO_ROOT = Path(__file__).parent.parent
-sys.path.insert(0, str(REPO_ROOT))
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 DB_PATH = REPO_ROOT / "data" / "promobg.db"
 CONFIG_DIR = REPO_ROOT / "config"
@@ -61,7 +64,7 @@ def get_db():
 # STEP 1: SCRAPE
 # =============================================================================
 
-def scrape_store(store_name):
+def scrape_store(store_name, limit=None):
     """Run scraper for a specific store"""
     log.info(f"Scraping {store_name}...")
     
@@ -69,18 +72,14 @@ def scrape_store(store_name):
     if store_name == 'lidl':
         from scrapers.lidl import LidlScraper
         scraper = LidlScraper()
-    elif store_name == 'kaufland':
-        from scrapers.kaufland import KauflandScraper
-        scraper = KauflandScraper()
-    elif store_name == 'billa':
-        from scrapers.billa import BillaScraper
-        scraper = BillaScraper()
     else:
-        raise ValueError(f"Unknown store: {store_name}")
+        log.warning(f"No scraper for {store_name}")
+        return None
     
-    # Scrape and save raw
-    products = scraper.scrape()
+    # Scrape
+    products = scraper.scrape(limit=limit)
     
+    # Save raw
     RAW_SCRAPES_DIR.mkdir(exist_ok=True)
     date_str = datetime.now().strftime("%Y%m%d")
     output_path = RAW_SCRAPES_DIR / f"{store_name}_{date_str}.json"
@@ -93,132 +92,35 @@ def scrape_store(store_name):
 
 
 # =============================================================================
-# STEP 2: CLEAN & IMPORT
+# STEP 2: SYNC (replaces old clean_and_import)
 # =============================================================================
 
-def clean_and_import(store_name, raw_file=None):
-    """Clean raw scrape data and import to DB"""
-    log.info(f"Cleaning and importing {store_name}...")
-    
-    config = load_config("cleaning")
+def sync_store(store_name, raw_file=None):
+    """Sync store using daily_sync module"""
+    from daily_sync import DailySync
     
     # Find latest raw file if not specified
     if raw_file is None:
         files = sorted(RAW_SCRAPES_DIR.glob(f"{store_name}_*.json"), reverse=True)
         if not files:
             log.warning(f"No raw files found for {store_name}")
-            return 0
+            return None
         raw_file = files[0]
     
+    log.info(f"Syncing {store_name} from {raw_file}...")
+    
     with open(raw_file) as f:
-        raw_products = json.load(f)
+        products = json.load(f)
     
-    log.info(f"Loaded {len(raw_products)} raw products from {raw_file}")
+    sync = DailySync(store_name)
+    stats = sync.sync(products)
+    sync.detect_delisted(days_threshold=3)
     
-    conn = get_db()
-    cur = conn.cursor()
+    report = sync.generate_report()
+    print(report)
     
-    # Get store ID
-    cur.execute("SELECT id FROM stores WHERE name = ?", (store_name.title(),))
-    row = cur.fetchone()
-    if not row:
-        log.error(f"Store {store_name} not found in DB")
-        return 0
-    store_id = row['id']
-    
-    # Get existing product names to avoid duplicates
-    cur.execute("""
-        SELECT p.name FROM products p
-        JOIN store_products sp ON p.id = sp.product_id
-        WHERE sp.store_id = ?
-    """, (store_id,))
-    existing = {row['name'].lower() for row in cur.fetchall()}
-    
-    # Process products
-    imported = 0
-    for raw in raw_products:
-        name = clean_name(raw.get('name', ''), config)
-        if not name:
-            continue
-        
-        # Skip duplicates
-        if name.lower() in existing:
-            continue
-        
-        # Get price (convert BGN to EUR if needed)
-        price = raw.get('price')
-        if price is None:
-            continue
-        
-        currency = raw.get('currency', 'EUR')
-        if currency == 'BGN':
-            price = round(price / config['currency']['bgn_to_eur'], 2)
-        
-        # Skip invalid prices
-        if price <= 0 or price > 10000:
-            continue
-        
-        # Get brand
-        brand = raw.get('brand') or extract_brand(name)
-        
-        # Get category
-        category = categorize(name, config['categories'])
-        
-        # Insert to DB
-        try:
-            cur.execute("INSERT INTO products (name, brand) VALUES (?, ?)", (name, brand))
-            product_id = cur.lastrowid
-            
-            cur.execute("INSERT INTO store_products (store_id, product_id) VALUES (?, ?)",
-                       (store_id, product_id))
-            store_product_id = cur.lastrowid
-            
-            cur.execute("INSERT INTO prices (store_product_id, current_price) VALUES (?, ?)",
-                       (store_product_id, price))
-            
-            existing.add(name.lower())
-            imported += 1
-        except Exception as e:
-            log.debug(f"Error importing {name}: {e}")
-    
-    conn.commit()
-    conn.close()
-    
-    log.info(f"Imported {imported} new products for {store_name}")
-    return imported
-
-
-def clean_name(name, config):
-    """Clean product name"""
-    if not name:
-        return ""
-    
-    # Remove patterns
-    for pattern in config['name_cleanup']['remove_patterns']:
-        name = name.replace(pattern, ' ')
-    
-    # Normalize whitespace
-    name = re.sub(r'\s+', ' ', name).strip()
-    
-    return name
-
-
-def extract_brand(name):
-    """Extract brand from product name (first word if capitalized)"""
-    words = name.split()
-    if words and words[0][0].isupper():
-        return words[0]
-    return None
-
-
-def categorize(name, categories):
-    """Categorize product by name keywords"""
-    name_lower = name.lower()
-    for cat, keywords in categories.items():
-        for kw in keywords:
-            if kw in name_lower:
-                return cat
-    return 'other'
+    sync.close()
+    return stats
 
 
 # =============================================================================
@@ -233,7 +135,7 @@ def run_matching():
     conn = get_db()
     cur = conn.cursor()
     
-    # Load all products with prices
+    # Load active products with prices
     cur.execute("""
         SELECT 
             p.id, p.name, p.brand,
@@ -243,11 +145,13 @@ def run_matching():
         JOIN store_products sp ON p.id = sp.product_id
         JOIN stores s ON sp.store_id = s.id
         LEFT JOIN prices pr ON pr.store_product_id = sp.id
-        WHERE pr.current_price IS NOT NULL AND pr.current_price > 0
+        WHERE pr.current_price IS NOT NULL 
+        AND pr.current_price > 0
+        AND (sp.status = 'active' OR sp.status IS NULL)
     """)
     
     products = [dict(row) for row in cur.fetchall()]
-    log.info(f"Loaded {len(products)} products with prices")
+    log.info(f"Loaded {len(products)} active products with prices")
     
     # Tokenize and categorize
     cleaning_config = load_config("cleaning")
@@ -281,7 +185,7 @@ def run_matching():
                                 'common': p1['tokens'] & p2['tokens']
                             })
     
-    # Deduplicate (keep highest score per pair)
+    # Deduplicate
     seen = set()
     unique_matches = []
     for m in sorted(matches, key=lambda x: -x['score']):
@@ -332,11 +236,9 @@ def tokenize(name, config):
     """Tokenize product name for matching"""
     name = name.lower()
     
-    # Remove ignore patterns
     for pattern in config['ignore_patterns']:
         name = name.replace(pattern.lower(), '')
     
-    # Remove quantities
     name = re.sub(r'\d+\s*(г|гр|мл|л|кг|бр|x|х)\b', '', name)
     name = re.sub(r'[®™©\n]', ' ', name)
     name = re.sub(r'\s+', ' ', name).strip()
@@ -358,8 +260,17 @@ def token_similarity(tokens1, tokens2, config):
     if len(common) < min_common:
         return 0
     
-    # Jaccard similarity
     return len(common) / len(tokens1 | tokens2)
+
+
+def categorize(name, categories):
+    """Categorize product by name keywords"""
+    name_lower = name.lower()
+    for cat, keywords in categories.items():
+        for kw in keywords:
+            if kw in name_lower:
+                return cat
+    return 'other'
 
 
 # =============================================================================
@@ -373,17 +284,20 @@ def export_frontend():
     conn = get_db()
     cur = conn.cursor()
     
-    # Load products
+    # Load active products
     cur.execute("""
         SELECT 
             p.id, p.name, p.brand,
             s.name as store,
-            pr.current_price as price
+            pr.current_price as price,
+            sp.image_url
         FROM products p
         JOIN store_products sp ON p.id = sp.product_id
         JOIN stores s ON sp.store_id = s.id
         LEFT JOIN prices pr ON pr.store_product_id = sp.id
-        WHERE pr.current_price IS NOT NULL AND pr.current_price > 0
+        WHERE pr.current_price IS NOT NULL 
+        AND pr.current_price > 0
+        AND (sp.status = 'active' OR sp.status IS NULL)
     """)
     
     products = []
@@ -394,6 +308,7 @@ def export_frontend():
             'brand': row['brand'],
             'store': row['store'],
             'price': round(row['price'], 2),
+            'image_url': row['image_url'],
             'group_id': None
         })
     
@@ -422,7 +337,7 @@ def export_frontend():
             'confidence': m['confidence']
         }
     
-    # Assign group_ids to products
+    # Assign group_ids
     for p in products:
         p['group_id'] = product_to_group.get(p['id'])
     
@@ -438,15 +353,74 @@ def export_frontend():
         'off': {}
     }
     
-    # Write
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     
     conn.close()
     
-    log.info(f"Exported {len(products)} products, {len(groups)} groups to {OUTPUT_PATH}")
+    log.info(f"Exported {len(products)} products, {len(groups)} groups")
     return len(products), len(groups)
+
+
+# =============================================================================
+# REPORT
+# =============================================================================
+
+def generate_report():
+    """Generate current status report"""
+    conn = get_db()
+    cur = conn.cursor()
+    
+    print("\n" + "="*50)
+    print("PROMOBG STATUS REPORT")
+    print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("="*50)
+    
+    # Products by store
+    cur.execute("""
+        SELECT s.name, 
+               COUNT(*) as total,
+               SUM(CASE WHEN sp.status = 'active' OR sp.status IS NULL THEN 1 ELSE 0 END) as active
+        FROM store_products sp
+        JOIN stores s ON sp.store_id = s.id
+        GROUP BY s.name
+    """)
+    
+    print("\nPRODUCTS BY STORE:")
+    for row in cur.fetchall():
+        print(f"  {row['name']}: {row['active']} active / {row['total']} total")
+    
+    # Matches
+    cur.execute("SELECT COUNT(*) FROM cross_store_matches")
+    matches = cur.fetchone()[0]
+    print(f"\nCROSS-STORE MATCHES: {matches}")
+    
+    # Recent price changes
+    cur.execute("""
+        SELECT COUNT(*) FROM price_history 
+        WHERE changed_at > datetime('now', '-1 day')
+    """)
+    recent_changes = cur.fetchone()[0]
+    print(f"PRICE CHANGES (24h): {recent_changes}")
+    
+    # Recent scan runs
+    cur.execute("""
+        SELECT s.name, sr.completed_at, sr.products_scraped, sr.new_products, sr.price_changes
+        FROM scan_runs sr
+        JOIN stores s ON sr.store_id = s.id
+        ORDER BY sr.completed_at DESC
+        LIMIT 5
+    """)
+    
+    runs = cur.fetchall()
+    if runs:
+        print("\nRECENT SCAN RUNS:")
+        for r in runs:
+            print(f"  {r['name']} @ {r['completed_at']}: {r['products_scraped']} products, +{r['new_products']} new, {r['price_changes']} price changes")
+    
+    print("="*50 + "\n")
+    conn.close()
 
 
 # =============================================================================
@@ -454,55 +428,72 @@ def export_frontend():
 # =============================================================================
 
 def run_full_pipeline(stores=None):
-    """Run complete pipeline for all or specified stores"""
-    stores = stores or ['lidl', 'kaufland', 'billa']
+    """Run complete pipeline"""
+    stores = stores or ['lidl']  # Only Lidl has scraper for now
     
     log.info("="*60)
     log.info("PROMOBG PIPELINE - FULL RUN")
     log.info("="*60)
     
-    # Step 1: Scrape (only if scraper exists)
     for store in stores:
-        try:
-            scrape_store(store)
-        except ImportError:
-            log.warning(f"No scraper for {store}, skipping scrape step")
+        # Scrape
+        raw_file = scrape_store(store)
+        if raw_file:
+            # Sync
+            sync_store(store, raw_file)
     
-    # Step 2: Clean & Import
-    for store in stores:
-        clean_and_import(store)
-    
-    # Step 3: Match
+    # Match
     run_matching()
     
-    # Step 4: Export
+    # Export
     export_frontend()
+    
+    # Report
+    generate_report()
     
     log.info("="*60)
     log.info("PIPELINE COMPLETE")
     log.info("="*60)
 
 
+def run_daily():
+    """Daily run without scraping"""
+    log.info("="*60)
+    log.info("PROMOBG PIPELINE - DAILY RUN (no scrape)")
+    log.info("="*60)
+    
+    run_matching()
+    export_frontend()
+    generate_report()
+
+
 def main():
     parser = argparse.ArgumentParser(description='PromoBG Data Pipeline')
-    parser.add_argument('--full', action='store_true', help='Run full pipeline')
+    parser.add_argument('--full', action='store_true', help='Full pipeline (scrape + sync + match + export)')
+    parser.add_argument('--daily', action='store_true', help='Daily run (match + export only)')
     parser.add_argument('--scrape', type=str, help='Scrape specific store')
-    parser.add_argument('--import', dest='import_store', type=str, help='Import specific store')
+    parser.add_argument('--sync', type=str, help='Sync specific store')
     parser.add_argument('--match', action='store_true', help='Run matching only')
     parser.add_argument('--export', action='store_true', help='Export to frontend only')
+    parser.add_argument('--report', action='store_true', help='Generate status report')
+    parser.add_argument('--limit', type=int, help='Limit products to scrape')
     
     args = parser.parse_args()
     
     if args.full:
         run_full_pipeline()
+    elif args.daily:
+        run_daily()
     elif args.scrape:
-        scrape_store(args.scrape)
-    elif args.import_store:
-        clean_and_import(args.import_store)
+        scrape_store(args.scrape, limit=args.limit)
+    elif args.sync:
+        sync_store(args.sync)
     elif args.match:
         run_matching()
     elif args.export:
         export_frontend()
+    elif args.report:
+        generate_report()
     else:
         parser.print_help()
 
