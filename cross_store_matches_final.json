@@ -1,838 +1,9 @@
 {
   "meta": {
-    "total_matches": 38,
-    "by_category": {
-      "beverages": 1,
-      "canned": 2,
-      "produce": 10,
-      "bakery": 2,
-      "pantry": 2,
-      "electronics": 1,
-      "personal_care": 1,
-      "snacks": 7,
-      "dairy": 4,
-      "meat": 3,
-      "alcohol": 2,
-      "household": 3
-    }
+    "total_matches": 51,
+    "total_savings": 93.45
   },
   "matches": [
-    {
-      "products": [
-        {
-          "id": 464,
-          "store": "Kaufland",
-          "raw_name": "Рrisun Плодова напитка\nразлични видове",
-          "clean_name": "Рrisun Плодова напитка",
-          "brand": "Prisun",
-          "description": "Плодова напитка",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "beverages",
-          "price": 2.19,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1350,
-          "store": "Billa",
-          "raw_name": "Рrisun негазирана напитка 1,5 л",
-          "clean_name": "Рrisun негазирана напитка 1,5 л",
-          "brand": "Prisun",
-          "description": "негазирана напитка 1,5 л",
-          "quantity_value": 1.5,
-          "quantity_unit": "L",
-          "category": "beverages",
-          "price": 1.78,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 1.19,
-          "unit_price_base": "L",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "beverages",
-      "similarity": 0.59,
-      "common_words": 2,
-      "brand": "Prisun",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 14,
-          "store": "Kaufland",
-          "raw_name": "Черни маслини Мамут от свежата витрина",
-          "clean_name": "Черни маслини Мамут",
-          "brand": null,
-          "description": "Черни маслини Мамут",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "canned",
-          "price": 6.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1266,
-          "store": "Billa",
-          "raw_name": "Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
-          "clean_name": "Черни маслини Мамут 101-110*",
-          "brand": null,
-          "description": "Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "canned",
-          "price": 8.0,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 8.0,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "canned",
-      "similarity": 0.713,
-      "common_words": 3,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 296,
-          "store": "Kaufland",
-          "raw_name": "Маслини Каламата 201/260",
-          "clean_name": "Маслини Каламата 201/260",
-          "brand": null,
-          "description": "Маслини Каламата 201/260",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "canned",
-          "price": 8.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1267,
-          "store": "Billa",
-          "raw_name": "Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
-          "clean_name": "Маслини Каламата Блонд 231-260*",
-          "brand": null,
-          "description": "Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "canned",
-          "price": 9.96,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 9.96,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "canned",
-      "similarity": 0.676,
-      "common_words": 3,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 183,
-          "store": "Kaufland",
-          "raw_name": "Червено зеле",
-          "clean_name": "Червено зеле",
-          "brand": null,
-          "description": "Червено зеле",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 1.29,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1101,
-          "store": "Lidl",
-          "raw_name": "Българско червено зеле",
-          "clean_name": "Българско червено зеле",
-          "brand": null,
-          "description": "Българско червено зеле",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 1.27,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "produce",
-      "similarity": 0.686,
-      "common_words": 2,
-      "brand": null,
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 280,
-          "store": "Kaufland",
-          "raw_name": "Булкарто Бланширани картофи",
-          "clean_name": "Булкарто Бланширани картофи",
-          "brand": null,
-          "description": "Булкарто Бланширани картофи",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 6.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 952,
-          "store": "Lidl",
-          "raw_name": "Бланширани сладки картофи",
-          "clean_name": "Бланширани сладки картофи",
-          "brand": "Harvest",
-          "description": "Бланширани сладки картофи",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 3.06,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "produce",
-      "similarity": 0.596,
-      "common_words": 2,
-      "brand": "Harvest",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 90,
-          "store": "Kaufland",
-          "raw_name": "Боровинки Клас: I",
-          "clean_name": "Боровинки Клас: I",
-          "brand": "Боровинки",
-          "description": "Клас: I",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 1.78,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1419,
-          "store": "Billa",
-          "raw_name": "Боровинки 125 г",
-          "clean_name": "Боровинки 125 г",
-          "brand": "Боровинки",
-          "description": "125 г",
-          "quantity_value": 125.0,
-          "quantity_unit": "g",
-          "category": "produce",
-          "price": 1.86,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 14.88,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "produce",
-      "similarity": 1.0,
-      "common_words": 1,
-      "brand": "Боровинки",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 171,
-          "store": "Kaufland",
-          "raw_name": "Гъби печурки",
-          "clean_name": "Гъби печурки",
-          "brand": null,
-          "description": "Гъби печурки",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 1.94,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1200,
-          "store": "Billa",
-          "raw_name": "Гъби печурки 250 г",
-          "clean_name": "Гъби печурки 250 г",
-          "brand": null,
-          "description": "Гъби печурки 250 г",
-          "quantity_value": 250.0,
-          "quantity_unit": "g",
-          "category": "produce",
-          "price": 1.94,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 7.76,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "produce",
-      "similarity": 1.0,
-      "common_words": 2,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 172,
-          "store": "Kaufland",
-          "raw_name": "Портокали",
-          "clean_name": "Портокали",
-          "brand": null,
-          "description": "Портокали",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 1.49,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1156,
-          "store": "Billa",
-          "raw_name": "Портокали За 1 кг",
-          "clean_name": "Портокали",
-          "brand": null,
-          "description": "Портокали За 1 кг",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "produce",
-          "price": 1.55,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 1.55,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "produce",
-      "similarity": 1.0,
-      "common_words": 1,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 181,
-          "store": "Kaufland",
-          "raw_name": "Ананас Клас: I",
-          "clean_name": "Ананас Клас: I",
-          "brand": "Ананас",
-          "description": "Клас: I",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 3.48,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1198,
-          "store": "Billa",
-          "raw_name": "Ананас 1 бр.",
-          "clean_name": "Ананас 1 бр.",
-          "brand": "Ананас",
-          "description": "1 бр.",
-          "quantity_value": 1.0,
-          "quantity_unit": "pcs",
-          "category": "produce",
-          "price": 3.89,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "produce",
-      "similarity": 1.0,
-      "common_words": 1,
-      "brand": "Ананас",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 186,
-          "store": "Kaufland",
-          "raw_name": "Авокадо",
-          "clean_name": "Авокадо",
-          "brand": null,
-          "description": "Авокадо",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 1.29,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1197,
-          "store": "Billa",
-          "raw_name": "Авокадо Хас 1 бр.",
-          "clean_name": "Авокадо Хас 1 бр.",
-          "brand": null,
-          "description": "Авокадо Хас 1 бр.",
-          "quantity_value": 1.0,
-          "quantity_unit": "pcs",
-          "category": "produce",
-          "price": 1.66,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "produce",
-      "similarity": 0.639,
-      "common_words": 1,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 989,
-          "store": "Lidl",
-          "raw_name": "Бланширани картофи",
-          "clean_name": "Бланширани картофи",
-          "brand": "Harvest",
-          "description": "Бланширани картофи",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 2.35,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1202,
-          "store": "Billa",
-          "raw_name": "Пресни картофи За 1 кг",
-          "clean_name": "Пресни картофи",
-          "brand": null,
-          "description": "Пресни картофи За 1 кг",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "produce",
-          "price": 2.52,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 2.52,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "produce",
-      "similarity": 0.51,
-      "common_words": 1,
-      "brand": "Harvest",
-      "stores": [
-        "Billa",
-        "Lidl"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 1100,
-          "store": "Lidl",
-          "raw_name": "Домати",
-          "clean_name": "Домати",
-          "brand": null,
-          "description": "Домати",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 2.99,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1201,
-          "store": "Billa",
-          "raw_name": "Домати розови За 1 кг",
-          "clean_name": "Домати розови",
-          "brand": null,
-          "description": "Домати розови За 1 кг",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "produce",
-          "price": 4.87,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 4.87,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "produce",
-      "similarity": 0.566,
-      "common_words": 1,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Lidl"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 1125,
-          "store": "Lidl",
-          "raw_name": "Ягоди",
-          "clean_name": "Ягоди",
-          "brand": null,
-          "description": "Ягоди",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "produce",
-          "price": 5.59,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1195,
-          "store": "Billa",
-          "raw_name": "Ягоди 250 г",
-          "clean_name": "Ягоди 250 г",
-          "brand": null,
-          "description": "Ягоди 250 г",
-          "quantity_value": 250.0,
-          "quantity_unit": "g",
-          "category": "produce",
-          "price": 3.31,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 13.24,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "produce",
-      "similarity": 1.0,
-      "common_words": 1,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Lidl"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 319,
-          "store": "Kaufland",
-          "raw_name": "Сомун от нашата пекарна",
-          "clean_name": "Сомун",
-          "brand": "Наша",
-          "description": "Сомун",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "bakery",
-          "price": 1.08,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1423,
-          "store": "Billa",
-          "raw_name": "Мини сомун 120 г",
-          "clean_name": "Мини сомун 120 г",
-          "brand": null,
-          "description": "Мини сомун 120 г",
-          "quantity_value": 120.0,
-          "quantity_unit": "g",
-          "category": "bakery",
-          "price": 0.59,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 4.92,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "bakery",
-      "similarity": 0.583,
-      "common_words": 1,
-      "brand": "Наша",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 330,
-          "store": "Kaufland",
-          "raw_name": "Вита Силует Хляб\nразлични видове",
-          "clean_name": "Вита Силует Хляб",
-          "brand": null,
-          "description": "Вита Силует Хляб",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "bakery",
-          "price": 2.39,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1242,
-          "store": "Billa",
-          "raw_name": "Вита Силует Хляб 6 зърна или класик 400 г Произход - България",
-          "clean_name": "Вита Силует Хляб 6 зърна или класик 400 г",
-          "brand": null,
-          "description": "Вита Силует Хляб 6 зърна или класик 400 г",
-          "quantity_value": 400.0,
-          "quantity_unit": "g",
-          "category": "bakery",
-          "price": 2.39,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 5.98,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "bakery",
-      "similarity": 0.796,
-      "common_words": 3,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 518,
-          "store": "Kaufland",
-          "raw_name": "Sеnsоdуnе Паста или Четка за зъби\nразлични видове",
-          "clean_name": "Sеnsоdуnе Паста или Четка за зъби",
-          "brand": "Sensodyne",
-          "description": "Паста или Четка за зъби",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "pantry",
-          "price": 5.79,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1184,
-          "store": "Billa",
-          "raw_name": "Sеnsоdуnе Whitеning Паста за зъби 2 х 75 мл Продукт, маркиран със синя звезда",
-          "clean_name": "Sеnsоdуnе Whitеning Паста за зъби 2 х 75 мл",
-          "brand": "Sensodyne",
-          "description": "Whitеning Паста за зъби 2 х 75 мл Продукт, маркиран със синя звезда",
-          "quantity_value": 75.0,
-          "quantity_unit": "ml",
-          "category": "pantry",
-          "price": 9.99,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 133.2,
-          "unit_price_base": "L",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "pantry",
-      "similarity": 0.657,
-      "common_words": 3,
-      "brand": "Sensodyne",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 607,
-          "store": "Kaufland",
-          "raw_name": "НЕINZ Кетчуп",
-          "clean_name": "НЕINZ Кетчуп",
-          "brand": "Heinz",
-          "description": "Кетчуп",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "pantry",
-          "price": 5.48,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1176,
-          "store": "Billa",
-          "raw_name": "Неinz Кетчуп оригинал 1,35 кг",
-          "clean_name": "Неinz Кетчуп оригинал 1,35 кг",
-          "brand": "Heinz",
-          "description": "Кетчуп оригинал 1,35 кг",
-          "quantity_value": 1.35,
-          "quantity_unit": "kg",
-          "category": "pantry",
-          "price": 8.08,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 5.99,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "pantry",
-      "similarity": 0.697,
-      "common_words": 2,
-      "brand": "Heinz",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
     {
       "products": [
         {
@@ -872,9 +43,8 @@
           "validation_errors": []
         }
       ],
-      "category": "electronics",
       "similarity": 0.604,
-      "common_words": 3,
+      "category": "electronics",
       "brand": "Parkside",
       "stores": [
         "Kaufland",
@@ -884,814 +54,45 @@
     {
       "products": [
         {
-          "id": 487,
+          "id": 402,
           "store": "Kaufland",
-          "raw_name": "NIVЕА Шампоан, Балсам или Душ гел\nразлични видове",
-          "clean_name": "NIVЕА Шампоан, Балсам или Душ гел",
-          "brand": "Nivea",
-          "description": "Шампоан, Балсам или Душ гел",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "personal_care",
-          "price": 5.48,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1387,
-          "store": "Billa",
-          "raw_name": "Nivеа Душ гел 500 мл Различни видове",
-          "clean_name": "Nivеа Душ гел 500 мл",
-          "brand": "Nivea",
-          "description": "Душ гел 500 мл",
-          "quantity_value": 500.0,
-          "quantity_unit": "ml",
-          "category": "personal_care",
-          "price": 7.999222,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 16.0,
-          "unit_price_base": "L",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "personal_care",
-      "similarity": 0.617,
-      "common_words": 3,
-      "brand": "Nivea",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 53,
-          "store": "Kaufland",
-          "raw_name": "Sniсkеrs Шоколадов десерт\nSuреr + 1",
-          "clean_name": "Sniсkеrs Шоколадов десерт Suреr + 1",
-          "brand": "Snickers",
-          "description": "Шоколадов десерт Suреr + 1",
+          "raw_name": "Fеrrеrо Rосhеr Шоколадови бонбони",
+          "clean_name": "Fеrrеrо Rосhеr Шоколадови бонбони",
+          "brand": "Ferrero",
+          "description": "Rосhеr Шоколадови бонбони",
           "quantity_value": null,
           "quantity_unit": null,
           "category": "snacks",
-          "price": 1.88,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1318,
-          "store": "Billa",
-          "raw_name": "Sniсkеrs, Маrs или Тwiх Шоколадов десерт 50 - 51 г",
-          "clean_name": "Sniсkеrs, Маrs или Тwiх Шоколадов десерт 50 - 51 г",
-          "brand": "Snickers",
-          "description": ", Маrs или Тwiх Шоколадов десерт 50 - 51 г",
-          "quantity_value": 51.0,
-          "quantity_unit": "g",
-          "category": "snacks",
-          "price": 1.19,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 23.33,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "snacks",
-      "similarity": 0.591,
-      "common_words": 3,
-      "brand": "Snickers",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 119,
-          "store": "Kaufland",
-          "raw_name": "Сhiо Чипс\nразлични вкусове",
-          "clean_name": "Сhiо Чипс",
-          "brand": "Chio",
-          "description": "Чипс",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "snacks",
-          "price": 2.48,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1324,
-          "store": "Billa",
-          "raw_name": "Сhiо Чипс Intеnsе 120 г",
-          "clean_name": "Сhiо Чипс Intеnsе 120 г",
-          "brand": "Chio",
-          "description": "Чипс Intеnsе 120 г",
-          "quantity_value": 120.0,
-          "quantity_unit": "g",
-          "category": "snacks",
-          "price": 2.58,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 21.5,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "snacks",
-      "similarity": 0.679,
-      "common_words": 2,
-      "brand": "Chio",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 372,
-          "store": "Kaufland",
-          "raw_name": "Кристал Локум",
-          "clean_name": "Кристал Локум",
-          "brand": "Кристал",
-          "description": "Локум",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "snacks",
-          "price": 0.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1288,
-          "store": "Billa",
-          "raw_name": "Кристал Локум цветен 140 г",
-          "clean_name": "Кристал Локум цветен 140 г",
-          "brand": "Кристал",
-          "description": "Локум цветен 140 г",
-          "quantity_value": 140.0,
-          "quantity_unit": "g",
-          "category": "snacks",
-          "price": 1.15,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 8.21,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "snacks",
-      "similarity": 0.727,
-      "common_words": 2,
-      "brand": "Кристал",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 375,
-          "store": "Kaufland",
-          "raw_name": "Хели Вафла Ретро\nизбрани видове",
-          "clean_name": "Хели Вафла Ретро",
-          "brand": "Хели",
-          "description": "Вафла Ретро",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "snacks",
-          "price": 0.55,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1287,
-          "store": "Billa",
-          "raw_name": "Хели Тунквана вафла с халва ретро 65 г Произход - България",
-          "clean_name": "Хели Тунквана вафла с халва ретро 65 г",
-          "brand": "Хели",
-          "description": "Тунквана вафла с халва ретро 65 г",
-          "quantity_value": 65.0,
-          "quantity_unit": "g",
-          "category": "snacks",
-          "price": 0.59,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 9.08,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "snacks",
-      "similarity": 0.64,
-      "common_words": 3,
-      "brand": "Хели",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 380,
-          "store": "Kaufland",
-          "raw_name": "RАFFАЕLLО Бонбони сърце",
-          "clean_name": "RАFFАЕLLО Бонбони сърце",
-          "brand": "Raffaello",
-          "description": "Бонбони сърце",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "snacks",
-          "price": 9.68,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1316,
-          "store": "Billa",
-          "raw_name": "Rаffаеllо Бонбони 150 г",
-          "clean_name": "Rаffаеllо Бонбони 150 г",
-          "brand": "Raffaello",
-          "description": "Бонбони 150 г",
-          "quantity_value": 150.0,
-          "quantity_unit": "g",
-          "category": "snacks",
-          "price": 6.59,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 43.93,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "snacks",
-      "similarity": 0.758,
-      "common_words": 2,
-      "brand": "Raffaello",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 412,
-          "store": "Kaufland",
-          "raw_name": "Lindt Шоколад Lеs Grаndеs",
-          "clean_name": "Lindt Шоколад Lеs Grаndеs",
-          "brand": "Lindt",
-          "description": "Шоколад Lеs Grаndеs",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "snacks",
-          "price": 9.49,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1313,
-          "store": "Billa",
-          "raw_name": "Lindt Шоколад Ехсеllеnсе различни видове 100 г",
-          "clean_name": "Lindt Шоколад Ехсеllеnсе различни видове 100 г",
-          "brand": "Lindt",
-          "description": "Шоколад Ехсеllеnсе различни видове 100 г",
-          "quantity_value": 100.0,
-          "quantity_unit": "g",
-          "category": "snacks",
-          "price": 5.984748,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 59.85,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "snacks",
-      "similarity": 0.567,
-      "common_words": 2,
-      "brand": "Lindt",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 868,
-          "store": "Kaufland",
-          "raw_name": "Мilkа Бисквити\nразлични видове",
-          "clean_name": "Мilkа Бисквити",
-          "brand": "Milka",
-          "description": "Бисквити",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "snacks",
-          "price": 2.78,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1181,
-          "store": "Billa",
-          "raw_name": "Мilkа Бисквити Милка ХL 184 г",
-          "clean_name": "Мilkа Бисквити Милка ХL 184 г",
-          "brand": "Milka",
-          "description": "Бисквити Милка ХL 184 г",
-          "quantity_value": 184.0,
-          "quantity_unit": "g",
-          "category": "snacks",
-          "price": 3.7942519999999997,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 20.62,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "snacks",
-      "similarity": 0.628,
-      "common_words": 2,
-      "brand": "Milka",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 244,
-          "store": "Kaufland",
-          "raw_name": "DЕUТSСНЕ МАRКЕNВUТТЕR Краве масло",
-          "clean_name": "DЕUТSСНЕ МАRКЕNВUТТЕR Краве масло",
-          "brand": "Deutsche Markenbutter",
-          "description": "Краве масло",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "dairy",
-          "price": 3.68,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1279,
-          "store": "Billa",
-          "raw_name": "Dеutsсhе Маrkеnbuttеr краве масло 250 г",
-          "clean_name": "Dеutsсhе Маrkеnbuttеr краве масло 250 г",
-          "brand": "Deutsche Markenbutter",
-          "description": "краве масло 250 г",
-          "quantity_value": 250.0,
-          "quantity_unit": "g",
-          "category": "dairy",
-          "price": 4.99,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 19.96,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "dairy",
-      "similarity": 0.576,
-      "common_words": 2,
-      "brand": "Deutsche Markenbutter",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 246,
-          "store": "Kaufland",
-          "raw_name": "Jоgоbеllа Плодов йогурт\nразлични вкусове",
-          "clean_name": "Jоgоbеllа Плодов йогурт",
-          "brand": "Jogobella",
-          "description": "Плодов йогурт",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "dairy",
-          "price": 2.64,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1174,
-          "store": "Billa",
-          "raw_name": "Jоgоbеllа Йогурт 400 г",
-          "clean_name": "Jоgоbеllа Йогурт 400 г",
-          "brand": "Jogobella",
-          "description": "Йогурт 400 г",
-          "quantity_value": 400.0,
-          "quantity_unit": "g",
-          "category": "dairy",
-          "price": 2.522982,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 6.31,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "dairy",
-      "similarity": 0.744,
-      "common_words": 2,
-      "brand": "Jogobella",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 258,
-          "store": "Kaufland",
-          "raw_name": "ПАСТИР Сирене\nот козе или овче мляко",
-          "clean_name": "ПАСТИР Сирене от козе или овче мляко",
-          "brand": "Пастир",
-          "description": "Сирене от козе или овче мляко",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "dairy",
-          "price": 9.49,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1275,
-          "store": "Billa",
-          "raw_name": "Пастир Кашкавал от козе мляко 200 г Продукт, маркиран със синя звезда",
-          "clean_name": "Пастир Кашкавал от козе мляко 200 г",
-          "brand": "Пастир",
-          "description": "Кашкавал от козе мляко 200 г Продукт, маркиран със синя звезда",
-          "quantity_value": 200.0,
-          "quantity_unit": "g",
-          "category": "dairy",
-          "price": 7.22,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 36.1,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "dairy",
-      "similarity": 0.577,
-      "common_words": 3,
-      "brand": "Пастир",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 266,
-          "store": "Kaufland",
-          "raw_name": "Саяна Кашкавал от краве мляко\nот свежата витрина",
-          "clean_name": "Саяна Кашкавал от краве мляко",
-          "brand": "Саяна",
-          "description": "Кашкавал от краве мляко",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "dairy",
-          "price": 17.99,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1269,
-          "store": "Billa",
-          "raw_name": "Саяна Кашкавал от краве мляко От деликатесната витрина За 1 кг",
-          "clean_name": "Саяна Кашкавал от краве мляко",
-          "brand": "Саяна",
-          "description": "Кашкавал от краве мляко От деликатесната витрина За 1 кг",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "dairy",
-          "price": 17.97,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 17.97,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "dairy",
-      "similarity": 1.0,
-      "common_words": 4,
-      "brand": "Саяна",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 209,
-          "store": "Kaufland",
-          "raw_name": "Цял заек охладен",
-          "clean_name": "Цял заек охладен",
-          "brand": null,
-          "description": "Цял заек охладен",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "meat",
-          "price": 14.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1227,
-          "store": "Billa",
-          "raw_name": "Охладен заек За 1 кг Продукт, маркиран със синя звезда",
-          "clean_name": "Охладен заек",
-          "brand": null,
-          "description": "Охладен заек За 1 кг Продукт, маркиран със синя звезда",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "meat",
-          "price": 14.981428,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 14.98,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "meat",
-      "similarity": 0.583,
-      "common_words": 2,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 214,
-          "store": "Kaufland",
-          "raw_name": "Мегдана Филе Елена\nот свежата витрина",
-          "clean_name": "Мегдана Филе Елена",
-          "brand": null,
-          "description": "Мегдана Филе Елена",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "meat",
-          "price": 22.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1261,
-          "store": "Billa",
-          "raw_name": "Перелик Филе Елена От деликатесната витрина За 1 кг Продукт, маркиран със синя звезда Х",
-          "clean_name": "Перелик Филе Елена",
-          "brand": null,
-          "description": "Перелик Филе Елена От деликатесната витрина За 1 кг Продукт, маркиран със синя звезда Х",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "meat",
-          "price": 29.32,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 29.32,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "meat",
-      "similarity": 0.583,
-      "common_words": 2,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 234,
-          "store": "Kaufland",
-          "raw_name": "Свински врат без кост около 1,5 кг",
-          "clean_name": "Свински врат без кост около 1,5 кг",
-          "brand": "Свински",
-          "description": "врат без кост около 1,5 кг",
-          "quantity_value": 1.5,
-          "quantity_unit": "kg",
-          "category": "meat",
-          "price": 7.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 5.32,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1155,
-          "store": "Billa",
-          "raw_name": "Свински врат без кост За 1 кг До 5 кг на клиент на ден*",
-          "clean_name": "Свински врат без кост",
-          "brand": "Свински",
-          "description": "врат без кост За 1 кг До 5 кг на клиент на ден*",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "meat",
-          "price": 6.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 6.98,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "meat",
-      "similarity": 1.0,
-      "common_words": 3,
-      "brand": "Свински",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 433,
-          "store": "Kaufland",
-          "raw_name": "Аbsоlut Водка\nразлични видове",
-          "clean_name": "Аbsоlut Водка",
-          "brand": "Absolut",
-          "description": "Водка",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "alcohol",
-          "price": 16.49,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1369,
-          "store": "Billa",
-          "raw_name": "Аbsоlut Водка 0,7 л",
-          "clean_name": "Аbsоlut Водка 0,7 л",
-          "brand": "Absolut",
-          "description": "Водка 0,7 л",
-          "quantity_value": 0.7,
-          "quantity_unit": "L",
-          "category": "alcohol",
-          "price": 16.49,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 23.56,
-          "unit_price_base": "L",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "alcohol",
-      "similarity": 1.0,
-      "common_words": 2,
-      "brand": "Absolut",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 436,
-          "store": "Kaufland",
-          "raw_name": "Пещерска Гроздова ракия",
-          "clean_name": "Пещерска Гроздова ракия",
-          "brand": "Пещерска",
-          "description": "Гроздова ракия",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "alcohol",
-          "price": 14.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1370,
-          "store": "Billa",
-          "raw_name": "Пещерска Ракия гроздова 0,7 л Произход - България",
-          "clean_name": "Пещерска Ракия гроздова 0,7 л",
-          "brand": "Пещерска",
-          "description": "Ракия гроздова 0,7 л",
-          "quantity_value": 0.7,
-          "quantity_unit": "L",
-          "category": "alcohol",
           "price": 10.99,
           "old_price": null,
           "discount_pct": null,
-          "unit_price": 15.7,
-          "unit_price_base": "L",
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1314,
+          "store": "Billa",
+          "raw_name": "Fеrrеrо Rосhеr Бонбониера Diаmаnd 300 г",
+          "clean_name": "Fеrrеrо Rосhеr Бонбониера Diаmаnd 300 г",
+          "brand": "Ferrero",
+          "description": "Rосhеr Бонбониера Diаmаnd 300 г",
+          "quantity_value": 300.0,
+          "quantity_unit": "g",
+          "category": "snacks",
+          "price": 18.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 63.3,
+          "unit_price_base": "kg",
           "image_url": null,
           "validation_errors": []
         }
       ],
-      "category": "alcohol",
-      "similarity": 0.87,
-      "common_words": 3,
-      "brand": "Пещерска",
+      "similarity": 0.5,
+      "category": "snacks",
+      "brand": "Ferrero",
       "stores": [
         "Billa",
         "Kaufland"
@@ -1736,10 +137,573 @@
           "validation_errors": []
         }
       ],
-      "category": "household",
       "similarity": 0.808,
-      "common_words": 3,
+      "category": "household",
       "brand": "Finish",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 214,
+          "store": "Kaufland",
+          "raw_name": "Мегдана Филе Елена\nот свежата витрина",
+          "clean_name": "Мегдана Филе Елена",
+          "brand": null,
+          "description": "Мегдана Филе Елена",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "meat",
+          "price": 22.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1261,
+          "store": "Billa",
+          "raw_name": "Перелик Филе Елена От деликатесната витрина За 1 кг Продукт, маркиран със синя звезда Х",
+          "clean_name": "Перелик Филе Елена",
+          "brand": null,
+          "description": "Перелик Филе Елена От деликатесната витрина За 1 кг Продукт, маркиран със синя звезда Х",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "meat",
+          "price": 29.32,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 29.32,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.583,
+      "category": "meat",
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 210,
+          "store": "Kaufland",
+          "raw_name": "БИС'98 Свински бут\nот свежата витрина",
+          "clean_name": "БИС'98 Свински бут",
+          "brand": null,
+          "description": "БИС'98 Свински бут",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "meat",
+          "price": 9.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1420,
+          "store": "Billa",
+          "raw_name": "Свински бут без кост За 1 кг",
+          "clean_name": "Свински бут без кост",
+          "brand": "Свински",
+          "description": "бут без кост За 1 кг",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "meat",
+          "price": 5.79,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 5.79,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.524,
+      "category": "meat",
+      "brand": "Свински",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 518,
+          "store": "Kaufland",
+          "raw_name": "Sеnsоdуnе Паста или Четка за зъби\nразлични видове",
+          "clean_name": "Sеnsоdуnе Паста или Четка за зъби",
+          "brand": "Sensodyne",
+          "description": "Паста или Четка за зъби",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "pantry",
+          "price": 5.79,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1184,
+          "store": "Billa",
+          "raw_name": "Sеnsоdуnе Whitеning Паста за зъби 2 х 75 мл Продукт, маркиран със синя звезда",
+          "clean_name": "Sеnsоdуnе Whitеning Паста за зъби 2 х 75 мл",
+          "brand": "Sensodyne",
+          "description": "Whitеning Паста за зъби 2 х 75 мл Продукт, маркиран със синя звезда",
+          "quantity_value": 75.0,
+          "quantity_unit": "ml",
+          "category": "pantry",
+          "price": 9.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 133.2,
+          "unit_price_base": "L",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.657,
+      "category": "pantry",
+      "brand": "Sensodyne",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 116,
+          "store": "Kaufland",
+          "raw_name": "Носhlаnd Топено сирене\nразлични вкусове",
+          "clean_name": "Носhlаnd Топено сирене",
+          "brand": "Hochland",
+          "description": "Топено сирене",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "dairy",
+          "price": 3.48,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1171,
+          "store": "Billa",
+          "raw_name": "Носhlаnd крема сирене 2 х 200 г",
+          "clean_name": "Носhlаnd крема сирене 2 х 200 г",
+          "brand": "Hochland",
+          "description": "крема сирене 2 х 200 г",
+          "quantity_value": 200.0,
+          "quantity_unit": "g",
+          "category": "dairy",
+          "price": 7.49,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 37.45,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.645,
+      "category": "dairy",
+      "brand": "Hochland",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 436,
+          "store": "Kaufland",
+          "raw_name": "Пещерска Гроздова ракия",
+          "clean_name": "Пещерска Гроздова ракия",
+          "brand": "Пещерска",
+          "description": "Гроздова ракия",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "alcohol",
+          "price": 14.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1370,
+          "store": "Billa",
+          "raw_name": "Пещерска Ракия гроздова 0,7 л Произход - България",
+          "clean_name": "Пещерска Ракия гроздова 0,7 л",
+          "brand": "Пещерска",
+          "description": "Ракия гроздова 0,7 л",
+          "quantity_value": 0.7,
+          "quantity_unit": "L",
+          "category": "alcohol",
+          "price": 10.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 15.7,
+          "unit_price_base": "L",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.87,
+      "category": "alcohol",
+      "brand": "Пещерска",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 280,
+          "store": "Kaufland",
+          "raw_name": "Булкарто Бланширани картофи",
+          "clean_name": "Булкарто Бланширани картофи",
+          "brand": null,
+          "description": "Булкарто Бланширани картофи",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 6.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 952,
+          "store": "Lidl",
+          "raw_name": "Бланширани сладки картофи",
+          "clean_name": "Бланширани сладки картофи",
+          "brand": "Harvest",
+          "description": "Бланширани сладки картофи",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 3.06,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.596,
+      "category": "produce",
+      "brand": "Harvest",
+      "stores": [
+        "Kaufland",
+        "Lidl"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 380,
+          "store": "Kaufland",
+          "raw_name": "RАFFАЕLLО Бонбони сърце",
+          "clean_name": "RАFFАЕLLО Бонбони сърце",
+          "brand": "Raffaello",
+          "description": "Бонбони сърце",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "snacks",
+          "price": 9.68,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1316,
+          "store": "Billa",
+          "raw_name": "Rаffаеllо Бонбони 150 г",
+          "clean_name": "Rаffаеllо Бонбони 150 г",
+          "brand": "Raffaello",
+          "description": "Бонбони 150 г",
+          "quantity_value": 150.0,
+          "quantity_unit": "g",
+          "category": "snacks",
+          "price": 6.59,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 43.93,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.758,
+      "category": "snacks",
+      "brand": "Raffaello",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 607,
+          "store": "Kaufland",
+          "raw_name": "НЕINZ Кетчуп",
+          "clean_name": "НЕINZ Кетчуп",
+          "brand": "Heinz",
+          "description": "Кетчуп",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "pantry",
+          "price": 5.48,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1176,
+          "store": "Billa",
+          "raw_name": "Неinz Кетчуп оригинал 1,35 кг",
+          "clean_name": "Неinz Кетчуп оригинал 1,35 кг",
+          "brand": "Heinz",
+          "description": "Кетчуп оригинал 1,35 кг",
+          "quantity_value": 1.35,
+          "quantity_unit": "kg",
+          "category": "pantry",
+          "price": 8.08,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 5.99,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.697,
+      "category": "pantry",
+      "brand": "Heinz",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 487,
+          "store": "Kaufland",
+          "raw_name": "NIVЕА Шампоан, Балсам или Душ гел\nразлични видове",
+          "clean_name": "NIVЕА Шампоан, Балсам или Душ гел",
+          "brand": "Nivea",
+          "description": "Шампоан, Балсам или Душ гел",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "personal_care",
+          "price": 5.48,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1387,
+          "store": "Billa",
+          "raw_name": "Nivеа Душ гел 500 мл Различни видове",
+          "clean_name": "Nivеа Душ гел 500 мл",
+          "brand": "Nivea",
+          "description": "Душ гел 500 мл",
+          "quantity_value": 500.0,
+          "quantity_unit": "ml",
+          "category": "personal_care",
+          "price": 7.999222,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 16.0,
+          "unit_price_base": "L",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.617,
+      "category": "personal_care",
+      "brand": "Nivea",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 889,
+          "store": "Kaufland",
+          "raw_name": "Орхидея Фаленопсис Ø12 см",
+          "clean_name": "Орхидея Фаленопсис Ø12 см",
+          "brand": "Орхидея",
+          "description": "Фаленопсис Ø12 см",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "garden",
+          "price": 15.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1216,
+          "store": "Billa",
+          "raw_name": "Орхидея Фаленопсис в керамика саксия Ф6 1 бр.** Продукт, маркиран със синя звезда",
+          "clean_name": "Орхидея Фаленопсис в керамика саксия Ф6 1 бр.**",
+          "brand": "Орхидея",
+          "description": "Фаленопсис в керамика саксия Ф6 1 бр.** Продукт, маркиран със синя звезда",
+          "quantity_value": 1.0,
+          "quantity_unit": "pcs",
+          "category": "garden",
+          "price": 13.671042,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.527,
+      "category": "garden",
+      "brand": "Орхидея",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 1125,
+          "store": "Lidl",
+          "raw_name": "Ягоди",
+          "clean_name": "Ягоди",
+          "brand": null,
+          "description": "Ягоди",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 5.59,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1195,
+          "store": "Billa",
+          "raw_name": "Ягоди 250 г",
+          "clean_name": "Ягоди 250 г",
+          "brand": null,
+          "description": "Ягоди 250 г",
+          "quantity_value": 250.0,
+          "quantity_unit": "g",
+          "category": "produce",
+          "price": 3.31,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 13.24,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 1.0,
+      "category": "produce",
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Lidl"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 258,
+          "store": "Kaufland",
+          "raw_name": "ПАСТИР Сирене\nот козе или овче мляко",
+          "clean_name": "ПАСТИР Сирене от козе или овче мляко",
+          "brand": "Пастир",
+          "description": "Сирене от козе или овче мляко",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "dairy",
+          "price": 9.49,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1275,
+          "store": "Billa",
+          "raw_name": "Пастир Кашкавал от козе мляко 200 г Продукт, маркиран със синя звезда",
+          "clean_name": "Пастир Кашкавал от козе мляко 200 г",
+          "brand": "Пастир",
+          "description": "Кашкавал от козе мляко 200 г Продукт, маркиран със синя звезда",
+          "quantity_value": 200.0,
+          "quantity_unit": "g",
+          "category": "dairy",
+          "price": 7.22,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 36.1,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.577,
+      "category": "dairy",
+      "brand": "Пастир",
       "stores": [
         "Billa",
         "Kaufland"
@@ -1784,9 +748,8 @@
           "validation_errors": []
         }
       ],
-      "category": "household",
       "similarity": 0.553,
-      "common_words": 5,
+      "category": "household",
       "brand": "Ariel",
       "stores": [
         "Billa",
@@ -1832,10 +795,1607 @@
           "validation_errors": []
         }
       ],
+      "similarity": 0.552,
       "category": "household",
-      "similarity": 0.813,
-      "common_words": 4,
       "brand": "Изтривалка",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 1100,
+          "store": "Lidl",
+          "raw_name": "Домати",
+          "clean_name": "Домати",
+          "brand": null,
+          "description": "Домати",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 2.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1201,
+          "store": "Billa",
+          "raw_name": "Домати розови За 1 кг",
+          "clean_name": "Домати розови",
+          "brand": null,
+          "description": "Домати розови За 1 кг",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "produce",
+          "price": 4.87,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 4.87,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.566,
+      "category": "produce",
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Lidl"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 244,
+          "store": "Kaufland",
+          "raw_name": "DЕUТSСНЕ МАRКЕNВUТТЕR Краве масло",
+          "clean_name": "DЕUТSСНЕ МАRКЕNВUТТЕR Краве масло",
+          "brand": "Deutsche Markenbutter",
+          "description": "Краве масло",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "dairy",
+          "price": 3.68,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1279,
+          "store": "Billa",
+          "raw_name": "Dеutsсhе Маrkеnbuttеr краве масло 250 г",
+          "clean_name": "Dеutsсhе Маrkеnbuttеr краве масло 250 г",
+          "brand": "Deutsche Markenbutter",
+          "description": "краве масло 250 г",
+          "quantity_value": 250.0,
+          "quantity_unit": "g",
+          "category": "dairy",
+          "price": 4.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 19.96,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.576,
+      "category": "dairy",
+      "brand": "Deutsche Markenbutter",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 186,
+          "store": "Kaufland",
+          "raw_name": "Авокадо",
+          "clean_name": "Авокадо",
+          "brand": null,
+          "description": "Авокадо",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 1.29,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 927,
+          "store": "Lidl",
+          "raw_name": "Кокос или авокадо",
+          "clean_name": "Кокос или авокадо",
+          "brand": "Freshona",
+          "description": "Кокос или авокадо",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 2.55,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.6,
+      "category": "produce",
+      "brand": "Freshona",
+      "stores": [
+        "Kaufland",
+        "Lidl"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 248,
+          "store": "Kaufland",
+          "raw_name": "Верея Прясно мляко",
+          "clean_name": "Верея Прясно мляко",
+          "brand": "Верея",
+          "description": "Прясно мляко",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "dairy",
+          "price": 2.68,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1281,
+          "store": "Billa",
+          "raw_name": "Верея Чудно Кисело мляко 5% 400 г",
+          "clean_name": "Верея Чудно Кисело мляко 5% 400 г",
+          "brand": "Верея",
+          "description": "Чудно Кисело мляко 5% 400 г",
+          "quantity_value": 400.0,
+          "quantity_unit": "g",
+          "category": "dairy",
+          "price": 1.49,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 3.73,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.533,
+      "category": "dairy",
+      "brand": "Верея",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 414,
+          "store": "Kaufland",
+          "raw_name": "Своге Шоколад\nразлични видове",
+          "clean_name": "Своге Шоколад",
+          "brand": "Своге",
+          "description": "Шоколад",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "snacks",
+          "price": 1.88,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1319,
+          "store": "Billa",
+          "raw_name": "Млечен шоколад 160 г",
+          "clean_name": "Млечен шоколад 160 г",
+          "brand": null,
+          "description": "Млечен шоколад 160 г",
+          "quantity_value": 160.0,
+          "quantity_unit": "g",
+          "category": "snacks",
+          "price": 2.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 18.69,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.5,
+      "category": "snacks",
+      "brand": "Своге",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 14,
+          "store": "Kaufland",
+          "raw_name": "Черни маслини Мамут от свежата витрина",
+          "clean_name": "Черни маслини Мамут",
+          "brand": null,
+          "description": "Черни маслини Мамут",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "canned",
+          "price": 6.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1266,
+          "store": "Billa",
+          "raw_name": "Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
+          "clean_name": "Черни маслини Мамут 101-110*",
+          "brand": null,
+          "description": "Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "canned",
+          "price": 8.0,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 8.0,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.713,
+      "category": "canned",
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 867,
+          "store": "Kaufland",
+          "raw_name": "Мilkа Бисквити\nСhосоminis",
+          "clean_name": "Мilkа Бисквити Сhосоminis",
+          "brand": "Milka",
+          "description": "Бисквити Сhосоminis",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "snacks",
+          "price": 2.78,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1181,
+          "store": "Billa",
+          "raw_name": "Мilkа Бисквити Милка ХL 184 г",
+          "clean_name": "Мilkа Бисквити Милка ХL 184 г",
+          "brand": "Milka",
+          "description": "Бисквити Милка ХL 184 г",
+          "quantity_value": 184.0,
+          "quantity_unit": "g",
+          "category": "snacks",
+          "price": 3.7942519999999997,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 20.62,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.512,
+      "category": "snacks",
+      "brand": "Milka",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 234,
+          "store": "Kaufland",
+          "raw_name": "Свински врат без кост около 1,5 кг",
+          "clean_name": "Свински врат без кост около 1,5 кг",
+          "brand": "Свински",
+          "description": "врат без кост около 1,5 кг",
+          "quantity_value": 1.5,
+          "quantity_unit": "kg",
+          "category": "meat",
+          "price": 7.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 5.32,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1155,
+          "store": "Billa",
+          "raw_name": "Свински врат без кост За 1 кг До 5 кг на клиент на ден*",
+          "clean_name": "Свински врат без кост",
+          "brand": "Свински",
+          "description": "врат без кост За 1 кг До 5 кг на клиент на ден*",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "meat",
+          "price": 6.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 6.98,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 1.0,
+      "category": "meat",
+      "brand": "Свински",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 264,
+          "store": "Kaufland",
+          "raw_name": "ДИМИТЪР МАДЖАРОВ Сирене от козе мляко\nот свежата витрина",
+          "clean_name": "ДИМИТЪР МАДЖАРОВ Сирене от козе мляко",
+          "brand": null,
+          "description": "ДИМИТЪР МАДЖАРОВ Сирене от козе мляко",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "dairy",
+          "price": 20.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1272,
+          "store": "Billa",
+          "raw_name": "Димитър Маджаров Овче сирене ЗНП 700 г Продукт, маркиран със синя звезда Защитено наименование за пр",
+          "clean_name": "Димитър Маджаров Овче сирене ЗНП 700 г",
+          "brand": "Димитър",
+          "description": "Маджаров Овче сирене ЗНП 700 г Продукт, маркиран със синя звезда Защитено наименование за пр",
+          "quantity_value": 700.0,
+          "quantity_unit": "g",
+          "category": "dairy",
+          "price": 19.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 28.56,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.593,
+      "category": "dairy",
+      "brand": "Димитър",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 786,
+          "store": "Kaufland",
+          "raw_name": "Моп тип Пеперуда",
+          "clean_name": "Моп тип Пеперуда",
+          "brand": null,
+          "description": "Моп тип Пеперуда",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "bathroom",
+          "price": 5.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1404,
+          "store": "Billa",
+          "raw_name": "Сlеvеr Моп тип пеперуда 1 бр.",
+          "clean_name": "Сlеvеr Моп тип пеперуда 1 бр.",
+          "brand": "Clever",
+          "description": "Моп тип пеперуда 1 бр.",
+          "quantity_value": 1.0,
+          "quantity_unit": "pcs",
+          "category": "bathroom",
+          "price": 6.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.785,
+      "category": "bathroom",
+      "brand": "Clever",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 296,
+          "store": "Kaufland",
+          "raw_name": "Маслини Каламата 201/260",
+          "clean_name": "Маслини Каламата 201/260",
+          "brand": null,
+          "description": "Маслини Каламата 201/260",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "canned",
+          "price": 8.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1267,
+          "store": "Billa",
+          "raw_name": "Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
+          "clean_name": "Маслини Каламата Блонд 231-260*",
+          "brand": null,
+          "description": "Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "canned",
+          "price": 9.96,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 9.96,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.676,
+      "category": "canned",
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 53,
+          "store": "Kaufland",
+          "raw_name": "Sniсkеrs Шоколадов десерт\nSuреr + 1",
+          "clean_name": "Sniсkеrs Шоколадов десерт Suреr + 1",
+          "brand": "Snickers",
+          "description": "Шоколадов десерт Suреr + 1",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "snacks",
+          "price": 1.88,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1318,
+          "store": "Billa",
+          "raw_name": "Sniсkеrs, Маrs или Тwiх Шоколадов десерт 50 - 51 г",
+          "clean_name": "Sniсkеrs, Маrs или Тwiх Шоколадов десерт 50 - 51 г",
+          "brand": "Snickers",
+          "description": ", Маrs или Тwiх Шоколадов десерт 50 - 51 г",
+          "quantity_value": 51.0,
+          "quantity_unit": "g",
+          "category": "snacks",
+          "price": 1.19,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 23.33,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.591,
+      "category": "snacks",
+      "brand": "Snickers",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 219,
+          "store": "Kaufland",
+          "raw_name": "Мегдана Наденица\nот свежата витрина",
+          "clean_name": "Мегдана Наденица",
+          "brand": null,
+          "description": "Мегдана Наденица",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "meat",
+          "price": 5.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1225,
+          "store": "Billa",
+          "raw_name": "Баварска наденица 400 г Продукт, маркиран със синя звезда",
+          "clean_name": "Баварска наденица 400 г",
+          "brand": null,
+          "description": "Баварска наденица 400 г Продукт, маркиран със синя звезда",
+          "quantity_value": 400.0,
+          "quantity_unit": "g",
+          "category": "meat",
+          "price": 6.49,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 16.23,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.5,
+      "category": "meat",
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 319,
+          "store": "Kaufland",
+          "raw_name": "Сомун от нашата пекарна",
+          "clean_name": "Сомун",
+          "brand": "Наша",
+          "description": "Сомун",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "bakery",
+          "price": 1.08,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1423,
+          "store": "Billa",
+          "raw_name": "Мини сомун 120 г",
+          "clean_name": "Мини сомун 120 г",
+          "brand": null,
+          "description": "Мини сомун 120 г",
+          "quantity_value": 120.0,
+          "quantity_unit": "g",
+          "category": "bakery",
+          "price": 0.59,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 4.92,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.583,
+      "category": "bakery",
+      "brand": "Наша",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 181,
+          "store": "Kaufland",
+          "raw_name": "Ананас Клас: I",
+          "clean_name": "Ананас Клас: I",
+          "brand": "Ананас",
+          "description": "Клас: I",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 3.48,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1198,
+          "store": "Billa",
+          "raw_name": "Ананас 1 бр.",
+          "clean_name": "Ананас 1 бр.",
+          "brand": "Ананас",
+          "description": "1 бр.",
+          "quantity_value": 1.0,
+          "quantity_unit": "pcs",
+          "category": "produce",
+          "price": 3.89,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 1.0,
+      "category": "produce",
+      "brand": "Ананас",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 464,
+          "store": "Kaufland",
+          "raw_name": "Рrisun Плодова напитка\nразлични видове",
+          "clean_name": "Рrisun Плодова напитка",
+          "brand": "Prisun",
+          "description": "Плодова напитка",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "beverages",
+          "price": 2.19,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1350,
+          "store": "Billa",
+          "raw_name": "Рrisun негазирана напитка 1,5 л",
+          "clean_name": "Рrisun негазирана напитка 1,5 л",
+          "brand": "Prisun",
+          "description": "негазирана напитка 1,5 л",
+          "quantity_value": 1.5,
+          "quantity_unit": "L",
+          "category": "beverages",
+          "price": 1.78,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 1.19,
+          "unit_price_base": "L",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.59,
+      "category": "beverages",
+      "brand": "Prisun",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 989,
+          "store": "Lidl",
+          "raw_name": "Бланширани картофи",
+          "clean_name": "Бланширани картофи",
+          "brand": "Harvest",
+          "description": "Бланширани картофи",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 2.35,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1202,
+          "store": "Billa",
+          "raw_name": "Пресни картофи За 1 кг",
+          "clean_name": "Пресни картофи",
+          "brand": null,
+          "description": "Пресни картофи За 1 кг",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "produce",
+          "price": 2.52,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 2.52,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.51,
+      "category": "produce",
+      "brand": "Harvest",
+      "stores": [
+        "Billa",
+        "Lidl"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 372,
+          "store": "Kaufland",
+          "raw_name": "Кристал Локум",
+          "clean_name": "Кристал Локум",
+          "brand": "Кристал",
+          "description": "Локум",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "snacks",
+          "price": 0.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1288,
+          "store": "Billa",
+          "raw_name": "Кристал Локум цветен 140 г",
+          "clean_name": "Кристал Локум цветен 140 г",
+          "brand": "Кристал",
+          "description": "Локум цветен 140 г",
+          "quantity_value": 140.0,
+          "quantity_unit": "g",
+          "category": "snacks",
+          "price": 1.15,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 8.21,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.727,
+      "category": "snacks",
+      "brand": "Кристал",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 103,
+          "store": "Kaufland",
+          "raw_name": "Сладея Захар\nдо 5 бр. на покупка",
+          "clean_name": "Сладея Захар до 5 бр. на покупка",
+          "brand": null,
+          "description": "Сладея Захар до 5 бр. на покупка",
+          "quantity_value": 5.0,
+          "quantity_unit": "pcs",
+          "category": "pantry",
+          "price": 1.25,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1292,
+          "store": "Billa",
+          "raw_name": "Сладея Пудра захар 250 г",
+          "clean_name": "Сладея Пудра захар 250 г",
+          "brand": "Сладея",
+          "description": "Пудра захар 250 г",
+          "quantity_value": 250.0,
+          "quantity_unit": "g",
+          "category": "pantry",
+          "price": 1.1,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 4.4,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.566,
+      "category": "pantry",
+      "brand": "Сладея",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 246,
+          "store": "Kaufland",
+          "raw_name": "Jоgоbеllа Плодов йогурт\nразлични вкусове",
+          "clean_name": "Jоgоbеllа Плодов йогурт",
+          "brand": "Jogobella",
+          "description": "Плодов йогурт",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "dairy",
+          "price": 2.64,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1174,
+          "store": "Billa",
+          "raw_name": "Jоgоbеllа Йогурт 400 г",
+          "clean_name": "Jоgоbеllа Йогурт 400 г",
+          "brand": "Jogobella",
+          "description": "Йогурт 400 г",
+          "quantity_value": 400.0,
+          "quantity_unit": "g",
+          "category": "dairy",
+          "price": 2.522982,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 6.31,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.744,
+      "category": "dairy",
+      "brand": "Jogobella",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 119,
+          "store": "Kaufland",
+          "raw_name": "Сhiо Чипс\nразлични вкусове",
+          "clean_name": "Сhiо Чипс",
+          "brand": "Chio",
+          "description": "Чипс",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "snacks",
+          "price": 2.48,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1324,
+          "store": "Billa",
+          "raw_name": "Сhiо Чипс Intеnsе 120 г",
+          "clean_name": "Сhiо Чипс Intеnsе 120 г",
+          "brand": "Chio",
+          "description": "Чипс Intеnsе 120 г",
+          "quantity_value": 120.0,
+          "quantity_unit": "g",
+          "category": "snacks",
+          "price": 2.58,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 21.5,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.679,
+      "category": "snacks",
+      "brand": "Chio",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 435,
+          "store": "Kaufland",
+          "raw_name": "Sаn Теrrа Газирана напитка\nразлични видове",
+          "clean_name": "Sаn Теrrа Газирана напитка",
+          "brand": null,
+          "description": "Sаn Теrrа Газирана напитка",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "beverages",
+          "price": 0.88,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1353,
+          "store": "Billa",
+          "raw_name": "Рерsi газирана напитка 0,33 л",
+          "clean_name": "Рерsi газирана напитка 0,33 л",
+          "brand": "Pepsi",
+          "description": "газирана напитка 0,33 л",
+          "quantity_value": 0.33,
+          "quantity_unit": "L",
+          "category": "beverages",
+          "price": 0.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 2.97,
+          "unit_price_base": "L",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.575,
+      "category": "beverages",
+      "brand": "Pepsi",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 90,
+          "store": "Kaufland",
+          "raw_name": "Боровинки Клас: I",
+          "clean_name": "Боровинки Клас: I",
+          "brand": "Боровинки",
+          "description": "Клас: I",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 1.78,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1419,
+          "store": "Billa",
+          "raw_name": "Боровинки 125 г",
+          "clean_name": "Боровинки 125 г",
+          "brand": "Боровинки",
+          "description": "125 г",
+          "quantity_value": 125.0,
+          "quantity_unit": "g",
+          "category": "produce",
+          "price": 1.86,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 14.88,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 1.0,
+      "category": "produce",
+      "brand": "Боровинки",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 172,
+          "store": "Kaufland",
+          "raw_name": "Портокали",
+          "clean_name": "Портокали",
+          "brand": null,
+          "description": "Портокали",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 1.49,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1156,
+          "store": "Billa",
+          "raw_name": "Портокали За 1 кг",
+          "clean_name": "Портокали",
+          "brand": null,
+          "description": "Портокали За 1 кг",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "produce",
+          "price": 1.55,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 1.55,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 1.0,
+      "category": "produce",
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 375,
+          "store": "Kaufland",
+          "raw_name": "Хели Вафла Ретро\nизбрани видове",
+          "clean_name": "Хели Вафла Ретро",
+          "brand": "Хели",
+          "description": "Вафла Ретро",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "snacks",
+          "price": 0.55,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1287,
+          "store": "Billa",
+          "raw_name": "Хели Тунквана вафла с халва ретро 65 г Произход - България",
+          "clean_name": "Хели Тунквана вафла с халва ретро 65 г",
+          "brand": "Хели",
+          "description": "Тунквана вафла с халва ретро 65 г",
+          "quantity_value": 65.0,
+          "quantity_unit": "g",
+          "category": "snacks",
+          "price": 0.59,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 9.08,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.64,
+      "category": "snacks",
+      "brand": "Хели",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 183,
+          "store": "Kaufland",
+          "raw_name": "Червено зеле",
+          "clean_name": "Червено зеле",
+          "brand": null,
+          "description": "Червено зеле",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 1.29,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1101,
+          "store": "Lidl",
+          "raw_name": "Българско червено зеле",
+          "clean_name": "Българско червено зеле",
+          "brand": null,
+          "description": "Българско червено зеле",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 1.27,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.686,
+      "category": "produce",
+      "brand": null,
+      "stores": [
+        "Kaufland",
+        "Lidl"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 266,
+          "store": "Kaufland",
+          "raw_name": "Саяна Кашкавал от краве мляко\nот свежата витрина",
+          "clean_name": "Саяна Кашкавал от краве мляко",
+          "brand": "Саяна",
+          "description": "Кашкавал от краве мляко",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "dairy",
+          "price": 17.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1269,
+          "store": "Billa",
+          "raw_name": "Саяна Кашкавал от краве мляко От деликатесната витрина За 1 кг",
+          "clean_name": "Саяна Кашкавал от краве мляко",
+          "brand": "Саяна",
+          "description": "Кашкавал от краве мляко От деликатесната витрина За 1 кг",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "dairy",
+          "price": 17.97,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 17.97,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 1.0,
+      "category": "dairy",
+      "brand": "Саяна",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 384,
+          "store": "Kaufland",
+          "raw_name": "МИРАЖ Тунквани бисквити Макси",
+          "clean_name": "МИРАЖ Тунквани бисквити Макси",
+          "brand": "Мираж",
+          "description": "Тунквани бисквити Макси",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "snacks",
+          "price": 2.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1177,
+          "store": "Billa",
+          "raw_name": "Мираж тунквани бисквити Макси ягода или портокал 245 г",
+          "clean_name": "Мираж тунквани бисквити Макси ягода или портокал 245 г",
+          "brand": null,
+          "description": "Мираж тунквани бисквити Макси ягода или портокал 245 г",
+          "quantity_value": 245.0,
+          "quantity_unit": "g",
+          "category": "snacks",
+          "price": 2.992374,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 12.21,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.731,
+      "category": "snacks",
+      "brand": "Мираж",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 209,
+          "store": "Kaufland",
+          "raw_name": "Цял заек охладен",
+          "clean_name": "Цял заек охладен",
+          "brand": null,
+          "description": "Цял заек охладен",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "meat",
+          "price": 14.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1227,
+          "store": "Billa",
+          "raw_name": "Охладен заек За 1 кг Продукт, маркиран със синя звезда",
+          "clean_name": "Охладен заек",
+          "brand": null,
+          "description": "Охладен заек За 1 кг Продукт, маркиран със синя звезда",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "meat",
+          "price": 14.981428,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 14.98,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.583,
+      "category": "meat",
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 330,
+          "store": "Kaufland",
+          "raw_name": "Вита Силует Хляб\nразлични видове",
+          "clean_name": "Вита Силует Хляб",
+          "brand": null,
+          "description": "Вита Силует Хляб",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "bakery",
+          "price": 2.39,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1242,
+          "store": "Billa",
+          "raw_name": "Вита Силует Хляб 6 зърна или класик 400 г Произход - България",
+          "clean_name": "Вита Силует Хляб 6 зърна или класик 400 г",
+          "brand": null,
+          "description": "Вита Силует Хляб 6 зърна или класик 400 г",
+          "quantity_value": 400.0,
+          "quantity_unit": "g",
+          "category": "bakery",
+          "price": 2.39,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 5.98,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.656,
+      "category": "bakery",
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 558,
+          "store": "Kaufland",
+          "raw_name": "Dоmеstоs Универсален препарат\nили Спрей",
+          "clean_name": "Dоmеstоs Универсален препарат или Спрей",
+          "brand": "Domestos",
+          "description": "Универсален препарат или Спрей",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "household",
+          "price": 6.49,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1193,
+          "store": "Billa",
+          "raw_name": "Dоmеstоs Почистващ препарат 1,250 л Продукт, маркиран със синя звезда",
+          "clean_name": "Dоmеstоs Почистващ препарат 1,250 л",
+          "brand": "Domestos",
+          "description": "Почистващ препарат 1,250 л Продукт, маркиран със синя звезда",
+          "quantity_value": 1.25,
+          "quantity_unit": "L",
+          "category": "household",
+          "price": 6.49,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 5.19,
+          "unit_price_base": "L",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.539,
+      "category": "household",
+      "brand": "Domestos",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 171,
+          "store": "Kaufland",
+          "raw_name": "Гъби печурки",
+          "clean_name": "Гъби печурки",
+          "brand": null,
+          "description": "Гъби печурки",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "produce",
+          "price": 1.94,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1200,
+          "store": "Billa",
+          "raw_name": "Гъби печурки 250 г",
+          "clean_name": "Гъби печурки 250 г",
+          "brand": null,
+          "description": "Гъби печурки 250 г",
+          "quantity_value": 250.0,
+          "quantity_unit": "g",
+          "category": "produce",
+          "price": 1.94,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 7.76,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 1.0,
+      "category": "produce",
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 433,
+          "store": "Kaufland",
+          "raw_name": "Аbsоlut Водка\nразлични видове",
+          "clean_name": "Аbsоlut Водка",
+          "brand": "Absolut",
+          "description": "Водка",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "alcohol",
+          "price": 16.49,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1369,
+          "store": "Billa",
+          "raw_name": "Аbsоlut Водка 0,7 л",
+          "clean_name": "Аbsоlut Водка 0,7 л",
+          "brand": "Absolut",
+          "description": "Водка 0,7 л",
+          "quantity_value": 0.7,
+          "quantity_unit": "L",
+          "category": "alcohol",
+          "price": 16.49,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 23.56,
+          "unit_price_base": "L",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 1.0,
+      "category": "alcohol",
+      "brand": "Absolut",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 526,
+          "store": "Kaufland",
+          "raw_name": "Есоnоmiс Суха храна за кучета",
+          "clean_name": "Есоnоmiс Суха храна за кучета",
+          "brand": "Economic",
+          "description": "Суха храна за кучета",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "pet",
+          "price": 13.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1191,
+          "store": "Billa",
+          "raw_name": "Моn Аmi Суха храна за кучета с говеждо 10 кг Продукт, маркиран със синя звезда",
+          "clean_name": "Моn Аmi Суха храна за кучета с говеждо 10 кг",
+          "brand": null,
+          "description": "Моn Аmi Суха храна за кучета с говеждо 10 кг Продукт, маркиран със синя звезда",
+          "quantity_value": 10.0,
+          "quantity_unit": "kg",
+          "category": "pet",
+          "price": 13.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 1.4,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "similarity": 0.587,
+      "category": "pet",
+      "brand": "Economic",
       "stores": [
         "Billa",
         "Kaufland"
