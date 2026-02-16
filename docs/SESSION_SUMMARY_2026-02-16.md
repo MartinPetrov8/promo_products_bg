@@ -1,66 +1,173 @@
-# Session Summary: Data Quality Pipeline Build
-**Date:** 2026-02-16
+# Session Summary: 2026-02-16
 
-## Goal
-Build a robust data quality pipeline for PromoBG to clean product names, extract brands, categorize products, validate prices, and enable accurate cross-store matching.
+## Overview
+Major data quality pipeline overhaul - from JSON files to proper SQLite database with price history tracking, plus hybrid LLM/rules cleaning system.
 
-## What We Built
+---
 
-### 1. LLM-Powered One-Time Cleaning
-- Used GPT-4o-mini to parse 2,733 products
-- Extracts: brand, clean product name, quantity, unit, pack_size, category
-- Cost: ~$0.30 for full dataset
-- Creates reference data for future rule-based cleaning
+## 1. LLM Cleaning Pipeline
 
-### 2. Config-Driven Rule System
+### What Was Built
+- **One-time GPT-4o-mini batch cleaning** of 2733 products
+- Extracted: brands (790), categories (30), quantities, pack sizes
+- Cost: ~$0.30 total
+
+### Files Created
+| File | Purpose |
+|------|---------|
+| `scripts/batch_llm_clean.py` | One-time LLM batch cleaner |
+| `scripts/extract_mappings.py` | Generates rules from LLM output |
+| `config/brands.json` | 790 brands |
+| `config/categories.json` | 30 categories with keywords |
+| `config/pack_patterns.json` | 133 pack patterns |
+| `config/quantity_patterns.json` | Quantity extraction patterns |
+
+---
+
+## 2. Rule-Based Cleaning (LLM-Free)
+
+### Accuracy vs LLM Ground Truth
+| Metric | Score |
+|--------|-------|
+| Brand extraction | 96.8% |
+| Quantity parsing | 84.9% |
+| Category assignment | 72.6% |
+
+### Files Created
+| File | Purpose |
+|------|---------|
+| `scripts/clean_products_rules.py` | Pure regex cleaner (slow) |
+| `scripts/clean_products_fast.py` | SKU lookup from LLM data |
+| `scripts/test_rules_vs_llm.py` | Test framework |
+
+---
+
+## 3. Hybrid Pipeline (Production)
+
+### How It Works
+1. Apply rules to ALL products (free, ~90% accurate)
+2. Detect low-confidence extractions (~10% of products)
+3. Send ONLY edge cases to GPT-4o-mini (~$0.002/run)
+
+### Cost Analysis
+| Model | Cost/Run | Monthly |
+|-------|----------|---------|
+| GPT-4o-mini | $0.002 | $0.05 |
+
+### File Created
+- `scripts/clean_products_hybrid.py`
+
+---
+
+## 4. Database Schema (SQLite)
+
+### New Tables
+```sql
+-- Append-only raw scraper data
+raw_scrapes (
+    id, scan_run_id, store, sku, raw_name, raw_subtitle,
+    raw_description, price_bgn, old_price_bgn, discount_pct,
+    image_url, product_url, scraped_at
+)
+
+-- Track each scraper execution
+scan_runs (
+    id, store_id, started_at, completed_at, status,
+    products_scraped, new_products, price_changes, errors
+)
 ```
-config/
-├── brands.json           # Master brand list (add new brands here)
-├── categories.json       # Category keywords (learned from LLM)
-├── pack_patterns.json    # Pack patterns (промопакет, витрина, etc.)
-└── quantity_patterns.json # Quantity regex patterns
+
+### Updated Tables
+```sql
+-- Added columns to prices
+prices (
+    ..., scraped_at, old_price, discount_pct
+)
 ```
 
-### 3. Generated Rule-Based Cleaner
-`scripts/clean_products_rules.py` - Auto-generated from LLM results, uses config files for instant cleaning without LLM.
+### Key Design Decisions
+- **raw_scrapes is APPEND-ONLY** - never delete historical data
+- **Every scrape creates a scan_run** - timestamped execution log
+- **price_history tracks changes** - for trend analysis
 
-## Key Lessons Learned
+### File Created
+- `scripts/db_pipeline.py` - Database operations class
 
-### Technical
-1. **Substring matching bugs** - "шоколад" contains "кола", causing wrong category. Fixed with category order.
+---
 
-2. **Brand word boundaries** - "бони" matched "бонбони". Fixed with regex word boundaries.
+## 5. Cross-Store Matching
 
-3. **Category order matters** - Check specific categories (торта→сладкарски) BEFORE generic (йогурт→млечни).
+### Results
+- 412 validated cross-store matches
+- Quantity normalization (ml/l, g/kg)
+- Price diff cap at 200%
 
-4. **Exec timeouts kill long jobs** - Use nohup for jobs >10 mins. Save progress incrementally.
+### Store Rankings (cheapest)
+| Store | Win % |
+|-------|-------|
+| Kaufland | 56.3% |
+| Lidl | 34.2% |
+| Billa | 9.5% |
 
-5. **LLM cleaning = one-time bootstrap** - Use it once to learn patterns, then pure rules forever.
+### Files Created
+- `scripts/cross_store_matcher.py`
+- `scripts/export_frontend.py`
 
-### Process
-1. **Manual brand/category review doesn't scale** - Need automated LLM pass first
+---
 
-2. **Data quality is foundational** - Can't do cross-store matching without clean data
+## 6. Data Issues Found
 
-3. **Incremental saves prevent data loss** - Batch jobs should save after each step
+### Lidl Brand Coverage: Only 2.7%
+**Root cause:** Lidl sitemap JSON-LD has no brand field
 
-## Data Structure Needs
+**Partial fix:** Merged `lidl_fresh.json` (130 products with brands)
 
-### Required Database Schema
-- brands table (master list, add new brands here)
-- categories table (keywords per category)
-- products table (store, sku, clean_name, brand_id, category_id, quantity, first_seen, last_seen)
-- price_history table (product_id, price_eur, price_bgn, promo_price, scraped_at)
-- cross_store_matches table (product_a, product_b, confidence, method, verified)
+**TODO:** Re-scrape Lidl product pages for brand data
 
-### Daily Scraping Pipeline
-1. SCRAPE → raw_scrapes/{store}_{date}.json
-2. CLEAN  → Apply rules from config/*.json  
-3. UPSERT → Insert new products, update last_seen
-4. PRICE  → Insert price_history record
-5. MATCH  → Run cross-store matching on new products
-6. EXPORT → Generate static site data
+### Quantity Coverage: Only 13.6%
+**Root cause:** Most products don't have quantity in name/subtitle
 
-## Cost Summary
-- GPT-4o-mini cleaning: ~$0.30 (one-time)
-- Future cleaning: $0 (rule-based)
+**Partial fix:** LLM extraction + strict prompt for edge cases
+
+---
+
+## 7. Full Pipeline (Production Ready)
+
+```bash
+# 1. Scrape all stores
+python scripts/scrape_all.py
+
+# 2. Import to database
+python scripts/db_pipeline.py
+
+# 3. Clean with hybrid pipeline
+python scripts/clean_products_hybrid.py
+
+# 4. Match across stores
+python scripts/cross_store_matcher.py
+
+# 5. Export for frontend
+python scripts/export_frontend.py
+
+# 6. Deploy (GitHub Pages auto-deploys)
+git add docs/data/ && git commit -m "Update data" && git push
+```
+
+---
+
+## 8. Cost Summary
+
+| Item | Cost |
+|------|------|
+| Initial LLM cleaning | $0.30 (one-time) |
+| Daily hybrid cleaning | $0.002/run |
+| Monthly (daily scrapes) | ~$0.05 |
+
+---
+
+## Next Steps
+1. [ ] Audit scrapers (see below)
+2. [ ] Set up daily cron job
+3. [ ] Fresh scrapes (Kaufland promo expired)
+4. [ ] Fix Lidl brand extraction
+5. [ ] Add more stores (T-Market, Metro)

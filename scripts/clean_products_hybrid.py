@@ -154,7 +154,12 @@ def main():
         text = (p.get('raw_name', '') + ' ' + p.get('raw_subtitle', '')).strip()
         sku = p.get('sku')
         
-        brand, brand_conf = extract_brand(text)
+        # Use raw brand if available, otherwise extract
+        raw_brand = p.get('brand')
+        if raw_brand:
+            brand, brand_conf = raw_brand, 1.0
+        else:
+            brand, brand_conf = extract_brand(text)
         category, cat_conf = extract_category(text)
         qty_value, qty_unit, qty_conf = extract_quantity(text)
         

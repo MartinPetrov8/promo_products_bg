@@ -83,7 +83,7 @@ class PromoBGDatabase:
             INSERT INTO raw_scrapes (
                 scan_run_id, store, sku, raw_name, raw_subtitle,
                 raw_description, price_bgn, old_price_bgn, discount_pct,
-                image_url, product_url, scraped_at
+                image_url, product_url, brand, scraped_at
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
         """, (
             run_id,
@@ -97,6 +97,7 @@ class PromoBGDatabase:
             product.get('discount_pct'),
             product.get('image_url'),
             product.get('product_url'),
+            product.get('brand'),
         ))
         return cursor.lastrowid
     
