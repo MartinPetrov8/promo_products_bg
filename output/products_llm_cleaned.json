@@ -485,8 +485,8 @@
     "name": "Луканков салам, Свинска шунка или Прошуто кото",
     "brand": "ФЕРМ75",
     "category": "Месо и колбаси",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 0,
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 1.53,
     "price_bgn": 2.99
@@ -5021,8 +5021,8 @@
     "name": "Омекотител различни видове",
     "brand": "Alvina",
     "category": "Почистващи",
-    "quantity_value": 75,
-    "quantity_unit": "пранета",
+    "quantity_value": 0,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 3.32,
     "price_bgn": 6.49
@@ -5189,8 +5189,8 @@
     "name": "Гел 35/40 пранета Прах 40 пранета Капсули 26/30 пранета",
     "brand": "Ariel",
     "category": "Почистващи",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 0,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 9.71,
     "price_bgn": 18.99
@@ -5237,8 +5237,8 @@
     "name": "Препарат за съдове избрани видове",
     "brand": "Fairy",
     "category": "Почистващи",
-    "quantity_value": null,
-    "quantity_unit": "l",
+    "quantity_value": 0,
+    "quantity_unit": "ml",
     "pack_size": "0,65 - 1,35",
     "price_eur": 3.57,
     "price_bgn": 6.98
@@ -6689,8 +6689,8 @@
     "name": "Захар до 5 бр. на покупка",
     "brand": "Сладея",
     "category": "Подправки и сосове",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 5,
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": null,
     "price_bgn": null
@@ -7745,8 +7745,8 @@
     "name": "Антифриз",
     "brand": "Tip Top",
     "category": "Автомобилни",
-    "quantity_value": 1,
-    "quantity_unit": "л",
+    "quantity_value": 1000,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 1.27,
     "price_bgn": 2.48
@@ -7806,7 +7806,7 @@
     "brand": "Avalon",
     "category": "Автомобилни",
     "quantity_value": 4,
-    "quantity_unit": "pcs",
+    "quantity_unit": "части",
     "pack_size": "4 части",
     "price_eur": 6.64,
     "price_bgn": 12.99
@@ -8297,8 +8297,8 @@
     "name": "Парочистачка",
     "brand": "ROWENTA",
     "category": "Дом",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 0,
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 66.41,
     "price_bgn": 129.89
@@ -8333,8 +8333,8 @@
     "name": "Кошче",
     "brand": "LIV&BO",
     "category": "Други",
-    "quantity_value": 3,
-    "quantity_unit": "л",
+    "quantity_value": 3000,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 6.64,
     "price_bgn": 12.99
@@ -8730,7 +8730,7 @@
     "brand": "DILIOS",
     "category": "Дом",
     "quantity_value": 3,
-    "quantity_unit": "pcs",
+    "quantity_unit": "parts",
     "pack_size": null,
     "price_eur": 20.44,
     "price_bgn": 39.98
@@ -8742,7 +8742,7 @@
     "brand": "DILIOS",
     "category": "Дом",
     "quantity_value": 4,
-    "quantity_unit": "pcs",
+    "quantity_unit": "parts",
     "pack_size": null,
     "price_eur": 28.06,
     "price_bgn": 54.88
@@ -8754,7 +8754,7 @@
     "brand": "DILIOS",
     "category": "Дом",
     "quantity_value": 5,
-    "quantity_unit": "pcs",
+    "quantity_unit": "parts",
     "pack_size": null,
     "price_eur": 35.73,
     "price_bgn": 69.88
@@ -8874,7 +8874,7 @@
     "brand": "PARKSIDE®",
     "category": "Дом",
     "quantity_value": 3,
-    "quantity_unit": "pcs",
+    "quantity_unit": "parts",
     "pack_size": null,
     "price_eur": 8.17,
     "price_bgn": 15.98
@@ -8922,7 +8922,7 @@
     "brand": "Parkside®",
     "category": "Дом",
     "quantity_value": 37,
-    "quantity_unit": "pcs",
+    "quantity_unit": "parts",
     "pack_size": null,
     "price_eur": 10.22,
     "price_bgn": 19.99
@@ -8934,7 +8934,7 @@
     "brand": "Parkside®",
     "category": "Други",
     "quantity_value": 4,
-    "quantity_unit": "pcs",
+    "quantity_unit": "br",
     "pack_size": null,
     "price_eur": 5.11,
     "price_bgn": 9.99
@@ -8946,7 +8946,7 @@
     "brand": "Parkside®",
     "category": "Дом",
     "quantity_value": 358,
-    "quantity_unit": "pcs",
+    "quantity_unit": "parts",
     "pack_size": null,
     "price_eur": 12.77,
     "price_bgn": 24.98
@@ -9282,7 +9282,7 @@
     "brand": "Ditex",
     "category": "Дом",
     "quantity_value": 3,
-    "quantity_unit": "pcs",
+    "quantity_unit": "parts",
     "pack_size": null,
     "price_eur": 9.71,
     "price_bgn": 18.99
@@ -9294,7 +9294,7 @@
     "brand": "Ditex",
     "category": "Дом",
     "quantity_value": 4,
-    "quantity_unit": "pcs",
+    "quantity_unit": "parts",
     "pack_size": null,
     "price_eur": 13.29,
     "price_bgn": 25.99
@@ -9306,7 +9306,7 @@
     "brand": "Ditex",
     "category": "Дом",
     "quantity_value": 5,
-    "quantity_unit": "pcs",
+    "quantity_unit": "parts",
     "pack_size": null,
     "price_eur": 16.87,
     "price_bgn": 32.99
@@ -9438,7 +9438,7 @@
     "brand": "BRIO",
     "category": "Други",
     "quantity_value": 2,
-    "quantity_unit": "бр.",
+    "quantity_unit": "br",
     "pack_size": null,
     "price_eur": 1.83,
     "price_bgn": 3.58
@@ -9654,7 +9654,7 @@
     "brand": null,
     "category": "Електроника",
     "quantity_value": 1600,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 2.04,
     "price_bgn": 3.99
@@ -9666,7 +9666,7 @@
     "brand": "luminarc",
     "category": "Други",
     "quantity_value": 19,
-    "quantity_unit": "части",
+    "quantity_unit": "parts",
     "pack_size": null,
     "price_eur": 25.56,
     "price_bgn": 49.99
@@ -9725,8 +9725,8 @@
     "name": "Комплект за подправки",
     "brand": "BRIO",
     "category": "Дом",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 13,
+    "quantity_unit": "parts",
     "pack_size": "13 части",
     "price_eur": 9.2,
     "price_bgn": 17.99
@@ -10037,8 +10037,8 @@
     "name": "Водоструийка",
     "brand": "Parkside®",
     "category": "Други",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 0,
+    "quantity_unit": "W",
     "pack_size": "PHD 135 G6",
     "price_eur": 81.8,
     "price_bgn": 159.99
@@ -10662,7 +10662,7 @@
     "brand": "Bohemia",
     "category": "Дом",
     "quantity_value": 6,
-    "quantity_unit": "pcs",
+    "quantity_unit": "br",
     "pack_size": null,
     "price_eur": 8.17,
     "price_bgn": 15.98
@@ -10853,8 +10853,8 @@
     "name": "Таблетки",
     "brand": "CERESIT",
     "category": "Други",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 4,
+    "quantity_unit": "parts",
     "pack_size": null,
     "price_eur": null,
     "price_bgn": null
@@ -10890,7 +10890,7 @@
     "brand": "BRIO",
     "category": "Други",
     "quantity_value": 650,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 3.06,
     "price_bgn": 5.98
@@ -11561,8 +11561,8 @@
     "name": "Блендер",
     "brand": "PHILIPS",
     "category": "Други",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 360,
+    "quantity_unit": "W",
     "pack_size": null,
     "price_eur": 51.12,
     "price_bgn": 99.98
@@ -11729,8 +11729,8 @@
     "name": "Пилешко бутче",
     "brand": null,
     "category": "Месо и колбаси",
-    "quantity_value": null,
-    "quantity_unit": "кг",
+    "quantity_value": 10000,
+    "quantity_unit": "g",
     "pack_size": "до 10 кг на покупка",
     "price_eur": 1.78,
     "price_bgn": 3.48
@@ -11802,7 +11802,7 @@
     "brand": "Whiskas",
     "category": "Храна за животни",
     "quantity_value": 1020,
-    "quantity_unit": "гр",
+    "quantity_unit": "g",
     "pack_size": "12х",
     "price_eur": 4.34,
     "price_bgn": 8.49
@@ -11837,8 +11837,8 @@
     "name": "Банани",
     "brand": null,
     "category": "Плодове и зеленчуци",
-    "quantity_value": null,
-    "quantity_unit": "кг",
+    "quantity_value": 5000,
+    "quantity_unit": "g",
     "pack_size": "до 5 кг на покупка",
     "price_eur": 1.27,
     "price_bgn": 2.48
@@ -12078,7 +12078,7 @@
     "brand": "Frudada",
     "category": "Напитки безалкохолни",
     "quantity_value": 250,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 1.53,
     "price_bgn": 2.99
@@ -12581,8 +12581,8 @@
     "name": "Свински врат",
     "brand": null,
     "category": "Месо и колбаси",
-    "quantity_value": null,
-    "quantity_unit": "кг",
+    "quantity_value": 5000,
+    "quantity_unit": "g",
     "pack_size": "до 5 кг на покупка",
     "price_eur": 3.83,
     "price_bgn": 7.49
@@ -16565,8 +16565,8 @@
     "name": "гел",
     "brand": "PERSIL",
     "category": "Хигиена",
-    "quantity_value": 6800,
-    "quantity_unit": "ml",
+    "quantity_value": 68,
+    "quantity_unit": "p",
     "pack_size": "100 пранета капсули",
     "price_eur": 18.4,
     "price_bgn": 35.99
@@ -16662,7 +16662,7 @@
     "brand": "BEBELAN",
     "category": "Хигиена",
     "quantity_value": 88,
-    "quantity_unit": "pcs",
+    "quantity_unit": "p",
     "pack_size": null,
     "price_eur": 1.53,
     "price_bgn": 2.99
@@ -16902,7 +16902,7 @@
     "brand": null,
     "category": "Хигиена",
     "quantity_value": 120,
-    "quantity_unit": "pcs",
+    "quantity_unit": "p",
     "pack_size": null,
     "price_eur": 0.73,
     "price_bgn": 1.43
@@ -16998,7 +16998,7 @@
     "brand": "Colgate Max",
     "category": "Хигиена",
     "quantity_value": 75,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": "или 2 бр.",
     "price_eur": 1.78,
     "price_bgn": 3.48
@@ -17646,7 +17646,7 @@
     "brand": "Fairy",
     "category": "Почистващи",
     "quantity_value": 88,
-    "quantity_unit": "pcs",
+    "quantity_unit": "p",
     "pack_size": null,
     "price_eur": 20.39,
     "price_bgn": 39.88
@@ -17886,7 +17886,7 @@
     "brand": "TEO BEBE FUTURE",
     "category": "Почистващи",
     "quantity_value": 45,
-    "quantity_unit": "pcs",
+    "quantity_unit": "p",
     "pack_size": null,
     "price_eur": 9.6,
     "price_bgn": 18.78
@@ -18125,8 +18125,8 @@
     "name": "Кутия",
     "brand": "Alpfa",
     "category": "Дом",
-    "quantity_value": 60,
-    "quantity_unit": "л",
+    "quantity_value": 2160,
+    "quantity_unit": "cm²",
     "pack_size": null,
     "price_eur": 8.17,
     "price_bgn": 15.98
@@ -18222,7 +18222,7 @@
     "brand": "LUIGI FERRERO",
     "category": "Дом",
     "quantity_value": 350,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 5.11,
     "price_bgn": 9.99
@@ -18234,7 +18234,7 @@
     "brand": null,
     "category": "Дом",
     "quantity_value": 80,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 6.13,
     "price_bgn": 11.99
@@ -18341,8 +18341,8 @@
     "name": "Термос",
     "brand": "SPICE&SOUL",
     "category": "Други",
-    "quantity_value": 0.5,
-    "quantity_unit": "л",
+    "quantity_value": 500,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 4.08,
     "price_bgn": 7.98
@@ -18498,7 +18498,7 @@
     "brand": "LIV&BO",
     "category": "Дом",
     "quantity_value": 2,
-    "quantity_unit": "части",
+    "quantity_unit": "p",
     "pack_size": null,
     "price_eur": 5.11,
     "price_bgn": 9.99
@@ -18785,8 +18785,8 @@
     "name": "Дигитален кантар",
     "brand": "Liv&Bo",
     "category": "Други",
-    "quantity_value": 180,
-    "quantity_unit": "kg",
+    "quantity_value": 180000,
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 9.2,
     "price_bgn": 17.99
@@ -18821,8 +18821,8 @@
     "name": "Кош за пране",
     "brand": null,
     "category": "Други",
-    "quantity_value": 27,
-    "quantity_unit": "l",
+    "quantity_value": 27000,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 3.06,
     "price_bgn": 5.98
@@ -18833,8 +18833,8 @@
     "name": "Сгъваем леген",
     "brand": "Home Practic",
     "category": "Други",
-    "quantity_value": 26,
-    "quantity_unit": "l",
+    "quantity_value": 26000,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 7.66,
     "price_bgn": 14.98
@@ -18845,8 +18845,8 @@
     "name": "Кофа",
     "brand": "K-Classic",
     "category": "Други",
-    "quantity_value": 12,
-    "quantity_unit": "l",
+    "quantity_value": 12000,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 2.04,
     "price_bgn": 3.99
@@ -18857,8 +18857,8 @@
     "name": "Сгъваема кофа",
     "brand": null,
     "category": "Други",
-    "quantity_value": 10,
-    "quantity_unit": "l",
+    "quantity_value": 10000,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 3.06,
     "price_bgn": 5.98
@@ -18870,7 +18870,7 @@
     "brand": "K-Classic",
     "category": "Други",
     "quantity_value": 20,
-    "quantity_unit": "бр.",
+    "quantity_unit": "p",
     "pack_size": null,
     "price_eur": 1.78,
     "price_bgn": 3.48
@@ -18882,7 +18882,7 @@
     "brand": "K-Classic",
     "category": "Други",
     "quantity_value": 10,
-    "quantity_unit": "бр.",
+    "quantity_unit": "p",
     "pack_size": null,
     "price_eur": 2.8,
     "price_bgn": 5.48
@@ -18894,7 +18894,7 @@
     "brand": "Seoul",
     "category": "Дом",
     "quantity_value": 3,
-    "quantity_unit": "бр.",
+    "quantity_unit": "p",
     "pack_size": null,
     "price_eur": 2.04,
     "price_bgn": 3.99
@@ -18905,8 +18905,8 @@
     "name": "Кутия с капак",
     "brand": null,
     "category": "Дом",
-    "quantity_value": 58,
-    "quantity_unit": "l",
+    "quantity_value": 58000,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 6.13,
     "price_bgn": 11.99
@@ -18917,8 +18917,8 @@
     "name": "Кутия с капак",
     "brand": null,
     "category": "Дом",
-    "quantity_value": 18,
-    "quantity_unit": "l",
+    "quantity_value": 18000,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 3.06,
     "price_bgn": 5.98
@@ -19133,8 +19133,8 @@
     "name": "PARKSIDE® Повдигната леха 70 л",
     "brand": null,
     "category": "Инструменти",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 70000,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 19.42,
     "price_bgn": 37.98
@@ -19409,8 +19409,8 @@
     "name": "Parkside® Лейка 10 л",
     "brand": null,
     "category": "Инструменти",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 10000,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 5.11,
     "price_bgn": 9.99
@@ -19493,7 +19493,7 @@
     "name": "Филтрираща кана Prime Line",
     "brand": "Laica",
     "category": "Електроника",
-    "quantity_value": 3000,
+    "quantity_value": 5000,
     "quantity_unit": "ml",
     "pack_size": "3 л + 2 филтъра",
     "price_eur": 15.33,
@@ -21498,7 +21498,7 @@
     "brand": "K-Classic",
     "category": "Хигиена",
     "quantity_value": 32,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 6.54,
     "price_bgn": 12.79
@@ -21534,7 +21534,7 @@
     "brand": "ALVINA",
     "category": "Почистващи",
     "quantity_value": 130,
-    "quantity_unit": "pcs",
+    "quantity_unit": "пр.",
     "pack_size": "2 х",
     "price_eur": 5.11,
     "price_bgn": 9.99
@@ -22997,8 +22997,8 @@
     "name": "Захар",
     "brand": null,
     "category": "Подправки и сосове",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 5,
+    "quantity_unit": "бр.",
     "pack_size": "до 5 бр. на покупка",
     "price_eur": null,
     "price_bgn": null
@@ -23657,8 +23657,8 @@
     "name": "Кутия",
     "brand": null,
     "category": "Дом",
-    "quantity_value": 1.4,
-    "quantity_unit": "л",
+    "quantity_value": 1400,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 2.04,
     "price_bgn": 3.99
@@ -23669,8 +23669,8 @@
     "name": "Кутия",
     "brand": null,
     "category": "Дом",
-    "quantity_value": 1.8,
-    "quantity_unit": "л",
+    "quantity_value": 1800,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 2.55,
     "price_bgn": 4.99
@@ -23681,8 +23681,8 @@
     "name": "Кутия",
     "brand": null,
     "category": "Дом",
-    "quantity_value": 0.4,
-    "quantity_unit": "л",
+    "quantity_value": 400,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 1.27,
     "price_bgn": 2.48
@@ -23693,8 +23693,8 @@
     "name": "Кутия",
     "brand": null,
     "category": "Дом",
-    "quantity_value": 0.4,
-    "quantity_unit": "л",
+    "quantity_value": 400,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 1.27,
     "price_bgn": 2.48
@@ -23705,8 +23705,8 @@
     "name": "Кутия за фолио",
     "brand": null,
     "category": "Дом",
-    "quantity_value": 0.6,
-    "quantity_unit": "л",
+    "quantity_value": 600,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 1.02,
     "price_bgn": 1.99
@@ -29501,8 +29501,8 @@
     "name": "Гранде кебапче",
     "brand": "Billa Ready",
     "category": "Месо и колбаси",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 1,
+    "quantity_unit": "бр.",
     "pack_size": "От топлата витрина 1 бр.",
     "price_eur": 1.0,
     "price_bgn": 1.96
@@ -29526,7 +29526,7 @@
     "brand": null,
     "category": "Други",
     "quantity_value": 1000,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 19.54,
     "price_bgn": 38.22
@@ -29550,7 +29550,7 @@
     "brand": "Emeka",
     "category": "Хигиена",
     "quantity_value": 40,
-    "quantity_unit": "бр",
+    "quantity_unit": "бр.",
     "pack_size": "32 + 8",
     "price_eur": 17.973802,
     "price_bgn": 35.15
@@ -29562,7 +29562,7 @@
     "brand": "Българска ферма",
     "category": "Месо и колбаси",
     "quantity_value": 1000,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 3.79,
     "price_bgn": 7.41
@@ -29574,7 +29574,7 @@
     "brand": "La Provincia",
     "category": "Месо и колбаси",
     "quantity_value": 1000,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 9.99,
     "price_bgn": 19.54
@@ -29718,7 +29718,7 @@
     "brand": "Калиакра",
     "category": "Подправки и сосове",
     "quantity_value": 2000,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 5.5,
     "price_bgn": 10.76
@@ -29730,7 +29730,7 @@
     "brand": "Heinz",
     "category": "Подправки и сосове",
     "quantity_value": 1350,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 8.08,
     "price_bgn": 15.8
@@ -29754,7 +29754,7 @@
     "brand": "Nucrema",
     "category": "Сладкарски изделия",
     "quantity_value": 1200,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 9.994138000000001,
     "price_bgn": 19.55
@@ -29778,7 +29778,7 @@
     "brand": "Банкя",
     "category": "Напитки безалкохолни",
     "quantity_value": 9000,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": "6 x",
     "price_eur": 4.99,
     "price_bgn": 9.76
@@ -29814,7 +29814,7 @@
     "brand": "Pepsi",
     "category": "Напитки безалкохолни",
     "quantity_value": 4000,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": "4 х",
     "price_eur": 3.99,
     "price_bgn": 7.8
@@ -29826,7 +29826,7 @@
     "brand": "Sensodyne Whitening",
     "category": "Хигиена",
     "quantity_value": 150,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": "2 x",
     "price_eur": 9.99,
     "price_bgn": 19.54
@@ -29838,7 +29838,7 @@
     "brand": "Chateau Karnobat",
     "category": "Напитки алкохолни",
     "quantity_value": 3000,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 14.26,
     "price_bgn": 27.89
@@ -29850,7 +29850,7 @@
     "brand": "William Peel",
     "category": "Напитки алкохолни",
     "quantity_value": 1500,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 24.975566,
     "price_bgn": 48.85
@@ -29862,7 +29862,7 @@
     "brand": "Paulaner",
     "category": "Напитки алкохолни",
     "quantity_value": 2000,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": "4 х",
     "price_eur": 9.0,
     "price_bgn": 17.6
@@ -29874,7 +29874,7 @@
     "brand": "Staropramen",
     "category": "Напитки алкохолни",
     "quantity_value": 2000,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": "4 x",
     "price_eur": 5.07,
     "price_bgn": 9.92
@@ -29897,8 +29897,8 @@
     "name": "Гел за пране или Капсули за пране",
     "brand": "Savex Premium",
     "category": "Почистващи",
-    "quantity_value": 112,
-    "quantity_unit": "пранета",
+    "quantity_value": 72,
+    "quantity_unit": "бр.",
     "pack_size": "1 опаковка",
     "price_eur": 29.982414,
     "price_bgn": 58.64
@@ -30246,7 +30246,7 @@
     "brand": "Bon Via",
     "category": "Градина",
     "quantity_value": 1,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 4.98729,
     "price_bgn": 9.75
@@ -30258,7 +30258,7 @@
     "brand": null,
     "category": "Градина",
     "quantity_value": 1,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 3.892042,
     "price_bgn": 7.61
@@ -30270,7 +30270,7 @@
     "brand": null,
     "category": "Градина",
     "quantity_value": 1,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 3.109722,
     "price_bgn": 6.08
@@ -30534,7 +30534,7 @@
     "brand": null,
     "category": "Месо и колбаси",
     "quantity_value": 1,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": "От топлата витрина",
     "price_eur": 0.96,
     "price_bgn": 1.88
@@ -30546,7 +30546,7 @@
     "brand": null,
     "category": "Месо и колбаси",
     "quantity_value": 1,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": "От топлата витрина",
     "price_eur": 2.52,
     "price_bgn": 4.93
@@ -30978,7 +30978,7 @@
     "brand": "Дончево",
     "category": "Яйца",
     "quantity_value": 10,
-    "quantity_unit": "бр",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 4.4,
     "price_bgn": 8.61
@@ -31098,7 +31098,7 @@
     "brand": null,
     "category": "Сладкарски изделия",
     "quantity_value": 1000,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 13.91,
     "price_bgn": 27.21
@@ -31134,7 +31134,7 @@
     "brand": "Cruzares",
     "category": "Напитки алкохолни",
     "quantity_value": 750,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 2.89,
     "price_bgn": 5.65
@@ -31170,7 +31170,7 @@
     "brand": null,
     "category": "Почистващи",
     "quantity_value": 2000,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 17.99,
     "price_bgn": 35.18
@@ -31182,7 +31182,7 @@
     "brand": null,
     "category": "Кафе и чай",
     "quantity_value": 1000,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 46.997874,
     "price_bgn": 91.92
@@ -31206,7 +31206,7 @@
     "brand": null,
     "category": "Напитки алкохолни",
     "quantity_value": 330,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 2.99,
     "price_bgn": 5.85
@@ -31218,7 +31218,7 @@
     "brand": null,
     "category": "Напитки алкохолни",
     "quantity_value": 700,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 22.98,
     "price_bgn": 44.94
@@ -31278,7 +31278,7 @@
     "brand": "Billa",
     "category": "Подправки и сосове",
     "quantity_value": 750,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 11.72,
     "price_bgn": 22.92
@@ -31289,8 +31289,8 @@
     "name": "Домашна едросмляна лютеница или Айвар",
     "brand": "Deroni",
     "category": "Консерви",
-    "quantity_value": 500,
-    "quantity_unit": "г",
+    "quantity_value": 520,
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 4.99,
     "price_bgn": 9.76
@@ -31302,7 +31302,7 @@
     "brand": "Monini",
     "category": "Подправки и сосове",
     "quantity_value": 1000,
-    "quantity_unit": "мл",
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 22.47,
     "price_bgn": 43.95
@@ -31314,7 +31314,7 @@
     "brand": "Фамилекс",
     "category": "Зърнени храни",
     "quantity_value": 1000,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 2.99,
     "price_bgn": 5.85
@@ -31578,7 +31578,7 @@
     "brand": "Tira",
     "category": "Кафе и чай",
     "quantity_value": 1000,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 34.989262000000004,
     "price_bgn": 68.43
@@ -31590,7 +31590,7 @@
     "brand": "Tira",
     "category": "Кафе и чай",
     "quantity_value": 1000,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 34.989262000000004,
     "price_bgn": 68.43
@@ -31602,7 +31602,7 @@
     "brand": "Tira",
     "category": "Кафе и чай",
     "quantity_value": 1000,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 34.989262000000004,
     "price_bgn": 68.43
@@ -31614,7 +31614,7 @@
     "brand": "Tira",
     "category": "Кафе и чай",
     "quantity_value": 1000,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 34.989262000000004,
     "price_bgn": 68.43
@@ -31626,7 +31626,7 @@
     "brand": "Tira",
     "category": "Кафе и чай",
     "quantity_value": 1000,
-    "quantity_unit": "г",
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 34.989262000000004,
     "price_bgn": 68.43
@@ -31710,7 +31710,7 @@
     "brand": "Tira",
     "category": "Кафе и чай",
     "quantity_value": 16,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 9.994138000000001,
     "price_bgn": 19.55
@@ -31722,7 +31722,7 @@
     "brand": "Tira",
     "category": "Кафе и чай",
     "quantity_value": 16,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 9.994138000000001,
     "price_bgn": 19.55
@@ -31734,7 +31734,7 @@
     "brand": "Tira",
     "category": "Кафе и чай",
     "quantity_value": 20,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 12.986512,
     "price_bgn": 25.4
@@ -31746,7 +31746,7 @@
     "brand": "Tira",
     "category": "Кафе и чай",
     "quantity_value": 16,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 9.994138000000001,
     "price_bgn": 19.55
@@ -31758,7 +31758,7 @@
     "brand": "Tira",
     "category": "Кафе и чай",
     "quantity_value": 16,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 9.994138000000001,
     "price_bgn": 19.55
@@ -31770,7 +31770,7 @@
     "brand": "Tira",
     "category": "Кафе и чай",
     "quantity_value": 16,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 9.994138000000001,
     "price_bgn": 19.55
@@ -32129,8 +32129,8 @@
     "name": "Антибактериални мокри кърпи",
     "brand": "Wet Hankies",
     "category": "Хигиена",
-    "quantity_value": 4,
-    "quantity_unit": "pcs",
+    "quantity_value": 40,
+    "quantity_unit": "бр.",
     "pack_size": "2 + 2",
     "price_eur": 2.581656,
     "price_bgn": 5.05
@@ -32141,8 +32141,8 @@
     "name": "Гел за пране",
     "brand": "Medix Alvina",
     "category": "Почистващи",
-    "quantity_value": 0.29,
-    "quantity_unit": "l",
+    "quantity_value": 6.36,
+    "quantity_unit": "л",
     "pack_size": "44 пранета",
     "price_eur": 12.5,
     "price_bgn": 24.45
@@ -32190,7 +32190,7 @@
     "brand": "Billa",
     "category": "Хигиена",
     "quantity_value": 1,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": "2 пласта",
     "price_eur": 5.98,
     "price_bgn": 11.7
@@ -32202,7 +32202,7 @@
     "brand": "Billa",
     "category": "Хигиена",
     "quantity_value": 16,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": "3 пласта",
     "price_eur": 9.99,
     "price_bgn": 19.54
@@ -32298,7 +32298,7 @@
     "brand": "Spontex",
     "category": "Други",
     "quantity_value": 10,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 13.983970000000001,
     "price_bgn": 27.35
@@ -32310,7 +32310,7 @@
     "brand": "Spontex",
     "category": "Други",
     "quantity_value": 200,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": "2 х 100",
     "price_eur": 29.982414,
     "price_bgn": 58.64
@@ -32322,7 +32322,7 @@
     "brand": "Spontex",
     "category": "Други",
     "quantity_value": 16,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 14.981428,
     "price_bgn": 29.3
@@ -32346,7 +32346,7 @@
     "brand": "Spontex",
     "category": "Други",
     "quantity_value": 12,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 13.983970000000001,
     "price_bgn": 27.35
@@ -32358,7 +32358,7 @@
     "brand": "Spontex",
     "category": "Електроника",
     "quantity_value": 16,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 11.989054,
     "price_bgn": 23.45
@@ -32382,7 +32382,7 @@
     "brand": "Spontex",
     "category": "Електроника",
     "quantity_value": 10,
-    "quantity_unit": "pcs",
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 3.481324,
     "price_bgn": 6.81
@@ -32441,8 +32441,8 @@
     "name": "Акумулаторна прахосмукачка",
     "brand": "CleanMaxx",
     "category": "Инструменти",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 7.4,
+    "quantity_unit": "V",
     "pack_size": "1 бр.",
     "price_eur": 49.99,
     "price_bgn": 97.77
@@ -32453,8 +32453,8 @@
     "name": "Акумулаторна прахосмукачка",
     "brand": "CleanMaxx",
     "category": "Инструменти",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 22.2,
+    "quantity_unit": "V",
     "pack_size": "1 бр.",
     "price_eur": 129.98,
     "price_bgn": 254.21
@@ -32465,8 +32465,8 @@
     "name": "Моп тип пеперуда",
     "brand": "Clever",
     "category": "Дом",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 1,
+    "quantity_unit": "бр.",
     "pack_size": "1 бр.",
     "price_eur": 6.98,
     "price_bgn": 13.65
@@ -32477,8 +32477,8 @@
     "name": "Резерва за моп пеперуда",
     "brand": "Clever",
     "category": "Дом",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 1,
+    "quantity_unit": "бр.",
     "pack_size": "1 бр.",
     "price_eur": 3.99,
     "price_bgn": 7.8
@@ -32489,8 +32489,8 @@
     "name": "Домакинска гъба",
     "brand": "Scrub Daddy или Scrub Mommy",
     "category": "Други",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 1,
+    "quantity_unit": "бр.",
     "pack_size": "1 бр.",
     "price_eur": 6.493256,
     "price_bgn": 12.7
@@ -32501,8 +32501,8 @@
     "name": "Кошница за съхранение М",
     "brand": "Vivess",
     "category": "Дом",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 30,
+    "quantity_unit": "см",
     "pack_size": "1 бр.",
     "price_eur": 11.989054,
     "price_bgn": 23.45
@@ -32513,8 +32513,8 @@
     "name": "Кошница за съхранение L",
     "brand": "Vivess",
     "category": "Дом",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 45,
+    "quantity_unit": "см",
     "pack_size": "1 бр.",
     "price_eur": 16.995901999999997,
     "price_bgn": 33.24
@@ -32525,8 +32525,8 @@
     "name": "Изтривалка",
     "brand": null,
     "category": "Дом",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 2400,
+    "quantity_unit": "cm²",
     "pack_size": "1 бр.",
     "price_eur": 6.982206,
     "price_bgn": 13.66
@@ -32537,8 +32537,8 @@
     "name": "Кошница за съхранение S",
     "brand": "Vivess",
     "category": "Дом",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 20,
+    "quantity_unit": "см",
     "pack_size": "1 бр.",
     "price_eur": 7.999222,
     "price_bgn": 15.64
@@ -32550,7 +32550,7 @@
     "brand": "Ariel",
     "category": "Почистващи",
     "quantity_value": 40,
-    "quantity_unit": "пранета",
+    "quantity_unit": "бр.",
     "pack_size": "1 опаковка",
     "price_eur": 20.985734,
     "price_bgn": 41.04
@@ -32561,8 +32561,8 @@
     "name": "Омекотител",
     "brand": "Lenor",
     "category": "Почистващи",
-    "quantity_value": 65,
-    "quantity_unit": "пранета",
+    "quantity_value": 170,
+    "quantity_unit": "ml",
     "pack_size": null,
     "price_eur": 8.78,
     "price_bgn": 17.17
@@ -32609,8 +32609,8 @@
     "name": "Бебешки пелени",
     "brand": "Pampers Premium",
     "category": "Хигиена",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 52,
+    "quantity_unit": "бр.",
     "pack_size": null,
     "price_eur": 28.789376,
     "price_bgn": 56.31
@@ -32633,8 +32633,8 @@
     "name": "Печено пиле",
     "brand": null,
     "category": "Месо и колбаси",
-    "quantity_value": null,
-    "quantity_unit": null,
+    "quantity_value": 1,
+    "quantity_unit": "бр.",
     "pack_size": "1 бр.",
     "price_eur": 9.76,
     "price_bgn": 19.09
@@ -32657,8 +32657,8 @@
     "name": "Свински бут без кост",
     "brand": null,
     "category": "Месо и колбаси",
-    "quantity_value": null,
-    "quantity_unit": "кг",
+    "quantity_value": 1000,
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 5.79,
     "price_bgn": 11.32
@@ -32669,8 +32669,8 @@
     "name": "Пилешки долен бут",
     "brand": null,
     "category": "Месо и колбаси",
-    "quantity_value": null,
-    "quantity_unit": "кг",
+    "quantity_value": 1000,
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 5.98,
     "price_bgn": 11.7
@@ -32681,8 +32681,8 @@
     "name": "Бяло зеле",
     "brand": null,
     "category": "Плодове и зеленчуци",
-    "quantity_value": null,
-    "quantity_unit": "кг",
+    "quantity_value": 1000,
+    "quantity_unit": "g",
     "pack_size": null,
     "price_eur": 0.88,
     "price_bgn": 1.72
