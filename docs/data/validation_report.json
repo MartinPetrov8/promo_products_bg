@@ -1,0 +1,5810 @@
+{
+  "stats": {
+    "total": 133,
+    "valid": 8,
+    "invalid": 125,
+    "reasons": {
+      "price_ratio": 10,
+      "insufficient_products_after_cleanup": 98,
+      "low_confidence": 122
+    },
+    "products_removed": 366,
+    "groups_dissolved": 98
+  },
+  "invalid_groups": [
+    {
+      "group_id": "g_2c4de95a",
+      "off_barcode": "5201360517312",
+      "reasons": [
+        "price_ratio: 100.3x (max 5.0x)",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "7 DAYS Кроасан Double\nванилия&ягода",
+          "price": 1.19,
+          "conf": 1.0
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с ванилия | LIDL",
+          "price": 119.3,
+          "conf": 0.75
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "7 DAYS Кроасан Double\nванилия&ягода"
+        }
+      ]
+    },
+    {
+      "group_id": "g_8b61dffe",
+      "off_barcode": "3800030771218",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "7 up Газирана напитка",
+          "price": 0.84,
+          "conf": 0.79
+        },
+        {
+          "store": "Kaufland",
+          "name": "Derby Газирана напитка\nразлични вкусове",
+          "price": 0.47,
+          "conf": 0.57
+        },
+        {
+          "store": "Billa",
+          "name": "Billa Indian tonic газирана напитка 1 л",
+          "price": 0.71,
+          "conf": 0.59
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Derby Газирана напитка\nразлични вкусове"
+        },
+        {
+          "store": "Billa",
+          "name": "Billa Indian tonic газирана напитка 1 л"
+        }
+      ]
+    },
+    {
+      "group_id": "g_cc6fa54c",
+      "off_barcode": "8007270126821",
+      "reasons": [
+        "low_confidence: 1 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "ALEAS Маслиново масло\nекстра върджин",
+          "price": 16.98,
+          "conf": 0.89
+        },
+        {
+          "store": "Billa",
+          "name": "Monini Маслиново масло екстра върджин 1 л",
+          "price": 11.49,
+          "conf": 0.88
+        },
+        {
+          "store": "Kaufland",
+          "name": "COSTA D'ORO LE COLLINE Маслиново масло",
+          "price": 14.98,
+          "conf": 0.66
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "COSTA D'ORO LE COLLINE Маслиново масло"
+        }
+      ]
+    },
+    {
+      "group_id": "g_ff0048fb",
+      "off_barcode": "7312040323104",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Absolut Водка 0,7 л",
+          "price": 8.43,
+          "conf": 0.56
+        },
+        {
+          "store": "Kaufland",
+          "name": "Absolut",
+          "price": 8.43,
+          "conf": 0.74
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Absolut Водка 0,7 л"
+        }
+      ]
+    },
+    {
+      "group_id": "g_82fc043a",
+      "off_barcode": "3800202560954",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Agi Бели курабии с бадеми",
+          "price": 1.78,
+          "conf": 1.0
+        },
+        {
+          "store": "Kaufland",
+          "name": "Донът Купидон с бели сърчица",
+          "price": 0.45,
+          "conf": 0.43
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Донът Купидон с бели сърчица"
+        }
+      ]
+    },
+    {
+      "group_id": "g_f4095fe6",
+      "off_barcode": "3800200990050",
+      "reasons": [
+        "low_confidence: 4 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Пуйка замразена",
+          "price": 8.98,
+          "conf": 0.59
+        },
+        {
+          "store": "Billa",
+          "name": "Цаца замразена 500 г",
+          "price": 1.12,
+          "conf": 0.54
+        },
+        {
+          "store": "Kaufland",
+          "name": "Almondy Торта\nзамразена",
+          "price": 10.93,
+          "conf": 0.51
+        },
+        {
+          "store": "Kaufland",
+          "name": "Агнешка главичка замразена",
+          "price": 3.29,
+          "conf": 0.49
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Пуйка замразена"
+        },
+        {
+          "store": "Billa",
+          "name": "Цаца замразена 500 г"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Almondy Торта\nзамразена"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Агнешка главичка замразена"
+        }
+      ]
+    },
+    {
+      "group_id": "g_ecec4612",
+      "off_barcode": "8002200144128",
+      "reasons": [
+        "low_confidence: 12 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Melitta Café Bar Кафе капсули\nразлични видове",
+          "price": 7.49,
+          "conf": 0.48
+        },
+        {
+          "store": "Kaufland",
+          "name": "STARBUCKS Кафе капсули\nразлични видове",
+          "price": 9.49,
+          "conf": 0.52
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ariel Прах, Гел или\nКапсули",
+          "price": 26.99,
+          "conf": 0.44
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ariel Прах, Гел или Капсули\nизбрани видове",
+          "price": 18.99,
+          "conf": 0.38
+        },
+        {
+          "store": "Kaufland",
+          "name": "L'OR Flavours collection Кафе капсули",
+          "price": 32.99,
+          "conf": 0.54
+        },
+        {
+          "store": "Kaufland",
+          "name": "PERSIL Гел или\nКапсули",
+          "price": 35.99,
+          "conf": 0.46
+        },
+        {
+          "store": "Kaufland",
+          "name": "PERSIL гел 100 пранета\nкапсули 68 пранета",
+          "price": 35.99,
+          "conf": 0.41
+        },
+        {
+          "store": "Kaufland",
+          "name": "Savex Гел или Капсули за пране",
+          "price": 13.98,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Savex Прах, Гел или Капсули\nизбрани видове",
+          "price": 13.98,
+          "conf": 0.38
+        },
+        {
+          "store": "Billa",
+          "name": "Tira капсули CAFE AU LAIT DG 16 бр.",
+          "price": 5.11,
+          "conf": 0.4
+        },
+        {
+          "store": "Billa",
+          "name": "Tira капсули Lungo DG 16 бр.",
+          "price": 5.11,
+          "conf": 0.43
+        },
+        {
+          "store": "Billa",
+          "name": "Tira капсули Macchiato 8 + 8 DG",
+          "price": 5.11,
+          "conf": 0.45
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Melitta Café Bar Кафе капсули\nразлични видове"
+        },
+        {
+          "store": "Kaufland",
+          "name": "STARBUCKS Кафе капсули\nразлични видове"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ariel Прах, Гел или\nКапсули"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ariel Прах, Гел или Капсули\nизбрани видове"
+        },
+        {
+          "store": "Kaufland",
+          "name": "L'OR Flavours collection Кафе капсули"
+        },
+        {
+          "store": "Kaufland",
+          "name": "PERSIL Гел или\nКапсули"
+        },
+        {
+          "store": "Kaufland",
+          "name": "PERSIL гел 100 пранета\nкапсули 68 пранета"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Savex Гел или Капсули за пране"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Savex Прах, Гел или Капсули\nизбрани видове"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira капсули CAFE AU LAIT DG 16 бр."
+        },
+        {
+          "store": "Billa",
+          "name": "Tira капсули Lungo DG 16 бр."
+        },
+        {
+          "store": "Billa",
+          "name": "Tira капсули Macchiato 8 + 8 DG"
+        }
+      ]
+    },
+    {
+      "group_id": "g_9647b63d",
+      "off_barcode": "4056489920298",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Prisun негазирана напитка 1,5 л",
+          "price": 0.91,
+          "conf": 0.63
+        },
+        {
+          "store": "Lidl",
+          "name": "Aspasia Негазирана безалкохолна напитка",
+          "price": 0.71,
+          "conf": 0.64
+        },
+        {
+          "store": "Lidl",
+          "name": "Dr Witt Негазирана безалкохолна напитка",
+          "price": 0.89,
+          "conf": 0.61
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Prisun негазирана напитка 1,5 л"
+        },
+        {
+          "store": "Lidl",
+          "name": "Aspasia Негазирана безалкохолна напитка"
+        },
+        {
+          "store": "Lidl",
+          "name": "Dr Witt Негазирана безалкохолна напитка"
+        }
+      ]
+    },
+    {
+      "group_id": "g_5fa32b8c",
+      "off_barcode": "4013400523884",
+      "reasons": [
+        "low_confidence: 4 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Тенеси уиски",
+          "price": 48.0,
+          "conf": 0.58
+        },
+        {
+          "store": "Billa",
+          "name": "Claymore Уиски 0,7 л",
+          "price": 6.64,
+          "conf": 0.47
+        },
+        {
+          "store": "Kaufland",
+          "name": "BACARDI Ром\nразлични видове",
+          "price": 24.98,
+          "conf": 0.53
+        },
+        {
+          "store": "Lidl",
+          "name": "Шотландско уиски",
+          "price": 2.29,
+          "conf": 0.51
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Тенеси уиски"
+        },
+        {
+          "store": "Billa",
+          "name": "Claymore Уиски 0,7 л"
+        },
+        {
+          "store": "Kaufland",
+          "name": "BACARDI Ром\nразлични видове"
+        },
+        {
+          "store": "Lidl",
+          "name": "Шотландско уиски"
+        }
+      ]
+    },
+    {
+      "group_id": "g_464a62c5",
+      "off_barcode": "2880020010993",
+      "reasons": [
+        "low_confidence: 2 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Свински врат до 5 кг на покупка",
+          "price": 7.49,
+          "conf": 0.59
+        },
+        {
+          "store": "Kaufland",
+          "name": "BIS Свински врат\nот свежата витрина",
+          "price": 9.99,
+          "conf": 0.54
+        },
+        {
+          "store": "Kaufland",
+          "name": "Свински врат без кост около 1,5 кг",
+          "price": 7.98,
+          "conf": 0.77
+        },
+        {
+          "store": "Lidl",
+          "name": "Свински врат с кост XXL",
+          "price": 3.79,
+          "conf": 0.84
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Свински врат до 5 кг на покупка"
+        },
+        {
+          "store": "Kaufland",
+          "name": "BIS Свински врат\nот свежата витрина"
+        }
+      ]
+    },
+    {
+      "group_id": "g_11b6a9db",
+      "off_barcode": "3809432895942",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Balkan Сандвич Чабата\nразлични видове",
+          "price": 3.99,
+          "conf": 1.0
+        },
+        {
+          "store": "Lidl",
+          "name": "Balkan Сандвич Чабата",
+          "price": 2.19,
+          "conf": 0.61
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Balkan Сандвич Чабата"
+        }
+      ]
+    },
+    {
+      "group_id": "g_b4474bea",
+      "off_barcode": "0804947570806",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Дома Меденки",
+          "price": 3.48,
+          "conf": 0.79
+        },
+        {
+          "store": "Billa",
+          "name": "Billa Меденки с глазура 200 г",
+          "price": 0.86,
+          "conf": 0.52
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Billa Меденки с глазура 200 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_17ce8e1f",
+      "off_barcode": "20465766",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Херинга филе от витрина на самообслужване",
+          "price": 8.98,
+          "conf": 0.53
+        },
+        {
+          "store": "Kaufland",
+          "name": "Херинга филе размразено",
+          "price": 10.09,
+          "conf": 0.65
+        },
+        {
+          "store": "Billa",
+          "name": "Billa Херинга филе различни видове 200 г",
+          "price": 1.53,
+          "conf": 0.5
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Херинга филе от витрина на самообслужване"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Херинга филе размразено"
+        },
+        {
+          "store": "Billa",
+          "name": "Billa Херинга филе различни видове 200 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_6f1a51c7",
+      "off_barcode": "9008684030505",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Шоколадови топчета Дуо",
+          "price": 1.69,
+          "conf": 0.81
+        },
+        {
+          "store": "Kaufland",
+          "name": "Bona Vita Шоколадови топчета или\nМидички",
+          "price": 5.48,
+          "conf": 0.6
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Bona Vita Шоколадови топчета или\nМидички"
+        }
+      ]
+    },
+    {
+      "group_id": "g_7613449d",
+      "off_barcode": "0380961107674",
+      "reasons": [
+        "low_confidence: 6 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Ditex Спален комплект Premium\n3 части",
+          "price": 18.99,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ditex Спален комплект Premium\n4 части",
+          "price": 25.99,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ditex Спален комплект Premium\n5 части",
+          "price": 32.99,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Bref WC Блокче Premium\nразлични видове",
+          "price": 12.99,
+          "conf": 0.41
+        },
+        {
+          "store": "Billa",
+          "name": "Sobieski Водка Premium 0,7 л",
+          "price": 6.13,
+          "conf": 0.51
+        },
+        {
+          "store": "Kaufland",
+          "name": "PAMPERS Пелени или Гащички PREMIUM",
+          "price": 36.98,
+          "conf": 0.43
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Ditex Спален комплект Premium\n3 части"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ditex Спален комплект Premium\n4 части"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ditex Спален комплект Premium\n5 части"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Bref WC Блокче Premium\nразлични видове"
+        },
+        {
+          "store": "Billa",
+          "name": "Sobieski Водка Premium 0,7 л"
+        },
+        {
+          "store": "Kaufland",
+          "name": "PAMPERS Пелени или Гащички PREMIUM"
+        }
+      ]
+    },
+    {
+      "group_id": "g_aafd364e",
+      "off_barcode": "4337185305429",
+      "reasons": [
+        "low_confidence: 5 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Ирландско уиски | LIDL",
+          "price": 40.0,
+          "conf": 0.52
+        },
+        {
+          "store": "Kaufland",
+          "name": "Bushmills Ирландско уиски",
+          "price": 31.98,
+          "conf": 0.49
+        },
+        {
+          "store": "Billa",
+          "name": "Pogues Ирландско Уиски 1 л",
+          "price": 15.33,
+          "conf": 0.51
+        },
+        {
+          "store": "Kaufland",
+          "name": "Jameson Ирландско уиски",
+          "price": 33.89,
+          "conf": 0.5
+        },
+        {
+          "store": "Kaufland",
+          "name": "IRISH BEEF Ирландско говеждо от врат\nот свежата витрина",
+          "price": 25.99,
+          "conf": 0.38
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Ирландско уиски | LIDL"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Bushmills Ирландско уиски"
+        },
+        {
+          "store": "Billa",
+          "name": "Pogues Ирландско Уиски 1 л"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Jameson Ирландско уиски"
+        },
+        {
+          "store": "Kaufland",
+          "name": "IRISH BEEF Ирландско говеждо от врат\nот свежата витрина"
+        }
+      ]
+    },
+    {
+      "group_id": "g_ad7f93c6",
+      "off_barcode": "5941445675666",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Chio Чипс Intense 120 г",
+          "price": 1.32,
+          "conf": 0.77
+        },
+        {
+          "store": "Kaufland",
+          "name": "Syoss Oleo Intense",
+          "price": 4.59,
+          "conf": 0.56
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Syoss Oleo Intense"
+        }
+      ]
+    },
+    {
+      "group_id": "g_0170983d",
+      "off_barcode": "4063367347535",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Пилешки крила от свежата витрина",
+          "price": 4.99,
+          "conf": 0.57
+        },
+        {
+          "store": "Kaufland",
+          "name": "Coco Rico Пилешки крила",
+          "price": 6.98,
+          "conf": 0.65
+        },
+        {
+          "store": "Lidl",
+          "name": "Пресни пилешки крила, мариновани | LIDL",
+          "price": 146.69,
+          "conf": 0.55
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Пилешки крила от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Coco Rico Пилешки крила"
+        },
+        {
+          "store": "Lidl",
+          "name": "Пресни пилешки крила, мариновани | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_070d0cd9",
+      "off_barcode": "4333465097589",
+      "reasons": [
+        "low_confidence: 8 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "DAVIDOFF Кафе на зърна\nразлични видове",
+          "price": 28.89,
+          "conf": 0.51
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Barista Crema 1 кг Продукт, маркиран със синя звезда",
+          "price": 17.89,
+          "conf": 0.41
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Barista Espresso 1 кг Продукт, маркиран със синя звезда",
+          "price": 17.89,
+          "conf": 0.4
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Crema 1 кг",
+          "price": 17.89,
+          "conf": 0.6
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Dual Colombia Brazil 500 г Продукт, маркиран със синя звезда",
+          "price": 11.24,
+          "conf": 0.39
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Dual Peru Brazil 500 г Продукт, маркиран със синя звезда",
+          "price": 11.24,
+          "conf": 0.4
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Espresso 1 кг",
+          "price": 17.89,
+          "conf": 0.57
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Single Origin Brazil 1 кг Продукт, маркиран със синя звезда",
+          "price": 17.89,
+          "conf": 0.39
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "DAVIDOFF Кафе на зърна\nразлични видове"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Barista Crema 1 кг Продукт, маркиран със синя звезда"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Barista Espresso 1 кг Продукт, маркиран със синя звезда"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Crema 1 кг"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Dual Colombia Brazil 500 г Продукт, маркиран със синя звезда"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Dual Peru Brazil 500 г Продукт, маркиран със синя звезда"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Espresso 1 кг"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Кафе на зърна Single Origin Brazil 1 кг Продукт, маркиран със синя звезда"
+        }
+      ]
+    },
+    {
+      "group_id": "g_fd6038e8",
+      "off_barcode": "4250365906073",
+      "reasons": [
+        "low_confidence: 1 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Супер цена - Deutsche Markenbutter краве масло 250 г",
+          "price": 2.55,
+          "conf": 0.79
+        },
+        {
+          "store": "Kaufland",
+          "name": "DEUTSCHE MARKENBUTTER Краве масло",
+          "price": 3.68,
+          "conf": 1.0
+        },
+        {
+          "store": "Lidl",
+          "name": "Kраве масло",
+          "price": 1.09,
+          "conf": 0.68
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Kраве масло"
+        }
+      ]
+    },
+    {
+      "group_id": "g_89f627f5",
+      "off_barcode": "3800225890625",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Ditex Възглавница Премиум\n50 х 70 см",
+          "price": 5.98,
+          "conf": 0.41
+        },
+        {
+          "store": "Lidl",
+          "name": "Баница Премиум | LIDL",
+          "price": 119.3,
+          "conf": 0.5
+        },
+        {
+          "store": "Lidl",
+          "name": "Премиум снакс за кучета | LIDL",
+          "price": 132.99,
+          "conf": 0.43
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Ditex Възглавница Премиум\n50 х 70 см"
+        },
+        {
+          "store": "Lidl",
+          "name": "Баница Премиум | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Премиум снакс за кучета | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_5549724a",
+      "off_barcode": "80177043",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "price_ratio: 5.4x (max 5.0x)"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Ferrero Rocher/ Raffaello",
+          "price": 2.04,
+          "conf": 0.95
+        },
+        {
+          "store": "Billa",
+          "name": "Ferrero Rocher Бонбониера Diamand 300 г",
+          "price": 9.71,
+          "conf": 1.0
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ferrero Rocher",
+          "price": 5.62,
+          "conf": 1.0
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ferrero Rocher Шоколадови бонбони",
+          "price": 10.99,
+          "conf": 0.78
+        },
+        {
+          "store": "Kaufland",
+          "name": "LUIGI FERRERO Чаша за капучино Coffeina\n350 мл",
+          "price": 9.99,
+          "conf": 0.44
+        },
+        {
+          "store": "Kaufland",
+          "name": "LUIGI FERRERO Чаша за капучино Coffeina\\n350 мл",
+          "price": 4.99,
+          "conf": 0.44
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "LUIGI FERRERO Чаша за капучино Coffeina\n350 мл"
+        },
+        {
+          "store": "Kaufland",
+          "name": "LUIGI FERRERO Чаша за капучино Coffeina\\n350 мл"
+        }
+      ]
+    },
+    {
+      "group_id": "g_a8c70cc1",
+      "off_barcode": "3800040201057",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Fresh & Cool Салата Градински микс\n250 г",
+          "price": 2.99,
+          "conf": 0.63
+        },
+        {
+          "store": "Lidl",
+          "name": "Салата микс Италиана",
+          "price": 4.6,
+          "conf": 0.61
+        },
+        {
+          "store": "Lidl",
+          "name": "Българска салата микс",
+          "price": 1.38,
+          "conf": 0.51
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Fresh & Cool Салата Градински микс\n250 г"
+        },
+        {
+          "store": "Lidl",
+          "name": "Салата микс Италиана"
+        },
+        {
+          "store": "Lidl",
+          "name": "Българска салата микс"
+        }
+      ]
+    },
+    {
+      "group_id": "g_4f87fe5c",
+      "off_barcode": "5205461200098",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "price_ratio: 6.1x (max 5.0x)",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Италианска салата",
+          "price": 1.14,
+          "conf": 1.0
+        },
+        {
+          "store": "Kaufland",
+          "name": "Fresh & Cool Салата Капрезе",
+          "price": 6.98,
+          "conf": 0.62
+        },
+        {
+          "store": "Kaufland",
+          "name": "Fresh & Cool Салата Цезар",
+          "price": 6.98,
+          "conf": 0.76
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Fresh & Cool Салата Капрезе"
+        },
+        {
+          "store": "Lidl",
+          "name": "Италианска салата"
+        }
+      ]
+    },
+    {
+      "group_id": "g_d8f0017f",
+      "off_barcode": "4046234567137",
+      "reasons": [
+        "low_confidence: 10 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Tchibo Мляно кафе",
+          "price": 7.49,
+          "conf": 1.0
+        },
+        {
+          "store": "Kaufland",
+          "name": "Gala Мляно кафе\nAla Carte",
+          "price": 14.98,
+          "conf": 0.57
+        },
+        {
+          "store": "Billa",
+          "name": "Супер цена - Illy мляно кафе 250 г",
+          "price": 7.61,
+          "conf": 0.52
+        },
+        {
+          "store": "Kaufland",
+          "name": "Tchibo Espresso",
+          "price": 5.11,
+          "conf": 1.0
+        },
+        {
+          "store": "Kaufland",
+          "name": "Tchibo Espresso Мляно кафе\nразлични видове",
+          "price": 9.99,
+          "conf": 0.68
+        },
+        {
+          "store": "Kaufland",
+          "name": "Tchibo Cafissimo Кафе капсули\nизбрани видове",
+          "price": 7.49,
+          "conf": 0.52
+        },
+        {
+          "store": "Kaufland",
+          "name": "K-Favourites Мляно кафе\nразлични видове",
+          "price": 8.98,
+          "conf": 0.5
+        },
+        {
+          "store": "Kaufland",
+          "name": "K-CLASSIC Мляно кафе\nбезкофеиново",
+          "price": 6.49,
+          "conf": 0.55
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Мляно кафе Gold 500 г",
+          "price": 10.22,
+          "conf": 0.57
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Мляно кафе Intenso 500 г",
+          "price": 8.18,
+          "conf": 0.55
+        },
+        {
+          "store": "Billa",
+          "name": "Tira мляно кафе Crema 250 г",
+          "price": 5.62,
+          "conf": 0.57
+        },
+        {
+          "store": "Billa",
+          "name": "Tira мляно кафе Espresso 250 г",
+          "price": 4.6,
+          "conf": 0.55
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Gala Мляно кафе\nAla Carte"
+        },
+        {
+          "store": "Billa",
+          "name": "Супер цена - Illy мляно кафе 250 г"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Tchibo Espresso Мляно кафе\nразлични видове"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Tchibo Cafissimo Кафе капсули\nизбрани видове"
+        },
+        {
+          "store": "Kaufland",
+          "name": "K-Favourites Мляно кафе\nразлични видове"
+        },
+        {
+          "store": "Kaufland",
+          "name": "K-CLASSIC Мляно кафе\nбезкофеиново"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Мляно кафе Gold 500 г"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira Мляно кафе Intenso 500 г"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira мляно кафе Crema 250 г"
+        },
+        {
+          "store": "Billa",
+          "name": "Tira мляно кафе Espresso 250 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_c120130e",
+      "off_barcode": "8715700421469",
+      "reasons": [
+        "low_confidence: 1 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "HEINZ",
+          "price": 2.29,
+          "conf": 1.0
+        },
+        {
+          "store": "Billa",
+          "name": "King оферта - Супер цена - Heinz Кетчуп оригинал 1,35 кг",
+          "price": 4.13,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "HEINZ Кетчуп",
+          "price": 5.48,
+          "conf": 0.95
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "King оферта - Супер цена - Heinz Кетчуп оригинал 1,35 кг"
+        }
+      ]
+    },
+    {
+      "group_id": "g_19b72b9c",
+      "off_barcode": "8711000526743",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "price_ratio: 10.1x (max 5.0x)"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Nescafe Разтворимо кафе 3в1",
+          "price": 5.79,
+          "conf": 0.68
+        },
+        {
+          "store": "Lidl",
+          "name": "Разтворимо кафе 3 в 1",
+          "price": 3.55,
+          "conf": 0.97
+        },
+        {
+          "store": "Kaufland",
+          "name": "Jacobs Разтворимо кафе\n2 в 1 или 3 в 1",
+          "price": 0.35,
+          "conf": 0.95
+        },
+        {
+          "store": "Kaufland",
+          "name": "Jacobs Разтворимо кафе 3в1\nразлични вкусове",
+          "price": 0.35,
+          "conf": 0.76
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Nescafe Разтворимо кафе 3в1"
+        },
+        {
+          "store": "Lidl",
+          "name": "Разтворимо кафе 3 в 1"
+        }
+      ]
+    },
+    {
+      "group_id": "g_378fd50f",
+      "off_barcode": "8595681101259",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Норвежка пушена сьомга XXL",
+          "price": 3.09,
+          "conf": 0.64
+        },
+        {
+          "store": "Kaufland",
+          "name": "K-Blue Bay Филе от сьомга с подправки\nразлични видове",
+          "price": 9.99,
+          "conf": 0.51
+        },
+        {
+          "store": "Kaufland",
+          "name": "K BLUE BAY Порции сьомга филе",
+          "price": 19.99,
+          "conf": 0.67
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Норвежка пушена сьомга XXL"
+        },
+        {
+          "store": "Kaufland",
+          "name": "K-Blue Bay Филе от сьомга с подправки\nразлични видове"
+        },
+        {
+          "store": "Kaufland",
+          "name": "K BLUE BAY Порции сьомга филе"
+        }
+      ]
+    },
+    {
+      "group_id": "g_99f32689",
+      "off_barcode": "8004030049000",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "K-FAVOURITES Маслиново масло\nГърция",
+          "price": 9.99,
+          "conf": 0.58
+        },
+        {
+          "store": "Lidl",
+          "name": "Хляб с розмарин и маслиново масло | LIDL",
+          "price": 119.3,
+          "conf": 0.56
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "K-FAVOURITES Маслиново масло\nГърция"
+        },
+        {
+          "store": "Lidl",
+          "name": "Хляб с розмарин и маслиново масло | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_e684a481",
+      "off_barcode": "2814026003055",
+      "reasons": [
+        "low_confidence: 6 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Маслини Каламата от свежата витрина",
+          "price": 7.49,
+          "conf": 0.63
+        },
+        {
+          "store": "Kaufland",
+          "name": "Маслини Каламата фини",
+          "price": 6.98,
+          "conf": 0.84
+        },
+        {
+          "store": "Kaufland",
+          "name": "Маслини Каламата",
+          "price": 4.59,
+          "conf": 0.95
+        },
+        {
+          "store": "Kaufland",
+          "name": "Маслини Каламата 201/260",
+          "price": 8.98,
+          "conf": 0.77
+        },
+        {
+          "store": "Kaufland",
+          "name": "Маслини Каламата Джъмбо 181/260",
+          "price": 9.99,
+          "conf": 0.66
+        },
+        {
+          "store": "Kaufland",
+          "name": "Маслини Каламата екстра",
+          "price": 6.13,
+          "conf": 0.81
+        },
+        {
+          "store": "Kaufland",
+          "name": "Маслини Каламата екстра от свежата витрина",
+          "price": 11.99,
+          "conf": 0.57
+        },
+        {
+          "store": "Kaufland",
+          "name": "Маслини Каламата натурални",
+          "price": 8.98,
+          "conf": 0.76
+        },
+        {
+          "store": "Billa",
+          "name": "Само с Billa Card - Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
+          "price": 5.09,
+          "conf": 0.43
+        },
+        {
+          "store": "Kaufland",
+          "name": "K-Favourites Маслини Каламата\nсушени",
+          "price": 3.29,
+          "conf": 0.65
+        },
+        {
+          "store": "Lidl",
+          "name": "Хлебче с маслини | LIDL",
+          "price": 117.35,
+          "conf": 0.62
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Маслини Каламата от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Маслини Каламата Джъмбо 181/260"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Маслини Каламата екстра от свежата витрина"
+        },
+        {
+          "store": "Billa",
+          "name": "Само с Billa Card - Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг"
+        },
+        {
+          "store": "Kaufland",
+          "name": "K-Favourites Маслини Каламата\nсушени"
+        },
+        {
+          "store": "Lidl",
+          "name": "Хлебче с маслини | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_dcf9d090",
+      "off_barcode": "4000281695502",
+      "reasons": [
+        "low_confidence: 7 products below 0.7",
+        "price_ratio: 24.6x (max 5.0x)"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "PERGALE Бонбони асорти\nизбрани видове",
+          "price": 2.99,
+          "conf": 0.52
+        },
+        {
+          "store": "Kaufland",
+          "name": "Pergale Шоколадови бонбони\nасорти",
+          "price": 2.99,
+          "conf": 0.84
+        },
+        {
+          "store": "Kaufland",
+          "name": "Melbon Шоколадови бонбони\nМорски фигури",
+          "price": 7.98,
+          "conf": 0.58
+        },
+        {
+          "store": "Lidl",
+          "name": "Merci Шоколадови бонбони",
+          "price": 4.59,
+          "conf": 0.73
+        },
+        {
+          "store": "Lidl",
+          "name": "Шоколадови бонбони",
+          "price": 0.69,
+          "conf": 0.77
+        },
+        {
+          "store": "Kaufland",
+          "name": "Merci Шоколадови бонбони",
+          "price": 16.98,
+          "conf": 0.73
+        },
+        {
+          "store": "Billa",
+          "name": "Milora Шоколадови бонбони Mozart Kugeln 200 г",
+          "price": 3.57,
+          "conf": 0.55
+        },
+        {
+          "store": "Lidl",
+          "name": "Шоколадови бонбони с марципан",
+          "price": 3.05,
+          "conf": 0.69
+        },
+        {
+          "store": "Kaufland",
+          "name": "Roshen Шоколадови бонбони\nCherry queen",
+          "price": 5.98,
+          "conf": 0.59
+        },
+        {
+          "store": "Kaufland",
+          "name": "Loacker Шоколадови бонбони Rose\nразлични видове",
+          "price": 11.48,
+          "conf": 0.53
+        },
+        {
+          "store": "Kaufland",
+          "name": "Roshen Шоколадови бонбони\nChocolateria",
+          "price": 9.49,
+          "conf": 0.61
+        },
+        {
+          "store": "Kaufland",
+          "name": "KATY Шоколадови бонбони\nасорти",
+          "price": 5.98,
+          "conf": 0.88
+        },
+        {
+          "store": "Kaufland",
+          "name": "Roshen Шоколадови бонбони",
+          "price": 9.49,
+          "conf": 0.72
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "PERGALE Бонбони асорти\nизбрани видове"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Melbon Шоколадови бонбони\nМорски фигури"
+        },
+        {
+          "store": "Billa",
+          "name": "Milora Шоколадови бонбони Mozart Kugeln 200 г"
+        },
+        {
+          "store": "Lidl",
+          "name": "Шоколадови бонбони с марципан"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Roshen Шоколадови бонбони\nCherry queen"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Loacker Шоколадови бонбони Rose\nразлични видове"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Roshen Шоколадови бонбони\nChocolateria"
+        },
+        {
+          "store": "Lidl",
+          "name": "Шоколадови бонбони"
+        }
+      ]
+    },
+    {
+      "group_id": "g_1ce1e3fa",
+      "off_barcode": "4008400290126",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Kinder Pingui",
+          "price": 2.37,
+          "conf": 1.0
+        },
+        {
+          "store": "Billa",
+          "name": "Само с Billa Card - Kinder Pingui 30 г",
+          "price": 0.71,
+          "conf": 0.62
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Само с Billa Card - Kinder Pingui 30 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_27d11a10",
+      "off_barcode": "4049726005964",
+      "reasons": [
+        "low_confidence: 3 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "King оферта - Само с Billa Card - Свински врат без кост За 1 кг До 5 кг на клиент на ден*",
+          "price": 3.57,
+          "conf": 0.48
+        },
+        {
+          "store": "Billa",
+          "name": "Супер цена - Свински бут без кост За 1 кг",
+          "price": 2.96,
+          "conf": 0.53
+        },
+        {
+          "store": "Kaufland",
+          "name": "Свински бут без кост от свежата витрина",
+          "price": 6.98,
+          "conf": 0.52
+        },
+        {
+          "store": "Lidl",
+          "name": "Свински бут без кост",
+          "price": 2.8,
+          "conf": 0.77
+        },
+        {
+          "store": "Kaufland",
+          "name": "Свински врат без кост",
+          "price": 4.08,
+          "conf": 1.0
+        },
+        {
+          "store": "Kaufland",
+          "name": "Стария ловец Ловджийски бабек",
+          "price": 4.99,
+          "conf": 1.0
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "King оферта - Само с Billa Card - Свински врат без кост За 1 кг До 5 кг на клиент на ден*"
+        },
+        {
+          "store": "Billa",
+          "name": "Супер цена - Свински бут без кост За 1 кг"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Свински бут без кост от свежата витрина"
+        }
+      ]
+    },
+    {
+      "group_id": "g_165c0b95",
+      "off_barcode": "9008684034213",
+      "reasons": [
+        "low_confidence: 5 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "МАКЛЕР Моцарела мини\nот свежата витрина",
+          "price": 19.99,
+          "conf": 0.53
+        },
+        {
+          "store": "Billa",
+          "name": "Само с Billa Card - Clever Моцарела настъргана 250 г Продукт, маркиран със синя звезда",
+          "price": 1.78,
+          "conf": 0.39
+        },
+        {
+          "store": "Billa",
+          "name": "Супер цена - Пица с шунка и моцарела От Billa пекарна 220 г Произход - България Billa Ready",
+          "price": 1.27,
+          "conf": 0.4
+        },
+        {
+          "store": "Billa",
+          "name": "King оферта - Сега в Billa - Cammino D'oro Моцарела 2 х 125 г",
+          "price": 2.19,
+          "conf": 0.47
+        },
+        {
+          "store": "Lidl",
+          "name": "Супер цена - Пица с шунка и моцарела От Billa пекарна 220 г Произход - България Billa Ready",
+          "price": 119.3,
+          "conf": 0.4
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "МАКЛЕР Моцарела мини\nот свежата витрина"
+        },
+        {
+          "store": "Billa",
+          "name": "Само с Billa Card - Clever Моцарела настъргана 250 г Продукт, маркиран със синя звезда"
+        },
+        {
+          "store": "Billa",
+          "name": "Супер цена - Пица с шунка и моцарела От Billa пекарна 220 г Произход - България Billa Ready"
+        },
+        {
+          "store": "Billa",
+          "name": "King оферта - Сега в Billa - Cammino D'oro Моцарела 2 х 125 г"
+        },
+        {
+          "store": "Lidl",
+          "name": "Супер цена - Пица с шунка и моцарела От Billa пекарна 220 г Произход - България Billa Ready"
+        }
+      ]
+    },
+    {
+      "group_id": "g_65f71f45",
+      "off_barcode": "2000000137968",
+      "reasons": [
+        "low_confidence: 14 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Бял земел от нашата пекарна",
+          "price": 0.08,
+          "conf": 0.4
+        },
+        {
+          "store": "Billa",
+          "name": "King оферта - Супер цена - Баничка със сирене или със сирене и спанак От Billa пекарна 125 г Произхо",
+          "price": 0.44,
+          "conf": 0.5
+        },
+        {
+          "store": "Kaufland",
+          "name": "Земел със сусам от нашата пекарна",
+          "price": 0.1,
+          "conf": 0.47
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пърленка от нашата пекарна",
+          "price": 0.18,
+          "conf": 0.41
+        },
+        {
+          "store": "Kaufland",
+          "name": "Селска вита баничка от нашата пекарна",
+          "price": 0.88,
+          "conf": 0.52
+        },
+        {
+          "store": "Kaufland",
+          "name": "Баничка",
+          "price": 0.3,
+          "conf": 0.65
+        },
+        {
+          "store": "Kaufland",
+          "name": "Баничка тип пура",
+          "price": 0.3,
+          "conf": 0.45
+        },
+        {
+          "store": "Kaufland",
+          "name": "Баничка тип пура от нашата пекарна",
+          "price": 0.59,
+          "conf": 0.53
+        },
+        {
+          "store": "Kaufland",
+          "name": "Геврек със сирене и сусам от нашата пекарна",
+          "price": 0.98,
+          "conf": 0.53
+        },
+        {
+          "store": "Kaufland",
+          "name": "Хотдог от нашата пекарна",
+          "price": 0.98,
+          "conf": 0.41
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сомун от нашата пекарна",
+          "price": 1.08,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Багета със семена от нашата пекарна",
+          "price": 0.45,
+          "conf": 0.47
+        },
+        {
+          "store": "Lidl",
+          "name": "Баничка тип пура от нашата пекарна",
+          "price": 119.3,
+          "conf": 0.53
+        },
+        {
+          "store": "Lidl",
+          "name": "Геврек със сирене и сусам от нашата пекарна",
+          "price": 117.35,
+          "conf": 0.53
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Бял земел от нашата пекарна"
+        },
+        {
+          "store": "Billa",
+          "name": "King оферта - Супер цена - Баничка със сирене или със сирене и спанак От Billa пекарна 125 г Произхо"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Земел със сусам от нашата пекарна"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пърленка от нашата пекарна"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Селска вита баничка от нашата пекарна"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Баничка"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Баничка тип пура"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Баничка тип пура от нашата пекарна"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Геврек със сирене и сусам от нашата пекарна"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Хотдог от нашата пекарна"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сомун от нашата пекарна"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Багета със семена от нашата пекарна"
+        },
+        {
+          "store": "Lidl",
+          "name": "Баничка тип пура от нашата пекарна"
+        },
+        {
+          "store": "Lidl",
+          "name": "Геврек със сирене и сусам от нашата пекарна"
+        }
+      ]
+    },
+    {
+      "group_id": "g_55021fc0",
+      "off_barcode": "2802823004894",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "King оферта - Супер цена - Виенски шницел от контрафиле 760 г",
+          "price": 5.62,
+          "conf": 0.39
+        },
+        {
+          "store": "Lidl",
+          "name": "Свинско контрафиле",
+          "price": 2.89,
+          "conf": 1.0
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "King оферта - Супер цена - Виенски шницел от контрафиле 760 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_5851bc0b",
+      "off_barcode": "3800500330013",
+      "reasons": [
+        "low_confidence: 2 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Портокали",
+          "price": 0.76,
+          "conf": 0.95
+        },
+        {
+          "store": "Billa",
+          "name": "King оферта - Супер цена - Портокали За 1 кг",
+          "price": 0.79,
+          "conf": 0.47
+        },
+        {
+          "store": "Lidl",
+          "name": "Портокали",
+          "price": 0.89,
+          "conf": 1.0
+        },
+        {
+          "store": "Kaufland",
+          "name": "Портокали XXL за фреш",
+          "price": 4.28,
+          "conf": 0.64
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "King оферта - Супер цена - Портокали За 1 кг"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Портокали XXL за фреш"
+        }
+      ]
+    },
+    {
+      "group_id": "g_f3f74be9",
+      "off_barcode": "3800216643049",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "King оферта - Супер цена – Деликатес Житница Варено пушен бекон XXL слайс 500 г",
+          "price": 4.59,
+          "conf": 0.49
+        },
+        {
+          "store": "Kaufland",
+          "name": "ДЕЛИКАТЕС ЖИТНИЦА Бекон\nварено-пушен",
+          "price": 8.98,
+          "conf": 0.83
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "King оферта - Супер цена – Деликатес Житница Варено пушен бекон XXL слайс 500 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_f4398369",
+      "off_barcode": "3800231301238",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Landfrisch Сирене котидж 4q5% 150 г",
+          "price": 1.15,
+          "conf": 0.41
+        },
+        {
+          "store": "Kaufland",
+          "name": "LACRIMA",
+          "price": 8.68,
+          "conf": 0.85
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Landfrisch Сирене котидж 4q5% 150 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_37c6798b",
+      "off_barcode": "7622300756413",
+      "reasons": [
+        "low_confidence: 1 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "LACRIMA Сирене\nот краве мляко",
+          "price": 16.98,
+          "conf": 1.0
+        },
+        {
+          "store": "Kaufland",
+          "name": "PHILADELPHIA",
+          "price": 5.87,
+          "conf": 1.0
+        },
+        {
+          "store": "Lidl",
+          "name": "Philadelphia Крем сирене",
+          "price": 2.55,
+          "conf": 0.53
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Philadelphia Крем сирене"
+        }
+      ]
+    },
+    {
+      "group_id": "g_0804b8d7",
+      "off_barcode": "3800092700232",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Ръчен хляб",
+          "price": 1.15,
+          "conf": 0.68
+        },
+        {
+          "store": "Kaufland",
+          "name": "LIV&BO Ръчен душ",
+          "price": 6.98,
+          "conf": 0.42
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Ръчен хляб"
+        },
+        {
+          "store": "Kaufland",
+          "name": "LIV&BO Ръчен душ"
+        }
+      ]
+    },
+    {
+      "group_id": "g_b3024df8",
+      "off_barcode": "2839217011206",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "La Provincia Прясно пилешко филе от царевично пиле За 1 кг",
+          "price": 7.66,
+          "conf": 0.51
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ципура филе прясно",
+          "price": 33.74,
+          "conf": 0.6
+        },
+        {
+          "store": "Lidl",
+          "name": "Месо за готвене от прясно пилешко филе",
+          "price": 3.29,
+          "conf": 0.57
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "La Provincia Прясно пилешко филе от царевично пиле За 1 кг"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ципура филе прясно"
+        },
+        {
+          "store": "Lidl",
+          "name": "Месо за готвене от прясно пилешко филе"
+        }
+      ]
+    },
+    {
+      "group_id": "g_1764b164",
+      "off_barcode": "8594071650896",
+      "reasons": [
+        "low_confidence: 1 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "MARLENKA Медени топчета\\nразлични видове",
+          "price": 2.48,
+          "conf": 1.0
+        },
+        {
+          "store": "Kaufland",
+          "name": "MARLENKA Медени топчета\nразлични видове",
+          "price": 11.48,
+          "conf": 1.0
+        },
+        {
+          "store": "Billa",
+          "name": "Сега в Billa - Marlenka Медени топчета малина 235 г - Ново в Billa",
+          "price": 6.85,
+          "conf": 0.49
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Сега в Billa - Marlenka Медени топчета малина 235 г - Ново в Billa"
+        }
+      ]
+    },
+    {
+      "group_id": "g_165d07d8",
+      "off_barcode": "7613287354556",
+      "reasons": [
+        "low_confidence: 1 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "MUHLER",
+          "price": 10.22,
+          "conf": 0.7
+        },
+        {
+          "store": "Lidl",
+          "name": "Пура",
+          "price": 0.3,
+          "conf": 0.68
+        },
+        {
+          "store": "Kaufland",
+          "name": "ЗОРА",
+          "price": 4.08,
+          "conf": 0.73
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Пура"
+        }
+      ]
+    },
+    {
+      "group_id": "g_a7f4775e",
+      "off_barcode": "3800059301847",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Мегдана",
+          "price": 11.75,
+          "conf": 0.69
+        },
+        {
+          "store": "Kaufland",
+          "name": "Medina Кюнефе\nзамразено",
+          "price": 8.98,
+          "conf": 0.6
+        },
+        {
+          "store": "Lidl",
+          "name": "Мадлен",
+          "price": 0.5,
+          "conf": 0.7
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Мегдана"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Medina Кюнефе\nзамразено"
+        }
+      ]
+    },
+    {
+      "group_id": "g_22b6e03c",
+      "off_barcode": "10206704",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Мakler Моцарела\nот свежата витрина",
+          "price": 20.99,
+          "conf": 0.47
+        },
+        {
+          "store": "Lidl",
+          "name": "Моцарела",
+          "price": 2.85,
+          "conf": 0.95
+        },
+        {
+          "store": "Kaufland",
+          "name": "Mlekpol Моцарела твърда\nот свежата витрина",
+          "price": 15.98,
+          "conf": 0.43
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Мakler Моцарела\nот свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Mlekpol Моцарела твърда\nот свежата витрина"
+        }
+      ]
+    },
+    {
+      "group_id": "g_40bbde38",
+      "off_barcode": "3800837314472",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Natura",
+          "price": 1.73,
+          "conf": 0.7
+        },
+        {
+          "store": "Billa",
+          "name": "Natura Парено жито 500 г",
+          "price": 0.97,
+          "conf": 0.43
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Natura Парено жито 500 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_640cce93",
+      "off_barcode": "3800202843712",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Ovi & Sari Супер мъфин",
+          "price": 0.49,
+          "conf": 0.64
+        },
+        {
+          "store": "Lidl",
+          "name": "Джинджифилов мъфин | LIDL",
+          "price": 117.35,
+          "conf": 0.43
+        },
+        {
+          "store": "Lidl",
+          "name": "Мъфин | LIDL",
+          "price": 119.3,
+          "conf": 0.52
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Ovi & Sari Супер мъфин"
+        },
+        {
+          "store": "Lidl",
+          "name": "Джинджифилов мъфин | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Мъфин | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_f0763f58",
+      "off_barcode": "8445291584471",
+      "reasons": [
+        "low_confidence: 5 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Пресни картофи За 1 кг",
+          "price": 1.29,
+          "conf": 0.5
+        },
+        {
+          "store": "Billa",
+          "name": "Сладки картофи За 1 кг",
+          "price": 1.49,
+          "conf": 0.5
+        },
+        {
+          "store": "Kaufland",
+          "name": "Parmentine Френски червени картофи\nза салата",
+          "price": 4.69,
+          "conf": 0.4
+        },
+        {
+          "store": "Kaufland",
+          "name": "Parmentine Картофи за печене\nфренски",
+          "price": 3.99,
+          "conf": 0.43
+        },
+        {
+          "store": "Kaufland",
+          "name": "Parmentine Френски картофи\nподходящи за салата",
+          "price": 3.99,
+          "conf": 0.4
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Пресни картофи За 1 кг"
+        },
+        {
+          "store": "Billa",
+          "name": "Сладки картофи За 1 кг"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Parmentine Френски червени картофи\nза салата"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Parmentine Картофи за печене\nфренски"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Parmentine Френски картофи\nподходящи за салата"
+        }
+      ]
+    },
+    {
+      "group_id": "g_46b2e88a",
+      "off_barcode": "4056489203469",
+      "reasons": [
+        "low_confidence: 1 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Paturages Comtois Сирене Бри\nот свежата витрина",
+          "price": 26.99,
+          "conf": 0.38
+        },
+        {
+          "store": "Lidl",
+          "name": "Сирене бри",
+          "price": 2.29,
+          "conf": 1.0
+        },
+        {
+          "store": "Lidl",
+          "name": "Френско сирене бри",
+          "price": 5.36,
+          "conf": 0.7
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Paturages Comtois Сирене Бри\nот свежата витрина"
+        }
+      ]
+    },
+    {
+      "group_id": "g_1e4edbfd",
+      "off_barcode": "2806131002559",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Penelope Набор за супа\nпатешки",
+          "price": 2.99,
+          "conf": 0.49
+        },
+        {
+          "store": "Kaufland",
+          "name": "Penelope",
+          "price": 3.57,
+          "conf": 0.68
+        },
+        {
+          "store": "Lidl",
+          "name": "Penelope Прясно патешко бутче",
+          "price": 7.66,
+          "conf": 0.77
+        },
+        {
+          "store": "Kaufland",
+          "name": "Penelope Цяла патица\nохладена",
+          "price": 6.98,
+          "conf": 0.52
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Penelope Набор за супа\nпатешки"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Penelope"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Penelope Цяла патица\nохладена"
+        }
+      ]
+    },
+    {
+      "group_id": "g_e1ea40cc",
+      "off_barcode": "3800202560497",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Poppies Еклери\nс шоколадова глазура",
+          "price": 4.69,
+          "conf": 0.63
+        },
+        {
+          "store": "Lidl",
+          "name": "Донат с шоколадова глазура",
+          "price": 117.35,
+          "conf": 0.72
+        },
+        {
+          "store": "Lidl",
+          "name": "Донат с шоколадова глазура | LIDL",
+          "price": 119.3,
+          "conf": 0.65
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Poppies Еклери\nс шоколадова глазура"
+        },
+        {
+          "store": "Lidl",
+          "name": "Донат с шоколадова глазура | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_88f124d0",
+      "off_barcode": "4008400183022",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "RAFFAELLO",
+          "price": 4.95,
+          "conf": 0.72
+        },
+        {
+          "store": "Lidl",
+          "name": "Raffaello Бонбони",
+          "price": 5.11,
+          "conf": 0.62
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Raffaello Бонбони"
+        }
+      ]
+    },
+    {
+      "group_id": "g_fb5bf504",
+      "off_barcode": "57028002",
+      "reasons": [
+        "low_confidence: 5 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Алпи Дъвчащи бонбони\nразлични видове",
+          "price": 2.89,
+          "conf": 0.44
+        },
+        {
+          "store": "Billa",
+          "name": "Насипни бонбони За 1 кг",
+          "price": 7.11,
+          "conf": 0.57
+        },
+        {
+          "store": "Billa",
+          "name": "Raffaello Бонбони 150 г",
+          "price": 3.37,
+          "conf": 0.57
+        },
+        {
+          "store": "Kaufland",
+          "name": "RAFFAELLO Бонбони сърце",
+          "price": 9.68,
+          "conf": 0.55
+        },
+        {
+          "store": "Kaufland",
+          "name": "Raffaello Бонбони\nкокос",
+          "price": 6.59,
+          "conf": 0.55
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Алпи Дъвчащи бонбони\nразлични видове"
+        },
+        {
+          "store": "Billa",
+          "name": "Насипни бонбони За 1 кг"
+        },
+        {
+          "store": "Billa",
+          "name": "Raffaello Бонбони 150 г"
+        },
+        {
+          "store": "Kaufland",
+          "name": "RAFFAELLO Бонбони сърце"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Raffaello Бонбони\nкокос"
+        }
+      ]
+    },
+    {
+      "group_id": "g_60f3416e",
+      "off_barcode": "3800065723060",
+      "reasons": [
+        "low_confidence: 5 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Salza Гризини\nразлични видове",
+          "price": 1.96,
+          "conf": 0.67
+        },
+        {
+          "store": "Lidl",
+          "name": "Геврек със сусам",
+          "price": 125.17,
+          "conf": 0.62
+        },
+        {
+          "store": "Lidl",
+          "name": "Геврек със сусам | LIDL",
+          "price": 117.35,
+          "conf": 0.55
+        },
+        {
+          "store": "Lidl",
+          "name": "Кайзер земел със сусам",
+          "price": 117.35,
+          "conf": 0.54
+        },
+        {
+          "store": "Lidl",
+          "name": "Кайзер земел със сусам | LIDL",
+          "price": 119.3,
+          "conf": 0.5
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Salza Гризини\nразлични видове"
+        },
+        {
+          "store": "Lidl",
+          "name": "Геврек със сусам"
+        },
+        {
+          "store": "Lidl",
+          "name": "Геврек със сусам | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Кайзер земел със сусам"
+        },
+        {
+          "store": "Lidl",
+          "name": "Кайзер земел със сусам | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_7c154f5f",
+      "off_barcode": "3800087100535",
+      "reasons": [
+        "low_confidence: 6 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Геврек със сирене и сусам",
+          "price": 0.5,
+          "conf": 0.59
+        },
+        {
+          "store": "Billa",
+          "name": "Salza Соленки с вкус на сирене 200 г",
+          "price": 1.22,
+          "conf": 0.61
+        },
+        {
+          "store": "Kaufland",
+          "name": "Тутманик със сирене",
+          "price": 1.78,
+          "conf": 0.66
+        },
+        {
+          "store": "Lidl",
+          "name": "Бюрек със сирене | LIDL",
+          "price": 119.3,
+          "conf": 0.61
+        },
+        {
+          "store": "Lidl",
+          "name": "Милинка със сирене | LIDL",
+          "price": 119.3,
+          "conf": 0.59
+        },
+        {
+          "store": "Lidl",
+          "name": "Пура със сирене | LIDL",
+          "price": 119.3,
+          "conf": 0.62
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Геврек със сирене и сусам"
+        },
+        {
+          "store": "Billa",
+          "name": "Salza Соленки с вкус на сирене 200 г"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Тутманик със сирене"
+        },
+        {
+          "store": "Lidl",
+          "name": "Бюрек със сирене | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Милинка със сирене | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Пура със сирене | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_08a9c63f",
+      "off_barcode": "3800066189612",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Sapori dei Monasteri Сладко жито",
+          "price": 1.02,
+          "conf": 0.47
+        },
+        {
+          "store": "Kaufland",
+          "name": "Традиция за трапезата Сладко жито",
+          "price": 2.84,
+          "conf": 0.55
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Sapori dei Monasteri Сладко жито"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Традиция за трапезата Сладко жито"
+        }
+      ]
+    },
+    {
+      "group_id": "g_5d9cf76f",
+      "off_barcode": "2802703014166",
+      "reasons": [
+        "low_confidence: 5 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Червени ябълки",
+          "price": 0.76,
+          "conf": 0.68
+        },
+        {
+          "store": "Lidl",
+          "name": "Червени ябълки",
+          "price": 0.76,
+          "conf": 0.56
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ябълки Бребърн",
+          "price": 2.99,
+          "conf": 0.68
+        },
+        {
+          "store": "Billa",
+          "name": "Ябълки Голдън делишъс За 1 кг",
+          "price": 1.39,
+          "conf": 0.47
+        },
+        {
+          "store": "Kaufland",
+          "name": "Südtirol Ябълки Пинк лейди",
+          "price": 5.98,
+          "conf": 0.48
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Червени ябълки"
+        },
+        {
+          "store": "Lidl",
+          "name": "Червени ябълки"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ябълки Бребърн"
+        },
+        {
+          "store": "Billa",
+          "name": "Ябълки Голдън делишъс За 1 кг"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Südtirol Ябълки Пинк лейди"
+        }
+      ]
+    },
+    {
+      "group_id": "g_5eb185ea",
+      "off_barcode": "9008684003004",
+      "reasons": [
+        "low_confidence: 4 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Торта с бял шоколад и ванилия",
+          "price": 10.99,
+          "conf": 0.62
+        },
+        {
+          "store": "Kaufland",
+          "name": "Елей Баварски сладкиш\nс шоколад",
+          "price": 5.38,
+          "conf": 0.45
+        },
+        {
+          "store": "Kaufland",
+          "name": "TASTY Торта Св. Валентин\nс бял шоколад",
+          "price": 9.76,
+          "conf": 0.52
+        },
+        {
+          "store": "Lidl",
+          "name": "Бутерка с шоколад",
+          "price": 119.3,
+          "conf": 0.58
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Торта с бял шоколад и ванилия"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Елей Баварски сладкиш\nс шоколад"
+        },
+        {
+          "store": "Kaufland",
+          "name": "TASTY Торта Св. Валентин\nс бял шоколад"
+        },
+        {
+          "store": "Lidl",
+          "name": "Бутерка с шоколад"
+        }
+      ]
+    },
+    {
+      "group_id": "g_2a0f2865",
+      "off_barcode": "3890000000288",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Авокадо Хас 1 бр.",
+          "price": 0.85,
+          "conf": 0.47
+        },
+        {
+          "store": "Kaufland",
+          "name": "Авокадо",
+          "price": 0.66,
+          "conf": 0.66
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Авокадо Хас 1 бр."
+        },
+        {
+          "store": "Kaufland",
+          "name": "Авокадо"
+        }
+      ]
+    },
+    {
+      "group_id": "g_a08565a2",
+      "off_barcode": "2803292011680",
+      "reasons": [
+        "low_confidence: 1 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Свинска плешка без кост",
+          "price": 2.96,
+          "conf": 0.8
+        },
+        {
+          "store": "Kaufland",
+          "name": "Свинска плешка без кост до 5 кг на покупка",
+          "price": 6.49,
+          "conf": 0.57
+        },
+        {
+          "store": "Lidl",
+          "name": "Агнешко месо с кост",
+          "price": 9.2,
+          "conf": 0.74
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Свинска плешка без кост до 5 кг на покупка"
+        }
+      ]
+    },
+    {
+      "group_id": "g_29b584c2",
+      "off_barcode": "8699025780350",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Ананас",
+          "price": 1.78,
+          "conf": 0.76
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ананас Голд",
+          "price": 6.98,
+          "conf": 0.58
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ананас Клас: I",
+          "price": 3.48,
+          "conf": 0.58
+        },
+        {
+          "store": "Billa",
+          "name": "Ананас 1 бр.",
+          "price": 1.99,
+          "conf": 0.6
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Ананас Голд"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ананас Клас: I"
+        },
+        {
+          "store": "Billa",
+          "name": "Ананас 1 бр."
+        }
+      ]
+    },
+    {
+      "group_id": "g_b04929a9",
+      "off_barcode": "3800216653888",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Аржентински бургер от премиум говеждо месо",
+          "price": 2.99,
+          "conf": 0.54
+        },
+        {
+          "store": "Lidl",
+          "name": "Филе от аржентински хек | LIDL",
+          "price": 138.86,
+          "conf": 0.46
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Аржентински бургер от премиум говеждо месо"
+        },
+        {
+          "store": "Lidl",
+          "name": "Филе от аржентински хек | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_7fb544f0",
+      "off_barcode": "3800215422720",
+      "reasons": [
+        "low_confidence: 7 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Бяла багета от нашата пекарна",
+          "price": 0.25,
+          "conf": 0.41
+        },
+        {
+          "store": "Kaufland",
+          "name": "Багета",
+          "price": 0.86,
+          "conf": 0.73
+        },
+        {
+          "store": "Kaufland",
+          "name": "Багета от нашата пекарна",
+          "price": 1.68,
+          "conf": 0.43
+        },
+        {
+          "store": "Lidl",
+          "name": "БИО Многозърнеста багета | LIDL",
+          "price": 117.35,
+          "conf": 0.42
+        },
+        {
+          "store": "Lidl",
+          "name": "Багета Рустик | LIDL",
+          "price": 131.04,
+          "conf": 0.48
+        },
+        {
+          "store": "Lidl",
+          "name": "Бяла рустикална багета | LIDL",
+          "price": 117.35,
+          "conf": 0.42
+        },
+        {
+          "store": "Lidl",
+          "name": "Пица багета",
+          "price": 117.35,
+          "conf": 0.56
+        },
+        {
+          "store": "Lidl",
+          "name": "Пица багета | LIDL",
+          "price": 125.17,
+          "conf": 0.49
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Бяла багета от нашата пекарна"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Багета от нашата пекарна"
+        },
+        {
+          "store": "Lidl",
+          "name": "БИО Многозърнеста багета | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Багета Рустик | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Бяла рустикална багета | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Пица багета"
+        },
+        {
+          "store": "Lidl",
+          "name": "Пица багета | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_d42ce88a",
+      "off_barcode": "7790040425262",
+      "reasons": [
+        "low_confidence: 4 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Багета със семена",
+          "price": 0.23,
+          "conf": 0.63
+        },
+        {
+          "store": "Lidl",
+          "name": "Минифранзела със семена",
+          "price": 119.3,
+          "conf": 0.57
+        },
+        {
+          "store": "Lidl",
+          "name": "Минифранзела със семена | LIDL",
+          "price": 121.26,
+          "conf": 0.49
+        },
+        {
+          "store": "Lidl",
+          "name": "Френска багета със семена | LIDL",
+          "price": 125.17,
+          "conf": 0.48
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Багета със семена"
+        },
+        {
+          "store": "Lidl",
+          "name": "Минифранзела със семена"
+        },
+        {
+          "store": "Lidl",
+          "name": "Минифранзела със семена | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Френска багета със семена | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_236671f3",
+      "off_barcode": "2810250005162",
+      "reasons": [
+        "low_confidence: 9 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Балканска пъстърва чистена",
+          "price": 14.98,
+          "conf": 0.55
+        },
+        {
+          "store": "Kaufland",
+          "name": "Бяла Река Сьомгова пъстърва\nот свежата витрина",
+          "price": 14.98,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пъстърва изчистена, прясна",
+          "price": 11.23,
+          "conf": 0.56
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пъстърва филе от свежата витрина",
+          "price": 18.74,
+          "conf": 0.49
+        },
+        {
+          "store": "Kaufland",
+          "name": "Бяла Река Сьомгова пъстърва",
+          "price": 15.98,
+          "conf": 0.53
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомгова пъстърва филе",
+          "price": 12.26,
+          "conf": 0.59
+        },
+        {
+          "store": "Lidl",
+          "name": "Дъгова пъстърва | LIDL",
+          "price": 131.04,
+          "conf": 0.62
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомгoва пъстърва",
+          "price": 17.89,
+          "conf": 0.7
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомгoва пъстърва филенца",
+          "price": 34.99,
+          "conf": 0.56
+        },
+        {
+          "store": "Lidl",
+          "name": "Филе от прясна пъстърва | LIDL",
+          "price": 138.86,
+          "conf": 0.52
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Балканска пъстърва чистена"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Бяла Река Сьомгова пъстърва\nот свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пъстърва изчистена, прясна"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пъстърва филе от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Бяла Река Сьомгова пъстърва"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомгова пъстърва филе"
+        },
+        {
+          "store": "Lidl",
+          "name": "Дъгова пъстърва | LIDL"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомгoва пъстърва филенца"
+        },
+        {
+          "store": "Lidl",
+          "name": "Филе от прясна пъстърва | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_afb08caf",
+      "off_barcode": "3800230300249",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Донът с пълнеж и бисквитки",
+          "price": 0.61,
+          "conf": 0.48
+        },
+        {
+          "store": "Kaufland",
+          "name": "Донът с пълнеж и бисквитки от нашата пекарна",
+          "price": 1.19,
+          "conf": 0.4
+        },
+        {
+          "store": "Lidl",
+          "name": "Бисквитки Дулсе де Лече | LIDL",
+          "price": 119.3,
+          "conf": 0.43
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Донът с пълнеж и бисквитки"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Донът с пълнеж и бисквитки от нашата пекарна"
+        },
+        {
+          "store": "Lidl",
+          "name": "Бисквитки Дулсе де Лече | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_ca73e1aa",
+      "off_barcode": "3800200990418",
+      "reasons": [
+        "low_confidence: 2 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Български четкани картофи",
+          "price": 0.35,
+          "conf": 0.52
+        },
+        {
+          "store": "Kaufland",
+          "name": "Булкарто Бланширани картофи",
+          "price": 6.98,
+          "conf": 0.79
+        },
+        {
+          "store": "Kaufland",
+          "name": "Скариди, бланширани от свежата витрина",
+          "price": 19.48,
+          "conf": 0.44
+        },
+        {
+          "store": "Lidl",
+          "name": "Бланширани сладки картофи",
+          "price": 2.55,
+          "conf": 0.77
+        },
+        {
+          "store": "Lidl",
+          "name": "Бланширани картофи",
+          "price": 1.99,
+          "conf": 1.0
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Български четкани картофи"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Скариди, бланширани от свежата витрина"
+        }
+      ]
+    },
+    {
+      "group_id": "g_eabec0a8",
+      "off_barcode": "3800501480021",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Боровинки",
+          "price": 0.91,
+          "conf": 0.95
+        },
+        {
+          "store": "Billa",
+          "name": "Супер цена - Боровинки 125 г",
+          "price": 0.95,
+          "conf": 0.56
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Супер цена - Боровинки 125 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_85c4faa6",
+      "off_barcode": "3800065711517",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Гербери Тунквани бисквити 170 г",
+          "price": 1.22,
+          "conf": 0.65
+        },
+        {
+          "store": "Kaufland",
+          "name": "Букет рози и гербери",
+          "price": 6.64,
+          "conf": 0.47
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Гербери Тунквани бисквити 170 г"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Букет рози и гербери"
+        }
+      ]
+    },
+    {
+      "group_id": "g_76ca6a03",
+      "off_barcode": "3800748051091",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Кашкавалка",
+          "price": 0.61,
+          "conf": 0.91
+        },
+        {
+          "store": "Lidl",
+          "name": "Булгарче Кашкавал",
+          "price": 3.06,
+          "conf": 0.58
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Булгарче Кашкавал"
+        }
+      ]
+    },
+    {
+      "group_id": "g_1ac53128",
+      "off_barcode": "3800220581283",
+      "reasons": [
+        "low_confidence: 1 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Булгарче Сирене от краве мляко\nот свежата витрина",
+          "price": 10.99,
+          "conf": 0.66
+        },
+        {
+          "store": "Kaufland",
+          "name": "РАФТИС Кашкавал\nот краве мляко",
+          "price": 14.98,
+          "conf": 0.84
+        },
+        {
+          "store": "Kaufland",
+          "name": "Кашкавал от краве мляко",
+          "price": 6.13,
+          "conf": 1.0
+        },
+        {
+          "store": "Lidl",
+          "name": "Кашкавал от краве мляко",
+          "price": 5.49,
+          "conf": 1.0
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Булгарче Сирене от краве мляко\nот свежата витрина"
+        }
+      ]
+    },
+    {
+      "group_id": "g_65303687",
+      "off_barcode": "4063367491559",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Българско червено зеле",
+          "price": 0.33,
+          "conf": 0.6
+        },
+        {
+          "store": "Kaufland",
+          "name": "Червено зеле",
+          "price": 0.66,
+          "conf": 0.74
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Българско червено зеле"
+        }
+      ]
+    },
+    {
+      "group_id": "g_95ea2b94",
+      "off_barcode": "3800572900121",
+      "reasons": [
+        "low_confidence: 2 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Бял земел",
+          "price": 0.04,
+          "conf": 0.54
+        },
+        {
+          "store": "Lidl",
+          "name": "Бял хляб",
+          "price": 119.3,
+          "conf": 0.95
+        },
+        {
+          "store": "Lidl",
+          "name": "Бял хляб | LIDL",
+          "price": 117.35,
+          "conf": 0.75
+        },
+        {
+          "store": "Lidl",
+          "name": "Бял хляб с квас | LIDL",
+          "price": 123.22,
+          "conf": 0.62
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Бял земел"
+        },
+        {
+          "store": "Lidl",
+          "name": "Бял хляб с квас | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_23ff933a",
+      "off_barcode": "3800233713008",
+      "reasons": [
+        "low_confidence: 8 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Кроасан с 24% масло от нашата пекарна",
+          "price": 0.59,
+          "conf": 0.45
+        },
+        {
+          "store": "Kaufland",
+          "name": "Кроасан",
+          "price": 0.65,
+          "conf": 0.95
+        },
+        {
+          "store": "Kaufland",
+          "name": "Кроасан различни видове",
+          "price": 0.37,
+          "conf": 0.55
+        },
+        {
+          "store": "Kaufland",
+          "name": "Веган кроасан",
+          "price": 0.4,
+          "conf": 0.75
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с 27% масло | LIDL",
+          "price": 125.17,
+          "conf": 0.57
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с кайсиево сладко | LIDL",
+          "price": 121.26,
+          "conf": 0.49
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с кренвирш | LIDL",
+          "price": 119.3,
+          "conf": 0.57
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с масло | LIDL",
+          "price": 119.3,
+          "conf": 0.62
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с шунка и кашкавал | LIDL",
+          "price": 119.3,
+          "conf": 0.5
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан шунка и кашкавал | LIDL",
+          "price": 125.17,
+          "conf": 0.5
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Кроасан с 24% масло от нашата пекарна"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Кроасан различни видове"
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с 27% масло | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с кайсиево сладко | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с кренвирш | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с масло | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с шунка и кашкавал | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан шунка и кашкавал | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_ba047fd3",
+      "off_barcode": "20978549",
+      "reasons": [
+        "low_confidence: 7 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Донът с ягодов пълнеж",
+          "price": 0.78,
+          "conf": 0.46
+        },
+        {
+          "store": "Kaufland",
+          "name": "Веган кроасан с пълнеж кайсия",
+          "price": 0.78,
+          "conf": 0.66
+        },
+        {
+          "store": "Lidl",
+          "name": "Донат с ягодов пълнеж",
+          "price": 119.3,
+          "conf": 0.46
+        },
+        {
+          "store": "Lidl",
+          "name": "Донат с ягодов пълнеж | LIDL",
+          "price": 119.3,
+          "conf": 0.43
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с нуга пълнеж и лешникова паста | LIDL",
+          "price": 125.17,
+          "conf": 0.54
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с нуга пълнеж и лешникова поръска | LIDL",
+          "price": 119.3,
+          "conf": 0.53
+        },
+        {
+          "store": "Lidl",
+          "name": "Розов донат с пълнеж | LIDL",
+          "price": 117.35,
+          "conf": 0.43
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Донът с ягодов пълнеж"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Веган кроасан с пълнеж кайсия"
+        },
+        {
+          "store": "Lidl",
+          "name": "Донат с ягодов пълнеж"
+        },
+        {
+          "store": "Lidl",
+          "name": "Донат с ягодов пълнеж | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с нуга пълнеж и лешникова паста | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Кроасан с нуга пълнеж и лешникова поръска | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Розов донат с пълнеж | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_bb0a2f05",
+      "off_barcode": "3800091731640",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Вита баничка различни видове",
+          "price": 0.88,
+          "conf": 0.5
+        },
+        {
+          "store": "Kaufland",
+          "name": "Вита Силует Хляб\nразлични видове",
+          "price": 2.39,
+          "conf": 0.75
+        },
+        {
+          "store": "Billa",
+          "name": "Вита Силует Хляб 6 зърна или класик 400 г Произход - България",
+          "price": 1.22,
+          "conf": 0.6
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Вита баничка различни видове"
+        },
+        {
+          "store": "Billa",
+          "name": "Вита Силует Хляб 6 зърна или класик 400 г Произход - България"
+        }
+      ]
+    },
+    {
+      "group_id": "g_9bc0ac5d",
+      "off_barcode": "3859889267007",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Гъби печурки",
+          "price": 0.99,
+          "conf": 0.95
+        },
+        {
+          "store": "Billa",
+          "name": "Супер цена - Гъби печурки 250 г",
+          "price": 0.99,
+          "conf": 0.61
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Супер цена - Гъби печурки 250 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_025d6d70",
+      "off_barcode": "5902162000940",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Само с Billa Card - Аржентински хек замразен За 1 кг",
+          "price": 3.06,
+          "conf": 0.4
+        },
+        {
+          "store": "Kaufland",
+          "name": "Данел Сафрид\nзамразен",
+          "price": 4.99,
+          "conf": 0.56
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Само с Billa Card - Аржентински хек замразен За 1 кг"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Данел Сафрид\nзамразен"
+        }
+      ]
+    },
+    {
+      "group_id": "g_5f3213f7",
+      "off_barcode": "3000001295228",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Домати",
+          "price": 0.59,
+          "conf": 0.62
+        },
+        {
+          "store": "Billa",
+          "name": "Чери домати Рома 250 г",
+          "price": 1.19,
+          "conf": 0.65
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Домати"
+        },
+        {
+          "store": "Billa",
+          "name": "Чери домати Рома 250 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_ec396642",
+      "off_barcode": "3800203213415",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Домати Рома кг",
+          "price": 1.78,
+          "conf": 0.55
+        },
+        {
+          "store": "Billa",
+          "name": "Домати розови За 1 кг",
+          "price": 2.49,
+          "conf": 0.49
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Домати Рома кг"
+        },
+        {
+          "store": "Billa",
+          "name": "Домати розови За 1 кг"
+        }
+      ]
+    },
+    {
+      "group_id": "g_a8bf70a5",
+      "off_barcode": "2637590011222",
+      "reasons": [
+        "low_confidence: 20 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Пълнени чушки с ориз От деликатесната витрина За 1 кг",
+          "price": 5.09,
+          "conf": 0.39
+        },
+        {
+          "store": "Kaufland",
+          "name": "Рагу от свежата витрина",
+          "price": 3.99,
+          "conf": 0.43
+        },
+        {
+          "store": "Kaufland",
+          "name": "Зарган от свежата витрина",
+          "price": 14.24,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Калкан от свежата витрина",
+          "price": 28.48,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Калмари лолиго от нашата витрина",
+          "price": 8.16,
+          "conf": 0.39
+        },
+        {
+          "store": "Kaufland",
+          "name": "Калмари туби от свежата витрина",
+          "price": 15.72,
+          "conf": 0.4
+        },
+        {
+          "store": "Kaufland",
+          "name": "Кефал от свежата витрина",
+          "price": 8.23,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Лаврак от свежата витрина",
+          "price": 17.6,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Милокоп от свежата витрина",
+          "price": 18.74,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Октопод от нашата витрина",
+          "price": 17.99,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Октопод от свежата витрина",
+          "price": 14.24,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Омар от нашата витрина",
+          "price": 37.49,
+          "conf": 0.43
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сафрид от нашата витрина",
+          "price": 3.74,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сафрид от свежата витрина",
+          "price": 6.73,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ципура от свежата витрина",
+          "price": 16.78,
+          "conf": 0.42
+        },
+        {
+          "store": "Kaufland",
+          "name": "Черноморски миди от свежата витрина",
+          "price": 3.74,
+          "conf": 0.39
+        },
+        {
+          "store": "Kaufland",
+          "name": "Калмари пипала от свежата витрина",
+          "price": 13.5,
+          "conf": 0.39
+        },
+        {
+          "store": "Kaufland",
+          "name": "Кълцана наденица от свежата витрина",
+          "price": 9.99,
+          "conf": 0.58
+        },
+        {
+          "store": "Billa",
+          "name": "Домашна луканкова наденица От топлата витрина 1 бр. Billa Ready",
+          "price": 1.29,
+          "conf": 0.46
+        },
+        {
+          "store": "Kaufland",
+          "name": "Мегдана Наденица\nот свежата витрина",
+          "price": 5.98,
+          "conf": 0.58
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Пълнени чушки с ориз От деликатесната витрина За 1 кг"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Рагу от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Зарган от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Калкан от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Калмари лолиго от нашата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Калмари туби от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Кефал от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Лаврак от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Милокоп от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Октопод от нашата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Октопод от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Омар от нашата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сафрид от нашата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сафрид от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ципура от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Черноморски миди от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Калмари пипала от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Кълцана наденица от свежата витрина"
+        },
+        {
+          "store": "Billa",
+          "name": "Домашна луканкова наденица От топлата витрина 1 бр. Billa Ready"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Мегдана Наденица\nот свежата витрина"
+        }
+      ]
+    },
+    {
+      "group_id": "g_dc669b0c",
+      "off_barcode": "3800213621262",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Донът с розова глазура и поръска",
+          "price": 0.68,
+          "conf": 0.42
+        },
+        {
+          "store": "Lidl",
+          "name": "Донат с глазура | LIDL",
+          "price": 117.35,
+          "conf": 0.48
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Донът с розова глазура и поръска"
+        },
+        {
+          "store": "Lidl",
+          "name": "Донат с глазура | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_dedce4af",
+      "off_barcode": "4056489907572",
+      "reasons": [
+        "low_confidence: 6 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Донат с шоколадов пълнеж | LIDL",
+          "price": 119.3,
+          "conf": 0.59
+        },
+        {
+          "store": "Lidl",
+          "name": "Мини поничка с шоколадов пълнеж | LIDL",
+          "price": 119.3,
+          "conf": 0.53
+        },
+        {
+          "store": "Lidl",
+          "name": "Сладкиш от ронливо тесто | LIDL",
+          "price": 119.3,
+          "conf": 0.51
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сладкиш сърце",
+          "price": 0.81,
+          "conf": 0.56
+        },
+        {
+          "store": "Lidl",
+          "name": "Шоколадов донат | LIDL",
+          "price": 123.22,
+          "conf": 0.67
+        },
+        {
+          "store": "Lidl",
+          "name": "Шоколадов мъфин | LIDL",
+          "price": 119.3,
+          "conf": 0.67
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Донат с шоколадов пълнеж | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Мини поничка с шоколадов пълнеж | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Сладкиш от ронливо тесто | LIDL"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сладкиш сърце"
+        },
+        {
+          "store": "Lidl",
+          "name": "Шоколадов донат | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Шоколадов мъфин | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_bead4e8d",
+      "off_barcode": "3800087203151",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Живкови Средиземноморска салата",
+          "price": 2.99,
+          "conf": 0.72
+        },
+        {
+          "store": "Lidl",
+          "name": "Хляб по италианска рецепта | LIDL",
+          "price": 117.35,
+          "conf": 0.46
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Хляб по италианска рецепта | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_7ee8e991",
+      "off_barcode": "8595160117139",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Жълт лук",
+          "price": 0.4,
+          "conf": 0.53
+        },
+        {
+          "store": "Billa",
+          "name": "Червен лук За 1 кг",
+          "price": 0.79,
+          "conf": 0.82
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Жълт лук"
+        }
+      ]
+    },
+    {
+      "group_id": "g_686b060c",
+      "off_barcode": "2000000137967",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "price_ratio: 238.6x (max 5.0x)"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Закуска",
+          "price": 0.5,
+          "conf": 0.91
+        },
+        {
+          "store": "Lidl",
+          "name": "Закуска Пица",
+          "price": 119.3,
+          "conf": 0.95
+        },
+        {
+          "store": "Lidl",
+          "name": "Закуска Пица | LIDL",
+          "price": 117.35,
+          "conf": 0.89
+        },
+        {
+          "store": "Lidl",
+          "name": "Закуска с Гауда",
+          "price": 117.35,
+          "conf": 0.66
+        },
+        {
+          "store": "Lidl",
+          "name": "Закуска с Гауда | LIDL",
+          "price": 119.3,
+          "conf": 0.56
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Закуска с Гауда"
+        },
+        {
+          "store": "Lidl",
+          "name": "Закуска с Гауда | LIDL"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Закуска"
+        }
+      ]
+    },
+    {
+      "group_id": "g_e7b921e8",
+      "off_barcode": "2850660010202",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Закуска с пушено сирене и шунка",
+          "price": 0.98,
+          "conf": 0.64
+        },
+        {
+          "store": "Lidl",
+          "name": "Закуска с пушено сирене и шунка",
+          "price": 119.3,
+          "conf": 0.64
+        },
+        {
+          "store": "Lidl",
+          "name": "Закуска със сирене и шунка | LIDL",
+          "price": 119.3,
+          "conf": 0.6
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Закуска с пушено сирене и шунка"
+        },
+        {
+          "store": "Lidl",
+          "name": "Закуска с пушено сирене и шунка"
+        },
+        {
+          "store": "Lidl",
+          "name": "Закуска със сирене и шунка | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_1330ded8",
+      "off_barcode": "3800201971232",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Кана за вода",
+          "price": 2.04,
+          "conf": 0.5
+        },
+        {
+          "store": "Kaufland",
+          "name": "Кана за вода 1600 мл",
+          "price": 3.99,
+          "conf": 0.42
+        },
+        {
+          "store": "Lidl",
+          "name": "Мицеларна вода за лице | LIDL",
+          "price": 146.69,
+          "conf": 0.39
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Кана за вода"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Кана за вода 1600 мл"
+        },
+        {
+          "store": "Lidl",
+          "name": "Мицеларна вода за лице | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_81a45fac",
+      "off_barcode": "3800093511530",
+      "reasons": [
+        "low_confidence: 2 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Кифлички различни видове",
+          "price": 1.99,
+          "conf": 0.49
+        },
+        {
+          "store": "Kaufland",
+          "name": "ТИМС Кифлички\nразлични видове",
+          "price": 1.99,
+          "conf": 0.74
+        },
+        {
+          "store": "Billa",
+          "name": "Тимс Кифлички 250 г Произход - България",
+          "price": 1.02,
+          "conf": 0.56
+        },
+        {
+          "store": "Kaufland",
+          "name": "Кифлички",
+          "price": 1.02,
+          "conf": 0.77
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Кифлички различни видове"
+        },
+        {
+          "store": "Billa",
+          "name": "Тимс Кифлички 250 г Произход - България"
+        }
+      ]
+    },
+    {
+      "group_id": "g_4ebf30b9",
+      "off_barcode": "4056489177920",
+      "reasons": [
+        "price_ratio: 59.0x (max 5.0x)",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Кифлички с какаов крем",
+          "price": 1.99,
+          "conf": 1.0
+        },
+        {
+          "store": "Lidl",
+          "name": "Кифлички с какаов крем",
+          "price": 117.35,
+          "conf": 1.0
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Кифлички с какаов крем"
+        }
+      ]
+    },
+    {
+      "group_id": "g_d471a541",
+      "off_barcode": "3800849209780",
+      "reasons": [
+        "price_ratio: 33.7x (max 5.0x)",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Козунак със стафиди",
+          "price": 3.48,
+          "conf": 0.94
+        },
+        {
+          "store": "Lidl",
+          "name": "Козунак със стафиди | LIDL",
+          "price": 117.35,
+          "conf": 0.82
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Козунак със стафиди"
+        }
+      ]
+    },
+    {
+      "group_id": "g_596424cb",
+      "off_barcode": "3800015763252",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Кристал",
+          "price": 0.5,
+          "conf": 0.73
+        },
+        {
+          "store": "Billa",
+          "name": "Кристал Локум цветен 140 г",
+          "price": 0.59,
+          "conf": 0.45
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Кристал Локум цветен 140 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_7016f370",
+      "off_barcode": "3800226520798",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Кроасан с шунка и кашкавал\nот нашата пекарна",
+          "price": 1.19,
+          "conf": 0.42
+        },
+        {
+          "store": "Lidl",
+          "name": "Пура с шунка и кашкавал | LIDL",
+          "price": 119.3,
+          "conf": 0.51
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Кроасан с шунка и кашкавал\nот нашата пекарна"
+        },
+        {
+          "store": "Lidl",
+          "name": "Пура с шунка и кашкавал | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_d152ad7d",
+      "off_barcode": "3800061605476",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "МИРАЖ Тунквани бисквити Макси",
+          "price": 2.99,
+          "conf": 0.65
+        },
+        {
+          "store": "Billa",
+          "name": "Само с Billa App - Престиж Тунквани бисквити 300 г",
+          "price": 1.78,
+          "conf": 0.67
+        },
+        {
+          "store": "Kaufland",
+          "name": "Престиж Бисквити\nтунквани",
+          "price": 3.66,
+          "conf": 0.95
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "МИРАЖ Тунквани бисквити Макси"
+        },
+        {
+          "store": "Billa",
+          "name": "Само с Billa App - Престиж Тунквани бисквити 300 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_fe33daf1",
+      "off_barcode": "3800791540023",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Сами-М Пилешки шницели панирани\nзамразени",
+          "price": 12.48,
+          "conf": 0.65
+        },
+        {
+          "store": "Lidl",
+          "name": "Панирани пилешки шницели",
+          "price": 4.99,
+          "conf": 0.69
+        },
+        {
+          "store": "Lidl",
+          "name": "Мариновани пилешки филенца",
+          "price": 4.6,
+          "conf": 0.55
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Сами-М Пилешки шницели панирани\nзамразени"
+        },
+        {
+          "store": "Lidl",
+          "name": "Панирани пилешки шницели"
+        },
+        {
+          "store": "Lidl",
+          "name": "Мариновани пилешки филенца"
+        }
+      ]
+    },
+    {
+      "group_id": "g_450e29a2",
+      "off_barcode": "7622300331283",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Морени Тунквана вафла\nразлични видове",
+          "price": 0.59,
+          "conf": 0.61
+        },
+        {
+          "store": "Billa",
+          "name": "Морени Maxx Вафла 49 г Произход - България",
+          "price": 0.4,
+          "conf": 0.61
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Морени Тунквана вафла\nразлични видове"
+        },
+        {
+          "store": "Billa",
+          "name": "Морени Maxx Вафла 49 г Произход - България"
+        }
+      ]
+    },
+    {
+      "group_id": "g_fe719667",
+      "off_barcode": "2858223003265",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Натурални маслини",
+          "price": 3.83,
+          "conf": 0.66
+        },
+        {
+          "store": "Kaufland",
+          "name": "Червени маслини Услу 280/360",
+          "price": 7.98,
+          "conf": 0.49
+        },
+        {
+          "store": "Lidl",
+          "name": "Хлебче с маслини",
+          "price": 121.26,
+          "conf": 0.72
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Натурални маслини"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Червени маслини Услу 280/360"
+        }
+      ]
+    },
+    {
+      "group_id": "g_5e956771",
+      "off_barcode": "2840176002341",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Натурални маслини Супер Колосал",
+          "price": 7.49,
+          "conf": 0.66
+        },
+        {
+          "store": "Billa",
+          "name": "Супер цена - Мини сомун 120 г",
+          "price": 0.3,
+          "conf": 0.44
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Натурални маслини Супер Колосал"
+        },
+        {
+          "store": "Billa",
+          "name": "Супер цена - Мини сомун 120 г"
+        }
+      ]
+    },
+    {
+      "group_id": "g_db6c27e1",
+      "off_barcode": "3800126411059",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Сьомга от нашата витрина",
+          "price": 20.24,
+          "conf": 0.47
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомга парченца кг",
+          "price": 27.73,
+          "conf": 0.53
+        },
+        {
+          "store": "Lidl",
+          "name": "Охладен стек от сьомга | LIDL",
+          "price": 123.22,
+          "conf": 0.44
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Сьомга от нашата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомга парченца кг"
+        },
+        {
+          "store": "Lidl",
+          "name": "Охладен стек от сьомга | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_de270ded",
+      "off_barcode": "3800849214234",
+      "reasons": [
+        "low_confidence: 5 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Филе от сьомга | LIDL",
+          "price": 29.98,
+          "conf": 0.69
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомга филе",
+          "price": 32.23,
+          "conf": 0.81
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомга цяла от нашата витрина",
+          "price": 7.61,
+          "conf": 0.44
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомга парчета от свежата витрина",
+          "price": 33.74,
+          "conf": 0.42
+        },
+        {
+          "store": "Lidl",
+          "name": "Охладена сьомга филе | LIDL",
+          "price": 142.77,
+          "conf": 0.57
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомга филе тип С-трим",
+          "price": 29.98,
+          "conf": 0.61
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Филе от сьомга | LIDL"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомга цяла от нашата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомга парчета от свежата витрина"
+        },
+        {
+          "store": "Lidl",
+          "name": "Охладена сьомга филе | LIDL"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сьомга филе тип С-трим"
+        }
+      ]
+    },
+    {
+      "group_id": "g_5f6023ce",
+      "off_barcode": "3800022700080",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "price_ratio: 5.6x (max 5.0x)"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Пиринско Бира\n4,4% vol",
+          "price": 1.15,
+          "conf": 0.87
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пиринско Бира",
+          "price": 1.68,
+          "conf": 0.95
+        },
+        {
+          "store": "Kaufland",
+          "name": "ПИРИНСКО Бира\n6 х 0,5 л кен",
+          "price": 6.49,
+          "conf": 0.87
+        },
+        {
+          "store": "Billa",
+          "name": "Супер цена - Пиринско бира 2 л Произход - България",
+          "price": 1.17,
+          "conf": 0.47
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Супер цена - Пиринско бира 2 л Произход - България"
+        }
+      ]
+    },
+    {
+      "group_id": "g_25a10918",
+      "off_barcode": "3800032050038",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Пещерска Ракия гроздова 0,7 л Произход - България",
+          "price": 5.62,
+          "conf": 0.47
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пещерска",
+          "price": 7.66,
+          "conf": 0.62
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пещерска Гроздова ракия",
+          "price": 14.98,
+          "conf": 0.58
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Пещерска Ракия гроздова 0,7 л Произход - България"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пещерска"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пещерска Гроздова ракия"
+        }
+      ]
+    },
+    {
+      "group_id": "g_43c07b0b",
+      "off_barcode": "2810960007562",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Пилешко филе от гърди",
+          "price": 5.62,
+          "conf": 0.82
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пилешко филе от гърди от свежата витрина",
+          "price": 10.99,
+          "conf": 0.63
+        },
+        {
+          "store": "Lidl",
+          "name": "Прясно пилешко филе от гърди, маринованo | LIDL",
+          "price": 146.69,
+          "conf": 0.58
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Пилешко филе от гърди от свежата витрина"
+        },
+        {
+          "store": "Lidl",
+          "name": "Прясно пилешко филе от гърди, маринованo | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_9edc750d",
+      "off_barcode": "3800454588034",
+      "reasons": [
+        "low_confidence: 4 products below 0.7",
+        "price_ratio: 6.8x (max 5.0x)",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Пица",
+          "price": 0.51,
+          "conf": 0.76
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пица Неаполетана",
+          "price": 3.83,
+          "conf": 0.5
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пица Специале",
+          "price": 3.45,
+          "conf": 0.52
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пица",
+          "price": 3.45,
+          "conf": 0.76
+        },
+        {
+          "store": "Lidl",
+          "name": "Пица парче | LIDL",
+          "price": 119.3,
+          "conf": 0.47
+        },
+        {
+          "store": "Lidl",
+          "name": "Фокача пица | LIDL",
+          "price": 121.26,
+          "conf": 0.46
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Пица Неаполетана"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Пица Специале"
+        },
+        {
+          "store": "Lidl",
+          "name": "Пица парче | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Фокача пица | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Пица"
+        }
+      ]
+    },
+    {
+      "group_id": "g_29a7b5ad",
+      "off_barcode": "3800209460011",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Помело",
+          "price": 1.99,
+          "conf": 0.66
+        },
+        {
+          "store": "Lidl",
+          "name": "Помело",
+          "price": 0.35,
+          "conf": 0.66
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Помело"
+        },
+        {
+          "store": "Lidl",
+          "name": "Помело"
+        }
+      ]
+    },
+    {
+      "group_id": "g_ec01ecc5",
+      "off_barcode": "3800207714598",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Поничка | LIDL",
+          "price": 125.17,
+          "conf": 0.59
+        },
+        {
+          "store": "Kaufland",
+          "name": "Поничка сърце",
+          "price": 0.66,
+          "conf": 0.58
+        },
+        {
+          "store": "Kaufland",
+          "name": "Поничка сърце от нашата пекарна",
+          "price": 1.29,
+          "conf": 0.42
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Поничка | LIDL"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Поничка сърце"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Поничка сърце от нашата пекарна"
+        }
+      ]
+    },
+    {
+      "group_id": "g_85068695",
+      "off_barcode": "3800206842865",
+      "reasons": [
+        "low_confidence: 4 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Поничка с плодов пълнеж",
+          "price": 0.78,
+          "conf": 0.63
+        },
+        {
+          "store": "Lidl",
+          "name": "Поничка с плодов пълнеж",
+          "price": 121.26,
+          "conf": 0.63
+        },
+        {
+          "store": "Lidl",
+          "name": "Поничка с плодов пълнеж | LIDL",
+          "price": 119.3,
+          "conf": 0.57
+        },
+        {
+          "store": "Lidl",
+          "name": "Поничка сърце с плодов пълнеж | LIDL",
+          "price": 117.35,
+          "conf": 0.52
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Поничка с плодов пълнеж"
+        },
+        {
+          "store": "Lidl",
+          "name": "Поничка с плодов пълнеж"
+        },
+        {
+          "store": "Lidl",
+          "name": "Поничка с плодов пълнеж | LIDL"
+        },
+        {
+          "store": "Lidl",
+          "name": "Поничка сърце с плодов пълнеж | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_62ff16d7",
+      "off_barcode": "9008684022494",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Сьомга филе с кожа от свежата витрина",
+          "price": 32.23,
+          "conf": 0.65
+        },
+        {
+          "store": "Lidl",
+          "name": "Прясно филе от сьомга с кожа | LIDL",
+          "price": 154.51,
+          "conf": 0.68
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Сьомга филе с кожа от свежата витрина"
+        },
+        {
+          "store": "Lidl",
+          "name": "Прясно филе от сьомга с кожа | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_04874ba7",
+      "off_barcode": "6410405141439",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Пърленка",
+          "price": 0.09,
+          "conf": 0.68
+        },
+        {
+          "store": "Lidl",
+          "name": "Пърленка",
+          "price": 4.49,
+          "conf": 0.68
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Пърленка"
+        },
+        {
+          "store": "Lidl",
+          "name": "Пърленка"
+        }
+      ]
+    },
+    {
+      "group_id": "g_8e299f42",
+      "off_barcode": "4056489889854",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Риба тон филе от свежата витрина",
+          "price": 31.49,
+          "conf": 0.58
+        },
+        {
+          "store": "Lidl",
+          "name": "Филе от жълтоперест тон",
+          "price": 2.49,
+          "conf": 0.53
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Риба тон филе от свежата витрина"
+        },
+        {
+          "store": "Lidl",
+          "name": "Филе от жълтоперест тон"
+        }
+      ]
+    },
+    {
+      "group_id": "g_745a9a8a",
+      "off_barcode": "3800501177020",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Рибно филе панирано",
+          "price": 9.99,
+          "conf": 0.59
+        },
+        {
+          "store": "Lidl",
+          "name": "Рибно филе панирано",
+          "price": 138.86,
+          "conf": 0.59
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Рибно филе панирано"
+        },
+        {
+          "store": "Lidl",
+          "name": "Рибно филе панирано"
+        }
+      ]
+    },
+    {
+      "group_id": "g_3d943cbe",
+      "off_barcode": "3800061604332",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Billa",
+          "name": "Роден край Нетунквани вафли 525 г Произход - България",
+          "price": 2.3,
+          "conf": 0.52
+        },
+        {
+          "store": "Kaufland",
+          "name": "Роден край Oбикновени вафли",
+          "price": 4.48,
+          "conf": 0.68
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Роден край Нетунквани вафли 525 г Произход - България"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Роден край Oбикновени вафли"
+        }
+      ]
+    },
+    {
+      "group_id": "g_ca76ec53",
+      "off_barcode": "3800203930572",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Салата херинга с пресен копър",
+          "price": 17.99,
+          "conf": 0.45
+        },
+        {
+          "store": "Lidl",
+          "name": "Руска салата XXL",
+          "price": 2.84,
+          "conf": 0.78
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Салата херинга с пресен копър"
+        }
+      ]
+    },
+    {
+      "group_id": "g_744ad2d6",
+      "off_barcode": "3800226480023",
+      "reasons": [
+        "low_confidence: 1 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Хляб ръжено-пшеничен от нашата пекарна",
+          "price": 1.49,
+          "conf": 0.68
+        },
+        {
+          "store": "Lidl",
+          "name": "Ръжено-пшеничен хляб",
+          "price": 119.3,
+          "conf": 0.95
+        },
+        {
+          "store": "Lidl",
+          "name": "Ръжено-пшеничен хляб | LIDL",
+          "price": 117.35,
+          "conf": 0.86
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Хляб ръжено-пшеничен от нашата пекарна"
+        }
+      ]
+    },
+    {
+      "group_id": "g_0c6cb6f2",
+      "off_barcode": "3800100626844",
+      "reasons": [
+        "low_confidence: 4 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Черни маслини Мамут",
+          "price": 3.57,
+          "conf": 0.74
+        },
+        {
+          "store": "Kaufland",
+          "name": "Черни маслини Мамут от свежата витрина",
+          "price": 6.98,
+          "conf": 0.53
+        },
+        {
+          "store": "Kaufland",
+          "name": "Черни маслини Колосал от свежата витрина",
+          "price": 6.49,
+          "conf": 0.52
+        },
+        {
+          "store": "Billa",
+          "name": "Само с Billa Card - Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
+          "price": 4.09,
+          "conf": 0.4
+        },
+        {
+          "store": "Kaufland",
+          "name": "Черни маслини Супер, Супер Мамут",
+          "price": 7.98,
+          "conf": 0.64
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Черни маслини Мамут от свежата витрина"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Черни маслини Колосал от свежата витрина"
+        },
+        {
+          "store": "Billa",
+          "name": "Само с Billa Card - Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Черни маслини Супер, Супер Мамут"
+        }
+      ]
+    },
+    {
+      "group_id": "g_f346d124",
+      "off_barcode": "3800226521191",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Саяна Кашкавал от краве мляко\nот свежата витрина",
+          "price": 17.99,
+          "conf": 0.77
+        },
+        {
+          "store": "Billa",
+          "name": "Саяна Кашкавал от краве мляко От деликатесната витрина За 1 кг",
+          "price": 9.19,
+          "conf": 0.61
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Саяна Кашкавал от краве мляко От деликатесната витрина За 1 кг"
+        }
+      ]
+    },
+    {
+      "group_id": "g_4f08191f",
+      "off_barcode": "3800502283775",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Топлопушена скумрия с глава",
+          "price": 11.23,
+          "conf": 0.53
+        },
+        {
+          "store": "Lidl",
+          "name": "Скумрия | LIDL",
+          "price": 142.77,
+          "conf": 0.79
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Топлопушена скумрия с глава"
+        }
+      ]
+    },
+    {
+      "group_id": "g_ddb66741",
+      "off_barcode": "3801056040111",
+      "reasons": [
+        "low_confidence: 2 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Сладки времена",
+          "price": 0.13,
+          "conf": 0.95
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сладки времена Локум или Халва\nразлични видове",
+          "price": 0.25,
+          "conf": 0.65
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сладки времена Минилокум\nобикновен",
+          "price": 0.25,
+          "conf": 0.61
+        },
+        {
+          "store": "Billa",
+          "name": "Сладки времена Халва 30 г",
+          "price": 0.15,
+          "conf": 0.71
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Сладки времена Локум или Халва\nразлични видове"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сладки времена Минилокум\nобикновен"
+        }
+      ]
+    },
+    {
+      "group_id": "g_3f319891",
+      "off_barcode": "4049726019688",
+      "reasons": [
+        "low_confidence: 2 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Lidl",
+          "name": "Ягоди",
+          "price": 1.78,
+          "conf": 1.0
+        },
+        {
+          "store": "Kaufland",
+          "name": "Ягоди",
+          "price": 6.49,
+          "conf": 0.86
+        },
+        {
+          "store": "Billa",
+          "name": "Ягоди 250 г",
+          "price": 1.69,
+          "conf": 0.65
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сладкиш сърце с ягоди",
+          "price": 1.58,
+          "conf": 0.49
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Ягоди 250 г"
+        },
+        {
+          "store": "Kaufland",
+          "name": "Сладкиш сърце с ягоди"
+        }
+      ]
+    },
+    {
+      "group_id": "g_ab0160e4",
+      "off_barcode": "3800078019419",
+      "reasons": [
+        "low_confidence: 3 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Средиземноморска салата от нашата витрина",
+          "price": 9.37,
+          "conf": 0.63
+        },
+        {
+          "store": "Lidl",
+          "name": "Средиземноморска фокача",
+          "price": 117.35,
+          "conf": 0.59
+        },
+        {
+          "store": "Lidl",
+          "name": "Средиземноморска фокача | LIDL",
+          "price": 125.17,
+          "conf": 0.53
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Средиземноморска салата от нашата витрина"
+        },
+        {
+          "store": "Lidl",
+          "name": "Средиземноморска фокача"
+        },
+        {
+          "store": "Lidl",
+          "name": "Средиземноморска фокача | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_d4113a99",
+      "off_barcode": "2840330004549",
+      "reasons": [
+        "low_confidence: 2 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Сьомгова пъстърва филе от свежата витрина",
+          "price": 21.73,
+          "conf": 0.45
+        },
+        {
+          "store": "Lidl",
+          "name": "Филе от прясна сьомгова пъстърва | LIDL",
+          "price": 123.22,
+          "conf": 0.46
+        }
+      ],
+      "removed": [
+        {
+          "store": "Kaufland",
+          "name": "Сьомгова пъстърва филе от свежата витрина"
+        },
+        {
+          "store": "Lidl",
+          "name": "Филе от прясна сьомгова пъстърва | LIDL"
+        }
+      ]
+    },
+    {
+      "group_id": "g_3fb65885",
+      "off_barcode": "3800047702151",
+      "reasons": [
+        "low_confidence: 1 products below 0.7"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Точени кори",
+          "price": 1.68,
+          "conf": 0.95
+        },
+        {
+          "store": "Lidl",
+          "name": "Точени кори",
+          "price": 1.09,
+          "conf": 1.0
+        },
+        {
+          "store": "Lidl",
+          "name": "Тракийски Точени кори",
+          "price": 1.09,
+          "conf": 0.68
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Тракийски Точени кори"
+        }
+      ]
+    },
+    {
+      "group_id": "g_9b970f34",
+      "off_barcode": "3800228184196",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Хляб",
+          "price": 0.72,
+          "conf": 0.79
+        },
+        {
+          "store": "Lidl",
+          "name": "Хляб Сомун",
+          "price": 119.3,
+          "conf": 0.56
+        }
+      ],
+      "removed": [
+        {
+          "store": "Lidl",
+          "name": "Хляб Сомун"
+        }
+      ]
+    },
+    {
+      "group_id": "g_d33f9d9b",
+      "off_barcode": "3800069005629",
+      "reasons": [
+        "low_confidence: 1 products below 0.7",
+        "insufficient_products_after_cleanup"
+      ],
+      "products": [
+        {
+          "store": "Kaufland",
+          "name": "Шуменско Бира",
+          "price": 0.98,
+          "conf": 0.95
+        },
+        {
+          "store": "Billa",
+          "name": "Шуменско бира 1 л Произход - България",
+          "price": 0.92,
+          "conf": 0.59
+        }
+      ],
+      "removed": [
+        {
+          "store": "Billa",
+          "name": "Шуменско бира 1 л Произход - България"
+        }
+      ]
+    }
+  ]
+}
