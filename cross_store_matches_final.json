@@ -2,213 +2,21 @@
   "meta": {
     "total_matches": 33,
     "by_category": {
-      "electronics": 1,
-      "household": 1,
-      "bakery": 2,
       "produce": 10,
-      "beverages": 1,
-      "canned": 2,
-      "pantry": 1,
-      "snacks": 7,
       "meat": 1,
-      "dairy": 3,
+      "snacks": 7,
       "alcohol": 3,
-      "personal_care": 1
+      "dairy": 3,
+      "personal_care": 1,
+      "beverages": 1,
+      "pantry": 1,
+      "electronics": 1,
+      "bakery": 2,
+      "household": 1,
+      "canned": 2
     }
   },
   "matches": [
-    {
-      "products": [
-        {
-          "id": 820,
-          "store": "Kaufland",
-          "raw_name": "PARKSIDE® Акумулаторна батерия 2 Ah\nи Зарядно 2,4 A",
-          "clean_name": "PARKSIDE® Акумулаторна батерия 2 Ah и Зарядно 2,4 A",
-          "brand": "Parkside",
-          "description": "® Акумулаторна батерия 2 Ah и Зарядно 2,4 A",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "electronics",
-          "price": 31.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1116,
-          "store": "Lidl",
-          "raw_name": "Акумулаторна батерия и зарядно устройство",
-          "clean_name": "Акумулаторна батерия и зарядно устройство",
-          "brand": "Parkside",
-          "description": "Акумулаторна батерия и зарядно устройство",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "electronics",
-          "price": 16.35,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "electronics",
-      "similarity": 0.604,
-      "common_words": 3,
-      "brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 552,
-          "store": "Kaufland",
-          "raw_name": "Ariel, Гел 35/40 пранета Прах 40 пранета\nКапсули 26/30 пранета",
-          "clean_name": "Ariel, Гел 35/40 пранета Прах 40 пранета Капсули 26/30 пранета",
-          "brand": "Ariel",
-          "description": ", Гел 35/40 пранета Прах 40 пранета Капсули 26/30 пранета",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "household",
-          "price": 18.99,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1411,
-          "store": "Billa",
-          "raw_name": "Ariel Гел за пране 40 пранета или Капсули за пране 28 бр. 1 опаковка, 1 изпиране",
-          "clean_name": "Ariel Гел за пране 40 пранета или Капсули за пране 28 бр. 1 опаковка, 1 изпиране",
-          "brand": "Ariel",
-          "description": "Гел за пране 40 пранета или Капсули за пране 28 бр. 1 опаковка, 1 изпиране",
-          "quantity_value": 28.0,
-          "quantity_unit": "pcs",
-          "category": "household",
-          "price": 20.985734,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "household",
-      "similarity": 0.553,
-      "common_words": 5,
-      "brand": "Ariel",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 319,
-          "store": "Kaufland",
-          "raw_name": "Сомун от нашата пекарна",
-          "clean_name": "Сомун",
-          "brand": "Наша",
-          "description": "Сомун",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "bakery",
-          "price": 1.08,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1423,
-          "store": "Billa",
-          "raw_name": "Мини сомун 120 г",
-          "clean_name": "Мини сомун 120 г",
-          "brand": null,
-          "description": "Мини сомун 120 г",
-          "quantity_value": 120.0,
-          "quantity_unit": "g",
-          "category": "bakery",
-          "price": 0.59,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 4.92,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "bakery",
-      "similarity": 0.583,
-      "common_words": 1,
-      "brand": "Наша",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 330,
-          "store": "Kaufland",
-          "raw_name": "Вита Силует Хляб\nразлични видове",
-          "clean_name": "Вита Силует Хляб",
-          "brand": null,
-          "description": "Вита Силует Хляб",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "bakery",
-          "price": 2.39,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1242,
-          "store": "Billa",
-          "raw_name": "Вита Силует Хляб 6 зърна или класик 400 г Произход - България",
-          "clean_name": "Вита Силует Хляб 6 зърна или класик 400 г",
-          "brand": null,
-          "description": "Вита Силует Хляб 6 зърна или класик 400 г",
-          "quantity_value": 400.0,
-          "quantity_unit": "g",
-          "category": "bakery",
-          "price": 2.39,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 5.98,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "bakery",
-      "similarity": 0.796,
-      "common_words": 3,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
     {
       "products": [
         {
@@ -692,190 +500,46 @@
     {
       "products": [
         {
-          "id": 464,
+          "id": 234,
           "store": "Kaufland",
-          "raw_name": "Prisun Плодова напитка\nразлични видове",
-          "clean_name": "Prisun Плодова напитка",
-          "brand": "Prisun",
-          "description": "Плодова напитка",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "beverages",
-          "price": 2.19,
+          "raw_name": "Свински врат без кост около 1,5 кг",
+          "clean_name": "Свински врат без кост около 1,5 кг",
+          "brand": "Свински",
+          "description": "врат без кост около 1,5 кг",
+          "quantity_value": 1.5,
+          "quantity_unit": "kg",
+          "category": "meat",
+          "price": 7.98,
           "old_price": null,
           "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
+          "unit_price": 5.32,
+          "unit_price_base": "kg",
           "image_url": null,
           "validation_errors": []
         },
         {
-          "id": 1350,
+          "id": 1155,
           "store": "Billa",
-          "raw_name": "Prisun негазирана напитка 1,5 л",
-          "clean_name": "Prisun негазирана напитка 1,5 л",
-          "brand": "Prisun",
-          "description": "негазирана напитка 1,5 л",
-          "quantity_value": 1.5,
-          "quantity_unit": "L",
-          "category": "beverages",
-          "price": 1.78,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 1.19,
-          "unit_price_base": "L",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "beverages",
-      "similarity": 0.59,
-      "common_words": 2,
-      "brand": "Prisun",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 14,
-          "store": "Kaufland",
-          "raw_name": "Черни маслини Мамут от свежата витрина",
-          "clean_name": "Черни маслини Мамут",
-          "brand": null,
-          "description": "Черни маслини Мамут",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "canned",
+          "raw_name": "Свински врат без кост За 1 кг До 5 кг на клиент на ден*",
+          "clean_name": "Свински врат без кост За 1 кг До 5 кг на клиент на ден*",
+          "brand": "Свински",
+          "description": "врат без кост За 1 кг До 5 кг на клиент на ден*",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "meat",
           "price": 6.98,
           "old_price": null,
           "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1266,
-          "store": "Billa",
-          "raw_name": "Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
-          "clean_name": "Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
-          "brand": null,
-          "description": "Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "canned",
-          "price": 8.0,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 8.0,
+          "unit_price": 6.98,
           "unit_price_base": "kg",
           "image_url": null,
           "validation_errors": []
         }
       ],
-      "category": "canned",
-      "similarity": 0.713,
+      "category": "meat",
+      "similarity": 0.822,
       "common_words": 3,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 296,
-          "store": "Kaufland",
-          "raw_name": "Маслини Каламата 201/260",
-          "clean_name": "Маслини Каламата 201/260",
-          "brand": null,
-          "description": "Маслини Каламата 201/260",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "canned",
-          "price": 8.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1267,
-          "store": "Billa",
-          "raw_name": "Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
-          "clean_name": "Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
-          "brand": null,
-          "description": "Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "canned",
-          "price": 9.96,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 9.96,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "canned",
-      "similarity": 0.676,
-      "common_words": 3,
-      "brand": null,
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 607,
-          "store": "Kaufland",
-          "raw_name": "HEINZ Кетчуп",
-          "clean_name": "HEINZ Кетчуп",
-          "brand": "Heinz",
-          "description": "Кетчуп",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "pantry",
-          "price": 5.48,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1176,
-          "store": "Billa",
-          "raw_name": "Heinz Кетчуп оригинал 1,35 кг",
-          "clean_name": "Heinz Кетчуп оригинал 1,35 кг",
-          "brand": "Heinz",
-          "description": "Кетчуп оригинал 1,35 кг",
-          "quantity_value": 1.35,
-          "quantity_unit": "kg",
-          "category": "pantry",
-          "price": 8.08,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 5.99,
-          "unit_price_base": "kg",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "pantry",
-      "similarity": 0.697,
-      "common_words": 2,
-      "brand": "Heinz",
+      "brand": "Свински",
       "stores": [
         "Billa",
         "Kaufland"
@@ -1220,46 +884,142 @@
     {
       "products": [
         {
-          "id": 234,
+          "id": 83,
           "store": "Kaufland",
-          "raw_name": "Свински врат без кост около 1,5 кг",
-          "clean_name": "Свински врат без кост около 1,5 кг",
-          "brand": "Свински",
-          "description": "врат без кост около 1,5 кг",
-          "quantity_value": 1.5,
-          "quantity_unit": "kg",
-          "category": "meat",
-          "price": 7.98,
+          "raw_name": "CHATEAU KARNOBAT Червено, Бяло вино или Розе",
+          "clean_name": "CHATEAU KARNOBAT Червено, Бяло вино или Розе",
+          "brand": "Chateau Karnobat",
+          "description": "Червено, Бяло вино или Розе",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "alcohol",
+          "price": 13.98,
           "old_price": null,
           "discount_pct": null,
-          "unit_price": 5.32,
-          "unit_price_base": "kg",
+          "unit_price": null,
+          "unit_price_base": null,
           "image_url": null,
           "validation_errors": []
         },
         {
-          "id": 1155,
+          "id": 1185,
           "store": "Billa",
-          "raw_name": "Свински врат без кост За 1 кг До 5 кг на клиент на ден*",
-          "clean_name": "Свински врат без кост За 1 кг До 5 кг на клиент на ден*",
-          "brand": "Свински",
-          "description": "врат без кост За 1 кг До 5 кг на клиент на ден*",
-          "quantity_value": 1.0,
-          "quantity_unit": "kg",
-          "category": "meat",
-          "price": 6.98,
+          "raw_name": "Chateau Karnobat Вино 3 л Произход - България",
+          "clean_name": "Chateau Karnobat Вино 3 л",
+          "brand": "Chateau Karnobat",
+          "description": "Вино 3 л",
+          "quantity_value": 3.0,
+          "quantity_unit": "L",
+          "category": "alcohol",
+          "price": 14.26,
           "old_price": null,
           "discount_pct": null,
-          "unit_price": 6.98,
-          "unit_price_base": "kg",
+          "unit_price": 4.75,
+          "unit_price_base": "L",
           "image_url": null,
           "validation_errors": []
         }
       ],
-      "category": "meat",
-      "similarity": 0.822,
+      "category": "alcohol",
+      "similarity": 0.6,
       "common_words": 3,
-      "brand": "Свински",
+      "brand": "Chateau Karnobat",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 433,
+          "store": "Kaufland",
+          "raw_name": "Absolut Водка\nразлични видове",
+          "clean_name": "Absolut Водка",
+          "brand": "Absolut",
+          "description": "Водка",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "alcohol",
+          "price": 16.49,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1369,
+          "store": "Billa",
+          "raw_name": "Absolut Водка 0,7 л",
+          "clean_name": "Absolut Водка 0,7 л",
+          "brand": "Absolut",
+          "description": "Водка 0,7 л",
+          "quantity_value": 0.7,
+          "quantity_unit": "L",
+          "category": "alcohol",
+          "price": 16.49,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 23.56,
+          "unit_price_base": "L",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "category": "alcohol",
+      "similarity": 1.0,
+      "common_words": 2,
+      "brand": "Absolut",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 436,
+          "store": "Kaufland",
+          "raw_name": "Пещерска Гроздова ракия",
+          "clean_name": "Пещерска Гроздова ракия",
+          "brand": "Пещерска",
+          "description": "Гроздова ракия",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "alcohol",
+          "price": 14.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1370,
+          "store": "Billa",
+          "raw_name": "Пещерска Ракия гроздова 0,7 л Произход - България",
+          "clean_name": "Пещерска Ракия гроздова 0,7 л",
+          "brand": "Пещерска",
+          "description": "Ракия гроздова 0,7 л",
+          "quantity_value": 0.7,
+          "quantity_unit": "L",
+          "category": "alcohol",
+          "price": 10.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 15.7,
+          "unit_price_base": "L",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "category": "alcohol",
+      "similarity": 0.87,
+      "common_words": 3,
+      "brand": "Пещерска",
       "stores": [
         "Billa",
         "Kaufland"
@@ -1412,150 +1172,6 @@
     {
       "products": [
         {
-          "id": 83,
-          "store": "Kaufland",
-          "raw_name": "CHATEAU KARNOBAT Червено, Бяло вино или Розе",
-          "clean_name": "CHATEAU KARNOBAT Червено, Бяло вино или Розе",
-          "brand": "Chateau Karnobat",
-          "description": "Червено, Бяло вино или Розе",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "alcohol",
-          "price": 13.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1185,
-          "store": "Billa",
-          "raw_name": "Chateau Karnobat Вино 3 л Произход - България",
-          "clean_name": "Chateau Karnobat Вино 3 л",
-          "brand": "Chateau Karnobat",
-          "description": "Вино 3 л",
-          "quantity_value": 3.0,
-          "quantity_unit": "L",
-          "category": "alcohol",
-          "price": 14.26,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 4.75,
-          "unit_price_base": "L",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "alcohol",
-      "similarity": 0.6,
-      "common_words": 3,
-      "brand": "Chateau Karnobat",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 433,
-          "store": "Kaufland",
-          "raw_name": "Absolut Водка\nразлични видове",
-          "clean_name": "Absolut Водка",
-          "brand": "Absolut",
-          "description": "Водка",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "alcohol",
-          "price": 16.49,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1369,
-          "store": "Billa",
-          "raw_name": "Absolut Водка 0,7 л",
-          "clean_name": "Absolut Водка 0,7 л",
-          "brand": "Absolut",
-          "description": "Водка 0,7 л",
-          "quantity_value": 0.7,
-          "quantity_unit": "L",
-          "category": "alcohol",
-          "price": 16.49,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 23.56,
-          "unit_price_base": "L",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "alcohol",
-      "similarity": 1.0,
-      "common_words": 2,
-      "brand": "Absolut",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
-          "id": 436,
-          "store": "Kaufland",
-          "raw_name": "Пещерска Гроздова ракия",
-          "clean_name": "Пещерска Гроздова ракия",
-          "brand": "Пещерска",
-          "description": "Гроздова ракия",
-          "quantity_value": null,
-          "quantity_unit": null,
-          "category": "alcohol",
-          "price": 14.98,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": null,
-          "unit_price_base": null,
-          "image_url": null,
-          "validation_errors": []
-        },
-        {
-          "id": 1370,
-          "store": "Billa",
-          "raw_name": "Пещерска Ракия гроздова 0,7 л Произход - България",
-          "clean_name": "Пещерска Ракия гроздова 0,7 л",
-          "brand": "Пещерска",
-          "description": "Ракия гроздова 0,7 л",
-          "quantity_value": 0.7,
-          "quantity_unit": "L",
-          "category": "alcohol",
-          "price": 10.99,
-          "old_price": null,
-          "discount_pct": null,
-          "unit_price": 15.7,
-          "unit_price_base": "L",
-          "image_url": null,
-          "validation_errors": []
-        }
-      ],
-      "category": "alcohol",
-      "similarity": 0.87,
-      "common_words": 3,
-      "brand": "Пещерска",
-      "stores": [
-        "Billa",
-        "Kaufland"
-      ]
-    },
-    {
-      "products": [
-        {
           "id": 487,
           "store": "Kaufland",
           "raw_name": "NIVEA Шампоан, Балсам или Душ гел\nразлични видове",
@@ -1596,6 +1212,390 @@
       "similarity": 0.617,
       "common_words": 3,
       "brand": "Nivea",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 464,
+          "store": "Kaufland",
+          "raw_name": "Prisun Плодова напитка\nразлични видове",
+          "clean_name": "Prisun Плодова напитка",
+          "brand": "Prisun",
+          "description": "Плодова напитка",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "beverages",
+          "price": 2.19,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1350,
+          "store": "Billa",
+          "raw_name": "Prisun негазирана напитка 1,5 л",
+          "clean_name": "Prisun негазирана напитка 1,5 л",
+          "brand": "Prisun",
+          "description": "негазирана напитка 1,5 л",
+          "quantity_value": 1.5,
+          "quantity_unit": "L",
+          "category": "beverages",
+          "price": 1.78,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 1.19,
+          "unit_price_base": "L",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "category": "beverages",
+      "similarity": 0.59,
+      "common_words": 2,
+      "brand": "Prisun",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 607,
+          "store": "Kaufland",
+          "raw_name": "HEINZ Кетчуп",
+          "clean_name": "HEINZ Кетчуп",
+          "brand": "Heinz",
+          "description": "Кетчуп",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "pantry",
+          "price": 5.48,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1176,
+          "store": "Billa",
+          "raw_name": "Heinz Кетчуп оригинал 1,35 кг",
+          "clean_name": "Heinz Кетчуп оригинал 1,35 кг",
+          "brand": "Heinz",
+          "description": "Кетчуп оригинал 1,35 кг",
+          "quantity_value": 1.35,
+          "quantity_unit": "kg",
+          "category": "pantry",
+          "price": 8.08,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 5.99,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "category": "pantry",
+      "similarity": 0.697,
+      "common_words": 2,
+      "brand": "Heinz",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 820,
+          "store": "Kaufland",
+          "raw_name": "PARKSIDE® Акумулаторна батерия 2 Ah\nи Зарядно 2,4 A",
+          "clean_name": "PARKSIDE® Акумулаторна батерия 2 Ah и Зарядно 2,4 A",
+          "brand": "Parkside",
+          "description": "® Акумулаторна батерия 2 Ah и Зарядно 2,4 A",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "electronics",
+          "price": 31.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1116,
+          "store": "Lidl",
+          "raw_name": "Акумулаторна батерия и зарядно устройство",
+          "clean_name": "Акумулаторна батерия и зарядно устройство",
+          "brand": "Parkside",
+          "description": "Акумулаторна батерия и зарядно устройство",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "electronics",
+          "price": 16.35,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "category": "electronics",
+      "similarity": 0.604,
+      "common_words": 3,
+      "brand": "Parkside",
+      "stores": [
+        "Kaufland",
+        "Lidl"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 319,
+          "store": "Kaufland",
+          "raw_name": "Сомун от нашата пекарна",
+          "clean_name": "Сомун",
+          "brand": "Наша",
+          "description": "Сомун",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "bakery",
+          "price": 1.08,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1423,
+          "store": "Billa",
+          "raw_name": "Мини сомун 120 г",
+          "clean_name": "Мини сомун 120 г",
+          "brand": null,
+          "description": "Мини сомун 120 г",
+          "quantity_value": 120.0,
+          "quantity_unit": "g",
+          "category": "bakery",
+          "price": 0.59,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 4.92,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "category": "bakery",
+      "similarity": 0.583,
+      "common_words": 1,
+      "brand": "Наша",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 330,
+          "store": "Kaufland",
+          "raw_name": "Вита Силует Хляб\nразлични видове",
+          "clean_name": "Вита Силует Хляб",
+          "brand": null,
+          "description": "Вита Силует Хляб",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "bakery",
+          "price": 2.39,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1242,
+          "store": "Billa",
+          "raw_name": "Вита Силует Хляб 6 зърна или класик 400 г Произход - България",
+          "clean_name": "Вита Силует Хляб 6 зърна или класик 400 г",
+          "brand": null,
+          "description": "Вита Силует Хляб 6 зърна или класик 400 г",
+          "quantity_value": 400.0,
+          "quantity_unit": "g",
+          "category": "bakery",
+          "price": 2.39,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 5.98,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "category": "bakery",
+      "similarity": 0.796,
+      "common_words": 3,
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 552,
+          "store": "Kaufland",
+          "raw_name": "Ariel, Гел 35/40 пранета Прах 40 пранета\nКапсули 26/30 пранета",
+          "clean_name": "Ariel, Гел 35/40 пранета Прах 40 пранета Капсули 26/30 пранета",
+          "brand": "Ariel",
+          "description": ", Гел 35/40 пранета Прах 40 пранета Капсули 26/30 пранета",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "household",
+          "price": 18.99,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1411,
+          "store": "Billa",
+          "raw_name": "Ariel Гел за пране 40 пранета или Капсули за пране 28 бр. 1 опаковка, 1 изпиране",
+          "clean_name": "Ariel Гел за пране 40 пранета или Капсули за пране 28 бр. 1 опаковка, 1 изпиране",
+          "brand": "Ariel",
+          "description": "Гел за пране 40 пранета или Капсули за пране 28 бр. 1 опаковка, 1 изпиране",
+          "quantity_value": 28.0,
+          "quantity_unit": "pcs",
+          "category": "household",
+          "price": 20.985734,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "category": "household",
+      "similarity": 0.553,
+      "common_words": 5,
+      "brand": "Ariel",
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 14,
+          "store": "Kaufland",
+          "raw_name": "Черни маслини Мамут от свежата витрина",
+          "clean_name": "Черни маслини Мамут",
+          "brand": null,
+          "description": "Черни маслини Мамут",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "canned",
+          "price": 6.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1266,
+          "store": "Billa",
+          "raw_name": "Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
+          "clean_name": "Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
+          "brand": null,
+          "description": "Черни маслини Мамут 101-110* От деликатесната витрина За 1 кг",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "canned",
+          "price": 8.0,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 8.0,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "category": "canned",
+      "similarity": 0.713,
+      "common_words": 3,
+      "brand": null,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ]
+    },
+    {
+      "products": [
+        {
+          "id": 296,
+          "store": "Kaufland",
+          "raw_name": "Маслини Каламата 201/260",
+          "clean_name": "Маслини Каламата 201/260",
+          "brand": null,
+          "description": "Маслини Каламата 201/260",
+          "quantity_value": null,
+          "quantity_unit": null,
+          "category": "canned",
+          "price": 8.98,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": null,
+          "unit_price_base": null,
+          "image_url": null,
+          "validation_errors": []
+        },
+        {
+          "id": 1267,
+          "store": "Billa",
+          "raw_name": "Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
+          "clean_name": "Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
+          "brand": null,
+          "description": "Маслини Каламата Блонд 231-260* От деликатесната витрина За 1 кг",
+          "quantity_value": 1.0,
+          "quantity_unit": "kg",
+          "category": "canned",
+          "price": 9.96,
+          "old_price": null,
+          "discount_pct": null,
+          "unit_price": 9.96,
+          "unit_price_base": "kg",
+          "image_url": null,
+          "validation_errors": []
+        }
+      ],
+      "category": "canned",
+      "similarity": 0.676,
+      "common_words": 3,
+      "brand": null,
       "stores": [
         "Billa",
         "Kaufland"
