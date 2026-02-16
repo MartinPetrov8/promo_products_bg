@@ -256,7 +256,7 @@
                 data = await response.json();
                 buildSearchIndex();
                 calculateStoreCounts();
-                updateStats();
+                updateStats(data.products);
                 updateStoreButtons();
                 showTopDeals();
             } catch (err) {
@@ -305,22 +305,7 @@
             searchIndex = Array.from(names).sort();
         }
         
-        function updateStats() {
-            document.getElementById('totalProducts').textContent = data.meta.total_products?.toLocaleString() || '-';
-            document.getElementById('crossStoreCount').textContent = data.meta.cross_store_groups?.toLocaleString() || '-';
-            
-            const withDiscount = data.products.filter(p => p.discount_pct > 0);
-            const avgDiscount = withDiscount.length > 0 
-                ? Math.round(withDiscount.reduce((a, p) => a + p.discount_pct, 0) / withDiscount.length)
-                : 0;
-            document.getElementById('avgDiscount').textContent = avgDiscount + '%';
-            
-            if (data.meta.updated_at) {
-                const date = new Date(data.meta.updated_at);
-                document.getElementById('lastUpdated').textContent = 
-                    `Последна актуализация: ${date.toLocaleDateString('bg-BG')} ${date.toLocaleTimeString('bg-BG', {hour: '2-digit', minute: '2-digit'})}`;
-            }
-        }
+
         
         function getNutriscore(product) {
             if (!product.off_barcode || !data.off[product.off_barcode]) return null;
@@ -385,6 +370,7 @@
             
             // Update store counts based on filtered results
             updateFilteredStoreCounts();
+            updateStats(applyFilters(data.products));
         }
         
         function updateFilteredStoreCounts() {
@@ -413,6 +399,36 @@
             document.getElementById('storeCountLidl').textContent = `(${filteredByStore.Lidl})`;
             document.getElementById('storeCountBilla').textContent = `(${filteredByStore.Billa})`;
         }
+
+        function updateStats(filteredProducts) {
+            // Total products
+            document.getElementById('totalProducts').textContent = filteredProducts.length.toLocaleString();
+            
+            // Cross-store comparisons
+            const crossStoreGroups = new Set();
+            filteredProducts.forEach(p => {
+                const group = data.groups[p.group_id];
+                if (group && group.stores.length >= 2) {
+                    crossStoreGroups.add(p.group_id);
+                }
+            });
+            document.getElementById('crossStoreCount').textContent = crossStoreGroups.size.toLocaleString();
+            
+            // Average discount
+            const withDiscount = filteredProducts.filter(p => p.discount_pct && p.discount_pct > 0);
+            const avgDiscount = withDiscount.length > 0 
+                ? Math.round(withDiscount.reduce((sum, p) => sum + p.discount_pct, 0) / withDiscount.length)
+                : 0;
+            document.getElementById('avgDiscount').textContent = avgDiscount + '%';
+            
+            // Last updated (use meta data)
+            if (data.meta.updated_at) {
+                const date = new Date(data.meta.updated_at);
+                document.getElementById('lastUpdated').textContent = 
+                    `Последна актуализация: ${date.toLocaleDateString('bg-BG')} ${date.toLocaleTimeString('bg-BG', {hour: '2-digit', minute: '2-digit'})}`;
+            }
+        }
+
         
         function applyFilters(products) {
             const store = currentStoreFilter;
@@ -513,11 +529,16 @@
             
             document.getElementById('modalTitle').textContent = offData?.name || products[0]?.name || 'Сравнение';
             
-            // Check if this is a cross-store match (more than one store)
+            // Check if this is a price match or has savings
+            const isPriceMatch = savings <= 0.01;
             const isCrossStore = products.length >= 2;
-            document.getElementById('matchType').innerHTML = isCrossStore 
-                ? '💰 <strong>Цената съвпада</strong> - Намери най-добрата оферта!'
-                : '📊 Сравнение на цени';
+            if (isPriceMatch && isCrossStore) {
+                document.getElementById('matchType').innerHTML = '💰 <strong>Цените съвпадат!</strong> — Избери удобния магазин';
+            } else if (isCrossStore) {
+                document.getElementById('matchType').innerHTML = '🏷️ <strong>Има разлика!</strong> — Спести от по-евтиния';
+            } else {
+                document.getElementById('matchType').innerHTML = '📊 Сравнение на цени';
+            }
             
             document.getElementById('modalContent').innerHTML = `
                 ${offData?.nutriscore ? `
@@ -529,22 +550,26 @@
                     </div>
                 ` : ''}
                 <div class="space-y-3">
-                    ${products.map((p, i) => `
-                        <div class="price-compare-card flex items-center gap-3 p-4 rounded-xl ${i === 0 ? 'best-price' : 'bg-gray-50 border border-gray-100'}">
+                    ${products.map((p, i) => {
+                        const isPriceMatch = savings <= 0.01;
+                        const isBest = i === 0 && !isPriceMatch;
+                        return `
+                        <div class="price-compare-card flex items-center gap-3 p-4 rounded-xl ${isBest ? 'best-price' : isPriceMatch ? 'bg-blue-50 border-2 border-blue-200' : 'bg-gray-50 border border-gray-100'}">
                             <span class="text-3xl">${getStoreEmoji(p.store)}</span>
                             <div class="flex-1">
                                 <div class="font-semibold text-gray-800">${p.store}</div>
                                 <div class="text-xs text-gray-500">
-                                    ${p.price_per_kg ? `📦 ${p.price_per_kg.toFixed(2)}€/кг` : ''}
-                                    ${p.price_per_l ? `📦 ${p.price_per_l.toFixed(2)}€/л` : ''}
+                                    ${p.price_per_kg ? '📦 ' + p.price_per_kg.toFixed(2) + '€/кг' : ''}
+                                    ${p.price_per_l ? '📦 ' + p.price_per_l.toFixed(2) + '€/л' : ''}
                                 </div>
                             </div>
                             <div class="text-right">
-                                <div class="text-xl font-bold ${i === 0 ? 'text-green-600' : 'text-gray-700'}">${p.price?.toFixed(2) || '-'}€</div>
-                                ${i === 0 ? '<div class="text-xs text-green-600 font-bold">✅ НАЙ-ДОБРА ЦЕНА</div>' : ''}
+                                <div class="text-xl font-bold ${isBest ? 'text-green-600' : isPriceMatch ? 'text-blue-600' : 'text-gray-700'}">${p.price?.toFixed(2) || '-'}€</div>
+                                ${isBest ? '<div class="text-xs text-green-600 font-bold">✅ НАЙ-ДОБРА ЦЕНА</div>' : ''}
+                                ${isPriceMatch ? '<div class="text-xs text-blue-600 font-bold">💰 ЕДНАКВА ЦЕНА</div>' : ''}
                             </div>
                         </div>
-                    `).join('')}
+                    `}).join('')}
                 </div>
                 ${savings > 0.01 ? `
                     <div class="mt-4 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl text-center border border-green-100">
