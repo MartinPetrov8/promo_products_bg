@@ -11,7 +11,6 @@ import sqlite3
 import json
 from datetime import datetime
 from pathlib import Path
-import uuid
 
 DB_PATH = 'data/promobg.db'
 
@@ -39,7 +38,6 @@ class PromoBGDatabase:
         """Start a new scan run, return run_id."""
         cursor = self.conn.cursor()
         
-        # Get store_id
         cursor.execute("SELECT id FROM stores WHERE name = ?", (store,))
         row = cursor.fetchone()
         if not row:
@@ -84,7 +82,7 @@ class PromoBGDatabase:
                 scan_run_id, store, sku, raw_name, raw_subtitle,
                 raw_description, price_bgn, old_price_bgn, discount_pct,
                 image_url, product_url, brand, scraped_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
         """, (
             run_id,
             product.get('store'),
@@ -99,115 +97,17 @@ class PromoBGDatabase:
             product.get('product_url'),
             product.get('brand'),
         ))
-        return cursor.lastrowid
-    
-    def update_price_with_history(self, store_product_id: int, new_price: float, 
-                                   old_price: float = None, discount_pct: float = None):
-        """Update price and track change in history."""
-        cursor = self.conn.cursor()
-        
-        # Get current price
-        cursor.execute("""
-            SELECT current_price FROM prices WHERE store_product_id = ?
-        """, (store_product_id,))
-        row = cursor.fetchone()
-        
-        if row:
-            prev_price = row['current_price']
-            if prev_price != new_price:
-                # Record price change
-                change_pct = ((new_price - prev_price) / prev_price * 100) if prev_price else 0
-                cursor.execute("""
-                    INSERT INTO price_history (store_product_id, old_price, new_price, change_pct, changed_at)
-                    VALUES (?, ?, ?, ?, datetime('now'))
-                """, (store_product_id, prev_price, new_price, change_pct))
-            
-            # Update current price
-            cursor.execute("""
-                UPDATE prices SET 
-                    current_price = ?, old_price = ?, discount_pct = ?, scraped_at = datetime('now')
-                WHERE store_product_id = ?
-            """, (new_price, old_price, discount_pct, store_product_id))
-        else:
-            # Insert new price
-            cursor.execute("""
-                INSERT INTO prices (store_product_id, current_price, old_price, discount_pct, scraped_at)
-                VALUES (?, ?, ?, ?, datetime('now'))
-            """, (store_product_id, new_price, old_price, discount_pct))
-        
         self.conn.commit()
-        return cursor.rowcount
+        return cursor.lastrowid
     
     def get_price_history(self, store: str, sku: str, days: int = 30):
         """Get price history for a product."""
         cursor = self.conn.cursor()
         cursor.execute("""
-            SELECT rs.price_bgn, rs.old_price_bgn, rs.scraped_at
-            FROM raw_scrapes rs
-            WHERE rs.store = ? AND rs.sku = ?
-            AND rs.scraped_at >= datetime('now', ?)
-            ORDER BY rs.scraped_at DESC
+            SELECT price_bgn, old_price_bgn, scraped_at
+            FROM raw_scrapes
+            WHERE store = ? AND sku = ?
+            AND scraped_at >= datetime('now', ?)
+            ORDER BY scraped_at DESC
         """, (store, sku, f'-{days} days'))
         return cursor.fetchall()
-    
-    def import_from_json(self, json_path: str, store: str):
-        """Import raw products from JSON file."""
-        with open(json_path) as f:
-            products = json.load(f)
-        
-        run_id = self.start_scan_run(store)
-        
-        for p in products:
-            p['store'] = store
-            self.append_raw_scrape(run_id, p)
-        
-        self.complete_scan_run(run_id, {
-            'products_scraped': len(products),
-            'new_products': len(products),
-            'price_changes': 0,
-            'errors': 0
-        })
-        
-        self.conn.commit()
-        return run_id, len(products)
-
-def main():
-    """Import current raw_products.json to database."""
-    with PromoBGDatabase() as db:
-        print("Importing raw_products.json to database...")
-        
-        with open('output/raw_products.json') as f:
-            products = json.load(f)
-        
-        # Group by store
-        by_store = {}
-        for p in products:
-            store = p.get('store', 'Unknown')
-            if store not in by_store:
-                by_store[store] = []
-            by_store[store].append(p)
-        
-        total = 0
-        for store, prods in by_store.items():
-            run_id = db.start_scan_run(store)
-            for p in prods:
-                p['store'] = store
-                db.append_raw_scrape(run_id, p)
-            db.complete_scan_run(run_id, {
-                'products_scraped': len(prods),
-                'new_products': len(prods),
-            })
-            print(f"  {store}: {len(prods)} products (run_id={run_id})")
-            total += len(prods)
-        
-        print(f"\n✓ Imported {total} products to raw_scrapes")
-        
-        # Show stats
-        cursor = db.conn.cursor()
-        cursor.execute("SELECT COUNT(*) FROM raw_scrapes")
-        print(f"Total raw_scrapes: {cursor.fetchone()[0]}")
-        cursor.execute("SELECT COUNT(*) FROM scan_runs")
-        print(f"Total scan_runs: {cursor.fetchone()[0]}")
-
-if __name__ == '__main__':
-    main()
