@@ -21,6 +21,8 @@ class RawProduct:
     price_bgn: Optional[float] = None
     old_price_bgn: Optional[float] = None
     discount_pct: Optional[float] = None
+    quantity_value: Optional[float] = None  # e.g., 500
+    quantity_unit: Optional[str] = None     # e.g., "g", "ml", "kg"
     image_url: Optional[str] = None
     product_url: Optional[str] = None
     scraped_at: str = None

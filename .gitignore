@@ -60,3 +60,4 @@ brochures/
 *.db-shm
 *.db-wal
 data/off_embeddings.npy
+.secrets/

@@ -1,0 +1,584 @@
+[
+  {
+    "id": "10050612",
+    "slug": "govezdi-ili-kamburgski-kolbas",
+    "name": "Родна Стреха говежди колбас с етикет, показващ произход от ЕС и София.",
+    "url": "https://www.lidl.bg/p/govezdi-ili-kamburgski-kolbas/p10050612",
+    "quantity_value": 650.0,
+    "quantity_unit": "g",
+    "price_eur": 8.69,
+    "price_bgn": 17.0
+  },
+  {
+    "id": "10050616",
+    "slug": "kayma",
+    "name": "Kayma",
+    "url": "https://www.lidl.bg/p/kayma/p10050616",
+    "quantity_value": 250.0,
+    "quantity_unit": "g",
+    "price_eur": 0.97,
+    "price_bgn": 1.9
+  },
+  {
+    "id": "10050619",
+    "slug": "motarela-xxl",
+    "name": "Motarela Xxl",
+    "url": "https://www.lidl.bg/p/motarela-xxl/p10050619",
+    "quantity_value": 500.0,
+    "quantity_unit": "g",
+    "price_eur": 5.87,
+    "price_bgn": 11.48
+  },
+  {
+    "id": "10050624",
+    "slug": "tortila-pitki",
+    "name": "Tortila Pitki",
+    "url": "https://www.lidl.bg/p/tortila-pitki/p10050624",
+    "quantity_value": 320.0,
+    "quantity_unit": "g",
+    "price_eur": 1.53,
+    "price_bgn": 2.99
+  },
+  {
+    "id": "10050625",
+    "slug": "bezalkokolna-napitka-limonada",
+    "name": "Bezalkokolna Napitka Limonada",
+    "url": "https://www.lidl.bg/p/bezalkokolna-napitka-limonada/p10050625",
+    "quantity_value": 750.0,
+    "quantity_unit": "ml",
+    "price_eur": 1.78,
+    "price_bgn": 3.48
+  },
+  {
+    "id": "10050626",
+    "slug": "visokoproteinov-puding",
+    "name": "Pilos High Protein шоколадов и ванилов пудинг с 15g протеин, нискомаслен и без добавена захар.",
+    "url": "https://www.lidl.bg/p/visokoproteinov-puding/p10050626",
+    "quantity_value": 150.0,
+    "quantity_unit": "g",
+    "price_eur": 1.02,
+    "price_bgn": 1.99
+  },
+  {
+    "id": "10050628",
+    "slug": "maslinova-pasta",
+    "name": "Буркан с маслинова паста Baresa с Nutri-Score C.",
+    "url": "https://www.lidl.bg/p/maslinova-pasta/p10050628",
+    "quantity_value": 180.0,
+    "quantity_unit": "g",
+    "price_eur": 1.12,
+    "price_bgn": 2.19
+  },
+  {
+    "id": "10050629",
+    "slug": "kokos-ili-avokado",
+    "name": "Freshona замразени парчета авокадо, 250g, с Nutri-Score A и инструкции за микровълнова печка.",
+    "url": "https://www.lidl.bg/p/kokos-ili-avokado/p10050629",
+    "quantity_value": 300.0,
+    "quantity_unit": "g",
+    "price_eur": 2.55,
+    "price_bgn": 4.99
+  },
+  {
+    "id": "10050630",
+    "slug": "susen-rozmarin",
+    "name": "Susen Rozmarin",
+    "url": "https://www.lidl.bg/p/susen-rozmarin/p10050630",
+    "quantity_value": 15.0,
+    "quantity_unit": "g",
+    "price_eur": 0.25,
+    "price_bgn": 0.49
+  },
+  {
+    "id": "10050635",
+    "slug": "frenski-kroasani-s-maslo",
+    "name": "Frenski Kroasani S Maslo",
+    "url": "https://www.lidl.bg/p/frenski-kroasani-s-maslo/p10050635",
+    "quantity_value": 360.0,
+    "quantity_unit": "g",
+    "price_eur": 3.57,
+    "price_bgn": 6.98
+  },
+  {
+    "id": "10050636",
+    "slug": "mini-breteli",
+    "name": "Mini Breteli",
+    "url": "https://www.lidl.bg/p/mini-breteli/p10050636",
+    "price_eur": 0.69,
+    "price_bgn": 1.35
+  },
+  {
+    "id": "10050637",
+    "slug": "bira-gold",
+    "name": "Bira Gold",
+    "url": "https://www.lidl.bg/p/bira-gold/p10050637",
+    "quantity_value": 500.0,
+    "quantity_unit": "ml",
+    "price_eur": 0.66,
+    "price_bgn": 1.29
+  },
+  {
+    "id": "10050638",
+    "slug": "krusi-v-sok-ot-grozde",
+    "name": "Допълнителна информация",
+    "url": "https://www.lidl.bg/p/krusi-v-sok-ot-grozde/p10050638",
+    "quantity_value": 460.0,
+    "quantity_unit": "g",
+    "price_eur": 2.55,
+    "price_bgn": 4.99
+  },
+  {
+    "id": "10050639",
+    "slug": "gores-sokolad",
+    "name": "Gores Sokolad",
+    "url": "https://www.lidl.bg/p/gores-sokolad/p10050639",
+    "quantity_value": 25.0,
+    "quantity_unit": "g",
+    "price_eur": 1.78,
+    "price_bgn": 3.48
+  },
+  {
+    "id": "10050640",
+    "slug": "schogetten-sokolad",
+    "name": "Шоколад Schogetten Latte Macchiato с 18 парчета, 100 г.",
+    "url": "https://www.lidl.bg/p/schogetten-sokolad/p10050640",
+    "quantity_value": 100.0,
+    "quantity_unit": "g",
+    "price_eur": 2.3,
+    "price_bgn": 4.5
+  },
+  {
+    "id": "10050641",
+    "slug": "gazirana-bezalkokolna-napitka",
+    "name": "Gazirana Bezalkokolna Napitka",
+    "url": "https://www.lidl.bg/p/gazirana-bezalkokolna-napitka/p10050641",
+    "quantity_value": 2500.0,
+    "quantity_unit": "ml",
+    "price_eur": 0.61,
+    "price_bgn": 1.19
+  },
+  {
+    "id": "10050643",
+    "slug": "dus-gel",
+    "name": "Cien душ гел Fresh Lime, подхранващ и витализиращ, с неутрално pH за кожата",
+    "url": "https://www.lidl.bg/p/dus-gel/p10050643",
+    "quantity_value": 400.0,
+    "quantity_unit": "ml",
+    "price_eur": 1.27,
+    "price_bgn": 2.48
+  },
+  {
+    "id": "10051016",
+    "slug": "nemska-delikatesna-salata-s-kolbas",
+    "name": "Nemska Delikatesna Salata S Kolbas",
+    "url": "https://www.lidl.bg/p/nemska-delikatesna-salata-s-kolbas/p10051016",
+    "quantity_value": 400.0,
+    "quantity_unit": "g",
+    "price_eur": 4.28,
+    "price_bgn": 8.37
+  },
+  {
+    "id": "10051017",
+    "slug": "sokoladovi-bonboni",
+    "name": "Sokoladovi Bonboni",
+    "url": "https://www.lidl.bg/p/sokoladovi-bonboni/p10051017",
+    "quantity_value": 180.0,
+    "quantity_unit": "g",
+    "price_eur": 5.11,
+    "price_bgn": 9.99
+  },
+  {
+    "id": "10051018",
+    "slug": "lakomstva-za-kuceta",
+    "name": "Опаковка лакомства за кучета с говеждо месо, съдържаща витамини, с нов дизайн.",
+    "url": "https://www.lidl.bg/p/lakomstva-za-kuceta/p10051018",
+    "quantity_value": 200.0,
+    "quantity_unit": "g",
+    "price_eur": 1.02,
+    "price_bgn": 1.99
+  },
+  {
+    "id": "10051020",
+    "slug": "meso-za-gotvene-ot-mlado-telesko",
+    "name": "Гаранция за качество от SGS, световен лидер в контрола.",
+    "url": "https://www.lidl.bg/p/meso-za-gotvene-ot-mlado-telesko/p10051020",
+    "price_eur": 6.49,
+    "price_bgn": 12.69
+  },
+  {
+    "id": "10051021",
+    "slug": "file-ot-s'omga",
+    "name": "File Ot S'Omga",
+    "url": "https://www.lidl.bg/p/file-ot-s'omga/p10051021",
+    "quantity_value": 125.0,
+    "quantity_unit": "g",
+    "price_eur": 11.5,
+    "price_bgn": 22.49
+  },
+  {
+    "id": "10051022",
+    "slug": "krem-sirene",
+    "name": "Krem Sirene",
+    "url": "https://www.lidl.bg/p/krem-sirene/p10051022",
+    "quantity_value": 200.0,
+    "quantity_unit": "g",
+    "price_eur": 1.89,
+    "price_bgn": 3.7
+  },
+  {
+    "id": "10051023",
+    "slug": "balkan-sandvic-cabata",
+    "name": "Опакован сандвич чабата с прошуто кото и моцарела, 240g.",
+    "url": "https://www.lidl.bg/p/balkan-sandvic-cabata/p10051023",
+    "quantity_value": 240.0,
+    "quantity_unit": "g"
+  },
+  {
+    "id": "10051024",
+    "slug": "extra-zytnia-vodka",
+    "name": "Допълнителна информация",
+    "url": "https://www.lidl.bg/p/extra-zytnia-vodka/p10051024",
+    "quantity_value": 700.0,
+    "quantity_unit": "ml",
+    "price_eur": 7.66,
+    "price_bgn": 14.98
+  },
+  {
+    "id": "10051025",
+    "slug": "gazirana-bezalkokolna-napitka",
+    "name": "Gazirana Bezalkokolna Napitka",
+    "url": "https://www.lidl.bg/p/gazirana-bezalkokolna-napitka/p10051025",
+    "quantity_value": 2500.0,
+    "quantity_unit": "ml",
+    "price_eur": 0.61,
+    "price_bgn": 1.19
+  },
+  {
+    "id": "10051026",
+    "slug": "sok-ot-plodove",
+    "name": "Sok Ot Plodove",
+    "url": "https://www.lidl.bg/p/sok-ot-plodove/p10051026",
+    "quantity_value": 1000.0,
+    "quantity_unit": "ml",
+    "price_eur": 3.57,
+    "price_bgn": 6.98
+  },
+  {
+    "id": "10051027",
+    "slug": "plodova-napitka-portokal",
+    "name": "Plodova Napitka Portokal",
+    "url": "https://www.lidl.bg/p/plodova-napitka-portokal/p10051027",
+    "quantity_value": 200.0,
+    "quantity_unit": "ml",
+    "price_eur": 1.78,
+    "price_bgn": 3.48
+  },
+  {
+    "id": "10051028",
+    "slug": "bio-meny",
+    "name": "Био пюре от зеленчуци с ориз и телешко месо за бебета над 12 месеца",
+    "url": "https://www.lidl.bg/p/bio-meny/p10051028",
+    "quantity_value": 250.0,
+    "quantity_unit": "g",
+    "price_eur": 1.41,
+    "price_bgn": 2.76
+  },
+  {
+    "id": "10051029",
+    "slug": "blansirani-sladki-kartofi",
+    "name": "Blansirani Sladki Kartofi",
+    "url": "https://www.lidl.bg/p/blansirani-sladki-kartofi/p10051029",
+    "quantity_value": 500.0,
+    "quantity_unit": "g",
+    "price_eur": 2.55,
+    "price_bgn": 4.99
+  },
+  {
+    "id": "10051030",
+    "slug": "sos-boloneze",
+    "name": "Sos Boloneze",
+    "url": "https://www.lidl.bg/p/sos-boloneze/p10051030",
+    "quantity_value": 400.0,
+    "quantity_unit": "ml",
+    "price_eur": 2.04,
+    "price_bgn": 3.99
+  },
+  {
+    "id": "10051032",
+    "slug": "fiks-za-ystie",
+    "name": "Опаковка за фикс за китайски ястия със сушени подправки и зеленчуци, сервирано с ориз и пиле.",
+    "url": "https://www.lidl.bg/p/fiks-za-ystie/p10051032",
+    "quantity_value": 45.0,
+    "quantity_unit": "g",
+    "price_eur": 0.76,
+    "price_bgn": 1.49
+  },
+  {
+    "id": "10051035",
+    "slug": "solenki-pandelki",
+    "name": "Оранжева опаковка със сиреневи пръчици с чедър и масло, 150 гр.",
+    "url": "https://www.lidl.bg/p/solenki-pandelki/p10051035",
+    "quantity_value": 150.0,
+    "quantity_unit": "g",
+    "price_eur": 2.33,
+    "price_bgn": 4.56
+  },
+  {
+    "id": "10051036",
+    "slug": "gofreti",
+    "name": "Gofreti",
+    "url": "https://www.lidl.bg/p/gofreti/p10051036",
+    "quantity_value": 225.0,
+    "quantity_unit": "g",
+    "price_eur": 1.63,
+    "price_bgn": 3.19
+  },
+  {
+    "id": "10051037",
+    "slug": "sokoladovi-mini-blokceta-s-kokos",
+    "name": "Sokoladovi Mini Blokceta S Kokos",
+    "url": "https://www.lidl.bg/p/sokoladovi-mini-blokceta-s-kokos/p10051037",
+    "quantity_value": 350.0,
+    "quantity_unit": "g",
+    "price_eur": 15.0,
+    "price_bgn": 29.34
+  },
+  {
+    "id": "10051039",
+    "slug": "vegan-krem-s-lesniti-i-kakao",
+    "name": "Веган крем с лешници и какао ",
+    "url": "https://www.lidl.bg/p/vegan-krem-s-lesniti-i-kakao/p10051039",
+    "quantity_value": 400.0,
+    "quantity_unit": "g",
+    "price_eur": 3.32,
+    "price_bgn": 6.49
+  },
+  {
+    "id": "10051040",
+    "slug": "sokolad",
+    "name": "Шоколадов блок с фъстъци и карамел, с надпис 'KINGSIZE' и '295g e'.",
+    "url": "https://www.lidl.bg/p/sokolad/p10051040",
+    "quantity_value": 300.0,
+    "quantity_unit": "g",
+    "price_eur": 4.34,
+    "price_bgn": 8.49
+  },
+  {
+    "id": "10051041",
+    "slug": "krem-sapun",
+    "name": "Два пакета кремообразен сапун с мляко и мед за нежно почистване и грижа за нормална кожа.",
+    "url": "https://www.lidl.bg/p/krem-sapun/p10051041",
+    "quantity_value": 2000.0,
+    "quantity_unit": "g",
+    "price_eur": 1.22,
+    "price_bgn": 2.39
+  },
+  {
+    "id": "10051043",
+    "slug": "suka-krana-za-kotki",
+    "name": "Suka Krana Za Kotki",
+    "url": "https://www.lidl.bg/p/suka-krana-za-kotki/p10051043",
+    "quantity_value": 2000.0,
+    "quantity_unit": "g",
+    "price_eur": 11.0,
+    "price_bgn": 21.51
+  },
+  {
+    "id": "10051058",
+    "slug": "mlecna-napitka",
+    "name": "Бутилка млечна напитка с вкус на ванилия, с илюстрация на пръскащо мляко и сламка.",
+    "url": "https://www.lidl.bg/p/mlecna-napitka/p10051058",
+    "quantity_value": 500.0,
+    "quantity_unit": "ml",
+    "price_eur": 1.53,
+    "price_bgn": 2.99
+  },
+  {
+    "id": "10051061",
+    "slug": "soev-yogurt",
+    "name": "Соева ванилова напитка в чаша от 500 г, с надпис „веган“ и „от соя“.",
+    "url": "https://www.lidl.bg/p/soev-yogurt/p10051061",
+    "quantity_value": 500.0,
+    "quantity_unit": "g",
+    "price_eur": 1.27,
+    "price_bgn": 2.48
+  },
+  {
+    "id": "10051063",
+    "slug": "sunka",
+    "name": "Sunka",
+    "url": "https://www.lidl.bg/p/sunka/p10051063",
+    "quantity_value": 550.0,
+    "quantity_unit": "g",
+    "price_eur": 10.22,
+    "price_bgn": 19.99
+  },
+  {
+    "id": "10051066",
+    "slug": "file-ot-mintay",
+    "name": "File Ot Mintay",
+    "url": "https://www.lidl.bg/p/file-ot-mintay/p10051066",
+    "quantity_value": 280.0,
+    "quantity_unit": "g",
+    "price_eur": 3.57,
+    "price_bgn": 6.98
+  },
+  {
+    "id": "10051067",
+    "slug": "sin'o-sirene",
+    "name": "Sin'O Sirene",
+    "url": "https://www.lidl.bg/p/sin'o-sirene/p10051067",
+    "quantity_value": 120.0,
+    "quantity_unit": "g",
+    "price_eur": 1.63,
+    "price_bgn": 3.19
+  },
+  {
+    "id": "10051068",
+    "slug": "mlyko-uht",
+    "name": "Mlyko Uht",
+    "url": "https://www.lidl.bg/p/mlyko-uht/p10051068",
+    "quantity_value": 1000.0,
+    "quantity_unit": "ml",
+    "price_eur": 1.43,
+    "price_bgn": 2.8
+  },
+  {
+    "id": "10051069",
+    "slug": "burger-ot-s'omga",
+    "name": "Burger Ot S'Omga",
+    "url": "https://www.lidl.bg/p/burger-ot-s'omga/p10051069",
+    "quantity_value": 100.0,
+    "quantity_unit": "g"
+  },
+  {
+    "id": "10051072",
+    "slug": "lazany",
+    "name": "Лазаня Болонезе с кайма и доматен сос, с Nutri-Score A и тегло 400g.",
+    "url": "https://www.lidl.bg/p/lazany/p10051072",
+    "quantity_value": 400.0,
+    "quantity_unit": "g",
+    "price_eur": 2.55,
+    "price_bgn": 4.99
+  },
+  {
+    "id": "10051073",
+    "slug": "susi-set-mukava",
+    "name": "Susi Set Mukava",
+    "url": "https://www.lidl.bg/p/susi-set-mukava/p10051073",
+    "quantity_value": 326.0,
+    "quantity_unit": "g",
+    "price_eur": 5.62,
+    "price_bgn": 10.99
+  },
+  {
+    "id": "10051074",
+    "slug": "skaridi",
+    "name": "Допълнителна информация",
+    "url": "https://www.lidl.bg/p/skaridi/p10051074",
+    "quantity_value": 270.0,
+    "quantity_unit": "g",
+    "price_eur": 5.11,
+    "price_bgn": 9.99
+  },
+  {
+    "id": "10051075",
+    "slug": "file-ot-keringa",
+    "name": "File Ot Keringa",
+    "url": "https://www.lidl.bg/p/file-ot-keringa/p10051075",
+    "quantity_value": 170.0,
+    "quantity_unit": "g",
+    "price_eur": 1.53,
+    "price_bgn": 2.99
+  },
+  {
+    "id": "10051078",
+    "slug": "susen-bosilek",
+    "name": "Susen Bosilek",
+    "url": "https://www.lidl.bg/p/susen-bosilek/p10051078",
+    "quantity_value": 10.0,
+    "quantity_unit": "g",
+    "price_eur": 0.2,
+    "price_bgn": 0.39
+  },
+  {
+    "id": "10051080",
+    "slug": "sokoladovi-topceta-duo",
+    "name": "Sokoladovi Topceta Duo",
+    "url": "https://www.lidl.bg/p/sokoladovi-topceta-duo/p10051080",
+    "quantity_value": 500.0,
+    "quantity_unit": "g",
+    "price_eur": 2.24,
+    "price_bgn": 4.38
+  },
+  {
+    "id": "10051081",
+    "slug": "savoy-dzin",
+    "name": "Savoy Dzin",
+    "url": "https://www.lidl.bg/p/savoy-dzin/p10051081",
+    "quantity_value": 700.0,
+    "quantity_unit": "ml",
+    "price_eur": 5.87,
+    "price_bgn": 11.48
+  },
+  {
+    "id": "10051083",
+    "slug": "pelin",
+    "name": "Pelin",
+    "url": "https://www.lidl.bg/p/pelin/p10051083",
+    "quantity_value": 1000.0,
+    "quantity_unit": "ml",
+    "price_eur": 3.57,
+    "price_bgn": 6.98
+  },
+  {
+    "id": "10051086",
+    "slug": "nektar-yb'lka",
+    "name": "Nektar Yb'Lka",
+    "url": "https://www.lidl.bg/p/nektar-yb'lka/p10051086",
+    "quantity_value": 200.0,
+    "quantity_unit": "ml",
+    "price_eur": 2.02,
+    "price_bgn": 3.95
+  },
+  {
+    "id": "10051087",
+    "slug": "gazirana-bezalkokolna-napitka",
+    "name": "Бутилка оранжев сок с етикет, показващ портокали и надпис „Портокал“.",
+    "url": "https://www.lidl.bg/p/gazirana-bezalkokolna-napitka/p10051087",
+    "quantity_value": 2500.0,
+    "quantity_unit": "ml",
+    "price_eur": 0.61,
+    "price_bgn": 1.19
+  },
+  {
+    "id": "10051088",
+    "slug": "sokoladovi-bonboni",
+    "name": "Опаковка с шоколадови чашки с бадемово масло, с лога за Fairtrade и Vegan.",
+    "url": "https://www.lidl.bg/p/sokoladovi-bonboni/p10051088",
+    "quantity_value": 39.0,
+    "quantity_unit": "g",
+    "price_eur": 1.43,
+    "price_bgn": 2.8
+  },
+  {
+    "id": "10051089",
+    "slug": "sokoladovi-mini-blokceta",
+    "name": "Опаковка от 20 броя шоколадови блокчета с кремов пълнеж, с надпис „Candy Cream Bars“ и „fun size“.",
+    "url": "https://www.lidl.bg/p/sokoladovi-mini-blokceta/p10051089",
+    "quantity_value": 350.0,
+    "quantity_unit": "g",
+    "price_eur": 3.06,
+    "price_bgn": 5.98
+  },
+  {
+    "id": "10051092",
+    "slug": "pasta-za-z'bi",
+    "name": "Паста за зъби Dentalux Fresh Gel Triple Protection с цинк за свеж дъх.",
+    "url": "https://www.lidl.bg/p/pasta-za-z'bi/p10051092",
+    "quantity_value": 125.0,
+    "quantity_unit": "ml",
+    "price_eur": 0.76,
+    "price_bgn": 1.49
+  }
+]
