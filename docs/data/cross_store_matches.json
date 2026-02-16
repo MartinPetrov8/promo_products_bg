@@ -1,0 +1,1713 @@
+{
+  "meta": {
+    "total_matches": 412,
+    "updated_at": "2026-02-16T15:55:26+00:00",
+    "store_wins": {
+      "Lidl": 141,
+      "Kaufland": 232,
+      "Billa": 39
+    }
+  },
+  "matches": [
+    {
+      "product": "Бира",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 1.68,
+          "sku": "00036657"
+        },
+        "Lidl": {
+          "price": 0.56,
+          "sku": "10050637"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 66.7,
+      "similarity": 1.0
+    },
+    {
+      "product": "Пилешко долно бутче",
+      "category": "Месо и колбаси",
+      "stores": {
+        "Kaufland": {
+          "price": 3.99,
+          "sku": "00100349"
+        },
+        "Billa": {
+          "price": 11.81,
+          "sku": "1253"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 66.2,
+      "similarity": 0.71
+    },
+    {
+      "product": "Помело",
+      "category": "Плодове и зеленчуци",
+      "stores": {
+        "Kaufland": {
+          "price": 1.99,
+          "sku": "09700138"
+        },
+        "Billa": {
+          "price": 5.85,
+          "sku": "1199"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 66.0,
+      "similarity": 0.71
+    },
+    {
+      "product": "Пилешко долно бутче",
+      "category": "Месо и колбаси",
+      "stores": {
+        "Kaufland": {
+          "price": 3.99,
+          "sku": "00100349"
+        },
+        "Billa": {
+          "price": 11.7,
+          "sku": "1421"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 65.9,
+      "similarity": 0.83
+    },
+    {
+      "product": "Кашкавал от краве мляко",
+      "category": "Млечни продукти",
+      "stores": {
+        "Kaufland": {
+          "price": 11.99,
+          "sku": "00031815"
+        },
+        "Billa": {
+          "price": 35.15,
+          "sku": "1269"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 65.9,
+      "similarity": 1.0
+    },
+    {
+      "product": "Шоколад различни видове",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 3.99,
+          "sku": "20919341"
+        },
+        "Billa": {
+          "price": 11.7,
+          "sku": "1313"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 65.9,
+      "similarity": 0.81
+    },
+    {
+      "product": "Шотландско уиски 40% vol",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 26.99,
+          "sku": "02100650"
+        },
+        "Lidl": {
+          "price": 9.2,
+          "sku": "10051902"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 65.9,
+      "similarity": 0.8
+    },
+    {
+      "product": "Водка",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 10.99,
+          "sku": "00095710"
+        },
+        "Billa": {
+          "price": 32.25,
+          "sku": "1369"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 65.9,
+      "similarity": 1.0
+    },
+    {
+      "product": "Минерална вода",
+      "category": "Напитки безалкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 2.99,
+          "sku": "02300029"
+        },
+        "Lidl": {
+          "price": 1.02,
+          "sku": "10051916"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 65.9,
+      "similarity": 1.0
+    },
+    {
+      "product": "Гел или Капсули за пране",
+      "category": "Почистващи",
+      "stores": {
+        "Kaufland": {
+          "price": 13.98,
+          "sku": "00104140"
+        },
+        "Billa": {
+          "price": 41.04,
+          "sku": "1411"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 65.9,
+      "similarity": 0.84
+    },
+    {
+      "product": "Мляно кафе",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 7.49,
+          "sku": "02401060"
+        },
+        "Billa": {
+          "price": 21.5,
+          "sku": "1340"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 65.2,
+      "similarity": 0.77
+    },
+    {
+      "product": "Краве сирене",
+      "category": "Млечни продукти",
+      "stores": {
+        "Lidl": {
+          "price": 5.11,
+          "sku": "10051846"
+        },
+        "Billa": {
+          "price": 14.65,
+          "sku": "1171"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 65.1,
+      "similarity": 0.83
+    },
+    {
+      "product": "Български кашкавал от краве мляко",
+      "category": "Млечни продукти",
+      "stores": {
+        "Lidl": {
+          "price": 12.26,
+          "sku": "10051946"
+        },
+        "Billa": {
+          "price": 35.15,
+          "sku": "1269"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 65.1,
+      "similarity": 0.82
+    },
+    {
+      "product": "Свински врат без кост",
+      "category": "Месо и колбаси",
+      "stores": {
+        "Kaufland": {
+          "price": 7.98,
+          "sku": "20914803"
+        },
+        "Lidl": {
+          "price": 2.8,
+          "sku": "10051810"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 64.9,
+      "similarity": 0.88
+    },
+    {
+      "product": "Обикновени бисквити",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 1.64,
+          "sku": "00101984"
+        },
+        "Billa": {
+          "price": 4.67,
+          "sku": "1320"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 64.9,
+      "similarity": 0.72
+    },
+    {
+      "product": "Кашкавал от краве мляко",
+      "category": "Млечни продукти",
+      "stores": {
+        "Kaufland": {
+          "price": 12.38,
+          "sku": "00078810"
+        },
+        "Billa": {
+          "price": 35.15,
+          "sku": "1269"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 64.8,
+      "similarity": 1.0
+    },
+    {
+      "product": "Шотландско уиски",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 28.99,
+          "sku": "20084993"
+        },
+        "Lidl": {
+          "price": 10.22,
+          "sku": "10051903"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 64.7,
+      "similarity": 1.0
+    },
+    {
+      "product": "Вафли",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 4.28,
+          "sku": "02800750"
+        },
+        "Billa": {
+          "price": 1.53,
+          "sku": "1315"
+        }
+      },
+      "cheaper_store": "Billa",
+      "savings_pct": 64.3,
+      "similarity": 0.8
+    },
+    {
+      "product": "Шотландско уиски",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 20.99,
+          "sku": "02100542"
+        },
+        "Billa": {
+          "price": 58.63,
+          "sku": "1371"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 64.2,
+      "similarity": 0.84
+    },
+    {
+      "product": "Препарат за съдове",
+      "category": "Почистващи",
+      "stores": {
+        "Kaufland": {
+          "price": 5.48,
+          "sku": "00092408"
+        },
+        "Lidl": {
+          "price": 15.29,
+          "sku": "10051920"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 64.2,
+      "similarity": 0.74
+    },
+    {
+      "product": "Таблетки за съдомиялна различни видове",
+      "category": "Почистващи",
+      "stores": {
+        "Kaufland": {
+          "price": 40.0,
+          "sku": "20705231"
+        },
+        "Lidl": {
+          "price": 14.31,
+          "sku": "10051925"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 64.2,
+      "similarity": 0.73
+    },
+    {
+      "product": "Бонбони кокос",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 8.98,
+          "sku": "02701460"
+        },
+        "Lidl": {
+          "price": 3.22,
+          "sku": "10051969"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 64.1,
+      "similarity": 0.7
+    },
+    {
+      "product": "Таблетки за съдомиялна избрани видове",
+      "category": "Почистващи",
+      "stores": {
+        "Kaufland": {
+          "price": 39.88,
+          "sku": "20748075"
+        },
+        "Lidl": {
+          "price": 14.31,
+          "sku": "10051925"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 64.1,
+      "similarity": 0.75
+    },
+    {
+      "product": "Уиски",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 17.58,
+          "sku": "00104327"
+        },
+        "Billa": {
+          "price": 48.85,
+          "sku": "1186"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 64.0,
+      "similarity": 1.0
+    },
+    {
+      "product": "Шунка",
+      "category": "Месо и колбаси",
+      "stores": {
+        "Kaufland": {
+          "price": 4.99,
+          "sku": "00203402"
+        },
+        "Billa": {
+          "price": 13.73,
+          "sku": "1166"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 63.7,
+      "similarity": 0.71
+    },
+    {
+      "product": "Тоалетна хартия 32 бр.",
+      "category": "Хигиена",
+      "stores": {
+        "Kaufland": {
+          "price": 12.79,
+          "sku": "20881972"
+        },
+        "Billa": {
+          "price": 35.15,
+          "sku": "1161"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 63.6,
+      "similarity": 0.78
+    },
+    {
+      "product": "Бланширани картофи",
+      "category": "Плодове и зеленчуци",
+      "stores": {
+        "Kaufland": {
+          "price": 6.98,
+          "sku": "00100606"
+        },
+        "Lidl": {
+          "price": 2.55,
+          "sku": "10051029"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 63.5,
+      "similarity": 0.84
+    },
+    {
+      "product": "Точени кори",
+      "category": "Хляб и печива",
+      "stores": {
+        "Kaufland": {
+          "price": 2.99,
+          "sku": "01200130"
+        },
+        "Lidl": {
+          "price": 1.09,
+          "sku": "10051197"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 63.5,
+      "similarity": 1.0
+    },
+    {
+      "product": "Изтривалка",
+      "category": "Дом",
+      "stores": {
+        "Kaufland": {
+          "price": 4.99,
+          "sku": "06600725"
+        },
+        "Billa": {
+          "price": 13.66,
+          "sku": "1409"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 63.5,
+      "similarity": 1.0
+    },
+    {
+      "product": "Кашкавал от краве мляко",
+      "category": "Млечни продукти",
+      "stores": {
+        "Kaufland": {
+          "price": 14.98,
+          "sku": "20601367"
+        },
+        "Lidl": {
+          "price": 5.49,
+          "sku": "10051108"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 63.4,
+      "similarity": 1.0
+    },
+    {
+      "product": "Кашкавал от краве мляко",
+      "category": "Млечни продукти",
+      "stores": {
+        "Kaufland": {
+          "price": 12.99,
+          "sku": "20276499"
+        },
+        "Billa": {
+          "price": 35.15,
+          "sku": "1269"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 63.0,
+      "similarity": 1.0
+    },
+    {
+      "product": "Бира",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 11.97,
+          "sku": "00036591"
+        },
+        "Billa": {
+          "price": 4.48,
+          "sku": "1425"
+        }
+      },
+      "cheaper_store": "Billa",
+      "savings_pct": 62.6,
+      "similarity": 1.0
+    },
+    {
+      "product": "Бира",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 1.68,
+          "sku": "00036657"
+        },
+        "Billa": {
+          "price": 4.48,
+          "sku": "1425"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 62.5,
+      "similarity": 1.0
+    },
+    {
+      "product": "Бира",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 1.49,
+          "sku": "00090910"
+        },
+        "Lidl": {
+          "price": 0.56,
+          "sku": "10050637"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 62.4,
+      "similarity": 1.0
+    },
+    {
+      "product": "Бира",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 1.49,
+          "sku": "02300272"
+        },
+        "Lidl": {
+          "price": 0.56,
+          "sku": "10050637"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 62.4,
+      "similarity": 1.0
+    },
+    {
+      "product": "Прясно мляко",
+      "category": "Млечни продукти",
+      "stores": {
+        "Kaufland": {
+          "price": 3.79,
+          "sku": "00094893"
+        },
+        "Lidl": {
+          "price": 1.43,
+          "sku": "10051196"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 62.3,
+      "similarity": 1.0
+    },
+    {
+      "product": "Лютеница фино смляна",
+      "category": "Консерви",
+      "stores": {
+        "Kaufland": {
+          "price": 1.99,
+          "sku": "01300882"
+        },
+        "Billa": {
+          "price": 5.28,
+          "sku": "1302"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 62.3,
+      "similarity": 0.84
+    },
+    {
+      "product": "Шоколадови бонбони Rose",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 11.48,
+          "sku": "00044152"
+        },
+        "Lidl": {
+          "price": 4.34,
+          "sku": "10051017"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 62.2,
+      "similarity": 0.88
+    },
+    {
+      "product": "Мляно кафе класик",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 10.99,
+          "sku": "00029042"
+        },
+        "Billa": {
+          "price": 29.1,
+          "sku": "1428"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 62.2,
+      "similarity": 0.74
+    },
+    {
+      "product": "Шотландско уиски 40% vol",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 26.99,
+          "sku": "02100650"
+        },
+        "Lidl": {
+          "price": 10.22,
+          "sku": "10051903"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 62.1,
+      "similarity": 0.8
+    },
+    {
+      "product": "Кашкавал от краве мляко",
+      "category": "Млечни продукти",
+      "stores": {
+        "Kaufland": {
+          "price": 5.38,
+          "sku": "00033832"
+        },
+        "Billa": {
+          "price": 14.12,
+          "sku": "1275"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 61.9,
+      "similarity": 0.89
+    },
+    {
+      "product": "Македонска наденица",
+      "category": "Месо и колбаси",
+      "stores": {
+        "Kaufland": {
+          "price": 8.98,
+          "sku": "01004172"
+        },
+        "Billa": {
+          "price": 23.53,
+          "sku": "1260"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 61.8,
+      "similarity": 1.0
+    },
+    {
+      "product": "Мляно кафе Grand Aroma",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 14.98,
+          "sku": "00102253"
+        },
+        "Billa": {
+          "price": 39.09,
+          "sku": "1337"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 61.7,
+      "similarity": 0.7
+    },
+    {
+      "product": "Боя за коса Olia",
+      "category": "Козметика",
+      "stores": {
+        "Kaufland": {
+          "price": 8.98,
+          "sku": "20777299"
+        },
+        "Billa": {
+          "price": 23.45,
+          "sku": "1383"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 61.7,
+      "similarity": 0.81
+    },
+    {
+      "product": "Безалкохолна газирана напитка",
+      "category": "Напитки безалкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 0.74,
+          "sku": "20175526"
+        },
+        "Billa": {
+          "price": 1.92,
+          "sku": "1353"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 61.5,
+      "similarity": 0.71
+    },
+    {
+      "product": "Студен чай/ Газирана напитка",
+      "category": "Напитки безалкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 0.74,
+          "sku": "20729393"
+        },
+        "Billa": {
+          "price": 1.92,
+          "sku": "1353"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 61.5,
+      "similarity": 0.73
+    },
+    {
+      "product": "Маслиново масло екстра върджин",
+      "category": "Подправки и сосове",
+      "stores": {
+        "Kaufland": {
+          "price": 16.98,
+          "sku": "20816576"
+        },
+        "Billa": {
+          "price": 43.95,
+          "sku": "1307"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 61.4,
+      "similarity": 1.0
+    },
+    {
+      "product": "Акумулаторна бормашина",
+      "category": "Инструменти",
+      "stores": {
+        "Kaufland": {
+          "price": 37.98,
+          "sku": "20348838"
+        },
+        "Billa": {
+          "price": 97.77,
+          "sku": "1402"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 61.2,
+      "similarity": 0.71
+    },
+    {
+      "product": "Кашкавал от краве мляко",
+      "category": "Млечни продукти",
+      "stores": {
+        "Lidl": {
+          "price": 5.49,
+          "sku": "10051108"
+        },
+        "Billa": {
+          "price": 14.12,
+          "sku": "1275"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 61.1,
+      "similarity": 0.89
+    },
+    {
+      "product": "Антибактериални мокри кърпички",
+      "category": "Хигиена",
+      "stores": {
+        "Kaufland": {
+          "price": 3.25,
+          "sku": "20819290"
+        },
+        "Lidl": {
+          "price": 1.27,
+          "sku": "10051931"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 60.9,
+      "similarity": 0.85
+    },
+    {
+      "product": "Шоколадови бонбони",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 10.99,
+          "sku": "02700056"
+        },
+        "Lidl": {
+          "price": 4.34,
+          "sku": "10051017"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 60.5,
+      "similarity": 1.0
+    },
+    {
+      "product": "Обикновени бисквити",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 2.7,
+          "sku": "20615529"
+        },
+        "Billa": {
+          "price": 6.81,
+          "sku": "1304"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 60.4,
+      "similarity": 0.72
+    },
+    {
+      "product": "Авокадо",
+      "category": "Плодове и зеленчуци",
+      "stores": {
+        "Kaufland": {
+          "price": 1.29,
+          "sku": "00059090"
+        },
+        "Billa": {
+          "price": 3.25,
+          "sku": "1197"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 60.3,
+      "similarity": 0.78
+    },
+    {
+      "product": "Моцарела",
+      "category": "Млечни продукти",
+      "stores": {
+        "Kaufland": {
+          "price": 20.99,
+          "sku": "00056690"
+        },
+        "Billa": {
+          "price": 8.38,
+          "sku": "1172"
+        }
+      },
+      "cheaper_store": "Billa",
+      "savings_pct": 60.1,
+      "similarity": 1.0
+    },
+    {
+      "product": "Гел за пране",
+      "category": "Почистващи",
+      "stores": {
+        "Kaufland": {
+          "price": 9.78,
+          "sku": "20673537"
+        },
+        "Billa": {
+          "price": 24.45,
+          "sku": "1377"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 60.0,
+      "similarity": 1.0
+    },
+    {
+      "product": "Филе Елена",
+      "category": "Месо и колбаси",
+      "stores": {
+        "Kaufland": {
+          "price": 22.98,
+          "sku": "00019630"
+        },
+        "Billa": {
+          "price": 57.34,
+          "sku": "1261"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 59.9,
+      "similarity": 1.0
+    },
+    {
+      "product": "Свински бут без кост",
+      "category": "Месо и колбаси",
+      "stores": {
+        "Kaufland": {
+          "price": 6.98,
+          "sku": "00100054"
+        },
+        "Lidl": {
+          "price": 2.8,
+          "sku": "10051810"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 59.9,
+      "similarity": 1.0
+    },
+    {
+      "product": "Водка",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 12.99,
+          "sku": "00029192"
+        },
+        "Billa": {
+          "price": 32.25,
+          "sku": "1369"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 59.7,
+      "similarity": 1.0
+    },
+    {
+      "product": "Шоколад",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 9.08,
+          "sku": "20834452"
+        },
+        "Lidl": {
+          "price": 3.68,
+          "sku": "10051040"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 59.5,
+      "similarity": 1.0
+    },
+    {
+      "product": "Шоколад",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 9.08,
+          "sku": "00051110"
+        },
+        "Lidl": {
+          "price": 3.68,
+          "sku": "10051040"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 59.5,
+      "similarity": 1.0
+    },
+    {
+      "product": "Какаов крем",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 7.98,
+          "sku": "20800651"
+        },
+        "Billa": {
+          "price": 19.55,
+          "sku": "1178"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 59.2,
+      "similarity": 1.0
+    },
+    {
+      "product": "Тунквани бисквити Траяна Макси",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 2.78,
+          "sku": "02803994"
+        },
+        "Billa": {
+          "price": 6.81,
+          "sku": "1304"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 59.2,
+      "similarity": 0.72
+    },
+    {
+      "product": "Бира",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 10.99,
+          "sku": "20843185"
+        },
+        "Billa": {
+          "price": 4.48,
+          "sku": "1425"
+        }
+      },
+      "cheaper_store": "Billa",
+      "savings_pct": 59.2,
+      "similarity": 1.0
+    },
+    {
+      "product": "Храна за кучета",
+      "category": "Храна за животни",
+      "stores": {
+        "Kaufland": {
+          "price": 1.25,
+          "sku": "00080163"
+        },
+        "Lidl": {
+          "price": 0.51,
+          "sku": "10051094"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 59.2,
+      "similarity": 0.71
+    },
+    {
+      "product": "Mинерална вода",
+      "category": "Напитки безалкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 3.99,
+          "sku": "20871817"
+        },
+        "Billa": {
+          "price": 9.76,
+          "sku": "1180"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 59.1,
+      "similarity": 0.93
+    },
+    {
+      "product": "Акумулаторен винтоверт",
+      "category": "Инструменти",
+      "stores": {
+        "Kaufland": {
+          "price": 99.98,
+          "sku": "20780719"
+        },
+        "Lidl": {
+          "price": 40.9,
+          "sku": "10051551"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 59.1,
+      "similarity": 0.7
+    },
+    {
+      "product": "Акумулаторна бормашина",
+      "category": "Инструменти",
+      "stores": {
+        "Kaufland": {
+          "price": 39.98,
+          "sku": "20783755"
+        },
+        "Billa": {
+          "price": 97.77,
+          "sku": "1402"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 59.1,
+      "similarity": 0.71
+    },
+    {
+      "product": "Маслини Гръцка салата",
+      "category": "Консерви",
+      "stores": {
+        "Kaufland": {
+          "price": 7.98,
+          "sku": "01003882"
+        },
+        "Billa": {
+          "price": 19.48,
+          "sku": "1267"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 59.0,
+      "similarity": 0.76
+    },
+    {
+      "product": "Свински котлет",
+      "category": "Месо и колбаси",
+      "stores": {
+        "Kaufland": {
+          "price": 6.98,
+          "sku": "00100036"
+        },
+        "Lidl": {
+          "price": 2.89,
+          "sku": "10051189"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 58.6,
+      "similarity": 0.75
+    },
+    {
+      "product": "Кафе на зърна",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 36.98,
+          "sku": "00062075"
+        },
+        "Lidl": {
+          "price": 15.33,
+          "sku": "10051888"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 58.5,
+      "similarity": 1.0
+    },
+    {
+      "product": "Дезодорант спрей или стик",
+      "category": "Хигиена",
+      "stores": {
+        "Kaufland": {
+          "price": 5.48,
+          "sku": "04800470"
+        },
+        "Billa": {
+          "price": 13.2,
+          "sku": "1415"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 58.5,
+      "similarity": 0.81
+    },
+    {
+      "product": "Дезодорант спрей или стик",
+      "category": "Хигиена",
+      "stores": {
+        "Kaufland": {
+          "price": 5.48,
+          "sku": "04804653"
+        },
+        "Billa": {
+          "price": 13.2,
+          "sku": "1415"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 58.5,
+      "similarity": 0.81
+    },
+    {
+      "product": "Дезодорант спрей или стик",
+      "category": "Хигиена",
+      "stores": {
+        "Kaufland": {
+          "price": 5.48,
+          "sku": "00047863"
+        },
+        "Billa": {
+          "price": 13.2,
+          "sku": "1415"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 58.5,
+      "similarity": 0.81
+    },
+    {
+      "product": "Мляно кафе",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 8.98,
+          "sku": "00096875"
+        },
+        "Billa": {
+          "price": 21.5,
+          "sku": "1340"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 58.2,
+      "similarity": 0.77
+    },
+    {
+      "product": "Кафе на зърна",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 28.89,
+          "sku": "20067150"
+        },
+        "Billa": {
+          "price": 68.43,
+          "sku": "1332"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.8,
+      "similarity": 0.74
+    },
+    {
+      "product": "Кафе на зърна",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 28.89,
+          "sku": "20067150"
+        },
+        "Billa": {
+          "price": 68.43,
+          "sku": "1333"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.8,
+      "similarity": 0.81
+    },
+    {
+      "product": "Кафе на зърна",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 28.89,
+          "sku": "02401602"
+        },
+        "Billa": {
+          "price": 68.43,
+          "sku": "1332"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.8,
+      "similarity": 0.74
+    },
+    {
+      "product": "Кафе на зърна",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 28.89,
+          "sku": "02401602"
+        },
+        "Billa": {
+          "price": 68.43,
+          "sku": "1333"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.8,
+      "similarity": 0.81
+    },
+    {
+      "product": "Кафе на зърна",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 28.89,
+          "sku": "20271273"
+        },
+        "Billa": {
+          "price": 68.43,
+          "sku": "1332"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.8,
+      "similarity": 0.74
+    },
+    {
+      "product": "Кафе на зърна",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 28.89,
+          "sku": "20271273"
+        },
+        "Billa": {
+          "price": 68.43,
+          "sku": "1333"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.8,
+      "similarity": 0.81
+    },
+    {
+      "product": "Минерална вода",
+      "category": "Напитки безалкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 0.43,
+          "sku": "02300022"
+        },
+        "Lidl": {
+          "price": 1.02,
+          "sku": "10051916"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.8,
+      "similarity": 1.0
+    },
+    {
+      "product": "Пилешки крила",
+      "category": "Месо и колбаси",
+      "stores": {
+        "Kaufland": {
+          "price": 4.99,
+          "sku": "01000438"
+        },
+        "Billa": {
+          "price": 11.81,
+          "sku": "1253"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.7,
+      "similarity": 0.72
+    },
+    {
+      "product": "Кашкавал от краве мляко",
+      "category": "Млечни продукти",
+      "stores": {
+        "Kaufland": {
+          "price": 12.99,
+          "sku": "20276499"
+        },
+        "Lidl": {
+          "price": 5.49,
+          "sku": "10051108"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 57.7,
+      "similarity": 1.0
+    },
+    {
+      "product": "Бира",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 1.49,
+          "sku": "00090910"
+        },
+        "Billa": {
+          "price": 3.52,
+          "sku": "1351"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.7,
+      "similarity": 1.0
+    },
+    {
+      "product": "Бира",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 1.49,
+          "sku": "02300272"
+        },
+        "Billa": {
+          "price": 3.52,
+          "sku": "1351"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.7,
+      "similarity": 1.0
+    },
+    {
+      "product": "Бебешки влажни кърпички",
+      "category": "Хигиена",
+      "stores": {
+        "Kaufland": {
+          "price": 2.99,
+          "sku": "00037984"
+        },
+        "Lidl": {
+          "price": 1.27,
+          "sku": "10051931"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 57.5,
+      "similarity": 0.7
+    },
+    {
+      "product": "препарат за съдове",
+      "category": "Почистващи",
+      "stores": {
+        "Kaufland": {
+          "price": 4.19,
+          "sku": "00101526"
+        },
+        "Lidl": {
+          "price": 1.78,
+          "sku": "10051924"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 57.5,
+      "similarity": 1.0
+    },
+    {
+      "product": "Червено зеле",
+      "category": "Плодове и зеленчуци",
+      "stores": {
+        "Kaufland": {
+          "price": 1.29,
+          "sku": "09700091"
+        },
+        "Billa": {
+          "price": 3.03,
+          "sku": "1206"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.4,
+      "similarity": 0.73
+    },
+    {
+      "product": "Кашкавал от краве мляко",
+      "category": "Млечни продукти",
+      "stores": {
+        "Kaufland": {
+          "price": 14.98,
+          "sku": "20601367"
+        },
+        "Billa": {
+          "price": 35.15,
+          "sku": "1269"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.4,
+      "similarity": 1.0
+    },
+    {
+      "product": "Шоколадови бонбони различни видове",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 4.99,
+          "sku": "20871117"
+        },
+        "Billa": {
+          "price": 11.7,
+          "sku": "1313"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.4,
+      "similarity": 0.71
+    },
+    {
+      "product": "Шоколадови бонбони различни видове",
+      "category": "Сладкарски изделия",
+      "stores": {
+        "Kaufland": {
+          "price": 4.99,
+          "sku": "20871063"
+        },
+        "Billa": {
+          "price": 11.7,
+          "sku": "1313"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.4,
+      "similarity": 0.71
+    },
+    {
+      "product": "Мляно кафе Grand Aroma",
+      "category": "Кафе и чай",
+      "stores": {
+        "Kaufland": {
+          "price": 14.98,
+          "sku": "00102253"
+        },
+        "Billa": {
+          "price": 35.18,
+          "sku": "1322"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.4,
+      "similarity": 0.7
+    },
+    {
+      "product": "Дезодорант спрей различни видове",
+      "category": "Хигиена",
+      "stores": {
+        "Kaufland": {
+          "price": 4.48,
+          "sku": "04802630"
+        },
+        "Billa": {
+          "price": 10.48,
+          "sku": "1414"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.3,
+      "similarity": 0.7
+    },
+    {
+      "product": "Дезодорант спрей различни видове",
+      "category": "Хигиена",
+      "stores": {
+        "Kaufland": {
+          "price": 4.48,
+          "sku": "00087033"
+        },
+        "Billa": {
+          "price": 10.48,
+          "sku": "1414"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.3,
+      "similarity": 0.7
+    },
+    {
+      "product": "Дезодорант спрей различни видове",
+      "category": "Хигиена",
+      "stores": {
+        "Kaufland": {
+          "price": 4.48,
+          "sku": "00065524"
+        },
+        "Billa": {
+          "price": 10.48,
+          "sku": "1414"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.3,
+      "similarity": 0.7
+    },
+    {
+      "product": "Препарат за стъкла",
+      "category": "Почистващи",
+      "stores": {
+        "Kaufland": {
+          "price": 2.99,
+          "sku": "00019979"
+        },
+        "Billa": {
+          "price": 7.0,
+          "sku": "1379"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 57.3,
+      "similarity": 0.78
+    },
+    {
+      "product": "Свинска плешка без кост",
+      "category": "Месо и колбаси",
+      "stores": {
+        "Kaufland": {
+          "price": 6.49,
+          "sku": "00100057"
+        },
+        "Lidl": {
+          "price": 2.8,
+          "sku": "10051810"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 56.9,
+      "similarity": 0.74
+    },
+    {
+      "product": "Македонска наденица",
+      "category": "Месо и колбаси",
+      "stores": {
+        "Kaufland": {
+          "price": 5.48,
+          "sku": "00058894"
+        },
+        "Billa": {
+          "price": 12.69,
+          "sku": "1225"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 56.8,
+      "similarity": 0.72
+    },
+    {
+      "product": "Водка",
+      "category": "Напитки алкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 15.98,
+          "sku": "00060563"
+        },
+        "Lidl": {
+          "price": 6.9,
+          "sku": "10051024"
+        }
+      },
+      "cheaper_store": "Lidl",
+      "savings_pct": 56.8,
+      "similarity": 1.0
+    },
+    {
+      "product": "Газирана напитка",
+      "category": "Напитки безалкохолни",
+      "stores": {
+        "Kaufland": {
+          "price": 0.84,
+          "sku": "00021729"
+        },
+        "Billa": {
+          "price": 1.92,
+          "sku": "1353"
+        }
+      },
+      "cheaper_store": "Kaufland",
+      "savings_pct": 56.3,
+      "similarity": 1.0
+    }
+  ]
+}
