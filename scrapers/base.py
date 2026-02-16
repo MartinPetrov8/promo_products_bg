@@ -2,7 +2,8 @@ from abc import ABC, abstractmethod
 from typing import List, Optional
 from dataclasses import dataclass, asdict
 from enum import Enum
-from datetime import datetime
+from datetime import datetime, timezone
+import hashlib
 
 class Store(Enum):
     KAUFLAND = "Kaufland"
@@ -26,10 +27,15 @@ class RawProduct:
     
     def __post_init__(self):
         if not self.scraped_at:
-            self.scraped_at = datetime.now().isoformat()
+            self.scraped_at = datetime.now(timezone.utc).isoformat()
     
     def to_dict(self):
         return asdict(self)
+    
+    @staticmethod
+    def generate_sku(text: str) -> str:
+        """Generate deterministic SKU from text (fixes hash randomization issue)"""
+        return hashlib.md5(text.encode('utf-8')).hexdigest()[:12]
 
 class BaseScraper(ABC):
     @property

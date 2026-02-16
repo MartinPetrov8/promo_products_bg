@@ -1,19 +1,22 @@
 #!/usr/bin/env python3
 """
 PromoBG - Production Scraping System
+
 Usage:
-    python main.py scrape --store all
-    python main.py scrape --store kaufland
-    python main.py clean
-    python main.py match
-    python main.py export
+    python3 main.py scrape --store all
+    python3 main.py scrape --store kaufland
+    python3 main.py clean
+    python3 main.py match
+    python3 main.py export
+    python3 main.py all
 """
 
 import sys
 import json
 import logging
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
+from typing import List, Dict
 
 # Setup logging
 logging.basicConfig(
@@ -39,8 +42,30 @@ SCRAPERS = {
     'billa': BillaScraper,
 }
 
+# Minimum products threshold (fail-safe)
+MIN_PRODUCTS_THRESHOLD = {
+    'kaufland': 100,
+    'lidl': 50,
+    'billa': 50,
+}
+
+def validate_scrape(store: str, products: List[RawProduct]) -> bool:
+    """Validate scrape results before committing."""
+    min_count = MIN_PRODUCTS_THRESHOLD.get(store.lower(), 10)
+    
+    if len(products) < min_count:
+        logger.error(f"{store}: Only {len(products)} products (minimum: {min_count})")
+        return False
+    
+    # Check for empty prices
+    with_price = sum(1 for p in products if p.price_bgn)
+    if with_price < len(products) * 0.5:
+        logger.warning(f"{store}: Only {with_price}/{len(products)} have prices")
+    
+    return True
+
 def cmd_scrape(store: str = 'all'):
-    """Run scrapers and save to database"""
+    """Run scrapers and save to database."""
     
     if store == 'all':
         stores = list(SCRAPERS.keys())
@@ -50,12 +75,14 @@ def cmd_scrape(store: str = 'all'):
     logger.info(f"Starting scrape: {', '.join(stores)}")
     
     all_products = []
+    results = []
     
     with PromoBGDatabase() as db:
         for store_name in stores:
             scraper_class = SCRAPERS.get(store_name)
             if not scraper_class:
                 logger.error(f"Unknown store: {store_name}")
+                results.append({'store': store_name, 'success': False, 'error': 'Unknown store'})
                 continue
             
             scraper = scraper_class()
@@ -63,6 +90,7 @@ def cmd_scrape(store: str = 'all'):
             # Health check
             if not scraper.health_check():
                 logger.error(f"{store_name}: Health check failed")
+                results.append({'store': store_name, 'success': False, 'error': 'Health check failed'})
                 continue
             
             # Start scan run
@@ -73,9 +101,15 @@ def cmd_scrape(store: str = 'all'):
                 # Scrape
                 products = scraper.scrape()
                 
-                # Save to DB
-                for p in products:
-                    db.append_raw_scrape(run_id, p.to_dict())
+                # Validate
+                if not validate_scrape(store_name, products):
+                    db.fail_scan_run(run_id, f"Validation failed: {len(products)} products")
+                    results.append({'store': store_name, 'success': False, 'error': 'Validation failed'})
+                    continue
+                
+                # Batch insert with transaction safety
+                product_dicts = [p.to_dict() for p in products]
+                db.batch_insert_raw_scrapes(run_id, product_dicts)
                 
                 # Complete run
                 stats = {
@@ -88,58 +122,70 @@ def cmd_scrape(store: str = 'all'):
                 
                 all_products.extend(products)
                 logger.info(f"{store_name}: {len(products)} products ✓")
+                results.append({'store': store_name, 'success': True, 'products': len(products)})
                 
             except Exception as e:
                 logger.error(f"{store_name}: Failed - {e}")
-                db.conn.execute(
-                    "UPDATE scan_runs SET status='failed', error_log=? WHERE id=?",
-                    (str(e), run_id)
-                )
-                db.conn.commit()
+                db.fail_scan_run(run_id, str(e))
+                results.append({'store': store_name, 'success': False, 'error': str(e)})
     
-    # Also save to JSON for compatibility
-    output_file = Path("output/raw_products.json")
-    output_file.parent.mkdir(exist_ok=True)
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump([p.to_dict() for p in all_products], f, ensure_ascii=False, indent=2)
+    # Save to JSON for compatibility
+    if all_products:
+        output_file = Path("output/raw_products.json")
+        output_file.parent.mkdir(exist_ok=True)
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump([p.to_dict() for p in all_products], f, ensure_ascii=False, indent=2)
+        
+        # Summary
+        with_brand = sum(1 for p in all_products if p.brand)
+        logger.info(f"Total: {len(all_products)} products, {with_brand} with brand ({with_brand*100/len(all_products):.1f}%)")
+        logger.info(f"Saved to {output_file}")
     
-    # Summary
-    with_brand = sum(1 for p in all_products if p.brand)
-    logger.info(f"Total: {len(all_products)} products, {with_brand} with brand ({with_brand*100/len(all_products):.1f}%)")
-    logger.info(f"Saved to {output_file}")
+    return results
 
 def cmd_clean():
-    """Run hybrid cleaning pipeline"""
+    """Run hybrid cleaning pipeline."""
     logger.info("Running cleaning pipeline...")
     import subprocess
     result = subprocess.run([sys.executable, 'scripts/clean_products_hybrid.py'], 
-                          capture_output=True, text=True)
+                          capture_output=True, text=True, timeout=600)
     print(result.stdout)
     if result.returncode != 0:
         print(result.stderr)
+        return False
+    return True
 
 def cmd_match():
-    """Run cross-store matching"""
+    """Run cross-store matching."""
     logger.info("Running cross-store matcher...")
     import subprocess
     result = subprocess.run([sys.executable, 'scripts/cross_store_matcher.py'],
-                          capture_output=True, text=True)
+                          capture_output=True, text=True, timeout=120)
     print(result.stdout)
+    return result.returncode == 0
 
 def cmd_export():
-    """Export to frontend"""
+    """Export to frontend."""
     logger.info("Exporting to frontend...")
     import subprocess
     result = subprocess.run([sys.executable, 'scripts/export_frontend.py'],
-                          capture_output=True, text=True)
+                          capture_output=True, text=True, timeout=120)
     print(result.stdout)
+    return result.returncode == 0
 
 def cmd_all():
-    """Run full pipeline"""
-    cmd_scrape('all')
+    """Run full pipeline."""
+    results = cmd_scrape('all')
+    
+    # Only continue if at least one scrape succeeded
+    if not any(r.get('success') for r in results):
+        logger.error("All scrapes failed, aborting pipeline")
+        return False
+    
     cmd_clean()
     cmd_match()
     cmd_export()
+    return True
 
 def main():
     if len(sys.argv) < 2:
@@ -149,11 +195,14 @@ def main():
     cmd = sys.argv[1]
     
     if cmd == 'scrape':
-        store = sys.argv[2] if len(sys.argv) > 2 else 'all'
-        if store.startswith('--store='):
-            store = store.split('=')[1]
-        elif store == '--store' and len(sys.argv) > 3:
-            store = sys.argv[3]
+        store = 'all'
+        for arg in sys.argv[2:]:
+            if arg.startswith('--store='):
+                store = arg.split('=')[1]
+            elif arg == '--store' and len(sys.argv) > sys.argv.index(arg) + 1:
+                store = sys.argv[sys.argv.index(arg) + 1]
+            elif not arg.startswith('-'):
+                store = arg
         cmd_scrape(store)
     elif cmd == 'clean':
         cmd_clean()
