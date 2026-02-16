@@ -1,23 +1,21 @@
 #!/usr/bin/env python3
 """
-Fast Product Matching Pipeline - Optimized version
+Fast Product Matching Pipeline v2 - Fixed index lookups
 """
 import sqlite3
 import json
 import re
-import math
 from collections import defaultdict
 from difflib import SequenceMatcher
 from pathlib import Path
 import numpy as np
-import sys
 
 BASE_DIR = Path(__file__).parent.parent / "data"
 PROMOBG_DB = BASE_DIR / "promobg.db"
 OFF_DB = BASE_DIR / "off_bulgaria.db"
 INDICES_DIR = BASE_DIR / "indices"
 
-MIN_CONFIDENCE = 0.45
+MIN_CONFIDENCE = 0.40
 
 NON_FOOD_KEYWORDS = [
     'почиств', 'препарат', 'прах за пране', 'омекотител', 'кърпи', 'хартия',
@@ -65,32 +63,33 @@ class FastMatcher:
         self.prom_conn = sqlite3.connect(PROMOBG_DB)
         self.off_conn = sqlite3.connect(OFF_DB)
         
-        # Load indices
-        log("Loading indices...")
-        with open(INDICES_DIR / "off_brand_index.json") as f:
-            self.brand_index = json.load(f)
-        with open(INDICES_DIR / "off_token_index.json") as f:
-            self.token_index = json.load(f)
-        log(f"  Brands: {len(self.brand_index)}, Tokens: {len(self.token_index)}")
-        
-        # Load OFF products
+        # Load OFF products - index by barcode
         log("Loading OFF products...")
-        self.off_products = {}
-        self.off_by_barcode = {}
+        self.off_products = {}  # id -> product
+        self.off_by_barcode = {}  # barcode -> id
         cur = self.off_conn.cursor()
         cur.execute('''SELECT id, barcode, product_name, product_name_bg, brands, quantity 
                       FROM off_products''')
         for row in cur.fetchall():
-            self.off_products[row[0]] = {
+            prod = {
                 'id': row[0], 'barcode': row[1], 'name': row[2] or '',
                 'name_bg': row[3], 'brands': row[4], 'quantity': row[5]
             }
+            self.off_products[row[0]] = prod
             if row[1]:
                 self.off_by_barcode[row[1]] = row[0]
         log(f"  OFF products: {len(self.off_products)}")
         
-        # Build inverted index for fast token lookup
-        log("Building token vectors...")
+        # Load indices (these map to BARCODES, not IDs)
+        log("Loading indices...")
+        with open(INDICES_DIR / "off_brand_index.json") as f:
+            self.brand_to_barcodes = json.load(f)  # brand -> [barcodes]
+        with open(INDICES_DIR / "off_token_index.json") as f:
+            self.token_to_barcodes = json.load(f)  # token -> [barcodes]
+        log(f"  Brands: {len(self.brand_to_barcodes)}, Tokens: {len(self.token_to_barcodes)}")
+        
+        # Build token sets for each OFF product for fast matching
+        log("Building token sets...")
         self.off_tokens = {}  # off_id -> set of tokens
         for off_id, off_prod in self.off_products.items():
             text = " ".join(filter(None, [off_prod['name'], off_prod['name_bg'], off_prod['brands']]))
@@ -128,76 +127,151 @@ class FastMatcher:
             return {'off_id': off_id, 'type': 'barcode', 'confidence': 1.0}
         return None
     
-    def match_brand_tokens(self, product):
-        brand = normalize(product['brand']) if product['brand'] else None
+    def match_by_tokens(self, product):
+        """Match using token overlap with TF-IDF-like scoring"""
         name_tokens = set(tokenize(product['name']))
+        if not name_tokens:
+            return None
+        
+        # Get candidate barcodes from token index
+        candidate_barcodes = set()
+        token_hits = defaultdict(int)  # barcode -> how many tokens matched
+        
+        for token in name_tokens:
+            if token in self.token_to_barcodes:
+                for bc in self.token_to_barcodes[token][:100]:  # Limit per token
+                    candidate_barcodes.add(bc)
+                    token_hits[bc] += 1
+        
+        # Also check brand index
+        if product['brand']:
+            brand_norm = normalize(product['brand'])
+            for brand_key, barcodes in self.brand_to_barcodes.items():
+                # Partial brand match
+                if brand_norm in brand_key or brand_key in brand_norm or \
+                   SequenceMatcher(None, brand_norm, brand_key).ratio() > 0.7:
+                    for bc in barcodes[:50]:
+                        candidate_barcodes.add(bc)
+                        token_hits[bc] += 2  # Brand match bonus
+        
+        if not candidate_barcodes:
+            return None
+        
+        # Score candidates
+        best_match = None
+        best_score = 0
         prod_qty = extract_quantity(product['name'])
         
-        # Get candidates from brand index
-        candidates = set()
-        if brand:
-            for b_key, off_ids in self.brand_index.items():
-                if brand in b_key or b_key in brand:
-                    candidates.update(off_ids[:50])  # Limit per brand
+        for barcode in candidate_barcodes:
+            off_id = self.off_by_barcode.get(barcode)
+            if not off_id or off_id not in self.off_products:
+                continue
+            
+            off_prod = self.off_products[off_id]
+            off_tokens = self.off_tokens.get(off_id, set())
+            
+            if not off_tokens:
+                continue
+            
+            # Jaccard similarity
+            common = len(name_tokens & off_tokens)
+            union = len(name_tokens | off_tokens)
+            jaccard = common / union if union > 0 else 0
+            
+            # Token hit bonus (how many of our tokens appeared in this product's index)
+            hit_bonus = token_hits.get(barcode, 0) / len(name_tokens) * 0.3
+            
+            # Size match bonus
+            size_bonus = 0
+            if prod_qty:
+                off_qty = extract_quantity(off_prod['quantity'] or '')
+                if off_qty and prod_qty[1] == off_qty[1]:
+                    ratio = min(prod_qty[0], off_qty[0]) / max(prod_qty[0], off_qty[0])
+                    if ratio > 0.8:
+                        size_bonus = 0.15
+            
+            # Combined score
+            score = jaccard * 0.6 + hit_bonus + size_bonus
+            
+            if score > best_score:
+                best_score = score
+                best_match = {
+                    'off_id': off_id,
+                    'type': 'token',
+                    'confidence': min(score + 0.2, 0.95),  # Boost confidence
+                    'jaccard': jaccard,
+                    'hits': token_hits.get(barcode, 0)
+                }
         
-        # Also get candidates from token index
-        for token in name_tokens:
-            if token in self.token_index:
-                candidates.update(self.token_index[token][:30])
+        if best_match and best_match['confidence'] >= MIN_CONFIDENCE:
+            self.stats['token'] += 1
+            return best_match
+        
+        return None
+    
+    def match_fuzzy_fallback(self, product):
+        """Fuzzy string match as last resort - but only check top candidates"""
+        name_norm = normalize(product['name'])
+        name_tokens = set(tokenize(product['name']))
+        
+        if len(name_tokens) < 2:
+            return None
+        
+        # Get some candidates based on first significant token
+        candidates = []
+        for token in list(name_tokens)[:3]:
+            if token in self.token_to_barcodes:
+                for bc in self.token_to_barcodes[token][:30]:
+                    off_id = self.off_by_barcode.get(bc)
+                    if off_id:
+                        candidates.append(off_id)
         
         if not candidates:
             return None
         
         best_match = None
-        best_score = 0
+        best_ratio = 0
         
-        for off_id in candidates:
-            if off_id not in self.off_products:
+        for off_id in set(candidates):
+            off_prod = self.off_products.get(off_id)
+            if not off_prod:
                 continue
-            off_prod = self.off_products[off_id]
-            off_tokens = self.off_tokens.get(off_id, set())
             
-            # Token overlap (Jaccard-like)
-            if not off_tokens:
-                continue
-            common = len(name_tokens & off_tokens)
-            union = len(name_tokens | off_tokens)
-            token_sim = common / union if union > 0 else 0
-            
-            # Brand bonus
-            brand_bonus = 0
-            if brand and off_prod['brands']:
-                off_brand = normalize(off_prod['brands'])
-                if brand in off_brand or off_brand in brand:
-                    brand_bonus = 0.2
-            
-            # Size similarity
-            size_sim = 0
-            if prod_qty:
-                off_qty = extract_quantity(off_prod['quantity'] or '')
-                if off_qty and prod_qty[1] == off_qty[1]:  # Same unit
-                    ratio = min(prod_qty[0], off_qty[0]) / max(prod_qty[0], off_qty[0])
-                    size_sim = ratio * 0.15
-            
-            score = token_sim + brand_bonus + size_sim
-            
-            if score > best_score:
-                best_score = score
-                best_match = {'off_id': off_id, 'type': 'token', 'confidence': min(score, 0.95)}
+            # Try Bulgarian name first
+            for off_name in [off_prod['name_bg'], off_prod['name']]:
+                if not off_name:
+                    continue
+                off_norm = normalize(off_name)
+                ratio = SequenceMatcher(None, name_norm, off_norm).ratio()
+                
+                if ratio > best_ratio:
+                    best_ratio = ratio
+                    best_match = {
+                        'off_id': off_id,
+                        'type': 'fuzzy',
+                        'confidence': ratio * 0.8,  # Scale down fuzzy confidence
+                        'ratio': ratio
+                    }
         
         if best_match and best_match['confidence'] >= MIN_CONFIDENCE:
-            self.stats['token'] += 1
+            self.stats['fuzzy'] += 1
             return best_match
+        
         return None
     
     def match_product(self, product):
-        # Strategy 1: Barcode
+        # Strategy 1: Barcode (100% confidence)
         match = self.match_barcode(product)
         if match:
             return match
         
-        # Strategy 2: Brand + Token matching
-        match = self.match_brand_tokens(product)
+        # Strategy 2: Token matching
+        match = self.match_by_tokens(product)
+        if match:
+            return match
+        
+        # Strategy 3: Fuzzy fallback
+        match = self.match_fuzzy_fallback(product)
         if match:
             return match
         
@@ -206,7 +280,7 @@ class FastMatcher:
     
     def run(self):
         log("\n" + "=" * 60)
-        log("FAST MATCHING PIPELINE")
+        log("FAST MATCHING PIPELINE v2")
         log("=" * 60)
         
         products = self.load_products()
@@ -223,8 +297,12 @@ class FastMatcher:
             if match:
                 match['product_id'] = product['id']
                 match['product_name'] = product['name']
-                match['off_name'] = self.off_products[match['off_id']]['name']
-                match['off_name_bg'] = self.off_products[match['off_id']]['name_bg']
+                match['product_brand'] = product['brand']
+                match['store'] = product['store']
+                off_prod = self.off_products[match['off_id']]
+                match['off_name'] = off_prod['name']
+                match['off_name_bg'] = off_prod['name_bg']
+                match['off_barcode'] = off_prod['barcode']
                 matches.append(match)
             else:
                 unmatched.append(product)
@@ -240,6 +318,7 @@ class FastMatcher:
         log("\nMatch breakdown:")
         log(f"  Barcode (100%): {self.stats['barcode']}")
         log(f"  Token matching: {self.stats['token']}")
+        log(f"  Fuzzy matching: {self.stats['fuzzy']}")
         log(f"  No match: {self.stats['no_match']}")
         
         # Confidence distribution
@@ -251,15 +330,29 @@ class FastMatcher:
         log(f"  Medium (0.6-0.8): {med}")
         log(f"  Low (<0.6): {low}")
         
-        # Sample matches
-        log("\nSample high-confidence matches:")
-        for m in sorted(matches, key=lambda x: -x['confidence'])[:5]:
-            off_name = m.get('off_name_bg') or m.get('off_name', '')
-            log(f"  [{m['type']}] {m['confidence']:.2f}: '{m['product_name'][:35]}' → '{off_name[:35]}'")
+        # Sample matches by type
+        log("\nSample barcode matches:")
+        for m in [x for x in matches if x['type'] == 'barcode'][:3]:
+            log(f"  '{m['product_name'][:35]}' → '{(m['off_name_bg'] or m['off_name'])[:35]}'")
         
-        log("\nSample unmatched:")
-        for p in unmatched[:10]:
-            log(f"  - [{p['store']}] {p['name'][:55]}")
+        log("\nSample token matches:")
+        for m in sorted([x for x in matches if x['type'] == 'token'], key=lambda x: -x['confidence'])[:5]:
+            off_name = m.get('off_name_bg') or m.get('off_name', '')
+            log(f"  [{m['confidence']:.2f}] '{m['product_name'][:30]}' → '{off_name[:30]}'")
+        
+        log("\nSample fuzzy matches:")
+        for m in sorted([x for x in matches if x['type'] == 'fuzzy'], key=lambda x: -x['confidence'])[:3]:
+            off_name = m.get('off_name_bg') or m.get('off_name', '')
+            log(f"  [{m['confidence']:.2f}] '{m['product_name'][:30]}' → '{off_name[:30]}'")
+        
+        log("\nSample unmatched (by store):")
+        by_store = defaultdict(list)
+        for p in unmatched:
+            by_store[p['store']].append(p)
+        for store, prods in by_store.items():
+            log(f"  {store}: {len(prods)} unmatched")
+            for p in prods[:3]:
+                log(f"    - {p['name'][:50]}")
         
         return matches, unmatched, products
     
@@ -283,9 +376,14 @@ class FastMatcher:
             'total_products': len(products),
             'total_matches': len(matches),
             'match_rate_percent': round(len(matches) / len(products) * 100, 1),
+            'confidence_distribution': {
+                'high': sum(1 for m in matches if m['confidence'] >= 0.8),
+                'medium': sum(1 for m in matches if 0.6 <= m['confidence'] < 0.8),
+                'low': sum(1 for m in matches if m['confidence'] < 0.6),
+            },
             'matches': matches[:500],
             'unmatched': [{'id': p['id'], 'name': p['name'], 'brand': p['brand'], 'store': p['store']} 
-                         for p in unmatched[:200]]
+                         for p in unmatched]
         }
         
         with open(BASE_DIR / "matches_results.json", 'w', encoding='utf-8') as f:

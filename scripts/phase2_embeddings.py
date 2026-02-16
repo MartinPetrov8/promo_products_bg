@@ -1,182 +1,145 @@
 #!/usr/bin/env python3
-"""
-Phase 2: Embedding-based semantic matching
-Uses LaBSE multilingual embeddings for Bulgarian↔English matching
-"""
-import sqlite3
-import json
+"""Phase 2 v3: Embedding-based matching with lower threshold"""
 import numpy as np
+import sqlite3
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
 import torch
+import os
 
-BASE_DIR = Path(__file__).parent.parent / "data"
-EMBEDDINGS_CACHE = BASE_DIR / "off_embeddings.npy"
-OFF_IDS_CACHE = BASE_DIR / "off_ids.json"
+DATA_DIR = Path(__file__).parent.parent / 'data'
+DB_PATH = DATA_DIR / 'promobg.db'
+OFF_DB_PATH = DATA_DIR / 'off_bulgaria.db'
 
+# Use persistent cache
+CACHE_DIR = os.environ.get('SENTENCE_TRANSFORMERS_HOME', '/home/sandbox/.cache')
+
+# Lower thresholds to catch more food matches
 CONFIDENT_THRESHOLD = 0.85
-LIKELY_THRESHOLD = 0.75
-MIN_THRESHOLD = 0.75  # Don't accept below this
+LIKELY_THRESHOLD = 0.75  
+LOW_THRESHOLD = 0.65     # New: catch more potential matches
+
+BATCH_SIZE = 64
+
+def get_unmatched_products():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT p.id, p.name FROM products p
+        LEFT JOIN product_off_matches m ON p.id = m.product_id
+        WHERE m.id IS NULL
+    """)
+    products = [{'id': row['id'], 'name': row['name']} for row in cursor.fetchall()]
+    conn.close()
+    return products
+
+def get_off_products():
+    conn = sqlite3.connect(OFF_DB_PATH)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, product_name, product_name_bg FROM off_products")
+    products = [{'id': row['id'], 'name': row['product_name'], 'name_bg': row['product_name_bg']} for row in cursor.fetchall()]
+    conn.close()
+    return products
 
 def main():
-    print("=" * 60)
-    print("PHASE 2: EMBEDDING-BASED MATCHING")
-    print("=" * 60)
-    
-    # Check for GPU
+    print("="*60)
+    print("PHASE 2 v3: EMBEDDING-BASED MATCHING")
+    print("="*60)
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     print(f"Using device: {device}")
+    print(f"Cache dir: {CACHE_DIR}")
+    print("Loading LaBSE model...")
+    model = SentenceTransformer('sentence-transformers/LaBSE', cache_folder=str(CACHE_DIR))
+    print("Model loaded")
     
-    # Load model
-    print("Loading LaBSE model (this may take a minute)...")
-    model = SentenceTransformer('sentence-transformers/LaBSE', device=device)
-    print("Model loaded ✓")
+    # Get OFF products
+    off_products = get_off_products()
+    off_ids = [p['id'] for p in off_products]
+    # Use Bulgarian name preferentially
+    off_texts = [(p['name_bg'] or p['name'] or '').strip() for p in off_products]
+    # Filter out empty/garbage entries
+    valid_off = [(i, oid, txt) for i, (oid, txt) in enumerate(zip(off_ids, off_texts)) 
+                 if txt and txt not in ('', 'Loading…', 'loading…')]
+    print(f"Valid OFF products: {len(valid_off)} / {len(off_products)}")
     
-    prom_conn = sqlite3.connect(BASE_DIR / "promobg.db")
-    off_conn = sqlite3.connect(BASE_DIR / "off_bulgaria.db")
+    off_texts_clean = [txt for _, _, txt in valid_off]
+    off_ids_clean = [oid for _, oid, _ in valid_off]
     
-    # Load or compute OFF embeddings
-    if EMBEDDINGS_CACHE.exists() and OFF_IDS_CACHE.exists():
-        print("Loading cached OFF embeddings...")
-        off_embeddings = np.load(EMBEDDINGS_CACHE)
-        with open(OFF_IDS_CACHE) as f:
-            off_ids = json.load(f)
-        print(f"Loaded {len(off_ids)} cached embeddings")
-    else:
-        print("Computing OFF embeddings (one-time)...")
-        off_cur = off_conn.cursor()
-        off_cur.execute('SELECT id, product_name, product_name_bg, brands FROM off_products')
-        
-        off_ids = []
-        off_texts = []
-        
-        for row in off_cur.fetchall():
-            off_id = row[0]
-            # Combine name fields
-            text = " ".join(filter(None, [row[1], row[2], row[3]]))
-            if text.strip():
-                off_ids.append(off_id)
-                off_texts.append(text[:256])  # Truncate long texts
-        
-        print(f"Encoding {len(off_texts)} OFF products...")
-        off_embeddings = model.encode(off_texts, show_progress_bar=True, batch_size=64)
-        
-        # Cache
-        np.save(EMBEDDINGS_CACHE, off_embeddings)
-        with open(OFF_IDS_CACHE, 'w') as f:
-            json.dump(off_ids, f)
-        print("Cached embeddings for future use")
+    print(f"Computing {len(off_texts_clean)} OFF embeddings...")
+    off_embeddings = model.encode(off_texts_clean, batch_size=BATCH_SIZE, show_progress_bar=True, convert_to_numpy=True)
     
-    # Load OFF product details
-    off_cur = off_conn.cursor()
-    off_products = {}
-    for off_id in off_ids:
-        off_cur.execute('SELECT product_name, product_name_bg FROM off_products WHERE id = ?', (off_id,))
-        row = off_cur.fetchone()
-        if row:
-            off_products[off_id] = {'name': row[0], 'name_bg': row[1]}
+    # Get unmatched products
+    unmatched = get_unmatched_products()
+    print(f"\nUnmatched products: {len(unmatched)}")
+    unmatched_ids = [p['id'] for p in unmatched]
+    unmatched_texts = [p['name'].replace('\n', ' ').strip() for p in unmatched]
     
-    # Load unmatched products
-    cur = prom_conn.cursor()
-    cur.execute('''
-        SELECT p.id, p.name, p.brand
-        FROM products p
-        WHERE p.id NOT IN (SELECT product_id FROM product_off_matches)
-    ''')
-    unmatched = [{'id': r[0], 'name': r[1], 'brand': r[2]} for r in cur.fetchall()]
-    print(f"\nUnmatched products to process: {len(unmatched)}")
+    print(f"Computing {len(unmatched_texts)} embeddings...")
+    unmatched_embeddings = model.encode(unmatched_texts, batch_size=BATCH_SIZE, show_progress_bar=True, convert_to_numpy=True)
     
-    if not unmatched:
-        print("No unmatched products remaining!")
-        return 0
+    print(f"\nComputing cosine similarities...")
+    # Compute all similarities at once (faster than row-by-row)
+    similarity_matrix = cosine_similarity(unmatched_embeddings, off_embeddings)
     
-    # Encode unmatched products
-    print("Encoding unmatched products...")
-    unmatched_texts = [p['name'][:256] for p in unmatched]
-    unmatched_embeddings = model.encode(unmatched_texts, show_progress_bar=True, batch_size=32)
-    
-    # Find best matches using cosine similarity
-    print("Finding best matches...")
-    
-    # Normalize for cosine similarity
-    off_embeddings_norm = off_embeddings / np.linalg.norm(off_embeddings, axis=1, keepdims=True)
-    unmatched_embeddings_norm = unmatched_embeddings / np.linalg.norm(unmatched_embeddings, axis=1, keepdims=True)
-    
+    print(f"\nFinding matches (threshold={LOW_THRESHOLD})...")
     matches = []
-    
-    for i, prod in enumerate(unmatched):
-        if (i + 1) % 100 == 0:
-            print(f"Processing {i+1}/{len(unmatched)}...")
-        
-        # Compute similarities
-        similarities = np.dot(off_embeddings_norm, unmatched_embeddings_norm[i])
-        
-        # Get best match
-        best_idx = np.argmax(similarities)
-        best_sim = similarities[best_idx]
-        
-        if best_sim >= MIN_THRESHOLD:
-            off_id = off_ids[best_idx]
-            off_prod = off_products.get(off_id, {})
-            
+    for i, prod_id in enumerate(unmatched_ids):
+        best_idx = np.argmax(similarity_matrix[i])
+        best_score = similarity_matrix[i][best_idx]
+        if best_score >= LOW_THRESHOLD:
+            if best_score >= CONFIDENT_THRESHOLD:
+                match_type = 'embedding_confident_v3'
+            elif best_score >= LIKELY_THRESHOLD:
+                match_type = 'embedding_likely_v3'
+            else:
+                match_type = 'embedding_low_v3'
             matches.append({
-                'product_id': prod['id'],
-                'product_name': prod['name'],
-                'off_id': off_id,
-                'off_name': off_prod.get('name') or off_prod.get('name_bg', ''),
-                'confidence': float(best_sim)
+                'product_id': prod_id, 
+                'off_id': off_ids_clean[best_idx], 
+                'match_type': match_type, 
+                'confidence': float(best_score),
+                'promo_name': unmatched_texts[i],
+                'off_name': off_texts_clean[best_idx]
             })
-    
-    # Results
-    print(f"\n{'='*60}")
-    print("RESULTS")
-    print(f"{'='*60}")
-    print(f"New matches found: {len(matches)}")
     
     confident = [m for m in matches if m['confidence'] >= CONFIDENT_THRESHOLD]
     likely = [m for m in matches if LIKELY_THRESHOLD <= m['confidence'] < CONFIDENT_THRESHOLD]
+    low = [m for m in matches if LOW_THRESHOLD <= m['confidence'] < LIKELY_THRESHOLD]
     
-    print(f"  Confident (≥0.85): {len(confident)}")
-    print(f"  Likely (0.75-0.84): {len(likely)}")
+    print(f"\nFound {len(matches)} matches:")
+    print(f"  Confident (≥{CONFIDENT_THRESHOLD}): {len(confident)}")
+    print(f"  Likely (≥{LIKELY_THRESHOLD}): {len(likely)}")
+    print(f"  Low (≥{LOW_THRESHOLD}): {len(low)}")
     
-    # Sample matches
-    print("\nSample confident matches:")
-    for m in sorted(confident, key=lambda x: -x['confidence'])[:5]:
-        off_name = m.get('off_name', '') or ''; print(f"  [{m['confidence']:.2f}] '{m['product_name'][:30]}' → '{off_name[:30]}'")
+    # Show sample matches
+    if matches:
+        print("\n=== Sample matches ===")
+        for m in sorted(matches, key=lambda x: -x['confidence'])[:10]:
+            print(f"{m['confidence']:.3f} [{m['match_type']}]")
+            print(f"  Promo: {m['promo_name'][:50]}")
+            print(f"  OFF:   {m['off_name'][:50]}")
     
-    print("\nSample likely matches:")
-    for m in sorted(likely, key=lambda x: -x['confidence'])[:5]:
-        off_name = m.get('off_name', '') or ''; print(f"  [{m['confidence']:.2f}] '{m['product_name'][:30]}' → '{off_name[:30]}'")
-    
-    # Save matches
-    print("\nSaving matches...")
+    # Save to database
+    print("\nSaving to database...")
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
     saved = 0
     for m in matches:
-        match_type = 'embed_confident' if m['confidence'] >= CONFIDENT_THRESHOLD else 'embed_likely'
         try:
-            cur.execute('''
-                INSERT INTO product_off_matches 
-                (product_id, off_product_id, match_type, match_confidence, is_verified, created_at)
-                VALUES (?, ?, ?, ?, 0, datetime('now'))
-            ''', (m['product_id'], m['off_id'], match_type, m['confidence']))
+            cursor.execute(
+                "INSERT INTO product_off_matches (product_id, off_product_id, match_type, match_confidence) VALUES (?, ?, ?, ?)",
+                (m['product_id'], m['off_id'], m['match_type'], m['confidence'])
+            )
             saved += 1
         except sqlite3.IntegrityError:
             pass
-    
-    prom_conn.commit()
-    
-    # Export results
-    with open(BASE_DIR / "phase2_results.json", 'w') as f:
-        json.dump({
-            'total_unmatched': len(unmatched),
-            'new_matches': len(matches),
-            'confident': len(confident),
-            'likely': len(likely),
-            'matches': matches
-        }, f, ensure_ascii=False, indent=2)
-    
-    print(f"\n✓ Phase 2 complete. Added {saved} matches.")
-    return saved
+    conn.commit()
+    conn.close()
+    print(f"Saved {saved} new matches")
+    print("Done!")
 
 if __name__ == '__main__':
     main()
