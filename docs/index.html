@@ -185,11 +185,24 @@
         }
         
         function showTopDeals() {
-            const deals = data.products
-                .filter(p => p.discount_pct > 0)
-                .slice(0, 20);
-            renderProducts(deals);
-            document.getElementById('resultsTitle').textContent = '🔥 Топ оферти';
+            // Show cross-store matches first (products with group_id), sorted by savings
+            const matchedProducts = data.products.filter(p => p.group_id);
+            
+            if (matchedProducts.length > 0) {
+                // Sort by savings (get from group)
+                matchedProducts.sort((a, b) => {
+                    const groupA = data.groups[a.group_id];
+                    const groupB = data.groups[b.group_id];
+                    return (groupB?.savings || 0) - (groupA?.savings || 0);
+                });
+                renderProducts(matchedProducts.slice(0, 40));
+                document.getElementById('resultsTitle').textContent = 
+                    `🔥 Сравни цените (${Object.keys(data.groups).length} съвпадения)`;
+            } else {
+                // Fallback: show all products
+                renderProducts(data.products.slice(0, 20));
+                document.getElementById('resultsTitle').textContent = '🛒 Всички продукти';
+            }
         }
         
         function searchProducts() {
