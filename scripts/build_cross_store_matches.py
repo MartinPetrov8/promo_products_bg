@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
 Build cross-store product matches from scratch.
-Uses name similarity + brand matching instead of OFF barcodes.
+Uses name similarity + brand matching + QUANTITY VALIDATION.
+
+v2.0: Added quantity extraction and validation to prevent false matches
+      (e.g., 50ml whisky matched to 700ml bottle)
 """
 import json
 import re
@@ -10,6 +13,8 @@ from pathlib import Path
 from datetime import datetime, timezone
 from difflib import SequenceMatcher
 from collections import defaultdict
+from dataclasses import dataclass
+from typing import Optional, Tuple
 
 REPO = Path(__file__).parent.parent
 INPUT_FILE = REPO / "docs" / "data" / "products.json"
@@ -18,12 +23,13 @@ OUTPUT_FILE = REPO / "docs" / "data" / "products_matched.json"
 # Thresholds
 MIN_SIMILARITY = 0.75
 MIN_PRICE = 0.05
-MAX_PRICE_RATIO = 2.5
+MAX_PRICE_RATIO = 2.5  # Only used when quantities match
+MAX_PRICE_RATIO_NO_QTY = 3.0  # Stricter when no quantity info
 
-# Stopwords
+# Stopwords (quantity units removed - we handle them separately)
 STOPWORDS = {'и', 'с', 'за', 'от', 'на', 'в', 'без', 'или', 'различни', 'видове', 
              'избрани', 'нашата', 'пекарна', 'витрина', 'свежата', 'промопакет',
-             'ml', 'г', 'л', 'кг', 'мл', 'бр', 'lidl', 'kaufland', 'billa'}
+             'lidl', 'kaufland', 'billa'}
 
 # Known brand list
 BRANDS = {
@@ -41,7 +47,9 @@ BRANDS = {
     'tchibo', 'чибо', 'melitta', 'мелита', 'kimbo', 'кимбо', 'lavazza',
     'nutella', 'нутела', 'kinder', 'киндер', 'ferrero', 'фереро',
     'stella artois', 'стела артоа', 'budweiser', 'будвайзер',
-    'muhler', 'мюлер', 'brio', 'брио', 'tefal', 'тефал', 'philips', 'филипс'
+    'muhler', 'мюлер', 'brio', 'брио', 'tefal', 'тефал', 'philips', 'филипс',
+    'bacardi', 'бакарди', 'johnnie walker', 'джони уокър', 'jack daniels',
+    'smirnoff', 'смирноф', 'absolut', 'абсолют', 'jagermeister', 'йегермайстер'
 }
 
 # Food keywords for Lidl price fix
@@ -57,12 +65,122 @@ NONFOOD_KEYWORDS = [
     'уред', 'машина', 'станция', 'инструмент', 'акумулаторн', 'електрическ'
 ]
 
+# ============================================================================
+# QUANTITY EXTRACTION (NEW IN v2)
+# ============================================================================
+
+@dataclass
+class QuantityInfo:
+    """Extracted quantity from product name"""
+    value: float
+    unit: str  # normalized: 'ml', 'g', 'бр'
+    original: str
+    
+    def to_base(self) -> Tuple[float, str]:
+        """Convert to base unit (ml or g)"""
+        if self.unit == 'l':
+            return self.value * 1000, 'ml'
+        if self.unit == 'kg':
+            return self.value * 1000, 'g'
+        return self.value, self.unit
+    
+    def is_compatible(self, other: 'QuantityInfo', tolerance: float = 0.25) -> bool:
+        """Check if quantities are similar enough to be same product"""
+        b1 = self.to_base()
+        b2 = other.to_base()
+        
+        # Must be same unit type
+        if b1[1] != b2[1]:
+            return False
+        
+        if b1[0] == 0 or b2[0] == 0:
+            return False
+        
+        ratio = b1[0] / b2[0]
+        return (1 - tolerance) <= ratio <= (1 + tolerance)
+
+
+# Patterns ordered by specificity (pack patterns first)
+QUANTITY_PATTERNS = [
+    # Pack patterns: "6x330ml", "4х500мл"
+    (r'(\d+)\s*[xх]\s*(\d+(?:[.,]\d+)?)\s*(?:мл|ml)', 'ml', True),
+    (r'(\d+)\s*[xх]\s*(\d+(?:[.,]\d+)?)\s*(?:гр?|g)', 'g', True),
+    (r'(\d+)\s*[xх]\s*(\d+(?:[.,]\d+)?)\s*(?:л|l)', 'l', True),
+    
+    # Single unit patterns
+    (r'(\d+(?:[.,]\d+)?)\s*(?:мл|ml)', 'ml', False),
+    (r'(\d+(?:[.,]\d+)?)\s*(?:л|l|L)(?:\s|$|[^a-zA-Zа-яА-Я])', 'l', False),
+    (r'(\d+(?:[.,]\d+)?)\s*(?:cl|сл)', 'cl', False),  # centiliters
+    (r'(\d+(?:[.,]\d+)?)\s*(?:гр?|g)(?:\s|$|[^a-zA-Zа-яА-Я])', 'g', False),
+    (r'(\d+(?:[.,]\d+)?)\s*(?:кг|kg)', 'kg', False),
+    (r'(\d+)\s*(?:бр|бройки|pcs|шт)', 'бр', False),
+]
+
+
+def extract_quantity(name: str) -> Optional[QuantityInfo]:
+    """Extract quantity from product name."""
+    if not name:
+        return None
+    
+    name_lower = name.lower()
+    
+    for pattern, unit, is_pack in QUANTITY_PATTERNS:
+        match = re.search(pattern, name_lower)
+        if match:
+            groups = match.groups()
+            
+            if is_pack and len(groups) == 2:
+                # Pack format: count x amount
+                count = float(groups[0])
+                amount = float(groups[1].replace(',', '.'))
+                value = count * amount
+            else:
+                value = float(groups[0].replace(',', '.'))
+            
+            # Convert centiliters to ml
+            if unit == 'cl':
+                value *= 10
+                unit = 'ml'
+            
+            return QuantityInfo(value=value, unit=unit, original=match.group(0))
+    
+    return None
+
+
+def quantities_compatible(name1: str, name2: str) -> Tuple[bool, str]:
+    """
+    Check if two products have compatible quantities.
+    Returns (is_compatible, reason)
+    """
+    qty1 = extract_quantity(name1)
+    qty2 = extract_quantity(name2)
+    
+    # Both have quantities - must match
+    if qty1 and qty2:
+        if qty1.is_compatible(qty2):
+            return True, f"quantities match ({qty1.original} ≈ {qty2.original})"
+        else:
+            return False, f"quantity mismatch ({qty1.original} vs {qty2.original})"
+    
+    # Only one has quantity - suspicious but allow with stricter price check
+    if qty1 or qty2:
+        return True, "partial quantity (needs price check)"
+    
+    # Neither has quantity - allow with price check
+    return True, "no quantities"
+
+
+# ============================================================================
+# ORIGINAL FUNCTIONS (with quantity integration)
+# ============================================================================
+
 def normalize_name(name):
     """Normalize product name for matching."""
     name = name.lower()
     name = re.sub(r'\|\s*lidl\s*$', '', name)  # Remove "| LIDL"
     name = re.sub(r'[^\w\s\u0400-\u04FF]', ' ', name)
-    name = re.sub(r'\d+\s*(г|гр|кг|мл|л|бр)\.?\s*$', '', name)  # Remove quantity
+    # DON'T remove quantity anymore - we need it for validation
+    # name = re.sub(r'\d+\s*(г|гр|кг|мл|л|бр)\.?\s*$', '', name)  # REMOVED
     name = re.sub(r'\s+', ' ', name).strip()
     return name
 
@@ -78,7 +196,6 @@ def extract_brand(name):
     for brand in BRANDS:
         if brand in name_lower:
             return brand
-    # First word might be brand
     words = normalize_name(name).split()
     if words and len(words[0]) >= 3:
         return words[0]
@@ -119,11 +236,10 @@ def similarity(name1, name2):
     # Sequence similarity
     seq = SequenceMatcher(None, normalize_name(name1), normalize_name(name2)).ratio()
     
-    # Combined score
     return jaccard * 0.6 + seq * 0.4
 
 def find_matches(products):
-    """Find cross-store matches using name similarity."""
+    """Find cross-store matches using name similarity + quantity validation."""
     by_store = defaultdict(list)
     for p in products:
         by_store[p['store']].append(p)
@@ -131,12 +247,12 @@ def find_matches(products):
     stores = list(by_store.keys())
     matches = []
     used = set()
+    rejected_qty = 0  # Track quantity-based rejections
     
     print(f"\nProducts by store:")
     for store, prods in by_store.items():
         print(f"  {store}: {len(prods)}")
     
-    # Compare each pair of stores
     for i, store1 in enumerate(stores):
         for store2 in stores[i+1:]:
             print(f"\nMatching {store1} vs {store2}...")
@@ -157,7 +273,7 @@ def find_matches(products):
                     if p2['id'] in used:
                         continue
                     
-                    # Brand check - if both have brands, they should match
+                    # Brand check
                     brand2 = extract_brand(p2['name'])
                     if brand1 and brand2 and brand1 != brand2:
                         continue
@@ -166,12 +282,30 @@ def find_matches(products):
                     if sim < MIN_SIMILARITY:
                         continue
                     
-                    # Price check
+                    # ===== QUANTITY VALIDATION (NEW) =====
+                    qty_ok, qty_reason = quantities_compatible(p1['name'], p2['name'])
+                    if not qty_ok:
+                        rejected_qty += 1
+                        continue  # REJECT: different sizes
+                    
+                    # Price check (stricter if no quantity info)
                     price1 = p1.get('price', 0)
                     price2 = p2.get('price', 0)
                     if price1 and price2 and min(price1, price2) > 0:
                         ratio = max(price1, price2) / min(price1, price2)
-                        if ratio > MAX_PRICE_RATIO:
+                        
+                        # Use stricter ratio when quantities unknown
+                        qty1 = extract_quantity(p1['name'])
+                        qty2 = extract_quantity(p2['name'])
+                        
+                        if qty1 and qty2:
+                            # Both have quantities and they matched - allow normal ratio
+                            max_ratio = MAX_PRICE_RATIO
+                        else:
+                            # Missing quantity info - be stricter
+                            max_ratio = MAX_PRICE_RATIO_NO_QTY
+                        
+                        if ratio > max_ratio:
                             continue
                     
                     if sim > best_sim:
@@ -190,10 +324,15 @@ def find_matches(products):
             
             print(f"  Found {match_count} matches")
     
+    print(f"\n⚠️  Rejected {rejected_qty} matches due to quantity mismatch")
     return matches
 
 def main():
-    print("Loading data...")
+    print("=" * 60)
+    print("CROSS-STORE MATCHER v2.0 (with quantity validation)")
+    print("=" * 60)
+    
+    print("\nLoading data...")
     with open(INPUT_FILE) as f:
         data = json.load(f)
     
@@ -226,7 +365,6 @@ def main():
         gid = f"g_{hashlib.md5(str(i).encode()).hexdigest()[:8]}"
         
         for p in match['products']:
-            # Find product in list and update
             for prod in products:
                 if prod['id'] == p['id']:
                     prod['group_id'] = gid
@@ -248,7 +386,8 @@ def main():
             'updated_at': datetime.now(timezone.utc).isoformat(),
             'total_products': len(products),
             'cross_store_groups': len(groups),
-            'stores': ['Kaufland', 'Lidl', 'Billa']
+            'stores': ['Kaufland', 'Lidl', 'Billa'],
+            'matcher_version': '2.0.0'
         },
         'products': products,
         'groups': groups
@@ -257,20 +396,26 @@ def main():
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     
-    print(f"\n=== RESULTS ===")
+    print(f"\n{'=' * 60}")
+    print("RESULTS")
+    print(f"{'=' * 60}")
     print(f"Products: {len(products)}")
     print(f"Cross-store groups: {len(groups)}")
     print(f"Saved to: {OUTPUT_FILE}")
     
     # Show sample matches
-    print(f"\n=== SAMPLE MATCHES ===")
+    print(f"\n{'=' * 60}")
+    print("SAMPLE MATCHES")
+    print(f"{'=' * 60}")
     for gid in list(groups.keys())[:10]:
         group = groups[gid]
         print(f"\n{gid} (brand: {group['brand']}):")
         for pid in group['product_ids']:
             p = next((x for x in products if x['id'] == pid), None)
             if p:
-                print(f"  {p['store']}: {p['name'][:50]} | €{p['price']}")
+                qty = extract_quantity(p['name'])
+                qty_str = f" [{qty.original}]" if qty else ""
+                print(f"  {p['store']}: {p['name'][:45]}{qty_str} | €{p['price']}")
 
 if __name__ == '__main__':
     main()
