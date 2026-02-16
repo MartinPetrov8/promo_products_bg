@@ -7,75 +7,186 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://images.openfoodfacts.org">
     <style>
-        .product-card:hover { transform: translateY(-2px); }
-        .discount-badge { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --accent: #f59e0b;
+            --bg-light: #f9fafb;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            min-height: 100vh;
+        }
+        
+        .product-card:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 10px 40px -10px rgba(16, 185, 129, 0.3);
+        }
+        
+        .discount-badge { 
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
+        }
+        
         .nutriscore-a { background: #038141; }
         .nutriscore-b { background: #85bb2f; }
-        .nutriscore-c { background: #fecb02; }
+        .nutriscore-c { background: #fecb02; color: #333 !important; }
         .nutriscore-d { background: #ee8100; }
         .nutriscore-e { background: #e63e11; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 100; }
+        
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 100; backdrop-filter: blur(4px); }
         .modal.active { display: flex; align-items: center; justify-content: center; }
-        .typeahead { position: absolute; top: 100%; left: 0; right: 0; background: white; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-height: 300px; overflow-y: auto; z-index: 50; }
-        .typeahead-item { padding: 0.75rem 1rem; cursor: pointer; border-bottom: 1px solid #eee; }
-        .typeahead-item:hover { background: #f3f4f6; }
-        .typeahead-item:last-child { border-bottom: none; }
+        
+        .typeahead { position: absolute; top: 100%; left: 0; right: 0; background: white; border-radius: 0.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); max-height: 300px; overflow-y: auto; z-index: 50; }
+        .typeahead-item { padding: 0.75rem 1rem; cursor: pointer; border-bottom: 1px solid #f3f4f6; transition: background 0.15s; }
+        .typeahead-item:hover { background: #ecfdf5; }
+        
+        .store-btn {
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        
+        .store-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .store-btn.active {
+            border-color: var(--primary);
+            background: #ecfdf5;
+        }
+        
+        .price-compare-card {
+            transition: all 0.2s ease;
+        }
+        
+        .price-compare-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .best-price {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 2px solid #10b981;
+        }
+        
+        .match-badge {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        
+        /* Mobile-first responsive */
+        @media (max-width: 640px) {
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            
+            .store-filters {
+                display: flex;
+                gap: 0.5rem;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .store-btn {
+                flex-shrink: 0;
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+        
+        @media (min-width: 640px) {
+            .results-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .results-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body>
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4">
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 py-3">
             <div class="flex items-center justify-between">
-                <h1 class="text-2xl font-bold text-green-600">🛒 PromoBG</h1>
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🛒</span>
+                    <h1 class="text-2xl font-bold" style="background: linear-gradient(135deg, #10b981, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        PromoBG
+                    </h1>
+                </div>
                 <p class="text-sm text-gray-500 hidden sm:block">Сравни цените • Спести пари</p>
             </div>
         </div>
     </header>
 
     <!-- Search Section -->
-    <section class="bg-gradient-to-r from-green-500 to-green-600 py-12">
+    <section class="bg-white py-8 sm:py-12 shadow-sm">
         <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-white text-center mb-6">
-                Намери най-добрите оферти
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 text-gray-800">
+                Намери най-добрите оферти 🏷️
             </h2>
-            <div class="relative">
+            
+            <!-- Search Input -->
+            <div class="relative mb-4">
                 <div class="flex gap-2">
                     <div class="flex-1 relative">
                         <input 
                             type="text" 
                             id="searchInput"
-                            placeholder="Търси продукт... (напр. мляко, хляб, кафе)"
-                            class="w-full px-4 py-3 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-green-300"
+                            placeholder="Търси продукт... ( напр. мляко, хляб, кафе)"
+                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-500 focus:outline-none transition text-base"
                             autocomplete="off"
                         >
                         <div id="typeahead" class="typeahead hidden"></div>
                     </div>
                     <button 
                         onclick="searchProducts()"
-                        class="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 rounded-lg font-semibold transition"
+                        class="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition shadow-lg shadow-green-500/25"
                     >
                         Търси
                     </button>
                 </div>
             </div>
-            <!-- Filters -->
-            <div class="flex gap-4 mt-4 flex-wrap">
-                <select id="storeFilter" class="px-3 py-2 rounded-lg" onchange="filterProducts()">
-                    <option value="">Всички магазини</option>
-                    <option value="Kaufland">Kaufland</option>
-                    <option value="Lidl">Lidl</option>
-                    <option value="Billa">Billa</option>
-                </select>
-                <select id="discountFilter" class="px-3 py-2 rounded-lg" onchange="filterProducts()">
-                    <option value="0">Всички оферти</option>
+            
+            <!-- Store Filter Buttons -->
+            <div class="store-filters flex gap-2 flex-wrap mb-4">
+                <button onclick="setStoreFilter('')" id="storeBtnAll" class="store-btn active bg-white px-4 py-2 rounded-xl font-medium border-2 border-gray-200 text-gray-700">
+                    Всички <span id="storeCountAll" class="font-bold text-green-600">-</span>
+                </button>
+                <button onclick="setStoreFilter('Kaufland')" id="storeBtnKaufland" class="store-btn bg-yellow-50 px-4 py-2 rounded-xl font-medium border-2 border-yellow-200 text-gray-700">
+                    🟡 Kaufland <span id="storeCountKaufland" class="font-bold">-</span>
+                </button>
+                <button onclick="setStoreFilter('Lidl')" id="storeBtnLidl" class="store-btn bg-blue-50 px-4 py-2 rounded-xl font-medium border-2 border-blue-200 text-gray-700">
+                    🔵 Lidl <span id="storeCountLidl" class="font-bold">-</span>
+                </button>
+                <button onclick="setStoreFilter('Billa')" id="storeBtnBilla" class="store-btn bg-green-50 px-4 py-2 rounded-xl font-medium border-2 border-green-200 text-gray-700">
+                    🟢 Billa <span id="storeCountBilla" class="font-bold">-</span>
+                </button>
+            </div>
+            
+            <!-- Other Filters -->
+            <div class="flex gap-3 flex-wrap items-center">
+                <select id="discountFilter" class="px-4 py-2 rounded-xl border-2 border-gray-200 focus:border-green-500 focus:outline-none text-sm" onchange="filterProducts()">
+                    <option value="0">💰 Всички оферти</option>
                     <option value="20">Над 20% отстъпка</option>
                     <option value="40">Над 40% отстъпка</option>
                     <option value="50">Над 50% отстъпка</option>
                 </select>
-                <label class="flex items-center gap-2 bg-white px-3 py-2 rounded-lg cursor-pointer">
-                    <input type="checkbox" id="crossStoreFilter" onchange="filterProducts()">
-                    <span class="text-sm">Само за сравнение</span>
+                <label class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border-2 border-gray-200 cursor-pointer hover:bg-gray-50 transition">
+                    <input type="checkbox" id="crossStoreFilter" onchange="filterProducts()" class="w-4 h-4 text-green-500 rounded">
+                    <span class="text-sm font-medium">🔗 Само за сравнение</span>
                 </label>
             </div>
         </div>
@@ -83,53 +194,60 @@
 
     <!-- Stats -->
     <section class="max-w-6xl mx-auto px-4 py-6">
-        <div class="grid grid-cols-3 gap-4 text-center">
-            <div class="bg-white p-4 rounded-lg shadow-sm">
-                <div class="text-3xl font-bold text-green-600" id="totalProducts">-</div>
-                <div class="text-sm text-gray-500">Продукти</div>
+        <div class="grid grid-cols-3 gap-3 sm:gap-4 text-center">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+                <div class="text-2xl sm:text-3xl font-bold text-green-500" id="totalProducts">-</div>
+                <div class="text-xs sm:text-sm text-gray-500 mt-1">Продукти</div>
             </div>
-            <div class="bg-white p-4 rounded-lg shadow-sm">
-                <div class="text-3xl font-bold text-green-600" id="crossStoreCount">-</div>
-                <div class="text-sm text-gray-500">За сравнение</div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+                <div class="text-2xl sm:text-3xl font-bold text-blue-500" id="crossStoreCount">-</div>
+                <div class="text-xs sm:text-sm text-gray-500 mt-1">За сравнение</div>
             </div>
-            <div class="bg-white p-4 rounded-lg shadow-sm">
-                <div class="text-3xl font-bold text-green-600" id="avgDiscount">-</div>
-                <div class="text-sm text-gray-500">Средна отстъпка</div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+                <div class="text-2xl sm:text-3xl font-bold text-orange-500" id="avgDiscount">-</div>
+                <div class="text-xs sm:text-sm text-gray-500 mt-1">Средна отстъпка</div>
             </div>
         </div>
-        <p class="text-center text-xs text-gray-400 mt-2" id="lastUpdated"></p>
+        <p class="text-center text-xs text-gray-400 mt-3" id="lastUpdated"></p>
     </section>
 
     <!-- Results -->
-    <section class="max-w-6xl mx-auto px-4 py-6">
-        <h3 class="text-xl font-semibold mb-4" id="resultsTitle">🔥 Топ оферти</h3>
-        <div id="results" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <section class="max-w-6xl mx-auto px-4 pb-12">
+        <h3 class="text-xl font-semibold mb-4 text-gray-800" id="resultsTitle">🔥 Топ оферти</h3>
+        <div id="results" class="results-grid">
             <div class="text-center py-12 text-gray-400 col-span-full">Зареждане...</div>
         </div>
     </section>
 
     <!-- Comparison Modal -->
     <div id="comparisonModal" class="modal" onclick="closeModal(event)">
-        <div class="bg-white rounded-xl shadow-xl max-w-lg w-full mx-4 max-h-[80vh] overflow-auto" onclick="event.stopPropagation()">
-            <div class="p-4 border-b flex justify-between items-center">
-                <h3 class="font-bold text-lg" id="modalTitle">Сравнение на цени</h3>
-                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full mx-4 max-h-[85vh] overflow-auto" onclick="event.stopPropagation()">
+            <div class="p-4 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
+                <div>
+                    <h3 class="font-bold text-lg text-gray-800" id="modalTitle">Сравнение на цени</h3>
+                    <p class="text-sm text-green-600 font-medium" id="matchType">💰 Price Match</p>
+                </div>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition">&times;</button>
             </div>
             <div id="modalContent" class="p-4"></div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
+    <footer class="bg-gray-800 text-white py-8 mt-auto">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <p class="text-gray-400">PromoBG © 2026 • Данните се обновяват ежедневно</p>
-            <p class="text-sm text-gray-500 mt-2">Kaufland • Lidl • Billa</p>
+            <p class="text-gray-300">PromoBG © 2026 • Данните се обновяват ежедневно</p>
+            <p class="text-sm text-gray-500 mt-2">🟡 Kaufland • 🔵 Lidl • 🟢 Billa</p>
         </div>
     </footer>
 
     <script>
         let data = { products: [], off: {}, groups: {}, meta: {} };
-        let searchIndex = []; // For typeahead
+        let searchIndex = [];
+        let currentStoreFilter = '';
+        
+        // Store counts
+        const storeCounts = { all: 0, Kaufland: 0, Lidl: 0, Billa: 0 };
         
         // Load products
         async function loadProducts() {
@@ -137,7 +255,9 @@
                 const response = await fetch('data/products.json');
                 data = await response.json();
                 buildSearchIndex();
+                calculateStoreCounts();
                 updateStats();
+                updateStoreButtons();
                 showTopDeals();
             } catch (err) {
                 console.error('Error loading products:', err);
@@ -146,11 +266,39 @@
             }
         }
         
+        function calculateStoreCounts() {
+            // Count products per store from current data
+            storeCounts.all = data.products.length;
+            storeCounts.Kaufland = data.products.filter(p => p.store === 'Kaufland').length;
+            storeCounts.Lidl = data.products.filter(p => p.store === 'Lidl').length;
+            storeCounts.Billa = data.products.filter(p => p.store === 'Billa').length;
+        }
+        
+        function updateStoreButtons() {
+            document.getElementById('storeCountAll').textContent = `(${storeCounts.all})`;
+            document.getElementById('storeCountKaufland').textContent = `(${storeCounts.Kaufland})`;
+            document.getElementById('storeCountLidl').textContent = `(${storeCounts.Lidl})`;
+            document.getElementById('storeCountBilla').textContent = `(${storeCounts.Billa})`;
+        }
+        
+        function setStoreFilter(store) {
+            currentStoreFilter = store;
+            
+            // Update button states
+            document.querySelectorAll('.store-btn').forEach(btn => btn.classList.remove('active'));
+            if (store === '') {
+                document.getElementById('storeBtnAll').classList.add('active');
+            } else {
+                const btn = document.getElementById('storeBtn' + store);
+                if (btn) btn.classList.add('active');
+            }
+            
+            filterProducts();
+        }
+        
         function buildSearchIndex() {
-            // Build unique product names for typeahead
             const names = new Set();
             data.products.forEach(p => {
-                // Extract first 2-3 words for suggestions
                 const words = p.name.split(/\s+/).slice(0, 3).join(' ');
                 if (words.length > 2) names.add(words);
             });
@@ -185,11 +333,9 @@
         }
         
         function showTopDeals() {
-            // Show cross-store matches first (products with group_id), sorted by savings
             const matchedProducts = data.products.filter(p => p.group_id);
             
             if (matchedProducts.length > 0) {
-                // Sort by savings (get from group)
                 matchedProducts.sort((a, b) => {
                     const groupA = data.groups[a.group_id];
                     const groupB = data.groups[b.group_id];
@@ -197,9 +343,8 @@
                 });
                 renderProducts(matchedProducts.slice(0, 40));
                 document.getElementById('resultsTitle').textContent = 
-                    `🔥 Сравни цените (${Object.keys(data.groups).length} съвпадения)`;
+                    `💰 Сравни цените (${Object.keys(data.groups).length} съвпадения)`;
             } else {
-                // Fallback: show all products
                 renderProducts(data.products.slice(0, 20));
                 document.getElementById('resultsTitle').textContent = '🛒 Всички продукти';
             }
@@ -213,10 +358,7 @@
                 return;
             }
             
-            let results = data.products.filter(p => 
-                p.name.toLowerCase().includes(query)
-            );
-            
+            let results = data.products.filter(p => p.name.toLowerCase().includes(query));
             results = applyFilters(results);
             renderProducts(results.slice(0, 100));
             document.getElementById('resultsTitle').textContent = 
@@ -230,12 +372,50 @@
             } else {
                 let results = applyFilters(data.products);
                 renderProducts(results.slice(0, 40));
-                document.getElementById('resultsTitle').textContent = '🔥 Топ оферти';
+                
+                // Update title based on filter
+                if (currentStoreFilter) {
+                    document.getElementById('resultsTitle').textContent = `🛒 ${currentStoreFilter} (${results.length})`;
+                } else if (document.getElementById('crossStoreFilter').checked) {
+                    document.getElementById('resultsTitle').textContent = `🔗 За сравнение (${results.length})`;
+                } else {
+                    document.getElementById('resultsTitle').textContent = '🔥 Топ оферти';
+                }
             }
+            
+            // Update store counts based on filtered results
+            updateFilteredStoreCounts();
+        }
+        
+        function updateFilteredStoreCounts() {
+            const minDiscount = parseInt(document.getElementById('discountFilter').value) || 0;
+            const crossStoreOnly = document.getElementById('crossStoreFilter').checked;
+            
+            const filtered = data.products.filter(p => {
+                if (currentStoreFilter && p.store !== currentStoreFilter) return false;
+                if (minDiscount && (p.discount_pct || 0) < minDiscount) return false;
+                if (crossStoreOnly) {
+                    const group = data.groups[p.group_id];
+                    if (!group || group.stores.length < 2) return false;
+                }
+                return true;
+            });
+            
+            document.getElementById('storeCountAll').textContent = `(${filtered.length})`;
+            
+            const filteredByStore = {
+                'Kaufland': filtered.filter(p => p.store === 'Kaufland').length,
+                'Lidl': filtered.filter(p => p.store === 'Lidl').length,
+                'Billa': filtered.filter(p => p.store === 'Billa').length
+            };
+            
+            document.getElementById('storeCountKaufland').textContent = `(${filteredByStore.Kaufland})`;
+            document.getElementById('storeCountLidl').textContent = `(${filteredByStore.Lidl})`;
+            document.getElementById('storeCountBilla').textContent = `(${filteredByStore.Billa})`;
         }
         
         function applyFilters(products) {
-            const store = document.getElementById('storeFilter').value;
+            const store = currentStoreFilter;
             const minDiscount = parseInt(document.getElementById('discountFilter').value) || 0;
             const crossStoreOnly = document.getElementById('crossStoreFilter').checked;
             
@@ -264,10 +444,10 @@
                 const hasComparison = group && group.stores.length >= 2;
                 
                 return `
-                <div class="product-card bg-white rounded-xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md">
+                <div class="product-card bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-lg cursor-pointer" onclick="${hasComparison ? `showComparison('${p.group_id}')` : ''}">
                     <div class="relative">
                         ${p.discount_pct ? `
-                            <div class="discount-badge absolute top-2 right-2 text-white text-sm font-bold px-2 py-1 rounded-lg">
+                            <div class="discount-badge absolute top-2 right-2 text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg">
                                 -${p.discount_pct}%
                             </div>
                         ` : ''}
@@ -276,17 +456,22 @@
                                 ${nutriscore}
                             </div>
                         ` : ''}
-                        <div class="h-32 bg-gray-100 flex items-center justify-center text-4xl">
+                        ${hasComparison ? `
+                            <div class="absolute bottom-2 left-2 match-badge text-white text-xs font-bold px-2 py-1 rounded-full">
+                                🔗 Сравни
+                            </div>
+                        ` : ''}
+                        <div class="h-28 sm:h-32 bg-gray-50 flex items-center justify-center text-4xl">
                             ${getStoreEmoji(p.store)}
                         </div>
                     </div>
-                    <div class="p-3">
+                    <div class="p-3 sm:p-4">
                         <div class="text-xs text-gray-400 mb-1">${p.store}</div>
-                        <h4 class="font-medium text-sm leading-tight mb-2 line-clamp-2" title="${p.name}">
-                            ${p.name.slice(0, 50)}${p.name.length > 50 ? '...' : ''}
+                        <h4 class="font-semibold text-sm leading-tight mb-2 line-clamp-2" title="${p.name}">
+                            ${p.name.slice(0, 45)}${p.name.length > 45 ? '...' : ''}
                         </h4>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-lg font-bold text-green-600">${p.price?.toFixed(2) || '-'}€</span>
+                            <span class="text-xl font-bold text-green-600">${p.price?.toFixed(2) || '-'}€</span>
                             ${p.old_price ? `
                                 <span class="text-sm text-gray-400 line-through">${p.old_price.toFixed(2)}€</span>
                             ` : ''}
@@ -298,21 +483,19 @@
                             </div>
                         ` : ''}
                         ${hasComparison ? `
-                            <button onclick="showComparison('${p.group_id}')" 
-                                class="mt-2 w-full text-xs bg-blue-50 text-blue-600 py-1 rounded hover:bg-blue-100 transition">
-                                📊 Сравни ${group.stores.length} магазина
-                            </button>
+                            <div class="mt-3 w-full text-center text-xs bg-green-50 text-green-600 py-2 rounded-lg font-medium">
+                                📊 Виж сравнението
+                            </div>
                         ` : ''}
                     </div>
                 </div>
-            `}).join('');
+                `}).join('');
         }
         
         function showComparison(groupId) {
             const group = data.groups[groupId];
             if (!group) return;
             
-            // Get products and dedupe by store (keep cheapest per store)
             const allProducts = getGroupProducts(groupId);
             const byStore = {};
             allProducts.forEach(p => {
@@ -326,12 +509,20 @@
             const minPrice = Math.min(...products.map(p => p.price || 999));
             const maxPrice = Math.max(...products.map(p => p.price || 0));
             const savings = maxPrice - minPrice;
+            const savingsPct = Math.round(savings / maxPrice * 100);
             
             document.getElementById('modalTitle').textContent = offData?.name || products[0]?.name || 'Сравнение';
+            
+            // Check if this is a cross-store match (more than one store)
+            const isCrossStore = products.length >= 2;
+            document.getElementById('matchType').innerHTML = isCrossStore 
+                ? '💰 <strong>Цената съвпада</strong> - Намери най-добрата оферта!'
+                : '📊 Сравнение на цени';
+            
             document.getElementById('modalContent').innerHTML = `
                 ${offData?.nutriscore ? `
                     <div class="mb-4 flex items-center gap-2">
-                        <span class="nutriscore-${offData.nutriscore.toLowerCase()} text-white px-2 py-1 rounded font-bold uppercase">
+                        <span class="nutriscore-${offData.nutriscore.toLowerCase()} text-white px-3 py-1 rounded-lg font-bold uppercase">
                             Nutriscore ${offData.nutriscore}
                         </span>
                         <span class="text-sm text-gray-500">${offData.brand || ''}</span>
@@ -339,27 +530,32 @@
                 ` : ''}
                 <div class="space-y-3">
                     ${products.map((p, i) => `
-                        <div class="flex items-center gap-3 p-3 rounded-lg ${i === 0 ? 'bg-green-50 border border-green-200' : 'bg-gray-50'}">
-                            <span class="text-2xl">${getStoreEmoji(p.store)}</span>
+                        <div class="price-compare-card flex items-center gap-3 p-4 rounded-xl ${i === 0 ? 'best-price' : 'bg-gray-50 border border-gray-100'}">
+                            <span class="text-3xl">${getStoreEmoji(p.store)}</span>
                             <div class="flex-1">
-                                <div class="font-medium">${p.store}</div>
+                                <div class="font-semibold text-gray-800">${p.store}</div>
                                 <div class="text-xs text-gray-500">
-                                    ${p.price_per_kg ? `${p.price_per_kg.toFixed(2)}€/кг` : ''}
-                                    ${p.price_per_l ? `${p.price_per_l.toFixed(2)}€/л` : ''}
+                                    ${p.price_per_kg ? `📦 ${p.price_per_kg.toFixed(2)}€/кг` : ''}
+                                    ${p.price_per_l ? `📦 ${p.price_per_l.toFixed(2)}€/л` : ''}
                                 </div>
                             </div>
                             <div class="text-right">
-                                <div class="font-bold text-lg ${i === 0 ? 'text-green-600' : ''}">${p.price?.toFixed(2) || '-'}€</div>
-                                ${i === 0 ? '<div class="text-xs text-green-600 font-medium">⭐ НАЙ-ДОБРА</div>' : ''}
+                                <div class="text-xl font-bold ${i === 0 ? 'text-green-600' : 'text-gray-700'}">${p.price?.toFixed(2) || '-'}€</div>
+                                ${i === 0 ? '<div class="text-xs text-green-600 font-bold">✅ НАЙ-ДОБРА ЦЕНА</div>' : ''}
                             </div>
                         </div>
                     `).join('')}
                 </div>
                 ${savings > 0.01 ? `
-                    <div class="mt-4 p-3 bg-yellow-50 rounded-lg text-center">
-                        <span class="text-yellow-800 font-medium">💰 Спестяваш до ${savings.toFixed(2)}€ (${Math.round(savings/maxPrice*100)}%)</span>
+                    <div class="mt-4 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl text-center border border-green-100">
+                        <span class="text-green-800 font-bold text-lg">💰 Спестяваш ${savings.toFixed(2)}€ (${savingsPct}%)</span>
+                        <p class="text-sm text-green-600 mt-1">при покупка от най-евтиния магазин</p>
                     </div>
                 ` : ''}
+                
+                <button onclick="closeModal()" class="mt-4 w-full py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition">
+                    Затвори
+                </button>
             `;
             document.getElementById('comparisonModal').classList.add('active');
         }
@@ -379,7 +575,7 @@
             return emojis[store] || '🛒';
         }
         
-        // Typeahead functionality
+        // Typeahead
         function showTypeahead(query) {
             if (!query || query.length < 2) {
                 hideTypeahead();
@@ -398,7 +594,7 @@
             const container = document.getElementById('typeahead');
             container.innerHTML = matches.map(m => `
                 <div class="typeahead-item" onclick="selectTypeahead('${m.replace(/'/g, "\\'")}')">
-                    ${m}
+                    🔍 ${m}
                 </div>
             `).join('');
             container.classList.remove('hidden');
@@ -427,14 +623,14 @@
         });
         
         document.getElementById('searchInput').addEventListener('blur', () => {
-            setTimeout(hideTypeahead, 200); // Delay to allow click
+            setTimeout(hideTypeahead, 200);
         });
         
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
         });
         
-        // Load on page load
+        // Load
         loadProducts();
     </script>
 </body>
