@@ -1,5 +1,5 @@
 {
-  "description": "Pack size patterns",
+  "description": "Pack size patterns to extract and move to pack_size field",
   "patterns": [
     "\"Стара планина\"",
     "0,65 - 1,35",

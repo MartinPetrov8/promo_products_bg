@@ -42,7 +42,7 @@ def main():
             brand = p['brand'].strip()
             brands.add(brand)
             if len(brand_examples[brand]) < 3:
-                brand_examples[brand].append(p.get('name', '')[:50])
+                brand_examples[brand].append((p.get('name') or '')[:50])
     
     brands_config = {
         "description": "Master brand list - add new brands here",
@@ -58,7 +58,7 @@ def main():
     category_keywords = defaultdict(lambda: defaultdict(int))
     for p in products:
         cat = p.get('category', 'Други')
-        name = p.get('name', '').lower()
+        name = (p.get('name') or '').lower()
         # Extract meaningful words (3+ chars)
         words = re.findall(r'[а-яa-z]{3,}', name)
         for word in words:
