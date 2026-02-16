@@ -21,7 +21,7 @@ INPUT_FILE = REPO / "docs" / "data" / "products.json"
 OUTPUT_FILE = REPO / "docs" / "data" / "products_matched.json"
 
 # Thresholds
-MIN_SIMILARITY = 0.75
+MIN_SIMILARITY = 0.55
 MIN_PRICE = 0.05
 MAX_PRICE_RATIO = 2.5  # Only used when quantities match
 MAX_PRICE_RATIO_NO_QTY = 3.0  # Stricter when no quantity info
