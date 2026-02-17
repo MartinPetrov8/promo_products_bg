@@ -399,16 +399,38 @@ def check_quantity_compatibility(p1, p2):
 
 
 def tokenize(name, config):
-    """Tokenize product name for matching"""
+    """Tokenize product name for matching — strips store-specific noise"""
     name = name.lower()
     
+    # Config-driven ignore patterns
     for pattern in config.get('ignore_patterns', []):
         name = name.replace(pattern.lower(), '')
     
+    # Store-specific noise removal (Billa's "blue star" labels, etc.)
+    billa_noise = [
+        r'продукт,?\s*маркиран\s*със\s*синя\s*звезда',
+        r'произход\s*[-–]\s*българия',
+        r'само\s*с\s*billa\s*app\s*[-–]?\s*',
+        r'супер\s*цена\s*[-–]?\s*',
+        r'\d+[.,]?\d*\s*(?:€|лв\.?)/\s*\d+[.,]?\d*\s*(?:€|лв\.?)?\s*(?:изпиране)?',
+    ]
+    for pattern in billa_noise:
+        name = re.sub(pattern, ' ', name, flags=re.IGNORECASE)
+    
     # Strip quantities (they're handled separately now)
     name = re.sub(r'\d+(?:[.,]\d+)?\s*[xх×]\s*\d+(?:[.,]\d+)?\s*(?:г|гр|мл|л|кг|kg|g|ml|l)\b', '', name)
-    name = re.sub(r'\d+(?:[.,]\d+)?\s*(?:г|гр|мл|л|кг|бр|kg|g|ml|l|cl)\b', '', name)
+    name = re.sub(r'\d+(?:[.,]\d+)?\s*(?:г|гр|мл|л|кг|бр|kg|g|ml|l|cl|см)\b', '', name)
     name = re.sub(r'[®™©\n]', ' ', name)
+    
+    # Strip percentage patterns (alcohol %, discount %)
+    name = re.sub(r'\d+[.,]?\d*\s*%\s*(?:vol)?', '', name)
+    
+    # Strip size ranges (S - XXL, M-XL)
+    name = re.sub(r'\b[SMLX]{1,3}\s*[-–]\s*[SMLX]{1,4}\b', '', name)
+    
+    # Strip model numbers that are just letters+digits (BCH400, PSG85)
+    name = re.sub(r'\b[a-z]{1,4}\d{2,}[a-z]?\d*\b', '', name)
+    
     name = re.sub(r'\s+', ' ', name).strip()
     
     tokens = set(name.split())
