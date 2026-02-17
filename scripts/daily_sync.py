@@ -14,6 +14,10 @@ import sqlite3
 from datetime import datetime, timedelta
 from pathlib import Path
 
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+from quantity_extractor import extract_quantity_from_name
+
 REPO_ROOT = Path(__file__).parent.parent
 DB_PATH = REPO_ROOT / "data" / "promobg.db"
 CONFIG_PATH = REPO_ROOT / "config" / "cleaning.json"
@@ -147,6 +151,20 @@ class DailySync:
             if cached.get('brand'):
                 brand = cached['brand']
                 log.debug(f"Brand from OCR cache: {brand}")
+        
+        # Extract quantity from cache or product name
+        quantity = None
+        quantity_unit = None
+        if external_id and external_id in self.brand_cache:
+            cached = self.brand_cache[external_id]
+            quantity = cached.get('quantity')
+            quantity_unit = cached.get('quantity_unit')
+        if not quantity:
+            qty_info = extract_quantity_from_name(name)
+            if qty_info:
+                quantity = qty_info['value']
+                quantity_unit = qty_info['unit']
+        
         price = prod.get('price')
         currency = prod.get('currency', 'EUR')
         product_url = prod.get('product_url')
@@ -217,7 +235,7 @@ class DailySync:
                 self.stats['unchanged'] += 1
         else:
             # NEW PRODUCT
-            self._insert_new_product(name, brand, price, external_id, product_url, image_url)
+            self._insert_new_product(name, brand, price, external_id, product_url, image_url, quantity, quantity_unit)
             self.stats['new_products'] += 1
             log.debug(f"🆕 New: {name} @ €{price}")
     

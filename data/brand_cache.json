@@ -2,2631 +2,3683 @@
   "151762": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051128": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051120": {
     "brand": "Alesto",
     "ocr_text": "NUTRI-SCORE\nAlesto\nФъстъци\nпечени, солени\nACE\n100 g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 100.0,
+    "quantity_unit": "g"
   },
   "7206198": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "164044": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051539": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051018": {
     "brand": "ORLANDO",
     "ocr_text": "ORLANDO\nFLEISCHSTREIFEN\nMIT GEFLÜGEL\nDIE TÄGLICHE BELOHNUNG\nENTHÄLT ALLE\nWICHTIGEN VITAMINE\nNEUES\nDESIGN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009267": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051288": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022012": {
     "brand": "Pur",
     "ocr_text": "ORLANDO\nPURETASTE\nPREMIUM DOG FOOD\nPATÉ\nRICH IN\nTURKEY\n70%\nMEAT & ANIMAL\nPRODUCTS\nGRAIN FREE\nRECIPE\nNO ADDED\nSUGAR\nWITH INULIN\n400g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 400.0,
+    "quantity_unit": "g"
   },
   "10051945": {
     "brand": "FRUIT",
     "ocr_text": "50%\nFRUIT\nCONTENT\nMaribel\nStrawberry",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013733": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051951": {
     "brand": "TED",
     "ocr_text": "Serving suggestion\nMilbona\nSELECTION\nBritish\nCHEDDAR\nORIGIN\nUNITED KINGDOM\n200 ge\nFOR\n15\nMONTHS\nvintage\nNUTRI-SCORE\nABCD",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051886": {
     "brand": "Natura",
     "ocr_text": "& PACK\nTuna Solid\nfrom metalock tuna\nMSC\n4 PACK\nNIXE\nTuna Solid\nnatural\nfrom real\nSkipjack tuna\nMSC\nwww.msc.org\nSAFE\nNATURALLY\nHIGH\nPROTEIN\n4x195ge\n(4x150 g drained)",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 780.0,
+    "quantity_unit": "g"
   },
   "10051509": {
     "brand": "ION",
     "ocr_text": "Quality\nPRODUCT\nCombinations\n30x\n10x Ranunculus 'Red'\n10x Ranunculus \"White\"\n10x Ranunculus 'Orange'",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 30.0,
+    "quantity_unit": "pcs"
   },
   "10051692": {
     "brand": "EM",
     "ocr_text": "Duc De Coeur\nDuc De Coeur\nFRENCH STYLE\nCheese Snack Box\nBrie Nuggets, Camembert Bites & Mozzarella Sticks\nwith a\nLingonberry Dip\nCheese Snack Box\nFROZEN\n425 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022019": {
     "brand": "TED",
     "ocr_text": "COMPLETE PET\nFOOD\nFOR ADULT\nCATS\nMSC\nCoshida\nPURETASTE\nPREMIUM CAT FOOD\nMSC-C-52533\nCOMPLETE\nCAT FOOD 60%\nMEAT & FISH SELECTION\nMEAT, FISH & GIBLETS\n•GRAIN FREE\nRECIPE⭑\n•WITH TAURINE TO SUPPORT YOUR C",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009268": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051585": {
     "brand": "BIS",
     "ocr_text": "120g (2x60g e)\nBELGIAN STYLE\nSPECIALITIES\nBEL\nDessert\nwith Cocoa Biscuit Crumble\nDark Chocolate\n&\nBELGIAN STYLE.\nSPECIALITIES\nDessert\nwith Cocoa Biscuit Crumble\n& Dark Chocolate\nINFOREST\nCocoa\nALLIAN\n",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 120.0,
+    "quantity_unit": "g"
   },
   "10051944": {
     "brand": "FRUIT",
     "ocr_text": "50%\nFRUIT\nCONTENT\nMaribel\nBlueberry",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051834": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009256": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050638": {
     "brand": "Freshona",
     "ocr_text": "Freshona\nPear\nHalves\nin grape juice\nP",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051588": {
     "brand": "BEL",
     "ocr_text": "BEL\nSPECIALITIES\nBELGIAN STYLE\nSPECIALITIES\nWaffle\nMix\n222 ge\nFor 5-6\nwaffles",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022299": {
     "brand": "EM",
     "ocr_text": "Coshida\nNIBBLE FEAST\nWITH MEAT &\nVEGETABLES\nA\nCOMPLETE\nCAT\nFOOD\nMineral supplement for\na balanced diet\nTaurine can support\nthe heart and vision\nwith vitamin D3\nVitamin A can\nsupport a shiny coat\n2K9\nr",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022009": {
     "brand": "ION",
     "ocr_text": "ORLANDO\n⚫COMPLETE FOOD FOR DOGS.\nFINE TERRINE\nWITH BEEF\n.FOR ADULT DOGS.\nWITH VITAMIN\n.D3.\nCAN SUPPORT\nCELL PROTECTION\n-DEVELOPED WITH VETERINARIAN\n300g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 300.0,
+    "quantity_unit": "g"
   },
   "10051294": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051830": {
     "brand": null,
     "ocr_text": "chef\nselect\nСАЛАТА\nМИКС ИТАЛИАНА\n| къдрава маруля, къдрава червена\nмаруля, рукола\nнарязана, измита\n160g е\nPEKTHA\nHOHCYMA\n* ИЗМИТА",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 160.0,
+    "quantity_unit": "g"
   },
   "7206197": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051973": {
     "brand": "EM",
     "ocr_text": "W5\nRINSE AID\nmicroplastics\n5x\nPOWER\nPrevents limescale buildep\nBrilliant shine\nQuick drying\nPrevents water marks\nFor a sparkling clean\nmachine\nBodemade\n100%\nrecycled plasti\n1 L",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 1000.0,
+    "quantity_unit": "ml"
   },
   "10009259": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013717": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "27985": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "5000270": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013747": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051126": {
     "brand": "Sondey",
     "ocr_text": "high libre\nservatives\nSondey\nBrown Rice\nCakes\nWith sunflower seeds\n120ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051027": {
     "brand": "Contrat",
     "ocr_text": "R\nde at one tab, et\nContrat de hue k\nm\nna ko\nSIG\nContinul de Fute Hot\nmet e dite\nume made\nmch\n199\nLive\nie\nolevita\nRANGE\n3100\n0,2L\nSugestie de prezentare\nСимволично изображение",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 200.0,
+    "quantity_unit": "ml"
   },
   "78246": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051123": {
     "brand": "Crown",
     "ocr_text": "500 ge\nCROWNFIELD\nCHOCO\nBALLS\nFOREST\nALLIANC\nPEOPLE\n&NATURE\nCocoa",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051950": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022181": {
     "brand": "CLASSIC",
     "ocr_text": "CLASSIC MIX\nMEGA PACK\nIN SAUCE\n12x\n100g\nCos\nCo\nCoshida\nJUICY\nDELIGHTS\nVEAL AND TURKEY\nSALMON AND TROUT\nTURKEY AND LAMB\nBEEF\nCoshida",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 1200.0,
+    "quantity_unit": "g"
   },
   "152811": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "57733": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051038": {
     "brand": "BIS",
     "ocr_text": "Bisexis Caramel\nSondey\nWaffe Biscuits\nCaramel",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051581": {
     "brand": "BELGIAN",
     "ocr_text": "BELGIAN STYLE\nSPECIALITIES\nSPECIALITIES.\nSmooth Pork\nLiver Pâté\n170g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 170.0,
+    "quantity_unit": "g"
   },
   "10051063": {
     "brand": "Ида",
     "ocr_text": "PIKOK\nLIDL\n6 Шунка от свинско месо, варено-пушена. Опакована във вакуум. Без глутен\nи лактоза. Съставки: 96% свинско месо, нитритна сол (трапезна сол, консервант:\nнатриев нитрит), екстракти от подправ",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051535": {
     "brand": null,
     "ocr_text": "every day is an adventure",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051811": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013755": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051119": {
     "brand": "РОДНА",
     "ocr_text": "РОДНА СТРЯХА\nГРОЗДОВА\nРАКИЯ\nОТЛЕЖАЛА\nВ ДЪБОВИ БЪЧВИ\n0.7Le\n40% vol\nс. Славянци",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051108": {
     "brand": "Ведраре",
     "ocr_text": "60\nДни\n張敬\nРОДНА СТРЯХА\nРОДНА\nКАШКАВАЛ\nОТ КРАВЕ\nМЛЯКО\nОТ СОБСТВЕНАТА\nФЕРМА\nс. Ведраре\nИ",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051285": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051194": {
     "brand": "Ида",
     "ocr_text": "POZHzOTESKA\n19 XXXL, 500 g XXXL, 500%\ntebruecki subsp.\n4. Неотворен, при\nо, до Партида:\nmaine &\nManea,\nАрия, България.\n23912046\nРОДНА СТРЯХА\nКисело\nМЛЯКО\n3,6%\nс. Горна\nМалина\nA\nLIDL\nEveprale\nПроизход ",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 500.0,
+    "quantity_unit": "g"
   },
   "10022011": {
     "brand": "ORLANDO",
     "ocr_text": "ORLANDO\nTWISTER STICKS\nMIT WILD UND GEFLÜGEL\nDIE TÄGLICHE BELOHNUNG\nENTHÄLT ALLE WICHTIGEN\nVITAMINE +BIOTIN\nNEUES\nDESIGN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009260": {
     "brand": "Crumble",
     "ocr_text": "2x Red Currant\nCrumble\nCookies\nwith fruity\nred currants\nIdeal for treat",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 2.0,
+    "quantity_unit": "pcs"
   },
   "10051570": {
     "brand": "French",
     "ocr_text": "French Style\nAir-Dried Salami\nwith Hazelnuts\n120 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 120.0,
+    "quantity_unit": "g"
   },
   "10013721": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051513": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "178638": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "178633": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009246": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "180882": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013727": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "119627": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051088": {
     "brand": "ION",
     "ocr_text": "PRIVAT CHOCOLATIERS\nJ. D. GROSS\nPeanut\nButter\nCACAO\nFAIRTRADE\nINTERNATIONAL\nV-LABEL\nCups\nV-LABEL.COM\nСимволично изображение\nVEGAN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009253": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051704": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\nMousse\nau Caramel\nCaramel Mousse\n4 x 60 g = 240 g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 240.0,
+    "quantity_unit": "g"
   },
   "10051527": {
     "brand": "MINNI",
     "ocr_text": "MINNI\nMOUSE",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022187": {
     "brand": "ION",
     "ocr_text": "Bellesan\nPOULTRY\nSTEAM\nCOOKED\nBellesan\nWITH BEEF\nVITAMIN\nO\nof vitali\nvitality\nthe keeping\nPORTION\nSTEAM\nCOOKED\nfull of\nflavour\n415 ge\nOur\nvitali",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051306": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051694": {
     "brand": "ION",
     "ocr_text": "-\nSSS\n10-12 min\nFROZEN\n260 g e\nDuc De Coeur\nFRENCH STYLE\nFlammekueche\nà l'Alsacienne\nBacon & Onion Tart",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 260.0,
+    "quantity_unit": "g"
   },
   "10013758": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009254": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022182": {
     "brand": "EM",
     "ocr_text": "Coshida\nNIBBLE FEAST\nWITH MEAT &\nVEGETABLES\nAA\nCOMPLETE\nCAT\nFOOD\nMineral supplement for\na balanced diet\nTaurin can support\nthe heart and vision\nwithout added sugar\nVitamin A can\nsupport a shiny coat.\n",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013736": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051569": {
     "brand": null,
     "ocr_text": "280 g\nSPÉCIALITÉS\nFRANÇAISES\nMeatballs\nFilled with Cheese & Garlic\n1",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 280.0,
+    "quantity_unit": "g"
   },
   "10022185": {
     "brand": "Natura",
     "ocr_text": "Coshida\nCAT LITTER\nCLUMPING\nFROM\nNATURAL CLAY\nMINERALS\nFree from harmful\nsubstances and fibers\nBest\nsuction power\n99%\nodor retention\n10K9",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10018735": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009247": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "99773": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051515": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051125": {
     "brand": "EM",
     "ocr_text": "Sondey\nMaria\nEASY\nOPEN\nT\nMARIA\n4x 200g e\nspaxenne/Πρόταση σερβιρίσματος\nEE\nSo\nolelini kips\nlergitusain\nemulgaator\nbhna- ja maitseaine\n1. Hoida kas ja jah\nmist säilitada samades\nenne loppu Parti\nLV Cep",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 800.0,
+    "quantity_unit": "g"
   },
   "10013735": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10031245": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013741": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051938": {
     "brand": "Snack",
     "ocr_text": "125 ge\nSnack\nDay\nSNACKS\nSalt",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051066": {
     "brand": "CERTIFIED",
     "ocr_text": "CERTIFIED\nSUSTAINABLE\nSEAFOOD\nMSC\nwww.msc.org\nФИЛЕ ОТ\nМИНТАЙ\nв панировка\nбез кожа, без кости*\nНетно\nколичество:\n280g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 280.0,
+    "quantity_unit": "g"
   },
   "7202027": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051190": {
     "brand": "Ида",
     "ocr_text": "ПОРЦИЯ\nEXKECT\nAPANTHPANA\nNA BEPHTA\nПРЯСНО\nПИЛЕШКО МЕСО\nОТ ГЪРДИТЕ\nБЕЗ КОЖА И КОСТ\nНетно количество:\nНАРЯЗАНО\n500 ge\nНеотворен, при съхранение от 0°С\nдо +4°С, използвай преди: / Партида:\nа за придор\nСп",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051297": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051022": {
     "brand": "ION",
     "ocr_text": "Serving suggestion***\nMilbona\nCheese spread\nLight*\n80% less fat*\n200 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050619": {
     "brand": "TED",
     "ocr_text": "TXX TXX TXX TXX\nIDEAL FOR\nOVEN-\nBAKING\nMilbona\nMozzarella\ngrated\ndelicately melting\npleasure\nNUTRI-SCORE\nABCDE\n500 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051577": {
     "brand": "BELGIAN",
     "ocr_text": "BELGIAN STYLE\nSPECIALITIES\nBELGIAN\nSTYLE ->>>>>.\nB\nSPECIALITIES.\nSmoked Cobourg\n150 ge\nStyle Ham",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051340": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050624": {
     "brand": "Snack",
     "ocr_text": "火\nSnack\nDay\nי\nClassic\n8x\nWRAP\nTortilla Wraps\n20 CM\n→\nNUTRI-SCORE\nABCDE\n320 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 8.0,
+    "quantity_unit": "pcs"
   },
   "10009261": {
     "brand": null,
     "ocr_text": "2x Hazelnut\nrolls\nwith a fine\nhazelnut filling\nIdeal for sharing",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 2.0,
+    "quantity_unit": "pcs"
   },
   "10051505": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10031661": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051096": {
     "brand": "EM",
     "ocr_text": "Floralys\nPremium\nPocket tissues\nSOFT AND EXTRA TEARPROOF\n10x10\nPLY\nproving&\nPackaging\n&reduci\nresponsib",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051961": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051104": {
     "brand": "Ида",
     "ocr_text": "170818725~\nNUTRI-SCORE\nPilos\nQuark\nVýživové údaje/\nХранителни стойности 0/100g\nEnergia/\n281 kJ/\nЕнергийна стойност\nTuky/Мазнини\nz toho nasýtené mastné\nkyseliny/от които\nнаситени мастни\nкиселини\nSachar",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051595": {
     "brand": "Dutch",
     "ocr_text": "Dutch\nStyle 12\nSPECIALITIES\nMidi\nCake\nwith Apple\nBIECES\n360 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051935": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "2004": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022672": {
     "brand": "Ида",
     "ocr_text": "ПРОВЕРЕНО\nКАЧЕСТВО\n• ОТ ПРОИЗВОДСТВО ДО ПРОДАЖБА ОВ\n• ПОРЦИЯ\nГАРАНТИРАНА\nBERKECT\nДИЛНА ВЕРИГА\nФИЛЕ ОТ\nАРЖЕНТИНСКИ\nXEK\nНеотворен, при съхранение от 0°С до +2°С,\nизползвай до:/ Партида:\nОпаковано на:",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013715": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051506": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7203989": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051197": {
     "brand": null,
     "ocr_text": "chef\nselect\nТОЧЕНИ\nКОРИ\nза сладки и солени печива\nNUTRI-SCORE\nSSS]\n500 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "27986": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "9000454": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051708": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\nà la Crème Brûlée\nCrème Brûlée Flavour Ice Cream\n850 ml e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 850.0,
+    "quantity_unit": "ml"
   },
   "10009258": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "67886": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050626": {
     "brand": "Aroma",
     "ocr_text": "Low fat\nNo added\nSugar\nPilos\nHIGH\nPROTEIN\nCHOCOLATE FLAVOUR & Pudding\nVANILLA\n[15\nPROTEIN\npor pot\nHigh in fotom\nSide by Side\nko smetana ke šlehání, modifikovaný škrob. 0.9 % kakao zahustovadia lap\noss",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022237": {
     "brand": "TED",
     "ocr_text": "COMPLETE PET\nFOOD\nFOR ADULT\nCATS\nMSC\nCoshida\nPURETASTE\nPREMIUM CAT FOOD\nMSC-C-52533\nCOMPLETE\nCAT FOOD 60%\nMEAT & FISH SELECTION\nMEAT, FISH & GIBLETS\n•GRAIN FREE\nRECIPE⭑\n•WITH TAURINE TO SUPPORT YOUR C",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051840": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013729": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051092": {
     "brand": "Natura",
     "ocr_text": "Herbs\nwith zinc\nfor teeth, gum and tongue\nwith natural\nherbal extracts\n3-WAY-PROTECTION\ndentaux\nPROTECTION AGAINST TARTAR\nGUM CARE\nTOOTH DECAY PROTECTION",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051130": {
     "brand": "TED",
     "ocr_text": "W5\nFLOOR CARE\nSHINE&\nCARE\nPERMANENT SHINE\nstreak-free shine\nwith joint protection\nquick dry effect\nradiant cleanliness\nhighly concentrated\n1 Liter",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051957": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051576": {
     "brand": "ETI",
     "ocr_text": "Duc De Coeur\nSPECIALITES FRANÇAISES\nPetit Brie\nsmooth & creamy\n500 g\nFRA\nORIGINE FRANCE\nPRODUITO\nORIGINAL\nFRA.\nCH PRODUCT",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 500.0,
+    "quantity_unit": "g"
   },
   "10013740": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7206791": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051037": {
     "brand": "Mister",
     "ocr_text": "Mister\nCHOC\nCOCOS\nChoco\nCOCOS&\nChoco\nCOCOS\nChoco\nminis\nNFOREST\nALLIANC\nCocoa\n350 g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 350.0,
+    "quantity_unit": "g"
   },
   "10051283": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050642": {
     "brand": "NAN",
     "ocr_text": "W5\nABFLUSSREINIGER-GEL\nROHR\nFREI\nBeugt unangenehmen Gerüchen vor\nWirkt selbstständig in Küche und Bad\nBeseitigt Fett, Haare, Seifenreste und Rehrverstopfungen\n1 Liter",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051565": {
     "brand": "BEL",
     "ocr_text": "BEL\nBELGIAN STYLE\nSPECIALITIES\nLITIES\nSPECIALITI\nPotato\nCroquettes\n18-20 18-20\nMIN MIN MIN\n1kg e\nCrispy &\nFluffy\nwith\nSunflower\nOil",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 1000.0,
+    "quantity_unit": "g"
   },
   "7203991": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051075": {
     "brand": "Дома",
     "ocr_text": "nautica\nФИЛЕ ОТ ХЕРИНГА\nС КОЖА\nВ ДОМАТЕН СОС\nCERTIFIED\nSUSTAINABLE\nSEAFOOD\nMSC\nwww.msc.org\nlliustracine nuotrauka/ Символич\n170g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 170.0,
+    "quantity_unit": "g"
   },
   "10051026": {
     "brand": "Solevita",
     "ocr_text": "Solevita\nVEGAN\nСОК ОТ ПЛОДОВЕ\nЯБЪЛКА, ПОРТОКАЛ, АНАНАС,\nМАНГО И МАРАКУЯ\nNUTRI-SCORE",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013724": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051710": {
     "brand": "Fa",
     "ocr_text": "Duc De Coeur\nDuc De Coeur\nFRENCH STYLE\nParfait Caramel\nCaramel Ice Cream with Hazelnut-Cocoa Sauce,\nCaramel pieces and Caramel Sauce\n240ml e/150ge (2 x 120ml e/75g e)\nAINFOREST\n&\nALLIANC\nANCE\nVATURE\nC",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 240.0,
+    "quantity_unit": "ml"
   },
   "10050612": {
     "brand": "София",
     "ocr_text": "55\nРОДНА СТРЯХА\nГовежди\nКОЛБАС\nПроизход на месото: ЕС\nСофия\n55",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022180": {
     "brand": "CLASSIC",
     "ocr_text": "CLASSIC MIX\nIN SAUCE\nJUICY DELIGHTS\nIN SAUCE\n>2 x\nCHICKEN\nLIVER\nCoshida\nда a\n4 x 100 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 400.0,
+    "quantity_unit": "g"
   },
   "10051016": {
     "brand": "Delicacy",
     "ocr_text": "chef\nselect\nDelicacy\nmeat salad\nWITH MAYONNAISE\n400 ge\nRO/BG\nestie de prezentare\nволично изображение",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "180911": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051943": {
     "brand": "Maribel",
     "ocr_text": "bel\nMaribel\n50% Sour Cherry\nFRUIT\nCONTENT\nNUTRI-SCORE\nEXTRA JAM",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051200": {
     "brand": "EM",
     "ocr_text": "COMBINO\nSNABB MACARONI\nfrom durum wheat semolina\nCOOKING TIME 3-4 MINUTES\n500g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 500.0,
+    "quantity_unit": "g"
   },
   "10050616": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022349": {
     "brand": "Ида",
     "ocr_text": "ПРОВЕРЕНО КАЧЕСТВО\n• ОТ ПРОИЗВОДСТВО ДО ПРОДАЖБА\nமென்\nПОРЦИЯ\n• ГАРАНТИРАНА Х\nBEKECT\nЦИЛНА ВЕРИГА\nХЛАДИЛНА\nЦИПУРА\nИЗЧИСТЕНА\nОХЛАДЕНА\nНеотворен, при съхранение от 0°С до +2°С,\nизползвай до / Партида:\nОп",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013726": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022183": {
     "brand": "ION",
     "ocr_text": "Coshida\nCat\nSTICKS\nLEICHT\n10 Sticks\nMet Geflügel&\nPORTIONIER-\nBAR\nMIT\nVIEL FISCH,\nFLEISCH\nUND\nLECKEREN\nINNEREIEN\nZUBEREITET\nLeber\nCoshida\nCat\nSTICKS\nLEICHT\n10 Sticks\nma Geflügel&\nPORTIONIER-\nBAR\nMIT\nV",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013710": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051286": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051937": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "182155": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051100": {
     "brand": "NUGGETS",
     "ocr_text": "12 CHICKEN\nNUGGETS\nWITH CURRY AND\nSWEET & SOUR DIPS\n300g e\nSWEET\n&SOUR\nDIP\n2590\nCURRY\nDIP",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 300.0,
+    "quantity_unit": "g"
   },
   "10051960": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051069": {
     "brand": "Дома",
     "ocr_text": "marine harvest\nСРЕДНИ ХРАНИТЕЛНИ\nСТОЙНОСТИ НА 100 G:|\n881 kJ/\n212 kcal\nЕнергийна.\nстойност\nМазнини\n16g\nот които наситени\n2,6 g\nВъглехидрати\n09\nот които захари\n09\nБелтъчини\nСол\n17 g\n0,75 g\nБУРГЕР\nОТ СЬ",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 17.0,
+    "quantity_unit": "g"
   },
   "10051291": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051094": {
     "brand": "ION",
     "ocr_text": "Paté\nwith beef & liver\nORLANDO\nd with\nVeterinarian\nServing suggestion*\nBALANCED\nDOG\nCOMPLETE\nNUTRITION",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7203718": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "95533": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "109878": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051959": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10018738": {
     "brand": "Ида",
     "ocr_text": "ПРОВЕРЕНО КАЧЕСТВО\n• ОТ ПРОИЗВОДСТВО ДО ПРОДАЖБА\nГРИЛ\nМАЙСТОР\nКОЛБАСИЦА\nПО СРЪБСКИ\nОТ СВИНСКО МЕСО\nС ВАРЕНО-ПУШЕН БЕКОН\nНетно количество:\n500 ge\nОХЛАДЕНА\nНеотворен, при съхранение до + 4°С,\nизползвай ",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013752": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "2659": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10031588": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051303": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051068": {
     "brand": "Pilos",
     "ocr_text": "Pilos\nMnЯko\nмасленост\nUHT\n3,5%\nSugestie de prezentare\nСимволично изображение\nPilos\n1Le",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "5522816": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051129": {
     "brand": "Floralys",
     "ocr_text": "Floralys\nNapkins\n30cm\n100x\n1\n30cm",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 100.0,
+    "quantity_unit": "pcs"
   },
   "10051838": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "5540976": {
     "brand": "Vegan",
     "ocr_text": "SA\nVegan\nMUFFIN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "5513977": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10018740": {
     "brand": "Ида",
     "ocr_text": "ПРОВЕРЕНО КАЧЕСТВО\n• ОТ ПРОИЗВОДСТВО ДО ПРОДАЖБА\nГРИЛ\nМАЙСТОР\nУЩИПЦИ ПО СРЪБСКИ\nОТ ТЕЛЕШКО\nИ СВИНСКО МЕСО\nС ВАРЕНО-ПУШЕН БЕКОН\nИ КАШКАВАЛ, ОХЛАДЕНИ\nНетно количество:\n400 ge\nНеотворен, при съхранение д",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051201": {
     "brand": "Tastino",
     "ocr_text": "Tastino\nПЪЛНОЗЪРНЕСТ\nХЛЯБ\nНАРЯЗАН\n700ge\nNUTRI-SCORE",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7201444": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051021": {
     "brand": "Ида",
     "ocr_text": "ocean Finest\nsea\nSalmon\nfrom the Faroe Islands\n3 Salmon Fillet\nPortions\nSKINLESS, FROZEN\n375 g\nasc\nASC-AQUA.ORG\nNaturally\nrich in\nOmega 3\nfatty acid\nPriprema/\nУказания за приготвяне\napprox.\n2-3 min.\nH",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 375.0,
+    "quantity_unit": "g"
   },
   "141692": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022186": {
     "brand": "ION",
     "ocr_text": "Belles\nWITH BEEF\nVITAMIN\nfor the\nof vitality\nthe keeping\nPORTION\nBellesan\nWITH POULTRY\nVITAMIN\nfor the kee\nof vitality\nSTEAM\nCOOKED\nfull of\nFavour\n1250 g\ne\nPORTION\nfull of\nFflavour\n1250 ge\n12",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 1250.0,
+    "quantity_unit": "g"
   },
   "10051202": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013731": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051575": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nDuc De Coeur\nFRENCH STYLE\nTartlets\nStrawberry\nStrawberry\nTartlets\n125 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 125.0,
+    "quantity_unit": "g"
   },
   "10051940": {
     "brand": "Воньиковни",
     "ocr_text": "Воньиковни\nки***, Maribee\nФЪСТЪЧЕНО\nМАСЛО\nINTERNA\nNUTRI-SCORE\nABCDE\nLABEL\nVEGAN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013737": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "106062": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022016": {
     "brand": "TED",
     "ocr_text": "COMPLETE PET FOOD FOR ADULT DOGS\nORLANDO\nPURETASTE\nPREMIUM DOG FOOD\nCOMPLETE\nDOG FOOD 60%\nMEAT SELECTION\nMEAT & GIBLETS\nFOR BALANCED NUTRITION\n-GRAIN FREE\nRECIPE⭑\nWITH BIOTIN SUPPORTS BEAUTIFUL\nSKIN &",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051962": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051705": {
     "brand": "Star",
     "ocr_text": "Duc De Coeur\nSweet Crêpes\nApkepti saldinti Getiniai. 6 vet. Sudedamosios dalys: geriamasis vanduo, 271 % kvietinių miltų 10% cukraus, kiausiniai, rapsų aliejus,\nstabilizatorius glicerols; valgomoji dr",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009262": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051029": {
     "brand": "Harvest",
     "ocr_text": "Harvest\nBasket\nSweet Potato\nFRIES\nCRISPY &\nDELICIOUS\nWITH SUN-\nFLOWER OIL\n8\n20-25 min. 11-13 min.\n2,5-3 min.\n500 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013718": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051073": {
     "brand": "Ида",
     "ocr_text": "SUSHI\nSET\nMUK\nAWA\nДа се консумира до:\nНомер на партидата:\nтемпературатот С до +7°C",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051701": {
     "brand": "EM",
     "ocr_text": "团购\nwwwww\n?\nA\nDuc De Coeur\nFRENCH STYLE\nAll Butter Pastry Twists!\nwith Emmental Cheese & Cheddar Cheese\n125 g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 125.0,
+    "quantity_unit": "g"
   },
   "10051591": {
     "brand": "BELOIA",
     "ocr_text": "BELOIA\nSPECIALITIES\nBELGIAN STYLE\nSPECIALITIES\nDessert sauce\nCaramel\nDelicious with ice cream and desserts\n300 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 300.0,
+    "quantity_unit": "g"
   },
   "10051833": {
     "brand": "EM",
     "ocr_text": "Cien\nVegan\nDRY\nSHAMPOO\nCherry Kiss\nLONG LASTING\nFRESHNESS & VOLUME\nNo white residue*\nRemoves oils from hair\nFresh fruity scent\nFOR ALL HAIR TYPES",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "118251": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051540": {
     "brand": null,
     "ocr_text": "B\n50°\nB\nMinnie\n4\n4\nBar\nB",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051039": {
     "brand": "EM",
     "ocr_text": "NUTRI-SCORE\nVEMONDO\nHAZELNUT\n& COCOA\nCREAM\nPLANT-\nBASED\nEL INTERN\nV-LABEL\nVEGAN\nINFOREST\nCocoa\nALLIAN\nMainber\nS\nРесидрен\n-p\nContains listi\nJowar\nOrpa 50p",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022189": {
     "brand": "VALUE",
     "ocr_text": "(131300\nVALUE PACK\nBellesan\nWITH BEEF\nMEDIUM\nSMALL, MEDE\nFOR SMALL\nAND PIC DOGS\nVITAMIN\nFOR HEALTHY\nCALCIUM\nHEALTHY\nTEETH\nROB\nAND T\nTHE GOOD CHOICE\nFOR YOUR DOG\n10 kg",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 10000.0,
+    "quantity_unit": "g"
   },
   "10051113": {
     "brand": "ОТВОРИ",
     "ocr_text": "ОТВОРИ ЛЕСНО ТУК\nKania\nДЕВЕСИЛ\n18 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051347": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "147239": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051589": {
     "brand": "GINAL",
     "ocr_text": "GINAL\nTVNIBYO\nORIGINAL\nWAFFELN MIT 14% KÄSE ORIGINAL DELATESSE\nORIGINAL\nIGINAL\nKÄSE\nWAFFELN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013712": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051035": {
     "brand": "Snack",
     "ocr_text": "150 g e\nSnack\nDay\nWITH\nCHEDDAR\nCHEESE\nCHEESE TWISTS\nWITH BUTTER\nSugestie de prezentare/CMB",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 150.0,
+    "quantity_unit": "g"
   },
   "10051936": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10018732": {
     "brand": "Ида",
     "ocr_text": "A MAPKA\nНАШАТА ДОКАЗАНА\nЦА ЗА ПРЯСНО МЕСО А\nОПАКОВКА, ЗАПАЗВАЩА\nпо-дълго СВЕЖЕСТТА НА МЕСОТО\nСТРИКТНО СПАЗВАНЕ\nНА ХЛАДИЛНАТА ВЕРИГА\nГАРАНЦИЯ ЗА КАЧЕСТВО!\nОТ НЕЗАМРАЗЯВАНО МЕСО\nГРИЛ\nМАЙСТОР\nНетно колич",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051020": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051998": {
     "brand": "OMO",
     "ocr_text": "Frida Kahli\nCARMEN\nFrida Kahlo\nATREVIDO\nCOMO EL\nRESERVA\nMERLOT\nValle Central, Chile 2022",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022175": {
     "brand": "ION",
     "ocr_text": "75%\nmeat\nORLANDO\nwith\n75%\nOVEN\nbaked\nmeat\nORLANDO\nCHEWING STICKS\nwith\n75%\nmeat\nOVEN\nbaked\nCHEWING STICKS\naddest cereals\nwithout the addition of\nlourings or flavourings\nwith GAME\n8\ncricks\nwith\n75%\nRLAN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051972": {
     "brand": "FORMIL",
     "ocr_text": "FORMIL\nTROPICAL\n95 °C\nWash-effective\n20 °C from 20°C\nALL-IN-ONE DETERGENT\n100",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "160434": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009269": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051952": {
     "brand": "ION",
     "ocr_text": "esentazione\nHier öffnen!\nMilbona\nPizza\nMozzarella\n400 ge\nINCARTO\n7\nRACCOLTA\nPLASTICA\nSEGUI LE REGOLE\nDEL TUO COMUNE\nA\nLDPE/PA",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051118": {
     "brand": "Siti",
     "ocr_text": "Siti\nЯбълка\n2,5 Le",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013751": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051592": {
     "brand": "BIS",
     "ocr_text": "250 ge\nDutch\nStyle\nSPECIALITIES\nPeanut\nBiscuits",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022172": {
     "brand": "DENTAL",
     "ocr_text": "DENTAL CARe\nORLANDO\n7X MIDI\nDENTAL STICKS\nSupports the\ndaily\ndental care\n✓ without\nadded sugar\nDENTAL CARE\nORLANDO\n14X MINI\nDENTAL STICKS\nпо\nadded sugar\nSupports the\nally dental\nMIDI | 10-25kg\n210 ge\n",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 14.0,
+    "quantity_unit": "pcs"
   },
   "10051956": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051932": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051511": {
     "brand": "EM",
     "ocr_text": "25 Lycopersicon esculentum 'Minibel'\nMini Kweekkast - Mini-Treibhaus - Mini-Greenhouse - Mini-Serre-Mini-Estufa\nMiniväxthus - Pienoiskasvihuone - Plemenskih mini kabinet-Minidrivhus - Minipařeniště\nMi",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051665": {
     "brand": "EM",
     "ocr_text": "Duc De Coeur\nSPÉCIALITÉS FRANÇAISES\nEMILY\nIN PARIS\nLe Crémeux\nclassic\nPRODUIT O\nFRA.\nORIGINE\nFRANCE\nH PRORA\nORIGINAL FRENCH",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051831": {
     "brand": "Bella",
     "ocr_text": "Bellarom\nINSTANT COFFEE\nGOLD\nCLASSIC\nFULL-BODIED AROMA\nSTRENGTH 00000\n100\nCoffee",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051661": {
     "brand": "EM",
     "ocr_text": "MUNSTER AOP\nNE PROX\nD'ORIGINE\nau CUMIN des Prés\nATION\nValeurs nutritionnelles moyennes pour 100 g\neres grass saturés\n20 g\n1.50\n1,5 g\n5g\n<0,5\nPoids net\nà l'emballage: 220 g\nA conserver entre +2°C et +6",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 220.0,
+    "quantity_unit": "g"
   },
   "10051690": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nDuc De Coeur\nFRENCH STYLE\nКиш от многолистно тесто\nс картофи и Кәмәмбер\n- картофи и Кәмәмбер\nКиш ОТ МНОГОЛИСТно тесто\nSSS\nок. 20 минути\n350 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 350.0,
+    "quantity_unit": "g"
   },
   "10051471": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051574": {
     "brand": "NEO",
     "ocr_text": "French Style\ni neobraden\njskog mesa.\nkonzervans\nvati tragove\nkon otvaranja\no: ofisnuto na\nLidl Hrvatska\nrica, Hnatska.\nGourmet Salami\nair dried\nК по френска\nПов. Съставки:\nконсервант:\nинско черво.\n. Н",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051966": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051289": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051580": {
     "brand": "Ида",
     "ocr_text": "pri Produs extra picant.\nsatifiant, acid citric\ndesse consuma\npeiorate aerisite, ferite de\nin decurs de 3 zile.\nМилан, консервант, натриез\nнада Ларида, вин ръба на\nПокорих само места. След отваряне\nби",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013743": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051192": {
     "brand": "BARONI",
     "ocr_text": "BARONI\nМАКЕДОНСКА\nНАДЕНИЦА\nБЕЗ\nМЕХАНИЧНО\nОТДЕЛЕНО\nMECO\n500 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051078": {
     "brand": "Kania",
     "ocr_text": "Kania\nBAZILIKA\nSUŠENA\nБОСИЛЕК\nСУШЕН\n10g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 10.0,
+    "quantity_unit": "g"
   },
   "94103": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013739": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051198": {
     "brand": "COMBINO",
     "ocr_text": "NUTRI-SCORE\nCOMBINO\nPENNE\n8-10\nмин.\nABCDE\n500 g\ne",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 500.0,
+    "quantity_unit": "g"
   },
   "10022168": {
     "brand": "ION",
     "ocr_text": "ORLANDO ANDO\nWITH POULTRY\nAND CARROTS\nIN SAUCE\nALANCED\nCOMPLETE\nNUTRITION\n1240 g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 1240.0,
+    "quantity_unit": "g"
   },
   "10051101": {
     "brand": "Ида",
     "ocr_text": "VitaDor\nVegetable\nMargarine\nwith Vitamin D\nSI >Rastlinski mastni namaz z 0,2% soli. Skupna maščoba: 80%.\nSestavine: sončnično olje, voda, popolnoma hidrogenirano sončnično olje, kokosova maščoba, emul",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051997": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nCaramel spread\nwith sea salt\nSRL. str. Cpt. Av.\n584 014295 Bucureşti,\nDuc De Coeur\nFRENCH STYLE\nCaramel spread\nwith sea salt",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051836": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013725": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051043": {
     "brand": "EM",
     "ocr_text": "Coshida\nNIBBLE FEAST\nWITH MEAT &\nVEGETABLES\nCOMPLETE\nCAT\nFOOD\nMineral supplement for\na balanced diet\nTaurin can support\nthe heart and Vision\nwithout added sugar\nVitamin A can\nsupport a shiny coat.\n2K9",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "85261": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "169327": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051691": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\n4 Roulés\nCheese Filled Pastry Rolls\nSSS\napprox. 12 minutes\n520 g (4 x 130 g)",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 520.0,
+    "quantity_unit": "g"
   },
   "10050636": {
     "brand": "TED",
     "ocr_text": "Snack\nDay\nSalted\nPretzels\nCRISPY\nدة\nBAKED\n250 g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 250.0,
+    "quantity_unit": "g"
   },
   "10018737": {
     "brand": "Ида",
     "ocr_text": "НАШАТА ДОКАЗАНА МАРКА\nЗА ПРЯСНО МЕСО\nОПАКОВКА, ЗАПАЗВАЩА\nпо-дълго СВЕЖЕСТТА НА МЕСОТО\nСТРИКТНО СПАЗВАНЕ\nНА ХЛАДИЛНАТА ВЕРИГА\nГАРАНЦИЯ ЗА КАЧЕСТВО!\nОТ НЕЗАМРАЗЯВАНО МЕСО\nГРИЛ\nМАЙСТОР\nСВИНСКИ ВРАТ\nБЕЗ К",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "2611": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051279": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051290": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022177": {
     "brand": "Tasty",
     "ocr_text": "Coshida\nWITH CHICKEN\nAND GAME\nIN SAUCE\nbalanced &\ntasty\nMinerals & vitamins:\nFor a balanced diet.\nTaurine can support\neyesight and heart\nfunction.\nVitamin D3 supports the\nbone structure.\n4159",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051688": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\nсти 0/100 д\n95k]/338 kcal\n32,6g\n23,6 д\nРуло от прясно\nКозе сирене\nи зелени подправки\nVEGETARIAN\n•V-LABEL EU.\nVEGETARIAN\n2,49\n2,3g\n7,8g\n1,16 g\n100 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 32.6,
+    "quantity_unit": "g"
   },
   "10051307": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022666": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10018736": {
     "brand": "Ида",
     "ocr_text": "ПРОВЕРЕНО\nКАЧЕСТВО\n• ОТ ПРОИЗВОДСТВО ДО ПРОДАЖБА\nமென்\nГРИЛ\nMAHCTOP\nо\nБИРЕНИ НАДЕНИЧКИ\nОТ СВИНСКО МЕСО\nС ПРАЗ ЛУК\nОХЛАДЕНИ\nНетно количество:\n500 g\nНеотворен, при съхранение до + 4°С,\nизползвай преди:/ ",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 500.0,
+    "quantity_unit": "g"
   },
   "10051537": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051829": {
     "brand": "TXX",
     "ocr_text": "TXX\n200 ge\nDulano\nPoultry\nFilet\ncured and cooked\nultra\nthin\nNUTRI-SCORE",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051284": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051693": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\nPommes Noisettes\nCrispy Potato Balls\ndmin\nSSS\n15-18 min\n3-5 min\nFrozen²\n1 kg e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 1000.0,
+    "quantity_unit": "g"
   },
   "10051516": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051097": {
     "brand": "Dulano",
     "ocr_text": "200ge\nDulano\nСАЛАМ СЕРВИЛАТ\nСУРОВОПУШЕН, ЕКСТРА КАЧЕСТВО",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013716": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051507": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "2612": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051196": {
     "brand": "TED",
     "ocr_text": "Pilos\nПрясно\nмляко\n3,7%\nмасленост\nMECTED\nNUTRI-SCORE\nABCD\n1 Le",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009264": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051030": {
     "brand": "TCOMBINO",
     "ocr_text": "TCOMBINO\nCOMBINO\nTOMATO SAUCE\nBOLOGNESE\nNUTRI-SCORE\nABCDE\n420ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050630": {
     "brand": "EM",
     "ocr_text": "Kania\nROSEMARY\n15 g\nSugestie de prezentare/Slika je simbolična/Символично изображение",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 15.0,
+    "quantity_unit": "g"
   },
   "10051281": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050639": {
     "brand": "Bella",
     "ocr_text": "Bellarom\nCHOCOLATE\nVARIATIONS\nCHOCOLATE DRINK\n10 SACHETS\nTAINFOREST\nPEOPLE\nANCE\nNATUR\nCocoa\nINSTANT CHOCOLATE DRINK\nSugestie de prezentare/Predlog za serviranje/\nСимволично изображение",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051193": {
     "brand": null,
     "ocr_text": "5 36 3\n559\n•\nРОДНА СТРЯКА\nБЪЛГАРСКО\nБЯЛО\nСАЛАМУРЕНО\nСИРЕНЕ\nTasapakuk\n45\nдни\nРОДНА СТРЯКА\nБЪЛГАРСКО\nБЯЛО\nСАЛАМУРЕНО\nСИРЕНЕ\n•Thesappkonk\n45\nдни\nОТ КРАВЕ\nМЛЯКО\nОТ КРАБЕ\nМЛЯКО\n25 96 95\nOVKA\nРОДНА СТРЯХА\nБ",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7202344": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013720": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051287": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013748": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050643": {
     "brand": "Cien",
     "ocr_text": "Cien\nVegan\n40%\nrecycled\nplastic\nPackagin\nrespons\nSHOWER GEL\nFresh Lime\nNOURISHES & VITALIZES\nPH-SKIN NEUTRAL\nWith lime and\npeppermint fragrance\nALL SKIN TYPES",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022350": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051017": {
     "brand": "TED",
     "ocr_text": "Hazelnut\nJ. D.GROSS\nPRIVAT CHOCOLATIERS\n▼ COCOA\nPRIVAT CHOCOLATIERS\nJ.D.GROSS\nPRIVAT CHOCOLATIERS\nJ.D.GROSS\nHazelnut\nPralines\nFAIRTRADE\nENJOY DELICIOUS PRALINES WITH HAZELNUT FILLING\nAND A WHOLE HAZEL",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "2654": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "5905014": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009250": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "2000": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009252": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051825": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013754": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051530": {
     "brand": "STITCH",
     "ocr_text": "STITCH\nPekY",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051536": {
     "brand": "WINNIE",
     "ocr_text": "←←\n→→\nWINNIE\nTHE POOH",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "9000842": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7204786": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "5502209": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051996": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\nChocolate & Profiterole\nFlavour Ice Cream\nwith Chocolate Flavoured Sauce\nINFOREST\nPEOPLE\nITURE\n&NATUR\nCocoa\nALLIANC\n850 ml e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 850.0,
+    "quantity_unit": "ml"
   },
   "10051965": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7202064": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013516": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051835": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "95664": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051346": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "125057": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050641": {
     "brand": "Siti",
     "ocr_text": "Siti\nТоник\n2,5Le",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051933": {
     "brand": "PIKOK",
     "ocr_text": "100 g\nPIKOK\nЛУКАІНІКОВ\nСАЛАМ\nпродукт са\nпроизведени от\n1289\nМЕСО\nСУРОВО-СУШЕН\nНАРЯЗАН\n300 де",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 100.0,
+    "quantity_unit": "g"
   },
   "10051296": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022332": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7201445": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013750": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009251": {
     "brand": null,
     "ocr_text": "X",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051598": {
     "brand": "BONGBER",
     "ocr_text": "www.vansteenberge.com\nBONGBER\nBELGISCH\nBOKBIER\nBOKBIER\nLEUTE BOKBIER\nC15% VOL\nLEUTE\nLEUTE\nANNO\n1927\nANNO\n1927\nBOKBIER вае\nMUC 75% VOL.\nBOKBIER\nвае",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051305": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013843": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051822": {
     "brand": "Tira",
     "ocr_text": "Tiradell\nWHEAT\nKYCKYC\nCUȘ-CUŞ\n400 ge\n9min\nal dente\nSERVINGS",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051528": {
     "brand": null,
     "ocr_text": "السود\n豆花",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051564": {
     "brand": "Aroma",
     "ocr_text": "Duc De Coeur\nSPÉCIALITÉS FRANÇAISES\nCamembert le Caractère\nCreamy Soft Cheese\nAromatic\n250 g e\nPRODUIT\nFRA.\nINE FRANCE\n1\nORIGINAL F\nCH\nPRODUCT",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 250.0,
+    "quantity_unit": "g"
   },
   "10022017": {
     "brand": "Duck",
     "ocr_text": "Coshida\nPURETASTE\nPREMIUM CAT FOOD\nMINI\nCUBESMADE\nFROM\nDUCK\n87%\nMEAT & ANIMAL\nDERIVATIVES\nMONO PROTEIN\nGRAIN FREE\nRECIPE*\nWITHOUT\nADDED SUGAR\n50g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 50.0,
+    "quantity_unit": "g"
   },
   "10013719": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "6001722": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051280": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022184": {
     "brand": "MEGA",
     "ocr_text": "MEGA PACK\nповторно затварян\nЛаком\nВСЯКО\n<2 kcal\nпо-малко\nOT 2 kcal\nЗа\nCos\nMEGA PACK\nR\nсъс сирене и\nптиче месо\nЛакомства\nЗа котки\nBCAKO\n<2 kcal\nпо-малко о\n2 kcal\nOT 2\nповторно затварян\nхрупкави хапки\nC",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "143246": {
     "brand": "Milka",
     "ocr_text": "Milka",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "128980": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051571": {
     "brand": "French",
     "ocr_text": "French Style\n3 Mini\nPork Salami\nAir dried\n150 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 150.0,
+    "quantity_unit": "g"
   },
   "61022": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051514": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051964": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051250": {
     "brand": "PIKOK",
     "ocr_text": "PIKOK\nПИЛЕШКИ ГЪРДИ\nС ЧЕРВЕНИ ЧУШКИ\n• БЕЗ МОНОНАТРИЕВ\nГЛУТАМАТ\n97%\nмесо\n15 броя 15 де\nAYTEN\nBE WILY TEH\nБЕЗ Г\nОТВОРИ ТУК",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051572": {
     "brand": "French",
     "ocr_text": "French Style\nAir-Dried Salami\nwith Hazelnuts.\n250 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 250.0,
+    "quantity_unit": "g"
   },
   "2298": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051533": {
     "brand": null,
     "ocr_text": "SPIDER-MAN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051953": {
     "brand": "TED",
     "ocr_text": "Cut and open here**\nMilbona\nGrana\nPadano\nItalian hard cheese\ngrated\nG\nGRANA\nPADANO\nP\nnorizzazione Consorzio\nGrana Padano\nNr TN 16/91\nCertificato da Organismo\ndi Controllo autorizzato\ndal Mipaaf\nFreshn",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013844": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "131681": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051189": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022018": {
     "brand": "Pur",
     "ocr_text": "RESEALABLE\nCoshida\nPURETASTE\nPREMIUM CAT FOOD\nWITH CHICKEN\n69%\nANIMAL\nDERIVATIVES\nCEREAL FREE\nRECIPE\nWITHOUT\nADDED SUGAR\nWITH TAURINE\n400 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 400.0,
+    "quantity_unit": "g"
   },
   "5505443": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022176": {
     "brand": "ORLANDO",
     "ocr_text": "ORLANDO\nStew\nwith Lamb,\nPasta &\nVegetables\nin sauce\nComplete &\nbalanced\nContains\nVitamin D3 and\nVitamin E",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013845": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051191": {
     "brand": "София",
     "ocr_text": "РОДНА СТРЯХА\nКРЕНВИРШИ\nОТ СВИНСКО И\nГОВЕЖДО МЕСО\n78%\nМЕСО\nПроизход на месото: ЕС\n•• гр. София,\n55",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051696": {
     "brand": "EM",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\n4 Puff Pastries\nwith cooked ham and Emmental cheese\nFrozen'\n400 ge\nSSS\n20-25 min",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051058": {
     "brand": "Pilos",
     "ocr_text": "Pilos\nMILK\nDRINK\nCHOCO\nFLAVOUR\nCocoa",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051308": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051716": {
     "brand": "Fa",
     "ocr_text": "100 ge\nFAIRTRADE\n▼ COCOA\nDuc De Coeur\nFRENCH STYLE\nMilk chocolate\nMarc de Champagne &\nWhite Chocolate Truffle Filling",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7203166": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051711": {
     "brand": "INFOREST",
     "ocr_text": "INFOREST\nDuc De Coeur\nFRENCH STYLE\nALLIANC\nProfiteroles\nwith Dark Chocolate Sauce\nOPLE\nNATURE\nCocoa\n330 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "121471": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051072": {
     "brand": "Lasagne",
     "ocr_text": "chef\nselect\nLasagne\nBolognese\nwith pork, béchamel sauce\nand spinach sauce\n-ooo\n200°C/25-30 min 700W/7-8 min\nNUTRI-SCORE\nABCDE\n400 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009245": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009270": {
     "brand": "Kicka",
     "ocr_text": "Kicka (Kicka",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013749": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051115": {
     "brand": "Kania",
     "ocr_text": "Kania\nMIROĐIJA\nСУШЕН КОПЪР\n10 g\nSlika je simbolična/Символично изображение",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 10.0,
+    "quantity_unit": "g"
   },
   "10051080": {
     "brand": "Crown",
     "ocr_text": "CROWNFIELD\nCRUNCHY\nBALLS\nDUO\n500 ge\nORESTAL\nPEOPLE\n&NAT\nNATURE\nNUTRI-SCORE\nABCDE",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7202578": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "2002": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051532": {
     "brand": "Stitch",
     "ocr_text": "Stitch\nTHAT'S ME",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051593": {
     "brand": "BIS",
     "ocr_text": "BELGIAN STYLE\nBiscuits\nButter Waffle\nBELG\nSPECIALITIE\n240 ge\nBELGIAN STYLE.\nSPECIALITIES\nButter Waffle\nBiscuits\nwith 18% Butter\n6x40 g\nfle Biscuits",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 240.0,
+    "quantity_unit": "g"
   },
   "10022212": {
     "brand": "Pur",
     "ocr_text": "RESEALABLE\nCoshida\nPURETASTE\nPREMIUM CAT FOOD\nWITH FISH 64%\nPROTEIN\nANIMAL DERIVATIVES\n(INCLUDING. FISH)\nCEREAL FREE\nRECIPE\nWITHOUT\nADDED SUGAR\nWITH TAURINE\nMSC\nMSC-C-54261\n400 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 400.0,
+    "quantity_unit": "g"
   },
   "10051087": {
     "brand": "BODE",
     "ocr_text": "BODE\nSiti\nЕтър\n2,5Le",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "128974": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "5555256": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051689": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\nOPEN HERE\nSalmon & Vegetables\nwrapped in Puff Pastry\napprox. 12 min.\n340g (2 x 170g)\nOPEN HERE\nt",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 340.0,
+    "quantity_unit": "g"
   },
   "10022667": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051566": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\nChocolate\nLava Cakes\nSSS\n16 min\nFrozen\n180 g (2 x 90 g)\nSAINFOREST\nPEOPLE\nALLIANCE\nNATURE\nCocoa",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 180.0,
+    "quantity_unit": "g"
   },
   "10013521": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "121022": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051810": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10018733": {
     "brand": "Ида",
     "ocr_text": "ПРОВЕРЕНО КАЧЕСТВО\n• ОТ ПРОИЗВОДСТВО ДО ПРОДАЖБ\nமென்\nГРИЛ\nМАЙСТОР\nПРЕСНИ\nПИЛЕШКИ\nНетно количество:\nКРИЛА\nС БИЛКОВА\n700 МАРИНАТА\nНеотворен, при съхранение до +4°С,\nизползвай преди:/ Партида:\nOTTOSOPH\nг",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051199": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051504": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051967": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051025": {
     "brand": "Siti",
     "ocr_text": "Siti\nЛимонада\n25LC\nC",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051083": {
     "brand": "РОДНА",
     "ocr_text": "РОДНА СТРЯХА\ne\nПелин\nБЯЛ\nLe",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "6804216": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051893": {
     "brand": "Chio",
     "ocr_text": "SMART\nNQTURAL\nPISTACHIO\nSPREAD",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051721": {
     "brand": "ЕМ",
     "ocr_text": "Duc De Coeur\nНуга\nс печени бадеми,\nлешниц и и шамфъстък\n75gC",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051067": {
     "brand": "Pilos",
     "ocr_text": "Pilos\nBLUE\nRival\n120 g\ne\nSugestie de prezentare/Slika je simbolična/CMM",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 120.0,
+    "quantity_unit": "g"
   },
   "10051594": {
     "brand": "BELGIAN",
     "ocr_text": "BELGIAN STYLE\nSPECIALITIES\nCrunchy\nWaffles\n450 ge\n18\nPIECES\nExtra\ncrispy",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022236": {
     "brand": "TED",
     "ocr_text": "Coshida\nPURETASTE\nPREMIUM CAT FOOD\nCOMPLETE PET FOOD\nFOR ADULT CATS\nCOMPLETE\nCAT FOOD 60%\nMEAT SELECTION\nMEAT & GIBLETS\n4x85g=\n340g\nHIGH IN PROTEIN FOR\nBALANCED NUTRITION\nGRAIN FREE\nRECIPE⭑\n⚫ WITH TAU",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 340.0,
+    "quantity_unit": "g"
   },
   "10051568": {
     "brand": "Ида",
     "ocr_text": "French Style\nSalami\nAir-Dried\nPL Salami-kielbasa wieprzowa, średnio rozdrobniona, surowa, suszona,\nw niejadalnej oslonce. 100 g produktu wyprodukowano ze 147 9 mięsa\nwieprzowego. Skladniki: mięso wiep",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 100.0,
+    "quantity_unit": "g"
   },
   "10051121": {
     "brand": "NAN",
     "ocr_text": "Milbona\nFLAN\nCantitate tel:/\nНетно количество:\n6 х 100 g = 600 g\nRO Budincă cu aromá de vanille şi glazur\nde caramel. 6 bucaji. Ingrediente: 72.3% lapte semidegresat\npasteurizat zahar, apă, 6% glazură",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 600.0,
+    "quantity_unit": "g"
   },
   "10018734": {
     "brand": "Ида",
     "ocr_text": "ПРОВЕРЕНО\nКАЧЕСТВО\n• ОТ ПРОИЗВОДСТВО ДО ПРОДАЖБА\nமென்\nТРИЛ\nМАЙСТОР\nФАКЛИЧКИ\nОТ СВИНСКИ\nГЪРДИ БЕЗ КОСТ\nС МАРИНАТА, ОХЛАДЕНИ\nНетно количество:\n420 g\nНеотворен, при съхранение до +4°С,\nизползвай преди:/ ",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 420.0,
+    "quantity_unit": "g"
   },
   "116485": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051942": {
     "brand": "ETI",
     "ocr_text": "Sondey\nPetit\nBiscuits\nMAKING\nDESSERTS!\n400 ge\nServeringsförslag/\nСимволично изображение",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10031740": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051106": {
     "brand": "Pilos",
     "ocr_text": "АЙРЯН.\n2,2%\nPilos\nАйрян\n2,2%\n300 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051923": {
     "brand": "CAR",
     "ocr_text": "alr\nbyW5\nCAR FRAGRANCE PLUG\n+ 2 REFILLS\nSWEET DREAM\nfor a lasting fragrance\nexperience in your car\n1 refill=\n30 days\nfresh\nfragrance*\n2x2,3ml",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 4.6,
+    "quantity_unit": "ml"
   },
   "10013722": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "135472": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013846": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051695": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\n· carrot, zucchini, broccoli\n4 Mini-Gratins\nDuc De Coeur\nFRENCH STYLE\n4 Mini-Gratins\ncarrot, zucchini, broccoli\nSSS\n30 minutes\nSSS\n3 minutes\nfor 1 gratin\nFrozen\n480 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051061": {
     "brand": "EM",
     "ocr_text": "VEM CONDO\nSOYA\nBLUEBERRY\n500 9\nVEMONDO\nSOYA\nBLUEBERRY\nfrom soybeans\n500\nVEGAN\nVEGAN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051958": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051508": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "141687": {
     "brand": "BID",
     "ocr_text": "BID\nanic",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051041": {
     "brand": "Vegan",
     "ocr_text": "Vegan\nCien\nCREAM SOAP\nOLIVE\nGENTLE CLEANSING & CARE\nWith olive oil\nNORMAL SKIN\nVegan\nCien\nCREAM SOAP\nOLIVE\nGENTLE CLEANSING & CARE\nWith olive oil\nNORMAL SKIN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "165220": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051947": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050637": {
     "brand": "Pur",
     "ocr_text": "Perlenbacher\nGOLD\nBREWED ACCORDING TO THE\nGERMAN PURITY LAW\nFRESH & AROMATIC TASTE\nAlk. 4,9 % vol. 0,51e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051124": {
     "brand": "TED",
     "ocr_text": "OOדוד רהוו ודרור\nJ. D.GROSS\npremium\nCocoa Dusted\nBelgian Truffles\nQUALITÉ SUPÉRIEURE\nNávrh na servírování/Predlog za serviranje/Patiekimo pasiūlymas/Sugestie de prezentare\nFAIRTRADE\n▼ COCOA\nQUALITE SU",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013723": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022013": {
     "brand": "Pur",
     "ocr_text": "ORLANDO\nPURETASTE\nPREMIUM DOG FOOD\nPORK\n66%\nMEAT AND\nANIMAL\nDERIVATIVES\nMONO\nPROTEIN\nGRAIN FREE\nRECIPE*\nWITHOUT\nADDED SUGAR\n400g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 400.0,
+    "quantity_unit": "g"
   },
   "10051584": {
     "brand": "ION",
     "ocr_text": "Dutch\nStyle\nSPECIALITIES\nCrispy Fried\ncrunchy &\ncrispy\nOnions\n280 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022015": {
     "brand": "Pur",
     "ocr_text": "ORLANDO\nPURETASTE\nPREMIUM DOG FOOD\nBEEF 100%\nMEAT &\nSTICKS ANIMAL\nDERIVATIVES\nMONO PROTEIN\nGRAIN FREE\nRECIPE\nWITHOUT\nADDED SUGAR\n100g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 100.0,
+    "quantity_unit": "g"
   },
   "10051815": {
     "brand": "BARONI",
     "ocr_text": "BARONI\nBARONI\nЛУКАНКА\nШПЕКОВ\nСАЛАМ\nБУРГАС\nMEX\nOTAEHO)\nMECO\n300ge\nБЕЗ\nМЕХАНИЧНО\nОТДЕЛЕНО\nMECO\n250 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051110": {
     "brand": "Harvest",
     "ocr_text": "Harvest\nBasket\nCRINKLE CUT\nFRIES\nEXTRA\nCRUNCHY\nWITH\nSUNFLOWER\nNUTRI-SCORE\nDE\n90\n15-20 min\n12-15 min\n1kg\nfrozen",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 1000.0,
+    "quantity_unit": "g"
   },
   "10018731": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022333": {
     "brand": null,
     "ocr_text": "D",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "97504": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051074": {
     "brand": "Ида",
     "ocr_text": "270 g\nocean\nsea\nGreenland\nPrawns\nCOOKED & PEELED\nFROZEN\nM\nMSC\nwww.msc.org\nA se păstra la o temperatură de\npână la maximum-18°C.\nA se consuma de preferinţă înainte\nde/Nr. Lot:/Неотворен, при\nтемператур",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 270.0,
+    "quantity_unit": "g"
   },
   "10051028": {
     "brand": "Bio",
     "ocr_text": "Bio\nlupilu®\nOrganic\nVegetables with\npasta and poultry\narab\nClone\n12+\nV\nMONTHS\n00:03\nKeratin VEhon UE\nEC\nDEAS\n23",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051697": {
     "brand": "Ида",
     "ocr_text": "Duc De Coeur\nSPECIALITES FRANCAISED\nTerrine\nDK Terrine af gris.\nIngredienser: 35% grisehalskød,\n32% griselever, 15% grisefedt,\n5% grisesvær, løg, æg, hvedemel,\nsalt, hvidløg, sort peber. *skrabeæg.\nKa",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051079": {
     "brand": "Deluxe",
     "ocr_text": "Deluxe\nVEGETABLE CHIPS\nWITH SEA SALT\nCRISPY VEGETABLE CHIPS MADE OF SWEET POTATO,\nBEETROOT AND PARSNIP. BAKED IN SUNFLOWER OIL.\n100 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 100.0,
+    "quantity_unit": "g"
   },
   "10013746": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022190": {
     "brand": "CARNE",
     "ocr_text": "S\n10\nCARNE DE\nГОВЕЖДО\npentr\n440 g\nminal BW\nD\nA\nmentine func\noaselor/3a mpa\nи функц\n44% carne si de\nanimala/44% Me\nSTEAM\nCOOKED\namina\nВИТЕ\nE\nPENT\nADULI\nB3P\n415",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 440.0,
+    "quantity_unit": "g"
   },
   "10022668": {
     "brand": "CERTIFIED",
     "ocr_text": "CERTIFIED\nSUSTAINABLE\nSEAFOOD\nMSC\nwww.msc.org\nФИЛЕ ОТ\nМИНТАЙ\nв панировка\nбез кожа, без кости*\nНетно\nколичество:\n280g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 280.0,
+    "quantity_unit": "g"
   },
   "10051963": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013753": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051712": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nCaramel spread\nwith sea salt\nSRL. str. Cpt. Av.\n584 014295 Bucureşti,\nDuc De Coeur\nFRENCH STYLE\nCaramel spread\nwith sea salt",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7203167": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051934": {
     "brand": "Vita",
     "ocr_text": "Vita Do\nЪНЧОГЛЕД\nМАСЛО\nita Don\nНЧОГЛЕДОВ\n• МАСЛО\nita D'or\nНЧОГЛЕДОВО\nМАСЛО\nDBO\nэти за пържене за печене\nза пържене за печене за готвене",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051653": {
     "brand": "ETI",
     "ocr_text": "12 Slices\n200 g\nDuc De Coeur\nFRENCH STYLE\nPetits chèvres doux\n12 Goats' Cheese Rounds",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 200.0,
+    "quantity_unit": "g"
   },
   "10051948": {
     "brand": "Символично",
     "ocr_text": "Символично изображение\nNUTRI-SCORE\nABCDE\nBaresa\nМаслини Каламон и зелени\nмаслини без костилка\nсъс слънчогледово масло",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "57732": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022170": {
     "brand": "ION",
     "ocr_text": "MINI DOG\nADULT\nORLANDO\nGOURMET\nMINI DOG\nADULT\nESPECIALLY FOR\nTHE NEEDS OF\nLITTLE DOGS\nOMEGA ZINC\nGA-3 FATTY ACIDS\nSUPPORT\nPORT SUPPLES\nAND ASHINY CAN\nVITAMIN D3 AND\nTHE SPECIAL KIBBLE SIZE\nFOR SMALL D",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051112": {
     "brand": "CDE",
     "ocr_text": "NUTRI-SCORE\nCDE\nTRATTORIA\nAlfredo\nMINI\nPIZZA\nMARGHERITA\n4\nPIECES\n360ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051531": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013711": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051929": {
     "brand": "ТЕСТВАЙ",
     "ocr_text": "ТЕСТВАЙ\nAPOMATA TYK\nalr\nby W5\nMIKADO\nLUFTERFRISCHER\nNIZZA\nChamps de Lavande\nNICE\nREED DIFFUSER",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051040": {
     "brand": "Fa",
     "ocr_text": "fin\nCARRE\nKINGSIZE SCHOKO & KEKS\nFAIRTRADE\nMIT 100%\nALPEN\nVOLLMILCH\nSCHOKOLADE\n300ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "6808146": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051928": {
     "brand": "EM",
     "ocr_text": "W5\nWINDOW\nDE-ICER\nFOR ICE & FROST REMOVAL\nFROM CAR WINDOWS\nBitrex\nCHILDREN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051974": {
     "brand": "ETI",
     "ocr_text": "ALCOHOLIC\nARGUS NON-ALCOHOLIC\n⚫ DELICATELY BREWED.\nA\nARGUS\nNON-ALCOHOLIC\nalc.\nMAX.\nc. 0.5% vol.\nGENUINE PLEASURE\nOF FLAVOUR\nfind alcool Pr\nde pred\nSapi\nadan\nCera Al\nHearse\nEve\nl\nEn\nForgalma Pa\nGe\nNeti",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051717": {
     "brand": "EM",
     "ocr_text": "INFOREST\nPEOPLE\nDuc De Coeur\nFRENCH STYLE\nBrioche Chinois\nFrench style pastry with vanilla flavoured\ncreme filling and chocolate chips\nALLIANC\nNATURE\nCocoa\n350 g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 350.0,
+    "quantity_unit": "g"
   },
   "10051512": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051089": {
     "brand": "Choco",
     "ocr_text": "Choco\nCarame\nminis\nChoco\nCaramel\nminis\nMister\nCHOC\nINFOREST\nCocoa\n350 g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 350.0,
+    "quantity_unit": "g"
   },
   "10050628": {
     "brand": null,
     "ocr_text": "пред\nsaresа\nNUTRI-SCORE\nBaresa\nМаслинова\nBCDE\nпаста\nСимволично\nизображение\n13\nИЗХВЪРЛИЙ\nPA3METHO\nLADE",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013745": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051706": {
     "brand": "ION",
     "ocr_text": "COOPERATIVE\nALSACE\nLAIT\nGOURMET E TRADITION\nFROMAGE BLANC\nSUR LIT DE POMME CANNELLE\nCOOPERATIVE\nALSACE\nLAIT\nGOURMET DE TRADITION\nFROMAGE BLANC\nSUR LIT DE POMME CANNELLE\nМЛЕЧНОКИСЕЛ ПРОДУКТ, ПОКРИВАЩ С",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022179": {
     "brand": "ION",
     "ocr_text": "символично изображение\nMOUSSE\nWITH LAMB\nPIECES\nIN GRAVY\nWITH TURKEY\nWITH TAURIN\nSupports heart function\nWITH VITAMIN D3\nSupports bones and teeth\nCoshida\nSELECTION\nWITH TAURIN\nSupports heart function\nW",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "154292": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013732": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022171": {
     "brand": "MINI",
     "ocr_text": "MINI\nORLANDO\nDENTAL STICKS\nDENTAL CARE SUPPORT & CHEWY FUN\nMIDI\nORLANDO\nDENTAL STICKS\nDENTAL CARE SUPPORT & CHEWY FUN\nMIDI 10-2\nMAXI\nORLANDO\nDENTAL STICKS\nDENTAL CARE SUPPORT & CHEWY FUN\n12x\nMINI 5-10",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 12.0,
+    "quantity_unit": "pcs"
   },
   "10051718": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\n8 Crêpes\nwith Chocolate flavour Filling\nindividually\nwrapped\n256 g\nINFOREST\nPEOPLE\nA\nALLIANC\nNATURE\nCocoa",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 256.0,
+    "quantity_unit": "g"
   },
   "10022671": {
     "brand": "Ида",
     "ocr_text": "ПРОВЕРЕНО КАЧЕСТВО\n• ОТ ПРОИЗВОДСТВО ДО ПРОДАЖБА\nமென\n• ПОРЦИЯ\nГАРАНТИРАНА\nСВЕЖЕСТО\nКИЛНА ВЕРИГА\nСКУМРИЯ\nИЗЧИСТЕНА\nОХЛАДЕНА\nНеотворен, при съхранение от 0°С до +2°С,\nизползвай до:/ Партида:\nОпаковано н",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051086": {
     "brand": "ION",
     "ocr_text": "Solevita\nAPPLE NECTAR\nfrom concentrate\nLABEL ION,\nV\nV-LABEL\n.COM\nVEGAN\n1, 1, 1, 1, 1.\nPrehranske vlaknine Braven\n40\npare Co\nFSC\nFSC\nFSC\nMOX\nMX\nMX\nBoard\nNUTRI-SCORE\nABCDE\nFRUIT CONTENT\nMINIMUM 50%\n0,2L",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 200.0,
+    "quantity_unit": "ml"
   },
   "10051534": {
     "brand": "Classy",
     "ocr_text": "Classy",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "159136": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009248": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051567": {
     "brand": "French",
     "ocr_text": "150 g\nFrench Style\nRosette\nAir Dried Salami\nOpen here!",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 150.0,
+    "quantity_unit": "g"
   },
   "10009265": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10031668": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7202065": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051586": {
     "brand": "Пастир",
     "ocr_text": "LT Valiai su 43% karameliniu daru, apliet 14 % pieniniu šokoladu Kakavs sasujų medžiagų pieniniame šokolade - ne mažiau kaip 30 %. Sucess\ndalys kissa vida mita, alpalmy rebala 4 pierinio šoked (ukrus,",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051715": {
     "brand": "ION",
     "ocr_text": "Macarons.\nSSS\n17 min\n250 g e\nDuc De Coeur\nFRENCH STYLE\nMacarons\nBaking mix for Cocoa flavoured Macarons\nRequired ingredients\nand baking instructions:\nsee back of the box\nINFOREST\nPEOPLE\nALLIAN\nNATURE\n",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 250.0,
+    "quantity_unit": "g"
   },
   "10051839": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051845": {
     "brand": "Cottage",
     "ocr_text": "XXIL. XXIL. XXL. XXI\nCottage Cheese\n400 ge\nKL XXL XXL\nMilbona\nCottage\nCheese\n400g e\nNUTRI-SCORE\nABCDE",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 400.0,
+    "quantity_unit": "g"
   },
   "178627": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7201573": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051582": {
     "brand": "BELO",
     "ocr_text": "BELO\nE-\nBELGIAN STYLE\n150 g e\nSPECIALITIES\nSPECIALITIES\nPork\nMeatloaf",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 150.0,
+    "quantity_unit": "g"
   },
   "10013730": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013757": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7202061": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022169": {
     "brand": "ION",
     "ocr_text": "4032668\nORLANDO\nGOURMET\nPATÉ\nWITH\nVEAL\nServing suggestion**",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009255": {
     "brand": "Feinback",
     "ocr_text": "Fränkische\nFeinback\nPFLAUMEN\nSTREUSEL\n300 g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 300.0,
+    "quantity_unit": "g"
   },
   "10013738": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022673": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "144723": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "159284": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051713": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nDuc De Coeur\nFRENCH STYLE\nRed Berries Tarte\nwith redcurrant, blackberry, cherry,\nblackcurrant, raspberry and blueberry\nSSS\n8 min.\nFrozen\n470 g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 470.0,
+    "quantity_unit": "g"
   },
   "10051127": {
     "brand": "MEGA",
     "ocr_text": "MEGA PACK\nповторно затваряне\nсъс сьомга\nЛакомства\nВсяко\n<2 kcal\nЗа котки\nпо-мално\nOT 2 kcal\nхрупкави хапки\nC\nпълнеж\nCoshida\nо изображение",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "94105": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051946": {
     "brand": null,
     "ocr_text": "БДС БЪЛГАРСКИ\n142010 КАШКАВАЛ\n45\nдни\nОТ КРАВЕ\nМЛЯКО\nРОДНА СТРЯХА\nБДС БЪЛГАРСКИ\n142010 КАШКАВАЛ\nОТ КРАВЕ\nМЛЯКО\n45\nдни\n59\n59988\n525569\nBegape\nРОДНА СТРЯХА\nБДС БЪЛГАРСКИ\n142010 КАШКАВАЛ\nОТ КРАВЕ\nМЛЯКО\n45",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051590": {
     "brand": "Star",
     "ocr_text": "200 g e\n12x\nBELGIAN STYLE\nSPECIALITIES\nWaffle Stars\nwith Cocoa Glaze\nBELG\nB\nSPECIALITIES\nFAIRTRADE\n▼ COCOA",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 200.0,
+    "quantity_unit": "g"
   },
   "10051573": {
     "brand": "PROVENCE",
     "ocr_text": "PROVENCE\nSTYLE\nDuc De Coeur\nSalami\nwith Herbes\nde Provence\n250 g e",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 250.0,
+    "quantity_unit": "g"
   },
   "180889": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051656": {
     "brand": "Ида",
     "ocr_text": "French Style\nSalami\nwith goat cheese\nLTVytintas prancūziško stiliaus saliamis su ožkų pieno sūriu. Nerūšinis. 100\nsalamio pagaminti sunaudota 151g kiaulienos ir 7 gožku pieno sūrio. Sudedamosios dalys",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 151.0,
+    "quantity_unit": "g"
   },
   "10050629": {
     "brand": "Freshona",
     "ocr_text": "Freshona\nПАРЧЕТА\nАВОКАДО\nNUTRI-SCORE\nABCDE\n250ge\nБързо замразен продукт\n5-6 мин.",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051720": {
     "brand": "Duc",
     "ocr_text": "Duc DR STYLE\nDe Coeur\nShortbread Cookies\nNET WT 11.1. OZ\n(315 g)\nDuc De Coeur\nFRENCH STYLE\nShortbread Cookies\nNET WT 11.1 OZ (315 g)",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 315.0,
+    "quantity_unit": "g"
   },
   "10051578": {
     "brand": "AXE",
     "ocr_text": "BELGIAN STYLE\nSPECIALITIES\nSaxe Filet\n100 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 100.0,
+    "quantity_unit": "g"
   },
   "10022669": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10018739": {
     "brand": "Ида",
     "ocr_text": "C\nПРОВЕРЕНО КАЧЕСТВО\n• ОТ ПРОИЗВОДСТВО ДО ПРОДАЖБА\nГРИЛ\nМАЙСТОР\nКЕБАПЧЕТА\nПО СРЪБСКИ\nОХЛАДЕНИ\nНетно количество:\n400 ge\nНеотворен, при съхранение до +4°С,\nизползвай преди:/ Партида:\nВ отговорно\nСАДКОВА",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051703": {
     "brand": "Star",
     "ocr_text": "Mayonnaise with Dijon mustard\nDuc De Coeur\nFRENCH STYLE\nMayonnaise\nwith Dijon mustard",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051032": {
     "brand": "Karo",
     "ocr_text": "Kania\nFix spaghetti\nNAPOLI\nsuszone\n✓ zioła\nsuszone\n✓\nwarzywa\nDanie dla 4 osób!\nDodaj tylko:\n✓ makaron\nparmezan",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009266": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "9002131": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051968": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051954": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051510": {
     "brand": "BIC",
     "ocr_text": "MORSELLE\nSMCHE\n1936\nTHE EICHERS BICOL\nMen\nSHOR\n1936\nPLANT GROWTH\nBlue Hyacinth",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051122": {
     "brand": "Bio",
     "ocr_text": "Bio\nlupilu\nOrganic\nMacaroni\nin cream vegetables\nEuan EU\nEC\n2\n12+\nMESECI\nMECELIA\nOPTANCKH\nAPORIBOR",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051579": {
     "brand": null,
     "ocr_text": "届\n田\n田田田\n田田田田E\nDutch\nStyle\nSPECIALITIES\n用户\nCheese\nPockets\nCES\n360gE\n3\nMIN",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051698": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\nGreen Beans\nextra fine\n555\n7-8 min\nfrozen\n$$$\n7-9 min\n1000 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "178636": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7202279": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051195": {
     "brand": "Ида",
     "ocr_text": "Pilos\nMaslac/\nHemcko kpaBe\nMacno\nSlika je simbolična/\nСимволично изображение\n82%\n100 g 6\n[RS] Maslac. Sadrži min. 82% mlečne masti. Čuvati na temperaturi do +8°C. Najbolje upotrebiti do:/ Lot broj: oz",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 100.0,
+    "quantity_unit": "g"
   },
   "10051699": {
     "brand": "Duc",
     "ocr_text": "Duc De Coeur\nFRENCH STYLE\nRatatouille\nProvencal Style vegetable stew\nIdeal with\npasta or rice\n400 ml e\n600w-2 min",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 400.0,
+    "quantity_unit": "ml"
   },
   "5501689": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050644": {
     "brand": "ION",
     "ocr_text": "FORMIL\nMORE\nCONTENT\"\n55\nDELICATE\nDETERGENT\nFINE & WOOL\nFOR WOOL, SILK & FINE CLOTHING\n+ Fiber care & protection\n+ Soft care formula for colours & fibers\nSTAY NEW-FORMULA\n60°C\nEFFECTIVE SAVES\n20°C\nFROM",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "162270": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022010": {
     "brand": "Pur",
     "ocr_text": "DO+\nPURE\nrich in Beef\nORLANDO\nGourme\nch in Poultry,\nPURE\nPURE\nrich in Chicken\nORLANDO\nSynet\nwith Heart and Liver\nORLANDO\nGourmet\nBALA\nDO\nCOMP\nNUTRI\nwith\nVitamine 03\nPAPE\nwith Omega-\nFatty acids\nfree f",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "5555304": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051709": {
     "brand": "TED",
     "ocr_text": "FROZEN\n154 9\nDuc De Coeur\nFRENCH STYLE\n12 Macarons\nSalted caramel, Chocolate, Speculoos,\nvanilla, pistachio and coffee flavour\nINFORES\nRAIN\nALLIANCE\nRE 30\nNATURE\nCocoa\n&Coffee",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051476": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009263": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051357": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022211": {
     "brand": "Pur",
     "ocr_text": "RESEALABLE\nCoshida\nPURETASTE\nPREMIUM CAT FOOD\nWITH CHICKEN\n69%\nANIMAL\nDERIVATIVES\nCEREAL FREE\nRECIPE\nWITHOUT\nADDED SUGAR\nWITH TAURINE\n400 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 400.0,
+    "quantity_unit": "g"
   },
   "10018741": {
     "brand": "Ида",
     "ocr_text": "• ОТ ПРОИЗВОДСТВО ДО ПРОДАЖБА Я\nПРОВЕРЕНО КАЧЕСТВО\nபென்\nГРИЛ\nМАЙСТОР\nВЕЛИКО КЮФТЕ\nОТ СВИНСКО И\nГОВЕЖДО МЕСО\nС БЕКОН И ПЪРЖЕН ЛУК\nНетно количество:\nОХЛАДЕНО\n400ge\nНеотворен, при съхранение до + 4°С,\nиз",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013756": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022188": {
     "brand": "ION",
     "ocr_text": "ORLANDO\nNODGERS\n64%\nCOMPLETE\nAUTRITION\nORLANDO\nNO 2099 PRESOVATES\nCOMPAGN\nORLANDO\n1000 g C\n64%\nCOMPLETE\nORLANDO\nOF ARTICAL CONT\n1000 g C\nORLANDO\nCOMPLETE",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 1000.0,
+    "quantity_unit": "g"
   },
   "10018730": {
     "brand": "Ида",
     "ocr_text": "ПРОВЕРЕНО КАЧЕСТВО\n• ОТ ПРОИЗВОДСТВО ДО ПРОДАЖБА\nГРИЛ\nMAИCTOP\nПРЯСНО\nПИЛЕШКО\nФИЛЕ\nОТ ГЪРДИТЕ БЕЗ КОЖА\nНетно количество:\n650 g\nС ПИКАНТНА\nНеотворен, при съхранение до +4°С,\nизползвай преди:/ Партида:\nМ",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 650.0,
+    "quantity_unit": "g"
   },
   "10022173": {
     "brand": "BIS",
     "ocr_text": "Resealable\ning &\nPackaging\nreducing\nresponsi\nORLANDO\nBISCUITS\nWith vitamins\nand minerals\nNo\nadded sugar\nThe daily\nEXTRA\nn-between mea\ning & red\nORLANDO\nMeaTY ROLLS\nWith vitamins\nand minerals\nNo\nadded ",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051282": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051841": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7205884": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022178": {
     "brand": "ION",
     "ocr_text": "Pâté\nBALANCED\nCAT\nCERTIFIED\nwith MSC Whitefish COMPLETE\nSUSTAINABLE\nSEAFOOD\nMSC\nwww.msc.org\nNUTRITION\nCoshida\nMSC-C-54990\nServing suggestion\n225246",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022167": {
     "brand": "MEGA",
     "ocr_text": "MEGA PACK\nORLANDO\nORLANDO\nDELICATE\nPIECES\nIN SAUCE\nWITH BEEF\nAND LAMB\nDELICATE PIECES\nIN SAUCE\nORLANDO\nCATE\nIN SAUCE\nWITH TURKEY\nAND CARROT\nORLANDO\nDELICATE\nPIE\nWITH BEEF\nAND VEGETABLES\nORLANDO\nDELICA",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10050625": {
     "brand": "Solevita",
     "ocr_text": "Solevita\nЯгодова\nлимонада\nVEGAN\n750M",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022670": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013744": {
     "brand": null,
     "ocr_text": "(KitKat) (KitKat)",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10031638": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022174": {
     "brand": "Pur",
     "ocr_text": "ORLANDO\nPURETASTE\nPREMIUM DOG FOOD\nSNACK\nCHICKEN\nFILLET\nSNACK\nCHICKEN FILLET\nRESEALABLE\n93%\nCHICKEN\nNO ADDED GRAINS\nFREE FROM\nADDED SUGARS\nFREE FROM ADDED\nARTIFICIAL PRESERVATIVES\n200 Ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009249": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "7202803": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013714": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10009257": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022298": {
     "brand": "Natura",
     "ocr_text": "MINI DOG\nBALANCE\nORLANDO\nGOURMET\nMINI DOG\nBALANCE\nESPECIALLY FOR\nTHE NEEDS OF\nLITTLE DOGS\nADAPTED PROTEN AND\nOPTIMIZE THE IDEAL\nWEIGHT\nNATURAL FIBER\nSUPPORT THE\nDIGESTION\nVITAMINEAS\nANTIOXIDANTS, SUPP",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051587": {
     "brand": "MINI",
     "ocr_text": "MINI\nSondey\n350 g\nBUTTER\nWAFFLES",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 350.0,
+    "quantity_unit": "g"
   },
   "59952": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013728": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "2299": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013734": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051036": {
     "brand": "Hranjive",
     "ocr_text": "Hranjive vrijednosti/Hranljive vrednosti/Xранителни стойности/Дiаτроι бwan\nMaistingumo deklaracija/Átlagos tápértéktartalom/Hranilna vrednost/\nConfiserie\nFirenze\nWaffles\nwith hazelnut\nflavour filling\n",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10013742": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051949": {
     "brand": null,
     "ocr_text": null,
-    "source": "ocr_failed"
+    "source": "ocr_failed",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10051719": {
     "brand": "BIS",
     "ocr_text": "Duc De Coeur\nButter\nBiscuits\nwith Apple filling\n100 ge",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": null,
+    "quantity_unit": null
   },
   "10022014": {
     "brand": "Pur",
     "ocr_text": "RESEALABLE\nORLANDO\nPURETASTE\nPREMIUM DOG FOOD\nWITH CHICKEN\n58%\nANIMAL\nINGREDIENTS\nGRAIN FREE\nRECIPE\nWITHOUT\nADDED SUGAR\nWITH BETA-\nCAROTENE\n1500 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 1500.0,
+    "quantity_unit": "g"
   },
   "10050635": {
     "brand": "Rois",
     "ocr_text": "ADY TO\nI\nBAKE\n18-20\nmin.\n=170°C\nNUTRI-SCORE\nD\nTastino*\n6 Butter\nCroissants\n360 g",
-    "source": "ocr"
+    "source": "ocr",
+    "quantity": 360.0,
+    "quantity_unit": "g"
   }
 }

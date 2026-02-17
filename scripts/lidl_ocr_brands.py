@@ -19,6 +19,7 @@ import logging
 import argparse
 import requests
 from pathlib import Path
+from quantity_extractor import extract_quantity_from_ocr, extract_quantity_from_name
 from datetime import datetime, timezone
 
 # For JWT signing
@@ -242,10 +243,18 @@ def main():
         
         if ocr_text:
             brand = extract_brand_from_ocr(ocr_text, name)
+            
+            # Extract quantity from OCR text or product name
+            quantity_info = extract_quantity_from_ocr(ocr_text)
+            if not quantity_info:
+                quantity_info = extract_quantity_from_name(name)
+            
             cache[sku] = {
                 'brand': brand,
                 'ocr_text': ocr_text[:200],
-                'source': 'ocr'
+                'source': 'ocr',
+                'quantity': quantity_info.get('value') if quantity_info else None,
+                'quantity_unit': quantity_info.get('unit') if quantity_info else None,
             }
             if brand:
                 logger.info(f"  → Brand: {brand}")
