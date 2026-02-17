@@ -235,14 +235,16 @@ def run_matching():
                         
                         # Step 3: Quantity check
                         qty_result = check_quantity_compatibility(p1, p2)
-                        if qty_result == 'incompatible':
+                        if qty_result == 'same_size':
+                            score = min(1.0, score + qty_compatible_boost)  # Boost for same size
+                        elif qty_result == 'different_size':
+                            pass  # Neutral — different packaging is fine, we'll show unit prices
+                        elif qty_result == 'incompatible':
                             if brand_result == 'match':
-                                score = score * 0.7  # Mild penalty: same brand, different size
+                                score = score * 0.7  # Mild penalty: same brand, wildly different size
                             else:
-                                score = score * qty_incompatible_penalty  # Heavy penalty: different brand + size
+                                score = score * qty_incompatible_penalty  # Heavy penalty: different brand + wildly different size
                             stats['qty_penalized'] += 1
-                        elif qty_result == 'compatible':
-                            score = min(1.0, score + qty_compatible_boost)  # Small boost for matching qty
                         # 'unknown' = no change
                         
                         # Step 4: Price ratio flag (informational, doesn't reject)
@@ -361,9 +363,17 @@ def check_quantity_compatibility(p1, p2):
     """
     Check if two products have compatible quantities.
     
+    Philosophy: Different sizes of the same product ARE valid comparisons.
+    Users want to compare unit prices across stores. A 500ml milk at Store A
+    vs 1L milk at Store B is useful — we show price/L for both.
+    
+    We only penalize when quantities suggest fundamentally different products
+    (e.g., a 10g spice sachet vs 500g jar — likely different products entirely).
+    
     Returns:
-        'compatible' - Same or similar quantity (<1.5x ratio)
-        'incompatible' - Very different quantity (>2x ratio)
+        'same_size' - Same or near-identical quantity (<1.3x ratio) → boost
+        'different_size' - Different packaging but likely same product (1.3-5x) → neutral, flag for unit price display
+        'incompatible' - Wildly different (>5x ratio) → likely different products, penalize
         'unknown' - Can't determine (one or both missing qty)
     """
     q1 = p1.get('quantity')
@@ -380,12 +390,12 @@ def check_quantity_compatibility(p1, p2):
     
     ratio = max(q1, q2) / min(q1, q2)
     
-    if ratio <= 1.5:
-        return 'compatible'
-    elif ratio > 2.0:
-        return 'incompatible'
+    if ratio <= 1.3:
+        return 'same_size'       # Essentially same product
+    elif ratio <= 5.0:
+        return 'different_size'  # Different packaging, same product — show unit price
     else:
-        return 'unknown'  # 1.5-2x range: uncertain
+        return 'incompatible'    # 10g sachet vs 1kg bag — probably different products
 
 
 def tokenize(name, config):
