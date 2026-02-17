@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- v2.1 --><title>PromoBG - Сравни цените в супермаркетите</title>
+    <!-- v2.2 - Phase 1: Security & Correctness fixes --><title>PromoBG - Сравни цените в супермаркетите</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://images.openfoodfacts.org">
     <style>
@@ -271,25 +271,43 @@
         }
         
         
-        // Product image mapping (from znamcenite.bg, background-removed)
-        const IMAGE_MAPPINGS = [{"keyword": "пресни зеленчукови подправки", "image": "presni-podpravki.png"}, {"keyword": "сушени зеленчукови подправки", "image": "podpravki.png"}, {"keyword": "гъби сушени и консервирани", "image": "susheni-gubi.png"}, {"keyword": "зелен лук, чесън и праз", "image": "zelen-luk-chesun-praz.png"}, {"keyword": "риба прясна и замразена", "image": "riba.png"}, {"keyword": "сокове, сиропи, нектари", "image": "sok.png"}, {"keyword": "чай. вкл. сушени билки", "image": "chai.png"}, {"keyword": "субпродукти, карантия", "image": "karantia.png"}, {"keyword": "зеленчукови консерви", "image": "zelenchukovi-konservi.png"}, {"keyword": "кафе - всички видове", "image": "kafe.png"}, {"keyword": "овче, шилешко, козе", "image": "ovche.png"}, {"keyword": "колбаси малотрайни", "image": "malotraini-kolbasi.png"}, {"keyword": "тикви, вкл. печени", "image": "tikva.png"}, {"keyword": "макаронени изделия", "image": "makaroneni-izdeliq.png"}, {"keyword": "сладкарски изделия", "image": "sladkarski-izdeliq.png"}, {"keyword": "зеленчукови сокове", "image": "zelenchukovi-sokove.png"}, {"keyword": "шоколадови изделия", "image": "bonboni.png"}, {"keyword": "праскови и кайсии", "image": "praskovi-kaisii.png"}, {"keyword": "конфитюри, сладка", "image": "konfitur.png"}, {"keyword": "цитрусови плодове", "image": "citrusi.png"}, {"keyword": "газирани напитки", "image": "gazirani-napitki.png"}, {"keyword": "агнешко и ярешко", "image": "agneshko.png"}, {"keyword": "лук кромид зрял", "image": "luk.png"}, {"keyword": "обработена риба", "image": "obrabotena-riba.png"}, {"keyword": "захарни изделия", "image": "zaharni-izdeliq.png"}, {"keyword": "тестени закуски", "image": "testeni-zakuski.png"}, {"keyword": "ягоди и малини", "image": "qgodi-malini.png"}, {"keyword": "череши и вишни", "image": "chereshi-vishni.png"}, {"keyword": "колбаси трайни", "image": "kolbasi-traini.png"}, {"keyword": "рибни консерви", "image": "ribni-konservi.png"}, {"keyword": "сушени плодове", "image": "susheni-plodove.png"}, {"keyword": "месни консерви", "image": "mesni-konservi.png"}, {"keyword": "минерална вода", "image": "voda.png"}, {"keyword": "вина гроздови", "image": "vino.png"}, {"keyword": "дини и пъпеши", "image": "dinq-pupesh.png"}, {"keyword": "мляко прясно", "image": "prqsno-mlqko.png"}, {"keyword": "млечни масла", "image": "mlechni-masla.png"}, {"keyword": "мляко кисело", "image": "kiselo-mlqko.png"}, {"keyword": "кайма - смес", "image": "kaima.png"}, {"keyword": "консервирани", "image": "susheni-gubi.png"}, {"keyword": "сирене бяло", "image": "sirene.png"}, {"keyword": "кисело зеле", "image": "kiselo-zele.png"}, {"keyword": "концентрати", "image": "alkohol.png"}, {"keyword": "гъби пресни", "image": "gubi.png"}, {"keyword": "зеленчукови", "image": "presni-podpravki.png"}, {"keyword": "субпродукти", "image": "karantia.png"}, {"keyword": "краставици", "image": "krastavici.png"}, {"keyword": "чесън зрял", "image": "chesun.png"}, {"keyword": "фасул зрял", "image": "fasul.png"}, {"keyword": "малотрайни", "image": "malotraini-kolbasi.png"}, {"keyword": "обработена", "image": "obrabotena-riba.png"}, {"keyword": "макаронени", "image": "makaroneni-izdeliq.png"}, {"keyword": "сладкарски", "image": "sladkarski-izdeliq.png"}, {"keyword": "шоколадови", "image": "bonboni.png"}, {"keyword": "подправки", "image": "podpravki.png"}, {"keyword": "замразена", "image": "riba.png"}, {"keyword": "конфитюри", "image": "konfitur.png"}, {"keyword": "цитрусови", "image": "citrusi.png"}, {"keyword": "минерална", "image": "voda.png"}, {"keyword": "хляб бял", "image": "hlqb-bql.png"}, {"keyword": "маргарин", "image": "margarin.png"}, {"keyword": "кашкавал", "image": "kashkaval.png"}, {"keyword": "праскови", "image": "praskovi-kaisii.png"}, {"keyword": "карантия", "image": "karantia.png"}, {"keyword": "газирани", "image": "gazirani-napitki.png"}, {"keyword": "гроздови", "image": "vino.png"}, {"keyword": "консерви", "image": "zelenchukovi-konservi.png"}, {"keyword": "сланина", "image": "slanina.png"}, {"keyword": "картофи", "image": "kartofi.png"}, {"keyword": "пилешко", "image": "pileshko.png"}, {"keyword": "маслини", "image": "maslini.png"}, {"keyword": "компоти", "image": "kompoti.png"}, {"keyword": "свинско", "image": "svinsko.png"}, {"keyword": "колбаси", "image": "malotraini-kolbasi.png"}, {"keyword": "напитки", "image": "gazirani-napitki.png"}, {"keyword": "изделия", "image": "makaroneni-izdeliq.png"}, {"keyword": "агнешко", "image": "agneshko.png"}, {"keyword": "шилешко", "image": "ovche.png"}, {"keyword": "захарни", "image": "zaharni-izdeliq.png"}, {"keyword": "тестени", "image": "testeni-zakuski.png"}, {"keyword": "закуски", "image": "testeni-zakuski.png"}, {"keyword": "плодове", "image": "citrusi.png"}, {"keyword": "нектари", "image": "sok.png"}, {"keyword": "грозде", "image": "grozde.png"}, {"keyword": "домати", "image": "domati.png"}, {"keyword": "туршии", "image": "turshii.png"}, {"keyword": "брашно", "image": "brashno.png"}, {"keyword": "ябълки", "image": "qbulki.png"}, {"keyword": "цигари", "image": "cigari.png"}, {"keyword": "банани", "image": "banani.png"}, {"keyword": "малини", "image": "qgodi-malini.png"}, {"keyword": "сирене", "image": "sirene.png"}, {"keyword": "череши", "image": "chereshi-vishni.png"}, {"keyword": "кайсии", "image": "praskovi-kaisii.png"}, {"keyword": "прясно", "image": "prqsno-mlqko.png"}, {"keyword": "кромид", "image": "luk.png"}, {"keyword": "печени", "image": "tikva.png"}, {"keyword": "млечни", "image": "mlechni-masla.png"}, {"keyword": "прясна", "image": "riba.png"}, {"keyword": "трайни", "image": "kolbasi-traini.png"}, {"keyword": "пъпеши", "image": "dinq-pupesh.png"}, {"keyword": "кисело", "image": "kiselo-mlqko.png"}, {"keyword": "ярешко", "image": "agneshko.png"}, {"keyword": "сладка", "image": "konfitur.png"}, {"keyword": "сушени", "image": "podpravki.png"}, {"keyword": "сокове", "image": "zelenchukovi-sokove.png"}, {"keyword": "сиропи", "image": "sok.png"}, {"keyword": "пипер", "image": "piper.png"}, {"keyword": "сливи", "image": "slivi.png"}, {"keyword": "захар", "image": "zahar.png"}, {"keyword": "ракии", "image": "rakia.png"}, {"keyword": "какaо", "image": "kakao-prah.png"}, {"keyword": "круши", "image": "krushi.png"}, {"keyword": "ягоди", "image": "qgodi-malini.png"}, {"keyword": "вишни", "image": "chereshi-vishni.png"}, {"keyword": "чесън", "image": "zelen-luk-chesun-praz.png"}, {"keyword": "мляко", "image": "prqsno-mlqko.png"}, {"keyword": "тикви", "image": "tikva.png"}, {"keyword": "масла", "image": "mlechni-masla.png"}, {"keyword": "кайма", "image": "kaima.png"}, {"keyword": "рибни", "image": "ribni-konservi.png"}, {"keyword": "месни", "image": "mesni-konservi.png"}, {"keyword": "билки", "image": "chai.png"}, {"keyword": "фасул", "image": "fasul.png"}, {"keyword": "оцет", "image": "ocet.png"}, {"keyword": "зеле", "image": "zele.png"}, {"keyword": "яйца", "image": "qica.png"}, {"keyword": "боза", "image": "boza.png"}, {"keyword": "ядки", "image": "qdki.png"}, {"keyword": "леща", "image": "leshta.png"}, {"keyword": "ориз", "image": "oriz.png"}, {"keyword": "бира", "image": "bira.png"}, {"keyword": "олио", "image": "olio.png"}, {"keyword": "праз", "image": "zelen-luk-chesun-praz.png"}, {"keyword": "хляб", "image": "hlqb-bql.png"}, {"keyword": "вина", "image": "vino.png"}, {"keyword": "дини", "image": "dinq-pupesh.png"}, {"keyword": "смес", "image": "kaima.png"}, {"keyword": "овче", "image": "ovche.png"}, {"keyword": "козе", "image": "ovche.png"}, {"keyword": "кафе", "image": "kafe.png"}, {"keyword": "гъби", "image": "gubi.png"}, {"keyword": "вода", "image": "voda.png"}, {"keyword": "сол", "image": "sol.png"}, {"keyword": "мас", "image": "mas.png"}, {"keyword": "мед", "image": "med.png"}];
+        // Image mapping config (loaded from data/image_mapping.json)
+        let IMAGE_CONFIG = { basePath: 'images/products/', mappings: [] };
+        
+        async function loadImageMappings() {
+            try {
+                const res = await fetch('data/image_mapping.json');
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const json = await res.json();
+                IMAGE_CONFIG = { basePath: json.base_path || 'images/products/', mappings: json.mappings || [] };
+            } catch (err) {
+                console.warn('Image mappings not loaded, using defaults:', err.message);
+            }
+        }
         
         function getProductImage(name) {
             if (!name) return null;
             const lower = name.toLowerCase();
-            for (const m of IMAGE_MAPPINGS) {
+            for (const m of IMAGE_CONFIG.mappings) {
                 if (lower.includes(m.keyword)) {
-                    return 'images/products/' + m.image;
+                    return IMAGE_CONFIG.basePath + m.image;
                 }
             }
             return null;
         }
 
         // Load products
-        async function loadProducts() {
+        async function loadProducts(retryCount) {
+            retryCount = retryCount || 0;
             try {
+                await loadImageMappings();
                 const response = await fetch('data/products.json');
-                data = await response.json();
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                const newData = await response.json();
+                if (!newData.products || !Array.isArray(newData.products)) {
+                    throw new Error('Invalid data format');
+                }
+                data = newData;
                 buildSearchIndex();
                 calculateStoreCounts();
                 updateStats(data.products);
@@ -297,8 +315,14 @@
                 showTopDeals();
             } catch (err) {
                 console.error('Error loading products:', err);
-                document.getElementById('results').innerHTML = 
-                    '<div class="text-center py-12 text-red-500 col-span-full">Грешка при зареждане на данните</div>';
+                if (retryCount < 2) {
+                    setTimeout(function() { loadProducts(retryCount + 1); }, 2000 * (retryCount + 1));
+                    document.getElementById('results').innerHTML = 
+                        '<div class="text-center py-12 text-gray-500 col-span-full">Зареждане... (опит ' + (retryCount + 1) + '/3)</div>';
+                } else {
+                    document.getElementById('results').innerHTML = 
+                        '<div class="text-center py-12 col-span-full"><p class="text-red-500 mb-4">⚠️ Грешка при зареждане: ' + escapeHtml(err.message) + '</p><button onclick="loadProducts(0)" class="px-6 py-2 bg-green-500 text-white rounded-xl hover:bg-green-600">🔄 Презареди</button></div>';
+                }
             }
         }
         
@@ -339,18 +363,18 @@
         }
         
         function getNutriscore(product) {
-            if (!product.off_barcode || !data.off[product.off_barcode]) return null;
-            return data.off[product.off_barcode].nutriscore?.toLowerCase();
+            if (!product?.off_barcode || !data?.off?.[product.off_barcode]) return null;
+            return data.off[product.off_barcode].nutriscore?.toLowerCase() || null;
         }
         
         function getGroupProducts(groupId) {
-            if (!groupId) return [];
+            if (!groupId || !Array.isArray(data?.products)) return [];
             return data.products.filter(p => p.group_id === groupId);
         }
         
         // Check if a product has a valid cross-store comparison (2+ products in 2+ stores)
         function hasValidComparison(product) {
-            if (!product.group_id) return false;
+            if (!product?.group_id) return false;
             const groupProducts = getGroupProducts(product.group_id);
             if (groupProducts.length < 2) return false;
             const uniqueStores = new Set(groupProducts.map(p => p.store));
@@ -392,7 +416,7 @@
             results = applyFilters(results);
             renderProducts(results.slice(0, 100));
             document.getElementById('resultsTitle').textContent = 
-                'Резултати за "' + query + '" (' + results.length + ')';
+                'Резултати за "' + escapeHtml(query) + '" (' + results.length + ')';
         }
         
         function filterProducts() {
@@ -490,8 +514,9 @@
                 const nutriscore = getNutriscore(p);
                 const hasComparison = hasValidComparison(p);
                 const displayName = cleanProductName(p.name);
+                const safeDisplayName = escapeHtml(displayName);
                 
-                return '<div class="product-card bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-lg ' + (hasComparison ? 'cursor-pointer' : '') + '" onclick="' + (hasComparison ? "showComparison('" + p.group_id + "')" : '') + '">' +
+                return '<div class="product-card bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-lg ' + (hasComparison ? 'cursor-pointer' : '') + '" data-group-id="' + (hasComparison ? escapeHtml(p.group_id || '') : '') + '">' +
                     '<div class="relative">' +
                         (p.discount_pct ? '<div class="discount-badge absolute top-2 right-2 text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg">-' + p.discount_pct + '%</div>' : '') +
                         (nutriscore ? '<div class="absolute top-2 left-2 nutriscore-' + nutriscore + ' text-white text-xs font-bold px-2 py-1 rounded-lg uppercase">' + nutriscore + '</div>' : '') +
@@ -499,14 +524,14 @@
                         (function() {
                     var img = getProductImage(p.name);
                     if (img) {
-                        return '<div class="h-28 sm:h-32 bg-gray-50 flex items-center justify-center p-2"><img src="' + img + '" alt="' + displayName.slice(0,30) + '" class="max-h-full max-w-full object-contain" loading="lazy" onerror="this.parentElement.innerHTML=\'' + getStoreEmoji(p.store) + '\'"></div>';
+                        return '<div class="h-28 sm:h-32 bg-gray-50 flex items-center justify-center p-2"><img src="' + img + '" alt="' + safeDisplayName.slice(0,30) + '" class="max-h-full max-w-full object-contain" loading="lazy" onerror="this.parentElement.innerHTML=\'' + getStoreEmoji(p.store) + '\'"></div>';
                     }
                     return '<div class="h-28 sm:h-32 bg-gray-50 flex items-center justify-center text-4xl">' + getStoreEmoji(p.store) + '</div>';
                 })() +
                     '</div>' +
                     '<div class="p-3 sm:p-4">' +
                         '<div class="text-xs text-gray-400 mb-1">' + p.store + '</div>' +
-                        '<h4 class="font-semibold text-sm leading-tight mb-2 line-clamp-2" title="' + displayName + '">' + displayName.slice(0, 45) + (displayName.length > 45 ? '...' : '') + '</h4>' +
+                        '<h4 class="font-semibold text-sm leading-tight mb-2 line-clamp-2" title="' + safeDisplayName + '">' + safeDisplayName.slice(0, 45) + (safeDisplayName.length > 45 ? '...' : '') + '</h4>' +
                         '<div class="flex items-baseline gap-2">' +
                             '<span class="' + (p.price > 99 ? 'text-base' : 'text-xl') + ' font-bold text-green-600">' + (p.price?.toFixed(2) || '-') + 'лв</span>' +
                             (p.old_price ? '<span class="text-sm text-gray-400 line-through">' + p.old_price.toFixed(2) + 'лв</span>' : '') +
@@ -540,7 +565,7 @@
             const savingsPct = Math.round(savings / maxPrice * 100);
             
             const modalTitle = offData?.name || cleanProductName(products[0]?.name) || 'Сравнение';
-            document.getElementById('modalTitle').textContent = modalTitle;
+            document.getElementById('modalTitle').textContent = modalTitle; // textContent is safe
             
             const isPriceMatch = savings <= 0.01;
             const isCrossStore = products.length >= 2;
@@ -563,7 +588,7 @@
                             '<span class="text-3xl">' + getStoreEmoji(p.store) + '</span>' +
                             '<div class="flex-1">' +
                                 '<div class="font-semibold text-gray-800">' + p.store + '</div>' +
-                                '<div class="text-xs text-gray-500 truncate" title="' + cleanedName + '">' + cleanedName.slice(0, 35) + (cleanedName.length > 35 ? '...' : '') + '</div>' +
+                                '<div class="text-xs text-gray-500 truncate" title="' + escapeHtml(cleanedName) + '">' + escapeHtml(cleanedName).slice(0, 35) + (cleanedName.length > 35 ? '...' : '') + '</div>' +
                                 '<div class="text-xs text-gray-400">' + (p.price_per_kg ? '📦 ' + p.price_per_kg.toFixed(2) + 'лв/кг' : '') + (p.price_per_l ? '📦 ' + p.price_per_l.toFixed(2) + 'лв/л' : '') + '</div>' +
                             '</div>' +
                             '<div class="text-right">' +
@@ -595,7 +620,7 @@
             const matches = searchIndex.filter(name => name.toLowerCase().includes(query.toLowerCase())).slice(0, 8);
             if (matches.length === 0) { hideTypeahead(); return; }
             const container = document.getElementById('typeahead');
-            container.innerHTML = matches.map(m => '<div class="typeahead-item" onclick="selectTypeahead(\'' + m.replace(/'/g, "\\'") + '\')">🔍 ' + m + '</div>').join('');
+            container.innerHTML = matches.map(m => '<div class="typeahead-item" onmousedown="selectTypeahead(\'' + m.replace(/'/g, "\\'") + '\')">🔍 ' + escapeHtml(m) + '</div>').join('');
             container.classList.remove('hidden');
         }
         
@@ -613,6 +638,14 @@
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
         
         loadProducts();
+        
+        // Event delegation for product card clicks (prevents XSS via group_id)
+        document.getElementById('results').addEventListener('click', function(e) {
+            const card = e.target.closest('[data-group-id]');
+            if (card && card.dataset.groupId) {
+                showComparison(card.dataset.groupId);
+            }
+        });
     </script>
 </body>
 </html>
