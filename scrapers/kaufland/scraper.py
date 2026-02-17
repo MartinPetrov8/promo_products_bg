@@ -142,12 +142,22 @@ class KauflandScraper(BaseScraper):
         else:
             raw_name = title
         
-        # Extract brand from title (not subtitle)
-        # If title is Latin text, it's likely the brand
+        # Get detailDescription as raw_description
+        raw_description = offer.get("detailDescription", None)
+        # Extract brand - multiple strategies
+        # 1. Latin title = brand name
         brand = extract_brand_from_name(title)
         
-        # Get detailDescription as raw_description
-        raw_description = offer.get('detailDescription', None)
+        # 2. If Cyrillic title, check detailDescription first line for brand
+        if not brand and raw_description:
+            first_line = raw_description.split('\n')[0].strip()
+            if first_line and first_line != title:
+                brand = extract_brand_from_name(first_line)
+        
+        # 3. Check subtitle for brand
+        if not brand and subtitle:
+            brand = extract_brand_from_name(subtitle)
+        
         
         # Extract prices
         prices = offer.get('prices', {}).get('alternative', {}).get('formatted', {})
