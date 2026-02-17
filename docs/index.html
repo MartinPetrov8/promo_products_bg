@@ -271,6 +271,14 @@
         }
         
         
+        // HTML escaping to prevent XSS
+        function escapeHtml(text) {
+            if (typeof text !== 'string') return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         // Image mapping config (loaded from data/image_mapping.json)
         let IMAGE_CONFIG = { basePath: 'images/products/', mappings: [] };
         
@@ -620,7 +628,7 @@
             const matches = searchIndex.filter(name => name.toLowerCase().includes(query.toLowerCase())).slice(0, 8);
             if (matches.length === 0) { hideTypeahead(); return; }
             const container = document.getElementById('typeahead');
-            container.innerHTML = matches.map(m => '<div class="typeahead-item" onmousedown="selectTypeahead(\'' + m.replace(/'/g, "\\'") + '\')">🔍 ' + escapeHtml(m) + '</div>').join('');
+            container.innerHTML = matches.map(m => '<div class="typeahead-item" data-value="' + escapeHtml(m) + '">🔍 ' + escapeHtml(m) + '</div>').join('');
             container.classList.remove('hidden');
         }
         
@@ -638,6 +646,15 @@
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
         
         loadProducts();
+        
+        // Event delegation for typeahead clicks
+        document.getElementById('typeahead').addEventListener('mousedown', function(e) {
+            const item = e.target.closest('[data-value]');
+            if (item) {
+                e.preventDefault();
+                selectTypeahead(item.dataset.value);
+            }
+        });
         
         // Event delegation for product card clicks (prevents XSS via group_id)
         document.getElementById('results').addEventListener('click', function(e) {
