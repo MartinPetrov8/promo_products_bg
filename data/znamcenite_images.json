@@ -1,0 +1,656 @@
+{
+  "source": "znamcenite.bg",
+  "total": 81,
+  "note": "Generic grocery product images - webp format, no brand logos",
+  "base_url": "https://znamcenite.bg/images/products/",
+  "products": [
+    {
+      "id": 1,
+      "name": "Грозде",
+      "category": "Пресни плодове",
+      "category_id": 1,
+      "image_filename": "grozde.webp",
+      "image_url": "https://znamcenite.bg/images/products/grozde.webp"
+    },
+    {
+      "id": 2,
+      "name": "Ягоди и малини",
+      "category": "Пресни плодове",
+      "category_id": 1,
+      "image_filename": "qgodi-malini.webp",
+      "image_url": "https://znamcenite.bg/images/products/qgodi-malini.webp"
+    },
+    {
+      "id": 3,
+      "name": "Сирене бяло",
+      "category": "Мляко и млечни произведения",
+      "category_id": 2,
+      "image_filename": "sirene.webp",
+      "image_url": "https://znamcenite.bg/images/products/sirene.webp"
+    },
+    {
+      "id": 4,
+      "name": "Сланина",
+      "category": "Месо",
+      "category_id": 3,
+      "image_filename": "slanina.webp",
+      "image_url": "https://znamcenite.bg/images/products/slanina.webp"
+    },
+    {
+      "id": 5,
+      "name": "Оцет ",
+      "category": "Други",
+      "category_id": 4,
+      "image_filename": "ocet.webp",
+      "image_url": "https://znamcenite.bg/images/products/ocet.webp"
+    },
+    {
+      "id": 6,
+      "name": "Череши и вишни",
+      "category": "Пресни плодове",
+      "category_id": 1,
+      "image_filename": "chereshi-vishni.webp",
+      "image_url": "https://znamcenite.bg/images/products/chereshi-vishni.webp"
+    },
+    {
+      "id": 7,
+      "name": "Сол",
+      "category": "Други",
+      "category_id": 4,
+      "image_filename": "sol.webp",
+      "image_url": "https://znamcenite.bg/images/products/sol.webp"
+    },
+    {
+      "id": 8,
+      "name": "Картофи",
+      "category": "Пресни и замразени зеленчуци",
+      "category_id": 5,
+      "image_filename": "kartofi.webp",
+      "image_url": "https://znamcenite.bg/images/products/kartofi.webp"
+    },
+    {
+      "id": 9,
+      "name": "Праскови и кайсии",
+      "category": "Пресни плодове",
+      "category_id": 1,
+      "image_filename": "praskovi-kaisii.webp",
+      "image_url": "https://znamcenite.bg/images/products/praskovi-kaisii.webp"
+    },
+    {
+      "id": 10,
+      "name": "Зеле",
+      "category": "Пресни и замразени зеленчуци",
+      "category_id": 5,
+      "image_filename": "zele.webp",
+      "image_url": "https://znamcenite.bg/images/products/zele.webp"
+    },
+    {
+      "id": 11,
+      "name": "Мас",
+      "category": "Животински мазнини",
+      "category_id": 6,
+      "image_filename": "mas.webp",
+      "image_url": "https://znamcenite.bg/images/products/mas.webp"
+    },
+    {
+      "id": 12,
+      "name": "Пресни зеленчукови подправки",
+      "category": "Пресни и замразени зеленчуци",
+      "category_id": 5,
+      "image_filename": "presni-podpravki.webp",
+      "image_url": "https://znamcenite.bg/images/products/presni-podpravki.webp"
+    },
+    {
+      "id": 13,
+      "name": "Домати",
+      "category": "Пресни и замразени зеленчуци",
+      "category_id": 5,
+      "image_filename": "domati.webp",
+      "image_url": "https://znamcenite.bg/images/products/domati.webp"
+    },
+    {
+      "id": 14,
+      "name": "Яйца ",
+      "category": "Основни продукти",
+      "category_id": 7,
+      "image_filename": "qica.webp",
+      "image_url": "https://znamcenite.bg/images/products/qica.webp"
+    },
+    {
+      "id": 16,
+      "name": "Пипер",
+      "category": "Пресни и замразени зеленчуци",
+      "category_id": 5,
+      "image_filename": "piper.webp",
+      "image_url": "https://znamcenite.bg/images/products/piper.webp"
+    },
+    {
+      "id": 17,
+      "name": "Зелен лук, чесън и праз",
+      "category": "Пресни и замразени зеленчуци",
+      "category_id": 5,
+      "image_filename": "zelen-luk-chesun-praz.webp",
+      "image_url": "https://znamcenite.bg/images/products/zelen-luk-chesun-praz.webp"
+    },
+    {
+      "id": 18,
+      "name": "Мляко прясно",
+      "category": "Мляко и млечни произведения",
+      "category_id": 2,
+      "image_filename": "prqsno-mlqko.webp",
+      "image_url": "https://znamcenite.bg/images/products/prqsno-mlqko.webp"
+    },
+    {
+      "id": 19,
+      "name": "Хляб бял",
+      "category": "Основни продукти",
+      "category_id": 7,
+      "image_filename": "hlqb-bql.webp",
+      "image_url": "https://znamcenite.bg/images/products/hlqb-bql.webp"
+    },
+    {
+      "id": 20,
+      "name": "Лук кромид зрял",
+      "category": "Пресни и замразени зеленчуци",
+      "category_id": 5,
+      "image_filename": "luk.webp",
+      "image_url": "https://znamcenite.bg/images/products/luk.webp"
+    },
+    {
+      "id": 21,
+      "name": "Боза",
+      "category": "Безалкохолни напитки",
+      "category_id": 9,
+      "image_filename": "boza.webp",
+      "image_url": "https://znamcenite.bg/images/products/boza.webp"
+    },
+    {
+      "id": 22,
+      "name": "Колбаси малотрайни",
+      "category": "Обработено месо и колбаси",
+      "category_id": 10,
+      "image_filename": "malotraini-kolbasi.webp",
+      "image_url": "https://znamcenite.bg/images/products/malotraini-kolbasi.webp"
+    },
+    {
+      "id": 23,
+      "name": "Маргарин",
+      "category": "Растителни мазнини",
+      "category_id": 11,
+      "image_filename": "margarin.webp",
+      "image_url": "https://znamcenite.bg/images/products/margarin.webp"
+    },
+    {
+      "id": 24,
+      "name": "Тикви, вкл. печени",
+      "category": "Пресни плодове",
+      "category_id": 1,
+      "image_filename": "tikva.webp",
+      "image_url": "https://znamcenite.bg/images/products/tikva.webp"
+    },
+    {
+      "id": 25,
+      "name": "Субпродукти, карантия",
+      "category": "Meso",
+      "category_id": 3,
+      "image_filename": "karantia.webp",
+      "image_url": "https://znamcenite.bg/images/products/karantia.webp"
+    },
+    {
+      "id": 26,
+      "name": "Млечни масла",
+      "category": "Растителни мазнини",
+      "category_id": 11,
+      "image_filename": "mlechni-masla.webp",
+      "image_url": "https://znamcenite.bg/images/products/mlechni-masla.webp"
+    },
+    {
+      "id": 27,
+      "name": "Газирани напитки",
+      "category": "Безалкохолни напитки",
+      "category_id": 9,
+      "image_filename": "gazirani-napitki.webp",
+      "image_url": "https://znamcenite.bg/images/products/gazirani-napitki.webp"
+    },
+    {
+      "id": 28,
+      "name": "Обработена риба",
+      "category": "Риба и рибни продукти",
+      "category_id": 13,
+      "image_filename": "obrabotena-riba.webp",
+      "image_url": "https://znamcenite.bg/images/products/obrabotena-riba.webp"
+    },
+    {
+      "id": 29,
+      "name": "Риба прясна и замразена",
+      "category": "Риба и рибни продукти",
+      "category_id": 13,
+      "image_filename": "riba.webp",
+      "image_url": "https://znamcenite.bg/images/products/riba.webp"
+    },
+    {
+      "id": 30,
+      "name": "Макаронени изделия",
+      "category": "Хлебни и тестени изделия",
+      "category_id": 14,
+      "image_filename": "makaroneni-izdeliq.webp",
+      "image_url": "https://znamcenite.bg/images/products/makaroneni-izdeliq.webp"
+    },
+    {
+      "id": 31,
+      "name": "Колбаси трайни",
+      "category": "Обработено месо и колбаси",
+      "category_id": 10,
+      "image_filename": "kolbasi-traini.webp",
+      "image_url": "https://znamcenite.bg/images/products/kolbasi-traini.webp"
+    },
+    {
+      "id": 32,
+      "name": "Туршии",
+      "category": "Консервирани зеленчуци",
+      "category_id": 15,
+      "image_filename": "turshii.webp",
+      "image_url": "https://znamcenite.bg/images/products/turshii.webp"
+    },
+    {
+      "id": 33,
+      "name": "Краставици",
+      "category": "Пресни и замразени зеленчуци",
+      "category_id": 5,
+      "image_filename": "krastavici.webp",
+      "image_url": "https://znamcenite.bg/images/products/krastavici.webp"
+    },
+    {
+      "id": 34,
+      "name": "Сладкарски изделия",
+      "category": "Хлебни и тестени изделия",
+      "category_id": 14,
+      "image_filename": "sladkarski-izdeliq.webp",
+      "image_url": "https://znamcenite.bg/images/products/sladkarski-izdeliq.webp"
+    },
+    {
+      "id": 35,
+      "name": "Сливи",
+      "category": "Пресни плодове",
+      "category_id": 1,
+      "image_filename": "slivi.webp",
+      "image_url": "https://znamcenite.bg/images/products/slivi.webp"
+    },
+    {
+      "id": 36,
+      "name": "Вина гроздови",
+      "category": "Алкохолни напитки",
+      "category_id": 22,
+      "image_filename": "vino.webp",
+      "image_url": "https://znamcenite.bg/images/products/vino.webp"
+    },
+    {
+      "id": 37,
+      "name": "Дини и пъпеши",
+      "category": "Пресни плодове",
+      "category_id": 1,
+      "image_filename": "dinq-pupesh.webp",
+      "image_url": "https://znamcenite.bg/images/products/dinq-pupesh.webp"
+    },
+    {
+      "id": 38,
+      "name": "Ядки",
+      "category": "Сушени плодове и ядки",
+      "category_id": 17,
+      "image_filename": "qdki.webp",
+      "image_url": "https://znamcenite.bg/images/products/qdki.webp"
+    },
+    {
+      "id": 39,
+      "name": "Зеленчукови консерви",
+      "category": "Консервирани зеленчуци",
+      "category_id": 15,
+      "image_filename": "zelenchukovi-konservi.webp",
+      "image_url": "https://znamcenite.bg/images/products/zelenchukovi-konservi.webp"
+    },
+    {
+      "id": 40,
+      "name": "Мляко кисело",
+      "category": "Мляко и млечни произведения",
+      "category_id": 2,
+      "image_filename": "kiselo-mlqko.webp",
+      "image_url": "https://znamcenite.bg/images/products/kiselo-mlqko.webp"
+    },
+    {
+      "id": 41,
+      "name": "Кашкавал",
+      "category": "Мляко и млечни произведения",
+      "category_id": 2,
+      "image_filename": "kashkaval.webp",
+      "image_url": "https://znamcenite.bg/images/products/kashkaval.webp"
+    },
+    {
+      "id": 42,
+      "name": "Агнешко и ярешко",
+      "category": "Месо",
+      "category_id": 3,
+      "image_filename": "agneshko.webp",
+      "image_url": "https://znamcenite.bg/images/products/agneshko.webp"
+    },
+    {
+      "id": 43,
+      "name": "Кайма - смес",
+      "category": "Месо",
+      "category_id": 3,
+      "image_filename": "kaima.webp",
+      "image_url": "https://znamcenite.bg/images/products/kaima.webp"
+    },
+    {
+      "id": 44,
+      "name": "Овче, шилешко, козе",
+      "category": "Месо",
+      "category_id": 3,
+      "image_filename": "ovche.webp",
+      "image_url": "https://znamcenite.bg/images/products/ovche.webp"
+    },
+    {
+      "id": 45,
+      "name": "Пилешко",
+      "category": "Месо",
+      "category_id": 3,
+      "image_filename": "pileshko.webp",
+      "image_url": "https://znamcenite.bg/images/products/pileshko.webp"
+    },
+    {
+      "id": 46,
+      "name": "Захарни изделия",
+      "category": "Захар и захарни изделия",
+      "category_id": 18,
+      "image_filename": "zaharni-izdeliq.webp",
+      "image_url": "https://znamcenite.bg/images/products/zaharni-izdeliq.webp"
+    },
+    {
+      "id": 47,
+      "name": "Кисело зеле",
+      "category": "Консервирани зеленчуци",
+      "category_id": 15,
+      "image_filename": "kiselo-zele.webp",
+      "image_url": "https://znamcenite.bg/images/products/kiselo-zele.webp"
+    },
+    {
+      "id": 48,
+      "name": "Кафе - всички видове",
+      "category": "Кафе, чай, какао",
+      "category_id": 19,
+      "image_filename": "kafe.webp",
+      "image_url": "https://znamcenite.bg/images/products/kafe.webp"
+    },
+    {
+      "id": 49,
+      "name": "Маслини",
+      "category": "Пресни и замразени зеленчуци",
+      "category_id": 5,
+      "image_filename": "maslini.webp",
+      "image_url": "https://znamcenite.bg/images/products/maslini.webp"
+    },
+    {
+      "id": 50,
+      "name": "Брашно",
+      "category": "Основни продукти",
+      "category_id": 7,
+      "image_filename": "brashno.webp",
+      "image_url": "https://znamcenite.bg/images/products/brashno.webp"
+    },
+    {
+      "id": 51,
+      "name": "Конфитюри, сладка",
+      "category": "Консервирани плодове",
+      "category_id": 20,
+      "image_filename": "konfitur.webp",
+      "image_url": "https://znamcenite.bg/images/products/konfitur.webp"
+    },
+    {
+      "id": 52,
+      "name": "Ябълки",
+      "category": "Пресни плодове",
+      "category_id": 1,
+      "image_filename": "qbulki.webp",
+      "image_url": "https://znamcenite.bg/images/products/qbulki.webp"
+    },
+    {
+      "id": 53,
+      "name": "Леща",
+      "category": "Сушени бобови и семена",
+      "category_id": 25,
+      "image_filename": "leshta.webp",
+      "image_url": "https://znamcenite.bg/images/products/leshta.webp"
+    },
+    {
+      "id": 54,
+      "name": "Тестени закуски",
+      "category": "Хлебни и тестени изделия",
+      "category_id": 14,
+      "image_filename": "testeni-zakuski.webp",
+      "image_url": "https://znamcenite.bg/images/products/testeni-zakuski.webp"
+    },
+    {
+      "id": 55,
+      "name": "Концентрати",
+      "category": "Алкохолни напитки",
+      "category_id": 22,
+      "image_filename": "alkohol.webp",
+      "image_url": "https://znamcenite.bg/images/products/alkohol.webp"
+    },
+    {
+      "id": 56,
+      "name": "Цитрусови плодове ",
+      "category": "Пресни плодове",
+      "category_id": 1,
+      "image_filename": "citrusi.webp",
+      "image_url": "https://znamcenite.bg/images/products/citrusi.webp"
+    },
+    {
+      "id": 57,
+      "name": "Ориз",
+      "category": "Основни продукти",
+      "category_id": 7,
+      "image_filename": "oriz.webp",
+      "image_url": "https://znamcenite.bg/images/products/oriz.webp"
+    },
+    {
+      "id": 58,
+      "name": "Сушени зеленчукови подправки",
+      "category": "Пресни и замразени зеленчуци",
+      "category_id": 5,
+      "image_filename": "podpravki.webp",
+      "image_url": "https://znamcenite.bg/images/products/podpravki.webp"
+    },
+    {
+      "id": 59,
+      "name": "Захар",
+      "category": "Основни продукти",
+      "category_id": 7,
+      "image_filename": "zahar.webp",
+      "image_url": "https://znamcenite.bg/images/products/zahar.webp"
+    },
+    {
+      "id": 60,
+      "name": "Гъби пресни",
+      "category": "Гъби",
+      "category_id": 23,
+      "image_filename": "gubi.webp",
+      "image_url": "https://znamcenite.bg/images/products/gubi.webp"
+    },
+    {
+      "id": 61,
+      "name": "Компоти",
+      "category": "Консервирани плодове",
+      "category_id": 20,
+      "image_filename": "kompoti.webp",
+      "image_url": "https://znamcenite.bg/images/products/kompoti.webp"
+    },
+    {
+      "id": 62,
+      "name": "Зеленчукови сокове ",
+      "category": "Консервирани зеленчуци",
+      "category_id": 15,
+      "image_filename": "zelenchukovi-sokove.webp",
+      "image_url": "https://znamcenite.bg/images/products/zelenchukovi-sokove.webp"
+    },
+    {
+      "id": 63,
+      "name": "Рибни консерви",
+      "category": "Риба и рибни продукти",
+      "category_id": 13,
+      "image_filename": "ribni-konservi.webp",
+      "image_url": "https://znamcenite.bg/images/products/ribni-konservi.webp"
+    },
+    {
+      "id": 64,
+      "name": "Чесън зрял",
+      "category": "Пресни и замразени зеленчуци",
+      "category_id": 5,
+      "image_filename": "chesun.webp",
+      "image_url": "https://znamcenite.bg/images/products/chesun.webp"
+    },
+    {
+      "id": 65,
+      "name": "Свинско",
+      "category": "Месо",
+      "category_id": 3,
+      "image_filename": "svinsko.webp",
+      "image_url": "https://znamcenite.bg/images/products/svinsko.webp"
+    },
+    {
+      "id": 66,
+      "name": "Ракии",
+      "category": "Aлкохолни напитки",
+      "category_id": 22,
+      "image_filename": "rakia.webp",
+      "image_url": "https://znamcenite.bg/images/products/rakia.webp"
+    },
+    {
+      "id": 67,
+      "name": "Шоколадови изделия",
+      "category": "Захар и захарни изделия",
+      "category_id": 18,
+      "image_filename": "bonboni.webp",
+      "image_url": "https://znamcenite.bg/images/products/bonboni.webp"
+    },
+    {
+      "id": 68,
+      "name": "Какaо",
+      "category": "Кафе, чай, какао",
+      "category_id": 19,
+      "image_filename": "kakao-prah.webp",
+      "image_url": "https://znamcenite.bg/images/products/kakao-prah.webp"
+    },
+    {
+      "id": 69,
+      "name": "Мед",
+      "category": "Захар и захарни изделия",
+      "category_id": 18,
+      "image_filename": "med.webp",
+      "image_url": "https://znamcenite.bg/images/products/med.webp"
+    },
+    {
+      "id": 70,
+      "name": "Круши",
+      "category": "Пресни плодове",
+      "category_id": 1,
+      "image_filename": "krushi.webp",
+      "image_url": "https://znamcenite.bg/images/products/krushi.webp"
+    },
+    {
+      "id": 71,
+      "name": "Сушени плодове",
+      "category": "Сушени плодове и ядки",
+      "category_id": 17,
+      "image_filename": "susheni-plodove.webp",
+      "image_url": "https://znamcenite.bg/images/products/susheni-plodove.webp"
+    },
+    {
+      "id": 72,
+      "name": "Сокове, сиропи, нектари",
+      "category": "Консервирани плодове",
+      "category_id": 20,
+      "image_filename": "sok.webp",
+      "image_url": "https://znamcenite.bg/images/products/sok.webp"
+    },
+    {
+      "id": 73,
+      "name": "Месни консерви",
+      "category": "Обработено месо и колбаси",
+      "category_id": 10,
+      "image_filename": "mesni-konservi.webp",
+      "image_url": "https://znamcenite.bg/images/products/mesni-konservi.webp"
+    },
+    {
+      "id": 74,
+      "name": "Минерална вода",
+      "category": "Основни продукти",
+      "category_id": 7,
+      "image_filename": "voda.webp",
+      "image_url": "https://znamcenite.bg/images/products/voda.webp"
+    },
+    {
+      "id": 75,
+      "name": "Подправки",
+      "category": "Други",
+      "category_id": 4,
+      "image_filename": "podpravki.webp",
+      "image_url": "https://znamcenite.bg/images/products/podpravki.webp"
+    },
+    {
+      "id": 76,
+      "name": "Гъби сушени и консервирани",
+      "category": "Гъби",
+      "category_id": 23,
+      "image_filename": "susheni-gubi.webp",
+      "image_url": "https://znamcenite.bg/images/products/susheni-gubi.webp"
+    },
+    {
+      "id": 77,
+      "name": "Бира ",
+      "category": "Алкохолни напитки",
+      "category_id": 22,
+      "image_filename": "bira.webp",
+      "image_url": "https://znamcenite.bg/images/products/bira.webp"
+    },
+    {
+      "id": 78,
+      "name": "Чай. вкл. сушени билки",
+      "category": "Кафе, чай, какао",
+      "category_id": 19,
+      "image_filename": "chai.webp",
+      "image_url": "https://znamcenite.bg/images/products/chai.webp"
+    },
+    {
+      "id": 79,
+      "name": "Цигари",
+      "category": "Други",
+      "category_id": 4,
+      "image_filename": "cigari.webp",
+      "image_url": "https://znamcenite.bg/images/products/cigari.webp"
+    },
+    {
+      "id": 80,
+      "name": "Олио",
+      "category": "Основни продукти",
+      "category_id": 7,
+      "image_filename": "olio.webp",
+      "image_url": "https://znamcenite.bg/images/products/olio.webp"
+    },
+    {
+      "id": 81,
+      "name": "Фасул зрял",
+      "category": "Сушени бобови и семена",
+      "category_id": 25,
+      "image_filename": "fasul.webp",
+      "image_url": "https://znamcenite.bg/images/products/fasul.webp"
+    },
+    {
+      "id": 82,
+      "name": "Банани",
+      "category": "Пресни плодове",
+      "category_id": 1,
+      "image_filename": "banani.webp",
+      "image_url": "https://znamcenite.bg/images/products/banani.webp"
+    }
+  ]
+}
