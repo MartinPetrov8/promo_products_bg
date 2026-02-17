@@ -17,6 +17,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).parent.parent
 DB_PATH = REPO_ROOT / "data" / "promobg.db"
 CONFIG_PATH = REPO_ROOT / "config" / "cleaning.json"
+BRAND_CACHE_PATH = REPO_ROOT / "data" / "brand_cache.json"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -62,6 +63,16 @@ class DailySync:
         
         # Track what we've seen this run
         self.seen_external_ids = set()
+        
+        # Load brand cache for OCR-extracted brands
+        self.brand_cache = {}
+        if BRAND_CACHE_PATH.exists():
+            try:
+                with open(BRAND_CACHE_PATH) as f:
+                    self.brand_cache = json.load(f)
+                log.info(f"Loaded brand cache: {len(self.brand_cache)} entries")
+            except Exception as e:
+                log.warning(f"Failed to load brand cache: {e}")
     
     def sync(self, products):
         """Sync a list of scraped products"""
@@ -129,6 +140,13 @@ class DailySync:
         external_id = prod.get('sku') or prod.get('external_id')
         name = prod.get('name', '').strip()
         brand = prod.get('brand')
+        
+        # Check brand cache if no brand from scraper (OCR-extracted brands)
+        if not brand and external_id and external_id in self.brand_cache:
+            cached = self.brand_cache[external_id]
+            if cached.get('brand'):
+                brand = cached['brand']
+                log.debug(f"Brand from OCR cache: {brand}")
         price = prod.get('price')
         currency = prod.get('currency', 'EUR')
         product_url = prod.get('product_url')
