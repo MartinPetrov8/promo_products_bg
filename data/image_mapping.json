@@ -1,187 +1,589 @@
 {
   "base_path": "images/products/",
-  "total_images": 81,
-  "category_images": {
-    "Пресни плодове": "grozde.png",
-    "Мляко и млечни произведения": "sirene.png",
-    "Месо": "slanina.png",
-    "Други": "ocet.png",
-    "Пресни и замразени зеленчуци": "kartofi.png",
-    "Животински мазнини": "mas.png",
-    "Основни продукти": "qica.png",
-    "Безалкохолни напитки": "boza.png",
-    "Обработено месо и колбаси": "malotraini-kolbasi.png",
-    "Растителни мазнини": "margarin.png",
-    "Meso": "karantia.png",
-    "Риба и рибни продукти": "obrabotena-riba.png",
-    "Хлебни и тестени изделия": "makaroneni-izdeliq.png",
-    "Консервирани зеленчуци": "turshii.png",
-    "Алкохолни напитки": "vino.png",
-    "Сушени плодове и ядки": "qdki.png",
-    "Захар и захарни изделия": "zaharni-izdeliq.png",
-    "Кафе, чай, какао": "kafe.png",
-    "Консервирани плодове": "konfitur.png",
-    "Сушени бобови и семена": "leshta.png",
-    "Гъби": "gubi.png",
-    "Aлкохолни напитки": "rakia.png"
-  },
-  "keyword_to_image": {
-    "грозде": "grozde.png",
-    "ягоди и малини": "qgodi-malini.png",
-    "ягоди": "qgodi-malini.png",
-    "малини": "qgodi-malini.png",
-    "сирене бяло": "sirene.png",
-    "сирене": "sirene.png",
-    "бяло": "sirene.png",
-    "сланина": "slanina.png",
-    "оцет ": "ocet.png",
-    "череши и вишни": "chereshi-vishni.png",
-    "череши": "chereshi-vishni.png",
-    "вишни": "chereshi-vishni.png",
-    "сол": "sol.png",
-    "картофи": "kartofi.png",
-    "праскови и кайсии": "praskovi-kaisii.png",
-    "праскови": "praskovi-kaisii.png",
-    "кайсии": "praskovi-kaisii.png",
-    "зеле": "zele.png",
-    "мас": "mas.png",
-    "пресни зеленчукови подправки": "presni-podpravki.png",
-    "пресни": "presni-podpravki.png",
-    "зеленчукови": "presni-podpravki.png",
-    "подправки": "podpravki.png",
-    "домати": "domati.png",
-    "яйца ": "qica.png",
-    "пипер": "piper.png",
-    "зелен лук, чесън и праз": "zelen-luk-chesun-praz.png",
-    "зелен": "zelen-luk-chesun-praz.png",
-    "лук,": "zelen-luk-chesun-praz.png",
-    "чесън": "zelen-luk-chesun-praz.png",
-    "праз": "zelen-luk-chesun-praz.png",
-    "мляко прясно": "prqsno-mlqko.png",
-    "мляко": "prqsno-mlqko.png",
-    "прясно": "prqsno-mlqko.png",
-    "хляб бял": "hlqb-bql.png",
-    "хляб": "hlqb-bql.png",
-    "лук кромид зрял": "luk.png",
-    "кромид": "luk.png",
-    "зрял": "luk.png",
-    "боза": "boza.png",
-    "колбаси малотрайни": "malotraini-kolbasi.png",
-    "колбаси": "malotraini-kolbasi.png",
-    "малотрайни": "malotraini-kolbasi.png",
-    "маргарин": "margarin.png",
-    "тикви, вкл. печени": "tikva.png",
-    "тикви,": "tikva.png",
-    "вкл.": "tikva.png",
-    "печени": "tikva.png",
-    "субпродукти, карантия": "karantia.png",
-    "субпродукти,": "karantia.png",
-    "карантия": "karantia.png",
-    "млечни масла": "mlechni-masla.png",
-    "млечни": "mlechni-masla.png",
-    "масла": "mlechni-masla.png",
-    "газирани напитки": "gazirani-napitki.png",
-    "газирани": "gazirani-napitki.png",
-    "напитки": "gazirani-napitki.png",
-    "обработена риба": "obrabotena-riba.png",
-    "обработена": "obrabotena-riba.png",
-    "риба": "obrabotena-riba.png",
-    "риба прясна и замразена": "riba.png",
-    "прясна": "riba.png",
-    "замразена": "riba.png",
-    "макаронени изделия": "makaroneni-izdeliq.png",
-    "макаронени": "makaroneni-izdeliq.png",
-    "изделия": "makaroneni-izdeliq.png",
-    "колбаси трайни": "kolbasi-traini.png",
-    "трайни": "kolbasi-traini.png",
-    "туршии": "turshii.png",
-    "краставици": "krastavici.png",
-    "сладкарски изделия": "sladkarski-izdeliq.png",
-    "сладкарски": "sladkarski-izdeliq.png",
-    "сливи": "slivi.png",
-    "вина гроздови": "vino.png",
-    "вина": "vino.png",
-    "гроздови": "vino.png",
-    "дини и пъпеши": "dinq-pupesh.png",
-    "дини": "dinq-pupesh.png",
-    "пъпеши": "dinq-pupesh.png",
-    "ядки": "qdki.png",
-    "зеленчукови консерви": "zelenchukovi-konservi.png",
-    "консерви": "zelenchukovi-konservi.png",
-    "мляко кисело": "kiselo-mlqko.png",
-    "кисело": "kiselo-mlqko.png",
-    "кашкавал": "kashkaval.png",
-    "агнешко и ярешко": "agneshko.png",
-    "агнешко": "agneshko.png",
-    "ярешко": "agneshko.png",
-    "кайма - смес": "kaima.png",
-    "кайма": "kaima.png",
-    "смес": "kaima.png",
-    "овче, шилешко, козе": "ovche.png",
-    "овче,": "ovche.png",
-    "шилешко,": "ovche.png",
-    "козе": "ovche.png",
-    "пилешко": "pileshko.png",
-    "захарни изделия": "zaharni-izdeliq.png",
-    "захарни": "zaharni-izdeliq.png",
-    "кисело зеле": "kiselo-zele.png",
-    "кафе - всички видове": "kafe.png",
-    "кафе": "kafe.png",
-    "всички": "kafe.png",
-    "видове": "kafe.png",
-    "маслини": "maslini.png",
-    "брашно": "brashno.png",
-    "конфитюри, сладка": "konfitur.png",
-    "конфитюри,": "konfitur.png",
-    "сладка": "konfitur.png",
-    "ябълки": "qbulki.png",
-    "леща": "leshta.png",
-    "тестени закуски": "testeni-zakuski.png",
-    "тестени": "testeni-zakuski.png",
-    "закуски": "testeni-zakuski.png",
-    "концентрати": "alkohol.png",
-    "цитрусови плодове ": "citrusi.png",
-    "цитрусови": "citrusi.png",
-    "плодове": "citrusi.png",
-    "ориз": "oriz.png",
-    "сушени зеленчукови подправки": "podpravki.png",
-    "сушени": "podpravki.png",
-    "захар": "zahar.png",
-    "гъби пресни": "gubi.png",
-    "гъби": "gubi.png",
-    "компоти": "kompoti.png",
-    "зеленчукови сокове ": "zelenchukovi-sokove.png",
-    "сокове": "zelenchukovi-sokove.png",
-    "рибни консерви": "ribni-konservi.png",
-    "рибни": "ribni-konservi.png",
-    "чесън зрял": "chesun.png",
-    "свинско": "svinsko.png",
-    "ракии": "rakia.png",
-    "шоколадови изделия": "bonboni.png",
-    "шоколадови": "bonboni.png",
-    "какaо": "kakao-prah.png",
-    "мед": "med.png",
-    "круши": "krushi.png",
-    "сушени плодове": "susheni-plodove.png",
-    "сокове, сиропи, нектари": "sok.png",
-    "сокове,": "sok.png",
-    "сиропи,": "sok.png",
-    "нектари": "sok.png",
-    "месни консерви": "mesni-konservi.png",
-    "месни": "mesni-konservi.png",
-    "минерална вода": "voda.png",
-    "минерална": "voda.png",
-    "вода": "voda.png",
-    "гъби сушени и консервирани": "susheni-gubi.png",
-    "консервирани": "susheni-gubi.png",
-    "бира ": "bira.png",
-    "чай. вкл. сушени билки": "chai.png",
-    "чай.": "chai.png",
-    "билки": "chai.png",
-    "цигари": "cigari.png",
-    "олио": "olio.png",
-    "фасул зрял": "fasul.png",
-    "фасул": "fasul.png",
-    "банани": "banani.png"
-  }
+  "mappings": [
+    {
+      "keyword": "пресни зеленчукови подправки",
+      "image": "presni-podpravki.png"
+    },
+    {
+      "keyword": "сушени зеленчукови подправки",
+      "image": "podpravki.png"
+    },
+    {
+      "keyword": "гъби сушени и консервирани",
+      "image": "susheni-gubi.png"
+    },
+    {
+      "keyword": "зелен лук, чесън и праз",
+      "image": "zelen-luk-chesun-praz.png"
+    },
+    {
+      "keyword": "риба прясна и замразена",
+      "image": "riba.png"
+    },
+    {
+      "keyword": "сокове, сиропи, нектари",
+      "image": "sok.png"
+    },
+    {
+      "keyword": "чай. вкл. сушени билки",
+      "image": "chai.png"
+    },
+    {
+      "keyword": "субпродукти, карантия",
+      "image": "karantia.png"
+    },
+    {
+      "keyword": "зеленчукови консерви",
+      "image": "zelenchukovi-konservi.png"
+    },
+    {
+      "keyword": "кафе - всички видове",
+      "image": "kafe.png"
+    },
+    {
+      "keyword": "овче, шилешко, козе",
+      "image": "ovche.png"
+    },
+    {
+      "keyword": "колбаси малотрайни",
+      "image": "malotraini-kolbasi.png"
+    },
+    {
+      "keyword": "тикви, вкл. печени",
+      "image": "tikva.png"
+    },
+    {
+      "keyword": "макаронени изделия",
+      "image": "makaroneni-izdeliq.png"
+    },
+    {
+      "keyword": "сладкарски изделия",
+      "image": "sladkarski-izdeliq.png"
+    },
+    {
+      "keyword": "зеленчукови сокове",
+      "image": "zelenchukovi-sokove.png"
+    },
+    {
+      "keyword": "шоколадови изделия",
+      "image": "bonboni.png"
+    },
+    {
+      "keyword": "праскови и кайсии",
+      "image": "praskovi-kaisii.png"
+    },
+    {
+      "keyword": "конфитюри, сладка",
+      "image": "konfitur.png"
+    },
+    {
+      "keyword": "цитрусови плодове",
+      "image": "citrusi.png"
+    },
+    {
+      "keyword": "газирани напитки",
+      "image": "gazirani-napitki.png"
+    },
+    {
+      "keyword": "агнешко и ярешко",
+      "image": "agneshko.png"
+    },
+    {
+      "keyword": "лук кромид зрял",
+      "image": "luk.png"
+    },
+    {
+      "keyword": "обработена риба",
+      "image": "obrabotena-riba.png"
+    },
+    {
+      "keyword": "захарни изделия",
+      "image": "zaharni-izdeliq.png"
+    },
+    {
+      "keyword": "тестени закуски",
+      "image": "testeni-zakuski.png"
+    },
+    {
+      "keyword": "ягоди и малини",
+      "image": "qgodi-malini.png"
+    },
+    {
+      "keyword": "череши и вишни",
+      "image": "chereshi-vishni.png"
+    },
+    {
+      "keyword": "колбаси трайни",
+      "image": "kolbasi-traini.png"
+    },
+    {
+      "keyword": "рибни консерви",
+      "image": "ribni-konservi.png"
+    },
+    {
+      "keyword": "сушени плодове",
+      "image": "susheni-plodove.png"
+    },
+    {
+      "keyword": "месни консерви",
+      "image": "mesni-konservi.png"
+    },
+    {
+      "keyword": "минерална вода",
+      "image": "voda.png"
+    },
+    {
+      "keyword": "вина гроздови",
+      "image": "vino.png"
+    },
+    {
+      "keyword": "дини и пъпеши",
+      "image": "dinq-pupesh.png"
+    },
+    {
+      "keyword": "мляко прясно",
+      "image": "prqsno-mlqko.png"
+    },
+    {
+      "keyword": "млечни масла",
+      "image": "mlechni-masla.png"
+    },
+    {
+      "keyword": "мляко кисело",
+      "image": "kiselo-mlqko.png"
+    },
+    {
+      "keyword": "кайма - смес",
+      "image": "kaima.png"
+    },
+    {
+      "keyword": "консервирани",
+      "image": "susheni-gubi.png"
+    },
+    {
+      "keyword": "сирене бяло",
+      "image": "sirene.png"
+    },
+    {
+      "keyword": "кисело зеле",
+      "image": "kiselo-zele.png"
+    },
+    {
+      "keyword": "концентрати",
+      "image": "alkohol.png"
+    },
+    {
+      "keyword": "гъби пресни",
+      "image": "gubi.png"
+    },
+    {
+      "keyword": "зеленчукови",
+      "image": "presni-podpravki.png"
+    },
+    {
+      "keyword": "субпродукти",
+      "image": "karantia.png"
+    },
+    {
+      "keyword": "краставици",
+      "image": "krastavici.png"
+    },
+    {
+      "keyword": "чесън зрял",
+      "image": "chesun.png"
+    },
+    {
+      "keyword": "фасул зрял",
+      "image": "fasul.png"
+    },
+    {
+      "keyword": "малотрайни",
+      "image": "malotraini-kolbasi.png"
+    },
+    {
+      "keyword": "обработена",
+      "image": "obrabotena-riba.png"
+    },
+    {
+      "keyword": "макаронени",
+      "image": "makaroneni-izdeliq.png"
+    },
+    {
+      "keyword": "сладкарски",
+      "image": "sladkarski-izdeliq.png"
+    },
+    {
+      "keyword": "шоколадови",
+      "image": "bonboni.png"
+    },
+    {
+      "keyword": "подправки",
+      "image": "podpravki.png"
+    },
+    {
+      "keyword": "замразена",
+      "image": "riba.png"
+    },
+    {
+      "keyword": "конфитюри",
+      "image": "konfitur.png"
+    },
+    {
+      "keyword": "цитрусови",
+      "image": "citrusi.png"
+    },
+    {
+      "keyword": "минерална",
+      "image": "voda.png"
+    },
+    {
+      "keyword": "хляб бял",
+      "image": "hlqb-bql.png"
+    },
+    {
+      "keyword": "маргарин",
+      "image": "margarin.png"
+    },
+    {
+      "keyword": "кашкавал",
+      "image": "kashkaval.png"
+    },
+    {
+      "keyword": "праскови",
+      "image": "praskovi-kaisii.png"
+    },
+    {
+      "keyword": "карантия",
+      "image": "karantia.png"
+    },
+    {
+      "keyword": "газирани",
+      "image": "gazirani-napitki.png"
+    },
+    {
+      "keyword": "гроздови",
+      "image": "vino.png"
+    },
+    {
+      "keyword": "консерви",
+      "image": "zelenchukovi-konservi.png"
+    },
+    {
+      "keyword": "сланина",
+      "image": "slanina.png"
+    },
+    {
+      "keyword": "картофи",
+      "image": "kartofi.png"
+    },
+    {
+      "keyword": "пилешко",
+      "image": "pileshko.png"
+    },
+    {
+      "keyword": "маслини",
+      "image": "maslini.png"
+    },
+    {
+      "keyword": "компоти",
+      "image": "kompoti.png"
+    },
+    {
+      "keyword": "свинско",
+      "image": "svinsko.png"
+    },
+    {
+      "keyword": "колбаси",
+      "image": "malotraini-kolbasi.png"
+    },
+    {
+      "keyword": "напитки",
+      "image": "gazirani-napitki.png"
+    },
+    {
+      "keyword": "изделия",
+      "image": "makaroneni-izdeliq.png"
+    },
+    {
+      "keyword": "агнешко",
+      "image": "agneshko.png"
+    },
+    {
+      "keyword": "шилешко",
+      "image": "ovche.png"
+    },
+    {
+      "keyword": "захарни",
+      "image": "zaharni-izdeliq.png"
+    },
+    {
+      "keyword": "тестени",
+      "image": "testeni-zakuski.png"
+    },
+    {
+      "keyword": "закуски",
+      "image": "testeni-zakuski.png"
+    },
+    {
+      "keyword": "плодове",
+      "image": "citrusi.png"
+    },
+    {
+      "keyword": "нектари",
+      "image": "sok.png"
+    },
+    {
+      "keyword": "грозде",
+      "image": "grozde.png"
+    },
+    {
+      "keyword": "домати",
+      "image": "domati.png"
+    },
+    {
+      "keyword": "туршии",
+      "image": "turshii.png"
+    },
+    {
+      "keyword": "брашно",
+      "image": "brashno.png"
+    },
+    {
+      "keyword": "ябълки",
+      "image": "qbulki.png"
+    },
+    {
+      "keyword": "цигари",
+      "image": "cigari.png"
+    },
+    {
+      "keyword": "банани",
+      "image": "banani.png"
+    },
+    {
+      "keyword": "малини",
+      "image": "qgodi-malini.png"
+    },
+    {
+      "keyword": "сирене",
+      "image": "sirene.png"
+    },
+    {
+      "keyword": "череши",
+      "image": "chereshi-vishni.png"
+    },
+    {
+      "keyword": "кайсии",
+      "image": "praskovi-kaisii.png"
+    },
+    {
+      "keyword": "прясно",
+      "image": "prqsno-mlqko.png"
+    },
+    {
+      "keyword": "кромид",
+      "image": "luk.png"
+    },
+    {
+      "keyword": "печени",
+      "image": "tikva.png"
+    },
+    {
+      "keyword": "млечни",
+      "image": "mlechni-masla.png"
+    },
+    {
+      "keyword": "прясна",
+      "image": "riba.png"
+    },
+    {
+      "keyword": "трайни",
+      "image": "kolbasi-traini.png"
+    },
+    {
+      "keyword": "пъпеши",
+      "image": "dinq-pupesh.png"
+    },
+    {
+      "keyword": "кисело",
+      "image": "kiselo-mlqko.png"
+    },
+    {
+      "keyword": "ярешко",
+      "image": "agneshko.png"
+    },
+    {
+      "keyword": "сладка",
+      "image": "konfitur.png"
+    },
+    {
+      "keyword": "сушени",
+      "image": "podpravki.png"
+    },
+    {
+      "keyword": "сокове",
+      "image": "zelenchukovi-sokove.png"
+    },
+    {
+      "keyword": "сиропи",
+      "image": "sok.png"
+    },
+    {
+      "keyword": "пипер",
+      "image": "piper.png"
+    },
+    {
+      "keyword": "сливи",
+      "image": "slivi.png"
+    },
+    {
+      "keyword": "захар",
+      "image": "zahar.png"
+    },
+    {
+      "keyword": "ракии",
+      "image": "rakia.png"
+    },
+    {
+      "keyword": "какaо",
+      "image": "kakao-prah.png"
+    },
+    {
+      "keyword": "круши",
+      "image": "krushi.png"
+    },
+    {
+      "keyword": "ягоди",
+      "image": "qgodi-malini.png"
+    },
+    {
+      "keyword": "вишни",
+      "image": "chereshi-vishni.png"
+    },
+    {
+      "keyword": "чесън",
+      "image": "zelen-luk-chesun-praz.png"
+    },
+    {
+      "keyword": "мляко",
+      "image": "prqsno-mlqko.png"
+    },
+    {
+      "keyword": "тикви",
+      "image": "tikva.png"
+    },
+    {
+      "keyword": "масла",
+      "image": "mlechni-masla.png"
+    },
+    {
+      "keyword": "кайма",
+      "image": "kaima.png"
+    },
+    {
+      "keyword": "рибни",
+      "image": "ribni-konservi.png"
+    },
+    {
+      "keyword": "месни",
+      "image": "mesni-konservi.png"
+    },
+    {
+      "keyword": "билки",
+      "image": "chai.png"
+    },
+    {
+      "keyword": "фасул",
+      "image": "fasul.png"
+    },
+    {
+      "keyword": "оцет",
+      "image": "ocet.png"
+    },
+    {
+      "keyword": "зеле",
+      "image": "zele.png"
+    },
+    {
+      "keyword": "яйца",
+      "image": "qica.png"
+    },
+    {
+      "keyword": "боза",
+      "image": "boza.png"
+    },
+    {
+      "keyword": "ядки",
+      "image": "qdki.png"
+    },
+    {
+      "keyword": "леща",
+      "image": "leshta.png"
+    },
+    {
+      "keyword": "ориз",
+      "image": "oriz.png"
+    },
+    {
+      "keyword": "бира",
+      "image": "bira.png"
+    },
+    {
+      "keyword": "олио",
+      "image": "olio.png"
+    },
+    {
+      "keyword": "праз",
+      "image": "zelen-luk-chesun-praz.png"
+    },
+    {
+      "keyword": "хляб",
+      "image": "hlqb-bql.png"
+    },
+    {
+      "keyword": "вина",
+      "image": "vino.png"
+    },
+    {
+      "keyword": "дини",
+      "image": "dinq-pupesh.png"
+    },
+    {
+      "keyword": "смес",
+      "image": "kaima.png"
+    },
+    {
+      "keyword": "овче",
+      "image": "ovche.png"
+    },
+    {
+      "keyword": "козе",
+      "image": "ovche.png"
+    },
+    {
+      "keyword": "кафе",
+      "image": "kafe.png"
+    },
+    {
+      "keyword": "гъби",
+      "image": "gubi.png"
+    },
+    {
+      "keyword": "вода",
+      "image": "voda.png"
+    },
+    {
+      "keyword": "сол",
+      "image": "sol.png"
+    },
+    {
+      "keyword": "мас",
+      "image": "mas.png"
+    },
+    {
+      "keyword": "мед",
+      "image": "med.png"
+    }
+  ]
 }
