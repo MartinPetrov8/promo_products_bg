@@ -141,8 +141,14 @@ def run_matching():
     
     config = load_config("matching")
     match_config = config.get('token_similarity', {})
+    rules = config.get('rules', {})
     min_threshold = match_config.get('min_threshold', 0.5)
     min_common = match_config.get('min_common_tokens', 2)
+    brand_same_boost = rules.get('brand_same_boost', 0.15)
+    brand_unknown_penalty = rules.get('brand_unknown_penalty', 0.85)
+    qty_incompatible_penalty = rules.get('quantity_incompatible_penalty', 0.4)
+    qty_compatible_boost = rules.get('quantity_compatible_boost', 0.05)
+    price_warning_threshold = rules.get('price_ratio_warning_threshold', 3.0)
     
     conn = get_db()
     cur = conn.cursor()
@@ -222,23 +228,26 @@ def run_matching():
                         # Apply brand modifier
                         score = base_score
                         if brand_result == 'match':
-                            score = min(1.0, score + 0.15)  # Same brand boost
+                            score = min(1.0, score + brand_same_boost)  # Same brand boost
                         elif brand_result == 'mismatch_one_unknown':
-                            score = score * 0.85  # Slight penalty
+                            score = score * brand_unknown_penalty  # Slight penalty
                         # 'both_unknown' = no change
                         
                         # Step 3: Quantity check
                         qty_result = check_quantity_compatibility(p1, p2)
                         if qty_result == 'incompatible':
-                            score = score * 0.4  # Heavy penalty for >2x size diff
+                            if brand_result == 'match':
+                                score = score * 0.7  # Mild penalty: same brand, different size
+                            else:
+                                score = score * qty_incompatible_penalty  # Heavy penalty: different brand + size
                             stats['qty_penalized'] += 1
                         elif qty_result == 'compatible':
-                            score = min(1.0, score + 0.05)  # Small boost for matching qty
+                            score = min(1.0, score + qty_compatible_boost)  # Small boost for matching qty
                         # 'unknown' = no change
                         
                         # Step 4: Price ratio flag (informational, doesn't reject)
                         price_ratio = max(p1['price'], p2['price']) / min(p1['price'], p2['price']) if min(p1['price'], p2['price']) > 0 else 999
-                        price_flag = price_ratio > 3.0
+                        price_flag = price_ratio > price_warning_threshold
                         if price_flag:
                             stats['price_flagged'] += 1
                         
@@ -308,7 +317,8 @@ def run_matching():
 
 def normalize_brand(brand):
     """Normalize brand name for comparison"""
-    if not brand or brand in ('NO_BRAND', 'Unknown', 'unknown', ''):
+    IGNORE_BRANDS = {'no_brand', 'unknown', 'n/a', 'generic', 'none', ''}
+    if not brand or brand.strip().lower() in IGNORE_BRANDS:
         return None
     brand = brand.strip().lower()
     brand = re.sub(r'[®™©]', '', brand)
@@ -336,7 +346,8 @@ def check_brand_compatibility(p1, p2):
         if b1 == b2:
             return 'match'
         # Check if one contains the other (e.g., "extra" in "extra zytnia")
-        if b1 in b2 or b2 in b1:
+        # Only allow substring matching for brands >= 4 chars to avoid false positives
+        if (len(b1) >= 4 and b1 in b2) or (len(b2) >= 4 and b2 in b1):
             return 'match'
         return 'reject'
     

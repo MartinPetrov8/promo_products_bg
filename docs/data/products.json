@@ -1,8 +1,8 @@
 {
   "meta": {
     "total_products": 1506,
-    "cross_store_groups": 47,
-    "updated_at": "2026-02-17T11:25:01.446001"
+    "cross_store_groups": 48,
+    "updated_at": "2026-02-17T11:28:16.838687"
   },
   "products": [
     {
@@ -2143,7 +2143,7 @@
       "store": "Kaufland",
       "price": 7.98,
       "image_url": null,
-      "group_id": null,
+      "group_id": "g74",
       "quantity": 1500.0,
       "quantity_unit": "g",
       "price_per_kg": 5.32
@@ -2227,7 +2227,7 @@
       "store": "Kaufland",
       "price": 12.99,
       "image_url": null,
-      "group_id": "g74"
+      "group_id": "g75"
     },
     {
       "id": 244,
@@ -9568,7 +9568,7 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": null,
+      "group_id": "g74",
       "quantity": 5000.0,
       "quantity_unit": "g",
       "price_per_kg": 1.4
@@ -10880,7 +10880,7 @@
       "store": "Billa",
       "price": 9.96,
       "image_url": null,
-      "group_id": "g76",
+      "group_id": "g77",
       "quantity": 1000.0,
       "quantity_unit": "g",
       "price_per_kg": 9.96
@@ -13636,7 +13636,7 @@
       "store": "Lidl",
       "price": 2.09,
       "image_url": null,
-      "group_id": "g74"
+      "group_id": "g75"
     },
     {
       "id": 1530,
@@ -13681,7 +13681,7 @@
       "store": "Lidl",
       "price": 1.84,
       "image_url": null,
-      "group_id": "g76"
+      "group_id": "g77"
     },
     {
       "id": 1535,
@@ -14442,7 +14442,7 @@
   ],
   "groups": {
     "g1": {
-      "canonical_name": "ударна акумулаторна бормашина parkside",
+      "canonical_name": "акумулаторна ударна бормашина parkside",
       "canonical_brand": "Parkside",
       "confidence": 1.0,
       "stores": [
@@ -14455,7 +14455,7 @@
       "price_ratio": 3.8
     },
     "g2": {
-      "canonical_name": "акумулаторна бормашина parkside",
+      "canonical_name": "бормашина акумулаторна parkside",
       "canonical_brand": "Parkside",
       "confidence": 1.0,
       "stores": [
@@ -14466,7 +14466,7 @@
       "savings": 4.0
     },
     "g3": {
-      "canonical_name": "печурки гъби",
+      "canonical_name": "гъби печурки",
       "canonical_brand": "NO_BRAND",
       "confidence": 1.0,
       "stores": [
@@ -14488,7 +14488,7 @@
       "savings": 0.63
     },
     "g5": {
-      "canonical_name": "водка zytnia extra",
+      "canonical_name": "zytnia extra водка",
       "canonical_brand": "Extra",
       "confidence": 1.0,
       "stores": [
@@ -14501,7 +14501,7 @@
       "price_ratio": 3.7
     },
     "g6": {
-      "canonical_name": "absolut водка",
+      "canonical_name": "водка absolut",
       "canonical_brand": "Absolut",
       "confidence": 1.0,
       "stores": [
@@ -14512,7 +14512,7 @@
       "savings": 0.0
     },
     "g7": {
-      "canonical_name": "deutsche масло краве markenbutter",
+      "canonical_name": "deutsche markenbutter краве масло",
       "canonical_brand": "Deutsche Markenbutter",
       "confidence": 1.0,
       "stores": [
@@ -14523,7 +14523,7 @@
       "savings": 1.31
     },
     "g8": {
-      "canonical_name": "краве мляко саяна кашкавал",
+      "canonical_name": "краве кашкавал мляко саяна",
       "canonical_brand": "NO_BRAND",
       "confidence": 1.0,
       "stores": [
@@ -14534,7 +14534,7 @@
       "savings": 0.02
     },
     "g11": {
-      "canonical_name": "сладки времена халва",
+      "canonical_name": "сладки халва времена",
       "canonical_brand": "Сладки",
       "confidence": 0.9,
       "stores": [
@@ -14545,7 +14545,7 @@
       "savings": 0.04
     },
     "g12": {
-      "canonical_name": "бут кост свински без",
+      "canonical_name": "кост бут свински без",
       "canonical_brand": "Свински",
       "confidence": 0.85,
       "stores": [
@@ -14569,7 +14569,7 @@
       "savings": 0.81
     },
     "g14": {
-      "canonical_name": "локум кристал",
+      "canonical_name": "кристал локум",
       "canonical_brand": "Кристал",
       "confidence": 0.817,
       "stores": [
@@ -14580,7 +14580,7 @@
       "savings": 0.17
     },
     "g15": {
-      "canonical_name": "кетчуп heinz",
+      "canonical_name": "heinz кетчуп",
       "canonical_brand": "HEINZ",
       "confidence": 0.817,
       "stores": [
@@ -14591,7 +14591,7 @@
       "savings": 2.6
     },
     "g16": {
-      "canonical_name": "бонбони raffaello",
+      "canonical_name": "raffaello бонбони",
       "canonical_brand": "Raffaello",
       "confidence": 0.817,
       "stores": [
@@ -14615,7 +14615,7 @@
       "price_ratio": 4.2
     },
     "g19": {
-      "canonical_name": "батерии зарядно parkside",
+      "canonical_name": "зарядно батерии parkside",
       "canonical_brand": "Parkside",
       "confidence": 0.75,
       "stores": [
@@ -14626,7 +14626,7 @@
       "savings": 9.54
     },
     "g20": {
-      "canonical_name": "espresso кафе мляно",
+      "canonical_name": "мляно кафе espresso",
       "canonical_brand": "Espresso",
       "confidence": 0.75,
       "stores": [
@@ -14637,7 +14637,7 @@
       "savings": 0.99
     },
     "g21": {
-      "canonical_name": "мамут черни маслини",
+      "canonical_name": "черни мамут маслини",
       "canonical_brand": "NO_BRAND",
       "confidence": 0.75,
       "stores": [
@@ -14648,7 +14648,7 @@
       "savings": 1.02
     },
     "g22": {
-      "canonical_name": "nivea душ гел",
+      "canonical_name": "гел душ nivea",
       "canonical_brand": "Nivea",
       "confidence": 0.75,
       "stores": [
@@ -14659,7 +14659,7 @@
       "savings": 2.52
     },
     "g23": {
-      "canonical_name": "гроздова ракия пещерска",
+      "canonical_name": "ракия гроздова пещерска",
       "canonical_brand": "Пещерска",
       "confidence": 0.75,
       "stores": [
@@ -14670,7 +14670,7 @@
       "savings": 3.99
     },
     "g24": {
-      "canonical_name": "зеле червено",
+      "canonical_name": "червено зеле",
       "canonical_brand": "NO_BRAND",
       "confidence": 0.667,
       "stores": [
@@ -14692,7 +14692,7 @@
       "savings": 2.43
     },
     "g29": {
-      "canonical_name": "батерия акумулаторна parkside",
+      "canonical_name": "батерия parkside акумулаторна",
       "canonical_brand": "Parkside",
       "confidence": 0.65,
       "stores": [
@@ -14718,7 +14718,7 @@
       "price_ratio": 3.3
     },
     "g32": {
-      "canonical_name": "шуменско бира",
+      "canonical_name": "бира шуменско",
       "canonical_brand": "Шуменско",
       "confidence": 0.65,
       "stores": [
@@ -14755,7 +14755,7 @@
       "savings": 0.1
     },
     "g37": {
-      "canonical_name": "milka бисквити",
+      "canonical_name": "бисквити milka",
       "canonical_brand": "MILKA",
       "confidence": 0.65,
       "stores": [
@@ -14777,7 +14777,7 @@
       "savings": 0.41
     },
     "g40": {
-      "canonical_name": "philadelphia сирене",
+      "canonical_name": "сирене philadelphia",
       "canonical_brand": "Philadelphia",
       "confidence": 0.65,
       "stores": [
@@ -14790,7 +14790,7 @@
       "price_ratio": 9.7
     },
     "g41": {
-      "canonical_name": "йогурт jogobella",
+      "canonical_name": "jogobella йогурт",
       "canonical_brand": "Jogobella",
       "confidence": 0.65,
       "stores": [
@@ -14801,7 +14801,7 @@
       "savings": 0.12
     },
     "g42": {
-      "canonical_name": "тип моп пеперуда",
+      "canonical_name": "моп тип пеперуда",
       "canonical_brand": "NO_BRAND",
       "confidence": 0.637,
       "stores": [
@@ -14812,7 +14812,7 @@
       "savings": 1.0
     },
     "g45": {
-      "canonical_name": "капсули пране гел savex",
+      "canonical_name": "гел пране savex капсули",
       "canonical_brand": "Savex",
       "confidence": 0.594,
       "stores": [
@@ -14823,7 +14823,7 @@
       "savings": 16.0
     },
     "g50": {
-      "canonical_name": "ретро хели вафла",
+      "canonical_name": "хели ретро вафла",
       "canonical_brand": "Хели",
       "confidence": 0.579,
       "stores": [
@@ -14834,7 +14834,7 @@
       "savings": 0.04
     },
     "g52": {
-      "canonical_name": "кори точени",
+      "canonical_name": "точени кори",
       "canonical_brand": "Фамилия",
       "confidence": 0.567,
       "stores": [
@@ -14858,7 +14858,7 @@
       "savings": 0.31
     },
     "g54": {
-      "canonical_name": "млечен шоколад",
+      "canonical_name": "шоколад млечен",
       "canonical_brand": "MILKA",
       "confidence": 0.567,
       "stores": [
@@ -14891,7 +14891,7 @@
       "savings": 0.15
     },
     "g57": {
-      "canonical_name": "мляко прясно",
+      "canonical_name": "прясно мляко",
       "canonical_brand": "Верея",
       "confidence": 0.567,
       "stores": [
@@ -14915,7 +14915,7 @@
       "savings": 0.0
     },
     "g63": {
-      "canonical_name": "lindt шоколад",
+      "canonical_name": "шоколад lindt",
       "canonical_brand": "Lindt",
       "confidence": 0.55,
       "stores": [
@@ -14926,7 +14926,7 @@
       "savings": 3.51
     },
     "g65": {
-      "canonical_name": "gliss шампоан",
+      "canonical_name": "шампоан gliss",
       "canonical_brand": "Gliss",
       "confidence": 0.55,
       "stores": [
@@ -14950,7 +14950,7 @@
       "savings": 4.01
     },
     "g70": {
-      "canonical_name": "шницели пилешки панирани",
+      "canonical_name": "панирани пилешки шницели",
       "canonical_brand": "Сами",
       "confidence": 0.51,
       "stores": [
@@ -14963,6 +14963,17 @@
       "price_ratio": 4.6
     },
     "g74": {
+      "canonical_name": "врат кост свински без",
+      "canonical_brand": "Свински",
+      "confidence": 0.505,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 1.0
+    },
+    "g75": {
       "canonical_name": "крем мазане",
       "canonical_brand": "NO_BRAND",
       "confidence": 0.5,
@@ -14975,8 +14986,8 @@
       "price_warning": true,
       "price_ratio": 6.2
     },
-    "g76": {
-      "canonical_name": "саламурено бяло сирене",
+    "g77": {
+      "canonical_name": "саламурено сирене бяло",
       "canonical_brand": "NO_BRAND",
       "confidence": 0.5,
       "stores": [
