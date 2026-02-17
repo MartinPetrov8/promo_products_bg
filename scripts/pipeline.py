@@ -428,8 +428,8 @@ def tokenize(name, config):
     # Strip size ranges (S - XXL, M-XL)
     name = re.sub(r'\b[SMLX]{1,3}\s*[-–]\s*[SMLX]{1,4}\b', '', name)
     
-    # Strip model numbers that are just letters+digits (BCH400, PSG85)
-    name = re.sub(r'\b[a-z]{1,4}\d{2,}[a-z]?\d*\b', '', name)
+    # Note: We intentionally do NOT strip model numbers — they can be meaningful
+    # product identifiers. Better to have extra tokens than lose important ones.
     
     name = re.sub(r'\s+', ' ', name).strip()
     
