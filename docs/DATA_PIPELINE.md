@@ -201,3 +201,38 @@ python scripts/lidl_ocr_brands.py --limit 100
 # Daily at 6 AM
 0 6 * * * /host-workspace/promo_products_bg/scripts/daily_scrape.sh
 ```
+
+## Product Images
+
+### Source: znamcenite.bg
+81 generic grocery product images (no brand logos).
+
+**Pipeline:**
+1. Scraped from `https://znamcenite.bg/images/products/`
+2. Background removed using `rembg` (u2net model)
+3. Resized to max 512px, saved as transparent PNG
+4. Stored in `docs/images/products/`
+
+**Mapping:** `data/image_mapping.json`
+- `keyword_to_image` — Maps Bulgarian product keywords to image files
+- `category_images` — Maps product categories to representative images
+
+**Usage in Frontend:**
+The frontend can match product names to images using keyword search:
+```javascript
+function getProductImage(name) {
+    const nameLower = name.toLowerCase();
+    for (const [keyword, image] of Object.entries(imageMapping)) {
+        if (nameLower.includes(keyword)) {
+            return 'images/products/' + image;
+        }
+    }
+    return null; // No match - use store emoji
+}
+```
+
+### Image Stats
+- 81 transparent PNGs
+- Total size: ~14MB
+- Avg size: ~170KB per image
+- Categories: 22 (fruits, vegetables, meat, dairy, beverages, etc.)

@@ -61,3 +61,7 @@ brochures/
 *.db-wal
 data/off_embeddings.npy
 .secrets/
+-e 
+# Python libs and ML models (local only)
+.pylibs/
+.u2net/

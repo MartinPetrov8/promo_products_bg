@@ -51,3 +51,15 @@
 3. Add brand/quantity requirements to matching
 4. Add price ratio sanity check (flag >2x differences)
 
+
+## Product Images (NEW)
+
+| Metric | Value |
+|--------|-------|
+| Source | znamcenite.bg |
+| Total images | 81 |
+| Background removed | 81 (100%) |
+| Format | PNG with transparency |
+| Total size | ~14MB |
+| Keyword mappings | 157 |
+| Category mappings | 22 |
