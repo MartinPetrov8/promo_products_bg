@@ -1,8 +1,8 @@
 {
   "meta": {
     "total_products": 1506,
-    "cross_store_groups": 91,
-    "updated_at": "2026-02-17T06:37:57.425017"
+    "cross_store_groups": 47,
+    "updated_at": "2026-02-17T11:25:01.446001"
   },
   "products": [
     {
@@ -93,7 +93,9 @@
       "store": "Kaufland",
       "price": 8.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 33.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 11,
@@ -129,7 +131,7 @@
       "store": "Kaufland",
       "price": 6.98,
       "image_url": null,
-      "group_id": "g16"
+      "group_id": "g21"
     },
     {
       "id": 15,
@@ -183,7 +185,10 @@
       "store": "Kaufland",
       "price": 5.79,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 5000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 1.16
     },
     {
       "id": 21,
@@ -210,7 +215,10 @@
       "store": "Kaufland",
       "price": 6.75,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 270.0,
+      "quantity_unit": "g",
+      "price_per_kg": 25.0
     },
     {
       "id": 24,
@@ -660,7 +668,10 @@
       "store": "Kaufland",
       "price": 2.46,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 330.0,
+      "quantity_unit": "g",
+      "price_per_kg": 7.45
     },
     {
       "id": 74,
@@ -687,7 +698,10 @@
       "store": "Kaufland",
       "price": 3.95,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 380.0,
+      "quantity_unit": "g",
+      "price_per_kg": 10.39
     },
     {
       "id": 77,
@@ -786,7 +800,7 @@
       "store": "Kaufland",
       "price": 7.98,
       "image_url": null,
-      "group_id": "g35"
+      "group_id": null
     },
     {
       "id": 88,
@@ -804,7 +818,7 @@
       "store": "Kaufland",
       "price": 7.49,
       "image_url": null,
-      "group_id": "g178"
+      "group_id": "g65"
     },
     {
       "id": 90,
@@ -822,7 +836,7 @@
       "store": "Kaufland",
       "price": 4.64,
       "image_url": null,
-      "group_id": "g74"
+      "group_id": "g30"
     },
     {
       "id": 92,
@@ -930,7 +944,9 @@
       "store": "Kaufland",
       "price": 1.25,
       "image_url": null,
-      "group_id": "g91"
+      "group_id": null,
+      "quantity": 5.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 104,
@@ -1047,7 +1063,7 @@
       "store": "Kaufland",
       "price": 3.48,
       "image_url": null,
-      "group_id": "g209"
+      "group_id": "g69"
     },
     {
       "id": 117,
@@ -1065,7 +1081,7 @@
       "store": "Kaufland",
       "price": 5.98,
       "image_url": null,
-      "group_id": "g152"
+      "group_id": null
     },
     {
       "id": 119,
@@ -1074,7 +1090,7 @@
       "store": "Kaufland",
       "price": 2.48,
       "image_url": null,
-      "group_id": "g101"
+      "group_id": "g36"
     },
     {
       "id": 120,
@@ -1155,7 +1171,9 @@
       "store": "Kaufland",
       "price": 79.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 83.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 129,
@@ -1164,7 +1182,9 @@
       "store": "Kaufland",
       "price": 19.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 130,
@@ -1173,7 +1193,9 @@
       "store": "Kaufland",
       "price": 12.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 131,
@@ -1182,7 +1204,9 @@
       "store": "Kaufland",
       "price": 20.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 132,
@@ -1191,7 +1215,9 @@
       "store": "Kaufland",
       "price": 17.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 120.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 133,
@@ -1200,7 +1226,9 @@
       "store": "Kaufland",
       "price": 19.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 165.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 134,
@@ -1209,7 +1237,9 @@
       "store": "Kaufland",
       "price": 21.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 180.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 135,
@@ -1218,7 +1248,9 @@
       "store": "Kaufland",
       "price": 15.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 90.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 136,
@@ -1227,7 +1259,9 @@
       "store": "Kaufland",
       "price": 14.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 137,
@@ -1236,7 +1270,9 @@
       "store": "Kaufland",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 50.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 138,
@@ -1371,7 +1407,9 @@
       "store": "Kaufland",
       "price": 39.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 50.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 153,
@@ -1380,7 +1418,9 @@
       "store": "Kaufland",
       "price": 34.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 25.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 154,
@@ -1533,7 +1573,7 @@
       "store": "Kaufland",
       "price": 1.94,
       "image_url": null,
-      "group_id": "g4"
+      "group_id": "g3"
     },
     {
       "id": 172,
@@ -1560,7 +1600,7 @@
       "store": "Kaufland",
       "price": 1.49,
       "image_url": null,
-      "group_id": "g6"
+      "group_id": "g4"
     },
     {
       "id": 175,
@@ -1641,7 +1681,7 @@
       "store": "Kaufland",
       "price": 1.29,
       "image_url": null,
-      "group_id": "g22"
+      "group_id": "g24"
     },
     {
       "id": 184,
@@ -1695,7 +1735,10 @@
       "store": "Kaufland",
       "price": 1.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 1.49
     },
     {
       "id": 190,
@@ -1704,7 +1747,7 @@
       "store": "Kaufland",
       "price": 6.98,
       "image_url": null,
-      "group_id": "g137"
+      "group_id": null
     },
     {
       "id": 191,
@@ -1992,7 +2035,7 @@
       "store": "Kaufland",
       "price": 24.98,
       "image_url": null,
-      "group_id": "g90"
+      "group_id": "g33"
     },
     {
       "id": 223,
@@ -2100,7 +2143,10 @@
       "store": "Kaufland",
       "price": 7.98,
       "image_url": null,
-      "group_id": "g76"
+      "group_id": null,
+      "quantity": 1500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 5.32
     },
     {
       "id": 235,
@@ -2181,7 +2227,7 @@
       "store": "Kaufland",
       "price": 12.99,
       "image_url": null,
-      "group_id": "g62"
+      "group_id": "g74"
     },
     {
       "id": 244,
@@ -2190,7 +2236,7 @@
       "store": "Kaufland",
       "price": 3.68,
       "image_url": null,
-      "group_id": "g8"
+      "group_id": "g7"
     },
     {
       "id": 245,
@@ -2208,7 +2254,7 @@
       "store": "Kaufland",
       "price": 2.64,
       "image_url": null,
-      "group_id": "g116"
+      "group_id": "g41"
     },
     {
       "id": 247,
@@ -2226,7 +2272,7 @@
       "store": "Kaufland",
       "price": 2.68,
       "image_url": null,
-      "group_id": "g49"
+      "group_id": "g57"
     },
     {
       "id": 249,
@@ -2244,7 +2290,7 @@
       "store": "Kaufland",
       "price": 1.39,
       "image_url": null,
-      "group_id": "g109"
+      "group_id": null
     },
     {
       "id": 251,
@@ -2271,7 +2317,7 @@
       "store": "Kaufland",
       "price": 2.99,
       "image_url": null,
-      "group_id": "g210"
+      "group_id": null
     },
     {
       "id": 254,
@@ -2298,7 +2344,7 @@
       "store": "Kaufland",
       "price": 14.98,
       "image_url": null,
-      "group_id": "g17"
+      "group_id": null
     },
     {
       "id": 257,
@@ -2325,7 +2371,7 @@
       "store": "Kaufland",
       "price": 28.99,
       "image_url": null,
-      "group_id": "g199"
+      "group_id": null
     },
     {
       "id": 260,
@@ -2388,7 +2434,7 @@
       "store": "Kaufland",
       "price": 17.99,
       "image_url": null,
-      "group_id": "g9"
+      "group_id": "g8"
     },
     {
       "id": 267,
@@ -2406,7 +2452,7 @@
       "store": "Kaufland",
       "price": 11.48,
       "image_url": null,
-      "group_id": "g112"
+      "group_id": "g40"
     },
     {
       "id": 269,
@@ -2433,7 +2479,7 @@
       "store": "Kaufland",
       "price": 12.99,
       "image_url": null,
-      "group_id": "g77"
+      "group_id": null
     },
     {
       "id": 272,
@@ -2514,7 +2560,7 @@
       "store": "Kaufland",
       "price": 6.98,
       "image_url": null,
-      "group_id": "g41"
+      "group_id": "g55"
     },
     {
       "id": 281,
@@ -2559,7 +2605,7 @@
       "store": "Kaufland",
       "price": 5.85,
       "image_url": null,
-      "group_id": "g177"
+      "group_id": null
     },
     {
       "id": 286,
@@ -2586,7 +2632,7 @@
       "store": "Kaufland",
       "price": 11.99,
       "image_url": null,
-      "group_id": "g175"
+      "group_id": null
     },
     {
       "id": 289,
@@ -2622,7 +2668,7 @@
       "store": "Kaufland",
       "price": 2.99,
       "image_url": null,
-      "group_id": "g23"
+      "group_id": "g52"
     },
     {
       "id": 293,
@@ -2676,7 +2722,7 @@
       "store": "Kaufland",
       "price": 1.58,
       "image_url": null,
-      "group_id": "g64"
+      "group_id": null
     },
     {
       "id": 299,
@@ -2964,7 +3010,7 @@
       "store": "Kaufland",
       "price": 2.39,
       "image_url": null,
-      "group_id": "g129"
+      "group_id": null
     },
     {
       "id": 331,
@@ -2982,7 +3028,7 @@
       "store": "Kaufland",
       "price": 1.19,
       "image_url": null,
-      "group_id": "g147"
+      "group_id": "g61"
     },
     {
       "id": 333,
@@ -3063,7 +3109,7 @@
       "store": "Kaufland",
       "price": 1.99,
       "image_url": null,
-      "group_id": "g148"
+      "group_id": null
     },
     {
       "id": 342,
@@ -3342,7 +3388,7 @@
       "store": "Kaufland",
       "price": 0.98,
       "image_url": null,
-      "group_id": "g28"
+      "group_id": "g14"
     },
     {
       "id": 373,
@@ -3360,7 +3406,7 @@
       "store": "Kaufland",
       "price": 0.25,
       "image_url": null,
-      "group_id": "g14"
+      "group_id": "g11"
     },
     {
       "id": 375,
@@ -3369,7 +3415,7 @@
       "store": "Kaufland",
       "price": 0.55,
       "image_url": null,
-      "group_id": null
+      "group_id": "g50"
     },
     {
       "id": 376,
@@ -3387,7 +3433,7 @@
       "store": "Kaufland",
       "price": 9.49,
       "image_url": null,
-      "group_id": "g29"
+      "group_id": null
     },
     {
       "id": 378,
@@ -3414,7 +3460,7 @@
       "store": "Kaufland",
       "price": 9.68,
       "image_url": null,
-      "group_id": "g43"
+      "group_id": "g16"
     },
     {
       "id": 381,
@@ -3432,7 +3478,7 @@
       "store": "Kaufland",
       "price": 29.98,
       "image_url": null,
-      "group_id": "g154"
+      "group_id": null
     },
     {
       "id": 383,
@@ -3450,7 +3496,7 @@
       "store": "Kaufland",
       "price": 2.99,
       "image_url": null,
-      "group_id": "g184"
+      "group_id": null
     },
     {
       "id": 385,
@@ -3513,7 +3559,7 @@
       "store": "Kaufland",
       "price": 9.99,
       "image_url": null,
-      "group_id": "g52"
+      "group_id": "g20"
     },
     {
       "id": 392,
@@ -3567,7 +3613,7 @@
       "store": "Kaufland",
       "price": 36.98,
       "image_url": null,
-      "group_id": "g166"
+      "group_id": null
     },
     {
       "id": 398,
@@ -3630,7 +3676,7 @@
       "store": "Kaufland",
       "price": 16.98,
       "image_url": null,
-      "group_id": "g158"
+      "group_id": null
     },
     {
       "id": 405,
@@ -3639,7 +3685,9 @@
       "store": "Kaufland",
       "price": 3.58,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 90.0,
+      "quantity_unit": "g"
     },
     {
       "id": 406,
@@ -3693,7 +3741,7 @@
       "store": "Kaufland",
       "price": 9.49,
       "image_url": null,
-      "group_id": "g168"
+      "group_id": "g63"
     },
     {
       "id": 412,
@@ -3801,7 +3849,7 @@
       "store": "Kaufland",
       "price": 13.98,
       "image_url": null,
-      "group_id": "g85"
+      "group_id": null
     },
     {
       "id": 424,
@@ -3882,7 +3930,7 @@
       "store": "Kaufland",
       "price": 12.99,
       "image_url": null,
-      "group_id": "g7"
+      "group_id": "g5"
     },
     {
       "id": 433,
@@ -3891,7 +3939,7 @@
       "store": "Kaufland",
       "price": 16.49,
       "image_url": null,
-      "group_id": "g47"
+      "group_id": "g6"
     },
     {
       "id": 434,
@@ -3909,7 +3957,7 @@
       "store": "Kaufland",
       "price": 0.88,
       "image_url": null,
-      "group_id": "g191"
+      "group_id": null
     },
     {
       "id": 436,
@@ -3918,7 +3966,7 @@
       "store": "Kaufland",
       "price": 14.98,
       "image_url": null,
-      "group_id": "g45"
+      "group_id": "g23"
     },
     {
       "id": 437,
@@ -4062,7 +4110,10 @@
       "store": "Kaufland",
       "price": 8.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2640.0,
+      "quantity_unit": "ml",
+      "price_per_l": 3.4
     },
     {
       "id": 453,
@@ -4152,7 +4203,10 @@
       "store": "Kaufland",
       "price": 6.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 3000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 2.16
     },
     {
       "id": 463,
@@ -4170,7 +4224,7 @@
       "store": "Kaufland",
       "price": 2.19,
       "image_url": null,
-      "group_id": "g108"
+      "group_id": "g39"
     },
     {
       "id": 465,
@@ -4269,7 +4323,7 @@
       "store": "Kaufland",
       "price": 35.99,
       "image_url": null,
-      "group_id": "g46"
+      "group_id": null
     },
     {
       "id": 476,
@@ -4377,7 +4431,7 @@
       "store": "Kaufland",
       "price": 5.48,
       "image_url": null,
-      "group_id": "g54"
+      "group_id": "g22"
     },
     {
       "id": 488,
@@ -4458,7 +4512,7 @@
       "store": "Kaufland",
       "price": 5.98,
       "image_url": null,
-      "group_id": "g170"
+      "group_id": null
     },
     {
       "id": 497,
@@ -4521,7 +4575,7 @@
       "store": "Kaufland",
       "price": 5.98,
       "image_url": null,
-      "group_id": "g10"
+      "group_id": null
     },
     {
       "id": 504,
@@ -4548,7 +4602,7 @@
       "store": "Kaufland",
       "price": 5.59,
       "image_url": null,
-      "group_id": "g36"
+      "group_id": null
     },
     {
       "id": 507,
@@ -4692,7 +4746,7 @@
       "store": "Kaufland",
       "price": 8.98,
       "image_url": null,
-      "group_id": "g128"
+      "group_id": null
     },
     {
       "id": 523,
@@ -4764,7 +4818,7 @@
       "store": "Kaufland",
       "price": 16.98,
       "image_url": null,
-      "group_id": "g24"
+      "group_id": null
     },
     {
       "id": 531,
@@ -4836,7 +4890,7 @@
       "store": "Kaufland",
       "price": 13.98,
       "image_url": null,
-      "group_id": "g123"
+      "group_id": "g45"
     },
     {
       "id": 539,
@@ -4863,7 +4917,10 @@
       "store": "Kaufland",
       "price": 4.48,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1440.0,
+      "quantity_unit": "ml",
+      "price_per_l": 3.11
     },
     {
       "id": 542,
@@ -4881,7 +4938,10 @@
       "store": "Kaufland",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 9.99
     },
     {
       "id": 544,
@@ -4998,7 +5058,10 @@
       "store": "Kaufland",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1350.0,
+      "quantity_unit": "ml",
+      "price_per_l": 5.17
     },
     {
       "id": 557,
@@ -5124,7 +5187,9 @@
       "store": "Kaufland",
       "price": 12.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 571,
@@ -5196,7 +5261,9 @@
       "store": "Kaufland",
       "price": 2.39,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 18.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 579,
@@ -5205,7 +5272,9 @@
       "store": "Kaufland",
       "price": 2.78,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 10.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 580,
@@ -5223,7 +5292,9 @@
       "store": "Kaufland",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 100.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 582,
@@ -5277,7 +5348,7 @@
       "store": "Kaufland",
       "price": 6.98,
       "image_url": null,
-      "group_id": "g1"
+      "group_id": null
     },
     {
       "id": 588,
@@ -5457,7 +5528,7 @@
       "store": "Kaufland",
       "price": 5.48,
       "image_url": null,
-      "group_id": "g78"
+      "group_id": "g15"
     },
     {
       "id": 608,
@@ -5502,7 +5573,7 @@
       "store": "Kaufland",
       "price": 1.68,
       "image_url": null,
-      "group_id": "g58"
+      "group_id": null
     },
     {
       "id": 613,
@@ -5520,7 +5591,7 @@
       "store": "Kaufland",
       "price": 3.19,
       "image_url": null,
-      "group_id": "g121"
+      "group_id": null
     },
     {
       "id": 615,
@@ -5574,7 +5645,7 @@
       "store": "Kaufland",
       "price": 1.84,
       "image_url": null,
-      "group_id": "g26"
+      "group_id": "g53"
     },
     {
       "id": 621,
@@ -5601,7 +5672,7 @@
       "store": "Kaufland",
       "price": 23.78,
       "image_url": null,
-      "group_id": "g113"
+      "group_id": null
     },
     {
       "id": 624,
@@ -5700,7 +5771,7 @@
       "store": "Kaufland",
       "price": 3.66,
       "image_url": null,
-      "group_id": "g102"
+      "group_id": null
     },
     {
       "id": 635,
@@ -5718,7 +5789,9 @@
       "store": "Kaufland",
       "price": 3.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 637,
@@ -5781,7 +5854,7 @@
       "store": "Kaufland",
       "price": 2.99,
       "image_url": null,
-      "group_id": "g141"
+      "group_id": null
     },
     {
       "id": 644,
@@ -5844,7 +5917,9 @@
       "store": "Kaufland",
       "price": 119.89,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 3.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 651,
@@ -5853,7 +5928,10 @@
       "store": "Kaufland",
       "price": 2.48,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 2.48
     },
     {
       "id": 652,
@@ -6123,7 +6201,7 @@
       "store": "Kaufland",
       "price": 139.9,
       "image_url": null,
-      "group_id": "g142"
+      "group_id": null
     },
     {
       "id": 682,
@@ -6249,7 +6327,10 @@
       "store": "Kaufland",
       "price": 12.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 3000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 4.33
     },
     {
       "id": 696,
@@ -6285,7 +6366,9 @@
       "store": "Kaufland",
       "price": 3.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 700,
@@ -6330,7 +6413,9 @@
       "store": "Kaufland",
       "price": 1.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 45.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 705,
@@ -6348,7 +6433,7 @@
       "store": "Kaufland",
       "price": 13.98,
       "image_url": null,
-      "group_id": "g68"
+      "group_id": null
     },
     {
       "id": 707,
@@ -6429,7 +6514,9 @@
       "store": "Kaufland",
       "price": 16.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 32.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 716,
@@ -6483,7 +6570,10 @@
       "store": "Kaufland",
       "price": 24.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 4000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 6.25
     },
     {
       "id": 722,
@@ -6492,7 +6582,9 @@
       "store": "Kaufland",
       "price": 19.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 35.5,
+      "quantity_unit": "pcs"
     },
     {
       "id": 723,
@@ -6519,7 +6611,9 @@
       "store": "Kaufland",
       "price": 4.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 28.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 726,
@@ -6528,7 +6622,9 @@
       "store": "Kaufland",
       "price": 3.48,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 25.7,
+      "quantity_unit": "pcs"
     },
     {
       "id": 727,
@@ -6573,7 +6669,9 @@
       "store": "Kaufland",
       "price": 24.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 140.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 732,
@@ -6663,7 +6761,7 @@
       "store": "Kaufland",
       "price": 4.99,
       "image_url": null,
-      "group_id": "g27"
+      "group_id": "g13"
     },
     {
       "id": 742,
@@ -6690,7 +6788,9 @@
       "store": "Kaufland",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 4.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 745,
@@ -6717,7 +6817,9 @@
       "store": "Kaufland",
       "price": 1.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 40.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 748,
@@ -6807,7 +6909,9 @@
       "store": "Kaufland",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 50.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 758,
@@ -6834,7 +6938,9 @@
       "store": "Kaufland",
       "price": 2.29,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 30.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 761,
@@ -6843,7 +6949,9 @@
       "store": "Kaufland",
       "price": 5.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 50.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 762,
@@ -6852,7 +6960,9 @@
       "store": "Kaufland",
       "price": 12.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 70.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 763,
@@ -6870,7 +6980,9 @@
       "store": "Kaufland",
       "price": 19.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 50.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 765,
@@ -6879,7 +6991,9 @@
       "store": "Kaufland",
       "price": 29.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 766,
@@ -6888,7 +7002,9 @@
       "store": "Kaufland",
       "price": 39.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 767,
@@ -6924,7 +7040,9 @@
       "store": "Kaufland",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 100.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 771,
@@ -6933,7 +7051,9 @@
       "store": "Kaufland",
       "price": 14.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 160.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 772,
@@ -6942,7 +7062,9 @@
       "store": "Kaufland",
       "price": 15.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 180.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 773,
@@ -6951,7 +7073,9 @@
       "store": "Kaufland",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 774,
@@ -6960,7 +7084,9 @@
       "store": "Kaufland",
       "price": 14.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 220.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 775,
@@ -6969,7 +7095,9 @@
       "store": "Kaufland",
       "price": 5.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 50.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 776,
@@ -6978,7 +7106,9 @@
       "store": "Kaufland",
       "price": 89.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 32.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 777,
@@ -6987,7 +7117,9 @@
       "store": "Kaufland",
       "price": 79.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 58.1,
+      "quantity_unit": "pcs"
     },
     {
       "id": 778,
@@ -7005,7 +7137,9 @@
       "store": "Kaufland",
       "price": 3.58,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 780,
@@ -7041,7 +7175,7 @@
       "store": "Kaufland",
       "price": 44.98,
       "image_url": null,
-      "group_id": "g2"
+      "group_id": "g1"
     },
     {
       "id": 784,
@@ -7068,7 +7202,7 @@
       "store": "Kaufland",
       "price": 5.98,
       "image_url": null,
-      "group_id": "g15"
+      "group_id": "g42"
     },
     {
       "id": 787,
@@ -7095,7 +7229,9 @@
       "store": "Kaufland",
       "price": 4.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 40.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 790,
@@ -7140,7 +7276,9 @@
       "store": "Kaufland",
       "price": 7.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 40.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 795,
@@ -7167,7 +7305,10 @@
       "store": "Kaufland",
       "price": 3.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1600.0,
+      "quantity_unit": "ml",
+      "price_per_l": 2.49
     },
     {
       "id": 798,
@@ -7185,7 +7326,9 @@
       "store": "Kaufland",
       "price": 2.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 30.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 800,
@@ -7230,7 +7373,10 @@
       "store": "Kaufland",
       "price": 1.68,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1250.0,
+      "quantity_unit": "ml",
+      "price_per_l": 1.34
     },
     {
       "id": 805,
@@ -7239,7 +7385,10 @@
       "store": "Kaufland",
       "price": 2.29,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2250.0,
+      "quantity_unit": "ml",
+      "price_per_l": 1.02
     },
     {
       "id": 806,
@@ -7248,7 +7397,10 @@
       "store": "Kaufland",
       "price": 3.29,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 4500.0,
+      "quantity_unit": "ml",
+      "price_per_l": 0.73
     },
     {
       "id": 807,
@@ -7320,7 +7472,7 @@
       "store": "Kaufland",
       "price": 3.99,
       "image_url": null,
-      "group_id": "g70"
+      "group_id": "g27"
     },
     {
       "id": 815,
@@ -7356,7 +7508,7 @@
       "store": "Kaufland",
       "price": 37.98,
       "image_url": null,
-      "group_id": "g3"
+      "group_id": "g2"
     },
     {
       "id": 819,
@@ -7365,7 +7517,7 @@
       "store": "Kaufland",
       "price": 19.99,
       "image_url": null,
-      "group_id": "g51"
+      "group_id": "g19"
     },
     {
       "id": 820,
@@ -7374,7 +7526,7 @@
       "store": "Kaufland",
       "price": 31.98,
       "image_url": null,
-      "group_id": "g72"
+      "group_id": "g29"
     },
     {
       "id": 821,
@@ -7446,7 +7598,10 @@
       "store": "Kaufland",
       "price": 99.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 6000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 16.66
     },
     {
       "id": 829,
@@ -7455,7 +7610,9 @@
       "store": "Kaufland",
       "price": 16.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 40.5,
+      "quantity_unit": "pcs"
     },
     {
       "id": 830,
@@ -7464,7 +7621,10 @@
       "store": "Kaufland",
       "price": 7.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 6000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 1.25
     },
     {
       "id": 831,
@@ -7500,7 +7660,10 @@
       "store": "Kaufland",
       "price": 20.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 4200.0,
+      "quantity_unit": "ml",
+      "price_per_l": 5.0
     },
     {
       "id": 835,
@@ -7509,7 +7672,10 @@
       "store": "Kaufland",
       "price": 22.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 5300.0,
+      "quantity_unit": "ml",
+      "price_per_l": 4.34
     },
     {
       "id": 836,
@@ -7554,7 +7720,9 @@
       "store": "Kaufland",
       "price": 9.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 13.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 841,
@@ -7563,7 +7731,10 @@
       "store": "Kaufland",
       "price": 19.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 400.0,
+      "quantity_unit": "ml",
+      "price_per_l": 49.98
     },
     {
       "id": 842,
@@ -7581,7 +7752,9 @@
       "store": "Kaufland",
       "price": 15.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 6.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 844,
@@ -7635,7 +7808,9 @@
       "store": "Kaufland",
       "price": 18.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 37.5,
+      "quantity_unit": "pcs"
     },
     {
       "id": 850,
@@ -7680,7 +7855,10 @@
       "store": "Kaufland",
       "price": 5.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 650.0,
+      "quantity_unit": "ml",
+      "price_per_l": 9.2
     },
     {
       "id": 855,
@@ -7707,7 +7885,7 @@
       "store": "Kaufland",
       "price": 12.48,
       "image_url": null,
-      "group_id": "g53"
+      "group_id": "g70"
     },
     {
       "id": 858,
@@ -7734,7 +7912,7 @@
       "store": "Kaufland",
       "price": 2.7,
       "image_url": null,
-      "group_id": "g183"
+      "group_id": null
     },
     {
       "id": 861,
@@ -7770,7 +7948,7 @@
       "store": "Kaufland",
       "price": 3.34,
       "image_url": null,
-      "group_id": "g33"
+      "group_id": "g54"
     },
     {
       "id": 865,
@@ -7806,7 +7984,7 @@
       "store": "Kaufland",
       "price": 2.78,
       "image_url": null,
-      "group_id": "g104"
+      "group_id": "g37"
     },
     {
       "id": 869,
@@ -7851,7 +8029,7 @@
       "store": "Kaufland",
       "price": 4.11,
       "image_url": null,
-      "group_id": "g186"
+      "group_id": null
     },
     {
       "id": 874,
@@ -7959,7 +8137,7 @@
       "store": "Kaufland",
       "price": 11.97,
       "image_url": null,
-      "group_id": "g89"
+      "group_id": "g32"
     },
     {
       "id": 886,
@@ -7995,7 +8173,7 @@
       "store": "Kaufland",
       "price": 15.98,
       "image_url": null,
-      "group_id": "g73"
+      "group_id": null
     },
     {
       "id": 890,
@@ -8211,7 +8389,7 @@
       "store": "Lidl",
       "price": 5.11,
       "image_url": null,
-      "group_id": "g29"
+      "group_id": null
     },
     {
       "id": 937,
@@ -8238,7 +8416,7 @@
       "store": "Lidl",
       "price": 0.61,
       "image_url": null,
-      "group_id": "g191"
+      "group_id": null
     },
     {
       "id": 940,
@@ -8256,7 +8434,7 @@
       "store": "Lidl",
       "price": 1.27,
       "image_url": null,
-      "group_id": "g35"
+      "group_id": null
     },
     {
       "id": 942,
@@ -8355,7 +8533,7 @@
       "store": "Lidl",
       "price": 3.06,
       "image_url": null,
-      "group_id": "g42"
+      "group_id": "g56"
     },
     {
       "id": 953,
@@ -8418,7 +8596,7 @@
       "store": "Lidl",
       "price": 1.22,
       "image_url": null,
-      "group_id": "g50"
+      "group_id": null
     },
     {
       "id": 960,
@@ -8436,7 +8614,7 @@
       "store": "Lidl",
       "price": 4.34,
       "image_url": null,
-      "group_id": "g10"
+      "group_id": null
     },
     {
       "id": 962,
@@ -8481,7 +8659,7 @@
       "store": "Lidl",
       "price": 1.63,
       "image_url": null,
-      "group_id": "g199"
+      "group_id": null
     },
     {
       "id": 967,
@@ -8535,7 +8713,7 @@
       "store": "Lidl",
       "price": 1.53,
       "image_url": null,
-      "group_id": "g34"
+      "group_id": null
     },
     {
       "id": 973,
@@ -8589,7 +8767,7 @@
       "store": "Lidl",
       "price": 3.57,
       "image_url": null,
-      "group_id": "g152"
+      "group_id": null
     },
     {
       "id": 979,
@@ -8607,7 +8785,7 @@
       "store": "Lidl",
       "price": 0.76,
       "image_url": null,
-      "group_id": "g36"
+      "group_id": null
     },
     {
       "id": 981,
@@ -8670,7 +8848,7 @@
       "store": "Lidl",
       "price": 6.64,
       "image_url": null,
-      "group_id": "g17"
+      "group_id": null
     },
     {
       "id": 988,
@@ -8688,7 +8866,7 @@
       "store": "Lidl",
       "price": 2.35,
       "image_url": null,
-      "group_id": "g41"
+      "group_id": "g55"
     },
     {
       "id": 990,
@@ -8724,7 +8902,7 @@
       "store": "Lidl",
       "price": 7.39,
       "image_url": null,
-      "group_id": "g45"
+      "group_id": null
     },
     {
       "id": 994,
@@ -8769,7 +8947,7 @@
       "store": "Lidl",
       "price": 2.3,
       "image_url": null,
-      "group_id": "g183"
+      "group_id": null
     },
     {
       "id": 999,
@@ -8886,7 +9064,7 @@
       "store": "Lidl",
       "price": 3.57,
       "image_url": null,
-      "group_id": "g1"
+      "group_id": null
     },
     {
       "id": 1048,
@@ -8940,7 +9118,7 @@
       "store": "Lidl",
       "price": 2.55,
       "image_url": null,
-      "group_id": "g121"
+      "group_id": null
     },
     {
       "id": 1065,
@@ -8985,7 +9163,7 @@
       "store": "Lidl",
       "price": 2.7,
       "image_url": null,
-      "group_id": "g53"
+      "group_id": "g70"
     },
     {
       "id": 1079,
@@ -9012,7 +9190,7 @@
       "store": "Lidl",
       "price": 23.51,
       "image_url": null,
-      "group_id": "g46"
+      "group_id": null
     },
     {
       "id": 1083,
@@ -9093,7 +9271,7 @@
       "store": "Lidl",
       "price": 2.04,
       "image_url": null,
-      "group_id": "g64"
+      "group_id": null
     },
     {
       "id": 1095,
@@ -9111,7 +9289,7 @@
       "store": "Lidl",
       "price": 5.62,
       "image_url": null,
-      "group_id": "g158"
+      "group_id": null
     },
     {
       "id": 1097,
@@ -9120,7 +9298,7 @@
       "store": "Lidl",
       "price": 5.11,
       "image_url": null,
-      "group_id": "g85"
+      "group_id": null
     },
     {
       "id": 1098,
@@ -9156,7 +9334,7 @@
       "store": "Lidl",
       "price": 1.27,
       "image_url": null,
-      "group_id": "g22"
+      "group_id": "g24"
     },
     {
       "id": 1102,
@@ -9174,7 +9352,7 @@
       "store": "Lidl",
       "price": 9.71,
       "image_url": null,
-      "group_id": "g24"
+      "group_id": null
     },
     {
       "id": 1105,
@@ -9237,7 +9415,7 @@
       "store": "Lidl",
       "price": 2.49,
       "image_url": null,
-      "group_id": "g62"
+      "group_id": null
     },
     {
       "id": 1112,
@@ -9318,7 +9496,7 @@
       "store": "Lidl",
       "price": 5.11,
       "image_url": null,
-      "group_id": "g137"
+      "group_id": null
     },
     {
       "id": 1124,
@@ -9390,7 +9568,10 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": "g76"
+      "group_id": null,
+      "quantity": 5000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 1.4
     },
     {
       "id": 1156,
@@ -9399,7 +9580,10 @@
       "store": "Billa",
       "price": 1.55,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 1.55
     },
     {
       "id": 1157,
@@ -9408,7 +9592,9 @@
       "store": "Billa",
       "price": 1.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1158,
@@ -9417,7 +9603,10 @@
       "store": "Billa",
       "price": 0.86,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 125.0,
+      "quantity_unit": "g",
+      "price_per_kg": 6.88
     },
     {
       "id": 1159,
@@ -9426,7 +9615,10 @@
       "store": "Billa",
       "price": 19.54,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 19.54
     },
     {
       "id": 1160,
@@ -9435,7 +9627,10 @@
       "store": "Billa",
       "price": 18.17,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 36.34
     },
     {
       "id": 1161,
@@ -9444,7 +9639,9 @@
       "store": "Billa",
       "price": 17.97,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 8.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1162,
@@ -9453,7 +9650,10 @@
       "store": "Billa",
       "price": 3.79,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 3.79
     },
     {
       "id": 1163,
@@ -9462,7 +9662,10 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 9.99
     },
     {
       "id": 1164,
@@ -9471,7 +9674,10 @@
       "store": "Billa",
       "price": 7.3,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 600.0,
+      "quantity_unit": "g",
+      "price_per_kg": 12.17
     },
     {
       "id": 1165,
@@ -9480,7 +9686,10 @@
       "store": "Billa",
       "price": 8.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 17.96
     },
     {
       "id": 1166,
@@ -9489,7 +9698,10 @@
       "store": "Billa",
       "price": 7.02,
       "image_url": null,
-      "group_id": "g90"
+      "group_id": "g33",
+      "quantity": 500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 14.04
     },
     {
       "id": 1167,
@@ -9498,7 +9710,10 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 960.0,
+      "quantity_unit": "g",
+      "price_per_kg": 7.27
     },
     {
       "id": 1168,
@@ -9507,7 +9722,10 @@
       "store": "Billa",
       "price": 5.85,
       "image_url": null,
-      "group_id": "g174"
+      "group_id": null,
+      "quantity": 300.0,
+      "quantity_unit": "g",
+      "price_per_kg": 19.5
     },
     {
       "id": 1169,
@@ -9516,7 +9734,10 @@
       "store": "Billa",
       "price": 10.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 760.0,
+      "quantity_unit": "g",
+      "price_per_kg": 14.46
     },
     {
       "id": 1170,
@@ -9525,7 +9746,10 @@
       "store": "Billa",
       "price": 11.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 350.0,
+      "quantity_unit": "g",
+      "price_per_kg": 34.26
     },
     {
       "id": 1171,
@@ -9534,7 +9758,10 @@
       "store": "Billa",
       "price": 7.49,
       "image_url": null,
-      "group_id": "g209"
+      "group_id": "g69",
+      "quantity": 400.0,
+      "quantity_unit": "g",
+      "price_per_kg": 18.73
     },
     {
       "id": 1172,
@@ -9543,7 +9770,10 @@
       "store": "Billa",
       "price": 4.28,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 17.13
     },
     {
       "id": 1173,
@@ -9552,7 +9782,10 @@
       "store": "Billa",
       "price": 12.11,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 300.0,
+      "quantity_unit": "g",
+      "price_per_kg": 40.37
     },
     {
       "id": 1174,
@@ -9561,7 +9794,10 @@
       "store": "Billa",
       "price": 2.52,
       "image_url": null,
-      "group_id": "g116"
+      "group_id": "g41",
+      "quantity": 400.0,
+      "quantity_unit": "g",
+      "price_per_kg": 6.31
     },
     {
       "id": 1175,
@@ -9570,7 +9806,10 @@
       "store": "Billa",
       "price": 5.5,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 2.75
     },
     {
       "id": 1176,
@@ -9579,7 +9818,10 @@
       "store": "Billa",
       "price": 8.08,
       "image_url": null,
-      "group_id": "g78"
+      "group_id": "g15",
+      "quantity": 1350.0,
+      "quantity_unit": "g",
+      "price_per_kg": 5.99
     },
     {
       "id": 1177,
@@ -9588,7 +9830,10 @@
       "store": "Billa",
       "price": 2.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 245.0,
+      "quantity_unit": "g",
+      "price_per_kg": 12.21
     },
     {
       "id": 1178,
@@ -9597,7 +9842,10 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": "g148"
+      "group_id": null,
+      "quantity": 1200.0,
+      "quantity_unit": "g",
+      "price_per_kg": 8.33
     },
     {
       "id": 1179,
@@ -9615,7 +9863,10 @@
       "store": "Billa",
       "price": 4.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 9000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 0.55
     },
     {
       "id": 1181,
@@ -9624,7 +9875,10 @@
       "store": "Billa",
       "price": 3.79,
       "image_url": null,
-      "group_id": "g104"
+      "group_id": "g37",
+      "quantity": 184.0,
+      "quantity_unit": "g",
+      "price_per_kg": 20.62
     },
     {
       "id": 1182,
@@ -9633,7 +9887,10 @@
       "store": "Billa",
       "price": 4.48,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 360.0,
+      "quantity_unit": "g",
+      "price_per_kg": 12.44
     },
     {
       "id": 1183,
@@ -9642,7 +9899,10 @@
       "store": "Billa",
       "price": 3.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 4000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 1.0
     },
     {
       "id": 1184,
@@ -9651,7 +9911,10 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "ml",
+      "price_per_l": 66.6
     },
     {
       "id": 1185,
@@ -9660,7 +9923,10 @@
       "store": "Billa",
       "price": 14.26,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 3000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 4.75
     },
     {
       "id": 1186,
@@ -9669,7 +9935,10 @@
       "store": "Billa",
       "price": 24.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1500.0,
+      "quantity_unit": "ml",
+      "price_per_l": 16.65
     },
     {
       "id": 1187,
@@ -9678,7 +9947,10 @@
       "store": "Billa",
       "price": 9.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 4.5
     },
     {
       "id": 1188,
@@ -9687,7 +9959,10 @@
       "store": "Billa",
       "price": 5.07,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 2.54
     },
     {
       "id": 1189,
@@ -9696,7 +9971,9 @@
       "store": "Billa",
       "price": 7.59,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 85.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1190,
@@ -9705,7 +9982,9 @@
       "store": "Billa",
       "price": 29.98,
       "image_url": null,
-      "group_id": "g123"
+      "group_id": "g45",
+      "quantity": 72.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1191,
@@ -9714,7 +9993,10 @@
       "store": "Billa",
       "price": 13.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 10000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 1.4
     },
     {
       "id": 1192,
@@ -9732,7 +10014,10 @@
       "store": "Billa",
       "price": 6.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1250.0,
+      "quantity_unit": "ml",
+      "price_per_l": 5.19
     },
     {
       "id": 1194,
@@ -9741,7 +10026,9 @@
       "store": "Billa",
       "price": 46.78,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1195,
@@ -9750,7 +10037,10 @@
       "store": "Billa",
       "price": 3.31,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 13.24
     },
     {
       "id": 1196,
@@ -9759,7 +10049,10 @@
       "store": "Billa",
       "price": 2.72,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 2.72
     },
     {
       "id": 1197,
@@ -9768,7 +10061,9 @@
       "store": "Billa",
       "price": 1.66,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1198,
@@ -9777,7 +10072,9 @@
       "store": "Billa",
       "price": 3.89,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1199,
@@ -9786,7 +10083,9 @@
       "store": "Billa",
       "price": 2.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1200,
@@ -9795,7 +10094,10 @@
       "store": "Billa",
       "price": 1.94,
       "image_url": null,
-      "group_id": "g4"
+      "group_id": "g3",
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 7.76
     },
     {
       "id": 1201,
@@ -9804,7 +10106,10 @@
       "store": "Billa",
       "price": 4.87,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 4.87
     },
     {
       "id": 1202,
@@ -9813,7 +10118,10 @@
       "store": "Billa",
       "price": 2.52,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 2.52
     },
     {
       "id": 1203,
@@ -9822,7 +10130,10 @@
       "store": "Billa",
       "price": 2.33,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 9.32
     },
     {
       "id": 1204,
@@ -9831,7 +10142,10 @@
       "store": "Billa",
       "price": 2.91,
       "image_url": null,
-      "group_id": "g42"
+      "group_id": "g56",
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 2.91
     },
     {
       "id": 1205,
@@ -9840,7 +10154,10 @@
       "store": "Billa",
       "price": 2.33,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "g",
+      "price_per_kg": 11.65
     },
     {
       "id": 1206,
@@ -9849,7 +10166,10 @@
       "store": "Billa",
       "price": 1.55,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 1.55
     },
     {
       "id": 1207,
@@ -9858,7 +10178,9 @@
       "store": "Billa",
       "price": 5.85,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 7.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1208,
@@ -9876,7 +10198,9 @@
       "store": "Billa",
       "price": 10.93,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 15.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1210,
@@ -9894,7 +10218,9 @@
       "store": "Billa",
       "price": 4.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 7.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1212,
@@ -9921,7 +10247,9 @@
       "store": "Billa",
       "price": 12.89,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1215,
@@ -9930,7 +10258,9 @@
       "store": "Billa",
       "price": 13.67,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1216,
@@ -9939,7 +10269,9 @@
       "store": "Billa",
       "price": 13.67,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1217,
@@ -9948,7 +10280,9 @@
       "store": "Billa",
       "price": 4.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1218,
@@ -9957,7 +10291,9 @@
       "store": "Billa",
       "price": 4.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1219,
@@ -9966,7 +10302,9 @@
       "store": "Billa",
       "price": 4.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1220,
@@ -9975,7 +10313,9 @@
       "store": "Billa",
       "price": 3.89,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1221,
@@ -9984,7 +10324,9 @@
       "store": "Billa",
       "price": 3.11,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1222,
@@ -9993,7 +10335,10 @@
       "store": "Billa",
       "price": 14.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 14.98
     },
     {
       "id": 1223,
@@ -10002,7 +10347,10 @@
       "store": "Billa",
       "price": 11.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 11.99
     },
     {
       "id": 1224,
@@ -10011,7 +10359,10 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 300.0,
+      "quantity_unit": "g",
+      "price_per_kg": 23.27
     },
     {
       "id": 1225,
@@ -10020,7 +10371,10 @@
       "store": "Billa",
       "price": 6.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 400.0,
+      "quantity_unit": "g",
+      "price_per_kg": 16.23
     },
     {
       "id": 1226,
@@ -10029,7 +10383,10 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 400.0,
+      "quantity_unit": "g",
+      "price_per_kg": 17.45
     },
     {
       "id": 1227,
@@ -10038,7 +10395,10 @@
       "store": "Billa",
       "price": 14.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 14.98
     },
     {
       "id": 1228,
@@ -10047,7 +10407,10 @@
       "store": "Billa",
       "price": 17.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 17.99
     },
     {
       "id": 1229,
@@ -10056,7 +10419,10 @@
       "store": "Billa",
       "price": 8.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 240.0,
+      "quantity_unit": "g",
+      "price_per_kg": 33.33
     },
     {
       "id": 1230,
@@ -10065,7 +10431,10 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 400.0,
+      "quantity_unit": "g",
+      "price_per_kg": 24.98
     },
     {
       "id": 1231,
@@ -10074,7 +10443,10 @@
       "store": "Billa",
       "price": 5.98,
       "image_url": null,
-      "group_id": "g177"
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 5.98
     },
     {
       "id": 1232,
@@ -10083,7 +10455,10 @@
       "store": "Billa",
       "price": 8.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 100.0,
+      "quantity_unit": "g",
+      "price_per_kg": 80.0
     },
     {
       "id": 1233,
@@ -10092,7 +10467,10 @@
       "store": "Billa",
       "price": 7.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "g",
+      "price_per_kg": 9.99
     },
     {
       "id": 1234,
@@ -10101,7 +10479,10 @@
       "store": "Billa",
       "price": 3.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "g",
+      "price_per_kg": 19.95
     },
     {
       "id": 1235,
@@ -10110,7 +10491,10 @@
       "store": "Billa",
       "price": 2.19,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 4.38
     },
     {
       "id": 1236,
@@ -10119,7 +10503,10 @@
       "store": "Billa",
       "price": 2.48,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 220.0,
+      "quantity_unit": "g",
+      "price_per_kg": 11.27
     },
     {
       "id": 1237,
@@ -10128,7 +10515,10 @@
       "store": "Billa",
       "price": 1.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 165.0,
+      "quantity_unit": "g",
+      "price_per_kg": 9.03
     },
     {
       "id": 1238,
@@ -10137,7 +10527,9 @@
       "store": "Billa",
       "price": 0.2,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 50.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1239,
@@ -10146,7 +10538,10 @@
       "store": "Billa",
       "price": 1.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 220.0,
+      "quantity_unit": "g",
+      "price_per_kg": 9.05
     },
     {
       "id": 1240,
@@ -10155,7 +10550,10 @@
       "store": "Billa",
       "price": 1.15,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 100.0,
+      "quantity_unit": "g",
+      "price_per_kg": 11.5
     },
     {
       "id": 1241,
@@ -10164,7 +10562,9 @@
       "store": "Billa",
       "price": 1.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 85.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1242,
@@ -10173,7 +10573,10 @@
       "store": "Billa",
       "price": 2.39,
       "image_url": null,
-      "group_id": "g129"
+      "group_id": null,
+      "quantity": 400.0,
+      "quantity_unit": "g",
+      "price_per_kg": 5.98
     },
     {
       "id": 1243,
@@ -10182,7 +10585,9 @@
       "store": "Billa",
       "price": 0.96,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1244,
@@ -10191,7 +10596,9 @@
       "store": "Billa",
       "price": 2.52,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1245,
@@ -10200,7 +10607,10 @@
       "store": "Billa",
       "price": 7.02,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 7.02
     },
     {
       "id": 1246,
@@ -10209,7 +10619,10 @@
       "store": "Billa",
       "price": 16.02,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 16.02
     },
     {
       "id": 1247,
@@ -10218,7 +10631,10 @@
       "store": "Billa",
       "price": 15.04,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 15.04
     },
     {
       "id": 1248,
@@ -10227,7 +10643,10 @@
       "store": "Billa",
       "price": 17.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 17.0
     },
     {
       "id": 1249,
@@ -10236,7 +10655,10 @@
       "store": "Billa",
       "price": 6.04,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 6.04
     },
     {
       "id": 1250,
@@ -10245,7 +10667,10 @@
       "store": "Billa",
       "price": 4.48,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 120.0,
+      "quantity_unit": "g",
+      "price_per_kg": 37.33
     },
     {
       "id": 1251,
@@ -10254,7 +10679,10 @@
       "store": "Billa",
       "price": 3.89,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 800.0,
+      "quantity_unit": "g",
+      "price_per_kg": 4.86
     },
     {
       "id": 1252,
@@ -10263,7 +10691,10 @@
       "store": "Billa",
       "price": 7.02,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 180.0,
+      "quantity_unit": "g",
+      "price_per_kg": 39.0
     },
     {
       "id": 1253,
@@ -10272,7 +10703,10 @@
       "store": "Billa",
       "price": 6.04,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 270.0,
+      "quantity_unit": "g",
+      "price_per_kg": 22.37
     },
     {
       "id": 1254,
@@ -10281,7 +10715,10 @@
       "store": "Billa",
       "price": 6.04,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 230.0,
+      "quantity_unit": "g",
+      "price_per_kg": 26.26
     },
     {
       "id": 1255,
@@ -10290,7 +10727,10 @@
       "store": "Billa",
       "price": 3.11,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 100.0,
+      "quantity_unit": "g",
+      "price_per_kg": 31.1
     },
     {
       "id": 1256,
@@ -10299,7 +10739,10 @@
       "store": "Billa",
       "price": 2.52,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 100.0,
+      "quantity_unit": "g",
+      "price_per_kg": 25.2
     },
     {
       "id": 1257,
@@ -10317,7 +10760,10 @@
       "store": "Billa",
       "price": 3.89,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 130.0,
+      "quantity_unit": "g",
+      "price_per_kg": 29.92
     },
     {
       "id": 1259,
@@ -10326,7 +10772,10 @@
       "store": "Billa",
       "price": 10.93,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 10.93
     },
     {
       "id": 1260,
@@ -10335,7 +10784,10 @@
       "store": "Billa",
       "price": 12.03,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 12.03
     },
     {
       "id": 1261,
@@ -10344,7 +10796,10 @@
       "store": "Billa",
       "price": 29.32,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 29.32
     },
     {
       "id": 1262,
@@ -10353,7 +10808,10 @@
       "store": "Billa",
       "price": 5.46,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 5.46
     },
     {
       "id": 1263,
@@ -10362,7 +10820,10 @@
       "store": "Billa",
       "price": 17.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 17.0
     },
     {
       "id": 1264,
@@ -10371,7 +10832,10 @@
       "store": "Billa",
       "price": 9.96,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 9.96
     },
     {
       "id": 1265,
@@ -10380,7 +10844,10 @@
       "store": "Billa",
       "price": 8.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 8.98
     },
     {
       "id": 1266,
@@ -10389,7 +10856,10 @@
       "store": "Billa",
       "price": 8.0,
       "image_url": null,
-      "group_id": "g16"
+      "group_id": "g21",
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 8.0
     },
     {
       "id": 1267,
@@ -10398,7 +10868,10 @@
       "store": "Billa",
       "price": 9.96,
       "image_url": null,
-      "group_id": "g175"
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 9.96
     },
     {
       "id": 1268,
@@ -10407,7 +10880,10 @@
       "store": "Billa",
       "price": 9.96,
       "image_url": null,
-      "group_id": "g119"
+      "group_id": "g76",
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 9.96
     },
     {
       "id": 1269,
@@ -10416,7 +10892,10 @@
       "store": "Billa",
       "price": 17.97,
       "image_url": null,
-      "group_id": "g9"
+      "group_id": "g8",
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 17.97
     },
     {
       "id": 1270,
@@ -10425,7 +10904,10 @@
       "store": "Billa",
       "price": 16.0,
       "image_url": null,
-      "group_id": "g118"
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 16.0
     },
     {
       "id": 1271,
@@ -10434,7 +10916,10 @@
       "store": "Billa",
       "price": 2.25,
       "image_url": null,
-      "group_id": "g210"
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "g",
+      "price_per_kg": 15.0
     },
     {
       "id": 1272,
@@ -10443,7 +10928,10 @@
       "store": "Billa",
       "price": 19.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 700.0,
+      "quantity_unit": "g",
+      "price_per_kg": 28.56
     },
     {
       "id": 1273,
@@ -10452,7 +10940,10 @@
       "store": "Billa",
       "price": 4.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 400.0,
+      "quantity_unit": "g",
+      "price_per_kg": 12.47
     },
     {
       "id": 1274,
@@ -10461,7 +10952,10 @@
       "store": "Billa",
       "price": 16.02,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 16.02
     },
     {
       "id": 1275,
@@ -10470,7 +10964,10 @@
       "store": "Billa",
       "price": 7.22,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "g",
+      "price_per_kg": 36.1
     },
     {
       "id": 1276,
@@ -10479,7 +10976,10 @@
       "store": "Billa",
       "price": 12.3,
       "image_url": null,
-      "group_id": "g79"
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "g",
+      "price_per_kg": 61.5
     },
     {
       "id": 1277,
@@ -10488,7 +10988,10 @@
       "store": "Billa",
       "price": 4.5,
       "image_url": null,
-      "group_id": "g77"
+      "group_id": null,
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 18.0
     },
     {
       "id": 1278,
@@ -10497,7 +11000,10 @@
       "store": "Billa",
       "price": 3.48,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 13.92
     },
     {
       "id": 1279,
@@ -10506,7 +11012,10 @@
       "store": "Billa",
       "price": 4.99,
       "image_url": null,
-      "group_id": "g8"
+      "group_id": "g7",
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 19.96
     },
     {
       "id": 1280,
@@ -10524,7 +11033,10 @@
       "store": "Billa",
       "price": 1.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 400.0,
+      "quantity_unit": "g",
+      "price_per_kg": 3.73
     },
     {
       "id": 1282,
@@ -10533,7 +11045,9 @@
       "store": "Billa",
       "price": 1.39,
       "image_url": null,
-      "group_id": "g74"
+      "group_id": "g30",
+      "quantity": 30.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1283,
@@ -10551,7 +11065,10 @@
       "store": "Billa",
       "price": 1.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 7.96
     },
     {
       "id": 1285,
@@ -10560,7 +11077,10 @@
       "store": "Billa",
       "price": 5.46,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "g",
+      "price_per_kg": 27.3
     },
     {
       "id": 1286,
@@ -10569,7 +11089,10 @@
       "store": "Billa",
       "price": 4.5,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 525.0,
+      "quantity_unit": "g",
+      "price_per_kg": 8.57
     },
     {
       "id": 1287,
@@ -10578,7 +11101,9 @@
       "store": "Billa",
       "price": 0.59,
       "image_url": null,
-      "group_id": null
+      "group_id": "g50",
+      "quantity": 65.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1288,
@@ -10587,7 +11112,10 @@
       "store": "Billa",
       "price": 1.15,
       "image_url": null,
-      "group_id": "g28"
+      "group_id": "g14",
+      "quantity": 140.0,
+      "quantity_unit": "g",
+      "price_per_kg": 8.21
     },
     {
       "id": 1289,
@@ -10596,7 +11124,10 @@
       "store": "Billa",
       "price": 3.6,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 270.0,
+      "quantity_unit": "g",
+      "price_per_kg": 13.33
     },
     {
       "id": 1290,
@@ -10605,7 +11136,10 @@
       "store": "Billa",
       "price": 13.91,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 13.91
     },
     {
       "id": 1291,
@@ -10614,7 +11148,9 @@
       "store": "Billa",
       "price": 0.59,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 50.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1292,
@@ -10623,7 +11159,10 @@
       "store": "Billa",
       "price": 1.1,
       "image_url": null,
-      "group_id": "g91"
+      "group_id": null,
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 4.4
     },
     {
       "id": 1293,
@@ -10632,7 +11171,10 @@
       "store": "Billa",
       "price": 2.89,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "ml",
+      "price_per_l": 3.85
     },
     {
       "id": 1294,
@@ -10641,7 +11183,10 @@
       "store": "Billa",
       "price": 1.9,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 3.8
     },
     {
       "id": 1295,
@@ -10650,7 +11195,9 @@
       "store": "Billa",
       "price": 0.29,
       "image_url": null,
-      "group_id": "g14"
+      "group_id": "g11",
+      "quantity": 30.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1296,
@@ -10659,7 +11206,10 @@
       "store": "Billa",
       "price": 17.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 8.99
     },
     {
       "id": 1297,
@@ -10668,7 +11218,10 @@
       "store": "Billa",
       "price": 47.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 47.0
     },
     {
       "id": 1298,
@@ -10686,7 +11239,10 @@
       "store": "Billa",
       "price": 2.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 330.0,
+      "quantity_unit": "ml",
+      "price_per_l": 9.06
     },
     {
       "id": 1300,
@@ -10695,7 +11251,10 @@
       "store": "Billa",
       "price": 22.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 700.0,
+      "quantity_unit": "ml",
+      "price_per_l": 32.83
     },
     {
       "id": 1301,
@@ -10704,7 +11263,9 @@
       "store": "Billa",
       "price": 1.47,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 75.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1302,
@@ -10713,7 +11274,10 @@
       "store": "Billa",
       "price": 2.7,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 310.0,
+      "quantity_unit": "g",
+      "price_per_kg": 8.71
     },
     {
       "id": 1303,
@@ -10731,7 +11295,10 @@
       "store": "Billa",
       "price": 3.48,
       "image_url": null,
-      "group_id": "g102"
+      "group_id": null,
+      "quantity": 300.0,
+      "quantity_unit": "g",
+      "price_per_kg": 11.6
     },
     {
       "id": 1305,
@@ -10740,7 +11307,10 @@
       "store": "Billa",
       "price": 11.72,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "ml",
+      "price_per_l": 15.63
     },
     {
       "id": 1306,
@@ -10749,7 +11319,10 @@
       "store": "Billa",
       "price": 4.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 520.0,
+      "quantity_unit": "g",
+      "price_per_kg": 9.6
     },
     {
       "id": 1307,
@@ -10758,7 +11331,10 @@
       "store": "Billa",
       "price": 22.47,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 22.47
     },
     {
       "id": 1308,
@@ -10767,7 +11343,10 @@
       "store": "Billa",
       "price": 2.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 2.99
     },
     {
       "id": 1309,
@@ -10776,7 +11355,10 @@
       "store": "Billa",
       "price": 3.89,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 680.0,
+      "quantity_unit": "g",
+      "price_per_kg": 5.72
     },
     {
       "id": 1310,
@@ -10785,7 +11367,10 @@
       "store": "Billa",
       "price": 2.48,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "g",
+      "price_per_kg": 16.53
     },
     {
       "id": 1311,
@@ -10794,7 +11379,10 @@
       "store": "Billa",
       "price": 2.99,
       "image_url": null,
-      "group_id": "g34"
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "g",
+      "price_per_kg": 14.95
     },
     {
       "id": 1312,
@@ -10803,7 +11391,9 @@
       "store": "Billa",
       "price": 1.19,
       "image_url": null,
-      "group_id": "g147"
+      "group_id": "g61",
+      "quantity": 92.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1313,
@@ -10812,7 +11402,10 @@
       "store": "Billa",
       "price": 5.98,
       "image_url": null,
-      "group_id": "g168"
+      "group_id": "g63",
+      "quantity": 100.0,
+      "quantity_unit": "g",
+      "price_per_kg": 59.85
     },
     {
       "id": 1314,
@@ -10821,7 +11414,10 @@
       "store": "Billa",
       "price": 18.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 300.0,
+      "quantity_unit": "g",
+      "price_per_kg": 63.3
     },
     {
       "id": 1315,
@@ -10830,7 +11426,9 @@
       "store": "Billa",
       "price": 0.78,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 49.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1316,
@@ -10839,7 +11437,10 @@
       "store": "Billa",
       "price": 6.59,
       "image_url": null,
-      "group_id": "g43"
+      "group_id": "g16",
+      "quantity": 150.0,
+      "quantity_unit": "g",
+      "price_per_kg": 43.93
     },
     {
       "id": 1317,
@@ -10848,7 +11449,10 @@
       "store": "Billa",
       "price": 13.4,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 235.0,
+      "quantity_unit": "g",
+      "price_per_kg": 57.01
     },
     {
       "id": 1318,
@@ -10857,7 +11461,9 @@
       "store": "Billa",
       "price": 1.19,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 51.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1319,
@@ -10866,7 +11472,10 @@
       "store": "Billa",
       "price": 2.99,
       "image_url": null,
-      "group_id": "g33"
+      "group_id": "g54",
+      "quantity": 160.0,
+      "quantity_unit": "g",
+      "price_per_kg": 18.69
     },
     {
       "id": 1320,
@@ -10875,7 +11484,10 @@
       "store": "Billa",
       "price": 2.39,
       "image_url": null,
-      "group_id": "g184"
+      "group_id": null,
+      "quantity": 170.0,
+      "quantity_unit": "g",
+      "price_per_kg": 14.06
     },
     {
       "id": 1321,
@@ -10884,7 +11496,10 @@
       "store": "Billa",
       "price": 3.7,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 180.0,
+      "quantity_unit": "g",
+      "price_per_kg": 20.56
     },
     {
       "id": 1322,
@@ -10893,7 +11508,10 @@
       "store": "Billa",
       "price": 17.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 35.98
     },
     {
       "id": 1323,
@@ -10902,7 +11520,9 @@
       "store": "Billa",
       "price": 2.89,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 10.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1324,
@@ -10911,7 +11531,10 @@
       "store": "Billa",
       "price": 2.58,
       "image_url": null,
-      "group_id": "g101"
+      "group_id": "g36",
+      "quantity": 120.0,
+      "quantity_unit": "g",
+      "price_per_kg": 21.5
     },
     {
       "id": 1325,
@@ -10920,7 +11543,10 @@
       "store": "Billa",
       "price": 2.39,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "g",
+      "price_per_kg": 11.95
     },
     {
       "id": 1326,
@@ -10929,7 +11555,9 @@
       "store": "Billa",
       "price": 2.29,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 80.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1327,
@@ -10938,7 +11566,10 @@
       "store": "Billa",
       "price": 8.78,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 400.0,
+      "quantity_unit": "g",
+      "price_per_kg": 21.95
     },
     {
       "id": 1328,
@@ -10947,7 +11578,9 @@
       "store": "Billa",
       "price": 0.55,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 30.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1329,
@@ -10956,7 +11589,10 @@
       "store": "Billa",
       "price": 2.52,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "g",
+      "price_per_kg": 12.6
     },
     {
       "id": 1330,
@@ -10965,7 +11601,10 @@
       "store": "Billa",
       "price": 34.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 34.99
     },
     {
       "id": 1331,
@@ -10974,7 +11613,10 @@
       "store": "Billa",
       "price": 34.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 34.99
     },
     {
       "id": 1332,
@@ -10983,7 +11625,10 @@
       "store": "Billa",
       "price": 34.99,
       "image_url": null,
-      "group_id": "g166"
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 34.99
     },
     {
       "id": 1333,
@@ -10992,7 +11637,10 @@
       "store": "Billa",
       "price": 34.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 34.99
     },
     {
       "id": 1334,
@@ -11001,7 +11649,10 @@
       "store": "Billa",
       "price": 34.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 34.99
     },
     {
       "id": 1335,
@@ -11010,7 +11661,10 @@
       "store": "Billa",
       "price": 21.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 43.97
     },
     {
       "id": 1336,
@@ -11019,7 +11673,10 @@
       "store": "Billa",
       "price": 21.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 43.97
     },
     {
       "id": 1337,
@@ -11028,7 +11685,10 @@
       "store": "Billa",
       "price": 19.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 39.98
     },
     {
       "id": 1338,
@@ -11037,7 +11697,10 @@
       "store": "Billa",
       "price": 16.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 32.0
     },
     {
       "id": 1339,
@@ -11046,7 +11709,10 @@
       "store": "Billa",
       "price": 9.0,
       "image_url": null,
-      "group_id": "g52"
+      "group_id": "g20",
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 35.99
     },
     {
       "id": 1340,
@@ -11055,7 +11721,10 @@
       "store": "Billa",
       "price": 10.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 43.97
     },
     {
       "id": 1341,
@@ -11064,7 +11733,9 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 16.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1342,
@@ -11073,7 +11744,9 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 16.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1343,
@@ -11082,7 +11755,9 @@
       "store": "Billa",
       "price": 12.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 20.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1344,
@@ -11091,7 +11766,9 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 16.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1345,
@@ -11100,7 +11777,9 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 16.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1346,
@@ -11109,7 +11788,9 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 16.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1347,
@@ -11136,7 +11817,10 @@
       "store": "Billa",
       "price": 3.99,
       "image_url": null,
-      "group_id": "g197"
+      "group_id": null,
+      "quantity": 3000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 1.33
     },
     {
       "id": 1350,
@@ -11145,7 +11829,10 @@
       "store": "Billa",
       "price": 1.78,
       "image_url": null,
-      "group_id": null
+      "group_id": "g39",
+      "quantity": 1500.0,
+      "quantity_unit": "ml",
+      "price_per_l": 1.19
     },
     {
       "id": 1351,
@@ -11154,7 +11841,10 @@
       "store": "Billa",
       "price": 1.8,
       "image_url": null,
-      "group_id": "g89"
+      "group_id": "g32",
+      "quantity": 1000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 1.8
     },
     {
       "id": 1352,
@@ -11163,7 +11853,10 @@
       "store": "Billa",
       "price": 7.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 7.49
     },
     {
       "id": 1353,
@@ -11172,7 +11865,10 @@
       "store": "Billa",
       "price": 0.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 330.0,
+      "quantity_unit": "ml",
+      "price_per_l": 2.97
     },
     {
       "id": 1354,
@@ -11181,7 +11877,10 @@
       "store": "Billa",
       "price": 1.58,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 330.0,
+      "quantity_unit": "ml",
+      "price_per_l": 4.8
     },
     {
       "id": 1355,
@@ -11190,7 +11889,10 @@
       "store": "Billa",
       "price": 1.39,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 1.39
     },
     {
       "id": 1356,
@@ -11199,7 +11901,10 @@
       "store": "Billa",
       "price": 4.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 4.99
     },
     {
       "id": 1357,
@@ -11208,7 +11913,10 @@
       "store": "Billa",
       "price": 2.99,
       "image_url": null,
-      "group_id": "g186"
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "g",
+      "price_per_kg": 19.93
     },
     {
       "id": 1358,
@@ -11217,7 +11925,10 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "g",
+      "price_per_kg": 34.9
     },
     {
       "id": 1359,
@@ -11226,7 +11937,10 @@
       "store": "Billa",
       "price": 1.68,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "g",
+      "price_per_kg": 8.4
     },
     {
       "id": 1360,
@@ -11235,7 +11949,10 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 168.0,
+      "quantity_unit": "g",
+      "price_per_kg": 41.55
     },
     {
       "id": 1361,
@@ -11244,7 +11961,10 @@
       "store": "Billa",
       "price": 18.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "ml",
+      "price_per_l": 25.32
     },
     {
       "id": 1362,
@@ -11253,7 +11973,10 @@
       "store": "Billa",
       "price": 18.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "ml",
+      "price_per_l": 25.32
     },
     {
       "id": 1363,
@@ -11262,7 +11985,10 @@
       "store": "Billa",
       "price": 12.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "ml",
+      "price_per_l": 17.32
     },
     {
       "id": 1364,
@@ -11271,7 +11997,10 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "ml",
+      "price_per_l": 9.31
     },
     {
       "id": 1365,
@@ -11280,7 +12009,10 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "ml",
+      "price_per_l": 9.31
     },
     {
       "id": 1366,
@@ -11289,7 +12021,10 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "ml",
+      "price_per_l": 9.31
     },
     {
       "id": 1367,
@@ -11298,7 +12033,10 @@
       "store": "Billa",
       "price": 26.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 26.99
     },
     {
       "id": 1368,
@@ -11307,7 +12045,10 @@
       "store": "Billa",
       "price": 12.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 700.0,
+      "quantity_unit": "ml",
+      "price_per_l": 18.56
     },
     {
       "id": 1369,
@@ -11316,7 +12057,10 @@
       "store": "Billa",
       "price": 16.49,
       "image_url": null,
-      "group_id": "g47"
+      "group_id": "g6",
+      "quantity": 700.0,
+      "quantity_unit": "ml",
+      "price_per_l": 23.56
     },
     {
       "id": 1370,
@@ -11325,7 +12069,10 @@
       "store": "Billa",
       "price": 10.99,
       "image_url": null,
-      "group_id": null
+      "group_id": "g23",
+      "quantity": 700.0,
+      "quantity_unit": "ml",
+      "price_per_l": 15.7
     },
     {
       "id": 1371,
@@ -11334,7 +12081,10 @@
       "store": "Billa",
       "price": 29.98,
       "image_url": null,
-      "group_id": "g48"
+      "group_id": "g18",
+      "quantity": 1000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 29.98
     },
     {
       "id": 1372,
@@ -11343,7 +12093,10 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "ml",
+      "price_per_l": 13.32
     },
     {
       "id": 1373,
@@ -11352,7 +12105,10 @@
       "store": "Billa",
       "price": 14.49,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 700.0,
+      "quantity_unit": "ml",
+      "price_per_l": 20.7
     },
     {
       "id": 1374,
@@ -11361,7 +12117,10 @@
       "store": "Billa",
       "price": 11.72,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "ml",
+      "price_per_l": 15.63
     },
     {
       "id": 1375,
@@ -11370,7 +12129,10 @@
       "store": "Billa",
       "price": 11.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 700.0,
+      "quantity_unit": "ml",
+      "price_per_l": 17.13
     },
     {
       "id": 1376,
@@ -11379,7 +12141,9 @@
       "store": "Billa",
       "price": 2.58,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1377,
@@ -11397,7 +12161,9 @@
       "store": "Billa",
       "price": 3.29,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 55.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1379,
@@ -11406,7 +12172,10 @@
       "store": "Billa",
       "price": 3.58,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 800.0,
+      "quantity_unit": "ml",
+      "price_per_l": 4.47
     },
     {
       "id": 1380,
@@ -11415,7 +12184,10 @@
       "store": "Billa",
       "price": 9.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 6.0
     },
     {
       "id": 1381,
@@ -11424,7 +12196,9 @@
       "store": "Billa",
       "price": 5.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1382,
@@ -11433,7 +12207,9 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 16.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1383,
@@ -11442,7 +12218,7 @@
       "store": "Billa",
       "price": 11.99,
       "image_url": null,
-      "group_id": "g128"
+      "group_id": null
     },
     {
       "id": 1384,
@@ -11451,7 +12227,10 @@
       "store": "Billa",
       "price": 7.75,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 200.0,
+      "quantity_unit": "ml",
+      "price_per_l": 38.75
     },
     {
       "id": 1385,
@@ -11460,7 +12239,10 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 750.0,
+      "quantity_unit": "ml",
+      "price_per_l": 13.32
     },
     {
       "id": 1386,
@@ -11469,7 +12251,10 @@
       "store": "Billa",
       "price": 5.28,
       "image_url": null,
-      "group_id": "g170"
+      "group_id": null,
+      "quantity": 400.0,
+      "quantity_unit": "ml",
+      "price_per_l": 13.2
     },
     {
       "id": 1387,
@@ -11478,7 +12263,10 @@
       "store": "Billa",
       "price": 8.0,
       "image_url": null,
-      "group_id": "g54"
+      "group_id": "g22",
+      "quantity": 500.0,
+      "quantity_unit": "ml",
+      "price_per_l": 16.0
     },
     {
       "id": 1388,
@@ -11487,7 +12275,9 @@
       "store": "Billa",
       "price": 3.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 75.0,
+      "quantity_unit": "ml"
     },
     {
       "id": 1389,
@@ -11496,7 +12286,10 @@
       "store": "Billa",
       "price": 2.09,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "g",
+      "price_per_kg": 13.93
     },
     {
       "id": 1390,
@@ -11514,7 +12307,9 @@
       "store": "Billa",
       "price": 29.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1392,
@@ -11532,7 +12327,10 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 24000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 0.42
     },
     {
       "id": 1394,
@@ -11559,7 +12357,10 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 9600.0,
+      "quantity_unit": "ml",
+      "price_per_l": 1.04
     },
     {
       "id": 1397,
@@ -11577,7 +12378,10 @@
       "store": "Billa",
       "price": 8.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 10000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 0.8
     },
     {
       "id": 1399,
@@ -11586,7 +12390,10 @@
       "store": "Billa",
       "price": 11.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 5000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 2.4
     },
     {
       "id": 1400,
@@ -11595,7 +12402,10 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 7500.0,
+      "quantity_unit": "ml",
+      "price_per_l": 1.33
     },
     {
       "id": 1401,
@@ -11604,7 +12414,9 @@
       "store": "Billa",
       "price": 11.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 24.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1402,
@@ -11613,7 +12425,9 @@
       "store": "Billa",
       "price": 49.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1403,
@@ -11622,7 +12436,9 @@
       "store": "Billa",
       "price": 129.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1404,
@@ -11631,7 +12447,9 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": "g15"
+      "group_id": "g42",
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1405,
@@ -11640,7 +12458,9 @@
       "store": "Billa",
       "price": 3.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1406,
@@ -11658,7 +12478,9 @@
       "store": "Billa",
       "price": 11.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1408,
@@ -11667,7 +12489,9 @@
       "store": "Billa",
       "price": 17.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1409,
@@ -11676,7 +12500,9 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 40.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1410,
@@ -11685,7 +12511,9 @@
       "store": "Billa",
       "price": 8.0,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1411,
@@ -11694,7 +12522,9 @@
       "store": "Billa",
       "price": 20.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 28.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1412,
@@ -11712,7 +12542,9 @@
       "store": "Billa",
       "price": 2.09,
       "image_url": null,
-      "group_id": "g50"
+      "group_id": null,
+      "quantity": 90.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1414,
@@ -11721,7 +12553,10 @@
       "store": "Billa",
       "price": 5.36,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "ml",
+      "price_per_l": 35.73
     },
     {
       "id": 1415,
@@ -11730,7 +12565,10 @@
       "store": "Billa",
       "price": 6.75,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 150.0,
+      "quantity_unit": "ml",
+      "price_per_l": 44.98
     },
     {
       "id": 1416,
@@ -11748,7 +12586,9 @@
       "store": "Billa",
       "price": 28.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 75.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1418,
@@ -11757,7 +12597,9 @@
       "store": "Billa",
       "price": 9.76,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1.0,
+      "quantity_unit": "pcs"
     },
     {
       "id": 1419,
@@ -11766,7 +12608,10 @@
       "store": "Billa",
       "price": 1.86,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 125.0,
+      "quantity_unit": "g",
+      "price_per_kg": 14.88
     },
     {
       "id": 1420,
@@ -11775,7 +12620,10 @@
       "store": "Billa",
       "price": 5.79,
       "image_url": null,
-      "group_id": "g5"
+      "group_id": "g12",
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 5.79
     },
     {
       "id": 1421,
@@ -11784,7 +12632,10 @@
       "store": "Billa",
       "price": 5.98,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 5.98
     },
     {
       "id": 1422,
@@ -11793,7 +12644,10 @@
       "store": "Billa",
       "price": 0.88,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 0.88
     },
     {
       "id": 1423,
@@ -11802,7 +12656,10 @@
       "store": "Billa",
       "price": 0.59,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 120.0,
+      "quantity_unit": "g",
+      "price_per_kg": 4.92
     },
     {
       "id": 1424,
@@ -11811,7 +12668,10 @@
       "store": "Billa",
       "price": 2.52,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 500.0,
+      "quantity_unit": "g",
+      "price_per_kg": 5.04
     },
     {
       "id": 1425,
@@ -11820,7 +12680,10 @@
       "store": "Billa",
       "price": 2.29,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 2000.0,
+      "quantity_unit": "ml",
+      "price_per_l": 1.15
     },
     {
       "id": 1426,
@@ -11829,7 +12692,10 @@
       "store": "Billa",
       "price": 4.99,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 138.0,
+      "quantity_unit": "g",
+      "price_per_kg": 36.16
     },
     {
       "id": 1427,
@@ -11838,7 +12704,10 @@
       "store": "Billa",
       "price": 2.29,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1250.0,
+      "quantity_unit": "ml",
+      "price_per_l": 1.83
     },
     {
       "id": 1428,
@@ -11847,7 +12716,10 @@
       "store": "Billa",
       "price": 14.88,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 250.0,
+      "quantity_unit": "g",
+      "price_per_kg": 59.52
     },
     {
       "id": 1429,
@@ -11856,7 +12728,10 @@
       "store": "Billa",
       "price": 4.48,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 4.48
     },
     {
       "id": 1430,
@@ -11865,7 +12740,9 @@
       "store": "Billa",
       "price": 1.15,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 70.0,
+      "quantity_unit": "g"
     },
     {
       "id": 1431,
@@ -11874,7 +12751,10 @@
       "store": "Billa",
       "price": 0.9,
       "image_url": null,
-      "group_id": null
+      "group_id": null,
+      "quantity": 1000.0,
+      "quantity_unit": "g",
+      "price_per_kg": 0.9
     },
     {
       "id": 1432,
@@ -11883,7 +12763,7 @@
       "store": "Lidl",
       "price": 4.18,
       "image_url": null,
-      "group_id": "g27"
+      "group_id": "g13"
     },
     {
       "id": 1433,
@@ -11901,7 +12781,7 @@
       "store": "Lidl",
       "price": 1.43,
       "image_url": null,
-      "group_id": "g5"
+      "group_id": "g12"
     },
     {
       "id": 1435,
@@ -11928,7 +12808,7 @@
       "store": "Lidl",
       "price": 7.06,
       "image_url": null,
-      "group_id": "g48"
+      "group_id": "g18"
     },
     {
       "id": 1438,
@@ -12009,7 +12889,7 @@
       "store": "Lidl",
       "price": 0.62,
       "image_url": null,
-      "group_id": "g108"
+      "group_id": null
     },
     {
       "id": 1447,
@@ -12027,7 +12907,7 @@
       "store": "Lidl",
       "price": 1.56,
       "image_url": null,
-      "group_id": "g70"
+      "group_id": "g27"
     },
     {
       "id": 1449,
@@ -12054,7 +12934,7 @@
       "store": "Lidl",
       "price": 2.61,
       "image_url": null,
-      "group_id": "g118"
+      "group_id": null
     },
     {
       "id": 1452,
@@ -12063,7 +12943,7 @@
       "store": "Lidl",
       "price": 0.73,
       "image_url": null,
-      "group_id": "g49"
+      "group_id": "g57"
     },
     {
       "id": 1453,
@@ -12252,7 +13132,7 @@
       "store": "Lidl",
       "price": 3.53,
       "image_url": null,
-      "group_id": "g7"
+      "group_id": "g5"
     },
     {
       "id": 1474,
@@ -12297,7 +13177,7 @@
       "store": "Lidl",
       "price": 2.35,
       "image_url": null,
-      "group_id": "g197"
+      "group_id": null
     },
     {
       "id": 1479,
@@ -12396,7 +13276,7 @@
       "store": "Lidl",
       "price": 0.86,
       "image_url": null,
-      "group_id": "g6"
+      "group_id": "g4"
     },
     {
       "id": 1490,
@@ -12414,7 +13294,7 @@
       "store": "Lidl",
       "price": 10.45,
       "image_url": null,
-      "group_id": "g51"
+      "group_id": "g19"
     },
     {
       "id": 1492,
@@ -12432,7 +13312,7 @@
       "store": "Lidl",
       "price": 1.96,
       "image_url": null,
-      "group_id": "g178"
+      "group_id": "g65"
     },
     {
       "id": 1494,
@@ -12477,7 +13357,7 @@
       "store": "Lidl",
       "price": 4.7,
       "image_url": null,
-      "group_id": "g141"
+      "group_id": null
     },
     {
       "id": 1499,
@@ -12603,7 +13483,7 @@
       "store": "Lidl",
       "price": 0.56,
       "image_url": null,
-      "group_id": "g23"
+      "group_id": "g52"
     },
     {
       "id": 1513,
@@ -12684,7 +13564,7 @@
       "store": "Lidl",
       "price": 7.84,
       "image_url": null,
-      "group_id": "g154"
+      "group_id": null
     },
     {
       "id": 1522,
@@ -12756,7 +13636,7 @@
       "store": "Lidl",
       "price": 2.09,
       "image_url": null,
-      "group_id": null
+      "group_id": "g74"
     },
     {
       "id": 1530,
@@ -12801,7 +13681,7 @@
       "store": "Lidl",
       "price": 1.84,
       "image_url": null,
-      "group_id": "g119"
+      "group_id": "g76"
     },
     {
       "id": 1535,
@@ -12990,7 +13870,7 @@
       "store": "Lidl",
       "price": 1.18,
       "image_url": null,
-      "group_id": "g112"
+      "group_id": "g40"
     },
     {
       "id": 1556,
@@ -12999,7 +13879,7 @@
       "store": "Lidl",
       "price": 1.75,
       "image_url": null,
-      "group_id": "g174"
+      "group_id": null
     },
     {
       "id": 1557,
@@ -13053,7 +13933,7 @@
       "store": "Lidl",
       "price": 11.76,
       "image_url": null,
-      "group_id": "g2"
+      "group_id": "g1"
     },
     {
       "id": 1563,
@@ -13080,7 +13960,7 @@
       "store": "Lidl",
       "price": 2.55,
       "image_url": null,
-      "group_id": "g79"
+      "group_id": null
     },
     {
       "id": 1566,
@@ -13089,7 +13969,7 @@
       "store": "Lidl",
       "price": 10.45,
       "image_url": null,
-      "group_id": "g72"
+      "group_id": "g29"
     },
     {
       "id": 1567,
@@ -13215,7 +14095,7 @@
       "store": "Lidl",
       "price": 33.98,
       "image_url": null,
-      "group_id": "g3"
+      "group_id": "g2"
     },
     {
       "id": 1581,
@@ -13269,7 +14149,7 @@
       "store": "Lidl",
       "price": 4.7,
       "image_url": null,
-      "group_id": "g68"
+      "group_id": null
     },
     {
       "id": 1587,
@@ -13305,7 +14185,7 @@
       "store": "Lidl",
       "price": 0.91,
       "image_url": null,
-      "group_id": "g58"
+      "group_id": null
     },
     {
       "id": 1591,
@@ -13386,7 +14266,7 @@
       "store": "Lidl",
       "price": 6.27,
       "image_url": null,
-      "group_id": "g113"
+      "group_id": null
     },
     {
       "id": 1600,
@@ -13422,7 +14302,7 @@
       "store": "Lidl",
       "price": 1.53,
       "image_url": null,
-      "group_id": "g26"
+      "group_id": "g53"
     },
     {
       "id": 1604,
@@ -13431,7 +14311,7 @@
       "store": "Lidl",
       "price": 6.01,
       "image_url": null,
-      "group_id": "g73"
+      "group_id": null
     },
     {
       "id": 1605,
@@ -13539,7 +14419,7 @@
       "store": "Lidl",
       "price": 33.98,
       "image_url": null,
-      "group_id": "g142"
+      "group_id": null
     },
     {
       "id": 1617,
@@ -13557,61 +14437,46 @@
       "store": "Lidl",
       "price": 0.35,
       "image_url": null,
-      "group_id": "g109"
+      "group_id": null
     }
   ],
   "groups": {
     "g1": {
-      "canonical_name": "играчка плюшена",
-      "canonical_brand": "Плюшена",
+      "canonical_name": "ударна акумулаторна бормашина parkside",
+      "canonical_brand": "Parkside",
       "confidence": 1.0,
       "stores": [
         "Lidl",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 33.22,
+      "price_warning": true,
+      "price_ratio": 3.8
     },
     "g2": {
-      "canonical_name": "ударна parkside бормашина акумулаторна",
+      "canonical_name": "акумулаторна бормашина parkside",
       "canonical_brand": "Parkside",
       "confidence": 1.0,
       "stores": [
         "Lidl",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 4.0
     },
     "g3": {
-      "canonical_name": "parkside бормашина акумулаторна",
-      "canonical_brand": "Parkside",
-      "confidence": 1.0,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g4": {
-      "canonical_name": "гъби печурки",
+      "canonical_name": "печурки гъби",
       "canonical_brand": "NO_BRAND",
       "confidence": 1.0,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 0.0
     },
-    "g5": {
-      "canonical_name": "свински бут без кост",
-      "canonical_brand": "Свински",
-      "confidence": 1.0,
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g6": {
+    "g4": {
       "canonical_name": "ябълки червени",
       "canonical_brand": "NO_BRAND",
       "confidence": 1.0,
@@ -13619,857 +14484,509 @@
         "Lidl",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 0.63
     },
-    "g7": {
-      "canonical_name": "extra водка zytnia",
+    "g5": {
+      "canonical_name": "водка zytnia extra",
       "canonical_brand": "Extra",
       "confidence": 1.0,
       "stores": [
         "Lidl",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 9.46,
+      "price_warning": true,
+      "price_ratio": 3.7
     },
-    "g8": {
-      "canonical_name": "deutsche краве markenbutter масло",
+    "g6": {
+      "canonical_name": "absolut водка",
+      "canonical_brand": "Absolut",
+      "confidence": 1.0,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 0.0
+    },
+    "g7": {
+      "canonical_name": "deutsche масло краве markenbutter",
       "canonical_brand": "Deutsche Markenbutter",
       "confidence": 1.0,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 1.31
     },
-    "g9": {
-      "canonical_name": "мляко краве кашкавал саяна",
+    "g8": {
+      "canonical_name": "краве мляко саяна кашкавал",
       "canonical_brand": "NO_BRAND",
       "confidence": 1.0,
       "stores": [
-        "Kaufland",
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 0.02
+    },
+    "g11": {
+      "canonical_name": "сладки времена халва",
+      "canonical_brand": "Сладки",
+      "confidence": 0.9,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 0.04
+    },
+    "g12": {
+      "canonical_name": "бут кост свински без",
+      "canonical_brand": "Свински",
+      "confidence": 0.85,
+      "stores": [
+        "Lidl",
         "Billa"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 4.36,
+      "price_warning": true,
+      "price_ratio": 4.0
     },
-    "g10": {
-      "canonical_name": "храна суха котки",
-      "canonical_brand": "K-Classic",
-      "confidence": 0.75,
+    "g13": {
+      "canonical_name": "битове parkside",
+      "canonical_brand": "Parkside",
+      "confidence": 0.817,
       "stores": [
         "Lidl",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 0.81
     },
     "g14": {
-      "canonical_name": "халва времена сладки",
-      "canonical_brand": "Сладки",
-      "confidence": 0.75,
+      "canonical_name": "локум кристал",
+      "canonical_brand": "Кристал",
+      "confidence": 0.817,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 0.17
     },
     "g15": {
-      "canonical_name": "тип моп пеперуда",
-      "canonical_brand": "NO_BRAND",
-      "confidence": 0.75,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g16": {
-      "canonical_name": "черни маслини мамут",
-      "canonical_brand": "NO_BRAND",
-      "confidence": 0.75,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g17": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "Рафтис",
-      "confidence": 0.75,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g22": {
-      "canonical_name": "червено зеле",
-      "canonical_brand": "NO_BRAND",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g23": {
-      "canonical_name": "кори точени",
-      "canonical_brand": "Фамилия",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g24": {
-      "canonical_name": "тоалетна хартия",
-      "canonical_brand": "Familia",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g26": {
-      "canonical_name": "млечен десерт",
-      "canonical_brand": "K-Classic",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g27": {
-      "canonical_name": "parkside битове",
-      "canonical_brand": "Parkside",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g28": {
-      "canonical_name": "кристал локум",
-      "canonical_brand": "Кристал",
-      "confidence": 0.67,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g29": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Roshen",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g33": {
-      "canonical_name": "млечен шоколад",
-      "canonical_brand": "MILKA",
-      "confidence": 0.67,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g34": {
-      "canonical_name": "херинга филе",
-      "canonical_brand": "ФИЛЕ ОТ ХЕРИНГА",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g35": {
-      "canonical_name": "гел душ",
-      "canonical_brand": "Palmolive",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g36": {
-      "canonical_name": "зъби паста",
-      "canonical_brand": "Parоdontax",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g41": {
-      "canonical_name": "бланширани картофи",
-      "canonical_brand": "NO_BRAND",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g42": {
-      "canonical_name": "картофи сладки",
-      "canonical_brand": "Harvest",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g43": {
-      "canonical_name": "raffaello бонбони",
-      "canonical_brand": "Raffaello",
-      "confidence": 0.67,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g45": {
-      "canonical_name": "ракия гроздова",
-      "canonical_brand": "Пещерска",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g46": {
-      "canonical_name": "шотландско уиски",
-      "canonical_brand": "Grant's",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g47": {
-      "canonical_name": "водка absolut",
-      "canonical_brand": "Absolut",
-      "confidence": 0.67,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g48": {
-      "canonical_name": "pogues уиски",
-      "canonical_brand": "The Pogues",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g49": {
-      "canonical_name": "прясно мляко",
-      "canonical_brand": "Верея",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g50": {
-      "canonical_name": "сапун крем",
-      "canonical_brand": "Cien",
-      "confidence": 0.67,
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g51": {
-      "canonical_name": "parkside батерии зарядно",
-      "canonical_brand": "Parkside",
-      "confidence": 0.6,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g52": {
-      "canonical_name": "espresso мляно кафе",
-      "canonical_brand": "Espresso",
-      "confidence": 0.6,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g53": {
-      "canonical_name": "панирани шницели пилешки",
-      "canonical_brand": "Сами",
-      "confidence": 0.6,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g54": {
-      "canonical_name": "гел душ nivea",
-      "canonical_brand": "Nivea",
-      "confidence": 0.6,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g58": {
-      "canonical_name": "съдове препарат medix",
-      "canonical_brand": "MAX",
-      "confidence": 0.6,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g62": {
-      "canonical_name": "мазане крем",
-      "canonical_brand": "NO_BRAND",
-      "confidence": 0.5,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g64": {
-      "canonical_name": "царевица сладка",
-      "canonical_brand": "Chef Carlo",
-      "confidence": 0.5,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g68": {
-      "canonical_name": "спрей моп",
-      "canonical_brand": "K-Classic",
-      "confidence": 0.5,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g70": {
-      "canonical_name": "parkside принадлежности",
-      "canonical_brand": "Parkside",
-      "confidence": 0.5,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g72": {
-      "canonical_name": "parkside батерия акумулаторна",
-      "canonical_brand": "Parkside",
-      "confidence": 0.5,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g73": {
-      "canonical_name": "орхидея фаленопсис",
-      "canonical_brand": "Орхидея",
-      "confidence": 0.5,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g74": {
-      "canonical_name": "pingui kinder",
-      "canonical_brand": "Kinder",
-      "confidence": 0.5,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g76": {
-      "canonical_name": "свински кост без врат",
-      "canonical_brand": "Свински",
-      "confidence": 0.5,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g77": {
-      "canonical_name": "селекция сирена",
-      "canonical_brand": "Castello",
-      "confidence": 0.5,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g78": {
       "canonical_name": "кетчуп heinz",
       "canonical_brand": "HEINZ",
-      "confidence": 0.5,
+      "confidence": 0.817,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 2.6
     },
-    "g79": {
-      "canonical_name": "пармиджано реджано",
-      "canonical_brand": "Billa Premium",
-      "confidence": 0.5,
+    "g16": {
+      "canonical_name": "бонбони raffaello",
+      "canonical_brand": "Raffaello",
+      "confidence": 0.817,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 3.09
+    },
+    "g18": {
+      "canonical_name": "pogues уиски",
+      "canonical_brand": "The Pogues",
+      "confidence": 0.817,
       "stores": [
         "Lidl",
         "Billa"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 22.92,
+      "price_warning": true,
+      "price_ratio": 4.2
     },
-    "g85": {
-      "canonical_name": "кафе разтворимо",
-      "canonical_brand": "CLASSIC",
-      "confidence": 0.5,
+    "g19": {
+      "canonical_name": "батерии зарядно parkside",
+      "canonical_brand": "Parkside",
+      "confidence": 0.75,
       "stores": [
         "Lidl",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 9.54
     },
-    "g89": {
-      "canonical_name": "бира шуменско",
-      "canonical_brand": "Шуменско",
-      "confidence": 0.5,
+    "g20": {
+      "canonical_name": "espresso кафе мляно",
+      "canonical_brand": "Espresso",
+      "confidence": 0.75,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 0.99
     },
-    "g90": {
-      "canonical_name": "шунка тандем",
-      "canonical_brand": "Тандем",
-      "confidence": 0.5,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g91": {
-      "canonical_name": "сладея захар",
+    "g21": {
+      "canonical_name": "мамут черни маслини",
       "canonical_brand": "NO_BRAND",
-      "confidence": 0.5,
+      "confidence": 0.75,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 1.02
     },
-    "g101": {
-      "canonical_name": "chio чипс",
+    "g22": {
+      "canonical_name": "nivea душ гел",
+      "canonical_brand": "Nivea",
+      "confidence": 0.75,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 2.52
+    },
+    "g23": {
+      "canonical_name": "гроздова ракия пещерска",
+      "canonical_brand": "Пещерска",
+      "confidence": 0.75,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 3.99
+    },
+    "g24": {
+      "canonical_name": "зеле червено",
+      "canonical_brand": "NO_BRAND",
+      "confidence": 0.667,
+      "stores": [
+        "Lidl",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 0.02
+    },
+    "g27": {
+      "canonical_name": "принадлежности parkside",
+      "canonical_brand": "Parkside",
+      "confidence": 0.65,
+      "stores": [
+        "Lidl",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 2.43
+    },
+    "g29": {
+      "canonical_name": "батерия акумулаторна parkside",
+      "canonical_brand": "Parkside",
+      "confidence": 0.65,
+      "stores": [
+        "Lidl",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 21.53,
+      "price_warning": true,
+      "price_ratio": 3.1
+    },
+    "g30": {
+      "canonical_name": "pingui kinder",
+      "canonical_brand": "Kinder",
+      "confidence": 0.65,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 3.25,
+      "price_warning": true,
+      "price_ratio": 3.3
+    },
+    "g32": {
+      "canonical_name": "шуменско бира",
+      "canonical_brand": "Шуменско",
+      "confidence": 0.65,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 10.17,
+      "price_warning": true,
+      "price_ratio": 6.7
+    },
+    "g33": {
+      "canonical_name": "тандем шунка",
+      "canonical_brand": "Тандем",
+      "confidence": 0.65,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 17.96,
+      "price_warning": true,
+      "price_ratio": 3.6
+    },
+    "g36": {
+      "canonical_name": "чипс chio",
       "canonical_brand": "Chio",
-      "confidence": 0.5,
+      "confidence": 0.65,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 0.1
     },
-    "g102": {
-      "canonical_name": "тунквани престиж бисквити",
-      "canonical_brand": "Престиж",
-      "confidence": 0.5,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g104": {
+    "g37": {
       "canonical_name": "milka бисквити",
       "canonical_brand": "MILKA",
-      "confidence": 0.5,
+      "confidence": 0.65,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 1.01
     },
-    "g108": {
-      "canonical_name": "напитка плодова",
+    "g39": {
+      "canonical_name": "prisun напитка",
       "canonical_brand": "Prisun",
-      "confidence": 0.5,
+      "confidence": 0.65,
       "stores": [
-        "Lidl",
+        "Billa",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 0.41
     },
-    "g109": {
-      "canonical_name": "кисело мляко",
-      "canonical_brand": "Елена",
-      "confidence": 0.5,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g112": {
-      "canonical_name": "сирене philadelphia",
+    "g40": {
+      "canonical_name": "philadelphia сирене",
       "canonical_brand": "Philadelphia",
-      "confidence": 0.5,
+      "confidence": 0.65,
       "stores": [
         "Lidl",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 10.3,
+      "price_warning": true,
+      "price_ratio": 9.7
     },
-    "g113": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "Мероне",
-      "confidence": 0.5,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g116": {
-      "canonical_name": "jogobella йогурт",
+    "g41": {
+      "canonical_name": "йогурт jogobella",
       "canonical_brand": "Jogobella",
-      "confidence": 0.5,
+      "confidence": 0.65,
       "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g118": {
-      "canonical_name": "сирене краве",
-      "canonical_brand": "Сакарела",
-      "confidence": 0.5,
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g119": {
-      "canonical_name": "сирене саламурено бяло",
-      "canonical_brand": "NO_BRAND",
-      "confidence": 0.5,
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g121": {
-      "canonical_name": "съдове препарат",
-      "canonical_brand": "Pur",
-      "confidence": 0.5,
-      "stores": [
-        "Lidl",
+        "Billa",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 0.12
     },
-    "g123": {
-      "canonical_name": "гел savex капсули пране",
+    "g42": {
+      "canonical_name": "тип моп пеперуда",
+      "canonical_brand": "NO_BRAND",
+      "confidence": 0.637,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 1.0
+    },
+    "g45": {
+      "canonical_name": "капсули пране гел savex",
       "canonical_brand": "Savex",
-      "confidence": 0.44,
+      "confidence": 0.594,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 16.0
     },
-    "g128": {
-      "canonical_name": "боя цветове коса",
-      "canonical_brand": "Syoss",
-      "confidence": 0.43,
+    "g50": {
+      "canonical_name": "ретро хели вафла",
+      "canonical_brand": "Хели",
+      "confidence": 0.579,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 0.04
     },
-    "g129": {
-      "canonical_name": "хляб вита силует",
+    "g52": {
+      "canonical_name": "кори точени",
+      "canonical_brand": "Фамилия",
+      "confidence": 0.567,
+      "stores": [
+        "Lidl",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 2.43,
+      "price_warning": true,
+      "price_ratio": 5.3
+    },
+    "g53": {
+      "canonical_name": "десерт млечен",
+      "canonical_brand": "K-Classic",
+      "confidence": 0.567,
+      "stores": [
+        "Lidl",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 0.31
+    },
+    "g54": {
+      "canonical_name": "млечен шоколад",
+      "canonical_brand": "MILKA",
+      "confidence": 0.567,
+      "stores": [
+        "Billa",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 0.35
+    },
+    "g55": {
+      "canonical_name": "бланширани картофи",
       "canonical_brand": "NO_BRAND",
-      "confidence": 0.43,
+      "confidence": 0.567,
       "stores": [
-        "Kaufland",
+        "Lidl",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 4.63
+    },
+    "g56": {
+      "canonical_name": "сладки картофи",
+      "canonical_brand": "Harvest",
+      "confidence": 0.567,
+      "stores": [
+        "Lidl",
         "Billa"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 0.15
     },
-    "g137": {
-      "canonical_name": "цяла патица",
-      "canonical_brand": "Penelope",
-      "confidence": 0.4,
+    "g57": {
+      "canonical_name": "мляко прясно",
+      "canonical_brand": "Верея",
+      "confidence": 0.567,
       "stores": [
         "Lidl",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 1.95,
+      "price_warning": true,
+      "price_ratio": 3.7
     },
-    "g141": {
-      "canonical_name": "led лампа",
-      "canonical_brand": "Star",
-      "confidence": 0.4,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g142": {
-      "canonical_name": "микровълнова фурна",
-      "canonical_brand": "Samsung",
-      "confidence": 0.4,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g147": {
+    "g61": {
       "canonical_name": "кроасан days",
       "canonical_brand": "DAYS",
-      "confidence": 0.4,
+      "confidence": 0.55,
       "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g148": {
-      "canonical_name": "какаов крем",
-      "canonical_brand": "NO_BRAND",
-      "confidence": 0.4,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g152": {
-      "canonical_name": "блокчета шоколадови",
-      "canonical_brand": "After Eight",
-      "confidence": 0.4,
-      "stores": [
-        "Lidl",
+        "Billa",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 0.0
     },
-    "g154": {
-      "canonical_name": "кафе зърна",
-      "canonical_brand": "Eduscho",
-      "confidence": 0.4,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g158": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Merci",
-      "confidence": 0.4,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g166": {
-      "canonical_name": "кафе зърна",
-      "canonical_brand": "Kimbo",
-      "confidence": 0.4,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g168": {
-      "canonical_name": "шоколад lindt",
+    "g63": {
+      "canonical_name": "lindt шоколад",
       "canonical_brand": "Lindt",
-      "confidence": 0.4,
+      "confidence": 0.55,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 3.51
     },
-    "g170": {
-      "canonical_name": "мицеларна вода",
-      "canonical_brand": "Nivea",
-      "confidence": 0.4,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g174": {
-      "canonical_name": "xxl салам",
-      "canonical_brand": "XXL",
-      "confidence": 0.4,
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g175": {
-      "canonical_name": "каламата маслини",
-      "canonical_brand": "NO_BRAND",
-      "confidence": 0.4,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g177": {
-      "canonical_name": "хек замразен",
-      "canonical_brand": "Primofish",
-      "confidence": 0.4,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g178": {
+    "g65": {
       "canonical_name": "gliss шампоан",
       "canonical_brand": "Gliss",
-      "confidence": 0.4,
+      "confidence": 0.55,
       "stores": [
         "Lidl",
         "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 5.53,
+      "price_warning": true,
+      "price_ratio": 3.8
     },
-    "g183": {
-      "canonical_name": "обикновени бисквити",
-      "canonical_brand": "Победа",
-      "confidence": 0.4,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g184": {
-      "canonical_name": "тунквани бисквити",
-      "canonical_brand": "Мираж",
-      "confidence": 0.4,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g186": {
-      "canonical_name": "cookies бисквити",
-      "canonical_brand": "MILKA",
-      "confidence": 0.4,
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g191": {
-      "canonical_name": "напитка газирана",
-      "canonical_brand": "NO_BRAND",
-      "confidence": 0.4,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g197": {
-      "canonical_name": "напитка coca-cola",
-      "canonical_brand": "Coca-Cola",
-      "confidence": 0.4,
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "product_count": 2
-    },
-    "g199": {
-      "canonical_name": "сирене синьо",
-      "canonical_brand": "NO_BRAND",
-      "confidence": 0.4,
-      "stores": [
-        "Lidl",
-        "Kaufland"
-      ],
-      "product_count": 2
-    },
-    "g209": {
+    "g69": {
       "canonical_name": "сирене hochland",
       "canonical_brand": "Hochland",
-      "confidence": 0.4,
+      "confidence": 0.55,
       "stores": [
-        "Kaufland",
-        "Billa"
+        "Billa",
+        "Kaufland"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 4.01
     },
-    "g210": {
-      "canonical_name": "сирене котидж",
-      "canonical_brand": "EXQUISA",
-      "confidence": 0.4,
+    "g70": {
+      "canonical_name": "шницели пилешки панирани",
+      "canonical_brand": "Сами",
+      "confidence": 0.51,
       "stores": [
-        "Kaufland",
+        "Lidl",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 9.78,
+      "price_warning": true,
+      "price_ratio": 4.6
+    },
+    "g74": {
+      "canonical_name": "крем мазане",
+      "canonical_brand": "NO_BRAND",
+      "confidence": 0.5,
+      "stores": [
+        "Lidl",
+        "Kaufland"
+      ],
+      "product_count": 2,
+      "savings": 10.9,
+      "price_warning": true,
+      "price_ratio": 6.2
+    },
+    "g76": {
+      "canonical_name": "саламурено бяло сирене",
+      "canonical_brand": "NO_BRAND",
+      "confidence": 0.5,
+      "stores": [
+        "Lidl",
         "Billa"
       ],
-      "product_count": 2
+      "product_count": 2,
+      "savings": 8.12,
+      "price_warning": true,
+      "price_ratio": 5.4
     }
   },
   "off": {}

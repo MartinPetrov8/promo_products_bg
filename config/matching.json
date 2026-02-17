@@ -1,19 +1,25 @@
 {
-  "version": "1.0.0",
-  "description": "Cross-store matching configuration - DO NOT CHANGE WITHOUT VERSIONING",
+  "version": "2.0.0",
+  "description": "Cross-store matching configuration v2 - brand-aware, quantity-aware",
   "token_similarity": {
-    "min_threshold": 0.4,
+    "min_threshold": 0.5,
     "min_common_tokens": 2
   },
   "rules": {
     "same_category_required": true,
-    "brand_boost": 0.1
+    "brand_same_boost": 0.15,
+    "brand_unknown_penalty": 0.85,
+    "quantity_incompatible_penalty": 0.4,
+    "quantity_compatible_boost": 0.05,
+    "price_ratio_warning_threshold": 3.0
   },
   "stopwords": ["или", "от", "за", "в", "с", "на", "и", "по", "до", "the", "a", "an", "-", "–", "различни", "видове"],
   "ignore_patterns": [
     "от свежата витрина",
-    "от деликатесната витрина", 
+    "от деликатесната витрина",
+    "от нашата пекарна",
     "за 1 кг",
-    "различни видове"
+    "различни видове",
+    "избрани видове"
   ]
 }

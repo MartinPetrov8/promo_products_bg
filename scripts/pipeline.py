@@ -132,20 +132,24 @@ def sync_store(store_name, raw_file=None):
 
 
 # =============================================================================
-# STEP 3: MATCH
+# STEP 3: MATCH (v2 - brand-aware, quantity-aware, price-validated)
 # =============================================================================
 
 def run_matching():
-    """Run cross-store matching"""
-    log.info("Running cross-store matching...")
+    """Run cross-store matching with brand, quantity, and price validation"""
+    log.info("Running cross-store matching (v2)...")
     
     config = load_config("matching")
+    match_config = config.get('token_similarity', {})
+    min_threshold = match_config.get('min_threshold', 0.5)
+    min_common = match_config.get('min_common_tokens', 2)
+    
     conn = get_db()
     cur = conn.cursor()
     
     cur.execute("""
         SELECT 
-            p.id, p.name, p.brand,
+            p.id, p.name, p.brand, p.quantity, p.quantity_unit,
             s.name as store,
             pr.current_price as price
         FROM products p
@@ -160,17 +164,39 @@ def run_matching():
     products = [dict(row) for row in cur.fetchall()]
     log.info(f"Loaded {len(products)} active products with prices")
     
+    # Enrich: extract quantities from names if not in DB
+    from quantity_extractor import extract_quantity_from_name
+    
+    qty_from_db = 0
+    qty_from_name = 0
+    for p in products:
+        if p.get('quantity') and p['quantity'] > 0:
+            qty_from_db += 1
+        else:
+            qty = extract_quantity_from_name(p['name'])
+            if qty:
+                p['quantity'] = qty['value']
+                p['quantity_unit'] = qty['unit']
+                qty_from_name += 1
+    
+    log.info(f"Quantities: {qty_from_db} from DB, {qty_from_name} from name parsing, "
+             f"{len(products) - qty_from_db - qty_from_name} unknown")
+    
+    # Tokenize and categorize
     cleaning_config = load_config("cleaning")
     for p in products:
         p['tokens'] = tokenize(p['name'], config)
         p['category'] = categorize(p['name'], cleaning_config['categories'])
+        p['brand_normalized'] = normalize_brand(p.get('brand'))
     
+    # Group by category then store
     by_category = defaultdict(lambda: defaultdict(list))
     for p in products:
         by_category[p['category']][p['store']].append(p)
     
     matches = []
-    min_threshold = config['token_similarity']['min_threshold']
+    stats = {'total_comparisons': 0, 'brand_rejected': 0, 'qty_penalized': 0, 
+             'price_flagged': 0, 'below_threshold': 0, 'accepted': 0}
     
     for cat, by_store in by_category.items():
         stores = list(by_store.keys())
@@ -179,16 +205,63 @@ def run_matching():
             for store2 in stores[i+1:]:
                 for p1 in by_store[store1]:
                     for p2 in by_store[store2]:
-                        score = token_similarity(p1['tokens'], p2['tokens'], config)
-                        if score >= min_threshold:
-                            matches.append({
-                                'score': score,
-                                'category': cat,
-                                'p1': p1,
-                                'p2': p2,
-                                'common': p1['tokens'] & p2['tokens']
-                            })
+                        stats['total_comparisons'] += 1
+                        
+                        # Step 1: Token similarity (base score)
+                        base_score = token_similarity(p1['tokens'], p2['tokens'], config)
+                        if base_score < min_threshold * 0.8:  # Allow slightly lower for brand boost
+                            stats['below_threshold'] += 1
+                            continue
+                        
+                        # Step 2: Brand check
+                        brand_result = check_brand_compatibility(p1, p2)
+                        if brand_result == 'reject':
+                            stats['brand_rejected'] += 1
+                            continue
+                        
+                        # Apply brand modifier
+                        score = base_score
+                        if brand_result == 'match':
+                            score = min(1.0, score + 0.15)  # Same brand boost
+                        elif brand_result == 'mismatch_one_unknown':
+                            score = score * 0.85  # Slight penalty
+                        # 'both_unknown' = no change
+                        
+                        # Step 3: Quantity check
+                        qty_result = check_quantity_compatibility(p1, p2)
+                        if qty_result == 'incompatible':
+                            score = score * 0.4  # Heavy penalty for >2x size diff
+                            stats['qty_penalized'] += 1
+                        elif qty_result == 'compatible':
+                            score = min(1.0, score + 0.05)  # Small boost for matching qty
+                        # 'unknown' = no change
+                        
+                        # Step 4: Price ratio flag (informational, doesn't reject)
+                        price_ratio = max(p1['price'], p2['price']) / min(p1['price'], p2['price']) if min(p1['price'], p2['price']) > 0 else 999
+                        price_flag = price_ratio > 3.0
+                        if price_flag:
+                            stats['price_flagged'] += 1
+                        
+                        # Final threshold check
+                        if score < min_threshold:
+                            stats['below_threshold'] += 1
+                            continue
+                        
+                        stats['accepted'] += 1
+                        matches.append({
+                            'score': round(score, 3),
+                            'base_score': round(base_score, 3),
+                            'category': cat,
+                            'p1': p1,
+                            'p2': p2,
+                            'common': p1['tokens'] & p2['tokens'],
+                            'brand_result': brand_result,
+                            'qty_result': qty_result,
+                            'price_ratio': round(price_ratio, 2),
+                            'price_flag': price_flag
+                        })
     
+    # Deduplicate: keep highest score per product pair
     seen = set()
     unique_matches = []
     for m in sorted(matches, key=lambda x: -x['score']):
@@ -197,21 +270,20 @@ def run_matching():
             seen.add(key)
             unique_matches.append(m)
     
-    log.info(f"Found {len(unique_matches)} unique matches")
+    log.info(f"Matching stats: {stats}")
+    log.info(f"Found {len(unique_matches)} unique matches (was {len(matches)} before dedup)")
     
+    # Save to DB
     cur.execute('DELETE FROM cross_store_matches')
     
     for m in unique_matches:
         p1, p2 = m['p1'], m['p2']
         kaufland_id = lidl_id = billa_id = None
         
-        if p1['store'] == 'Kaufland': kaufland_id = p1['id']
-        elif p1['store'] == 'Lidl': lidl_id = p1['id']
-        elif p1['store'] == 'Billa': billa_id = p1['id']
-        
-        if p2['store'] == 'Kaufland': kaufland_id = p2['id']
-        elif p2['store'] == 'Lidl': lidl_id = p2['id']
-        elif p2['store'] == 'Billa': billa_id = p2['id']
+        for p in [p1, p2]:
+            if p['store'] == 'Kaufland': kaufland_id = p['id']
+            elif p['store'] == 'Lidl': lidl_id = p['id']
+            elif p['store'] == 'Billa': billa_id = p['id']
         
         cur.execute('''
             INSERT INTO cross_store_matches (
@@ -222,8 +294,8 @@ def run_matching():
             kaufland_id, lidl_id, billa_id,
             ' '.join(m['common']),
             m['p1'].get('brand') or m['p2'].get('brand'),
-            'token_similarity',
-            round(m['score'], 2),
+            f"token_v2|brand:{m['brand_result']}|qty:{m['qty_result']}|pr:{m['price_ratio']}",
+            m['score'],
             2
         ))
     
@@ -234,30 +306,103 @@ def run_matching():
     return len(unique_matches)
 
 
+def normalize_brand(brand):
+    """Normalize brand name for comparison"""
+    if not brand or brand in ('NO_BRAND', 'Unknown', 'unknown', ''):
+        return None
+    brand = brand.strip().lower()
+    brand = re.sub(r'[®™©]', '', brand)
+    brand = brand.strip()
+    # Handle common variants
+    brand = brand.replace('parkside®', 'parkside')
+    brand = brand.replace('extra zytnia', 'extra')
+    return brand if brand else None
+
+
+def check_brand_compatibility(p1, p2):
+    """
+    Check if two products have compatible brands.
+    
+    Returns:
+        'match' - Same brand (boost score)
+        'reject' - Different known brands (skip match)
+        'mismatch_one_unknown' - One has brand, other doesn't (slight penalty)
+        'both_unknown' - Neither has brand (neutral)
+    """
+    b1 = p1.get('brand_normalized')
+    b2 = p2.get('brand_normalized')
+    
+    if b1 and b2:
+        if b1 == b2:
+            return 'match'
+        # Check if one contains the other (e.g., "extra" in "extra zytnia")
+        if b1 in b2 or b2 in b1:
+            return 'match'
+        return 'reject'
+    
+    if b1 or b2:
+        return 'mismatch_one_unknown'
+    
+    return 'both_unknown'
+
+
+def check_quantity_compatibility(p1, p2):
+    """
+    Check if two products have compatible quantities.
+    
+    Returns:
+        'compatible' - Same or similar quantity (<1.5x ratio)
+        'incompatible' - Very different quantity (>2x ratio)
+        'unknown' - Can't determine (one or both missing qty)
+    """
+    q1 = p1.get('quantity')
+    q2 = p2.get('quantity')
+    u1 = p1.get('quantity_unit')
+    u2 = p2.get('quantity_unit')
+    
+    if not q1 or not q2 or q1 <= 0 or q2 <= 0:
+        return 'unknown'
+    
+    # Only compare same unit types (weight vs weight, volume vs volume)
+    if u1 != u2:
+        return 'unknown'
+    
+    ratio = max(q1, q2) / min(q1, q2)
+    
+    if ratio <= 1.5:
+        return 'compatible'
+    elif ratio > 2.0:
+        return 'incompatible'
+    else:
+        return 'unknown'  # 1.5-2x range: uncertain
+
+
 def tokenize(name, config):
     """Tokenize product name for matching"""
     name = name.lower()
     
-    for pattern in config['ignore_patterns']:
+    for pattern in config.get('ignore_patterns', []):
         name = name.replace(pattern.lower(), '')
     
-    name = re.sub(r'\d+\s*(г|гр|мл|л|кг|бр|x|х)\b', '', name)
+    # Strip quantities (they're handled separately now)
+    name = re.sub(r'\d+(?:[.,]\d+)?\s*[xх×]\s*\d+(?:[.,]\d+)?\s*(?:г|гр|мл|л|кг|kg|g|ml|l)\b', '', name)
+    name = re.sub(r'\d+(?:[.,]\d+)?\s*(?:г|гр|мл|л|кг|бр|kg|g|ml|l|cl)\b', '', name)
     name = re.sub(r'[®™©\n]', ' ', name)
     name = re.sub(r'\s+', ' ', name).strip()
     
     tokens = set(name.split())
-    stopwords = set(config['stopwords'])
+    stopwords = set(config.get('stopwords', []))
     
     return {t for t in tokens if len(t) > 1 and t not in stopwords}
 
 
 def token_similarity(tokens1, tokens2, config):
-    """Calculate token similarity score"""
+    """Calculate Jaccard similarity between token sets"""
     if not tokens1 or not tokens2:
         return 0
     
     common = tokens1 & tokens2
-    min_common = config['token_similarity']['min_common_tokens']
+    min_common = config.get('token_similarity', {}).get('min_common_tokens', 2)
     
     if len(common) < min_common:
         return 0
@@ -289,7 +434,7 @@ def export_frontend():
     # Load active products
     cur.execute("""
         SELECT 
-            p.id, p.name, p.brand,
+            p.id, p.name, p.brand, p.quantity, p.quantity_unit,
             s.name as store,
             pr.current_price as price,
             sp.image_url
@@ -302,10 +447,23 @@ def export_frontend():
         AND (sp.status = 'active' OR sp.status IS NULL)
     """)
     
+    # Enrich quantities from name if not in DB
+    from quantity_extractor import extract_quantity_from_name
+    
     products = []
     exported_ids = set()
     for row in cur.fetchall():
-        products.append({
+        qty = row['quantity']
+        qty_unit = row['quantity_unit']
+        
+        # Try to extract from name if missing
+        if not qty or qty <= 0:
+            parsed = extract_quantity_from_name(row['name'])
+            if parsed:
+                qty = parsed['value']
+                qty_unit = parsed['unit']
+        
+        product = {
             'id': row['id'],
             'name': row['name'],
             'brand': row['brand'],
@@ -313,7 +471,19 @@ def export_frontend():
             'price': round(row['price'], 2),
             'image_url': row['image_url'],
             'group_id': None
-        })
+        }
+        
+        # Add quantity if available
+        if qty and qty > 0:
+            product['quantity'] = qty
+            product['quantity_unit'] = qty_unit
+            # Calculate unit price
+            if qty_unit == 'g' and qty >= 100:
+                product['price_per_kg'] = round(row['price'] / qty * 1000, 2)
+            elif qty_unit == 'ml' and qty >= 100:
+                product['price_per_l'] = round(row['price'] / qty * 1000, 2)
+        
+        products.append(product)
         exported_ids.add(row['id'])
     
     log.info(f"Loaded {len(products)} exportable products")
@@ -380,6 +550,15 @@ def export_frontend():
             groups[gid]['stores'] = actual_stores
             groups[gid]['product_count'] = len(group_products)
             del groups[gid]['_pids']  # Remove internal tracking
+            
+            # Calculate savings and flag suspicious price ratios
+            prices = [p['price'] for p in group_products if p.get('price')]
+            if len(prices) >= 2:
+                groups[gid]['savings'] = round(max(prices) - min(prices), 2)
+                price_ratio = max(prices) / min(prices)
+                if price_ratio > 3.0:
+                    groups[gid]['price_warning'] = True
+                    groups[gid]['price_ratio'] = round(price_ratio, 1)
     
     # Count valid groups
     valid_groups = len(groups)
