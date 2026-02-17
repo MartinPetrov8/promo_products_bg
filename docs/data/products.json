@@ -1,8 +1,8 @@
 {
   "meta": {
     "total_products": 1506,
-    "cross_store_groups": 217,
-    "updated_at": "2026-02-17T04:00:51.387612"
+    "cross_store_groups": 91,
+    "updated_at": "2026-02-17T06:37:57.425017"
   },
   "products": [
     {
@@ -444,7 +444,7 @@
       "store": "Kaufland",
       "price": 5.55,
       "image_url": null,
-      "group_id": "g182"
+      "group_id": null
     },
     {
       "id": 50,
@@ -777,7 +777,7 @@
       "store": "Kaufland",
       "price": 2.48,
       "image_url": null,
-      "group_id": "g59"
+      "group_id": null
     },
     {
       "id": 87,
@@ -786,7 +786,7 @@
       "store": "Kaufland",
       "price": 7.98,
       "image_url": null,
-      "group_id": "g97"
+      "group_id": "g35"
     },
     {
       "id": 88,
@@ -831,7 +831,7 @@
       "store": "Kaufland",
       "price": 1.11,
       "image_url": null,
-      "group_id": "g131"
+      "group_id": null
     },
     {
       "id": 93,
@@ -849,7 +849,7 @@
       "store": "Kaufland",
       "price": 1.64,
       "image_url": null,
-      "group_id": "g132"
+      "group_id": null
     },
     {
       "id": 95,
@@ -858,7 +858,7 @@
       "store": "Kaufland",
       "price": 1.35,
       "image_url": null,
-      "group_id": "g75"
+      "group_id": null
     },
     {
       "id": 96,
@@ -1038,7 +1038,7 @@
       "store": "Kaufland",
       "price": 3.48,
       "image_url": null,
-      "group_id": "g133"
+      "group_id": null
     },
     {
       "id": 116,
@@ -1092,7 +1092,7 @@
       "store": "Kaufland",
       "price": 4.87,
       "image_url": null,
-      "group_id": "g134"
+      "group_id": null
     },
     {
       "id": 122,
@@ -1101,7 +1101,7 @@
       "store": "Kaufland",
       "price": 1.25,
       "image_url": null,
-      "group_id": "g135"
+      "group_id": null
     },
     {
       "id": 123,
@@ -1497,7 +1497,7 @@
       "store": "Kaufland",
       "price": 24.98,
       "image_url": null,
-      "group_id": "g136"
+      "group_id": null
     },
     {
       "id": 168,
@@ -1596,7 +1596,7 @@
       "store": "Kaufland",
       "price": 2.48,
       "image_url": null,
-      "group_id": "g40"
+      "group_id": null
     },
     {
       "id": 179,
@@ -1884,7 +1884,7 @@
       "store": "Kaufland",
       "price": 9.99,
       "image_url": null,
-      "group_id": "g173"
+      "group_id": null
     },
     {
       "id": 211,
@@ -2181,7 +2181,7 @@
       "store": "Kaufland",
       "price": 12.99,
       "image_url": null,
-      "group_id": "g63"
+      "group_id": "g62"
     },
     {
       "id": 244,
@@ -2226,7 +2226,7 @@
       "store": "Kaufland",
       "price": 2.68,
       "image_url": null,
-      "group_id": "g198"
+      "group_id": "g49"
     },
     {
       "id": 249,
@@ -2298,7 +2298,7 @@
       "store": "Kaufland",
       "price": 14.98,
       "image_url": null,
-      "group_id": "g110"
+      "group_id": "g17"
     },
     {
       "id": 257,
@@ -2352,7 +2352,7 @@
       "store": "Kaufland",
       "price": 10.99,
       "image_url": null,
-      "group_id": "g211"
+      "group_id": null
     },
     {
       "id": 263,
@@ -2388,7 +2388,7 @@
       "store": "Kaufland",
       "price": 17.99,
       "image_url": null,
-      "group_id": "g111"
+      "group_id": "g9"
     },
     {
       "id": 267,
@@ -2397,7 +2397,7 @@
       "store": "Kaufland",
       "price": 16.98,
       "image_url": null,
-      "group_id": "g212"
+      "group_id": null
     },
     {
       "id": 268,
@@ -2406,7 +2406,7 @@
       "store": "Kaufland",
       "price": 11.48,
       "image_url": null,
-      "group_id": "g117"
+      "group_id": "g112"
     },
     {
       "id": 269,
@@ -2424,7 +2424,7 @@
       "store": "Kaufland",
       "price": 10.99,
       "image_url": null,
-      "group_id": "g130"
+      "group_id": null
     },
     {
       "id": 271,
@@ -2469,7 +2469,7 @@
       "store": "Kaufland",
       "price": 4.48,
       "image_url": null,
-      "group_id": "g204"
+      "group_id": null
     },
     {
       "id": 276,
@@ -2514,7 +2514,7 @@
       "store": "Kaufland",
       "price": 6.98,
       "image_url": null,
-      "group_id": "g100"
+      "group_id": "g41"
     },
     {
       "id": 281,
@@ -2658,7 +2658,7 @@
       "store": "Kaufland",
       "price": 8.98,
       "image_url": null,
-      "group_id": "g176"
+      "group_id": null
     },
     {
       "id": 297,
@@ -2739,7 +2739,7 @@
       "store": "Kaufland",
       "price": 1.58,
       "image_url": null,
-      "group_id": "g92"
+      "group_id": null
     },
     {
       "id": 306,
@@ -3351,7 +3351,7 @@
       "store": "Kaufland",
       "price": 0.25,
       "image_url": null,
-      "group_id": "g149"
+      "group_id": null
     },
     {
       "id": 374,
@@ -3387,7 +3387,7 @@
       "store": "Kaufland",
       "price": 9.49,
       "image_url": null,
-      "group_id": "g153"
+      "group_id": "g29"
     },
     {
       "id": 378,
@@ -3396,7 +3396,7 @@
       "store": "Kaufland",
       "price": 9.49,
       "image_url": null,
-      "group_id": "g80"
+      "group_id": null
     },
     {
       "id": 379,
@@ -3432,7 +3432,7 @@
       "store": "Kaufland",
       "price": 29.98,
       "image_url": null,
-      "group_id": "g164"
+      "group_id": "g154"
     },
     {
       "id": 383,
@@ -3441,7 +3441,7 @@
       "store": "Kaufland",
       "price": 5.98,
       "image_url": null,
-      "group_id": "g155"
+      "group_id": null
     },
     {
       "id": 384,
@@ -3504,7 +3504,7 @@
       "store": "Kaufland",
       "price": 2.89,
       "image_url": null,
-      "group_id": "g156"
+      "group_id": null
     },
     {
       "id": 391,
@@ -3513,7 +3513,7 @@
       "store": "Kaufland",
       "price": 9.99,
       "image_url": null,
-      "group_id": "g165"
+      "group_id": "g52"
     },
     {
       "id": 392,
@@ -3567,7 +3567,7 @@
       "store": "Kaufland",
       "price": 36.98,
       "image_url": null,
-      "group_id": "g167"
+      "group_id": "g166"
     },
     {
       "id": 398,
@@ -3612,7 +3612,7 @@
       "store": "Kaufland",
       "price": 10.99,
       "image_url": null,
-      "group_id": "g81"
+      "group_id": null
     },
     {
       "id": 403,
@@ -3621,7 +3621,7 @@
       "store": "Kaufland",
       "price": 6.59,
       "image_url": null,
-      "group_id": "g44"
+      "group_id": null
     },
     {
       "id": 404,
@@ -3702,7 +3702,7 @@
       "store": "Kaufland",
       "price": 9.49,
       "image_url": null,
-      "group_id": "g169"
+      "group_id": null
     },
     {
       "id": 413,
@@ -3729,7 +3729,7 @@
       "store": "Kaufland",
       "price": 3.79,
       "image_url": null,
-      "group_id": "g159"
+      "group_id": null
     },
     {
       "id": 416,
@@ -3738,7 +3738,7 @@
       "store": "Kaufland",
       "price": 5.98,
       "image_url": null,
-      "group_id": "g82"
+      "group_id": null
     },
     {
       "id": 417,
@@ -3747,7 +3747,7 @@
       "store": "Kaufland",
       "price": 11.48,
       "image_url": null,
-      "group_id": "g83"
+      "group_id": null
     },
     {
       "id": 418,
@@ -3756,7 +3756,7 @@
       "store": "Kaufland",
       "price": 7.98,
       "image_url": null,
-      "group_id": "g160"
+      "group_id": null
     },
     {
       "id": 419,
@@ -3765,7 +3765,7 @@
       "store": "Kaufland",
       "price": 2.99,
       "image_url": null,
-      "group_id": "g84"
+      "group_id": null
     },
     {
       "id": 420,
@@ -3783,7 +3783,7 @@
       "store": "Kaufland",
       "price": 4.99,
       "image_url": null,
-      "group_id": "g161"
+      "group_id": null
     },
     {
       "id": 422,
@@ -3792,7 +3792,7 @@
       "store": "Kaufland",
       "price": 3.99,
       "image_url": null,
-      "group_id": "g162"
+      "group_id": null
     },
     {
       "id": 423,
@@ -3819,7 +3819,7 @@
       "store": "Kaufland",
       "price": 13.98,
       "image_url": null,
-      "group_id": "g86"
+      "group_id": null
     },
     {
       "id": 426,
@@ -3855,7 +3855,7 @@
       "store": "Kaufland",
       "price": 33.89,
       "image_url": null,
-      "group_id": "g106"
+      "group_id": null
     },
     {
       "id": 430,
@@ -3873,7 +3873,7 @@
       "store": "Kaufland",
       "price": 23.98,
       "image_url": null,
-      "group_id": "g189"
+      "group_id": null
     },
     {
       "id": 432,
@@ -3918,7 +3918,7 @@
       "store": "Kaufland",
       "price": 14.98,
       "image_url": null,
-      "group_id": "g107"
+      "group_id": "g45"
     },
     {
       "id": 437,
@@ -4143,7 +4143,7 @@
       "store": "Kaufland",
       "price": 1.99,
       "image_url": null,
-      "group_id": "g192"
+      "group_id": null
     },
     {
       "id": 462,
@@ -4170,7 +4170,7 @@
       "store": "Kaufland",
       "price": 2.19,
       "image_url": null,
-      "group_id": "g193"
+      "group_id": "g108"
     },
     {
       "id": 465,
@@ -4269,7 +4269,7 @@
       "store": "Kaufland",
       "price": 35.99,
       "image_url": null,
-      "group_id": "g190"
+      "group_id": "g46"
     },
     {
       "id": 476,
@@ -4377,7 +4377,7 @@
       "store": "Kaufland",
       "price": 5.48,
       "image_url": null,
-      "group_id": "g179"
+      "group_id": "g54"
     },
     {
       "id": 488,
@@ -4386,7 +4386,7 @@
       "store": "Kaufland",
       "price": 5.48,
       "image_url": null,
-      "group_id": "g98"
+      "group_id": null
     },
     {
       "id": 489,
@@ -4395,7 +4395,7 @@
       "store": "Kaufland",
       "price": 5.48,
       "image_url": null,
-      "group_id": "g99"
+      "group_id": null
     },
     {
       "id": 490,
@@ -4539,7 +4539,7 @@
       "store": "Kaufland",
       "price": 5.59,
       "image_url": null,
-      "group_id": "g94"
+      "group_id": null
     },
     {
       "id": 506,
@@ -4557,7 +4557,7 @@
       "store": "Kaufland",
       "price": 5.59,
       "image_url": null,
-      "group_id": "g95"
+      "group_id": null
     },
     {
       "id": 508,
@@ -4656,7 +4656,7 @@
       "store": "Kaufland",
       "price": 5.79,
       "image_url": null,
-      "group_id": "g96"
+      "group_id": null
     },
     {
       "id": 519,
@@ -4665,7 +4665,7 @@
       "store": "Kaufland",
       "price": 5.79,
       "image_url": null,
-      "group_id": "g180"
+      "group_id": null
     },
     {
       "id": 520,
@@ -4674,7 +4674,7 @@
       "store": "Kaufland",
       "price": 5.79,
       "image_url": null,
-      "group_id": "g37"
+      "group_id": null
     },
     {
       "id": 521,
@@ -4728,7 +4728,7 @@
       "store": "Kaufland",
       "price": 13.98,
       "image_url": null,
-      "group_id": "g138"
+      "group_id": null
     },
     {
       "id": 527,
@@ -4737,7 +4737,7 @@
       "store": "Kaufland",
       "price": 1.08,
       "image_url": null,
-      "group_id": "g65"
+      "group_id": null
     },
     {
       "id": 528,
@@ -4755,7 +4755,7 @@
       "store": "Kaufland",
       "price": 16.98,
       "image_url": null,
-      "group_id": "g139"
+      "group_id": null
     },
     {
       "id": 530,
@@ -4926,7 +4926,7 @@
       "store": "Kaufland",
       "price": 5.98,
       "image_url": null,
-      "group_id": "g181"
+      "group_id": null
     },
     {
       "id": 549,
@@ -4944,7 +4944,7 @@
       "store": "Kaufland",
       "price": 5.18,
       "image_url": null,
-      "group_id": "g38"
+      "group_id": null
     },
     {
       "id": 551,
@@ -5007,7 +5007,7 @@
       "store": "Kaufland",
       "price": 6.98,
       "image_url": null,
-      "group_id": "g217"
+      "group_id": null
     },
     {
       "id": 558,
@@ -5025,7 +5025,7 @@
       "store": "Kaufland",
       "price": 9.99,
       "image_url": null,
-      "group_id": "g66"
+      "group_id": null
     },
     {
       "id": 560,
@@ -5097,7 +5097,7 @@
       "store": "Kaufland",
       "price": 14.98,
       "image_url": null,
-      "group_id": "g140"
+      "group_id": null
     },
     {
       "id": 568,
@@ -5286,7 +5286,7 @@
       "store": "Kaufland",
       "price": 6.98,
       "image_url": null,
-      "group_id": "g25"
+      "group_id": null
     },
     {
       "id": 589,
@@ -5376,7 +5376,7 @@
       "store": "Kaufland",
       "price": 0.68,
       "image_url": null,
-      "group_id": "g67"
+      "group_id": null
     },
     {
       "id": 599,
@@ -5394,7 +5394,7 @@
       "store": "Kaufland",
       "price": 12.48,
       "image_url": null,
-      "group_id": "g11"
+      "group_id": null
     },
     {
       "id": 601,
@@ -5520,7 +5520,7 @@
       "store": "Kaufland",
       "price": 3.19,
       "image_url": null,
-      "group_id": "g122"
+      "group_id": "g121"
     },
     {
       "id": 615,
@@ -5583,7 +5583,7 @@
       "store": "Kaufland",
       "price": 12.38,
       "image_url": null,
-      "group_id": "g205"
+      "group_id": null
     },
     {
       "id": 622,
@@ -5610,7 +5610,7 @@
       "store": "Kaufland",
       "price": 3.09,
       "image_url": null,
-      "group_id": "g206"
+      "group_id": null
     },
     {
       "id": 625,
@@ -5700,7 +5700,7 @@
       "store": "Kaufland",
       "price": 3.66,
       "image_url": null,
-      "group_id": "g103"
+      "group_id": "g102"
     },
     {
       "id": 635,
@@ -6582,7 +6582,7 @@
       "store": "Kaufland",
       "price": 2.48,
       "image_url": null,
-      "group_id": "g143"
+      "group_id": null
     },
     {
       "id": 733,
@@ -6663,7 +6663,7 @@
       "store": "Kaufland",
       "price": 4.99,
       "image_url": null,
-      "group_id": "g69"
+      "group_id": "g27"
     },
     {
       "id": 742,
@@ -7041,7 +7041,7 @@
       "store": "Kaufland",
       "price": 44.98,
       "image_url": null,
-      "group_id": "g144"
+      "group_id": "g2"
     },
     {
       "id": 784,
@@ -7068,7 +7068,7 @@
       "store": "Kaufland",
       "price": 5.98,
       "image_url": null,
-      "group_id": "g150"
+      "group_id": "g15"
     },
     {
       "id": 787,
@@ -7311,7 +7311,7 @@
       "store": "Kaufland",
       "price": 39.98,
       "image_url": null,
-      "group_id": "g125"
+      "group_id": null
     },
     {
       "id": 814,
@@ -7356,7 +7356,7 @@
       "store": "Kaufland",
       "price": 37.98,
       "image_url": null,
-      "group_id": "g145"
+      "group_id": "g3"
     },
     {
       "id": 819,
@@ -7374,7 +7374,7 @@
       "store": "Kaufland",
       "price": 31.98,
       "image_url": null,
-      "group_id": "g127"
+      "group_id": "g72"
     },
     {
       "id": 821,
@@ -7725,7 +7725,7 @@
       "store": "Kaufland",
       "price": 12.99,
       "image_url": null,
-      "group_id": "g114"
+      "group_id": null
     },
     {
       "id": 860,
@@ -7797,7 +7797,7 @@
       "store": "Kaufland",
       "price": 2.78,
       "image_url": null,
-      "group_id": "g185"
+      "group_id": null
     },
     {
       "id": 868,
@@ -7815,7 +7815,7 @@
       "store": "Kaufland",
       "price": 3.34,
       "image_url": null,
-      "group_id": "g87"
+      "group_id": null
     },
     {
       "id": 870,
@@ -7824,7 +7824,7 @@
       "store": "Kaufland",
       "price": 9.08,
       "image_url": null,
-      "group_id": "g88"
+      "group_id": null
     },
     {
       "id": 871,
@@ -7860,7 +7860,7 @@
       "store": "Kaufland",
       "price": 4.11,
       "image_url": null,
-      "group_id": "g187"
+      "group_id": null
     },
     {
       "id": 875,
@@ -7869,7 +7869,7 @@
       "store": "Kaufland",
       "price": 4.11,
       "image_url": null,
-      "group_id": "g188"
+      "group_id": null
     },
     {
       "id": 876,
@@ -7905,7 +7905,7 @@
       "store": "Kaufland",
       "price": 3.6,
       "image_url": null,
-      "group_id": "g213"
+      "group_id": null
     },
     {
       "id": 880,
@@ -7914,7 +7914,7 @@
       "store": "Kaufland",
       "price": 14.98,
       "image_url": null,
-      "group_id": "g214"
+      "group_id": null
     },
     {
       "id": 881,
@@ -7986,7 +7986,7 @@
       "store": "Kaufland",
       "price": 29.98,
       "image_url": null,
-      "group_id": "g146"
+      "group_id": null
     },
     {
       "id": 889,
@@ -8211,7 +8211,7 @@
       "store": "Lidl",
       "price": 5.11,
       "image_url": null,
-      "group_id": "g171"
+      "group_id": "g29"
     },
     {
       "id": 937,
@@ -8238,7 +8238,7 @@
       "store": "Lidl",
       "price": 0.61,
       "image_url": null,
-      "group_id": "g196"
+      "group_id": "g191"
     },
     {
       "id": 940,
@@ -8256,7 +8256,7 @@
       "store": "Lidl",
       "price": 1.27,
       "image_url": null,
-      "group_id": "g181"
+      "group_id": "g35"
     },
     {
       "id": 942,
@@ -8355,7 +8355,7 @@
       "store": "Lidl",
       "price": 3.06,
       "image_url": null,
-      "group_id": "g100"
+      "group_id": "g42"
     },
     {
       "id": 953,
@@ -8436,7 +8436,7 @@
       "store": "Lidl",
       "price": 4.34,
       "image_url": null,
-      "group_id": "g138"
+      "group_id": "g10"
     },
     {
       "id": 962,
@@ -8481,7 +8481,7 @@
       "store": "Lidl",
       "price": 1.63,
       "image_url": null,
-      "group_id": "g206"
+      "group_id": "g199"
     },
     {
       "id": 967,
@@ -8607,7 +8607,7 @@
       "store": "Lidl",
       "price": 0.76,
       "image_url": null,
-      "group_id": "g180"
+      "group_id": "g36"
     },
     {
       "id": 981,
@@ -8670,7 +8670,7 @@
       "store": "Lidl",
       "price": 6.64,
       "image_url": null,
-      "group_id": "g207"
+      "group_id": "g17"
     },
     {
       "id": 988,
@@ -8724,7 +8724,7 @@
       "store": "Lidl",
       "price": 7.39,
       "image_url": null,
-      "group_id": "g189"
+      "group_id": "g45"
     },
     {
       "id": 994,
@@ -8886,7 +8886,7 @@
       "store": "Lidl",
       "price": 3.57,
       "image_url": null,
-      "group_id": "g25"
+      "group_id": "g1"
     },
     {
       "id": 1048,
@@ -8940,7 +8940,7 @@
       "store": "Lidl",
       "price": 2.55,
       "image_url": null,
-      "group_id": "g216"
+      "group_id": "g121"
     },
     {
       "id": 1065,
@@ -9084,7 +9084,7 @@
       "store": "Lidl",
       "price": 12.78,
       "image_url": null,
-      "group_id": "g126"
+      "group_id": null
     },
     {
       "id": 1094,
@@ -9111,7 +9111,7 @@
       "store": "Lidl",
       "price": 5.62,
       "image_url": null,
-      "group_id": "g161"
+      "group_id": "g158"
     },
     {
       "id": 1097,
@@ -9120,7 +9120,7 @@
       "store": "Lidl",
       "price": 5.11,
       "image_url": null,
-      "group_id": "g156"
+      "group_id": "g85"
     },
     {
       "id": 1098,
@@ -9174,7 +9174,7 @@
       "store": "Lidl",
       "price": 9.71,
       "image_url": null,
-      "group_id": "g151"
+      "group_id": "g24"
     },
     {
       "id": 1105,
@@ -9264,7 +9264,7 @@
       "store": "Lidl",
       "price": 16.35,
       "image_url": null,
-      "group_id": "g127"
+      "group_id": null
     },
     {
       "id": 1117,
@@ -9624,7 +9624,7 @@
       "store": "Billa",
       "price": 3.79,
       "image_url": null,
-      "group_id": "g188"
+      "group_id": "g104"
     },
     {
       "id": 1182,
@@ -10398,7 +10398,7 @@
       "store": "Billa",
       "price": 9.96,
       "image_url": null,
-      "group_id": "g176"
+      "group_id": "g175"
     },
     {
       "id": 1268,
@@ -10416,7 +10416,7 @@
       "store": "Billa",
       "price": 17.97,
       "image_url": null,
-      "group_id": "g213"
+      "group_id": "g9"
     },
     {
       "id": 1270,
@@ -10425,7 +10425,7 @@
       "store": "Billa",
       "price": 16.0,
       "image_url": null,
-      "group_id": "g214"
+      "group_id": "g118"
     },
     {
       "id": 1271,
@@ -10461,7 +10461,7 @@
       "store": "Billa",
       "price": 16.02,
       "image_url": null,
-      "group_id": "g215"
+      "group_id": null
     },
     {
       "id": 1275,
@@ -10533,7 +10533,7 @@
       "store": "Billa",
       "price": 1.39,
       "image_url": null,
-      "group_id": "g75"
+      "group_id": "g74"
     },
     {
       "id": 1283,
@@ -10623,7 +10623,7 @@
       "store": "Billa",
       "price": 1.1,
       "image_url": null,
-      "group_id": "g92"
+      "group_id": "g91"
     },
     {
       "id": 1293,
@@ -10650,7 +10650,7 @@
       "store": "Billa",
       "price": 0.29,
       "image_url": null,
-      "group_id": "g149"
+      "group_id": "g14"
     },
     {
       "id": 1296,
@@ -10812,7 +10812,7 @@
       "store": "Billa",
       "price": 5.98,
       "image_url": null,
-      "group_id": "g169"
+      "group_id": "g168"
     },
     {
       "id": 1314,
@@ -10839,7 +10839,7 @@
       "store": "Billa",
       "price": 6.59,
       "image_url": null,
-      "group_id": "g44"
+      "group_id": "g43"
     },
     {
       "id": 1317,
@@ -10866,7 +10866,7 @@
       "store": "Billa",
       "price": 2.99,
       "image_url": null,
-      "group_id": "g88"
+      "group_id": "g33"
     },
     {
       "id": 1320,
@@ -10992,7 +10992,7 @@
       "store": "Billa",
       "price": 34.99,
       "image_url": null,
-      "group_id": "g167"
+      "group_id": null
     },
     {
       "id": 1334,
@@ -11145,7 +11145,7 @@
       "store": "Billa",
       "price": 1.78,
       "image_url": null,
-      "group_id": "g193"
+      "group_id": null
     },
     {
       "id": 1351,
@@ -11172,7 +11172,7 @@
       "store": "Billa",
       "price": 0.98,
       "image_url": null,
-      "group_id": "g195"
+      "group_id": null
     },
     {
       "id": 1354,
@@ -11217,7 +11217,7 @@
       "store": "Billa",
       "price": 6.98,
       "image_url": null,
-      "group_id": "g171"
+      "group_id": null
     },
     {
       "id": 1359,
@@ -11325,7 +11325,7 @@
       "store": "Billa",
       "price": 10.99,
       "image_url": null,
-      "group_id": "g107"
+      "group_id": null
     },
     {
       "id": 1371,
@@ -11334,7 +11334,7 @@
       "store": "Billa",
       "price": 29.98,
       "image_url": null,
-      "group_id": "g106"
+      "group_id": "g48"
     },
     {
       "id": 1372,
@@ -11433,7 +11433,7 @@
       "store": "Billa",
       "price": 9.99,
       "image_url": null,
-      "group_id": "g151"
+      "group_id": null
     },
     {
       "id": 1383,
@@ -11478,7 +11478,7 @@
       "store": "Billa",
       "price": 8.0,
       "image_url": null,
-      "group_id": "g182"
+      "group_id": "g54"
     },
     {
       "id": 1388,
@@ -11640,7 +11640,7 @@
       "store": "Billa",
       "price": 3.99,
       "image_url": null,
-      "group_id": "g150"
+      "group_id": null
     },
     {
       "id": 1406,
@@ -11775,7 +11775,7 @@
       "store": "Billa",
       "price": 5.79,
       "image_url": null,
-      "group_id": "g173"
+      "group_id": "g5"
     },
     {
       "id": 1421,
@@ -11838,7 +11838,7 @@
       "store": "Billa",
       "price": 2.29,
       "image_url": null,
-      "group_id": "g196"
+      "group_id": null
     },
     {
       "id": 1428,
@@ -11847,7 +11847,7 @@
       "store": "Billa",
       "price": 14.88,
       "image_url": null,
-      "group_id": "g165"
+      "group_id": null
     },
     {
       "id": 1429,
@@ -11901,7 +11901,7 @@
       "store": "Lidl",
       "price": 1.43,
       "image_url": null,
-      "group_id": "g172"
+      "group_id": "g5"
     },
     {
       "id": 1435,
@@ -12009,7 +12009,7 @@
       "store": "Lidl",
       "price": 0.62,
       "image_url": null,
-      "group_id": "g192"
+      "group_id": "g108"
     },
     {
       "id": 1447,
@@ -12027,7 +12027,7 @@
       "store": "Lidl",
       "price": 1.56,
       "image_url": null,
-      "group_id": "g143"
+      "group_id": "g70"
     },
     {
       "id": 1449,
@@ -12054,7 +12054,7 @@
       "store": "Lidl",
       "price": 2.61,
       "image_url": null,
-      "group_id": "g215"
+      "group_id": "g118"
     },
     {
       "id": 1452,
@@ -12099,7 +12099,7 @@
       "store": "Lidl",
       "price": 2.09,
       "image_url": null,
-      "group_id": "g69"
+      "group_id": null
     },
     {
       "id": 1457,
@@ -12396,7 +12396,7 @@
       "store": "Lidl",
       "price": 0.86,
       "image_url": null,
-      "group_id": "g40"
+      "group_id": "g6"
     },
     {
       "id": 1490,
@@ -12684,7 +12684,7 @@
       "store": "Lidl",
       "price": 7.84,
       "image_url": null,
-      "group_id": "g157"
+      "group_id": "g154"
     },
     {
       "id": 1522,
@@ -12702,7 +12702,7 @@
       "store": "Lidl",
       "price": 4.7,
       "image_url": null,
-      "group_id": "g190"
+      "group_id": null
     },
     {
       "id": 1524,
@@ -12720,7 +12720,7 @@
       "store": "Lidl",
       "price": 1.02,
       "image_url": null,
-      "group_id": "g198"
+      "group_id": null
     },
     {
       "id": 1526,
@@ -12756,7 +12756,7 @@
       "store": "Lidl",
       "price": 2.09,
       "image_url": null,
-      "group_id": "g63"
+      "group_id": null
     },
     {
       "id": 1530,
@@ -12900,7 +12900,7 @@
       "store": "Lidl",
       "price": 5.23,
       "image_url": null,
-      "group_id": "g105"
+      "group_id": null
     },
     {
       "id": 1546,
@@ -13053,7 +13053,7 @@
       "store": "Lidl",
       "price": 11.76,
       "image_url": null,
-      "group_id": "g13"
+      "group_id": "g2"
     },
     {
       "id": 1563,
@@ -13089,7 +13089,7 @@
       "store": "Lidl",
       "price": 10.45,
       "image_url": null,
-      "group_id": "g144"
+      "group_id": "g72"
     },
     {
       "id": 1567,
@@ -13215,7 +13215,7 @@
       "store": "Lidl",
       "price": 33.98,
       "image_url": null,
-      "group_id": "g125"
+      "group_id": "g3"
     },
     {
       "id": 1581,
@@ -13305,7 +13305,7 @@
       "store": "Lidl",
       "price": 0.91,
       "image_url": null,
-      "group_id": "g217"
+      "group_id": "g58"
     },
     {
       "id": 1591,
@@ -13386,7 +13386,7 @@
       "store": "Lidl",
       "price": 6.27,
       "image_url": null,
-      "group_id": "g120"
+      "group_id": "g113"
     },
     {
       "id": 1600,
@@ -13395,7 +13395,7 @@
       "store": "Lidl",
       "price": 16.99,
       "image_url": null,
-      "group_id": "g145"
+      "group_id": null
     },
     {
       "id": 1601,
@@ -13422,7 +13422,7 @@
       "store": "Lidl",
       "price": 1.53,
       "image_url": null,
-      "group_id": "g133"
+      "group_id": "g26"
     },
     {
       "id": 1604,
@@ -13431,7 +13431,7 @@
       "store": "Lidl",
       "price": 6.01,
       "image_url": null,
-      "group_id": "g146"
+      "group_id": "g73"
     },
     {
       "id": 1605,
@@ -13557,1962 +13557,919 @@
       "store": "Lidl",
       "price": 0.35,
       "image_url": null,
-      "group_id": "g204"
+      "group_id": "g109"
     }
   ],
   "groups": {
     "g1": {
       "canonical_name": "играчка плюшена",
       "canonical_brand": "Плюшена",
+      "confidence": 1.0,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 1.0
+      "product_count": 2
     },
     "g2": {
       "canonical_name": "ударна parkside бормашина акумулаторна",
       "canonical_brand": "Parkside",
+      "confidence": 1.0,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 1.0
+      "product_count": 2
     },
     "g3": {
       "canonical_name": "parkside бормашина акумулаторна",
       "canonical_brand": "Parkside",
+      "confidence": 1.0,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 1.0
+      "product_count": 2
     },
     "g4": {
       "canonical_name": "гъби печурки",
       "canonical_brand": "NO_BRAND",
+      "confidence": 1.0,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 1.0
+      "product_count": 2
     },
     "g5": {
       "canonical_name": "свински бут без кост",
       "canonical_brand": "Свински",
+      "confidence": 1.0,
       "stores": [
         "Lidl",
         "Billa"
       ],
-      "confidence": 1.0
+      "product_count": 2
     },
     "g6": {
       "canonical_name": "ябълки червени",
       "canonical_brand": "NO_BRAND",
+      "confidence": 1.0,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 1.0
+      "product_count": 2
     },
     "g7": {
       "canonical_name": "extra водка zytnia",
       "canonical_brand": "Extra",
+      "confidence": 1.0,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 1.0
+      "product_count": 2
     },
     "g8": {
       "canonical_name": "deutsche краве markenbutter масло",
       "canonical_brand": "Deutsche Markenbutter",
+      "confidence": 1.0,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 1.0
+      "product_count": 2
     },
     "g9": {
       "canonical_name": "мляко краве кашкавал саяна",
       "canonical_brand": "NO_BRAND",
+      "confidence": 1.0,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 1.0
+      "product_count": 2
     },
     "g10": {
       "canonical_name": "храна суха котки",
       "canonical_brand": "K-Classic",
+      "confidence": 0.75,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.75
-    },
-    "g11": {
-      "canonical_name": "храна суха котки",
-      "canonical_brand": "Whiskas",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.75
-    },
-    "g12": {
-      "canonical_name": "parkside бормашина акумулаторна",
-      "canonical_brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.75
-    },
-    "g13": {
-      "canonical_name": "parkside бормашина акумулаторна",
-      "canonical_brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.75
+      "product_count": 2
     },
     "g14": {
       "canonical_name": "халва времена сладки",
       "canonical_brand": "Сладки",
+      "confidence": 0.75,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.75
+      "product_count": 2
     },
     "g15": {
       "canonical_name": "тип моп пеперуда",
       "canonical_brand": "NO_BRAND",
+      "confidence": 0.75,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.75
+      "product_count": 2
     },
     "g16": {
       "canonical_name": "черни маслини мамут",
       "canonical_brand": "NO_BRAND",
+      "confidence": 0.75,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.75
+      "product_count": 2
     },
     "g17": {
       "canonical_name": "краве кашкавал мляко",
       "canonical_brand": "Рафтис",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.75
-    },
-    "g18": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.75
-    },
-    "g19": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "Мероне",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.75
-    },
-    "g20": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "Зафирови",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.75
-    },
-    "g21": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "Дни",
+      "confidence": 0.75,
       "stores": [
         "Lidl",
-        "Billa"
+        "Kaufland"
       ],
-      "confidence": 0.75
+      "product_count": 2
     },
     "g22": {
       "canonical_name": "червено зеле",
       "canonical_brand": "NO_BRAND",
+      "confidence": 0.67,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g23": {
       "canonical_name": "кори точени",
       "canonical_brand": "Фамилия",
+      "confidence": 0.67,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g24": {
       "canonical_name": "тоалетна хартия",
       "canonical_brand": "Familia",
+      "confidence": 0.67,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.67
-    },
-    "g25": {
-      "canonical_name": "играчка плюшена",
-      "canonical_brand": "Плюшена",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g26": {
       "canonical_name": "млечен десерт",
       "canonical_brand": "K-Classic",
+      "confidence": 0.67,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g27": {
       "canonical_name": "parkside битове",
       "canonical_brand": "Parkside",
+      "confidence": 0.67,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g28": {
       "canonical_name": "кристал локум",
       "canonical_brand": "Кристал",
+      "confidence": 0.67,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g29": {
       "canonical_name": "бонбони шоколадови",
       "canonical_brand": "Roshen",
+      "confidence": 0.67,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.67
-    },
-    "g30": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Merci",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.67
-    },
-    "g31": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "MILKA",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.67
-    },
-    "g32": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Suchard",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g33": {
       "canonical_name": "млечен шоколад",
       "canonical_brand": "MILKA",
+      "confidence": 0.67,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g34": {
       "canonical_name": "херинга филе",
       "canonical_brand": "ФИЛЕ ОТ ХЕРИНГА",
+      "confidence": 0.67,
       "stores": [
         "Lidl",
         "Billa"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g35": {
       "canonical_name": "гел душ",
       "canonical_brand": "Palmolive",
+      "confidence": 0.67,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g36": {
       "canonical_name": "зъби паста",
       "canonical_brand": "Parоdontax",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.67
-    },
-    "g37": {
-      "canonical_name": "зъби паста",
-      "canonical_brand": "Sensodyne",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.67
-    },
-    "g38": {
-      "canonical_name": "зъби паста",
-      "canonical_brand": "Aquafresh",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.67
-    },
-    "g39": {
-      "canonical_name": "гел душ",
-      "canonical_brand": "Cien",
+      "confidence": 0.67,
       "stores": [
         "Lidl",
-        "Billa"
+        "Kaufland"
       ],
-      "confidence": 0.67
-    },
-    "g40": {
-      "canonical_name": "ябълки червени",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g41": {
       "canonical_name": "бланширани картофи",
       "canonical_brand": "NO_BRAND",
+      "confidence": 0.67,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g42": {
       "canonical_name": "картофи сладки",
       "canonical_brand": "Harvest",
+      "confidence": 0.67,
       "stores": [
         "Lidl",
         "Billa"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g43": {
       "canonical_name": "raffaello бонбони",
       "canonical_brand": "Raffaello",
+      "confidence": 0.67,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.67
-    },
-    "g44": {
-      "canonical_name": "raffaello бонбони",
-      "canonical_brand": "Raffaello",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g45": {
       "canonical_name": "ракия гроздова",
       "canonical_brand": "Пещерска",
+      "confidence": 0.67,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g46": {
       "canonical_name": "шотландско уиски",
       "canonical_brand": "Grant's",
+      "confidence": 0.67,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g47": {
       "canonical_name": "водка absolut",
       "canonical_brand": "Absolut",
+      "confidence": 0.67,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g48": {
       "canonical_name": "pogues уиски",
       "canonical_brand": "The Pogues",
+      "confidence": 0.67,
       "stores": [
         "Lidl",
         "Billa"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g49": {
       "canonical_name": "прясно мляко",
       "canonical_brand": "Верея",
+      "confidence": 0.67,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g50": {
       "canonical_name": "сапун крем",
       "canonical_brand": "Cien",
+      "confidence": 0.67,
       "stores": [
         "Lidl",
         "Billa"
       ],
-      "confidence": 0.67
+      "product_count": 2
     },
     "g51": {
       "canonical_name": "parkside батерии зарядно",
       "canonical_brand": "Parkside",
+      "confidence": 0.6,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.6
+      "product_count": 2
     },
     "g52": {
       "canonical_name": "espresso мляно кафе",
       "canonical_brand": "Espresso",
+      "confidence": 0.6,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.6
+      "product_count": 2
     },
     "g53": {
       "canonical_name": "панирани шницели пилешки",
       "canonical_brand": "Сами",
+      "confidence": 0.6,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.6
+      "product_count": 2
     },
     "g54": {
       "canonical_name": "гел душ nivea",
       "canonical_brand": "Nivea",
+      "confidence": 0.6,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.6
-    },
-    "g55": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "Рафтис",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.6
-    },
-    "g56": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "Мероне",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.6
-    },
-    "g57": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "Зафирови",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.6
+      "product_count": 2
     },
     "g58": {
       "canonical_name": "съдове препарат medix",
       "canonical_brand": "MAX",
+      "confidence": 0.6,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.6
-    },
-    "g59": {
-      "canonical_name": "храна котки",
-      "canonical_brand": "Friskies",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g60": {
-      "canonical_name": "млечен десерт",
-      "canonical_brand": "Kinder",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g61": {
-      "canonical_name": "млечен десерт",
-      "canonical_brand": "Kinder",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g62": {
       "canonical_name": "мазане крем",
       "canonical_brand": "NO_BRAND",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
-    },
-    "g63": {
-      "canonical_name": "мазане крем",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g64": {
       "canonical_name": "царевица сладка",
       "canonical_brand": "Chef Carlo",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
-    },
-    "g65": {
-      "canonical_name": "храна котки",
-      "canonical_brand": "Dante",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g66": {
-      "canonical_name": "тоалетна хартия",
-      "canonical_brand": "Bonuss",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g67": {
-      "canonical_name": "храна котки",
-      "canonical_brand": "K-Classic",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g68": {
       "canonical_name": "спрей моп",
       "canonical_brand": "K-Classic",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
-    },
-    "g69": {
-      "canonical_name": "parkside битове",
-      "canonical_brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g70": {
       "canonical_name": "parkside принадлежности",
       "canonical_brand": "Parkside",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
-    },
-    "g71": {
-      "canonical_name": "parkside акумулаторна",
-      "canonical_brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g72": {
       "canonical_name": "parkside батерия акумулаторна",
       "canonical_brand": "Parkside",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g73": {
       "canonical_name": "орхидея фаленопсис",
       "canonical_brand": "Орхидея",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g74": {
       "canonical_name": "pingui kinder",
       "canonical_brand": "Kinder",
+      "confidence": 0.5,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.5
-    },
-    "g75": {
-      "canonical_name": "pingui kinder",
-      "canonical_brand": "Kinder",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g76": {
       "canonical_name": "свински кост без врат",
       "canonical_brand": "Свински",
+      "confidence": 0.5,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g77": {
       "canonical_name": "селекция сирена",
       "canonical_brand": "Castello",
+      "confidence": 0.5,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g78": {
       "canonical_name": "кетчуп heinz",
       "canonical_brand": "HEINZ",
+      "confidence": 0.5,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g79": {
       "canonical_name": "пармиджано реджано",
       "canonical_brand": "Billa Premium",
+      "confidence": 0.5,
       "stores": [
         "Lidl",
         "Billa"
       ],
-      "confidence": 0.5
-    },
-    "g80": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Roshen",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g81": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Ferrero",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g82": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Katy",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g83": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Loacker",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g84": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Pergale",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g85": {
       "canonical_name": "кафе разтворимо",
       "canonical_brand": "CLASSIC",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
-    },
-    "g86": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Lindt",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g87": {
-      "canonical_name": "млечен шоколад",
-      "canonical_brand": "MILKA",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.5
-    },
-    "g88": {
-      "canonical_name": "млечен шоколад",
-      "canonical_brand": "MILKA",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g89": {
       "canonical_name": "бира шуменско",
       "canonical_brand": "Шуменско",
+      "confidence": 0.5,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g90": {
       "canonical_name": "шунка тандем",
       "canonical_brand": "Тандем",
+      "confidence": 0.5,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g91": {
       "canonical_name": "сладея захар",
       "canonical_brand": "NO_BRAND",
+      "confidence": 0.5,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.5
-    },
-    "g92": {
-      "canonical_name": "пудра захар",
-      "canonical_brand": "Захира",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.5
-    },
-    "g93": {
-      "canonical_name": "гел душ",
-      "canonical_brand": "Old",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g94": {
-      "canonical_name": "зъби паста",
-      "canonical_brand": "Parоdontax",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g95": {
-      "canonical_name": "зъби паста",
-      "canonical_brand": "Parodontax",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g96": {
-      "canonical_name": "зъби паста",
-      "canonical_brand": "Sensodyne",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g97": {
-      "canonical_name": "гел душ",
-      "canonical_brand": "Palmolive",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.5
-    },
-    "g98": {
-      "canonical_name": "гел душ nivea",
-      "canonical_brand": "Nivea",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.5
-    },
-    "g99": {
-      "canonical_name": "гел душ nivea",
-      "canonical_brand": "Nivea",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.5
-    },
-    "g100": {
-      "canonical_name": "бланширани картофи",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g101": {
       "canonical_name": "chio чипс",
       "canonical_brand": "Chio",
+      "confidence": 0.5,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g102": {
       "canonical_name": "тунквани престиж бисквити",
       "canonical_brand": "Престиж",
+      "confidence": 0.5,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.5
-    },
-    "g103": {
-      "canonical_name": "тунквани бисквити",
-      "canonical_brand": "Престиж",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g104": {
       "canonical_name": "milka бисквити",
       "canonical_brand": "MILKA",
+      "confidence": 0.5,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.5
-    },
-    "g105": {
-      "canonical_name": "шотландско уиски",
-      "canonical_brand": "Grant's",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g106": {
-      "canonical_name": "ирландско уиски",
-      "canonical_brand": "Jameson",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.5
-    },
-    "g107": {
-      "canonical_name": "ракия пещерска гроздова",
-      "canonical_brand": "Пещерска",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g108": {
       "canonical_name": "напитка плодова",
       "canonical_brand": "Prisun",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g109": {
       "canonical_name": "кисело мляко",
       "canonical_brand": "Елена",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
-    },
-    "g110": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "Рафтис",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g111": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g112": {
       "canonical_name": "сирене philadelphia",
       "canonical_brand": "Philadelphia",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g113": {
       "canonical_name": "краве кашкавал мляко",
       "canonical_brand": "Мероне",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
-    },
-    "g114": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "Зафирови",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
-    },
-    "g115": {
-      "canonical_name": "кисело мляко",
-      "canonical_brand": "Саяна",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g116": {
       "canonical_name": "jogobella йогурт",
       "canonical_brand": "Jogobella",
+      "confidence": 0.5,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.5
-    },
-    "g117": {
-      "canonical_name": "крема сирене",
-      "canonical_brand": "Philadelphia",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g118": {
       "canonical_name": "сирене краве",
       "canonical_brand": "Сакарела",
+      "confidence": 0.5,
       "stores": [
         "Lidl",
         "Billa"
       ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g119": {
       "canonical_name": "сирене саламурено бяло",
       "canonical_brand": "NO_BRAND",
+      "confidence": 0.5,
       "stores": [
         "Lidl",
         "Billa"
       ],
-      "confidence": 0.5
-    },
-    "g120": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g121": {
       "canonical_name": "съдове препарат",
       "canonical_brand": "Pur",
+      "confidence": 0.5,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.5
-    },
-    "g122": {
-      "canonical_name": "съдове препарат",
-      "canonical_brand": "Pur",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.5
+      "product_count": 2
     },
     "g123": {
       "canonical_name": "гел savex капсули пране",
       "canonical_brand": "Savex",
+      "confidence": 0.44,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.44
-    },
-    "g124": {
-      "canonical_name": "parkside батерия акумулаторна",
-      "canonical_brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.43
-    },
-    "g125": {
-      "canonical_name": "parkside бормашина акумулаторна",
-      "canonical_brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.43
-    },
-    "g126": {
-      "canonical_name": "батерия зарядно акумулаторна",
-      "canonical_brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.43
-    },
-    "g127": {
-      "canonical_name": "батерия зарядно акумулаторна",
-      "canonical_brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.43
+      "product_count": 2
     },
     "g128": {
       "canonical_name": "боя цветове коса",
       "canonical_brand": "Syoss",
+      "confidence": 0.43,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.43
+      "product_count": 2
     },
     "g129": {
       "canonical_name": "хляб вита силует",
       "canonical_brand": "NO_BRAND",
+      "confidence": 0.43,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.43
-    },
-    "g130": {
-      "canonical_name": "краве кашкавал мляко",
-      "canonical_brand": "Димитър",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.43
-    },
-    "g131": {
-      "canonical_name": "млечен десерт",
-      "canonical_brand": "Kinder",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g132": {
-      "canonical_name": "млечен десерт",
-      "canonical_brand": "Kinder",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g133": {
-      "canonical_name": "млечен десерт",
-      "canonical_brand": "EXQUISA",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g134": {
-      "canonical_name": "храна котки",
-      "canonical_brand": "Gourmet",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g135": {
-      "canonical_name": "храна котки",
-      "canonical_brand": "Gourmet",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g136": {
-      "canonical_name": "орхидея фаленопсис",
-      "canonical_brand": "Орхидея",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g137": {
       "canonical_name": "цяла патица",
       "canonical_brand": "Penelope",
+      "confidence": 0.4,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.4
-    },
-    "g138": {
-      "canonical_name": "храна суха",
-      "canonical_brand": "Economic",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g139": {
-      "canonical_name": "тоалетна хартия",
-      "canonical_brand": "Flower",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g140": {
-      "canonical_name": "тоалетна хартия",
-      "canonical_brand": "Fresh",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g141": {
       "canonical_name": "led лампа",
       "canonical_brand": "Star",
+      "confidence": 0.4,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g142": {
       "canonical_name": "микровълнова фурна",
       "canonical_brand": "Samsung",
+      "confidence": 0.4,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.4
-    },
-    "g143": {
-      "canonical_name": "parkside принадлежности",
-      "canonical_brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g144": {
-      "canonical_name": "parkside акумулаторна",
-      "canonical_brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g145": {
-      "canonical_name": "parkside акумулаторна",
-      "canonical_brand": "Parkside",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g146": {
-      "canonical_name": "орхидея фаленопсис",
-      "canonical_brand": "Орхидея",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g147": {
       "canonical_name": "кроасан days",
       "canonical_brand": "DAYS",
+      "confidence": 0.4,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g148": {
       "canonical_name": "какаов крем",
       "canonical_brand": "NO_BRAND",
+      "confidence": 0.4,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.4
-    },
-    "g149": {
-      "canonical_name": "времена сладки",
-      "canonical_brand": "Сладки",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g150": {
-      "canonical_name": "моп пеперуда",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g151": {
-      "canonical_name": "тоалетна хартия",
-      "canonical_brand": "XXXL 32+16",
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g152": {
       "canonical_name": "блокчета шоколадови",
       "canonical_brand": "After Eight",
+      "confidence": 0.4,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.4
-    },
-    "g153": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Roshen",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g154": {
       "canonical_name": "кафе зърна",
       "canonical_brand": "Eduscho",
+      "confidence": 0.4,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.4
-    },
-    "g155": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Roshen",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g156": {
-      "canonical_name": "кафе разтворимо",
-      "canonical_brand": "Nescafe",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g157": {
-      "canonical_name": "кафе зърна",
-      "canonical_brand": "Kimbo",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g158": {
       "canonical_name": "бонбони шоколадови",
       "canonical_brand": "Merci",
+      "confidence": 0.4,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.4
-    },
-    "g159": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "MILKA",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g160": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Melbon",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g161": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Suchard",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g162": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "Shooters",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g163": {
-      "canonical_name": "кафе зърна",
-      "canonical_brand": "Eduscho",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g164": {
-      "canonical_name": "кафе зърна",
-      "canonical_brand": "Eduscho",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g165": {
-      "canonical_name": "мляно кафе",
-      "canonical_brand": "Espresso",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g166": {
       "canonical_name": "кафе зърна",
       "canonical_brand": "Kimbo",
+      "confidence": 0.4,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.4
-    },
-    "g167": {
-      "canonical_name": "кафе зърна",
-      "canonical_brand": "Kimbo",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g168": {
       "canonical_name": "шоколад lindt",
       "canonical_brand": "Lindt",
+      "confidence": 0.4,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.4
-    },
-    "g169": {
-      "canonical_name": "шоколад lindt",
-      "canonical_brand": "Lindt",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g170": {
       "canonical_name": "мицеларна вода",
       "canonical_brand": "Nivea",
+      "confidence": 0.4,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.4
-    },
-    "g171": {
-      "canonical_name": "бонбони шоколадови",
-      "canonical_brand": "J.D.GROSS",
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g172": {
-      "canonical_name": "свински бут",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g173": {
-      "canonical_name": "свински бут",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g174": {
       "canonical_name": "xxl салам",
       "canonical_brand": "XXL",
+      "confidence": 0.4,
       "stores": [
         "Lidl",
         "Billa"
       ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g175": {
       "canonical_name": "каламата маслини",
       "canonical_brand": "NO_BRAND",
+      "confidence": 0.4,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.4
-    },
-    "g176": {
-      "canonical_name": "каламата маслини",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g177": {
       "canonical_name": "хек замразен",
       "canonical_brand": "Primofish",
+      "confidence": 0.4,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g178": {
       "canonical_name": "gliss шампоан",
       "canonical_brand": "Gliss",
+      "confidence": 0.4,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.4
-    },
-    "g179": {
-      "canonical_name": "гел душ",
-      "canonical_brand": "Nivea",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g180": {
-      "canonical_name": "зъби паста",
-      "canonical_brand": "Sensodyne",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g181": {
-      "canonical_name": "гел душ",
-      "canonical_brand": "Men",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g182": {
-      "canonical_name": "гел душ",
-      "canonical_brand": "Old",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g183": {
       "canonical_name": "обикновени бисквити",
       "canonical_brand": "Победа",
+      "confidence": 0.4,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g184": {
       "canonical_name": "тунквани бисквити",
       "canonical_brand": "Мираж",
+      "confidence": 0.4,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.4
-    },
-    "g185": {
-      "canonical_name": "milka бисквити",
-      "canonical_brand": "MILKA",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g186": {
       "canonical_name": "cookies бисквити",
       "canonical_brand": "MILKA",
+      "confidence": 0.4,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.4
-    },
-    "g187": {
-      "canonical_name": "milka бисквити",
-      "canonical_brand": "MILKA",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g188": {
-      "canonical_name": "milka бисквити",
-      "canonical_brand": "MILKA",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g189": {
-      "canonical_name": "ракия гроздова",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g190": {
-      "canonical_name": "шотландско уиски",
-      "canonical_brand": "Grant's",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g191": {
       "canonical_name": "напитка газирана",
       "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g192": {
-      "canonical_name": "напитка плодова",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g193": {
-      "canonical_name": "напитка prisun",
-      "canonical_brand": "Prisun",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g194": {
-      "canonical_name": "напитка газирана",
-      "canonical_brand": "Siti",
+      "confidence": 0.4,
       "stores": [
         "Lidl",
-        "Billa"
+        "Kaufland"
       ],
-      "confidence": 0.4
-    },
-    "g195": {
-      "canonical_name": "напитка газирана",
-      "canonical_brand": "Siti",
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g196": {
-      "canonical_name": "напитка газирана",
-      "canonical_brand": "Siti",
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g197": {
       "canonical_name": "напитка coca-cola",
       "canonical_brand": "Coca-Cola",
+      "confidence": 0.4,
       "stores": [
         "Lidl",
         "Billa"
       ],
-      "confidence": 0.4
-    },
-    "g198": {
-      "canonical_name": "прясно мляко",
-      "canonical_brand": "Верея",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g199": {
       "canonical_name": "сирене синьо",
       "canonical_brand": "NO_BRAND",
+      "confidence": 0.4,
       "stores": [
-        "Kaufland",
-        "Lidl"
+        "Lidl",
+        "Kaufland"
       ],
-      "confidence": 0.4
-    },
-    "g200": {
-      "canonical_name": "краве мляко",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g201": {
-      "canonical_name": "сирене краве",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g202": {
-      "canonical_name": "краве мляко",
-      "canonical_brand": "Lacrima",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g203": {
-      "canonical_name": "сирене краве",
-      "canonical_brand": "Lacrima",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g204": {
-      "canonical_name": "кисело мляко",
-      "canonical_brand": "Йовчев",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g205": {
-      "canonical_name": "краве мляко",
-      "canonical_brand": "Frezco",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g206": {
-      "canonical_name": "сирене синьо",
-      "canonical_brand": "Madeta",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g207": {
-      "canonical_name": "краве мляко",
-      "canonical_brand": "Киселово",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g208": {
-      "canonical_name": "сирене краве",
-      "canonical_brand": "Киселово",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g209": {
       "canonical_name": "сирене hochland",
       "canonical_brand": "Hochland",
+      "confidence": 0.4,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.4
+      "product_count": 2
     },
     "g210": {
       "canonical_name": "сирене котидж",
       "canonical_brand": "EXQUISA",
+      "confidence": 0.4,
       "stores": [
         "Kaufland",
         "Billa"
       ],
-      "confidence": 0.4
-    },
-    "g211": {
-      "canonical_name": "сирене краве",
-      "canonical_brand": "NO_BRAND",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g212": {
-      "canonical_name": "сирене краве",
-      "canonical_brand": "Lacrima",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g213": {
-      "canonical_name": "мляко саяна",
-      "canonical_brand": "Саяна",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g214": {
-      "canonical_name": "сирене краве",
-      "canonical_brand": "Киселово",
-      "stores": [
-        "Kaufland",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g215": {
-      "canonical_name": "сирене краве",
-      "canonical_brand": "Сакарела",
-      "stores": [
-        "Lidl",
-        "Billa"
-      ],
-      "confidence": 0.4
-    },
-    "g216": {
-      "canonical_name": "съдове препарат",
-      "canonical_brand": "Fairy",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
-    },
-    "g217": {
-      "canonical_name": "съдове препарат",
-      "canonical_brand": "Fairy",
-      "stores": [
-        "Kaufland",
-        "Lidl"
-      ],
-      "confidence": 0.4
+      "product_count": 2
     }
   },
   "off": {}

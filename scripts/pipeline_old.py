@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
 """
-PromoBG Data Pipeline - Production Ready (FIXED)
+PromoBG Data Pipeline - Production Ready
 
-Changes from original:
-- export_frontend: Best-confidence-wins deduplication
-- export_frontend: Recalculate stores from actual products
-- export_frontend: Filter invalid groups (< 2 products or < 2 stores)
-- Added clean_product_name function for display names
+Usage:
+  python pipeline.py --full              # Full pipeline (scrape all → sync → match → export)
+  python pipeline.py --daily             # Daily run (sync + match + export, no scrape)
+  python pipeline.py --scrape lidl       # Scrape single store
+  python pipeline.py --sync lidl         # Sync store from latest raw file
+  python pipeline.py --match             # Run matching only
+  python pipeline.py --export            # Export to frontend only
+  python pipeline.py --report            # Generate status report
+
+Pipeline phases:
+  1. SCRAPE  → raw_scrapes/{store}_{date}.json
+  2. SYNC    → DB (products, prices, price_history)
+  3. MATCH   → DB (cross_store_matches)
+  4. EXPORT  → docs/data/products.json
 """
 
 import argparse
@@ -37,27 +46,6 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 
-# Store-specific suffixes to strip
-STORE_SUFFIXES = [
-    r'\s*от свежата витрина\s*',
-    r'\s*от нашата пекарна\s*',
-    r'\s*от деликатесната витрина\s*',
-    r'\s*За 1 кг\s*',
-    r'\s*\d+\s*бр\.?\s*$',
-    r'\s*\d+-\d+\*?\s*',
-]
-
-
-def clean_product_name(name):
-    """Clean product name for display"""
-    if not name:
-        return ''
-    cleaned = name.replace('\n', ' ')
-    for pattern in STORE_SUFFIXES:
-        cleaned = re.sub(pattern, ' ', cleaned, flags=re.IGNORECASE)
-    return ' '.join(cleaned.split())  # Normalize whitespace
-
-
 def load_config(name):
     """Load config from JSON file"""
     path = CONFIG_DIR / f"{name}.json"
@@ -80,6 +68,7 @@ def scrape_store(store_name, limit=None):
     """Run scraper for a specific store"""
     log.info(f"Scraping {store_name}...")
     
+    # Import store-specific scraper
     if store_name == 'lidl':
         from scrapers.lidl import LidlScraper
         scraper = LidlScraper()
@@ -87,8 +76,10 @@ def scrape_store(store_name, limit=None):
         log.warning(f"No scraper for {store_name}")
         return None
     
+    # Scrape
     products = scraper.scrape(limit=limit)
     
+    # Save raw
     RAW_SCRAPES_DIR.mkdir(exist_ok=True)
     date_str = datetime.now().strftime("%Y%m%d")
     output_path = RAW_SCRAPES_DIR / f"{store_name}_{date_str}.json"
@@ -101,13 +92,14 @@ def scrape_store(store_name, limit=None):
 
 
 # =============================================================================
-# STEP 2: SYNC
+# STEP 2: SYNC (replaces old clean_and_import)
 # =============================================================================
 
 def sync_store(store_name, raw_file=None):
     """Sync store using daily_sync module"""
     from daily_sync import DailySync
     
+    # Find latest raw file if not specified
     if raw_file is None:
         files = sorted(RAW_SCRAPES_DIR.glob(f"{store_name}_*.json"), reverse=True)
         if not files:
@@ -143,6 +135,7 @@ def run_matching():
     conn = get_db()
     cur = conn.cursor()
     
+    # Load active products with prices
     cur.execute("""
         SELECT 
             p.id, p.name, p.brand,
@@ -160,15 +153,18 @@ def run_matching():
     products = [dict(row) for row in cur.fetchall()]
     log.info(f"Loaded {len(products)} active products with prices")
     
+    # Tokenize and categorize
     cleaning_config = load_config("cleaning")
     for p in products:
         p['tokens'] = tokenize(p['name'], config)
         p['category'] = categorize(p['name'], cleaning_config['categories'])
     
+    # Group by category and store
     by_category = defaultdict(lambda: defaultdict(list))
     for p in products:
         by_category[p['category']][p['store']].append(p)
     
+    # Find matches
     matches = []
     min_threshold = config['token_similarity']['min_threshold']
     
@@ -189,6 +185,7 @@ def run_matching():
                                 'common': p1['tokens'] & p2['tokens']
                             })
     
+    # Deduplicate
     seen = set()
     unique_matches = []
     for m in sorted(matches, key=lambda x: -x['score']):
@@ -199,6 +196,7 @@ def run_matching():
     
     log.info(f"Found {len(unique_matches)} unique matches")
     
+    # Save to DB
     cur.execute('DELETE FROM cross_store_matches')
     
     for m in unique_matches:
@@ -276,11 +274,11 @@ def categorize(name, categories):
 
 
 # =============================================================================
-# STEP 4: EXPORT (FIXED)
+# STEP 4: EXPORT
 # =============================================================================
 
 def export_frontend():
-    """Export DB to frontend JSON - FIXED VERSION"""
+    """Export DB to frontend JSON"""
     log.info("Exporting to frontend...")
     
     conn = get_db()
@@ -303,7 +301,6 @@ def export_frontend():
     """)
     
     products = []
-    exported_ids = set()
     for row in cur.fetchall():
         products.append({
             'id': row['id'],
@@ -314,82 +311,41 @@ def export_frontend():
             'image_url': row['image_url'],
             'group_id': None
         })
-        exported_ids.add(row['id'])
     
-    log.info(f"Loaded {len(products)} exportable products")
-    
-    # Load matches
-    cur.execute("SELECT * FROM cross_store_matches ORDER BY confidence DESC")
+    # Load matches and build groups
+    cur.execute("SELECT * FROM cross_store_matches")
     matches = cur.fetchall()
     
-    # FIX 1: Best-confidence-wins deduplication
-    # Track which products are already assigned
-    product_to_group = {}
-    product_to_confidence = {}
     groups = {}
+    product_to_group = {}
     
     for i, m in enumerate(matches):
         group_id = f"g{i+1}"
         
-        # Check which products from this match are available and not yet assigned
-        available_pids = []
+        stores = []
         for store, col in [('Kaufland', 'kaufland_product_id'), 
-                           ('Lidl', 'lidl_product_id'), 
-                           ('Billa', 'billa_product_id')]:
-            pid = m[col]
-            if pid and pid in exported_ids:
-                # Only assign if not yet assigned OR this match has higher confidence
-                current_conf = product_to_confidence.get(pid, -1)
-                if m['confidence'] > current_conf:
-                    available_pids.append((pid, store, m['confidence']))
+                          ('Lidl', 'lidl_product_id'), 
+                          ('Billa', 'billa_product_id')]:
+            if m[col]:
+                stores.append(store)
+                product_to_group[m[col]] = group_id
         
-        # Only create group if we have 2+ products
-        if len(available_pids) >= 2:
-            # Assign all available products to this group
-            for pid, store, conf in available_pids:
-                # Unassign from previous group if needed
-                old_group = product_to_group.get(pid)
-                if old_group and old_group in groups:
-                    groups[old_group]['_pids'].discard(pid)
-                
-                product_to_group[pid] = group_id
-                product_to_confidence[pid] = conf
-            
-            groups[group_id] = {
-                'canonical_name': m['canonical_name'],
-                'canonical_brand': m['canonical_brand'],
-                'confidence': m['confidence'],
-                '_pids': set(pid for pid, _, _ in available_pids)  # Track for later
-            }
+        groups[group_id] = {
+            'canonical_name': m['canonical_name'],
+            'canonical_brand': m['canonical_brand'],
+            'stores': stores,
+            'confidence': m['confidence']
+        }
     
-    # Assign group_ids to products
+    # Assign group_ids
     for p in products:
         p['group_id'] = product_to_group.get(p['id'])
-    
-    # FIX 2: Recalculate stores from actual assigned products
-    for gid in list(groups.keys()):
-        group_products = [p for p in products if p['group_id'] == gid]
-        actual_stores = list(set(p['store'] for p in group_products))
-        
-        if len(group_products) < 2 or len(actual_stores) < 2:
-            # Invalid group - remove it
-            del groups[gid]
-            for p in group_products:
-                p['group_id'] = None
-        else:
-            groups[gid]['stores'] = actual_stores
-            groups[gid]['product_count'] = len(group_products)
-            del groups[gid]['_pids']  # Remove internal tracking
-    
-    # Count valid groups
-    valid_groups = len(groups)
-    log.info(f"Created {valid_groups} valid cross-store groups")
     
     # Build output
     output = {
         'meta': {
             'total_products': len(products),
-            'cross_store_groups': valid_groups,
+            'cross_store_groups': len(groups),
             'updated_at': datetime.now().isoformat()
         },
         'products': products,
@@ -403,8 +359,8 @@ def export_frontend():
     
     conn.close()
     
-    log.info(f"Exported {len(products)} products, {valid_groups} groups to {OUTPUT_PATH}")
-    return len(products), valid_groups
+    log.info(f"Exported {len(products)} products, {len(groups)} groups")
+    return len(products), len(groups)
 
 
 # =============================================================================
@@ -421,6 +377,7 @@ def generate_report():
     print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("="*50)
     
+    # Products by store
     cur.execute("""
         SELECT s.name, 
                COUNT(*) as total,
@@ -434,25 +391,33 @@ def generate_report():
     for row in cur.fetchall():
         print(f"  {row['name']}: {row['active']} active / {row['total']} total")
     
+    # Matches
     cur.execute("SELECT COUNT(*) FROM cross_store_matches")
     matches = cur.fetchone()[0]
-    print(f"\nCROSS-STORE MATCHES IN DB: {matches}")
+    print(f"\nCROSS-STORE MATCHES: {matches}")
     
-    # Check exported data
-    try:
-        with open(OUTPUT_PATH) as f:
-            exported = json.load(f)
-        print(f"EXPORTED PRODUCTS: {len(exported['products'])}")
-        print(f"VALID GROUPS: {len(exported['groups'])}")
-    except:
-        pass
-    
+    # Recent price changes
     cur.execute("""
         SELECT COUNT(*) FROM price_history 
         WHERE changed_at > datetime('now', '-1 day')
     """)
     recent_changes = cur.fetchone()[0]
     print(f"PRICE CHANGES (24h): {recent_changes}")
+    
+    # Recent scan runs
+    cur.execute("""
+        SELECT s.name, sr.completed_at, sr.products_scraped, sr.new_products, sr.price_changes
+        FROM scan_runs sr
+        JOIN stores s ON sr.store_id = s.id
+        ORDER BY sr.completed_at DESC
+        LIMIT 5
+    """)
+    
+    runs = cur.fetchall()
+    if runs:
+        print("\nRECENT SCAN RUNS:")
+        for r in runs:
+            print(f"  {r['name']} @ {r['completed_at']}: {r['products_scraped']} products, +{r['new_products']} new, {r['price_changes']} price changes")
     
     print("="*50 + "\n")
     conn.close()
@@ -464,19 +429,26 @@ def generate_report():
 
 def run_full_pipeline(stores=None):
     """Run complete pipeline"""
-    stores = stores or ['lidl']
+    stores = stores or ['lidl']  # Only Lidl has scraper for now
     
     log.info("="*60)
     log.info("PROMOBG PIPELINE - FULL RUN")
     log.info("="*60)
     
     for store in stores:
+        # Scrape
         raw_file = scrape_store(store)
         if raw_file:
+            # Sync
             sync_store(store, raw_file)
     
+    # Match
     run_matching()
+    
+    # Export
     export_frontend()
+    
+    # Report
     generate_report()
     
     log.info("="*60)
@@ -497,8 +469,8 @@ def run_daily():
 
 def main():
     parser = argparse.ArgumentParser(description='PromoBG Data Pipeline')
-    parser.add_argument('--full', action='store_true', help='Full pipeline')
-    parser.add_argument('--daily', action='store_true', help='Daily run')
+    parser.add_argument('--full', action='store_true', help='Full pipeline (scrape + sync + match + export)')
+    parser.add_argument('--daily', action='store_true', help='Daily run (match + export only)')
     parser.add_argument('--scrape', type=str, help='Scrape specific store')
     parser.add_argument('--sync', type=str, help='Sync specific store')
     parser.add_argument('--match', action='store_true', help='Run matching only')
