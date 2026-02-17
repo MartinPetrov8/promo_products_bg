@@ -588,7 +588,7 @@
             }
             
             document.getElementById('modalContent').innerHTML = 
-                (offData?.nutriscore ? '<div class="mb-4 flex items-center gap-2"><span class="nutriscore-' + offData.nutriscore.toLowerCase() + ' text-white px-3 py-1 rounded-lg font-bold uppercase">Nutriscore ' + offData.nutriscore + '</span><span class="text-sm text-gray-500">' + (offData.brand || '') + '</span></div>' : '') +
+                (offData?.nutriscore && /^[a-e]$/i.test(offData.nutriscore) ? '<div class="mb-4 flex items-center gap-2"><span class="nutriscore-' + offData.nutriscore.toLowerCase() + ' text-white px-3 py-1 rounded-lg font-bold uppercase">Nutriscore ' + offData.nutriscore.toUpperCase() + '</span><span class="text-sm text-gray-500">' + escapeHtml(offData.brand || '') + '</span></div>' : '') +
                 '<div class="space-y-3">' +
                     products.map((p, i) => {
                         const isPM = savings <= 0.01;
