@@ -1,94 +1,25 @@
 [
   {
-    "product": "Кроасан с 24% масло",
-    "product_alt": "Кроасан 70 - 92 г",
-    "category": "Хляб и печива",
+    "product": "Свински бут без кост",
+    "product_alt": "Свински джолан без кост За 1 кг",
+    "category": "Месо и колбаси",
     "stores": {
       "Kaufland": {
-        "price": 0.59,
-        "sku": "20676449",
-        "name": "Кроасан с 24% масло",
-        "quantity": ""
+        "price": 6.98,
+        "sku": "00100054",
+        "name": "Свински бут без кост",
+        "quantity": "1000 g"
       },
       "Billa": {
-        "price": 1.19,
-        "sku": "f933365826fe",
-        "name": "Кроасан 70 - 92 г",
-        "quantity": "92.0 g"
+        "price": 12.5,
+        "sku": "9632213e8379",
+        "name": "Свински джолан без кост За 1 кг",
+        "quantity": "1000.0 g"
       }
     },
     "cheaper_store": "Kaufland",
-    "savings_pct": 50.4,
+    "savings_pct": 44.2,
     "similarity": 0.67,
-    "match_method": "name_only"
-  },
-  {
-    "product": "Млечен шоколад",
-    "product_alt": "Горещ шоколад",
-    "category": "Сладкарски изделия",
-    "stores": {
-      "Kaufland": {
-        "price": 1.49,
-        "sku": "02500102",
-        "name": "Млечен шоколад",
-        "quantity": ""
-      },
-      "Lidl": {
-        "price": 2.99,
-        "sku": "f52e8caf8337",
-        "name": "Горещ шоколад",
-        "quantity": ""
-      }
-    },
-    "cheaper_store": "Kaufland",
-    "savings_pct": 50.2,
-    "similarity": 0.67,
-    "match_method": "name_only"
-  },
-  {
-    "product": "Млечен шоколад",
-    "product_alt": "Млечен шоколад 160 г",
-    "category": "Сладкарски изделия",
-    "stores": {
-      "Kaufland": {
-        "price": 1.49,
-        "sku": "02500102",
-        "name": "Млечен шоколад",
-        "quantity": ""
-      },
-      "Billa": {
-        "price": 2.99,
-        "sku": "5ad7cf27f78f",
-        "name": "Млечен шоколад 160 г",
-        "quantity": "160.0 g"
-      }
-    },
-    "cheaper_store": "Kaufland",
-    "savings_pct": 50.2,
-    "similarity": 0.82,
-    "match_method": "name_only"
-  },
-  {
-    "product": "Гъби печурки",
-    "product_alt": "Гъби печурки 250 г",
-    "category": "Плодове и зеленчуци",
-    "stores": {
-      "Kaufland": {
-        "price": 3.48,
-        "sku": "09700650",
-        "name": "Гъби печурки",
-        "quantity": ""
-      },
-      "Billa": {
-        "price": 1.94,
-        "sku": "5b4c975463e9",
-        "name": "Гъби печурки 250 г",
-        "quantity": "250.0 g"
-      }
-    },
-    "cheaper_store": "Billa",
-    "savings_pct": 44.3,
-    "similarity": 0.8,
     "match_method": "name_only"
   },
   {
@@ -100,7 +31,7 @@
         "price": 1.99,
         "sku": "00041702",
         "name": "Прясно мляко",
-        "quantity": ""
+        "quantity": "1000.0 ml"
       },
       "Billa": {
         "price": 3.34,
@@ -115,26 +46,26 @@
     "match_method": "name_only"
   },
   {
-    "product": "Кроасан",
-    "product_alt": "Кроасан 50 г",
-    "category": "Хляб и печива",
+    "product": "Броколи",
+    "product_alt": "Броколи 500 г",
+    "category": "Други",
     "stores": {
       "Kaufland": {
-        "price": 1.19,
-        "sku": "00051214",
-        "name": "Кроасан",
-        "quantity": ""
+        "price": 2.48,
+        "sku": "09701241",
+        "name": "Броколи",
+        "quantity": "500.0 g"
       },
       "Billa": {
-        "price": 1.94,
-        "sku": "43335796df6f",
-        "name": "Кроасан 50 г",
-        "quantity": "50.0 g"
+        "price": 3.89,
+        "sku": "55e17b774e5f",
+        "name": "Броколи 500 г",
+        "quantity": "500.0 g"
       }
     },
     "cheaper_store": "Kaufland",
-    "savings_pct": 38.7,
-    "similarity": 0.74,
+    "savings_pct": 36.2,
+    "similarity": 0.7,
     "match_method": "name_only"
   },
   {
@@ -146,7 +77,7 @@
         "price": 5.28,
         "sku": "09700105",
         "name": "Краставици",
-        "quantity": ""
+        "quantity": "1000 g"
       },
       "Billa": {
         "price": 6.88,
@@ -161,26 +92,26 @@
     "match_method": "name_only"
   },
   {
-    "product": "Спанак листа",
-    "product_alt": "Спанак листа 200 г",
-    "category": "Плодове и зеленчуци",
+    "product": "Свински бут без кост",
+    "product_alt": "Свински бут без кост За 1 кг",
+    "category": "Месо и колбаси",
     "stores": {
       "Kaufland": {
-        "price": 2.99,
-        "sku": "09701770",
-        "name": "Спанак листа",
-        "quantity": ""
+        "price": 6.98,
+        "sku": "00100054",
+        "name": "Свински бут без кост",
+        "quantity": "1000 g"
       },
       "Billa": {
-        "price": 2.33,
-        "sku": "5320babe93c8",
-        "name": "Спанак листа 200 г",
-        "quantity": "200.0 g"
+        "price": 5.79,
+        "sku": "13f8037b608c",
+        "name": "Свински бут без кост За 1 кг",
+        "quantity": "1000.0 g"
       }
     },
     "cheaper_store": "Billa",
-    "savings_pct": 22.1,
-    "similarity": 0.8,
+    "savings_pct": 17.0,
+    "similarity": 0.83,
     "match_method": "name_only"
   },
   {
@@ -192,7 +123,7 @@
         "price": 33.99,
         "sku": "dcda27c5eeb8",
         "name": "Пакет кафе на зърна с надпис „Espresso Classic“, 1 кг",
-        "quantity": "1000.0 g"
+        "quantity": "1.0 kg"
       },
       "Billa": {
         "price": 29.71,

@@ -184,7 +184,14 @@ def main():
         else:
             brand, brand_conf = extract_brand(text, sku, store)
         category, cat_conf = extract_category(text)
-        qty_value, qty_unit, qty_conf = extract_quantity(text)
+        
+        # Use scraped quantity if available, otherwise extract from text
+        raw_qty_value = p.get('quantity_value')
+        raw_qty_unit = p.get('quantity_unit')
+        if raw_qty_value and raw_qty_unit:
+            qty_value, qty_unit, qty_conf = raw_qty_value, raw_qty_unit, 1.0
+        else:
+            qty_value, qty_unit, qty_conf = extract_quantity(text)
         
         min_conf = min(brand_conf, cat_conf, qty_conf)
         
@@ -237,7 +244,7 @@ def main():
                 if r['sku'] in llm_results:
                     llm = llm_results[r['sku']]
                     if llm.get('brand'): r['brand'] = llm['brand']
-                    if llm.get('category'): r['category'] = llm['category']
+                    # if llm.get('category'): r['category'] = llm['category']  # Disabled - rules more reliable
                     if llm.get('quantity_value'): r['quantity_value'] = llm['quantity_value']
                     if llm.get('quantity_unit'): r['quantity_unit'] = llm['quantity_unit']
             
