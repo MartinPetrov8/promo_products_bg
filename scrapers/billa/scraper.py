@@ -10,6 +10,19 @@ import requests
 from bs4 import BeautifulSoup
 from typing import List, Optional
 from scrapers.base import BaseScraper, Store, RawProduct, extract_brand_from_name, parse_quantity_from_name
+import json as _json
+from pathlib import Path as _Path
+
+def _load_known_brands():
+    try:
+        config_path = _Path(__file__).parent.parent.parent / 'config' / 'brands_enrichment.json'
+        with open(config_path) as f:
+            cfg = _json.load(f)
+        return set(cfg.get('bg_brands', []) + cfg.get('intl_brands', []) + cfg.get('lidl_brands', []))
+    except Exception:
+        return set()
+
+KNOWN_BRANDS = _load_known_brands()
 
 logger = logging.getLogger(__name__)
 
@@ -109,7 +122,15 @@ class BillaScraper(BaseScraper):
                 return None
             
             # Extract brand from cleaned name
-            brand = extract_brand_from_name(clean_name)
+            # Strip Billa noise phrases before brand extraction
+            brand_text = clean_name
+            for noise in ['Продукт, маркиран със синя звезда', 'Произход - България',
+                          'Произход България', 'Само с Billa Card', 'Само с Billa App',
+                          'От топлата витрина', 'От Billa пекарна', 'От деликатесната витрина',
+                          'До 5 бр. на клиент*', 'До 5 кг на клиент на ден*', 'Billa Ready']:
+                brand_text = brand_text.replace(noise, ' ')
+            brand_text = ' '.join(brand_text.split())
+            brand = extract_brand_from_name(brand_text, known_brands=KNOWN_BRANDS)
             
             # Extract quantity from cleaned name
             qty_value, qty_unit = parse_quantity_from_name(clean_name)

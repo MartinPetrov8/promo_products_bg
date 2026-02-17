@@ -10,6 +10,19 @@ import logging
 import requests
 from typing import List, Optional, Dict, Tuple
 from scrapers.base import BaseScraper, Store, RawProduct, extract_brand_from_name
+import json as _json
+from pathlib import Path as _Path
+
+def _load_known_brands():
+    try:
+        config_path = _Path(__file__).parent.parent.parent / 'config' / 'brands_enrichment.json'
+        with open(config_path) as f:
+            cfg = _json.load(f)
+        return set(cfg.get('bg_brands', []) + cfg.get('intl_brands', []) + cfg.get('lidl_brands', []))
+    except Exception:
+        return set()
+
+KNOWN_BRANDS = _load_known_brands()
 
 logger = logging.getLogger(__name__)
 
@@ -121,7 +134,7 @@ class KauflandScraper(BaseScraper):
                                 if klnr and klnr not in seen_klnr:
                                     seen_klnr.add(klnr)
                                     all_offers.append(offer)
-                        except:
+                        except (json.JSONDecodeError, ValueError):
                             pass
                         break
         
@@ -146,17 +159,17 @@ class KauflandScraper(BaseScraper):
         raw_description = offer.get("detailDescription", None)
         # Extract brand - multiple strategies
         # 1. Latin title = brand name
-        brand = extract_brand_from_name(title)
+        brand = extract_brand_from_name(title, known_brands=KNOWN_BRANDS)
         
         # 2. If Cyrillic title, check detailDescription first line for brand
         if not brand and raw_description:
             first_line = raw_description.split('\n')[0].strip()
             if first_line and first_line != title:
-                brand = extract_brand_from_name(first_line)
+                brand = extract_brand_from_name(first_line, known_brands=KNOWN_BRANDS)
         
         # 3. Check subtitle for brand
         if not brand and subtitle:
-            brand = extract_brand_from_name(subtitle)
+            brand = extract_brand_from_name(subtitle, known_brands=KNOWN_BRANDS)
         
         
         # Extract prices

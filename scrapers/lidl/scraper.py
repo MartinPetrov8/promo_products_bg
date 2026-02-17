@@ -312,16 +312,24 @@ def enrich_from_detail_pages(session: requests.Session, products: List[dict], ca
         # Check cache first
         if pid in cache:
             cached = cache[pid]
-            if not p.get('brand') and cached.get('brand'):
-                p['brand'] = cached['brand']
-            if not p.get('quantity_value') and cached.get('quantity_value'):
-                p['quantity_value'] = cached['quantity_value']
-                p['quantity_unit'] = cached.get('quantity_unit')
-            if cached.get('ocr_description'):
-                p['raw_description'] = cached['ocr_description']
-            continue
+            
+            # Retry failed entries after 1 hour
+            import time as _t
+            if cached.get('_failed'):
+                if _t.time() - cached.get('_ts', 0) < 3600:
+                    continue  # Still in cooldown
+                # else: fall through to re-fetch
+            else:
+                if not p.get('brand') and cached.get('brand'):
+                    p['brand'] = cached['brand']
+                if not p.get('quantity_value') and cached.get('quantity_value'):
+                    p['quantity_value'] = cached['quantity_value']
+                    p['quantity_unit'] = cached.get('quantity_unit')
+                if cached.get('ocr_description'):
+                    p['raw_description'] = cached['ocr_description']
+                continue
         
-        # Only fetch if missing brand OR quantity
+        # Only skip if we already have brand (main gap)
         if p.get('brand') and p.get('quantity_value'):
             continue
         
@@ -340,7 +348,9 @@ def enrich_from_detail_pages(session: requests.Session, products: List[dict], ca
             if detail.get('ocr_description'):
                 p['raw_description'] = detail['ocr_description']
         else:
-            cache[pid] = {}
+            # Mark as failed with timestamp so we can retry later
+            import time as _t
+            cache[pid] = {'_failed': True, '_ts': int(_t.time())}
         
         fetched += 1
         time.sleep(0.25)

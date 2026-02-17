@@ -118,12 +118,12 @@ def extract_brand(name: str, description: str = '', store: str = '') -> Optional
     """
     # Strip store-specific noise before matching
     clean_name = name
-    # Billa noise phrases
-    for noise in ['Продукт, маркиран със синя звезда', 'Произход - България',
-                   'Произход България', 'Само с Billa Card -', 'Само с Billa App',
-                   'От топлата витрина', 'От Billa пекарна', 'От деликатесната витрина',
-                   'До 5 бр. на клиент*', 'До 5 кг на клиент на ден*']:
-        clean_name = clean_name.replace(noise, ' ')
+    if store == 'Billa':
+        for noise in ['Продукт, маркиран със синя звезда', 'Произход - България',
+                       'Произход България', 'Само с Billa Card -', 'Само с Billa App',
+                       'От топлата витрина', 'От Billa пекарна', 'От деликатесната витрина',
+                       'До 5 бр. на клиент*', 'До 5 кг на клиент на ден*']:
+            clean_name = clean_name.replace(noise, ' ')
     
     text = f"{clean_name} {description}".strip()
     text_lower = text.lower()

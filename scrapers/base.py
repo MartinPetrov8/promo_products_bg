@@ -109,22 +109,49 @@ def parse_quantity_from_name(name: str) -> tuple:
         elif unit in ('л', 'l'):
             return value * 1000, 'ml'
     
+    # Pattern 2b: No space before unit ("1,2кг", "500мл")
+    match = re.search(r'(\d+(?:[.,]\d+)?)(г|g|кг|kg|мл|ml|л|l)\b', name_lower)
+    if match:
+        value = float(match.group(1).replace(',', '.'))
+        unit = match.group(2)
+        if unit in ('г', 'g'):
+            return value, 'g'
+        elif unit in ('кг', 'kg'):
+            return value * 1000, 'g'
+        elif unit in ('мл', 'ml'):
+            return value, 'ml'
+        elif unit in ('л', 'l'):
+            return value * 1000, 'ml'
+    
+    # Pattern 2c: Range ("250-300 г") — take first value
+    match = re.search(r'(\d+)\s*[-–]\s*\d+\s*(г|g|кг|kg|мл|ml|л|l)\b', name_lower)
+    if match:
+        value = float(match.group(1))
+        unit = match.group(2)
+        if unit in ('г', 'g'):
+            return value, 'g'
+        elif unit in ('кг', 'kg'):
+            return value * 1000, 'g'
+        elif unit in ('мл', 'ml'):
+            return value, 'ml'
+        elif unit in ('л', 'l'):
+            return value * 1000, 'ml'
+    
     # Pattern 3: "X бр" (count)
     match = re.search(r'(\d+)\s*бр\.?', name_lower)
     if match:
-        return float(match.group(1)), 'count'
+        return int(match.group(1)), 'count'
     
     return None, None
 
 
-def extract_brand_from_name(name: str) -> Optional[str]:
+def extract_brand_from_name(name: str, known_brands: set = None) -> Optional[str]:
     """
     Extract brand from product name.
     
-    Heuristic:
-    - If first word(s) are Latin text (not Cyrillic), likely a brand
-    - Common patterns: "Coca-Cola", "Dr. Oetker", "La Provincia"
-    - Stops at first Cyrillic word or common connectors (-, с, от)
+    Strategy (in priority order):
+    1. Match against known brands list (longest match wins) — handles Cyrillic + Latin
+    2. Extract Latin brand from start of name (heuristic fallback)
     
     Returns: brand name or None
     """
@@ -134,12 +161,24 @@ def extract_brand_from_name(name: str) -> Optional[str]:
     import re
     name = name.strip()
     
-    # Split into words
+    # Strategy 1: Known brands list (most reliable, handles Cyrillic)
+    if known_brands:
+        name_lower = name.lower()
+        for brand in sorted(known_brands, key=len, reverse=True):
+            if brand.lower() in name_lower:
+                # Word boundary check to prevent substring matches
+                pattern = re.compile(
+                    r'(?:^|[\s,\-\(])' + re.escape(brand) + r'(?:[\s,\-\)\.:]|$)',
+                    re.IGNORECASE
+                )
+                if pattern.search(name):
+                    return brand
+    
+    # Strategy 2: Latin text at start of name = likely brand
     words = name.split()
     if not words:
         return None
     
-    # Check first word - if it's Latin alphabet, it's likely a brand
     first_word = words[0]
     
     # Remove common prefixes
@@ -149,39 +188,27 @@ def extract_brand_from_name(name: str) -> Optional[str]:
         else:
             return None
     
-    # Check if first word is Latin (has Latin letters, no Cyrillic)
     has_latin = bool(re.search(r'[a-zA-Z]', first_word))
     has_cyrillic = bool(re.search(r'[а-яА-Я]', first_word))
     
     if has_latin and not has_cyrillic:
-        # Collect consecutive Latin words
         brand_parts = [first_word]
         
         for i, word in enumerate(words[1:], 1):
-            # Stop at Cyrillic words
             if re.search(r'[а-яА-Я]', word):
                 break
-            
-            # Stop at connectors
             if word.lower() in ('-', 'с', 'от', 'за'):
                 break
-            
-            # Include if Latin or special chars (Dr., &, etc.)
             if re.search(r'[a-zA-Z]', word) or word in ('&', '+'):
                 brand_parts.append(word)
             else:
                 break
-            
-            # Don't go too far (max 3 words for brand)
             if i >= 2:
                 break
         
         brand = ' '.join(brand_parts).strip()
-        
-        # Clean up trailing punctuation
         brand = re.sub(r'[,\-:]+$', '', brand).strip()
         
-        # Only return if it's not empty and not too long
         if brand and len(brand) >= 2 and len(brand) <= 50:
             return brand
     
