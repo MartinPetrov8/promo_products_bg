@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "description": "Known brands for post-scrape enrichment. Longest match wins.",
+  "bg_brands": [
+    "Българска ферма", "Деликатес Житница", "Ел Би Булгарикум", "Родна Стреха",
+    "Стара планина", "Бисер Олива", "Горна Баня", "Златен лъв", "Нова Загора",
+    "Еко Мес", "Тандем", "Перелик", "КФМ", "Орехите", "Градус", "Родопа",
+    "Кен", "Кенар", "Маджаров", "Елит", "Свежест", "Живкови", "Крина", "Пилко",
+    "Верея", "Данон", "Кремио", "Бисер", "Мадара", "Боровец", "Преслав",
+    "Калиакра", "Олинеза", "Краси", "Домат", "Звезда",
+    "Девин", "Банкя", "Хисар", "Загорка", "Каменица", "Пиринско", "Шуменско",
+    "Ариана", "Болярка", "Престиж", "Добруджа", "Лидер",
+    "Фамилекс", "Бела", "Медикс"
+  ],
+  "intl_brands": [
+    "Coca-Cola", "Pepsi", "Fanta", "Sprite", "Schweppes", "Red Bull",
+    "Nestlé", "Nestle", "Danone", "Activia", "Milka", "Oreo",
+    "Barilla", "Panzani", "Knorr", "Maggi", "Hellmann", "Heinz",
+    "Nutella", "Ferrero", "Kinder", "Raffaello", "Lindt", "Toblerone",
+    "Mars", "Snickers", "Twix", "Bounty", "Skittles",
+    "Pringles", "Lays", "Doritos", "Ruffles", "Chio",
+    "Jacobs", "Nescafe", "Lavazza", "Tchibo", "Illy",
+    "Lipton", "Ahmad", "Twinings",
+    "Philadelphia", "President", "Galbani", "Arla",
+    "Bonduelle", "Del Monte",
+    "Johnnie Walker", "Jack Daniel", "Jim Beam",
+    "Smirnoff", "Absolut", "Bacardi", "Havana Club",
+    "Heineken", "Guinness", "Corona", "Amstel", "Stella Artois",
+    "Persil", "Ariel", "Tide", "Fairy", "Domestos", "Cif",
+    "Vanish", "Finish", "Somat", "Calgon",
+    "Colgate", "Oral-B", "Signal", "Sensodyne",
+    "Nivea", "Dove", "Rexona", "Head & Shoulders", "Pantene",
+    "Pampers", "Huggies", "Whiskas", "Pedigree", "Felix",
+    "K-Classic", "K-Favourites", "K-Bio", "Billa", "Clever"
+  ],
+  "lidl_brands": [
+    "Milbona", "Pilos", "Cien", "Silvercrest", "Parkside", "Livarno",
+    "Esmara", "Livergy", "Ernesto", "Crivit", "Baresa", "Italiamo",
+    "Vitasia", "Kania", "Freshona", "Solevita", "Freeway", "Chef Select",
+    "Snack Day", "Tastino", "Bellarom", "Pikok", "Favorina", "Fin Carré",
+    "Perlenbacher", "Argus", "Trattoria Alfredo", "Combino", "Deluxe",
+    "W5", "Formil", "Dentalux", "Floralys", "Coshida", "Orlando",
+    "Lupilu", "Toujours", "Nevadent", "Auriol", "Sanino",
+    "Siti", "Purio", "Lord Nelson", "Tower"
+  ]
+}
