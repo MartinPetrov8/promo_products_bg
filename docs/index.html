@@ -287,7 +287,8 @@
                 const res = await fetch('data/image_mapping.json');
                 if (!res.ok) throw new Error('HTTP ' + res.status);
                 const json = await res.json();
-                IMAGE_CONFIG = { basePath: json.base_path || 'images/products/', mappings: json.mappings || [] };
+                if (!Array.isArray(json.mappings)) throw new Error('Invalid mapping format');
+                IMAGE_CONFIG = { basePath: json.base_path || 'images/products/', mappings: json.mappings };
             } catch (err) {
                 console.warn('Image mappings not loaded, using defaults:', err.message);
             }
@@ -372,7 +373,8 @@
         
         function getNutriscore(product) {
             if (!product?.off_barcode || !data?.off?.[product.off_barcode]) return null;
-            return data.off[product.off_barcode].nutriscore?.toLowerCase() || null;
+            const score = data.off[product.off_barcode].nutriscore?.toLowerCase();
+            return /^[a-e]$/.test(score) ? score : null;
         }
         
         function getGroupProducts(groupId) {
@@ -526,7 +528,7 @@
                 
                 return '<div class="product-card bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-lg ' + (hasComparison ? 'cursor-pointer' : '') + '" data-group-id="' + (hasComparison ? escapeHtml(p.group_id || '') : '') + '">' +
                     '<div class="relative">' +
-                        (p.discount_pct ? '<div class="discount-badge absolute top-2 right-2 text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg">-' + p.discount_pct + '%</div>' : '') +
+                        (p.discount_pct ? '<div class="discount-badge absolute top-2 right-2 text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg">-' + parseInt(p.discount_pct) + '%</div>' : '') +
                         (nutriscore ? '<div class="absolute top-2 left-2 nutriscore-' + nutriscore + ' text-white text-xs font-bold px-2 py-1 rounded-lg uppercase">' + nutriscore + '</div>' : '') +
                         (hasComparison ? '<div class="absolute bottom-2 left-2 match-badge text-white text-xs font-bold px-2 py-1 rounded-full">🔗 Сравни</div>' : '') +
                         (function() {
@@ -538,7 +540,7 @@
                 })() +
                     '</div>' +
                     '<div class="p-3 sm:p-4">' +
-                        '<div class="text-xs text-gray-400 mb-1">' + p.store + '</div>' +
+                        '<div class="text-xs text-gray-400 mb-1">' + escapeHtml(p.store) + '</div>' +
                         '<h4 class="font-semibold text-sm leading-tight mb-2 line-clamp-2" title="' + safeDisplayName + '">' + safeDisplayName.slice(0, 45) + (safeDisplayName.length > 45 ? '...' : '') + '</h4>' +
                         '<div class="flex items-baseline gap-2">' +
                             '<span class="' + (p.price > 99 ? 'text-base' : 'text-xl') + ' font-bold text-green-600">' + (p.price?.toFixed(2) || '-') + 'лв</span>' +
@@ -595,7 +597,7 @@
                         return '<div class="price-compare-card flex items-center gap-3 p-4 rounded-xl ' + (isBest ? 'best-price' : isPM ? 'bg-blue-50 border-2 border-blue-200' : 'bg-gray-50 border border-gray-100') + '">' +
                             '<span class="text-3xl">' + getStoreEmoji(p.store) + '</span>' +
                             '<div class="flex-1">' +
-                                '<div class="font-semibold text-gray-800">' + p.store + '</div>' +
+                                '<div class="font-semibold text-gray-800">' + escapeHtml(p.store) + '</div>' +
                                 '<div class="text-xs text-gray-500 truncate" title="' + escapeHtml(cleanedName) + '">' + escapeHtml(cleanedName).slice(0, 35) + (cleanedName.length > 35 ? '...' : '') + '</div>' +
                                 '<div class="text-xs text-gray-400">' + (p.price_per_kg ? '📦 ' + p.price_per_kg.toFixed(2) + 'лв/кг' : '') + (p.price_per_l ? '📦 ' + p.price_per_l.toFixed(2) + 'лв/л' : '') + '</div>' +
                             '</div>' +
