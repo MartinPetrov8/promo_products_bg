@@ -1,6 +1,6 @@
 """
 Billa Live Scraper - from ssbbilla.site accessibility version
-Cleans promo prefixes from product names
+Improved version with brand, quantity, discount, description extraction
 """
 import re
 import time
@@ -9,7 +9,7 @@ import logging
 import requests
 from bs4 import BeautifulSoup
 from typing import List, Optional
-from scrapers.base import BaseScraper, Store, RawProduct
+from scrapers.base import BaseScraper, Store, RawProduct, extract_brand_from_name, parse_quantity_from_name
 
 logger = logging.getLogger(__name__)
 
@@ -108,38 +108,82 @@ class BillaScraper(BaseScraper):
             if clean_name in seen_names:
                 return None
             
-            # Get prices
-            price_spans = div.find_all(class_='price')
-            currency_spans = div.find_all(class_='currency')
+            # Extract brand from cleaned name
+            brand = extract_brand_from_name(clean_name)
             
-            if not price_spans:
-                return None
+            # Extract quantity from cleaned name
+            qty_value, qty_unit = parse_quantity_from_name(clean_name)
+            
+            # Extract discount percentage
+            discount_pct = None
+            discount_div = div.find(class_='discount')
+            if discount_div:
+                discount_text = discount_div.get_text(strip=True)
+                # Pattern: "- 56%" or "56%"
+                match = re.search(r'[-–]?\s*(\d+)\s*%', discount_text)
+                if match:
+                    discount_pct = float(match.group(1))
+            
+            # Get prices - need to handle old/new price pairs better
+            price_divs = div.find_all('div')
             
             prices_eur = []
             prices_bgn = []
             
-            for i, price_span in enumerate(price_spans):
-                try:
-                    value = float(price_span.get_text(strip=True).replace(',', '.'))
-                    if i < len(currency_spans):
-                        curr = currency_spans[i].get_text(strip=True)
-                        if '€' in curr:
-                            prices_eur.append(value)
-                        elif 'лв' in curr:
-                            prices_bgn.append(value)
-                except (ValueError, AttributeError):
-                    continue
+            # Look for price text indicators
+            old_price_bgn = None
+            current_price_bgn = None
             
-            if not prices_eur and not prices_bgn:
-                return None
+            for i, price_div in enumerate(price_divs):
+                text = price_div.get_text(strip=True)
+                
+                # Check if this is a price label
+                if text in ['ПРЕДИШНАЦЕНА', 'НОВАЦЕНА']:
+                    # Next div should have the price
+                    if i + 1 < len(price_divs):
+                        next_div = price_divs[i + 1]
+                        price_text = next_div.get_text(strip=True)
+                        
+                        # Parse EUR and BGN from combined text like "8.18€16.00лв."
+                        eur_match = re.search(r'([\d,\.]+)\s*€', price_text)
+                        bgn_match = re.search(r'([\d,\.]+)\s*лв', price_text, re.IGNORECASE)
+                        
+                        if bgn_match:
+                            price = float(bgn_match.group(1).replace(',', '.'))
+                            if text == 'ПРЕДИШНАЦЕНА':
+                                old_price_bgn = price
+                            elif text == 'НОВАЦЕНА':
+                                current_price_bgn = price
             
-            prices_eur.sort()
-            prices_bgn.sort()
+            # Fallback: use old method if new parsing didn't work
+            if not current_price_bgn:
+                price_spans = div.find_all(class_='price')
+                currency_spans = div.find_all(class_='currency')
+                
+                for i, price_span in enumerate(price_spans):
+                    try:
+                        value = float(price_span.get_text(strip=True).replace(',', '.'))
+                        if i < len(currency_spans):
+                            curr = currency_spans[i].get_text(strip=True)
+                            if '€' in curr:
+                                prices_eur.append(value)
+                            elif 'лв' in curr:
+                                prices_bgn.append(value)
+                    except (ValueError, AttributeError):
+                        continue
+                
+                if prices_bgn:
+                    prices_bgn.sort()
+                    current_price_bgn = prices_bgn[0]
+                    if len(prices_bgn) > 1:
+                        old_price_bgn = prices_bgn[-1]
+                elif prices_eur:
+                    prices_eur.sort()
+                    current_price_bgn = prices_eur[0] * EUR_BGN_RATE
+                    if len(prices_eur) > 1:
+                        old_price_bgn = prices_eur[-1] * EUR_BGN_RATE
             
-            price_bgn = prices_bgn[0] if prices_bgn else (prices_eur[0] * EUR_BGN_RATE if prices_eur else None)
-            old_price_bgn = prices_bgn[-1] if len(prices_bgn) > 1 else None
-            
-            if not price_bgn:
+            if not current_price_bgn:
                 return None
             
             seen_names.add(clean_name)
@@ -150,11 +194,55 @@ class BillaScraper(BaseScraper):
             return RawProduct(
                 store=self.store.value,
                 sku=RawProduct.generate_sku(clean_name),
-                raw_name=clean_name,  # Use cleaned name
-                price_bgn=round(price_bgn, 2),
+                raw_name=clean_name,
+                raw_description=clean_name,  # Best we have for Billa
+                brand=brand,
+                price_bgn=round(current_price_bgn, 2),
                 old_price_bgn=round(old_price_bgn, 2) if old_price_bgn else None,
+                discount_pct=discount_pct,
+                quantity_value=qty_value,
+                quantity_unit=qty_unit,
                 image_url=image_url,
             )
         except Exception as e:
             logger.debug(f"Parse error: {e}")
             return None
+
+
+def main():
+    logging.basicConfig(level=logging.INFO)
+    scraper = BillaScraper()
+    products = scraper.scrape()
+    
+    with_qty = sum(1 for p in products if p.quantity_value)
+    with_brand = sum(1 for p in products if p.brand)
+    with_desc = sum(1 for p in products if p.raw_description)
+    with_old = sum(1 for p in products if p.old_price_bgn)
+    with_disc = sum(1 for p in products if p.discount_pct)
+    
+    print(f"\n{'='*70}")
+    print(f"BILLA SCRAPER RESULTS")
+    print(f"{'='*70}")
+    print(f"Total products:      {len(products)}")
+    print(f"With brand:          {with_brand:4d} ({100*with_brand/len(products):5.1f}%)")
+    print(f"With quantity:       {with_qty:4d} ({100*with_qty/len(products):5.1f}%)")
+    print(f"With description:    {with_desc:4d} ({100*with_desc/len(products):5.1f}%)")
+    print(f"With old_price:      {with_old:4d} ({100*with_old/len(products):5.1f}%)")
+    print(f"With discount:       {with_disc:4d} ({100*with_disc/len(products):5.1f}%)")
+    
+    print(f"\n{'='*70}")
+    print(f"SAMPLE PRODUCTS (first 5)")
+    print(f"{'='*70}")
+    for i, p in enumerate(products[:5], 1):
+        qty = f"{p.quantity_value} {p.quantity_unit}" if p.quantity_value else '-'
+        old = f"(was {p.old_price_bgn:.2f})" if p.old_price_bgn else ''
+        disc = f"-{p.discount_pct}%" if p.discount_pct else ''
+        brand = p.brand or '-'
+        
+        print(f"\n[{i}] {p.raw_name}")
+        print(f"    Brand:       {brand}")
+        print(f"    Price:       {p.price_bgn:.2f}лв {old} {disc}")
+        print(f"    Quantity:    {qty}")
+
+if __name__ == '__main__':
+    main()

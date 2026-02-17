@@ -1,6 +1,6 @@
 """
 Kaufland Live Scraper - Extracts from offers page
-Now with quantity extraction from unit field
+Improved version with brand, description, discount, old_price
 """
 import json
 import re
@@ -9,7 +9,7 @@ import random
 import logging
 import requests
 from typing import List, Optional, Dict, Tuple
-from scrapers.base import BaseScraper, Store, RawProduct
+from scrapers.base import BaseScraper, Store, RawProduct, extract_brand_from_name
 
 logger = logging.getLogger(__name__)
 
@@ -136,6 +136,19 @@ class KauflandScraper(BaseScraper):
         
         subtitle = offer.get('subtitle', '')
         
+        # Combine title + subtitle for full product name
+        if subtitle:
+            raw_name = f"{title} {subtitle}"
+        else:
+            raw_name = title
+        
+        # Extract brand from title (not subtitle)
+        # If title is Latin text, it's likely the brand
+        brand = extract_brand_from_name(title)
+        
+        # Get detailDescription as raw_description
+        raw_description = offer.get('detailDescription', None)
+        
         # Extract prices
         prices = offer.get('prices', {}).get('alternative', {}).get('formatted', {})
         price_bgn = parse_bgn_price(prices.get('standard'))
@@ -143,6 +156,11 @@ class KauflandScraper(BaseScraper):
         
         if not price_bgn:
             return None
+        
+        # Extract discount percentage
+        discount_pct = offer.get('discount')
+        if discount_pct == 0:
+            discount_pct = None
         
         # Extract quantity from unit field
         unit_text = offer.get('unit', '')
@@ -155,11 +173,13 @@ class KauflandScraper(BaseScraper):
         return RawProduct(
             store=self.store.value,
             sku=str(kl_nr),
-            raw_name=title,
-            raw_subtitle=subtitle,
-            brand=offer.get('brand'),
+            raw_name=raw_name,
+            raw_subtitle=subtitle if subtitle else None,
+            raw_description=raw_description,
+            brand=brand,
             price_bgn=price_bgn,
             old_price_bgn=old_price_bgn,
+            discount_pct=discount_pct,
             quantity_value=qty_value,
             quantity_unit=qty_unit,
             image_url=image_url,
@@ -172,12 +192,36 @@ def main():
     products = scraper.scrape()
     
     with_qty = sum(1 for p in products if p.quantity_value)
-    print(f"\nKaufland: {len(products)} products, {with_qty} with quantity ({100*with_qty/len(products):.0f}%)")
+    with_brand = sum(1 for p in products if p.brand)
+    with_desc = sum(1 for p in products if p.raw_description)
+    with_old = sum(1 for p in products if p.old_price_bgn)
+    with_disc = sum(1 for p in products if p.discount_pct)
     
-    print("\n=== SAMPLE ===")
-    for p in products[:10]:
+    print(f"\n{'='*70}")
+    print(f"KAUFLAND SCRAPER RESULTS")
+    print(f"{'='*70}")
+    print(f"Total products:      {len(products)}")
+    print(f"With brand:          {with_brand:4d} ({100*with_brand/len(products):5.1f}%)")
+    print(f"With quantity:       {with_qty:4d} ({100*with_qty/len(products):5.1f}%)")
+    print(f"With description:    {with_desc:4d} ({100*with_desc/len(products):5.1f}%)")
+    print(f"With old_price:      {with_old:4d} ({100*with_old/len(products):5.1f}%)")
+    print(f"With discount:       {with_disc:4d} ({100*with_disc/len(products):5.1f}%)")
+    
+    print(f"\n{'='*70}")
+    print(f"SAMPLE PRODUCTS (first 5)")
+    print(f"{'='*70}")
+    for i, p in enumerate(products[:5], 1):
         qty = f"{p.quantity_value} {p.quantity_unit}" if p.quantity_value else '-'
-        print(f"{p.raw_name[:35]:35} | {p.price_bgn:.2f}лв | {qty}")
+        old = f"(was {p.old_price_bgn:.2f})" if p.old_price_bgn else ''
+        disc = f"-{p.discount_pct}%" if p.discount_pct else ''
+        brand = p.brand or '-'
+        desc = (p.raw_description[:50] + '...') if p.raw_description and len(p.raw_description) > 50 else (p.raw_description or '-')
+        
+        print(f"\n[{i}] {p.raw_name}")
+        print(f"    Brand:       {brand}")
+        print(f"    Price:       {p.price_bgn:.2f}лв {old} {disc}")
+        print(f"    Quantity:    {qty}")
+        print(f"    Description: {desc}")
 
 if __name__ == '__main__':
     main()
