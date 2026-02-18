@@ -29,8 +29,10 @@ from typing import Tuple, List, Optional
 
 # Constants
 README_PATH = "/home/node/.openclaw/workspace/promo_products_bg/README_test.md"
-REQUIRED_SECTIONS = ["Features", "Quick Start", "Project Structure"]
+REQUIRED_SECTIONS = ["Features", "Technology Stack", "Project Structure"]
+REQUIRED_STORES = ["Kaufland", "Lidl", "Billa"]
 MIN_FILE_SIZE = 0  # bytes
+MIN_WORD_COUNT = 200  # words
 
 
 def validate_file_exists() -> Tuple[bool, str]:
@@ -117,11 +119,38 @@ def validate_title_header() -> Tuple[bool, str]:
         return False, f"Failed to read file: {e}"
 
 
+def validate_overview_paragraph() -> Tuple[bool, str]:
+    """
+    Verify README has an overview paragraph between the title and first section.
+    
+    Returns:
+        Tuple of (success: bool, message: str)
+    """
+    try:
+        with open(README_PATH, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Find content between title (# ...) and first section (## ...)
+        match = re.search(r'^# .+?\n\n(.+?)(?=\n##|\Z)', content, re.MULTILINE | re.DOTALL)
+        
+        if not match:
+            return False, "No overview paragraph found after title"
+        
+        overview = match.group(1).strip()
+        if len(overview) < 20:
+            return False, f"Overview paragraph too short: {len(overview)} characters"
+        
+        return True, f"Overview paragraph present ({len(overview)} characters)"
+    
+    except OSError as e:
+        return False, f"Failed to read file: {e}"
+
+
 def validate_required_sections() -> Tuple[bool, str]:
     """
     Check that all required sections are present using grep-like pattern matching.
     
-    Required sections: Features, Quick Start, Project Structure
+    Required sections: Features, Technology Stack, Project Structure
     
     Returns:
         Tuple of (success: bool, message: str)
@@ -215,6 +244,59 @@ def validate_has_content_sections() -> Tuple[bool, str]:
         return False, f"Failed to read file: {e}"
 
 
+def validate_word_count() -> Tuple[bool, str]:
+    """
+    Verify README has minimum word count (200+ words).
+    
+    Returns:
+        Tuple of (success: bool, message: str)
+    """
+    try:
+        with open(README_PATH, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Count words (split on whitespace)
+        words = content.split()
+        word_count = len(words)
+        
+        if word_count < MIN_WORD_COUNT:
+            return False, f"Insufficient word count: {word_count} words (minimum {MIN_WORD_COUNT} required)"
+        
+        return True, f"Word count: {word_count} words (exceeds minimum of {MIN_WORD_COUNT})"
+    
+    except OSError as e:
+        return False, f"Failed to read file: {e}"
+
+
+def validate_store_names() -> Tuple[bool, str]:
+    """
+    Verify all three store names are mentioned (Kaufland, Lidl, Billa).
+    
+    Returns:
+        Tuple of (success: bool, message: str)
+    """
+    try:
+        with open(README_PATH, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        missing_stores: List[str] = []
+        found_stores: List[str] = []
+        
+        for store in REQUIRED_STORES:
+            if store in content:
+                found_stores.append(store)
+            else:
+                missing_stores.append(store)
+        
+        if missing_stores:
+            return False, f"Missing store names: {', '.join(missing_stores)}"
+        
+        return True, f"All store names present: {', '.join(found_stores)}"
+    
+    except OSError as e:
+        return False, f"Failed to read file: {e}"
+
+
 def run_validation(name: str, validator_func) -> bool:
     """
     Run a validation function and print formatted results.
@@ -263,7 +345,10 @@ def main() -> int:
         ("File Size > 0 Bytes", validate_file_size),
         ("UTF-8 Encoding", validate_utf8_encoding),
         ("Title Header Present", validate_title_header),
+        ("Overview Paragraph Present", validate_overview_paragraph),
         ("Required Sections Present", validate_required_sections),
+        ("Minimum Word Count (200+)", validate_word_count),
+        ("All Store Names Mentioned", validate_store_names),
         ("Markdown Syntax Valid", validate_markdown_syntax),
         ("Substantive Content", validate_has_content_sections),
     ]
