@@ -74,6 +74,186 @@ The project follows a modular architecture with clear separation between scrapin
 - **Vendored Dependencies**: Dependencies stored in .pylibs/ directory
 - **Direct Script Execution**: No build step, Python scripts run directly
 
+## Architecture
+
+### System Design Overview
+
+Promo Products BG follows a multi-stage pipeline architecture that transforms raw promotional data from Bulgarian grocery stores into enriched, matchable product information for web-based price comparison.
+
+```
+┌─────────────┐    ┌────────────────┐    ┌──────────────┐    ┌─────────────┐
+│  Scrapers   │───▶│ Normalization  │───▶│   Matching   │───▶│  Export     │
+│  (K/L/B)    │    │ & Enrichment   │    │   Pipeline   │    │  & API      │
+└─────────────┘    └────────────────┘    └──────────────┘    └─────────────┘
+     │                    │                     │                    │
+     ▼                    ▼                     ▼                    ▼
+ Raw JSON          Product Cleaning      OFF Integration      JSON Export
+ Scrapes           Brand/Qty Extract     Cross-Store Match    GitHub Pages
+```
+
+**Data Flow:**
+
+1. **Scraping Layer** - Store-specific scrapers extract promotional products
+   - Kaufland: 800+ products from website
+   - Lidl: 300+ products from promotional catalog
+   - Billa: 400+ products from weekly offers
+   - Raw data saved to JSON files for audit trail
+
+2. **Normalization Layer** - Product cleaning and enrichment
+   - Brand extraction from product names
+   - Quantity parsing (weights, volumes, multipacks)
+   - Price validation and currency conversion
+   - Text normalization (Cyrillic/Latin handling)
+
+3. **Matching Layer** - Multi-strategy product matching
+   - **Barcode matching**: Exact EAN lookup (100% confidence)
+   - **Token matching**: Weighted Jaccard similarity on tokenized names
+   - **Transliteration matching**: Cyrillic→Latin conversion for cross-script matching
+   - **Embedding matching**: LaBSE semantic similarity (≥0.75 threshold)
+   - **Fuzzy matching**: SequenceMatcher fallback for near-matches
+
+4. **Export Layer** - API and frontend data generation
+   - JSON export for web interface
+   - Cross-store price comparison data
+   - Nutritional information from OpenFoodFacts
+   - Static site deployment to GitHub Pages
+
+### Database Architecture
+
+The system uses two SQLite databases for persistent storage:
+
+#### 1. promobg.db (Main Product Database)
+
+**Core Tables:**
+- `scan_runs` - Tracks each scraping run (timestamp, store, product count, status)
+- `raw_scrapes` - Raw scraped data for historical tracking and reprocessing
+- `products` - Cleaned and normalized product data with extracted attributes
+- `prices` - Current and historical price data across stores
+- `store_products` - Store-specific product information (SKU, URL, image, status)
+- `cross_store_matches` - Links between products across different stores
+- `product_off_matches` - Links between store products and OpenFoodFacts entries
+
+**Schema Highlights:**
+```sql
+products (
+    id, name, normalized_name, brand,
+    quantity, unit, category_code, category_name,
+    barcode_ean, image_url, created_at, updated_at
+)
+
+store_products (
+    id, product_id, store_id,
+    external_id, status, last_seen_at,
+    product_url, image_url
+)
+
+prices (
+    id, store_product_id,
+    current_price, old_price, discount_percent,
+    recorded_at
+)
+
+product_off_matches (
+    id, product_id, off_product_id,
+    match_type, match_confidence, is_verified,
+    created_at
+)
+```
+
+#### 2. off_bulgaria.db (OpenFoodFacts Cache)
+
+- **Purpose**: Local cache of OpenFoodFacts Bulgaria entries for offline matching
+- **Size**: 14,853 products with nutritional data
+- **Contents**: Product names, barcodes, Nutri-Score, ingredients, allergens
+- **Update**: Periodic sync with OpenFoodFacts API
+
+### Matching Pipeline
+
+The matching pipeline connects store products to OpenFoodFacts entries and enables cross-store price comparison through a three-phase approach:
+
+**Phase 1a: Token & Barcode Matching**
+- Barcode match (100% confidence): Exact EAN lookup in OFF database
+- Token match (60-95% confidence): Weighted Jaccard similarity on normalized tokens
+- Fuzzy match (40-60% confidence): SequenceMatcher fallback for partial matches
+- **Result**: 2,716 matches (2,415 token + 288 barcode + 13 fuzzy)
+
+**Phase 1b: Transliteration Matching**
+- Cyrillic→Latin transliteration for unmatched products
+- Confidence tiers:
+  - `translit_confident` (≥0.85): 11 matches
+  - `translit_likely` (0.75-0.84): 61 matches
+  - `translit_low` (0.60-0.74): 433 matches
+- **Result**: +505 additional matches
+
+**Phase 2: Embedding-Based Semantic Matching**
+- LaBSE (Language-agnostic BERT Sentence Embeddings)
+- Cosine similarity ≥0.75 threshold
+- Confidence tiers:
+  - `embedding_confident` (≥0.85): 1 match
+  - `embedding_likely` (0.75-0.84): 13 matches
+- **Result**: +14 additional matches
+
+**Overall Performance:**
+- **Total store products**: 5,113
+- **Successfully matched**: 3,235 (63.3%)
+- **Unmatched**: 1,878 (primarily local Bulgarian brands not in OpenFoodFacts)
+
+### Match Type Distribution
+
+| Match Type | Count | Confidence Range | Use Case |
+|------------|-------|------------------|----------|
+| token | 2,415 | 60-95% | Primary matching method |
+| translit_low | 433 | 60-74% | Cyrillic/Latin variations |
+| barcode | 288 | 100% | Exact product identification |
+| translit_likely | 61 | 75-84% | High-confidence transliteration |
+| fuzzy | 13 | 40-60% | Near-match fallback |
+| embedding_likely | 13 | 75-84% | Semantic similarity |
+| translit_confident | 11 | ≥85% | Very high-confidence transliteration |
+| embedding_confident | 1 | ≥85% | Very high semantic similarity |
+
+### Cross-Store Matching
+
+Products from different stores can be linked via shared OpenFoodFacts barcode, enabling price comparison:
+
+```sql
+-- Find same products across multiple stores
+SELECT off_product_id, GROUP_CONCAT(DISTINCT store_name)
+FROM product_off_matches pom
+JOIN products p ON pom.product_id = p.id
+JOIN store_products sp ON sp.product_id = p.id
+JOIN stores s ON sp.store_id = s.id
+GROUP BY off_product_id
+HAVING COUNT(DISTINCT s.id) > 1;
+```
+
+### Performance Metrics
+
+**Current System Performance:**
+- **Products processed**: 5,113 across 3 stores
+- **Match rate**: 63.3% (3,235/5,113 matched to OpenFoodFacts)
+- **Cross-store groups**: 162 high-quality matches (0.92+ confidence)
+- **Price comparison coverage**: 82 products with valid cross-store pricing
+- **Categories classified**: 29 GS1 GPC categories
+- **Daily scraping capacity**: 1,500+ products per run
+- **Average scrape time**: 15-20 minutes for all stores
+- **Database size**: ~50MB (promobg.db + off_bulgaria.db)
+
+**Store-Level Metrics:**
+
+| Store | Products | Brand Coverage | Quantity Coverage | Avg Price |
+|-------|----------|----------------|-------------------|-----------|
+| Kaufland | 800+ | 68% | 39% | €2.50 |
+| Lidl | 300+ | 37% | 33% | €2.20 |
+| Billa | 400+ | 35% | 53% | €2.80 |
+
+### Related Documentation
+
+For detailed architecture documentation, see:
+- **[DAILY_SCAN_ARCHITECTURE.md](./DAILY_SCAN_ARCHITECTURE.md)** - Daily scraping workflow and incremental updates
+- **[MATCHING_PIPELINE.md](./docs/MATCHING_PIPELINE.md)** - Detailed matching algorithm documentation
+- **[DATA_PIPELINE.md](./docs/DATA_PIPELINE.md)** - Complete data flow and transformation pipeline
+- **[ARCHITECTURE.md](./docs/ARCHITECTURE.md)** - System overview and component design
+
 ## Project Structure
 
 ```
