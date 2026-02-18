@@ -170,16 +170,8 @@
       "image": "kiselo-zele.png"
     },
     {
-      "keyword": "концентрати",
-      "image": "alkohol.png"
-    },
-    {
       "keyword": "гъби пресни",
       "image": "gubi.png"
-    },
-    {
-      "keyword": "зеленчукови",
-      "image": "presni-podpravki.png"
     },
     {
       "keyword": "субпродукти",
@@ -202,10 +194,6 @@
       "image": "malotraini-kolbasi.png"
     },
     {
-      "keyword": "обработена",
-      "image": "obrabotena-riba.png"
-    },
-    {
       "keyword": "макаронени",
       "image": "makaroneni-izdeliq.png"
     },
@@ -222,20 +210,8 @@
       "image": "kashkaval.png"
     },
     {
-      "keyword": "омекотител",
-      "image": "voda.png"
-    },
-    {
-      "keyword": "паста зъби",
-      "image": "voda.png"
-    },
-    {
       "keyword": "подправки",
       "image": "podpravki.png"
-    },
-    {
-      "keyword": "замразена",
-      "image": "riba.png"
     },
     {
       "keyword": "конфитюри",
@@ -256,10 +232,6 @@
     {
       "keyword": "coca-cola",
       "image": "gazirani-napitki.png"
-    },
-    {
-      "keyword": "почистващ",
-      "image": "voda.png"
     },
     {
       "keyword": "хляб бял",
@@ -342,18 +314,6 @@
       "image": "citrusi.png"
     },
     {
-      "keyword": "майонеза",
-      "image": "ocet.png"
-    },
-    {
-      "keyword": "препарат",
-      "image": "voda.png"
-    },
-    {
-      "keyword": "замразен",
-      "image": "riba.png"
-    },
-    {
       "keyword": "сланина",
       "image": "slanina.png"
     },
@@ -431,7 +391,7 @@
     },
     {
       "keyword": "телешко",
-      "image": "agneshko.png"
+      "image": "svinsko.png"
     },
     {
       "keyword": "кюфтета",
@@ -474,24 +434,8 @@
       "image": "citrusi.png"
     },
     {
-      "keyword": "орхидея",
-      "image": "presni-podpravki.png"
-    },
-    {
       "keyword": "горчица",
       "image": "podpravki.png"
-    },
-    {
-      "keyword": "перилен",
-      "image": "voda.png"
-    },
-    {
-      "keyword": "шампоан",
-      "image": "voda.png"
-    },
-    {
-      "keyword": "душ гел",
-      "image": "voda.png"
     },
     {
       "keyword": "скумрия",
@@ -558,16 +502,8 @@
       "image": "luk.png"
     },
     {
-      "keyword": "печени",
-      "image": "tikva.png"
-    },
-    {
       "keyword": "млечни",
       "image": "mlechni-masla.png"
-    },
-    {
-      "keyword": "прясна",
-      "image": "riba.png"
     },
     {
       "keyword": "трайни",
@@ -588,10 +524,6 @@
     {
       "keyword": "сладка",
       "image": "konfitur.png"
-    },
-    {
-      "keyword": "сушени",
-      "image": "podpravki.png"
     },
     {
       "keyword": "сокове",
@@ -615,7 +547,7 @@
     },
     {
       "keyword": "шницел",
-      "image": "pileshko.png"
+      "image": "svinsko.png"
     },
     {
       "keyword": "йогурт",
@@ -644,10 +576,6 @@
     {
       "keyword": "багета",
       "image": "hlqb-bql.png"
-    },
-    {
-      "keyword": "зюмбюл",
-      "image": "presni-podpravki.png"
     },
     {
       "keyword": "кетчуп",
@@ -738,10 +666,6 @@
       "image": "malotraini-kolbasi.png"
     },
     {
-      "keyword": "масло",
-      "image": "mlechni-masla.png"
-    },
-    {
       "keyword": "крема",
       "image": "mlechni-masla.png"
     },
@@ -788,18 +712,6 @@
     {
       "keyword": "манго",
       "image": "citrusi.png"
-    },
-    {
-      "keyword": "кокос",
-      "image": "citrusi.png"
-    },
-    {
-      "keyword": "цветя",
-      "image": "presni-podpravki.png"
-    },
-    {
-      "keyword": "сапун",
-      "image": "voda.png"
     },
     {
       "keyword": "оцет",
@@ -854,10 +766,6 @@
       "image": "dinq-pupesh.png"
     },
     {
-      "keyword": "смес",
-      "image": "kaima.png"
-    },
-    {
       "keyword": "овче",
       "image": "ovche.png"
     },
@@ -880,18 +788,6 @@
     {
       "keyword": "пица",
       "image": "testeni-zakuski.png"
-    },
-    {
-      "keyword": "заек",
-      "image": "agneshko.png"
-    },
-    {
-      "keyword": "филе",
-      "image": "riba.png"
-    },
-    {
-      "keyword": "крем",
-      "image": "sladkarski-izdeliq.png"
     },
     {
       "keyword": "кейк",

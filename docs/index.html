@@ -302,9 +302,9 @@
             'beverages': 'gazirani-napitki.png',
             'bakery': 'hlqb-bql.png',
             'snacks': 'qdki.png',
-            'frozen': 'riba.png',
-            'household': 'voda.png',
-            'personal_care': 'voda.png',
+            'frozen': null,            // Frozen products aren't all fish
+            'household': null,        // No food image fits cleaning products
+            'personal_care': null,    // No food image fits shampoo/cosmetics
             'alcohol': 'alkohol.png',
             'wine': 'vino.png',
             'spirits': 'rakia.png',
@@ -318,11 +318,11 @@
             'eggs': 'qica.png',
             'pantry': 'brashno.png',
             'asian_food': 'podpravki.png',
-            'laundry': 'voda.png',
-            'dishwasher': 'voda.png',
-            'deodorant': 'voda.png',
-            'baby': 'prqsno-mlqko.png',
-            'paper_products': 'voda.png',
+            'laundry': null,           // Detergent ≠ water
+            'dishwasher': null,        // Dishwasher tabs ≠ water
+            'deodorant': null,         // Deodorant ≠ water
+            'baby': null,              // Baby products ≠ milk
+            'paper_products': null,    // Toilet paper ≠ water
             'pet_food': 'mesni-konservi.png',
             'tools_diy': null,
             'kitchen': null,
@@ -332,13 +332,29 @@
             'other': null
         };
 
+        // Pre-compiled regex cache for image keyword matching
+        let IMAGE_REGEX_CACHE = null;
+        function buildImageRegexCache() {
+            IMAGE_REGEX_CACHE = IMAGE_CONFIG.mappings.map(m => {
+                // Multi-word keywords: use substring match (already specific enough)
+                // Single-word keywords: use word boundary to avoid "бира" in "листосъбирач"
+                var kw = m.keyword;
+                var esc = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                if (kw.includes(' ')) {
+                    return { re: new RegExp(esc), image: m.image };
+                }
+                return { re: new RegExp('(?:^|[\\s,;(/\n])' + esc + '(?:[\\s,;)/.\n]|$)'), image: m.image };
+            });
+        }
+
         function getProductImage(name, category) {
             if (!name) return null;
-            const lower = name.toLowerCase();
-            // 1. Try keyword match (most specific)
-            for (const m of IMAGE_CONFIG.mappings) {
-                if (lower.includes(m.keyword)) {
-                    return IMAGE_CONFIG.basePath + m.image;
+            if (!IMAGE_REGEX_CACHE) buildImageRegexCache();
+            var lower = name.toLowerCase();
+            // 1. Try keyword match (word-boundary aware)
+            for (var i = 0; i < IMAGE_REGEX_CACHE.length; i++) {
+                if (IMAGE_REGEX_CACHE[i].re.test(lower)) {
+                    return IMAGE_CONFIG.basePath + IMAGE_REGEX_CACHE[i].image;
                 }
             }
             // 2. Try category fallback
