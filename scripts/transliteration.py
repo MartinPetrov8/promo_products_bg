@@ -223,35 +223,18 @@ def resolve_brand(brand_text: Optional[str]) -> Optional[str]:
 # PRODUCT TYPE SYNONYMS
 # =============================================================================
 
+# Pruned to EXACT semantic equivalents only — no generic expansions
+# (Sonnet+Kimi audit: aggressive synonyms cause false bridges between milk↔yogurt etc.)
 PRODUCT_SYNONYMS = {
     'кисело мляко': {'йогурт', 'yoghurt', 'yogurt'},
-    'йогурт': {'кисело мляко', 'yoghurt', 'yogurt'},
-    'прясно мляко': {'мляко', 'milk', 'fresh milk'},
-    'кашкавал': {'yellow cheese', 'kashkaval'},
-    'сирене': {'white cheese', 'sirene', 'feta'},
-    'масло': {'butter', 'масло краве'},
-    'хляб': {'bread', 'хлеб'},
-    'кафе': {'coffee', 'cafe'},
-    'чай': {'tea', 'чаи'},
-    'бира': {'beer'},
-    'вино': {'wine'},
-    'ракия': {'rakia', 'rakiya'},
-    'водка': {'vodka'},
-    'уиски': {'whisky', 'whiskey'},
-    'сок': {'juice'},
-    'вода': {'water'},
-    'шоколад': {'chocolate', 'чоколад'},
-    'бисквити': {'biscuits', 'cookies'},
-    'чипс': {'chips', 'чипсове', 'crisps'},
-    'сапун': {'soap'},
+    'йогурт': {'yoghurt', 'yogurt'},
+    'кашкавал': {'kashkaval'},
+    'сирене': {'sirene'},
+    'шоколад': {'chocolate'},
+    'чипс': {'чипсове', 'chips'},
     'шампоан': {'shampoo'},
-    'паста за зъби': {'toothpaste'},
-    'дезодорант': {'deodorant', 'дез'},
-    'душ гел': {'shower gel', 'душгел'},
-    'прах за пране': {'washing powder', 'detergent'},
-    'гел за пране': {'liquid detergent', 'washing gel'},
-    'омекотител': {'fabric softener'},
-    'препарат': {'detergent', 'cleaner'},
+    'дезодорант': {'deodorant'},
+    'душ гел': {'душгел'},
 }
 
 # Build a flat synonym lookup: word → set of synonyms
@@ -317,3 +300,120 @@ def expand_tokens(tokens: Set[str]) -> Set[str]:
     for t in tokens:
         expanded.update(expand_token(t))
     return expanded
+
+
+# =============================================================================
+# CONCEPT JACCARD (fixes token expansion inflation)
+# =============================================================================
+
+def _normalize_to_concept(token: str) -> str:
+    """Collapse a token to a single concept key (Latin base form)."""
+    clean = re.sub(r'[^\w]', '', token.lower())
+    if not clean:
+        return token
+    # If Cyrillic, convert to Latin as canonical form
+    if has_cyrillic(clean):
+        return cyrillic_to_latin(clean)
+    return clean
+
+
+def concept_jaccard(tokens_a: Set[str], tokens_b: Set[str], min_common: int = 1) -> float:
+    """
+    Jaccard on concept-collapsed tokens, not raw tokens.
+    
+    Fixes the inflation bug: "nivea" and "нивеа" collapse to same concept "nivea",
+    so they count as 1 intersection / 1 union, not 2/3.
+    """
+    concepts_a = {_normalize_to_concept(t) for t in tokens_a}
+    concepts_b = {_normalize_to_concept(t) for t in tokens_b}
+    
+    # Remove empty/tiny concepts
+    concepts_a = {c for c in concepts_a if len(c) > 1}
+    concepts_b = {c for c in concepts_b if len(c) > 1}
+    
+    if not concepts_a or not concepts_b:
+        return 0.0
+    
+    common = concepts_a & concepts_b
+    if len(common) < min_common:
+        return 0.0
+    
+    return len(common) / len(concepts_a | concepts_b)
+
+
+# =============================================================================
+# BRAND EXTRACTION FROM PRODUCT NAME
+# =============================================================================
+
+def extract_brand_from_name(name: str) -> Optional[str]:
+    """
+    Extract brand from product name when DB brand is missing/NO_BRAND.
+    Searches for any known brand alias in the product name.
+    """
+    if not name:
+        return None
+    name_lower = name.lower()
+    name_clean = name_lower.replace('-', ' ').replace('  ', ' ')
+    
+    # Check each canonical brand and its variants
+    best_match = None
+    best_len = 0
+    for canonical, variants in BRAND_ALIASES.items():
+        all_forms = variants | {canonical}
+        for variant in all_forms:
+            v_lower = variant.lower()
+            if v_lower in name_clean or v_lower in name_lower:
+                # Prefer longest match (avoids "or" matching "oreo")
+                if len(v_lower) > best_len:
+                    best_match = canonical
+                    best_len = len(v_lower)
+    
+    return best_match
+
+
+# =============================================================================
+# PRODUCT TYPE CONFLICT DETECTION (Parkside false positive fix)
+# =============================================================================
+
+TYPE_INDICATORS = {
+    'power_tools': {'бормашина', 'шлайф', 'ексцентършлайф', 'трион', 'фреза', 'полираща', 'винтоверт'},
+    'hand_tools': {'чук', 'отвертка', 'ключ', 'клещи', 'кусачки'},
+    'garden': {'листосъбирач', 'косачка', 'ножица', 'градински'},
+    'clothing': {'блуза', 'тениска', 'тениски', 'панталон', 'чорапи', 'чорап', 'термочорапи', 'яке', 'колан'},
+    'camping': {'палатка', 'спален', 'чанта', 'фенер'},
+    'storage': {'стелаж', 'кутия', 'органайзер'},
+    'fasteners': {'уплътнители', 'битове', 'винтове', 'скоби', 'свредла'},
+    'battery': {'батерия', 'зарядно'},
+}
+
+
+def detect_type_conflict(tokens_a: Set[str], tokens_b: Set[str]) -> bool:
+    """
+    Returns True if products have CONFLICTING type indicators.
+    Used to reject same-brand matches like Parkside tent vs Parkside belt.
+    Uses both exact token match AND substring match for compound words.
+    """
+    def find_types(tokens):
+        types = set()
+        tokens_lower = {t.lower() for t in tokens}
+        joined = ' '.join(tokens_lower)  # For substring matching
+        for ptype, keywords in TYPE_INDICATORS.items():
+            # Exact token match
+            if tokens_lower & keywords:
+                types.add(ptype)
+            else:
+                # Substring match (catches "ексцентършлайф" containing "шлайф")
+                for kw in keywords:
+                    if kw in joined:
+                        types.add(ptype)
+                        break
+        return types
+    
+    types_a = find_types(tokens_a)
+    types_b = find_types(tokens_b)
+    
+    # Conflict = both have type indicators but NO overlap
+    if types_a and types_b and not (types_a & types_b):
+        return True
+    
+    return False

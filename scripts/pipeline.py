@@ -139,7 +139,9 @@ def run_matching():
     """Run cross-store matching v3 — with transliteration + n-grams + soft category"""
     log.info("Running cross-store matching (v3 — transliteration + n-grams)...")
     
-    from transliteration import resolve_brand as resolve_brand_alias
+    from transliteration import (resolve_brand as resolve_brand_alias, 
+                                  extract_brand_from_name, concept_jaccard,
+                                  detect_type_conflict, BRAND_ALIASES)
     
     config = load_config("matching")
     match_config = config.get('token_similarity', {})
@@ -196,8 +198,11 @@ def run_matching():
         p['tokens'] = tokenize(p['name'], config)
         p['raw_tokens'] = tokenize_raw(p['name'], config)  # For n-gram fallback
         p['category'] = categorize(p['name'], cleaning_config['categories'])
-        # v3: Try alias resolution first, then fallback to simple normalization
-        p['brand_normalized'] = resolve_brand_alias(p.get('brand')) or normalize_brand(p.get('brand'))
+        # v3.1: Try alias resolution, then extract from name if missing, then fallback
+        raw_brand = p.get('brand')
+        if not raw_brand or raw_brand in {'NO_BRAND', 'Unknown', 'Generic', 'none', ''}:
+            raw_brand = extract_brand_from_name(p['name'])
+        p['brand_normalized'] = resolve_brand_alias(raw_brand) or normalize_brand(raw_brand)
     
     # Group by category then store
     by_category = defaultdict(lambda: defaultdict(list))
@@ -228,14 +233,14 @@ def run_matching():
                         # Different categories = 15% penalty, not rejection
                         category_penalty = 0.85
                     
-                    # Step 1: Token similarity on expanded tokens (includes transliterations)
-                    base_score = token_similarity(p1['tokens'], p2['tokens'], config)
+                    # Step 1: Concept Jaccard (fixes inflation bug from v3)
+                    base_score = concept_jaccard(p1['tokens'], p2['tokens'], min_common=1)
                     
                     # Step 1b: N-gram fallback for transliteration misses
                     ngram_score = ngram_similarity(p1['name'], p2['name'])
                     
-                    # Combined: 70% token (with transliteration) + 30% n-gram
-                    combined_base = 0.7 * base_score + 0.3 * ngram_score
+                    # Combined: 60% concept_jaccard + 40% n-gram (rebalanced per audit)
+                    combined_base = 0.6 * base_score + 0.4 * ngram_score
                     
                     if combined_base < min_threshold * 0.7:  # Early reject
                         stats['below_threshold'] += 1
@@ -244,6 +249,11 @@ def run_matching():
                     # Step 2: Brand check
                     brand_result = check_brand_compatibility(p1, p2)
                     if brand_result == 'reject':
+                        stats['brand_rejected'] += 1
+                        continue
+                    
+                    # Step 2b: Type conflict check (Parkside tent vs belt fix)
+                    if brand_result == 'match' and detect_type_conflict(p1['raw_tokens'], p2['raw_tokens']):
                         stats['brand_rejected'] += 1
                         continue
                     
@@ -275,8 +285,17 @@ def run_matching():
                     if price_flag:
                         stats['price_flagged'] += 1
                     
+                    # Same brand + same category = extra boost (catches Ariel gel vs capsules)
+                    if brand_result == 'match' and p1['category'] == p2['category']:
+                        if score >= 0.25:
+                            score = min(1.0, score + 0.12)
+                    
                     # Apply category penalty
                     score = score * category_penalty
+                    
+                    # High n-gram rescue: strong character match = likely same product
+                    if ngram_score >= 0.65 and combined_base >= 0.3 and score < min_threshold:
+                        score = max(score, min_threshold + 0.01)
                     
                     # Final threshold check
                     if score < min_threshold:
