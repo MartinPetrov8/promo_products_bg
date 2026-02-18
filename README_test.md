@@ -39,6 +39,7 @@ python3 test_all_scrapers.py
 ## Technology Stack
 
 - **Language:** Python 3.x with type hints
+- **API Framework:** FastAPI with uvicorn (REST API endpoints)
 - **Database:** SQLite (promobg.db, off_bulgaria.db)
 - **Web Scrapers:** Custom scrapers for Kaufland, Lidl, and Billa
 - **Data Models:** Python dataclasses with strict typing
