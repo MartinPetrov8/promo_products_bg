@@ -104,7 +104,7 @@ BRAND_ALIASES = {
     'nescafe': {'нескафе', 'nescafe', 'nescafé'},
     'lavazza': {'лаваца', 'лавацa', 'lavazza'},
     'tchibo': {'чибо', 'tchibo'},
-    'illy': {'или', 'illy'},
+    'illy': {'illy'},  # NOT "или" — that's Bulgarian for "or"!
     
     # Dairy
     'danone': {'данон', 'данън', 'danone'},
@@ -131,7 +131,7 @@ BRAND_ALIASES = {
     
     # Personal Care
     'nivea': {'нивеа', 'нивея', 'nivea'},
-    'dove': {'дав', 'дов', 'dove'},
+    'dove': {'dove'},  # NOT дав/дов — too short, causes false matches in Bulgarian text
     'colgate': {'колгейт', 'colgate'},
     'oral-b': {'орал-б', 'oral-b', 'oral b', 'oralb'},
     'gillette': {'жилет', 'gillette', 'gilette'},
@@ -190,6 +190,45 @@ BRAND_ALIASES = {
     'olineza': {'олинеза', 'olineza'},
     'zhiva voda': {'жива вода', 'zhiva voda'},
     'pestherska': {'пещерска', 'pestherska', 'peshterska'},
+    
+    # More brands found in DB across 2+ stores
+    'heinz': {'хайнц', 'heinz'},
+    'hochland': {'хохланд', 'hochland'},
+    'jogobella': {'жогобела', 'jogobella'},
+    'philadelphia': {'филаделфия', 'philadelphia'},
+    'lindt': {'линдт', 'lindt'},
+    'pampers': {'памперс', 'pampers'},
+    'sensodyne': {'сенсодин', 'sensodyne'},
+    'somat': {'сомат', 'somat'},
+    'suchard': {'сушар', 'suchard'},
+    'syoss': {'сиос', 'syoss'},
+    'savex': {'савекс', 'savex'},
+    'medix': {'медикс', 'medix'},
+    'domestos': {'доместос', 'domestos'},
+    'rexona': {'рексона', 'rexona'},
+    'snickers': {'сникърс', 'snickers'},
+    'alvina': {'алвина', 'alvina'},
+    'brio': {'брио', 'brio'},
+    'krina': {'крина', 'krina'},
+    'teo': {'тео', 'teo'},
+    'salza': {'салца', 'salza'},
+    'prisun': {'присън', 'prisun'},
+    'wet hankies': {'ует ханкис', 'wet hankies'},
+    'jim beam': {'джим бийм', 'jim beam'},
+    'nucrema': {'нукрема', 'nucrema'},
+    
+    # Bulgarian brands
+    'orehite': {'орехите', 'orehite'},
+    'vereia': {'верея', 'vereia'},
+    'prestige': {'престиж', 'prestige', 'престиж'},
+    'sladeia': {'сладея', 'sladeia'},
+    'pastir': {'пастир', 'pastir'},
+    'vita siluet': {'вита силует', 'vita siluet'},
+    'delikatess zhitnitsa': {'деликатес житница'},
+    'maistor tsvetko': {'майстор цветко'},
+    'heli': {'хели', 'heli'},
+    'kristal': {'кристал', 'kristal'},
+    'roden': {'роден', 'roden'},
 }
 
 # Build reverse lookup: any variant → canonical name
@@ -275,15 +314,16 @@ def expand_token(token: str) -> Set[str]:
             for part in v.split():
                 variants.add(part.lower())
     
-    # 2. Transliteration
-    if has_cyrillic(clean):
-        latin = cyrillic_to_latin(clean)
-        if latin != clean:
-            variants.add(latin)
-    if has_latin(clean):
-        cyr = latin_to_cyrillic(clean)
-        if cyr != clean:
-            variants.add(cyr)
+    # 2. Transliteration (only for tokens >= 4 chars to avoid noise)
+    if len(clean) >= 4:
+        if has_cyrillic(clean):
+            latin = cyrillic_to_latin(clean)
+            if latin != clean:
+                variants.add(latin)
+        if has_latin(clean):
+            cyr = latin_to_cyrillic(clean)
+            if cyr != clean:
+                variants.add(cyr)
     
     # 3. Product synonyms
     syns = get_synonyms(clean)
@@ -348,22 +388,26 @@ def concept_jaccard(tokens_a: Set[str], tokens_b: Set[str], min_common: int = 1)
 def extract_brand_from_name(name: str) -> Optional[str]:
     """
     Extract brand from product name when DB brand is missing/NO_BRAND.
-    Searches for any known brand alias in the product name.
+    Uses word-boundary matching to avoid false positives.
+    Requires brand to be >= 3 chars to avoid matching short Bulgarian words.
     """
     if not name:
         return None
     name_lower = name.lower()
     name_clean = name_lower.replace('-', ' ').replace('  ', ' ')
     
-    # Check each canonical brand and its variants
     best_match = None
     best_len = 0
     for canonical, variants in BRAND_ALIASES.items():
         all_forms = variants | {canonical}
         for variant in all_forms:
             v_lower = variant.lower()
-            if v_lower in name_clean or v_lower in name_lower:
-                # Prefer longest match (avoids "or" matching "oreo")
+            # Skip very short variants (high false positive risk)
+            if len(v_lower) < 3:
+                continue
+            # Use word boundary matching
+            pattern = r'(?:^|[\s,;(])' + re.escape(v_lower) + r'(?:[\s,;)]|$)'
+            if re.search(pattern, name_clean) or re.search(pattern, name_lower):
                 if len(v_lower) > best_len:
                     best_match = canonical
                     best_len = len(v_lower)
@@ -384,6 +428,19 @@ TYPE_INDICATORS = {
     'storage': {'стелаж', 'кутия', 'органайзер'},
     'fasteners': {'уплътнители', 'битове', 'винтове', 'скоби', 'свредла'},
     'battery': {'батерия', 'зарядно'},
+    # CPG product types (prevents shower gel matching soap, shampoo matching dye)
+    'shower_gel': {'душ'},
+    'soap': {'сапун'},
+    'shampoo': {'шампоан', 'балсам'},
+    'hair_dye': {'боя', 'боядисване'},
+    'deodorant': {'дезодорант', 'антиперспирант'},
+    'face_care': {'мицеларна', 'мицеларен', 'лице'},
+    'shaving': {'бръснене'},
+    'cream_cpg': {'крем'},
+    # Food product types  
+    'biscuit': {'бисквити'},
+    'wafer': {'вафли', 'вафла'},
+    'pasta_dry': {'паста'},
 }
 
 

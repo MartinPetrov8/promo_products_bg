@@ -141,7 +141,8 @@ def run_matching():
     
     from transliteration import (resolve_brand as resolve_brand_alias, 
                                   extract_brand_from_name, concept_jaccard,
-                                  detect_type_conflict, BRAND_ALIASES)
+                                  detect_type_conflict, BRAND_ALIASES,
+                                  cyrillic_to_latin, _normalize_to_concept)
     
     config = load_config("matching")
     match_config = config.get('token_similarity', {})
@@ -242,14 +243,16 @@ def run_matching():
                     # Combined: 60% concept_jaccard + 40% n-gram (rebalanced per audit)
                     combined_base = 0.6 * base_score + 0.4 * ngram_score
                     
-                    if combined_base < min_threshold * 0.7:  # Early reject
-                        stats['below_threshold'] += 1
-                        continue
-                    
-                    # Step 2: Brand check
+                    # Step 2: Brand check (moved before early reject so brand can rescue)
                     brand_result = check_brand_compatibility(p1, p2)
                     if brand_result == 'reject':
                         stats['brand_rejected'] += 1
+                        continue
+                    
+                    # Early reject (relaxed for same brand — brand match = strong signal)
+                    early_threshold = min_threshold * 0.6 if brand_result == 'match' else min_threshold * 0.7
+                    if combined_base < early_threshold:
+                        stats['below_threshold'] += 1
                         continue
                     
                     # Step 2b: Type conflict check (Parkside tent vs belt fix)
@@ -257,10 +260,35 @@ def run_matching():
                         stats['brand_rejected'] += 1
                         continue
                     
+                    # Step 2c: Brand-only overlap check
+                    # If the ONLY common concepts are brand tokens, reject (Nivea water ≠ Nivea shower gel)
+                    if brand_result == 'match' and p1.get('brand_normalized'):
+                        brand_tokens = set()
+                        brand_str = p1['brand_normalized']
+                        # Get all token variants of the brand name
+                        for t in p1['tokens']:
+                            t_lower = t.lower()
+                            if brand_str in t_lower or t_lower in brand_str or \
+                               cyrillic_to_latin(t_lower) in brand_str or brand_str in cyrillic_to_latin(t_lower):
+                                brand_tokens.add(t)
+                        # Check if non-brand tokens overlap
+                        non_brand_1 = {_normalize_to_concept(t) for t in p1['tokens'] if t not in brand_tokens}
+                        non_brand_2 = {_normalize_to_concept(t) for t in p2['tokens'] if t not in brand_tokens}
+                        non_brand_common = non_brand_1 & non_brand_2
+                        if len(non_brand_common) == 0 and combined_base < 0.35:
+                            stats['below_threshold'] += 1
+                            continue
+                    
                     # Apply brand modifier
                     score = combined_base
                     if brand_result == 'match':
-                        score = min(1.0, score + brand_same_boost)  # Same brand boost
+                        # CPG categories get higher brand boost (brand IS identity)
+                        cpg_cats = {'personal_care', 'household', 'laundry', 'dishwasher', 
+                                    'deodorant', 'lip_care'}
+                        if p1['category'] in cpg_cats or p2['category'] in cpg_cats:
+                            score = min(1.0, score + brand_same_boost + 0.10)  # Extra CPG boost
+                        else:
+                            score = min(1.0, score + brand_same_boost)  # Standard boost
                     elif brand_result == 'mismatch_one_unknown':
                         score = score * brand_unknown_penalty  # Slight penalty
                     # 'both_unknown' = no change
@@ -285,10 +313,14 @@ def run_matching():
                     if price_flag:
                         stats['price_flagged'] += 1
                     
-                    # Same brand + same category = extra boost (catches Ariel gel vs capsules)
-                    if brand_result == 'match' and p1['category'] == p2['category']:
-                        if score >= 0.25:
+                    # Same brand boost: brand IS the product identity for CPG
+                    if brand_result == 'match':
+                        if p1['category'] == p2['category']:
+                            # Same brand + same category = strong signal
                             score = min(1.0, score + 0.12)
+                        else:
+                            # Same brand, different category (miscategorized) = mild boost
+                            score = min(1.0, score + 0.06)
                     
                     # Apply category penalty
                     score = score * category_penalty
@@ -364,7 +396,16 @@ def run_matching():
 
 def normalize_brand(brand):
     """Normalize brand name for comparison"""
-    IGNORE_BRANDS = {'no_brand', 'unknown', 'n/a', 'generic', 'none', ''}
+    IGNORE_BRANDS = {
+        'no_brand', 'unknown', 'n/a', 'generic', 'none', '',
+        # Bulgarian words misidentified as brands
+        'салата', 'свински', 'микс', 'xxl', 'fresh', 'vol', 'premium',
+        'red', 'max', 'extra', 'family', 'days', 'ocean', 'original',
+        'espresso', 'crema', 'angel', 'natura', 'портокали', 'червени ябълки',
+        'авокадо', 'домати', 'ягоди', 'ананас', 'боровинки', 'зюмбюл',
+        'орхидея', 'броя', 'мес', 'кен', 'изтривалка', 'димитър',
+        'сладки', 'маслини каламата',
+    }
     if not brand or brand.strip().lower() in IGNORE_BRANDS:
         return None
     brand = brand.strip().lower()
@@ -429,11 +470,19 @@ def check_quantity_compatibility(p1, p2):
     if not q1 or not q2 or q1 <= 0 or q2 <= 0:
         return 'unknown'
     
-    # Only compare same unit types (weight vs weight, volume vs volume)
-    if u1 != u2:
+    # Normalize units for comparison (g↔kg, ml↔l)
+    UNIT_TO_BASE = {'g': ('g', 1), 'kg': ('g', 1000), 'ml': ('ml', 1), 'l': ('ml', 1000), 'pcs': ('pcs', 1)}
+    base1 = UNIT_TO_BASE.get(u1)
+    base2 = UNIT_TO_BASE.get(u2)
+    
+    if not base1 or not base2 or base1[0] != base2[0]:
         return 'unknown'
     
-    ratio = max(q1, q2) / min(q1, q2)
+    # Convert to same base unit
+    q1_norm = q1 * base1[1]
+    q2_norm = q2 * base2[1]
+    
+    ratio = max(q1_norm, q2_norm) / min(q1_norm, q2_norm)
     
     if ratio <= 1.3:
         return 'same_size'       # Essentially same product
@@ -462,17 +511,36 @@ def tokenize(name, config):
     
     # Store-specific noise removal (Billa's "blue star" labels, etc.)
     billa_noise = [
-        r'продукт,?\s*маркиран\s*със\s*синя\s*звезда',
+        r'продукт,?\s*маркиран\s*със?\s*синя\s*звезда',
         r'произход\s*[-–]\s*българия',
         r'само\s*с\s*billa\s*app\s*[-–]?\s*',
         r'супер\s*цена\s*[-–]?\s*',
-        r'\d+[.,]?\d*\s*(?:€|лв\.?)/\s*\d+[.,]?\d*\s*(?:€|лв\.?)?\s*(?:изпиране)?',
+        # Price patterns: "0,07 €", "0,14 лв.", "1 изпиране = 0,07 €/0,14 лв."
+        r'\d+\s*изпиране\s*[=]\s*\d+[.,]\d+\s*(?:€|лв\.?)',
+        r'\d+[.,]?\d*\s*(?:€|лв\.?)\s*/\s*\d+[.,]?\d*\s*(?:€|лв\.?)',
+        r'\d+[.,]?\d*\s*(?:€|лв\.?)',
+        # Wash counts: "65/71 пранета"
+        r'\d+\s*/\s*\d+\s*пранет[аи]',
+        r'\d+\s*пранет[аи]',
+        # Per-unit pricing
+        r'за\s*\d+\s*(?:кг|г|мл|л|бр)',
+        r'от\s*делик(?:атесната)?',
     ]
     for pattern in billa_noise:
         name = re.sub(pattern, ' ', name, flags=re.IGNORECASE)
     
-    # NEW: Split on hyphens, slashes, parentheses (before quantity stripping)
-    name = re.sub(r'[-/()[\]]', ' ', name)
+    # General noise stripping (all stores)
+    # Strip "различни видове/вкусове/цветове" (Kaufland's "various types")
+    name = re.sub(r'различни\s+(?:видове|вкусове|цветове|размери|аромати)', '', name, flags=re.IGNORECASE)
+    # Strip "от свежата витрина" / "от хладилната витрина"
+    name = re.sub(r'от\s+(?:свежата|хладилната)\s+витрина', '', name, flags=re.IGNORECASE)
+    # Strip orphan standalone numbers (leftover from price/qty stripping)
+    
+    # Split on hyphens, slashes, parentheses, commas (before quantity stripping)
+    # Normalizes "Гел/Прах/Капсули" → "Гел Прах Капсули"
+    name = re.sub(r'[-/()[\],]', ' ', name)
+    # Strip trailing variant details after colon (e.g., "Ariel Гел: 40 пранета")
+    name = re.sub(r':\s*\d+.*$', '', name)
     
     # NEW: Separate numbers glued to units (400гр → 400 гр, 500ml → 500 ml)
     name = re.sub(r'(\d+(?:[.,]\d+)?)\s*(г|гр|грам|мл|мил|л|лит|кг|kg|g|ml|l|cl|бр)', r'\1 \2', name)
@@ -505,7 +573,15 @@ def tokenize_raw(name, config):
     name = name.lower()
     for pattern in config.get('ignore_patterns', []):
         name = name.replace(pattern.lower(), '')
-    name = re.sub(r'[-/()[\]]', ' ', name)
+    # Same noise stripping as tokenize()
+    name = re.sub(r'различни\s+(?:видове|вкусове|цветове|размери|аромати)', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'от\s+(?:свежата|хладилната)\s+витрина', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'продукт,?\s*маркиран\s*със?\s*синя\s*звезда', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'произход\s*[-–]\s*българия', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'\d+[.,]?\d*\s*(?:€|лв\.?)', '', name)
+    name = re.sub(r'\d+\s*пранет[аи]', '', name)
+    name = re.sub(r'[-/()[\],]', ' ', name)
+    name = re.sub(r':\s*\d+.*$', '', name)
     name = re.sub(r'(\d+(?:[.,]\d+)?)\s*(г|гр|грам|мл|мил|л|лит|кг|kg|g|ml|l|cl|бр)', r'\1 \2', name)
     name = re.sub(r'\d+(?:[.,]\d+)?\s*[xх×]\s*\d+(?:[.,]\d+)?\s*(?:г|гр|мл|л|кг|kg|g|ml|l)\b', '', name)
     name = re.sub(r'\d+(?:[.,]\d+)?\s*(?:г|гр|мл|л|кг|бр|kg|g|ml|l|cl|см)\b', '', name)
@@ -516,10 +592,24 @@ def tokenize_raw(name, config):
     return {t for t in name.split() if len(t) > 1 and t not in stopwords}
 
 
+def clean_name_for_comparison(name):
+    """Strip noise from name before similarity comparison."""
+    name = name.lower()
+    name = re.sub(r'различни\s+(?:видове|вкусове|цветове|размери|аромати)', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'от\s+(?:свежата|хладилната)\s+витрина', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'продукт,?\s*маркиран\s*със?\s*синя\s*звезда', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'произход\s*[-–]\s*българия', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'\d+[.,]?\d*\s*(?:€|лв\.?)', '', name)
+    name = re.sub(r'\d+\s*(?:пранет[аи]|изпиране)', '', name)
+    name = re.sub(r'\d+\s*/\s*\d+\s*пранет[аи]', '', name)
+    name = re.sub(r'само\s*с\s*billa\s*app\s*[-–]?\s*', '', name, flags=re.IGNORECASE)
+    return name.strip()
+
 def ngram_similarity(name1, name2, n=3):
     """Character n-gram (trigram) Jaccard similarity — catches transliteration misses."""
     def ngrams(s):
-        s = re.sub(r'[^\wа-яА-Я]', '', s.lower())
+        s = clean_name_for_comparison(s)
+        s = re.sub(r'[^\wа-яА-Я]', '', s)
         return set(s[i:i+n] for i in range(len(s) - n + 1))
     n1, n2 = ngrams(name1), ngrams(name2)
     if not n1 or not n2:
@@ -543,11 +633,19 @@ def token_similarity(tokens1, tokens2, config):
 
 
 def categorize(name, categories):
-    """Categorize product by name keywords"""
+    """Categorize product by name keywords (word-boundary aware)"""
     name_lower = name.lower()
+    # First pass: try word-boundary matches (more precise)
     for cat, keywords in categories.items():
         for kw in keywords:
-            if kw in name_lower:
+            # Use word boundary to avoid "питка" matching inside "напитка"
+            pattern = r'(?:^|[\s,;(/])' + re.escape(kw) + r'(?:[\s,;)/]|$)'
+            if re.search(pattern, name_lower):
+                return cat
+    # Fallback: substring match for compound words
+    for cat, keywords in categories.items():
+        for kw in keywords:
+            if len(kw) >= 5 and kw in name_lower:  # Only long keywords for substring
                 return cat
     return 'other'
 
