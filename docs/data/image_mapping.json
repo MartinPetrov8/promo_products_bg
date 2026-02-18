@@ -816,6 +816,14 @@
     {
       "keyword": "бри",
       "image": "sirene.png"
+    },
+    {
+      "keyword": "добруджа",
+      "image": "hlqb-dobrudja.png"
+    },
+    {
+      "keyword": "хляб добруджа",
+      "image": "hlqb-dobrudja.png"
     }
   ]
 }
