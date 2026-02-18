@@ -1,17 +1,20 @@
 {
-  "version": "2.0.0",
-  "description": "Cross-store matching configuration v2 - brand-aware, quantity-aware",
+  "version": "3.0.0",
+  "description": "Cross-store matching v3 — transliteration + n-grams + soft category gating",
   "token_similarity": {
-    "min_threshold": 0.5,
-    "min_common_tokens": 2
+    "min_threshold": 0.4,
+    "min_common_tokens": 1
   },
   "rules": {
-    "same_category_required": true,
+    "same_category_required": false,
+    "category_mismatch_penalty": 0.85,
     "brand_same_boost": 0.15,
     "brand_unknown_penalty": 0.85,
     "quantity_incompatible_penalty": 0.4,
     "quantity_compatible_boost": 0.05,
-    "price_ratio_warning_threshold": 3.0
+    "price_ratio_warning_threshold": 3.0,
+    "ngram_weight": 0.3,
+    "token_weight": 0.7
   },
   "stopwords": [
     "или",

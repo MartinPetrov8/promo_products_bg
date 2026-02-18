@@ -136,14 +136,16 @@ def sync_store(store_name, raw_file=None):
 # =============================================================================
 
 def run_matching():
-    """Run cross-store matching with brand, quantity, and price validation"""
-    log.info("Running cross-store matching (v2)...")
+    """Run cross-store matching v3 — with transliteration + n-grams + soft category"""
+    log.info("Running cross-store matching (v3 — transliteration + n-grams)...")
+    
+    from transliteration import resolve_brand as resolve_brand_alias
     
     config = load_config("matching")
     match_config = config.get('token_similarity', {})
     rules = config.get('rules', {})
-    min_threshold = match_config.get('min_threshold', 0.5)
-    min_common = match_config.get('min_common_tokens', 2)
+    min_threshold = match_config.get('min_threshold', 0.4)  # v3: lowered from 0.5
+    min_common = match_config.get('min_common_tokens', 1)   # v3: lowered from 2
     brand_same_boost = rules.get('brand_same_boost', 0.15)
     brand_unknown_penalty = rules.get('brand_unknown_penalty', 0.85)
     qty_incompatible_penalty = rules.get('quantity_incompatible_penalty', 0.4)
@@ -192,8 +194,10 @@ def run_matching():
     cleaning_config = load_config("cleaning")
     for p in products:
         p['tokens'] = tokenize(p['name'], config)
+        p['raw_tokens'] = tokenize_raw(p['name'], config)  # For n-gram fallback
         p['category'] = categorize(p['name'], cleaning_config['categories'])
-        p['brand_normalized'] = normalize_brand(p.get('brand'))
+        # v3: Try alias resolution first, then fallback to simple normalization
+        p['brand_normalized'] = resolve_brand_alias(p.get('brand')) or normalize_brand(p.get('brand'))
     
     # Group by category then store
     by_category = defaultdict(lambda: defaultdict(list))
@@ -204,73 +208,95 @@ def run_matching():
     stats = {'total_comparisons': 0, 'brand_rejected': 0, 'qty_penalized': 0, 
              'price_flagged': 0, 'below_threshold': 0, 'accepted': 0}
     
-    for cat, by_store in by_category.items():
-        stores = list(by_store.keys())
-        
-        for i, store1 in enumerate(stores):
-            for store2 in stores[i+1:]:
-                for p1 in by_store[store1]:
-                    for p2 in by_store[store2]:
-                        stats['total_comparisons'] += 1
-                        
-                        # Step 1: Token similarity (base score)
-                        base_score = token_similarity(p1['tokens'], p2['tokens'], config)
-                        if base_score < min_threshold * 0.8:  # Allow slightly lower for brand boost
-                            stats['below_threshold'] += 1
-                            continue
-                        
-                        # Step 2: Brand check
-                        brand_result = check_brand_compatibility(p1, p2)
-                        if brand_result == 'reject':
-                            stats['brand_rejected'] += 1
-                            continue
-                        
-                        # Apply brand modifier
-                        score = base_score
+    # v3: Build flat list grouped by store (soft category gating)
+    by_store = defaultdict(list)
+    for p in products:
+        by_store[p['store']].append(p)
+    
+    store_names = list(by_store.keys())
+    log.info(f"Stores: {', '.join(f'{s} ({len(by_store[s])})' for s in store_names)}")
+    
+    for i, store1 in enumerate(store_names):
+        for store2 in store_names[i+1:]:
+            for p1 in by_store[store1]:
+                for p2 in by_store[store2]:
+                    stats['total_comparisons'] += 1
+                    
+                    # v3: Soft category check — penalty instead of reject
+                    category_penalty = 1.0
+                    if p1['category'] != p2['category']:
+                        # Different categories = 15% penalty, not rejection
+                        category_penalty = 0.85
+                    
+                    # Step 1: Token similarity on expanded tokens (includes transliterations)
+                    base_score = token_similarity(p1['tokens'], p2['tokens'], config)
+                    
+                    # Step 1b: N-gram fallback for transliteration misses
+                    ngram_score = ngram_similarity(p1['name'], p2['name'])
+                    
+                    # Combined: 70% token (with transliteration) + 30% n-gram
+                    combined_base = 0.7 * base_score + 0.3 * ngram_score
+                    
+                    if combined_base < min_threshold * 0.7:  # Early reject
+                        stats['below_threshold'] += 1
+                        continue
+                    
+                    # Step 2: Brand check
+                    brand_result = check_brand_compatibility(p1, p2)
+                    if brand_result == 'reject':
+                        stats['brand_rejected'] += 1
+                        continue
+                    
+                    # Apply brand modifier
+                    score = combined_base
+                    if brand_result == 'match':
+                        score = min(1.0, score + brand_same_boost)  # Same brand boost
+                    elif brand_result == 'mismatch_one_unknown':
+                        score = score * brand_unknown_penalty  # Slight penalty
+                    # 'both_unknown' = no change
+                    
+                    # Step 3: Quantity check
+                    qty_result = check_quantity_compatibility(p1, p2)
+                    if qty_result == 'same_size':
+                        score = min(1.0, score + qty_compatible_boost)  # Boost for same size
+                    elif qty_result == 'different_size':
+                        pass  # Neutral — different packaging is fine, we'll show unit prices
+                    elif qty_result == 'incompatible':
                         if brand_result == 'match':
-                            score = min(1.0, score + brand_same_boost)  # Same brand boost
-                        elif brand_result == 'mismatch_one_unknown':
-                            score = score * brand_unknown_penalty  # Slight penalty
-                        # 'both_unknown' = no change
-                        
-                        # Step 3: Quantity check
-                        qty_result = check_quantity_compatibility(p1, p2)
-                        if qty_result == 'same_size':
-                            score = min(1.0, score + qty_compatible_boost)  # Boost for same size
-                        elif qty_result == 'different_size':
-                            pass  # Neutral — different packaging is fine, we'll show unit prices
-                        elif qty_result == 'incompatible':
-                            if brand_result == 'match':
-                                score = score * 0.7  # Mild penalty: same brand, wildly different size
-                            else:
-                                score = score * qty_incompatible_penalty  # Heavy penalty: different brand + wildly different size
-                            stats['qty_penalized'] += 1
-                        # 'unknown' = no change
-                        
-                        # Step 4: Price ratio flag (informational, doesn't reject)
-                        price_ratio = max(p1['price'], p2['price']) / min(p1['price'], p2['price']) if min(p1['price'], p2['price']) > 0 else 999
-                        price_flag = price_ratio > price_warning_threshold
-                        if price_flag:
-                            stats['price_flagged'] += 1
-                        
-                        # Final threshold check
-                        if score < min_threshold:
-                            stats['below_threshold'] += 1
-                            continue
-                        
-                        stats['accepted'] += 1
-                        matches.append({
-                            'score': round(score, 3),
-                            'base_score': round(base_score, 3),
-                            'category': cat,
-                            'p1': p1,
-                            'p2': p2,
-                            'common': p1['tokens'] & p2['tokens'],
-                            'brand_result': brand_result,
-                            'qty_result': qty_result,
-                            'price_ratio': round(price_ratio, 2),
-                            'price_flag': price_flag
-                        })
+                            score = score * 0.7  # Mild penalty: same brand, wildly different size
+                        else:
+                            score = score * qty_incompatible_penalty  # Heavy penalty
+                        stats['qty_penalized'] += 1
+                    # 'unknown' = no change
+                    
+                    # Step 4: Price ratio flag (informational, doesn't reject)
+                    price_ratio = max(p1['price'], p2['price']) / min(p1['price'], p2['price']) if min(p1['price'], p2['price']) > 0 else 999
+                    price_flag = price_ratio > price_warning_threshold
+                    if price_flag:
+                        stats['price_flagged'] += 1
+                    
+                    # Apply category penalty
+                    score = score * category_penalty
+                    
+                    # Final threshold check
+                    if score < min_threshold:
+                        stats['below_threshold'] += 1
+                        continue
+                    
+                    stats['accepted'] += 1
+                    matches.append({
+                        'score': round(score, 3),
+                        'base_score': round(combined_base, 3),
+                        'ngram_score': round(ngram_score, 3),
+                        'category': p1['category'],
+                        'p1': p1,
+                        'p2': p2,
+                        'common': p1['tokens'] & p2['tokens'],
+                        'brand_result': brand_result,
+                        'qty_result': qty_result,
+                        'price_ratio': round(price_ratio, 2),
+                        'price_flag': price_flag
+                    })
     
     # Deduplicate: keep highest score per product pair
     seen = set()
@@ -399,7 +425,16 @@ def check_quantity_compatibility(p1, p2):
 
 
 def tokenize(name, config):
-    """Tokenize product name for matching — strips store-specific noise"""
+    """
+    Tokenize product name for matching — v3 with transliteration.
+    
+    Changes from v2:
+    - Split on hyphens, slashes, parentheses
+    - Separate numbers from glued units (400гр → 400, гр)
+    - Expand tokens with Cyrillic↔Latin transliterations + brand aliases
+    """
+    from transliteration import expand_tokens
+    
     name = name.lower()
     
     # Config-driven ignore patterns
@@ -417,6 +452,12 @@ def tokenize(name, config):
     for pattern in billa_noise:
         name = re.sub(pattern, ' ', name, flags=re.IGNORECASE)
     
+    # NEW: Split on hyphens, slashes, parentheses (before quantity stripping)
+    name = re.sub(r'[-/()[\]]', ' ', name)
+    
+    # NEW: Separate numbers glued to units (400гр → 400 гр, 500ml → 500 ml)
+    name = re.sub(r'(\d+(?:[.,]\d+)?)\s*(г|гр|грам|мл|мил|л|лит|кг|kg|g|ml|l|cl|бр)', r'\1 \2', name)
+    
     # Strip quantities (they're handled separately now)
     name = re.sub(r'\d+(?:[.,]\d+)?\s*[xх×]\s*\d+(?:[.,]\d+)?\s*(?:г|гр|мл|л|кг|kg|g|ml|l)\b', '', name)
     name = re.sub(r'\d+(?:[.,]\d+)?\s*(?:г|гр|мл|л|кг|бр|kg|g|ml|l|cl|см)\b', '', name)
@@ -428,24 +469,53 @@ def tokenize(name, config):
     # Strip size ranges (S - XXL, M-XL)
     name = re.sub(r'\b[SMLX]{1,3}\s*[-–]\s*[SMLX]{1,4}\b', '', name)
     
-    # Note: We intentionally do NOT strip model numbers — they can be meaningful
-    # product identifiers. Better to have extra tokens than lose important ones.
-    
     name = re.sub(r'\s+', ' ', name).strip()
     
     tokens = set(name.split())
     stopwords = set(config.get('stopwords', []))
+    base_tokens = {t for t in tokens if len(t) > 1 and t not in stopwords}
     
-    return {t for t in tokens if len(t) > 1 and t not in stopwords}
+    # NEW: Expand with transliterations + brand aliases + synonyms
+    expanded = expand_tokens(base_tokens)
+    
+    return expanded
+
+
+def tokenize_raw(name, config):
+    """Tokenize WITHOUT transliteration expansion (for n-gram comparison)."""
+    name = name.lower()
+    for pattern in config.get('ignore_patterns', []):
+        name = name.replace(pattern.lower(), '')
+    name = re.sub(r'[-/()[\]]', ' ', name)
+    name = re.sub(r'(\d+(?:[.,]\d+)?)\s*(г|гр|грам|мл|мил|л|лит|кг|kg|g|ml|l|cl|бр)', r'\1 \2', name)
+    name = re.sub(r'\d+(?:[.,]\d+)?\s*[xх×]\s*\d+(?:[.,]\d+)?\s*(?:г|гр|мл|л|кг|kg|g|ml|l)\b', '', name)
+    name = re.sub(r'\d+(?:[.,]\d+)?\s*(?:г|гр|мл|л|кг|бр|kg|g|ml|l|cl|см)\b', '', name)
+    name = re.sub(r'[®™©\n]', ' ', name)
+    name = re.sub(r'\d+[.,]?\d*\s*%\s*(?:vol)?', '', name)
+    name = re.sub(r'\s+', ' ', name).strip()
+    stopwords = set(config.get('stopwords', []))
+    return {t for t in name.split() if len(t) > 1 and t not in stopwords}
+
+
+def ngram_similarity(name1, name2, n=3):
+    """Character n-gram (trigram) Jaccard similarity — catches transliteration misses."""
+    def ngrams(s):
+        s = re.sub(r'[^\wа-яА-Я]', '', s.lower())
+        return set(s[i:i+n] for i in range(len(s) - n + 1))
+    n1, n2 = ngrams(name1), ngrams(name2)
+    if not n1 or not n2:
+        return 0.0
+    return len(n1 & n2) / len(n1 | n2)
 
 
 def token_similarity(tokens1, tokens2, config):
-    """Calculate Jaccard similarity between token sets"""
+    """Calculate Jaccard similarity between token sets — v3 with relaxed thresholds"""
     if not tokens1 or not tokens2:
         return 0
     
     common = tokens1 & tokens2
-    min_common = config.get('token_similarity', {}).get('min_common_tokens', 2)
+    # v3: Lowered from 2 to 1 (transliteration expansion means 1 common token is meaningful)
+    min_common = config.get('token_similarity', {}).get('min_common_tokens', 1)
     
     if len(common) < min_common:
         return 0
