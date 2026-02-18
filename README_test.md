@@ -80,7 +80,7 @@ The project follows a modular architecture with clear separation between scrapin
 
 Promo Products BG follows a multi-stage pipeline architecture that transforms raw promotional data from Bulgarian grocery stores into enriched, matchable product information for web-based price comparison.
 
-```
+```text
 ┌─────────────┐    ┌────────────────┐    ┌──────────────┐    ┌─────────────┐
 │  Scrapers   │───▶│ Normalization  │───▶│   Matching   │───▶│  Export     │
 │  (K/L/B)    │    │ & Enrichment   │    │   Pipeline   │    │  & API      │
@@ -256,7 +256,7 @@ For detailed architecture documentation, see:
 
 ## Project Structure
 
-```
+```text
 promo_products_bg/
 ├── main.py                          # CLI entry point (scrape/clean/match/export)
 ├── scrapers/                        # Store-specific scrapers
