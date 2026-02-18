@@ -1,0 +1,107 @@
+# Progress Log
+Run: 402f6c16-a159-4201-9671-e90c4610a428
+Task: Add README_test.md to /host-workspace/promo_products_bg with project description
+Started: 2026-02-18 12:52 UTC
+
+## Codebase Patterns
+
+### Documentation Structure
+- Main documentation in `docs/` directory (ARCHITECTURE.md, MATCHING_PIPELINE.md, DATA_PIPELINE.md)
+- Key architectural docs: DAILY_SCAN_ARCHITECTURE.md (root level)
+- Test files follow pattern: `test_<feature>.py` in root directory
+- Documentation tests verify content completeness, not just syntax
+
+### Database Architecture
+- SQLite databases in `data/` directory
+- Two main databases: promobg.db (main), off_bulgaria.db (OpenFoodFacts cache)
+- Schema includes: products, store_products, prices, cross_store_matches, product_off_matches
+- All databases gitignored (*.db pattern)
+
+### Python Testing Patterns
+- Tests use classes with methods for each test case
+- Test output includes AC (Acceptance Criteria) references
+- Exit code 0 for success, 1 for failure
+- UTF-8 encoding explicitly specified for file operations
+
+---
+
+## 2026-02-18 12:52 UTC - US-002: Add architecture and data flow documentation to README_test.md
+
+**What was implemented:**
+- Added comprehensive "Architecture" section to README_test.md
+- Documented system design overview with data flow diagram
+- Detailed database architecture section covering both promobg.db and off_bulgaria.db
+- Documented matching pipeline with three phases (token/barcode, transliteration, embedding)
+- Included performance metrics (63.3% match rate, 5,113 products)
+- Added cross-store matching explanation with SQL example
+- Referenced related documentation (DAILY_SCAN_ARCHITECTURE.md, MATCHING_PIPELINE.md, DATA_PIPELINE.md, ARCHITECTURE.md)
+- Created match type distribution table with confidence ranges
+
+**Files changed:**
+- README_test.md - Added ~200 lines of architecture documentation
+- test_readme_architecture.py - Created new test file with 6 acceptance criteria tests
+
+**Tests written:**
+- test_readme_architecture.py with 6 test cases:
+  1. AC1: Architecture section exists
+  2. AC2: Database structure documented (promobg.db, off_bulgaria.db)
+  3. AC3: Matching pipeline described with match types (token, barcode, embedding)
+  4. AC4: Project directory structure included (scrapers/, scripts/, apps/, data/)
+  5. AC5: Performance metrics documented (63.3% match rate, 5,113 products)
+  6. AC6: Related docs referenced (DAILY_SCAN_ARCHITECTURE.md, MATCHING_PIPELINE.md)
+- All 6 tests passing ✓
+
+**Learnings:**
+- Project has excellent existing documentation in docs/ that can be referenced
+- Architecture follows clear pipeline: Scraping → Normalization → Matching → Export
+- Three databases in play: promobg.db (main), off_bulgaria.db (OFF cache)
+- Matching uses multi-phase approach: barcode/token, transliteration, embeddings
+- Current match rate of 63.3% is solid given many Bulgarian local brands not in OpenFoodFacts
+- Documentation tests should verify content presence, not just file existence
+
+**Commit:**
+- feat: US-002 - Add architecture and data flow documentation to README_test.md (c6bddde)
+
+---
+
+## 2026-02-18 13:02 UTC - US-003: Validate README_test.md formatting and completeness
+
+**What was implemented:**
+- Created validation script (scripts/validate_readme_test.py) with comprehensive checks
+- Validates UTF-8 encoding with explicit encoding check
+- Checks for all required sections (title, overview, features, tech stack, architecture)
+- Validates markdown syntax (links, backticks, code blocks)
+- Verifies heading hierarchy (no skipped levels)
+- Ensures all code blocks have language tags
+- Detects broken internal file links
+- Fixed README_test.md: Added 'text' language tags to ASCII diagrams
+
+**Files changed:**
+- scripts/validate_readme_test.py - Created new validation script (280+ lines)
+- test_validate_readme.py - Created comprehensive test suite with 7 test cases
+- README_test.md - Fixed 2 code blocks to include language tags
+
+**Tests written:**
+- test_validate_readme.py with 7 test cases:
+  1. AC1: Validation script exists at scripts/validate_readme_test.py
+  2. AC2: Script checks for required sections (title, overview, features, stack, architecture)
+  3. AC3: Script validates markdown syntax (links, backticks)
+  4. AC4: Script verifies UTF-8 encoding
+  5. AC5: Script checks heading hierarchy
+  6. AC6: Validation script exits with code 0 when run
+  7. AC7: Validation script detects issues (negative test with invalid README)
+- All 7 tests passing ✓
+- Validation script runs successfully: 5 required sections verified, 9 code blocks validated, 4 links checked
+
+**Learnings:**
+- Validation scripts should be comprehensive but not overly strict (warnings vs errors)
+- Code blocks in markdown should always have language tags (bash, python, sql, text, etc.)
+- Heading hierarchy validation needs context-awareness (warnings for false positives acceptable)
+- Testing validation scripts requires both positive and negative test cases
+- Python's re module excellent for markdown parsing and pattern matching
+- Validation exit codes critical for CI/CD integration (0 = success, 1 = failure)
+
+**Commit:**
+- feat: US-003 - Validate README_test.md formatting and completeness (adfa524)
+
+---
