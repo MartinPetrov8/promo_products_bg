@@ -294,13 +294,56 @@
             }
         }
         
-        function getProductImage(name) {
+        // Category → fallback image mapping
+        const CATEGORY_IMAGES = {
+            'dairy': 'prqsno-mlqko.png',
+            'meat': 'svinsko.png',
+            'produce': 'domati.png',
+            'beverages': 'gazirani-napitki.png',
+            'bakery': 'hlqb-bql.png',
+            'snacks': 'qdki.png',
+            'frozen': 'riba.png',
+            'household': 'voda.png',
+            'personal_care': 'voda.png',
+            'alcohol': 'alkohol.png',
+            'wine': 'vino.png',
+            'spirits': 'rakia.png',
+            'condiments': 'podpravki.png',
+            'sauces': 'podpravki.png',
+            'canned': 'zelenchukovi-konservi.png',
+            'sweets': 'bonboni.png',
+            'coffee_tea': 'kafe.png',
+            'grains': 'oriz.png',
+            'oils': 'olio.png',
+            'eggs': 'qica.png',
+            'pantry': 'brashno.png',
+            'asian_food': 'podpravki.png',
+            'laundry': 'voda.png',
+            'dishwasher': 'voda.png',
+            'deodorant': 'voda.png',
+            'baby': 'prqsno-mlqko.png',
+            'paper_products': 'voda.png',
+            'pet_food': 'mesni-konservi.png',
+            'tools_diy': null,
+            'kitchen': null,
+            'kitchen_appliances': null,
+            'home_textile': null,
+            'auto': null,
+            'other': null
+        };
+
+        function getProductImage(name, category) {
             if (!name) return null;
             const lower = name.toLowerCase();
+            // 1. Try keyword match (most specific)
             for (const m of IMAGE_CONFIG.mappings) {
                 if (lower.includes(m.keyword)) {
                     return IMAGE_CONFIG.basePath + m.image;
                 }
+            }
+            // 2. Try category fallback
+            if (category && CATEGORY_IMAGES[category]) {
+                return IMAGE_CONFIG.basePath + CATEGORY_IMAGES[category];
             }
             return null;
         }
@@ -532,7 +575,7 @@
                         (nutriscore ? '<div class="absolute top-2 left-2 nutriscore-' + nutriscore + ' text-white text-xs font-bold px-2 py-1 rounded-lg uppercase">' + nutriscore + '</div>' : '') +
                         (hasComparison ? '<div class="absolute bottom-2 left-2 match-badge text-white text-xs font-bold px-2 py-1 rounded-full">🔗 Сравни</div>' : '') +
                         (function() {
-                    var img = getProductImage(p.name);
+                    var img = getProductImage(p.name, p.category);
                     if (img) {
                         return '<div class="h-28 sm:h-32 bg-gray-50 flex items-center justify-center p-2"><img src="' + img + '" alt="' + safeDisplayName.slice(0,30) + '" class="max-h-full max-w-full object-contain" loading="lazy" onerror="this.parentElement.innerHTML=\'' + getStoreEmoji(p.store) + '\'"></div>';
                     }

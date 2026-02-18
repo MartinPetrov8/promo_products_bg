@@ -679,6 +679,7 @@ def export_frontend():
     
     # Enrich quantities from name if not in DB
     from quantity_extractor import extract_quantity_from_name
+    cleaning_config = load_config("cleaning")
     
     products = []
     exported_ids = set()
@@ -693,6 +694,9 @@ def export_frontend():
                 qty = parsed['value']
                 qty_unit = parsed['unit']
         
+        # Categorize product for image fallback
+        category = categorize(row['name'], cleaning_config['categories'])
+        
         product = {
             'id': row['id'],
             'name': row['name'],
@@ -700,6 +704,7 @@ def export_frontend():
             'store': row['store'],
             'price': round(row['price'], 2),
             'image_url': row['image_url'],
+            'category': category,
             'group_id': None
         }
         
