@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromoBG — Сравни цени в супермаркетите</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                            400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8',
+                            800: '#1e40af', 900: '#1e3a8a'
+                        },
+                        savings: '#10b981',
+                        discount: '#ef4444',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+
+        /* Dark mode */
+        .dark body { background: #0f172a; }
+
+        /* Smooth card hover */
+        .product-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px -6px rgba(59,130,246,0.15); }
+
+        /* Discount badge pulse */
+        .discount-badge { background: linear-gradient(135deg, #ef4444, #dc2626); }
+
+        /* Store brand colors */
+        .store-kaufland { --store-color: #f59e0b; --store-bg: #fffbeb; --store-border: #fde68a; }
+        .store-lidl { --store-color: #3b82f6; --store-bg: #eff6ff; --store-border: #bfdbfe; }
+        .store-billa { --store-color: #10b981; --store-bg: #ecfdf5; --store-border: #a7f3d0; }
+
+        /* Best price highlight */
+        .best-price { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid #10b981; }
+
+        /* Modal */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 100; backdrop-filter: blur(8px); }
+        .modal-overlay.active { display: flex; align-items: center; justify-content: center; }
+
+        /* Typeahead */
+        .typeahead { position: absolute; top: 100%; left: 0; right: 0; background: white; border-radius: 16px; box-shadow: 0 12px 32px rgba(0,0,0,0.12); max-height: 320px; overflow-y: auto; z-index: 50; margin-top: 8px; }
+        .dark .typeahead { background: #1e293b; }
+        .typeahead-item { padding: 12px 20px; cursor: pointer; transition: background 0.15s; font-size: 14px; }
+        .typeahead-item:hover { background: #eff6ff; }
+        .dark .typeahead-item:hover { background: #334155; }
+        .typeahead-item + .typeahead-item { border-top: 1px solid #f1f5f9; }
+        .dark .typeahead-item + .typeahead-item { border-top-color: #334155; }
+
+        /* Price font */
+        .price-display { font-variant-numeric: tabular-nums; }
+
+        /* Nutriscore */
+        .nutriscore-a { background: #038141; }
+        .nutriscore-b { background: #85bb2f; }
+        .nutriscore-c { background: #fecb02; color: #333 !important; }
+        .nutriscore-d { background: #ee8100; }
+        .nutriscore-e { background: #e63e11; }
+
+        /* Hide scrollbar on filter chips */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Skeleton loader */
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        .skeleton { background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl sticky top-0 z-50 border-b border-slate-200/60 dark:border-slate-700/60">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-brand-500 rounded-xl flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-slate-900 dark:text-white">PromoBG</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">Kaufland · Lidl · Billa</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="toggleDarkMode()" class="p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Тъмен режим">
+                    <svg class="w-5 h-5 text-slate-600 dark:text-slate-300 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    <svg class="w-5 h-5 text-slate-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Search -->
+    <section class="bg-white dark:bg-slate-800/50 border-b border-slate-200/60 dark:border-slate-700/60">
+        <div class="max-w-3xl mx-auto px-4 py-10 sm:py-14">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-2 text-slate-900 dark:text-white">
+                Сравни цените
+            </h2>
+            <p class="text-center text-slate-500 dark:text-slate-400 mb-8 text-base">
+                <span id="totalProductsHero">1500+</span> продукта от 3 магазина — намери най-евтиното
+            </p>
+
+            <!-- Pill Search Bar -->
+            <div class="relative">
+                <div class="flex items-center bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-600 focus-within:border-brand-500 dark:focus-within:border-brand-400 rounded-full shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50 transition-all duration-300">
+                    <div class="pl-5 pr-2">
+                        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </div>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Търси продукти..."
+                        class="flex-1 py-4 text-base bg-transparent text-slate-900 dark:text-white placeholder-slate-400 outline-none"
+                        autocomplete="off"
+                    >
+                    <button onclick="searchProducts()" class="m-1.5 px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-full transition-colors duration-200 text-sm">
+                        Търси
+                    </button>
+                </div>
+                <div id="typeahead" class="typeahead hidden"></div>
+            </div>
+
+            <!-- Filter Chips -->
+            <div class="flex items-center gap-2 mt-5 overflow-x-auto hide-scrollbar pb-1">
+                <button onclick="setStoreFilter('')" id="storeBtnAll" class="store-chip active flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border-2 whitespace-nowrap transition-all duration-200 bg-brand-50 dark:bg-brand-900/30 border-brand-200 dark:border-brand-700 text-brand-700 dark:text-brand-300">
+                    Всички <span id="storeCountAll" class="text-brand-500 font-bold">-</span>
+                </button>
+                <button onclick="setStoreFilter('Kaufland')" id="storeBtnKaufland" class="store-chip flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border-2 whitespace-nowrap transition-all duration-200 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-amber-50 hover:border-amber-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Kaufland <span id="storeCountKaufland" class="font-bold">-</span>
+                </button>
+                <button onclick="setStoreFilter('Lidl')" id="storeBtnLidl" class="store-chip flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border-2 whitespace-nowrap transition-all duration-200 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-blue-50 hover:border-blue-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> Lidl <span id="storeCountLidl" class="font-bold">-</span>
+                </button>
+                <button onclick="setStoreFilter('Billa')" id="storeBtnBilla" class="store-chip flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border-2 whitespace-nowrap transition-all duration-200 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-emerald-50 hover:border-emerald-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Billa <span id="storeCountBilla" class="font-bold">-</span>
+                </button>
+
+                <div class="w-px h-6 bg-slate-200 dark:bg-slate-600 mx-1"></div>
+
+                <select id="discountFilter" class="px-4 py-2 rounded-full text-sm font-medium border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 outline-none cursor-pointer" onchange="filterProducts()">
+                    <option value="0">Всички оферти</option>
+                    <option value="20">-20%+</option>
+                    <option value="40">-40%+</option>
+                    <option value="50">-50%+</option>
+                </select>
+
+                <label class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border-2 border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors whitespace-nowrap">
+                    <input type="checkbox" id="crossStoreFilter" onchange="filterProducts()" class="w-3.5 h-3.5 text-brand-500 rounded">
+                    <span>Само сравнения</span>
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Row -->
+    <section class="max-w-6xl mx-auto px-4 py-6">
+        <div class="grid grid-cols-3 gap-3">
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
+                <div class="text-2xl sm:text-3xl font-extrabold text-brand-500 price-display" id="totalProducts">-</div>
+                <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Продукти</div>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
+                <div class="text-2xl sm:text-3xl font-extrabold text-savings price-display" id="crossStoreCount">-</div>
+                <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Сравнения</div>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
+                <div class="text-2xl sm:text-3xl font-extrabold text-discount price-display" id="avgDiscount">-</div>
+                <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Ø Отстъпка</div>
+            </div>
+        </div>
+        <p class="text-center text-xs text-slate-400 dark:text-slate-500 mt-3" id="lastUpdated"></p>
+    </section>
+
+    <!-- Results -->
+    <section class="max-w-6xl mx-auto px-4 pb-16">
+        <div class="flex items-center justify-between mb-5">
+            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200" id="resultsTitle">Топ оферти</h3>
+        </div>
+        <div id="results" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            <div class="text-center py-16 text-slate-400 col-span-full">Зареждане...</div>
+        </div>
+    </section>
+
+    <!-- Comparison Modal -->
+    <div id="comparisonModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-lg w-full mx-4 max-h-[85vh] overflow-auto border border-slate-200 dark:border-slate-700" onclick="event.stopPropagation()">
+            <div class="p-5 border-b border-slate-100 dark:border-slate-700 flex justify-between items-start">
+                <div>
+                    <h3 class="font-bold text-lg text-slate-900 dark:text-white" id="modalTitle">Сравнение</h3>
+                    <p class="text-sm text-savings font-medium mt-1" id="matchType"></p>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xl w-9 h-9 flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition -mt-1">&times;</button>
+            </div>
+            <div id="modalContent" class="p-5"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 dark:bg-slate-950 text-white py-8 mt-auto border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm">PromoBG © 2026 · Данните се обновяват ежедневно</p>
+            <div class="flex items-center justify-center gap-4 mt-3 text-xs text-slate-500">
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-400"></span>Kaufland</span>
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span>Lidl</span>
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Billa</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ==================== STATE ====================
+        let data = { products: [], off: {}, groups: {}, meta: {} };
+        let searchIndex = [];
+        let currentStoreFilter = '';
+        const storeCounts = { all: 0, Kaufland: 0, Lidl: 0, Billa: 0 };
+
+        // ==================== DARK MODE ====================
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        }
+        if (localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // ==================== STORE SUFFIXES ====================
+        const STORE_SUFFIXES = [
+            /от\s*свежата\s*витрина/gi, /от\s*нашата\s*пекарна/gi, /от\s*деликатесната\s*витрина/gi,
+            /За\s*1\s*кг/gi, /\d+\s*бр\.?\s*$/gi, /\d+-\d+\*?/gi, /различни\s*видове?/gi,
+        ];
+        function cleanProductName(name) {
+            if (!name) return '';
+            let c = name.replace(/\n/g, ' ');
+            STORE_SUFFIXES.forEach(p => { c = c.replace(p, ' '); });
+            return c.trim().replace(/\s+/g, ' ');
+        }
+        function escapeHtml(text) {
+            if (typeof text !== 'string') return '';
+            const d = document.createElement('div'); d.textContent = text; return d.innerHTML;
+        }
+
+        // ==================== STORE HELPERS ====================
+        const STORE_META = {
+            'Kaufland': { dot: 'bg-amber-400', text: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-900/20', border: 'border-amber-200 dark:border-amber-800' },
+            'Lidl':     { dot: 'bg-blue-500', text: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-800' },
+            'Billa':    { dot: 'bg-emerald-500', text: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-900/20', border: 'border-emerald-200 dark:border-emerald-800' },
+        };
+        function getStoreDot(store) {
+            return '<span class="w-2 h-2 rounded-full inline-block ' + (STORE_META[store]?.dot || 'bg-slate-400') + '"></span>';
+        }
+
+        // ==================== IMAGE MAPPING ====================
+        let IMAGE_CONFIG = { basePath: 'images/products/', mappings: [] };
+        let IMAGE_REGEX_CACHE = null;
+
+        async function loadImageMappings() {
+            try {
+                const res = await fetch('data/image_mapping.json');
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const json = await res.json();
+                if (!Array.isArray(json.mappings)) throw new Error('Invalid');
+                IMAGE_CONFIG = { basePath: json.base_path || 'images/products/', mappings: json.mappings };
+            } catch (e) { console.warn('Image mappings:', e.message); }
+        }
+
+        const CATEGORY_IMAGES = {
+            'dairy':'prqsno-mlqko.png','meat':'svinsko.png','produce':'domati.png','beverages':'gazirani-napitki.png',
+            'bakery':'hlqb-bql.png','snacks':'qdki.png','alcohol':'alkohol.png','wine':'vino.png','spirits':'rakia.png',
+            'condiments':'podpravki.png','sauces':'podpravki.png','canned':'zelenchukovi-konservi.png',
+            'sweets':'bonboni.png','coffee_tea':'kafe.png','grains':'oriz.png','oils':'olio.png','eggs':'qica.png',
+            'pantry':'brashno.png','asian_food':'podpravki.png',
+        };
+
+        function buildImageRegexCache() {
+            IMAGE_REGEX_CACHE = IMAGE_CONFIG.mappings.map(m => {
+                var kw = m.keyword, esc = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                if (kw.includes(' ')) return { re: new RegExp(esc), image: m.image };
+                return { re: new RegExp('(?:^|[\\s,;(/\n])' + esc + '(?:[\\s,;)/.\n]|$)'), image: m.image };
+            });
+        }
+
+        function getProductImage(name, category) {
+            if (!name) return null;
+            if (!IMAGE_REGEX_CACHE) buildImageRegexCache();
+            var lower = name.toLowerCase();
+            for (var i = 0; i < IMAGE_REGEX_CACHE.length; i++) {
+                if (IMAGE_REGEX_CACHE[i].re.test(lower)) return IMAGE_CONFIG.basePath + IMAGE_REGEX_CACHE[i].image;
+            }
+            if (category && CATEGORY_IMAGES[category]) return IMAGE_CONFIG.basePath + CATEGORY_IMAGES[category];
+            return null;
+        }
+
+        // ==================== DATA LOADING ====================
+        async function loadProducts(retry) {
+            retry = retry || 0;
+            try {
+                await loadImageMappings();
+                const res = await fetch('data/products.json');
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const d = await res.json();
+                if (!d.products || !Array.isArray(d.products)) throw new Error('Invalid data');
+                data = d;
+                buildSearchIndex();
+                calculateStoreCounts();
+                updateStats(data.products);
+                updateStoreButtons();
+                showTopDeals();
+                document.getElementById('totalProductsHero').textContent = data.products.length.toLocaleString() + '+';
+            } catch (e) {
+                console.error(e);
+                if (retry < 2) {
+                    setTimeout(() => loadProducts(retry + 1), 2000 * (retry + 1));
+                    document.getElementById('results').innerHTML = '<div class="text-center py-16 text-slate-400 col-span-full">Зареждане... (опит ' + (retry+1) + '/3)</div>';
+                } else {
+                    document.getElementById('results').innerHTML = '<div class="text-center py-16 col-span-full"><p class="text-red-500 mb-4">Грешка: ' + escapeHtml(e.message) + '</p><button onclick="loadProducts(0)" class="px-6 py-2.5 bg-brand-500 text-white rounded-full hover:bg-brand-600 font-medium">Презареди</button></div>';
+                }
+            }
+        }
+
+        // ==================== COUNTS & STATS ====================
+        function calculateStoreCounts() {
+            storeCounts.all = data.products.length;
+            storeCounts.Kaufland = data.products.filter(p => p.store === 'Kaufland').length;
+            storeCounts.Lidl = data.products.filter(p => p.store === 'Lidl').length;
+            storeCounts.Billa = data.products.filter(p => p.store === 'Billa').length;
+        }
+
+        function updateStoreButtons() {
+            document.getElementById('storeCountAll').textContent = storeCounts.all;
+            document.getElementById('storeCountKaufland').textContent = storeCounts.Kaufland;
+            document.getElementById('storeCountLidl').textContent = storeCounts.Lidl;
+            document.getElementById('storeCountBilla').textContent = storeCounts.Billa;
+        }
+
+        function updateStats(filtered) {
+            document.getElementById('totalProducts').textContent = filtered.length.toLocaleString();
+            const groups = new Set();
+            filtered.forEach(p => { if (hasValidComparison(p)) groups.add(p.group_id); });
+            document.getElementById('crossStoreCount').textContent = groups.size;
+            const wd = filtered.filter(p => p.discount_pct > 0);
+            document.getElementById('avgDiscount').textContent = (wd.length ? Math.round(wd.reduce((s,p) => s+p.discount_pct, 0)/wd.length) : 0) + '%';
+            if (data.meta.updated_at) {
+                const d = new Date(data.meta.updated_at);
+                document.getElementById('lastUpdated').textContent = 'Обновено: ' + d.toLocaleDateString('bg-BG') + ' ' + d.toLocaleTimeString('bg-BG',{hour:'2-digit',minute:'2-digit'});
+            }
+        }
+
+        // ==================== FILTERS ====================
+        function setStoreFilter(store) {
+            currentStoreFilter = store;
+            document.querySelectorAll('.store-chip').forEach(b => {
+                b.classList.remove('active','bg-brand-50','dark:bg-brand-900/30','border-brand-200','dark:border-brand-700','text-brand-700','dark:text-brand-300');
+                b.classList.add('bg-white','dark:bg-slate-800','border-slate-200','dark:border-slate-600','text-slate-600','dark:text-slate-300');
+            });
+            const btn = store ? document.getElementById('storeBtn' + store) : document.getElementById('storeBtnAll');
+            if (btn) {
+                btn.classList.add('active','bg-brand-50','dark:bg-brand-900/30','border-brand-200','dark:border-brand-700','text-brand-700','dark:text-brand-300');
+                btn.classList.remove('bg-white','dark:bg-slate-800','border-slate-200','dark:border-slate-600','text-slate-600','dark:text-slate-300');
+            }
+            filterProducts();
+        }
+
+        function applyFilters(products) {
+            const store = currentStoreFilter;
+            const minD = parseInt(document.getElementById('discountFilter').value) || 0;
+            const cross = document.getElementById('crossStoreFilter').checked;
+            return products.filter(p => {
+                if (store && p.store !== store) return false;
+                if (minD && (p.discount_pct||0) < minD) return false;
+                if (cross && !hasValidComparison(p)) return false;
+                return true;
+            });
+        }
+
+        function filterProducts() {
+            const q = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (q) { searchProducts(); return; }
+            let r = applyFilters(data.products);
+            renderProducts(r.slice(0, 40));
+            document.getElementById('resultsTitle').textContent = currentStoreFilter ? currentStoreFilter + ' (' + r.length + ')' : (document.getElementById('crossStoreFilter').checked ? 'Сравнения (' + r.length + ')' : 'Топ оферти');
+            updateStats(applyFilters(data.products));
+        }
+
+        // ==================== SEARCH ====================
+        function buildSearchIndex() {
+            const s = new Set();
+            data.products.forEach(p => { const w = cleanProductName(p.name).split(/\s+/).slice(0,3).join(' '); if (w.length > 2) s.add(w); });
+            searchIndex = Array.from(s).sort();
+        }
+
+        function searchProducts() {
+            hideTypeahead();
+            const q = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!q) { showTopDeals(); return; }
+            let r = data.products.filter(p => cleanProductName(p.name).toLowerCase().includes(q) || p.name.toLowerCase().includes(q));
+            r = applyFilters(r);
+            renderProducts(r.slice(0, 100));
+            document.getElementById('resultsTitle').textContent = '"' + escapeHtml(q) + '" (' + r.length + ')';
+        }
+
+        function showTypeahead(q) {
+            if (!q || q.length < 2) { hideTypeahead(); return; }
+            const m = searchIndex.filter(n => n.toLowerCase().includes(q.toLowerCase())).slice(0, 6);
+            if (!m.length) { hideTypeahead(); return; }
+            const c = document.getElementById('typeahead');
+            c.innerHTML = m.map(v => '<div class="typeahead-item" data-value="' + escapeHtml(v) + '">' + escapeHtml(v) + '</div>').join('');
+            c.classList.remove('hidden');
+        }
+        function hideTypeahead() { document.getElementById('typeahead').classList.add('hidden'); }
+        function selectTypeahead(v) { document.getElementById('searchInput').value = v; hideTypeahead(); searchProducts(); }
+
+        // ==================== HELPERS ====================
+        function getNutriscore(p) {
+            if (!p?.off_barcode || !data?.off?.[p.off_barcode]) return null;
+            const s = data.off[p.off_barcode].nutriscore?.toLowerCase();
+            return /^[a-e]$/.test(s) ? s : null;
+        }
+        function getGroupProducts(gid) { return gid && Array.isArray(data?.products) ? data.products.filter(p => p.group_id === gid) : []; }
+        function hasValidComparison(p) {
+            if (!p?.group_id) return false;
+            const gp = getGroupProducts(p.group_id);
+            return gp.length >= 2 && new Set(gp.map(x => x.store)).size >= 2;
+        }
+
+        function showTopDeals() {
+            const matched = data.products.filter(p => hasValidComparison(p));
+            if (matched.length) {
+                matched.sort((a,b) => (data.groups[b.group_id]?.savings||0) - (data.groups[a.group_id]?.savings||0));
+                renderProducts(matched.slice(0, 40));
+                document.getElementById('resultsTitle').textContent = 'Сравни цените (' + new Set(matched.map(p=>p.group_id)).size + ' съвпадения)';
+            } else {
+                renderProducts(data.products.slice(0, 20));
+                document.getElementById('resultsTitle').textContent = 'Всички продукти';
+            }
+        }
+
+        // ==================== RENDER ====================
+        function renderProducts(products) {
+            const c = document.getElementById('results');
+            if (!products.length) { c.innerHTML = '<div class="text-center py-16 text-slate-400 col-span-full">Няма намерени продукти</div>'; return; }
+
+            c.innerHTML = products.map(p => {
+                const ns = getNutriscore(p);
+                const hasCmp = hasValidComparison(p);
+                const name = cleanProductName(p.name);
+                const safeName = escapeHtml(name);
+                const sm = STORE_META[p.store] || {};
+                const img = getProductImage(p.name, p.category);
+
+                return '<div class="product-card bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 ' + (hasCmp ? 'cursor-pointer ring-1 ring-brand-100 dark:ring-brand-900' : '') + '" data-group-id="' + (hasCmp ? escapeHtml(p.group_id||'') : '') + '">' +
+                    '<div class="relative">' +
+                        (p.discount_pct ? '<div class="discount-badge absolute top-2 right-2 z-10 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-md">-' + parseInt(p.discount_pct) + '%</div>' : '') +
+                        (ns ? '<div class="absolute top-2 left-2 z-10 nutriscore-' + ns + ' text-white text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">' + ns + '</div>' : '') +
+                        (img
+                            ? '<div class="aspect-[4/3] bg-slate-50 dark:bg-slate-700/50 flex items-center justify-center p-3"><img src="' + img + '" alt="" class="max-h-full max-w-full object-contain" loading="lazy" onerror="this.parentElement.innerHTML=\'<span class=\\\'text-3xl\\\'>' + getStoreDotLarge(p.store) + '</span>\'"></div>'
+                            : '<div class="aspect-[4/3] bg-slate-50 dark:bg-slate-700/50 flex items-center justify-center"><span class="text-3xl opacity-30">' + getStoreDotLarge(p.store) + '</span></div>'
+                        ) +
+                    '</div>' +
+                    '<div class="p-3 sm:p-4 space-y-2">' +
+                        '<div class="flex items-center gap-1.5">' + getStoreDot(p.store) + '<span class="text-[11px] text-slate-400 dark:text-slate-500 font-medium">' + escapeHtml(p.store) + '</span></div>' +
+                        '<h4 class="font-semibold text-sm leading-snug text-slate-800 dark:text-slate-200 line-clamp-2 min-h-[2.5rem]" title="' + safeName + '">' + safeName + '</h4>' +
+                        '<div class="flex items-baseline gap-2 pt-1">' +
+                            '<span class="text-xl font-extrabold price-display text-slate-900 dark:text-white">' + (p.price?.toFixed(2)||'-') + '</span>' +
+                            '<span class="text-sm text-slate-400 font-medium">лв</span>' +
+                            (p.old_price ? '<span class="text-xs text-slate-400 line-through ml-auto">' + p.old_price.toFixed(2) + ' лв</span>' : '') +
+                        '</div>' +
+                        (p.price_per_kg||p.price_per_l ? '<div class="text-[11px] text-slate-400">' + (p.price_per_kg ? p.price_per_kg.toFixed(2)+' лв/кг' : p.price_per_l ? p.price_per_l.toFixed(2)+' лв/л' : '') + '</div>' : '') +
+                        (hasCmp ? '<div class="mt-2 w-full text-center text-xs py-2 rounded-lg font-semibold bg-brand-50 dark:bg-brand-900/20 text-brand-600 dark:text-brand-400 border border-brand-100 dark:border-brand-800">Сравни цени →</div>' : '') +
+                    '</div>' +
+                '</div>';
+            }).join('');
+        }
+
+        function getStoreDotLarge(store) {
+            const colors = { 'Kaufland': '🟡', 'Lidl': '🔵', 'Billa': '🟢' };
+            return colors[store] || '🛒';
+        }
+
+        // ==================== COMPARISON MODAL ====================
+        function showComparison(groupId) {
+            const group = data.groups[groupId];
+            if (!group) return;
+            const all = getGroupProducts(groupId);
+            const byStore = {};
+            all.forEach(p => { if (!byStore[p.store] || p.price < byStore[p.store].price) byStore[p.store] = p; });
+            const products = Object.values(byStore).sort((a,b) => (a.price||999) - (b.price||999));
+            if (products.length < 2) return;
+
+            const minP = Math.min(...products.map(p => p.price||999));
+            const maxP = Math.max(...products.map(p => p.price||0));
+            const savings = maxP - minP;
+            const pct = Math.round(savings/maxP*100);
+
+            document.getElementById('modalTitle').textContent = cleanProductName(products[0]?.name) || 'Сравнение';
+            const isPM = savings <= 0.01;
+            document.getElementById('matchType').innerHTML = isPM
+                ? '💰 Цените съвпадат — избери удобния магазин'
+                : '🏷️ Разлика в цената — спести от по-евтиния';
+
+            document.getElementById('modalContent').innerHTML =
+                '<div class="space-y-3">' +
+                    products.map((p, i) => {
+                        const best = i === 0 && !isPM;
+                        const sm = STORE_META[p.store] || {};
+                        const cn = cleanProductName(p.name);
+                        return '<div class="flex items-center gap-3 p-4 rounded-xl transition-all ' + (best ? 'best-price' : isPM ? 'bg-brand-50 dark:bg-brand-900/20 border-2 border-brand-200 dark:border-brand-800' : 'bg-slate-50 dark:bg-slate-700/50 border border-slate-100 dark:border-slate-600') + '">' +
+                            '<div class="flex-shrink-0">' + getStoreDot(p.store) + '</div>' +
+                            '<div class="flex-1 min-w-0">' +
+                                '<div class="font-semibold text-slate-800 dark:text-slate-200 text-sm">' + escapeHtml(p.store) + '</div>' +
+                                '<div class="text-xs text-slate-500 dark:text-slate-400 truncate" title="' + escapeHtml(cn) + '">' + escapeHtml(cn).slice(0,40) + (cn.length > 40 ? '…' : '') + '</div>' +
+                                (p.price_per_kg ? '<div class="text-[11px] text-slate-400 mt-0.5">' + p.price_per_kg.toFixed(2) + ' лв/кг</div>' : '') +
+                                (p.price_per_l ? '<div class="text-[11px] text-slate-400 mt-0.5">' + p.price_per_l.toFixed(2) + ' лв/л</div>' : '') +
+                            '</div>' +
+                            '<div class="text-right flex-shrink-0">' +
+                                '<div class="text-xl font-extrabold price-display ' + (best ? 'text-savings' : isPM ? 'text-brand-600 dark:text-brand-400' : 'text-slate-700 dark:text-slate-300') + '">' + (p.price?.toFixed(2)||'-') + ' лв</div>' +
+                                (best ? '<div class="text-[11px] text-savings font-bold mt-0.5">✓ Най-добра цена</div>' : '') +
+                            '</div>' +
+                        '</div>';
+                    }).join('') +
+                '</div>' +
+                (savings > 0.01 ? '<div class="mt-5 p-4 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl text-center border border-emerald-100 dark:border-emerald-800"><span class="text-savings font-extrabold text-lg">Спестяваш ' + savings.toFixed(2) + ' лв (' + pct + '%)</span><p class="text-sm text-emerald-600 dark:text-emerald-400 mt-1">при покупка от най-евтиния магазин</p></div>' : '') +
+                '<button onclick="closeModal()" class="mt-5 w-full py-3 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-colors">Затвори</button>';
+
+            document.getElementById('comparisonModal').classList.add('active');
+        }
+
+        function closeModal(e) { if (!e || e.target.id === 'comparisonModal') document.getElementById('comparisonModal').classList.remove('active'); }
+
+        // ==================== EVENT LISTENERS ====================
+        document.getElementById('searchInput').addEventListener('keypress', e => { if (e.key === 'Enter') { hideTypeahead(); searchProducts(); } });
+        document.getElementById('searchInput').addEventListener('input', e => showTypeahead(e.target.value));
+        document.getElementById('searchInput').addEventListener('blur', () => setTimeout(hideTypeahead, 200));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        document.getElementById('typeahead').addEventListener('mousedown', function(e) {
+            const item = e.target.closest('[data-value]');
+            if (item) { e.preventDefault(); selectTypeahead(item.dataset.value); }
+        });
+
+        document.getElementById('results').addEventListener('click', function(e) {
+            const card = e.target.closest('[data-group-id]');
+            if (card && card.dataset.groupId) showComparison(card.dataset.groupId);
+        });
+
+        // ==================== INIT ====================
+        loadProducts();
+    </script>
+</body>
+</html>
